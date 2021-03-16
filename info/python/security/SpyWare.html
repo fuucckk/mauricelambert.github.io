@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module spyware</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>spyware</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="spyware.py">spyware.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;implement&nbsp;a&nbsp;spyware.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-join"><strong>join</strong></a>(*threads) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;join&nbsp;threads.</tt></dd></dl>
+ <dl><dt><a name="-spy"><strong>spy</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;all&nbsp;spy&nbsp;functions.</tt></dd></dl>
+ <dl><dt><a name="-spyware"><strong>spyware</strong></a>() -&gt; None</dt><dd><tt>The&nbsp;SpyWare&nbsp;launcher.</tt></dd></dl>
+ <dl><dt><a name="-start_audio_spy"><strong>start_audio_spy</strong></a>() -&gt; Tuple[threading.Thread, AudioLogger.AudioLogger.Daemon]</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;audio&nbsp;spy.</tt></dd></dl>
+ <dl><dt><a name="-start_copy_spy"><strong>start_copy_spy</strong></a>() -&gt; Tuple[threading.Thread, CopyLogger.CopyLogger.Daemon]</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;copy&nbsp;spy.</tt></dd></dl>
+ <dl><dt><a name="-start_domains_spy"><strong>start_domains_spy</strong></a>() -&gt; Tuple[threading.Thread, threading.Thread, DomainsLogger.DomainsLogger.Daemon]</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;domains&nbsp;spy.</tt></dd></dl>
+ <dl><dt><a name="-start_files_spy"><strong>start_files_spy</strong></a>() -&gt; Tuple[threading.Thread, FilesLogger.FilesLogger.Daemon]</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;files&nbsp;spy.</tt></dd></dl>
+ <dl><dt><a name="-start_key_spy"><strong>start_key_spy</strong></a>() -&gt; Tuple[threading.Thread, KeyLogger.KeyLogger.KeyLogger]</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;key&nbsp;spy.</tt></dd></dl>
+ <dl><dt><a name="-start_screen_spy"><strong>start_screen_spy</strong></a>() -&gt; Tuple[threading.Thread, ScreenLogger.ScreenLogger.Daemon]</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;screen&nbsp;spy.</tt></dd></dl>
+ <dl><dt><a name="-start_webcam_spy"><strong>start_webcam_spy</strong></a>() -&gt; Tuple[threading.Thread, WebcamLogger.WebcamLogger.Daemon]</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;files&nbsp;spy.</tt></dd></dl>
+ <dl><dt><a name="-stop_deamons"><strong>stop_deamons</strong></a>(*daemons) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;send&nbsp;daemon's&nbsp;stop&nbsp;signal.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['spy', 'join', 'stop_deamons', 'start_audio_spy', 'start_copy_spy', 'start_domains_spy', 'start_files_spy', 'start_key_spy', 'start_screen_spy', 'start_webcam_spy', 'spyware']</td></tr></table>
+</body></html>
