@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module RansomWare</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RansomWare</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="ransomware.py">ransomware.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;implement&nbsp;a&nbsp;ransomware.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
+</td><td width="25%" valign=top><a href="platform.html">platform</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="RansomWare.html#RansomWare">RansomWare</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RansomWare">class <strong>RansomWare</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#RansomWare">RansomWare</a>(key:&nbsp;bytes,&nbsp;function_encrypt:&nbsp;Callable&nbsp;=&nbsp;&amp;lt;function&nbsp;crypt&nbsp;at&nbsp;0x000001D0BCBC9A60&amp;gt;,&nbsp;function_IV:&nbsp;Callable&nbsp;=&nbsp;&amp;lt;function&nbsp;get_sha512&nbsp;at&nbsp;0x000001D0BCC03A60&amp;gt;,&nbsp;directory:&nbsp;str&nbsp;=&nbsp;'C:\\Users\\CSU1\\Documents\\dev\\botnet\\<a href="#RansomWare">RansomWare</a>\\<a href="#RansomWare">RansomWare</a>',&nbsp;timeBetweenCrypt:&nbsp;float&nbsp;=&nbsp;0,&nbsp;regexs_filename_to_encrypt:&nbsp;list&nbsp;=&nbsp;[],&nbsp;regexs_filename_dont_encrypt:&nbsp;list&nbsp;=&nbsp;[])<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;can&nbsp;encrypt&nbsp;files.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RansomWare-__init__"><strong>__init__</strong></a>(self, key: bytes, function_encrypt: Callable = &lt;function crypt at 0x000001D0BCBC9A60&gt;, function_IV: Callable = &lt;function get_sha512 at 0x000001D0BCC03A60&gt;, directory: str = 'C:\\Users\\CSU1\\Documents\\dev\\botnet\\RansomWare\\RansomWare', timeBetweenCrypt: float = 0, regexs_filename_to_encrypt: list = [], regexs_filename_dont_encrypt: list = [])</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="RansomWare-encrypt_file"><strong>encrypt_file</strong></a>(self, filename: str, key: bytes) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;encrypt&nbsp;one&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="RansomWare-encrypt_files"><strong>encrypt_files</strong></a>(self, directory: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;get&nbsp;recursive&nbsp;filenames&nbsp;and&nbsp;crypt&nbsp;files.</tt></dd></dl>
+
+<dl><dt><a name="RansomWare-launch"><strong>launch</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;the&nbsp;CryptoLocker.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-crypt"><strong>crypt</strong></a>(key: bytes, data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;fonction&nbsp;xor&nbsp;data&nbsp;with&nbsp;key.</tt></dd></dl>
+ <dl><dt><a name="-get_sha512"><strong>get_sha512</strong></a>(filename: str) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;make&nbsp;an&nbsp;IV&nbsp;from&nbsp;filename.</tt></dd></dl>
+ <dl><dt><a name="-getcwd"><strong>getcwd</strong></a>()</dt><dd><tt>Return&nbsp;a&nbsp;unicode&nbsp;string&nbsp;representing&nbsp;the&nbsp;current&nbsp;working&nbsp;directory.</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt></dl>
+ <dl><dt><a name="-parse"><strong>parse</strong></a>() -&gt; argparse.ArgumentParser</dt><dd><tt>This&nbsp;function&nbsp;parse&nbsp;arguments.</tt></dd></dl>
+ <dl><dt><a name="-scandir"><strong>scandir</strong></a>(path=None)</dt><dd><tt>Return&nbsp;an&nbsp;iterator&nbsp;of&nbsp;DirEntry&nbsp;objects&nbsp;for&nbsp;given&nbsp;path.<br>
+&nbsp;<br>
+path&nbsp;can&nbsp;be&nbsp;specified&nbsp;as&nbsp;either&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;a&nbsp;path-like&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;If&nbsp;path<br>
+is&nbsp;bytes,&nbsp;the&nbsp;names&nbsp;of&nbsp;yielded&nbsp;DirEntry&nbsp;objects&nbsp;will&nbsp;also&nbsp;be&nbsp;bytes;&nbsp;in<br>
+all&nbsp;other&nbsp;circumstances&nbsp;they&nbsp;will&nbsp;be&nbsp;str.<br>
+&nbsp;<br>
+If&nbsp;path&nbsp;is&nbsp;None,&nbsp;uses&nbsp;the&nbsp;path='.'.</tt></dd></dl>
+ <dl><dt><a name="-sha512"><strong>sha512</strong></a> = openssl_sha512(string=b'', *, usedforsecurity=True)</dt><dd><tt>Returns&nbsp;a&nbsp;sha512&nbsp;hash&nbsp;<a href="builtins.html#object">object</a>;&nbsp;optionally&nbsp;initialized&nbsp;with&nbsp;a&nbsp;string</tt></dd></dl>
+ <dl><dt><a name="-sleep"><strong>sleep</strong></a>(...)</dt><dd><tt><a href="#-sleep">sleep</a>(seconds)<br>
+&nbsp;<br>
+Delay&nbsp;execution&nbsp;for&nbsp;a&nbsp;given&nbsp;number&nbsp;of&nbsp;seconds.&nbsp;&nbsp;The&nbsp;argument&nbsp;may&nbsp;be<br>
+a&nbsp;floating&nbsp;point&nbsp;number&nbsp;for&nbsp;subsecond&nbsp;precision.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Callable</strong> = typing.Callable<br>
+<strong>ascii_uppercase</strong> = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</td></tr></table>
+</body></html>
