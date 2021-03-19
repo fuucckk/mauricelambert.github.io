@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module FileAnalysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>FileAnalysis</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ccsu1%5Cdocuments%5Cdev%5Ctest%5Cfileanalysis%5Cfileanalysis%5Cfileanalysis.py">c:\users\csu1\documents\dev\test\fileanalysis\fileanalysis\fileanalysis.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;analyze&nbsp;emergence&nbsp;of&nbsp;characters&nbsp;in&nbsp;file&nbsp;(to&nbsp;decrypt&nbsp;with&nbsp;statistics).</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="FileAnalysis.html#FileAnalysis">FileAnalysis</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FileAnalysis">class <strong>FileAnalysis</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#FileAnalysis">FileAnalysis</a>(filename:&nbsp;str,&nbsp;alphabet_only:&nbsp;bool&nbsp;=&nbsp;False)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;analyze&nbsp;emergence&nbsp;of&nbsp;characters.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="FileAnalysis-__init__"><strong>__init__</strong></a>(self, filename: str, alphabet_only: bool = False)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="FileAnalysis-analysis_char"><strong>analysis_char</strong></a>(self, char: bytes) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;analyse&nbsp;a&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="FileAnalysis-analysis_filecontent"><strong>analysis_filecontent</strong></a>(self) -&gt; Dict[str, int]</dt><dd><tt>This&nbsp;function&nbsp;analyze&nbsp;file&nbsp;content.</tt></dd></dl>
+
+<dl><dt><a name="FileAnalysis-build_chart"><strong>build_chart</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;use&nbsp;pyplot&nbsp;to&nbsp;build&nbsp;the&nbsp;chart&nbsp;from&nbsp;chars.</tt></dd></dl>
+
+<dl><dt><a name="FileAnalysis-get_pourcent"><strong>get_pourcent</strong></a>(self) -&gt; Dict[str, float]</dt><dd><tt>This&nbsp;function&nbsp;return&nbsp;pourcent&nbsp;from&nbsp;chars.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt></dl>
+ <dl><dt><a name="-parse"><strong>parse</strong></a>() -&gt; argparse.ArgumentParser</dt><dd><tt>This&nbsp;function&nbsp;parse&nbsp;arguments.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Dict</strong> = typing.Dict<br>
+<strong>FRENCH_FREQUENCE</strong> = {'A': 7.11, 'B': 1.14, 'C': 3.18, 'D': 3.67, 'E': 12.1, 'F': 1.11, 'G': 1.23, 'H': 1.11, 'I': 6.59, 'J': 0.34, ...}<br>
+<strong>ascii_letters</strong> = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'</td></tr></table>
+</body></html>
