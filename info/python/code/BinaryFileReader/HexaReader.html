@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module HexaReader</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>HexaReader</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ccsu1%5Cdocuments%5Cdev%5Cmodules%5Cbinaryfilereader%5Cbinaryfilereader%5Chexareader.py">c:\users\csu1\documents\dev\modules\binaryfilereader\binaryfilereader\hexareader.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;implement&nbsp;a&nbsp;<a href="#HexaReader">HexaReader</a>&nbsp;(read&nbsp;binary&nbsp;file&nbsp;as&nbsp;hexa&nbsp;and&nbsp;ascii).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;with&nbsp;open("test",&nbsp;'wb')&nbsp;as&nbsp;f:&nbsp;f.write(b"\x00abc")<br>
+4<br>
+&gt;&gt;&gt;&nbsp;hexareader&nbsp;=&nbsp;<a href="#HexaReader">HexaReader</a>("test")<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;hexareader.reader():&nbsp;print(line)<br>
+00&nbsp;61&nbsp;62&nbsp;63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.abc<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;os;&nbsp;os.remove("test")</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="HexaReader.html#HexaReader">HexaReader</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="HexaReader">class <strong>HexaReader</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#HexaReader">HexaReader</a>(filename:&nbsp;str)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implement&nbsp;a&nbsp;hexadecimal&nbsp;reader&nbsp;for&nbsp;binary&nbsp;file.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;with&nbsp;open("test",&nbsp;'wb')&nbsp;as&nbsp;f:&nbsp;f.write(b"\x00abc")<br>
+4<br>
+&gt;&gt;&gt;&nbsp;hexareader&nbsp;=&nbsp;<a href="#HexaReader">HexaReader</a>("test")<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;hexareader.<a href="#HexaReader-reader">reader</a>():&nbsp;print(line)<br>
+00&nbsp;61&nbsp;62&nbsp;63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.abc<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;os;&nbsp;os.remove("test")<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="HexaReader-__init__"><strong>__init__</strong></a>(self, filename: str)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="HexaReader-get_line"><strong>get_line</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;return&nbsp;hexareader&nbsp;line&nbsp;from&nbsp;bytes.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;hexareader&nbsp;=&nbsp;<a href="#HexaReader">HexaReader</a>(None)<br>
+&gt;&gt;&gt;&nbsp;hexareader.<a href="#HexaReader-get_line">get_line</a>(b"\x00\x01")<br>
+'00&nbsp;01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..'</tt></dd></dl>
+
+<dl><dt><a name="HexaReader-reader"><strong>reader</strong></a>(self) -&gt; Generator[str, NoneType, NoneType]</dt><dd><tt>This&nbsp;function&nbsp;read&nbsp;file&nbsp;16&nbsp;chars&nbsp;by&nbsp;16&nbsp;chars&nbsp;and&nbsp;yield&nbsp;lines.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;with&nbsp;open("test",&nbsp;'wb')&nbsp;as&nbsp;f:&nbsp;f.write(b"\x00abc")<br>
+4<br>
+&gt;&gt;&gt;&nbsp;hexareader&nbsp;=&nbsp;<a href="#HexaReader">HexaReader</a>("test")<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;hexareader.<a href="#HexaReader-reader">reader</a>():&nbsp;print(line)<br>
+00&nbsp;61&nbsp;62&nbsp;63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.abc<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;os;&nbsp;os.remove("test")</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-hexlify"><strong>hexlify</strong></a>(...)</dt><dd><tt>Hexadecimal&nbsp;representation&nbsp;of&nbsp;binary&nbsp;data.<br>
+&nbsp;<br>
+&nbsp;&nbsp;sep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;optional&nbsp;single&nbsp;character&nbsp;or&nbsp;byte&nbsp;to&nbsp;separate&nbsp;hex&nbsp;bytes.<br>
+&nbsp;&nbsp;bytes_per_sep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;How&nbsp;many&nbsp;bytes&nbsp;between&nbsp;separators.&nbsp;&nbsp;Positive&nbsp;values&nbsp;count&nbsp;from&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;right,&nbsp;negative&nbsp;values&nbsp;count&nbsp;from&nbsp;the&nbsp;left.<br>
+&nbsp;<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;This&nbsp;function&nbsp;is&nbsp;also<br>
+available&nbsp;as&nbsp;"b2a_hex()".</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;parse&nbsp;arguments&nbsp;and&nbsp;return&nbsp;error.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Generator</strong> = typing.Generator<br>
+<strong>argv</strong> = [r'C:\Program Files\Python\lib\pydoc.py', '-w', 'HexaReader']</td></tr></table>
+</body></html>
