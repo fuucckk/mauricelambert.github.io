@@ -23,6 +23,7 @@
  - [SpyWare.ScreenLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/ScreenLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/screenSpy.conf)
  - [SpyWare.WebcamLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/webcamSpy.conf)
  - [ChromePasswordsStealer Documentation](https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.html)
+ - [WifiDeauth Documentation](https://mauricelambert.github.io/info/python/security/WifiDeauth.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -39,3 +40,4 @@
  - [SpyWare.ScreenLogger](https://mauricelambert.github.io/info/python/security/SpyWare/ScreenLogger.pyz)
  - [SpyWare.WebcamLogger](https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.pyz)
  - [ChromePasswordsStealer](https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.pyz)
+ - [WifiDeauth](https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz)
