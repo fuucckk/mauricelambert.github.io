@@ -1,7 +1,7 @@
 # This script launch WifiDeauth attack
 
 ###########################
-# This script use python3 package named WifiDeauth
+# This script use python3 package named WifiDeauth, launch it with sudo or with root user
 # get it with this command: "python3 -m pip install WifiDeauth"
 # Package URL:        https://pypi.org/project/WifiDeauth/
 # Github URL:         https://github.com/mauricelambert/WifiDeauth
