@@ -28,6 +28,7 @@
  - [BinaryFileReader.Strings Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/Strings.html)
  - [LatinUtilities Documentation](https://mauricelambert.github.io/info/python/security/LatinUtilities.html)
  - [WifiDeauth Documentation](https://mauricelambert.github.io/info/python/security/WifiDeauth.html)
+ - [PyObfuscator Documentation](https://mauricelambert.github.io/info/python/security/PyObfuscator.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -48,3 +49,4 @@
  - [BinaryFileReader](https://mauricelambert.github.io/info/python/code/BinaryFileReader.pyz)
  - [LatinUtilities](https://mauricelambert.github.io/info/python/security/LatinUtilities.pyz)
  - [WifiDeauth](https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz)
+ - [PyObfuscator](https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz)
