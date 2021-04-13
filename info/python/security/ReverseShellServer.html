@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ReverseShellServer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ReverseShellServer</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="reverseshellserver.py">reverseshellserver.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;implement&nbsp;a&nbsp;Asynchrone&nbsp;Reverse&nbsp;Shell&nbsp;Server.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="asyncore.html">asyncore</a><br>
+</td><td width="25%" valign=top><a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="asyncore.html#dispatcher">asyncore.dispatcher</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShellServer.html#ReverseShellServer">ReverseShellServer</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReverseShellServer">class <strong>ReverseShellServer</strong></a>(<a href="asyncore.html#dispatcher">asyncore.dispatcher</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ReverseShellServer">ReverseShellServer</a>(host,&nbsp;port)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implement&nbsp;a&nbsp;simple&nbsp;asynchronous&nbsp;TCP&nbsp;server.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ReverseShellServer.html#ReverseShellServer">ReverseShellServer</a></dd>
+<dd><a href="asyncore.html#dispatcher">asyncore.dispatcher</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ReverseShellServer-__init__"><strong>__init__</strong></a>(self, host, port)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_accepted"><strong>handle_accepted</strong></a>(self, sock, addr)</dt><dd><tt>This&nbsp;method&nbsp;call&nbsp;the&nbsp;ReverseShell&nbsp;class.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="asyncore.html#dispatcher">asyncore.dispatcher</a>:<br>
+<dl><dt><a name="ReverseShellServer-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellServer-accept"><strong>accept</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-add_channel"><strong>add_channel</strong></a>(self, map=None)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-bind"><strong>bind</strong></a>(self, addr)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-close"><strong>close</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-connect"><strong>connect</strong></a>(self, address)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-create_socket"><strong>create_socket</strong></a>(self, family=&lt;AddressFamily.AF_INET: 2&gt;, type=&lt;SocketKind.SOCK_STREAM: 1&gt;)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-del_channel"><strong>del_channel</strong></a>(self, map=None)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_accept"><strong>handle_accept</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_close"><strong>handle_close</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_connect"><strong>handle_connect</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_connect_event"><strong>handle_connect_event</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_error"><strong>handle_error</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_expt"><strong>handle_expt</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_expt_event"><strong>handle_expt_event</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_read"><strong>handle_read</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_read_event"><strong>handle_read_event</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_write"><strong>handle_write</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-handle_write_event"><strong>handle_write_event</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-listen"><strong>listen</strong></a>(self, num)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-log"><strong>log</strong></a>(self, message)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-log_info"><strong>log_info</strong></a>(self, message, type='info')</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-readable"><strong>readable</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-recv"><strong>recv</strong></a>(self, buffer_size)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-send"><strong>send</strong></a>(self, data)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-set_reuse_addr"><strong>set_reuse_addr</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-set_socket"><strong>set_socket</strong></a>(self, sock, map=None)</dt></dl>
+
+<dl><dt><a name="ReverseShellServer-writable"><strong>writable</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="asyncore.html#dispatcher">asyncore.dispatcher</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="asyncore.html#dispatcher">asyncore.dispatcher</a>:<br>
+<dl><dt><strong>accepting</strong> = False</dl>
+
+<dl><dt><strong>addr</strong> = None</dl>
+
+<dl><dt><strong>closing</strong> = False</dl>
+
+<dl><dt><strong>connected</strong> = False</dl>
+
+<dl><dt><strong>connecting</strong> = False</dl>
+
+<dl><dt><strong>debug</strong> = False</dl>
+
+<dl><dt><strong>ignore_log_types</strong> = frozenset({'warning'})</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['ReverseShellServer']</td></tr></table>
+</body></html>
