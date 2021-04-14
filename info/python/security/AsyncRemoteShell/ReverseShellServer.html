@@ -8,8 +8,8 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ReverseShellServer</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="reverseshellserver.py">reverseshellserver.py</a></font></td></tr></table>
-    <p><tt>This&nbsp;module&nbsp;implement&nbsp;a&nbsp;Asynchrone&nbsp;Reverse&nbsp;Shell&nbsp;Server.</tt></p>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ccsu1%5Cdocuments%5Cdev%5Cmodules%5Casyncremoteshell%5Casyncremoteshell%5Creverseshellserver.py">c:\users\csu1\documents\dev\modules\asyncremoteshell\asyncremoteshell\reverseshellserver.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;implement&nbsp;a&nbsp;asynchronous&nbsp;<a href="#ReverseShellServer">ReverseShellServer</a>.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -19,7 +19,8 @@
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="asyncore.html">asyncore</a><br>
 </td><td width="25%" valign=top><a href="logging.html">logging</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+</td><td width="25%" valign=top><a href="socket.html">socket</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -41,9 +42,9 @@
 <font color="#000000" face="helvetica, arial"><a name="ReverseShellServer">class <strong>ReverseShellServer</strong></a>(<a href="asyncore.html#dispatcher">asyncore.dispatcher</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#ReverseShellServer">ReverseShellServer</a>(host,&nbsp;port)<br>
+<td colspan=2><tt><a href="#ReverseShellServer">ReverseShellServer</a>(host:&nbsp;str,&nbsp;port:&nbsp;int)<br>
 &nbsp;<br>
-This&nbsp;class&nbsp;implement&nbsp;a&nbsp;simple&nbsp;asynchronous&nbsp;TCP&nbsp;server.<br>&nbsp;</tt></td></tr>
+This&nbsp;class&nbsp;implement&nbsp;a&nbsp;simple&nbsp;asynchronous&nbsp;TCP&nbsp;server&nbsp;to&nbsp;launch&nbsp;ReverseShell.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ReverseShellServer.html#ReverseShellServer">ReverseShellServer</a></dd>
@@ -52,9 +53,9 @@ This&nbsp;class&nbsp;implement&nbsp;a&nbsp;simple&nbsp;asynchronous&nbsp;TCP&nbs
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="ReverseShellServer-__init__"><strong>__init__</strong></a>(self, host, port)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="ReverseShellServer-__init__"><strong>__init__</strong></a>(self, host: str, port: int)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<dl><dt><a name="ReverseShellServer-handle_accepted"><strong>handle_accepted</strong></a>(self, sock, addr)</dt><dd><tt>This&nbsp;method&nbsp;call&nbsp;the&nbsp;ReverseShell&nbsp;class.</tt></dd></dl>
+<dl><dt><a name="ReverseShellServer-handle_accepted"><strong>handle_accepted</strong></a>(self, sock: socket.socket, addr: Tuple[str, int]) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;log&nbsp;a&nbsp;new&nbsp;connection&nbsp;and&nbsp;calls&nbsp;the&nbsp;ReverseShell&nbsp;class.</tt></dd></dl>
 
 <hr>
 Methods inherited from <a href="asyncore.html#dispatcher">asyncore.dispatcher</a>:<br>
