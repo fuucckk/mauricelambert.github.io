@@ -29,6 +29,7 @@
  - [LatinUtilities Documentation](https://mauricelambert.github.io/info/python/security/LatinUtilities.html)
  - [WifiDeauth Documentation](https://mauricelambert.github.io/info/python/security/WifiDeauth.html)
  - [PyObfuscator Documentation](https://mauricelambert.github.io/info/python/security/PyObfuscator.html)
+ - [PyWCGIshell Documentation](https://mauricelambert.github.io/info/python/security/PyWCGIshell.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
