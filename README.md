@@ -30,6 +30,7 @@
  - [WifiDeauth Documentation](https://mauricelambert.github.io/info/python/security/WifiDeauth.html)
  - [PyObfuscator Documentation](https://mauricelambert.github.io/info/python/security/PyObfuscator.html)
  - [PyWCGIshell Documentation](https://mauricelambert.github.io/info/python/security/PyWCGIshell.html)
+ - [WordListGenerator Documentation](https://mauricelambert.github.io/info/python/security/WordListGenerator.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -51,3 +52,4 @@
  - [LatinUtilities](https://mauricelambert.github.io/info/python/security/LatinUtilities.pyz)
  - [WifiDeauth](https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz)
  - [PyObfuscator](https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz)
+ - [WordListGenerator](https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz)
