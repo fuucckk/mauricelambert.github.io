@@ -31,6 +31,7 @@
  - [PyObfuscator Documentation](https://mauricelambert.github.io/info/python/security/PyObfuscator.html)
  - [PyWCGIshell Documentation](https://mauricelambert.github.io/info/python/security/PyWCGIshell.html)
  - [WordListGenerator Documentation](https://mauricelambert.github.io/info/python/security/WordListGenerator.html)
+ - [SteganograPy Documentation](https://mauricelambert.github.io/info/python/security/SteganograPy.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -53,3 +54,4 @@
  - [WifiDeauth](https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz)
  - [PyObfuscator](https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz)
  - [WordListGenerator](https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz)
+ - [SteganograPy](https://mauricelambert.github.io/info/python/security/SteganograPy.pyz)
