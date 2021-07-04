@@ -32,7 +32,7 @@
  - [PyWCGIshell Documentation](https://mauricelambert.github.io/info/python/security/PyWCGIshell.html)
  - [WordListGenerator Documentation](https://mauricelambert.github.io/info/python/security/WordListGenerator.html)
  - [SteganograPy Documentation](https://mauricelambert.github.io/info/python/security/SteganograPy.html)
- - [HttpMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpMultipart.html)
+ - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -56,4 +56,4 @@
  - [PyObfuscator](https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz)
  - [WordListGenerator](https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz)
  - [SteganograPy](https://mauricelambert.github.io/info/python/security/SteganograPy.pyz)
- - [HttpMultipart](https://mauricelambert.github.io/info/python/code/HttpMultipart.pyz)
+ - [HttpClientMultipart](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz)
