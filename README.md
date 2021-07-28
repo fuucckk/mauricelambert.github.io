@@ -33,6 +33,14 @@
  - [WordListGenerator Documentation](https://mauricelambert.github.io/info/python/security/WordListGenerator.html)
  - [SteganograPy Documentation](https://mauricelambert.github.io/info/python/security/SteganograPy.html)
  - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
+ - [WebScripts.__init__ Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/)
+ - [WebScripts.WebScripts Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.html)
+ - [WebScripts.Pages Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/Pages.html)
+ - [WebScripts.commons Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/commons.html)
+ - [WebScripts.utils Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/utils.html)
+ - [WebScripts.Errors Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/Errors.html)
+ - [Default database manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/manage_defaults_databases.html)
+ - [Default upload manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
