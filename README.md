@@ -41,6 +41,7 @@
  - [WebScripts.Errors Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/Errors.html)
  - [Default database manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/manage_defaults_databases.html)
  - [Default upload manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html)
+ - [UpgradePipPackages](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -65,3 +66,4 @@
  - [WordListGenerator](https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz)
  - [SteganograPy](https://mauricelambert.github.io/info/python/security/SteganograPy.pyz)
  - [HttpClientMultipart](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz)
+ - [UpgradePipPackages](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
