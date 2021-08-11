@@ -43,6 +43,7 @@
  - [Default upload manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html)
  - [UpgradePipPackages](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
  - [PasswordsSniffer](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.html)
+ - [PyProgressTerm](https://mauricelambert.github.io/info/python/code/PyProgressTerm.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -69,3 +70,4 @@
  - [HttpClientMultipart](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz)
  - [UpgradePipPackages](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
  - [PasswordsSniffer](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.pyz)
+ - [PyProgressTerm](https://mauricelambert.github.io/info/python/code/PyProgressTerm.pyz)
