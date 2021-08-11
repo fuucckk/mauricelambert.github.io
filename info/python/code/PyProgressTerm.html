@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module PyProgressTerm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PyProgressTerm</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="pyprogressterm.py">pyprogressterm.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implement&nbsp;customizable&nbsp;progress&nbsp;bar&nbsp;and&nbsp;rotating&nbsp;animations.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="asyncio.html">asyncio</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="PyProgressTerm.html#Progress">Progress</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Progress">class <strong>Progress</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implement&nbsp;customizable&nbsp;progress&nbsp;bar&nbsp;and&nbsp;rotating&nbsp;animations.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Progress-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt>async <a name="Progress-async_infinity_run"><strong>async_infinity_run</strong></a>(self, function_name: str = 'progress_bar', total: int = 100, wait: int = 0.05, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;an&nbsp;infinity&nbsp;progress&nbsp;bar&nbsp;(for&nbsp;asynchronous).</tt></dd></dl>
+
+<dl><dt><a name="Progress-colored_progress_bar"><strong>colored_progress_bar</strong></a>(self, *args, foreground: str = 'default', background: str = 'default', function_name: str = 'progress_bar', first_delimiter: str = '|', last_delimiter: str = '|', **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;a&nbsp;colored&nbsp;progress&nbsp;bar.<br>
+&nbsp;<br>
+Colors&nbsp;must&nbsp;be&nbsp;black,&nbsp;red,&nbsp;green,&nbsp;yellow,&nbsp;blue,&nbsp;<br>
+magenta,&nbsp;cyan&nbsp;gray&nbsp;or&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="Progress-progress_bar"><strong>progress_bar</strong></a>(self, step: int, progress_length: int = 50, line_length: int = 10, text: str = '', empty_char: str = ' ', progress_char: str = '█', first_delimiter: str = '|', last_delimiter: str = '|', total: int = 100, placeholder: str = '...') -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;a&nbsp;customizable&nbsp;progress&nbsp;bar.<br>
+&nbsp;<br>
+progress_char&nbsp;and&nbsp;empty_char&nbsp;must&nbsp;be&nbsp;a&nbsp;character.<br>
+&nbsp;<br>
+text&nbsp;is&nbsp;a&nbsp;short&nbsp;description&nbsp;of&nbsp;the&nbsp;step.<br>
+&nbsp;<br>
+line_length&nbsp;is&nbsp;the&nbsp;max&nbsp;text&nbsp;length.</tt></dd></dl>
+
+<dl><dt><a name="Progress-rotating_animation"><strong>rotating_animation</strong></a>(self, step: int, line_length: int = 10, title: str = 'Progress...', text: str = '', total: int = 100, placeholder: str = '...') -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;a&nbsp;rotating&nbsp;animation.</tt></dd></dl>
+
+<dl><dt><a name="Progress-rotating_progress_bar"><strong>rotating_progress_bar</strong></a>(self, step: int, *args, function_name: str = 'progress_bar', **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;a&nbsp;rotating&nbsp;animation&nbsp;in&nbsp;the&nbsp;progress&nbsp;bar.</tt></dd></dl>
+
+<dl><dt><a name="Progress-thread_infinity_run"><strong>thread_infinity_run</strong></a>(self, function_name: str = 'progress_bar', total: int = 100, wait: int = 0.05, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;an&nbsp;infinity&nbsp;progress&nbsp;bar&nbsp;(for&nbsp;thread).</tt></dd></dl>
+
+<dl><dt><a name="Progress-timed_progress_bar"><strong>timed_progress_bar</strong></a>(self, *args, function_name: str = 'progress_bar', first_delimiter: str = '|', **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;a&nbsp;timed&nbsp;probress&nbsp;bar.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Progress-get_rotation"><strong>get_rotation</strong></a>(step: int) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;return&nbsp;the&nbsp;character&nbsp;for&nbsp;rotating&nbsp;animations.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>rotating_characters</strong> = [r'\', '-', '/', '|']</dl>
+
+<dl><dt><strong>rotating_characters_length</strong> = 4</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Progress']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PyProgressTerm  Copyright (C) 2021  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This package implement customizable progress bar and rotating animations.'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PyProgressTerm'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
