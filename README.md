@@ -41,7 +41,7 @@
  - [WebScripts.Errors Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/Errors.html)
  - [Default database manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/manage_defaults_databases.html)
  - [Default upload manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html)
- - [Default modules errors for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/errors.html)
+ - [Default module errors for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/errors.html)
  - [UpgradePipPackages](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
  - [PasswordsSniffer](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.html)
  - [PyProgressTerm](https://mauricelambert.github.io/info/python/code/PyProgressTerm.html)
