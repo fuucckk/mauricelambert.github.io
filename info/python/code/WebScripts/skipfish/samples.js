@@ -3,9 +3,8 @@ var mime_samples = [
     { 'url': 'http://127.0.0.1:8000/js/webscripts_index_js_scripts.js', 'dir': '_m0/0', 'linked': 2, 'len': 2263 },
     { 'url': 'http://127.0.0.1:8000/js/webscripts_js_scripts.js', 'dir': '_m0/1', 'linked': 2, 'len': 4326 },
     { 'url': 'http://127.0.0.1:8000/js/webscripts_script_js_scripts.js', 'dir': '_m0/2', 'linked': 2, 'len': 20726 },
-    { 'url': 'http://127.0.0.1:8000/api', 'dir': '_m0/3', 'linked': 0, 'len': 18909 },
-    { 'url': 'http://127.0.0.1:8000/web', 'dir': '_m0/4', 'linked': 2, 'len': 5399 },
-    { 'url': 'http://127.0.0.1:8000/web/auth', 'dir': '_m0/5', 'linked': 2, 'len': 6591 } ]
+    { 'url': 'http://127.0.0.1:8000/web', 'dir': '_m0/3', 'linked': 2, 'len': 5399 },
+    { 'url': 'http://127.0.0.1:8000/web/auth', 'dir': '_m0/4', 'linked': 2, 'len': 6591 } ]
   },
   { 'mime': 'application/xhtml+xml', 'samples': [
     { 'url': 'http://127.0.0.1:8000/static/commons.html', 'dir': '_m1/0', 'linked': 2, 'len': 43982 },
@@ -55,8 +54,7 @@ var issue_samples = [
     { 'url': 'http://127.0.0.1:8000/web/auth', 'extra': 'application/javascript', 'sid': '0', 'dir': '_i2/1' } ]
   },
   { 'severity': 0, 'type': 10405, 'samples': [
-    { 'url': 'http://127.0.0.1:8000/auth/', 'extra': '', 'sid': '0', 'dir': '_i3/0' },
-    { 'url': 'http://127.0.0.1:8000/api', 'extra': '', 'sid': '0', 'dir': '_i3/1' } ]
+    { 'url': 'http://127.0.0.1:8000/auth/', 'extra': '', 'sid': '0', 'dir': '_i3/0' } ]
   },
   { 'severity': 0, 'type': 10403, 'samples': [
     { 'url': 'http://127.0.0.1:8000/auth/', 'extra': '', 'sid': '0', 'dir': '_i4/0' },
@@ -78,7 +76,7 @@ var issue_samples = [
     { 'url': 'http://127.0.0.1:8000/', 'extra': 'X-Server', 'sid': '0', 'dir': '_i7/3' } ]
   },
   { 'severity': 0, 'type': 10202, 'samples': [
-    { 'url': 'http://127.0.0.1:8000/', 'extra': 'WebScripts 1.4.1', 'sid': '0', 'dir': '_i8/0' } ]
+    { 'url': 'http://127.0.0.1:8000/', 'extra': 'WebScripts 1.4.2', 'sid': '0', 'dir': '_i8/0' } ]
   }
 ];
 

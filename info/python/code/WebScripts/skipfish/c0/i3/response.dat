@@ -1,0 +1,22 @@
+HTTP/1.1 301 Moved Permanently
+Date: Tue, 14 Sep 2021 10:59:24 GMT
+Server: WebScripts 1.4.2
+Content-Type: text/html; charset=utf-8
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Referrer-Policy: origin-when-cross-origin
+Cache-Control: no-store
+Pragma: no-store
+Clear-Site-Data: *
+Feature-Policy: microphone 'none'; camera 'none'
+Cross-Origin-Embedder-Policy: require-corp
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+X-Server: WebScripts
+Location: /web/
+Content-Length: 165
+
+<!-- To use API go to this URL: /api/ --><html><body><h1>Index page is /web/</h1><a href="/web/">Please click here</a><script>window.location="/web/"</script></html>

@@ -1,9 +1,9 @@
 HTTP/1.1 200 OK
-Date: Tue, 14 Sep 2021 10:30:08 GMT
-Server: WebScripts 1.4.1
+Date: Tue, 14 Sep 2021 10:59:25 GMT
+Server: WebScripts 1.4.2
 Content-Type: text/html
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'; script-src 'self' 'nonce-378b27b26ad7740ad92c9e6df84bbff4adda9073'
+Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'; script-src 'self' 'nonce-679bc2351335d1693b86a84fb8d1a811e524745c'
 X-Frame-Options: deny
 X-XSS-Protection: 1; mode=block
 X-Content-Type-Options: nosniff
@@ -48,7 +48,7 @@ Content-Length: 6591
 		<link rel="stylesheet" type="text/css" href="/static/webscripts_script_style.css">
 		<script type="text/javascript" src="/js/webscripts_js_scripts.js"></script>
 		<script type="text/javascript" src="/js/webscripts_script_js_scripts.js"></script>
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; script-src 'self' 'nonce-378b27b26ad7740ad92c9e6df84bbff4adda9073'">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; script-src 'self' 'nonce-679bc2351335d1693b86a84fb8d1a811e524745c'">
 	</head>
 
 	<body>
@@ -86,7 +86,7 @@ Content-Length: 6591
 				</div>
 
 				<div id="submit_row" class="row">
-					<input type="hidden" name="csrf_token" id="csrf_token" value="r+gUbKIzbdNCmNiOccs0oE+uZ+gx6+eyeuxEASqZI5qh0iJDE7Kemv+YecwJk3Q0">
+					<input type="hidden" name="csrf_token" id="csrf_token" value="MiISiMIydfYMitcdK0dm8IaDVRkTPrbhfBOvEGQwPD5K2AHGWhq3O/ayW945jaG5">
 					<div class="submit_position">
 						<input id="submit_button" type="submit" class="submit" value="Start script execution">
 					</div>
@@ -125,7 +125,7 @@ Content-Length: 6591
 			</ul>
 		</footer>
 
-		<script type="text/javascript" nonce="378b27b26ad7740ad92c9e6df84bbff4adda9073">
+		<script type="text/javascript" nonce="679bc2351335d1693b86a84fb8d1a811e524745c">
 			document.getElementById("submit_button").onclick=start_script_execution;
 			document.getElementById("webscripts_header_image").style.height = document.getElementById("webscripts_header_text_position").offsetHeight + "px";
 			script_name="/auth/";

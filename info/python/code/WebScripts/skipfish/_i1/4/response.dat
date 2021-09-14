@@ -1,6 +1,6 @@
 HTTP/1.1 200 OK
-Date: Tue, 14 Sep 2021 10:33:09 GMT
-Server: WebScripts 1.4.1
+Date: Tue, 14 Sep 2021 11:02:24 GMT
+Server: WebScripts 1.4.2
 Content-Type: text/css
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
@@ -139,4 +139,4 @@ td {
 	background-color: #895100;
 	border-radius: 5px;
 	color: #222222;
-}e scripts" Á
+}ElementById!
