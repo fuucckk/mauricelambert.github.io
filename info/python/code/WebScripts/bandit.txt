@@ -1,0 +1,197 @@
+Run started:2021-09-14 10:26:55.387713
+Files in scope (51):
+	./WebScripts/Errors.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/Pages.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/WebScripts.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/__init__.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/__main__.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/commons.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/modules/error_pages.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/add_group.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/add_user.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/api_view_groups.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/api_view_users.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/auth.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/change_my_password.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/change_user_password.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/delete_group.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/delete_user.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/get_apikey.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/modules/manage_defaults_databases.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/view_groups.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/account/view_users.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/doc/py_doc.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/logs/log_analysis.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/logs/log_viewer.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/passwords/get_password_share.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/passwords/new_password_share.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/passwords/password_generator.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/py/hello.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/py/show_license.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/py/test_config.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/request/delete_request.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/request/get_request.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/request/get_requests.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/request/modules/requests_management.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/to_3.8/to_3.8.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/api_get_all_files.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/api_get_files.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/api_get_history.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/delete_file.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/get_all_files.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/get_any_file.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/get_file.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/get_files.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/get_history.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/modules/uploads_management.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/scripts/uploads/upload_file.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./WebScripts/utils.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./setup.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./test/TestErrors.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./test/TestUtils.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./test/TestWebScripts.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./test/modules/test.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+Files excluded (123):
+	./.git/FETCH_HEAD
+	./.git/HEAD
+	./.git/config
+	./.git/description
+	./.git/hooks/applypatch-msg.sample
+	./.git/hooks/commit-msg.sample
+	./.git/hooks/fsmonitor-watchman.sample
+	./.git/hooks/post-update.sample
+	./.git/hooks/pre-applypatch.sample
+	./.git/hooks/pre-commit.sample
+	./.git/hooks/pre-merge-commit.sample
+	./.git/hooks/pre-push.sample
+	./.git/hooks/pre-rebase.sample
+	./.git/hooks/pre-receive.sample
+	./.git/hooks/prepare-commit-msg.sample
+	./.git/hooks/push-to-checkout.sample
+	./.git/hooks/update.sample
+	./.git/index
+	./.git/info/exclude
+	./.git/logs/HEAD
+	./.git/logs/refs/heads/main
+	./.git/logs/refs/remotes/origin/main
+	./.git/objects/pack/pack-b0975b120da72816bcac39c4e59d821954481d49.idx
+	./.git/objects/pack/pack-b0975b120da72816bcac39c4e59d821954481d49.pack
+	./.git/refs/heads/main
+	./.git/refs/remotes/origin/main
+	./.github/workflows/ZAP.yml
+	./.github/workflows/ZAP2.yml
+	./.github/workflows/bandit.yml
+	./.github/workflows/ci.yml
+	./.github/workflows/codeql-analysis.yml
+	./.github/workflows/kali_tools_scans.yml
+	./.github/workflows/nuclei.yml
+	./.github/workflows/pycharm.yml
+	./.github/workflows/safety_check.yml
+	./.github/workflows/semgrep.yml
+	./.gitlab-ci.yml
+	./API.md
+	./API_Client.md
+	./Add_Module.md
+	./Add_Script.md
+	./Argument_Configuration.md
+	./Authentication.md
+	./Code_Analysis_for_Security.md
+	./Default_Database.md
+	./Deployment.md
+	./Installation.md
+	./LICENSE.txt
+	./Logs.md
+	./MANIFEST.in
+	./Modules.md
+	./PKG-INFO
+	./Pentest.md
+	./README.md
+	./Script_Configuration.md
+	./Security_Considerations.md
+	./Server_Configuration.md
+	./Usages.md
+	./Users_Access_and_Rights.md
+	./WEB_Interface.md
+	./WebScripts.egg-info/PKG-INFO
+	./WebScripts.egg-info/SOURCES.txt
+	./WebScripts.egg-info/dependency_links.txt
+	./WebScripts.egg-info/entry_points.txt
+	./WebScripts.egg-info/top_level.txt
+	./WebScripts/LICENSE.txt
+	./WebScripts/config/files/change_my_password.json
+	./WebScripts/config/files/test_config.json
+	./WebScripts/config/loggers.ini
+	./WebScripts/config/nt/files/change_my_password.json
+	./WebScripts/config/nt/scripts/default_admin_scripts.json
+	./WebScripts/config/nt/scripts/default_log_scripts.json
+	./WebScripts/config/nt/scripts/default_password_scripts.json
+	./WebScripts/config/nt/scripts/default_requests_scripts.json
+	./WebScripts/config/nt/scripts/default_uploads_scripts.json
+	./WebScripts/config/nt/server.ini
+	./WebScripts/config/nt/server.json
+	./WebScripts/config/scripts/default_admin_scripts.json
+	./WebScripts/config/scripts/default_log_scripts.json
+	./WebScripts/config/scripts/default_password_scripts.json
+	./WebScripts/config/scripts/default_requests_scripts.json
+	./WebScripts/config/scripts/default_uploads_scripts.json
+	./WebScripts/config/server.ini
+	./WebScripts/config/server.json
+	./WebScripts/data/groups.csv
+	./WebScripts/data/id
+	./WebScripts/data/passwords.csv
+	./WebScripts/data/requests.csv
+	./WebScripts/data/uploads.csv
+	./WebScripts/data/uploads/LICENSE_210725_181116.txt
+	./WebScripts/data/users.csv
+	./WebScripts/doc/empty.html
+	./WebScripts/static/css/webscripts_index_style.css
+	./WebScripts/static/css/webscripts_script_style.css
+	./WebScripts/static/css/webscripts_style.css
+	./WebScripts/static/html/Errors.html
+	./WebScripts/static/html/Pages.html
+	./WebScripts/static/html/WebScripts.html
+	./WebScripts/static/html/__init__.html
+	./WebScripts/static/html/commons.html
+	./WebScripts/static/html/error_pages.html
+	./WebScripts/static/html/get_request.html
+	./WebScripts/static/html/index.html
+	./WebScripts/static/html/manage_defaults_databases.html
+	./WebScripts/static/html/requests_management.html
+	./WebScripts/static/html/uploads_management.html
+	./WebScripts/static/html/utils.html
+	./WebScripts/static/images/webscripts_header.jpg
+	./WebScripts/static/images/webscripts_icon.jpg
+	./WebScripts/static/images/webscripts_icon.png
+	./WebScripts/static/js/webscripts_index_js_scripts.js
+	./WebScripts/static/js/webscripts_js_scripts.js
+	./WebScripts/static/js/webscripts_script_js_scripts.js
+	./WebScripts/static/templates/index.html
+	./WebScripts/static/templates/script.html
+	./bandit_stdout
+	./requirenments.txt
+	./setup.cfg
+	./test/modules/__pycache__/test.cpython-39.pyc
+	./test/static/css/test.css
+	./test/static/js/test.js
+	./test/test.ini
+	./test/test.json
+
+Test results:
+	No issues identified.
+
+Code scanned:
+	Total lines of code: 6883
+	Total lines skipped (#nosec): 5
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0.0
+		Low: 0.0
+		Medium: 0.0
+		High: 0.0
+	Total issues (by confidence):
+		Undefined: 0.0
+		Low: 0.0
+		Medium: 0.0
+		High: 0.0
+Files skipped (0):
