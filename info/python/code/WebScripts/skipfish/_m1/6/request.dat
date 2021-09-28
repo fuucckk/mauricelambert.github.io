@@ -1,4 +1,4 @@
-GET /static/utils.html HTTP/1.1
+GET /static/manage_defaults_databases.html HTTP/1.1
 Host: 127.0.0.1:8000
 Accept-Encoding: gzip
 Connection: keep-alive

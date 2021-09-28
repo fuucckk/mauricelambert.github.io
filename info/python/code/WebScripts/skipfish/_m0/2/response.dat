@@ -1,7 +1,7 @@
 HTTP/1.1 200 OK
-Date: Tue, 14 Sep 2021 11:02:42 GMT
-Server: WebScripts 1.4.2
-Content-Type: text/javascript
+Date: Mon, 27 Sep 2021 17:56:18 GMT
+Server: WebScripts 1.4.13
+Content-Type: text/javascript; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
 X-Frame-Options: deny
@@ -11,12 +11,13 @@ Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
 Clear-Site-Data: *
-Feature-Policy: microphone 'none'; camera 'none'
+Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
+Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 20726
+Content-Length: 21573
 
 /*
 
@@ -442,9 +443,6 @@ function send_request(json) {
                 seconds = `0${seconds}`;
             }
 
-            console.log(minutes);
-            console.log(seconds);
-
             build_output_interface(
                 response_object,
                 true,
@@ -460,14 +458,14 @@ function send_request(json) {
             }
             
         } else if (xhttp.readyState === 4 && xhttp.status === 500) {
-            document.getElementById("bar").innerText =
-                "ERROR 500: Internal Server Error.";
+            document.getElementById("bar").innerHTML =
+                `ERROR 500: Internal Server Error. \nYou can report a bug <a href="/error_pages/Report/new/${xhttp.status}">on the local report page</a>.`;
         } else if (xhttp.readyState === 4 && xhttp.status === 403) {
-            document.getElementById("bar").innerText =
-                "ERROR 403: Forbidden. (Refresh the page or re-authenticate please)";
+            document.getElementById("bar").innerHTML =
+                `ERROR 403: Forbidden. (Refresh the page or re-authenticate please). \nYou can <a href="/error_pages/Report/new/${xhttp.status}">request access to the administrator</a>.`;
         } else if (xhttp.readyState === 4) {
             document.getElementById("bar").innerHTML =
-                `HTTP ERROR ${xhttp.status}. You can report a bug <a href="/error_pages/Report/new/${xhttp.status}">on the local report page</a>.`;
+                `HTTP ERROR ${xhttp.status}. \nYou can report a bug <a href="/error_pages/Report/new/${xhttp.status}">on the local report page</a>.`;
         }
 
         is_running = false;
@@ -517,32 +515,53 @@ function build_output_interface(output, add_history_ = true, time = null) {
         return new_output;
     }
 
+    const unescape = str => str.replace(/&amp;/g , '&').replace(/&lt;/g  , '<').replace(/&gt;/g  , '>').replace(/&#0*39;/g , "'").replace(/&quot;/g, '"');
     let console_div = document.getElementById("script_outputs");
     let content_type = output["Content-Type"];
+    let stderr_content_type;
+    let text = "\n";
+    let html = "";
 
-    if (add_history_) {
-        add_history(
-            `${output.stdout}${output.stderr}`,
-            output.code,
-            output.error,
-            content_type
-        );
+    if (output.hasOwnProperty("Stderr-Content-Type")) {
+        stderr_content_type = output["Stderr-Content-Type"];
+    } else {
+        stderr_content_type = "text/plain";
     }
 
     let code = build_code(output, time);
     let new_output = build_new_output(code);
 
+    if (add_history_) {
+        add_history(
+            output.stdout,
+            output.stderr,
+            output.code,
+            output.error,
+            content_type,
+            stderr_content_type
+        );
+    }
+
+    if (stderr_content_type.includes("text/html")) {
+        html += output.stderr;
+    } else {
+        text += output.stderr;
+    }
+
     if (content_type.includes("text/html")) {
         download_extension = ".html";
         download_separator = "\n<br>\n";
         download_type = "html";
-        new_output.innerHTML += `${output.stdout}${output.stderr}`;
+        html = output.stdout + html;
     } else {
         download_extension = ".txt";
         download_separator = "\n";
         download_type = "plain";
-        code.innerText += `\n${output.stdout}${output.stderr}\n`;
+        text = `\n${output.stdout}${text}`;
     }
+
+    code.innerText += unescape(text);
+    new_output.innerHTML += html;
 
     console_div.appendChild(new_output);
     download_text += `${output.stdout}${output.stderr}${download_separator}`;
@@ -554,15 +573,16 @@ function build_output_interface(output, add_history_ = true, time = null) {
     }
 }
 
-function add_history(value, code, error, content_type) {
+function add_history(stdout, stderr, code, error, content_type, stderr_content_type) {
     let button = document.createElement("button");
     button.onclick = build_output_interface.bind(
         button, {
-            'stdout': value,
-            'stderr': '',
+            'stdout': stdout,
+            'stderr': stderr,
             'code': code,
             'error': error,
             'Content-Type': content_type,
+            'Stderr-Content-Type': stderr_content_type,
         },
         add_history_ = false
     );

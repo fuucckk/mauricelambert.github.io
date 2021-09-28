@@ -1,9 +1,9 @@
-HTTP/1.1 404 Not Found
-Date: Tue, 14 Sep 2021 10:59:24 GMT
-Server: WebScripts 1.4.2
+HTTP/1.1 500 Internal Error
+Date: Mon, 27 Sep 2021 17:52:56 GMT
+Server: WebScripts 1.4.13
 Content-Type: text/html; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'; script-src 'self' 'nonce-c7d794fae7177c62d65d00ff8528cae0d63d29d3'
+Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'; script-src 'self' 'nonce-c86b907b2dbf29b2c2a033936e0fef2805c89dd4'
 X-Frame-Options: deny
 X-XSS-Protection: 1; mode=block
 X-Content-Type-Options: nosniff
@@ -11,24 +11,46 @@ Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
 Clear-Site-Data: *
-Feature-Policy: microphone 'none'; camera 'none'
+Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
+Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 8227
+Content-Length: 10754
 
 
+<!--
+
+    HTML page to launch scripts.
+    Copyright (C) 2021  Maurice Lambert
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+-->
+
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Error 404</title>
+        <title>Error 500</title>
         <meta charset="utf-8">
         <link rel="shortcut icon" type="image/png" href="/static/webscripts_icon.png"/>
         <link rel="stylesheet" type="text/css" href="/static/webscripts_style.css">
         <link rel="stylesheet" type="text/css" href="/static/webscripts_script_style.css">
         <script type="text/javascript" src="/js/webscripts_js_scripts.js"></script>
         <script type="text/javascript" src="/js/webscripts_script_js_scripts.js"></script>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; script-src 'self' 'nonce-c7d794fae7177c62d65d00ff8528cae0d63d29d3'">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; script-src 'self' 'nonce-c86b907b2dbf29b2c2a033936e0fef2805c89dd4'">
     </head>
 
     <body>
@@ -47,7 +69,7 @@ Content-Length: 8227
 
         <div id="webscripts_content">
             <div id="script_presentation">
-                <h1 id="script_title">Error 404 - request or report</h1>
+                <h1 id="script_title">Error 500 - request or report</h1>
                 <p class="description" id="script_description">
                     This script sends a request or a report to the administrator of this Web server.
                 </p>
@@ -55,7 +77,7 @@ Content-Length: 8227
                 <a href="/web/">Index</a>
             </div>
 
-            <p>404 Not Found</p>
+            <p>500 Internal Error</p>
 
             <div id="script_interface">
                 <div class="row">
@@ -83,7 +105,7 @@ Content-Length: 8227
                 </div>
 
                 <div id="submit_row" class="row">
-                    <input type="hidden" id="code" name="code" value="404">
+                    <input type="hidden" id="code" name="code" value="500">
                     <input type="hidden" name="csrf_token" id="csrf_token" value="{csrf}">
                     <div class="submit_position">
                         <input id="submit_button" type="submit" class="submit" value="Start script execution">
@@ -106,8 +128,8 @@ Content-Length: 8227
         <footer id="webscripts_footer" class="footer border">
             <ul id="webscripts_footer_list" class="list footer border">
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Source code and contact is <a id="webscripts_link_source" href="https://github.com/mauricelambert/WebScripts">here (on my github)</a>.</li>
-                <li id="webscripts_footer_list_documentation" class="bullet_point footer border">Documentation is <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/index.html">here (on my github)</a>.</li>
-                <li id="webscripts_footer_list_wiki" class="bullet_point footer border">Wiki is <a id="webscripts_link_wiki" href="https://github.com/mauricelambert/WebScripts/wiki">here (on my github)</a>.</li>
+                <li id="webscripts_footer_list_wiki" class="bullet_point footer border">Wiki (documentation) is <a id="webscripts_link_wiki" href="https://github.com/mauricelambert/WebScripts/wiki">here (on my github)</a>.</li>
+                <li id="webscripts_footer_list_documentation" class="bullet_point footer border">Pydoc online is here: <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/index.html">__init__.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.html">WebScripts.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/Pages.html">Pages.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/commons.html">commons.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/utils.html">utils.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/Errors.html">Errors.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/manage_defaults_databases.html">manage_defaults_databases.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html">uploads_management.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/requests_management.html">requests_management.py</a> and <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/error_pages.html">error_pages.py</a>.</li>
                 <li id="webscripts_footer_list_wiki" class="bullet_point footer border">License: <a id="webscripts_link_wiki" href="https://www.gnu.org/licenses/">GPL-3.0 License</a>.</li>
             </ul>
 
@@ -119,18 +141,20 @@ Content-Length: 8227
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for Errors.py is <a id="webscripts_link_source" href="/static/Errors.html">here</a>.</li>
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for manage_defaults_databases.py is <a id="webscripts_link_source" href="/static/manage_defaults_databases.html">here</a>.</li>
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for uploads_management.py is <a id="webscripts_link_source" href="/static/uploads_management.html">here</a>.</li>
+                <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for requests_management.py is <a id="webscripts_link_source" href="/static/requests_management.html">here</a>.</li>
+                <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for module errors.py is <a id="webscripts_link_source" href="/static/error_pages.html">here</a>.</li>
             </ul>
         </footer>
 
-        <script type="text/javascript" nonce="c7d794fae7177c62d65d00ff8528cae0d63d29d3">
+        <script type="text/javascript" nonce="c86b907b2dbf29b2c2a033936e0fef2805c89dd4">
             document.getElementById("submit_button").onclick=start_script_execution;
-            script_name="/error_pages/Request/send/404";
+            script_name="/error_pages/Request/send/500";
             document.getElementById("prevent_no_javascript").style.display='none';
             document.getElementById("webscripts_header_image").style.height = document.getElementById("webscripts_header_text_position").offsetHeight + "px";
             add_buttons();
             script =  {
                 "content_type": "text/plain", 
-                "name": "/error_pages/request/404", 
+                "name": "/error_pages/request/500", 
                 "args": [
                     { 
                         "input": false, 
@@ -153,3 +177,4 @@ Content-Length: 8227
         </script>
     </body>
 </html>
+Å

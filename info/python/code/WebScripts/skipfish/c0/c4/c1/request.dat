@@ -1,4 +1,4 @@
-GET /web/scripts/ HTTP/1.1
+GET /static/error_pages.html HTTP/1.1
 Host: 127.0.0.1:8000
 Accept-Encoding: gzip
 Connection: keep-alive

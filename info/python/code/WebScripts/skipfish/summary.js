@@ -1,4 +1,4 @@
 var sf_version = '2.10b';
-var scan_date  = 'Tue Sep 14 11:03:17 2021';
-var scan_seed  = '0x80422998';
-var scan_ms    = 293425;
+var scan_date  = 'Mon Sep 27 17:56:54 2021';
+var scan_seed  = '0x048a8dff';
+var scan_ms    = 351931;

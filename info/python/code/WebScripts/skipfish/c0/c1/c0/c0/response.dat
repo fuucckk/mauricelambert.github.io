@@ -1,9 +1,9 @@
 HTTP/1.1 200 OK
-Date: Tue, 14 Sep 2021 11:02:57 GMT
-Server: WebScripts 1.4.2
+Date: Mon, 27 Sep 2021 17:56:34 GMT
+Server: WebScripts 1.4.13
 Content-Type: text/html; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'; script-src 'self' 'nonce-7d4426b451c62b19c7a853240d533b4d57952f45'
+Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'; script-src 'self' 'nonce-ecdf57af299373d8cd77c75e8ea650ecdb361f82'
 X-Frame-Options: deny
 X-XSS-Protection: 1; mode=block
 X-Content-Type-Options: nosniff
@@ -11,14 +11,36 @@ Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
 Clear-Site-Data: *
-Feature-Policy: microphone 'none'; camera 'none'
+Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
+Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 8215
+Content-Length: 10737
 
 
+<!--
+
+    HTML page to launch scripts.
+    Copyright (C) 2021  Maurice Lambert
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+-->
+
+<!DOCTYPE html>
 <html>
     <head>
         <title>Error </title>
@@ -28,7 +50,7 @@ Content-Length: 8215
         <link rel="stylesheet" type="text/css" href="/static/webscripts_script_style.css">
         <script type="text/javascript" src="/js/webscripts_js_scripts.js"></script>
         <script type="text/javascript" src="/js/webscripts_script_js_scripts.js"></script>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; script-src 'self' 'nonce-7d4426b451c62b19c7a853240d533b4d57952f45'">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; form-action 'none'; script-src 'self' 'nonce-ecdf57af299373d8cd77c75e8ea650ecdb361f82'">
     </head>
 
     <body>
@@ -106,8 +128,8 @@ Content-Length: 8215
         <footer id="webscripts_footer" class="footer border">
             <ul id="webscripts_footer_list" class="list footer border">
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Source code and contact is <a id="webscripts_link_source" href="https://github.com/mauricelambert/WebScripts">here (on my github)</a>.</li>
-                <li id="webscripts_footer_list_documentation" class="bullet_point footer border">Documentation is <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/index.html">here (on my github)</a>.</li>
-                <li id="webscripts_footer_list_wiki" class="bullet_point footer border">Wiki is <a id="webscripts_link_wiki" href="https://github.com/mauricelambert/WebScripts/wiki">here (on my github)</a>.</li>
+                <li id="webscripts_footer_list_wiki" class="bullet_point footer border">Wiki (documentation) is <a id="webscripts_link_wiki" href="https://github.com/mauricelambert/WebScripts/wiki">here (on my github)</a>.</li>
+                <li id="webscripts_footer_list_documentation" class="bullet_point footer border">Pydoc online is here: <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/index.html">__init__.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.html">WebScripts.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/Pages.html">Pages.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/commons.html">commons.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/utils.html">utils.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/Errors.html">Errors.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/manage_defaults_databases.html">manage_defaults_databases.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html">uploads_management.py</a>, <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/requests_management.html">requests_management.py</a> and <a id="webscripts_link_documentation" href="https://mauricelambert.github.io/info/python/code/WebScripts/error_pages.html">error_pages.py</a>.</li>
                 <li id="webscripts_footer_list_wiki" class="bullet_point footer border">License: <a id="webscripts_link_wiki" href="https://www.gnu.org/licenses/">GPL-3.0 License</a>.</li>
             </ul>
 
@@ -119,10 +141,12 @@ Content-Length: 8215
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for Errors.py is <a id="webscripts_link_source" href="/static/Errors.html">here</a>.</li>
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for manage_defaults_databases.py is <a id="webscripts_link_source" href="/static/manage_defaults_databases.html">here</a>.</li>
                 <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for uploads_management.py is <a id="webscripts_link_source" href="/static/uploads_management.html">here</a>.</li>
+                <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for requests_management.py is <a id="webscripts_link_source" href="/static/requests_management.html">here</a>.</li>
+                <li id="webscripts_footer_list_source" class="bullet_point footer border">Local pydoc documentation for module errors.py is <a id="webscripts_link_source" href="/static/error_pages.html">here</a>.</li>
             </ul>
         </footer>
 
-        <script type="text/javascript" nonce="7d4426b451c62b19c7a853240d533b4d57952f45">
+        <script type="text/javascript" nonce="ecdf57af299373d8cd77c75e8ea650ecdb361f82">
             document.getElementById("submit_button").onclick=start_script_execution;
             script_name="/error_pages/Request/send/";
             document.getElementById("prevent_no_javascript").style.display='none';
