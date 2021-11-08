@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module CustomCrypto</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>CustomCrypto</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="customcrypto.py">customcrypto.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;your&nbsp;custom&nbsp;ciper.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(xor).dynamic_key_1(b'00',&nbsp;[ord('0')])<br>
+[0,&nbsp;48]<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(xor).reverse_dynamic_key_1([0,&nbsp;48],&nbsp;[ord('0')])<br>
+[48,&nbsp;48]<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(viginere,&nbsp;string.ascii_uppercase,&nbsp;alphabet_length=26).dynamic_key_2('ACCA',&nbsp;('C',&nbsp;'A'))<br>
+['C',&nbsp;'C',&nbsp;'C',&nbsp;'C']<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(decipher_viginere,&nbsp;string.ascii_uppercase,&nbsp;alphabet_length=26).dynamic_key_2('CCCC',&nbsp;('C',&nbsp;'A'))<br>
+['A',&nbsp;'C',&nbsp;'C',&nbsp;'A']<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).shuffle('ABCDEFGH',&nbsp;4)<br>
+['A',&nbsp;'E',&nbsp;'B',&nbsp;'F',&nbsp;'C',&nbsp;'G',&nbsp;'D',&nbsp;'H']<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).unshuffle('AEBFCGDH',&nbsp;4)<br>
+['A',&nbsp;'B',&nbsp;'C',&nbsp;'D',&nbsp;'E',&nbsp;'F',&nbsp;'G',&nbsp;'H']<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).reverse('ABCD')<br>
+['D',&nbsp;'C',&nbsp;'B',&nbsp;'A']<br>
+&gt;&gt;&gt;&nbsp;lines&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).group('0'&nbsp;*&nbsp;40,&nbsp;'0')<br>
+&gt;&gt;&gt;&nbsp;lines&nbsp;=&nbsp;"\n".join("&nbsp;".join("".join(chars)&nbsp;for&nbsp;chars&nbsp;in&nbsp;words)&nbsp;for&nbsp;words&nbsp;in&nbsp;lines)<br>
+&gt;&gt;&gt;&nbsp;print(lines)<br>
+30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030<br>
+30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).shift(b'\xff\x00\xf0\xa5\xaa')<br>
+b'\xff\x00\x0fZ\xaa'<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;<a href="#CustomCrypto">CustomCrypto</a>.py</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="operator.html">operator</a><br>
+</td><td width="25%" valign=top><a href="string.html">string</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="CustomCrypto.html#CustomCrypto">CustomCrypto</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CustomCrypto">class <strong>CustomCrypto</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CustomCrypto">CustomCrypto</a>(crypt:&nbsp;collections.abc.Callable,&nbsp;*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;custom&nbsp;crypto.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(viginere,&nbsp;string.ascii_uppercase,&nbsp;alphabet_length=26).<a href="#CustomCrypto-dynamic_key_1">dynamic_key_1</a>('AC',&nbsp;('C',))<br>
+['C',&nbsp;'E']<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="CustomCrypto-__init__"><strong>__init__</strong></a>(self, crypt: collections.abc.Callable, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-dynamic_key_1"><strong>dynamic_key_1</strong></a>(self, data: collections.abc.Iterable, key: collections.abc.Iterable, *args, **kwargs) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;crypt&nbsp;data&nbsp;with&nbsp;the&nbsp;key&nbsp;and&nbsp;precedent&nbsp;character/block.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(xor).<a href="#CustomCrypto-dynamic_key_1">dynamic_key_1</a>(b'00',&nbsp;[ord('0')])<br>
+[0,&nbsp;48]<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(viginere).<a href="#CustomCrypto-dynamic_key_1">dynamic_key_1</a>('AC',&nbsp;('C',),&nbsp;string.ascii_uppercase,&nbsp;alphabet_length=26)<br>
+['C',&nbsp;'E']</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-dynamic_key_2"><strong>dynamic_key_2</strong></a>(self, data: collections.abc.Iterable, key: collections.abc.Iterable, *args, **kwargs) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;crypt&nbsp;data&nbsp;with&nbsp;.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(xor).<a href="#CustomCrypto-dynamic_key_2">dynamic_key_2</a>(b'0110',&nbsp;[ord('0'),&nbsp;ord('1')])<br>
+[0,&nbsp;0,&nbsp;0,&nbsp;0]<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(viginere,&nbsp;string.ascii_uppercase,&nbsp;alphabet_length=26).<a href="#CustomCrypto-dynamic_key_2">dynamic_key_2</a>('ACCA',&nbsp;('C',&nbsp;'A'))<br>
+['C',&nbsp;'C',&nbsp;'C',&nbsp;'C']</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-group"><strong>group</strong></a>(self, data: collections.abc.Iterable, alphabet: collections.abc.Iterable, hexa: bool = True, lines_size: int = 5, word_size: int = 4) -&gt; List[List[Any]]</dt><dd><tt>This&nbsp;function&nbsp;format&nbsp;elements&nbsp;in&nbsp;data.<br>
+&nbsp;<br>
+data:&nbsp;should&nbsp;be&nbsp;bytes&nbsp;or&nbsp;str&nbsp;(can&nbsp;be&nbsp;Iterable[Any])<br>
+alphabet:&nbsp;should&nbsp;be&nbsp;bytes&nbsp;or&nbsp;str&nbsp;(can&nbsp;be&nbsp;Iterable[Any])<br>
+hexa:&nbsp;should&nbsp;be&nbsp;boolean&nbsp;(True&nbsp;only&nbsp;with&nbsp;data&nbsp;and&nbsp;alphabet&nbsp;as&nbsp;bytes&nbsp;or&nbsp;str)<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;lines&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-group">group</a>('0'&nbsp;*&nbsp;40,&nbsp;'0')<br>
+&gt;&gt;&gt;&nbsp;lines&nbsp;=&nbsp;"\n".join("&nbsp;".join("".join(chars)&nbsp;for&nbsp;chars&nbsp;in&nbsp;words)&nbsp;for&nbsp;words&nbsp;in&nbsp;lines)<br>
+&gt;&gt;&gt;&nbsp;print(lines)<br>
+30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030<br>
+30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030&nbsp;30303030<br>
+&gt;&gt;&gt;&nbsp;lines&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-group">group</a>(b'0'&nbsp;*&nbsp;40,&nbsp;b'0',&nbsp;hexa=False)<br>
+&gt;&gt;&gt;&nbsp;lines&nbsp;=&nbsp;"\n".join("&nbsp;".join("".join(chars)&nbsp;for&nbsp;chars&nbsp;in&nbsp;words)&nbsp;for&nbsp;words&nbsp;in&nbsp;lines)<br>
+&gt;&gt;&gt;&nbsp;print(lines)<br>
+0000&nbsp;0000&nbsp;0000&nbsp;0000&nbsp;0000<br>
+0000&nbsp;0000&nbsp;0000&nbsp;0000&nbsp;0000</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-reverse"><strong>reverse</strong></a>(self, data: collections.abc.Iterable) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;reverse&nbsp;data.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-reverse">reverse</a>('ABCD')<br>
+['D',&nbsp;'C',&nbsp;'B',&nbsp;'A']<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None);&nbsp;c.<a href="#CustomCrypto-reverse">reverse</a>(c.<a href="#CustomCrypto-reverse">reverse</a>('ABCD'))<br>
+['A',&nbsp;'B',&nbsp;'C',&nbsp;'D']</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-reverse_dynamic_key_1"><strong>reverse_dynamic_key_1</strong></a>(self, data: collections.abc.Iterable, key: collections.abc.Iterable, *args, **kwargs) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;decrypt&nbsp;data&nbsp;with&nbsp;the&nbsp;key&nbsp;and&nbsp;precedent&nbsp;character/block.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(xor)<br>
+&gt;&gt;&gt;&nbsp;key&nbsp;=&nbsp;[ord('0')]<br>
+&gt;&gt;&gt;&nbsp;c.<a href="#CustomCrypto-reverse_dynamic_key_1">reverse_dynamic_key_1</a>(c.<a href="#CustomCrypto-dynamic_key_1">dynamic_key_1</a>(b'00',&nbsp;key),&nbsp;key)<br>
+[48,&nbsp;48]<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(viginere)<br>
+&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;c.<a href="#CustomCrypto-dynamic_key_1">dynamic_key_1</a>('AC',&nbsp;('C',),&nbsp;string.ascii_uppercase,&nbsp;alphabet_length=26)<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(decipher_viginere)<br>
+&gt;&gt;&gt;&nbsp;c.<a href="#CustomCrypto-reverse_dynamic_key_1">reverse_dynamic_key_1</a>(d,&nbsp;('C',),&nbsp;string.ascii_uppercase,&nbsp;alphabet_length=26)<br>
+['A',&nbsp;'C']</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-shift"><strong>shift</strong></a>(self, data: bytes, shifter: int = 4, decode: bool = False) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;shift&nbsp;bits.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-shift">shift</a>(b'\xff\x00\xf0\xa5\xaa')<br>
+b'\xff\x00\x0fZ\xaa'<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-shift">shift</a>(b'\xff\x00\x0fZ\xaa',&nbsp;decode=True)<br>
+b'\xff\x00\xf0\xa5\xaa'<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-shift">shift</a>(b'',&nbsp;shifter=8)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'shifter'&nbsp;should&nbsp;be&nbsp;smaller&nbsp;than&nbsp;8.<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-shift">shift</a>(b'',&nbsp;shifter=9)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'shifter'&nbsp;should&nbsp;be&nbsp;smaller&nbsp;than&nbsp;8.</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-shuffle"><strong>shuffle</strong></a>(self, data: collections.abc.Iterable, number: int = 2) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;shuffle&nbsp;data&nbsp;in&nbsp;&lt;number&gt;&nbsp;sections.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-shuffle">shuffle</a>('ABCD')<br>
+['A',&nbsp;'C',&nbsp;'B',&nbsp;'D']<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-shuffle">shuffle</a>('ABCDEFGH',&nbsp;4)<br>
+['A',&nbsp;'E',&nbsp;'B',&nbsp;'F',&nbsp;'C',&nbsp;'G',&nbsp;'D',&nbsp;'H']</tt></dd></dl>
+
+<dl><dt><a name="CustomCrypto-unshuffle"><strong>unshuffle</strong></a>(self, data: collections.abc.Iterable, number: int = 2) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;shuffle&nbsp;data&nbsp;in&nbsp;&lt;number&gt;&nbsp;sections.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None).<a href="#CustomCrypto-unshuffle">unshuffle</a>('ACBD')<br>
+['A',&nbsp;'B',&nbsp;'C',&nbsp;'D']<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;<a href="#CustomCrypto">CustomCrypto</a>(None);&nbsp;c.<a href="#CustomCrypto-unshuffle">unshuffle</a>(c.<a href="#CustomCrypto-shuffle">shuffle</a>('ABCDEFGH',&nbsp;4),&nbsp;4)<br>
+['A',&nbsp;'B',&nbsp;'C',&nbsp;'D',&nbsp;'E',&nbsp;'F',&nbsp;'G',&nbsp;'H']</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-decipher_monoalphabetique"><strong>decipher_monoalphabetique</strong></a>(data: collections.abc.Iterable, key: Union[Dict[Any, Any], collections.abc.Iterable[Tuple[Any, Any]], Tuple[collections.abc.Iterable[Any, Any]]]) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;monoalphabetique&nbsp;cipher.<br>
+&nbsp;<br>
+key&nbsp;as&nbsp;dict:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;key:&nbsp;should&nbsp;contains&nbsp;any&nbsp;element&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+key&nbsp;as&nbsp;tuples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;key[x][0]&nbsp;should&nbsp;contains&nbsp;any&nbsp;element&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+key&nbsp;as&nbsp;tuple:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;key[0]&nbsp;should&nbsp;contains&nbsp;any&nbsp;element&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-decipher_monoalphabetique">decipher_monoalphabetique</a>("B",&nbsp;{"A":&nbsp;"B"})<br>
+['A']<br>
+&gt;&gt;&gt;&nbsp;<a href="#-decipher_monoalphabetique">decipher_monoalphabetique</a>("B",&nbsp;[("A","B")])<br>
+['A']<br>
+&gt;&gt;&gt;&nbsp;<a href="#-decipher_monoalphabetique">decipher_monoalphabetique</a>("B",&nbsp;("A","B"))<br>
+['A']<br>
+&gt;&gt;&gt;&nbsp;<a href="#-decipher_monoalphabetique">decipher_monoalphabetique</a>("B",&nbsp;10)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;'key'&nbsp;should&nbsp;be&nbsp;a&nbsp;Dict[Any,&nbsp;Any],&nbsp;a&nbsp;Tuple[Iterable[Any,&nbsp;Any]]&nbsp;or&nbsp;Iterable[Tuple[Any,&nbsp;Any]].</tt></dd></dl>
+ <dl><dt><a name="-decipher_viginere"><strong>decipher_viginere</strong></a>(char_data: Union[str, bytes], char_key: Union[str, bytes], alphabet: Union[str, bytes] = ['\x00', '\x01', '\x02', '\x03', '\x04', '\x05', '\x06', '\x07', '\x08', '\t', '\n', '\x0b', '\x0c', '\r', '\x0e', '\x0f', '\x10', '\x11', '\x12', '\x13', '\x14', '\x15', '\x16', '\x17', '\x18', '\x19', '\x1a', '\x1b', '\x1c', '\x1d', '\x1e', '\x1f', ' ', '!', '"', '#', '$', '%', '&amp;', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '&lt;', '=', '&gt;', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', '\x7f', '\x80', '\x81', '\x82', '\x83', '\x84', '\x85', '\x86', '\x87', '\x88', '\x89', '\x8a', '\x8b', '\x8c', '\x8d', '\x8e', '\x8f', '\x90', '\x91', '\x92', '\x93', '\x94', '\x95', '\x96', '\x97', '\x98', '\x99', '\x9a', '\x9b', '\x9c', '\x9d', '\x9e', '\x9f', '\xa0', '¡', '¢', '£', '¤', '¥', '¦', '§', '¨', '©', 'ª', '«', '¬', '\xad', '®', '¯', '°', '±', '²', '³', '´', 'µ', '¶', '·', '¸', '¹', 'º', '»', '¼', '½', '¾', '¿', 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', '×', 'Ø', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'Þ', 'ß', 'à', 'á', 'â', 'ã', 'ä', 'å', 'æ', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ð', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', '÷', 'ø', 'ù', 'ú', 'û', 'ü', 'ý', 'þ', 'ÿ'], *, alphabet_length: int = None) -&gt; Union[str, int]</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;VIGINERE&nbsp;cipher.<br>
+&nbsp;<br>
+char_data:&nbsp;should&nbsp;be&nbsp;a&nbsp;str&nbsp;or&nbsp;bytes&nbsp;of&nbsp;length&nbsp;1<br>
+char_key:&nbsp;&nbsp;should&nbsp;be&nbsp;a&nbsp;str&nbsp;or&nbsp;bytes&nbsp;of&nbsp;length&nbsp;1<br>
+alphabet:&nbsp;should&nbsp;contains&nbsp;char_data&nbsp;and&nbsp;char_key<br>
+alphabet_length:&nbsp;should&nbsp;be&nbsp;the&nbsp;alphabet&nbsp;length<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-decipher_viginere">decipher_viginere</a>('C',&nbsp;'C',&nbsp;string.ascii_uppercase)<br>
+'A'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-decipher_viginere">decipher_viginere</a>(b'C',&nbsp;b'C',&nbsp;string.ascii_uppercase.encode('ascii'))<br>
+65</tt></dd></dl>
+ <dl><dt><a name="-monoalphabetique"><strong>monoalphabetique</strong></a>(data: collections.abc.Iterable, key: Union[Dict[Any, Any], collections.abc.Iterable[Tuple[Any, Any]], Tuple[collections.abc.Iterable[Any, Any]]]) -&gt; List[Any]</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;monoalphabetique&nbsp;cipher.<br>
+&nbsp;<br>
+key&nbsp;as&nbsp;dict:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;key:&nbsp;should&nbsp;contains&nbsp;any&nbsp;element&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+key&nbsp;as&nbsp;tuples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;key[x][0]&nbsp;should&nbsp;contains&nbsp;any&nbsp;element&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+key&nbsp;as&nbsp;tuple:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;key[0]&nbsp;should&nbsp;contains&nbsp;any&nbsp;element&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-monoalphabetique">monoalphabetique</a>("A",&nbsp;{"A":&nbsp;"B"})<br>
+['B']<br>
+&gt;&gt;&gt;&nbsp;<a href="#-monoalphabetique">monoalphabetique</a>("A",&nbsp;[("A","B")])<br>
+['B']<br>
+&gt;&gt;&gt;&nbsp;<a href="#-monoalphabetique">monoalphabetique</a>("A",&nbsp;("A","B"))<br>
+['B']<br>
+&gt;&gt;&gt;&nbsp;<a href="#-monoalphabetique">monoalphabetique</a>("A",&nbsp;10)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;'key'&nbsp;should&nbsp;be&nbsp;a&nbsp;Dict[Any,&nbsp;Any],&nbsp;a&nbsp;Tuple[Iterable[Any,&nbsp;Any]]&nbsp;or&nbsp;Iterable[Tuple[Any,&nbsp;Any]].</tt></dd></dl>
+ <dl><dt><a name="-viginere"><strong>viginere</strong></a>(char_data: Union[str, bytes], char_key: Union[str, bytes], alphabet: Union[str, bytes] = ['\x00', '\x01', '\x02', '\x03', '\x04', '\x05', '\x06', '\x07', '\x08', '\t', '\n', '\x0b', '\x0c', '\r', '\x0e', '\x0f', '\x10', '\x11', '\x12', '\x13', '\x14', '\x15', '\x16', '\x17', '\x18', '\x19', '\x1a', '\x1b', '\x1c', '\x1d', '\x1e', '\x1f', ' ', '!', '"', '#', '$', '%', '&amp;', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '&lt;', '=', '&gt;', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', '\x7f', '\x80', '\x81', '\x82', '\x83', '\x84', '\x85', '\x86', '\x87', '\x88', '\x89', '\x8a', '\x8b', '\x8c', '\x8d', '\x8e', '\x8f', '\x90', '\x91', '\x92', '\x93', '\x94', '\x95', '\x96', '\x97', '\x98', '\x99', '\x9a', '\x9b', '\x9c', '\x9d', '\x9e', '\x9f', '\xa0', '¡', '¢', '£', '¤', '¥', '¦', '§', '¨', '©', 'ª', '«', '¬', '\xad', '®', '¯', '°', '±', '²', '³', '´', 'µ', '¶', '·', '¸', '¹', 'º', '»', '¼', '½', '¾', '¿', 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', '×', 'Ø', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'Þ', 'ß', 'à', 'á', 'â', 'ã', 'ä', 'å', 'æ', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ð', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', '÷', 'ø', 'ù', 'ú', 'û', 'ü', 'ý', 'þ', 'ÿ'], *, alphabet_length: int = None) -&gt; Union[str, int]</dt><dd><tt>This&nbsp;function&nbsp;implement&nbsp;VIGINERE&nbsp;cipher.<br>
+&nbsp;<br>
+char_data:&nbsp;should&nbsp;be&nbsp;a&nbsp;str&nbsp;or&nbsp;bytes&nbsp;of&nbsp;length&nbsp;1<br>
+char_key:&nbsp;&nbsp;should&nbsp;be&nbsp;a&nbsp;str&nbsp;or&nbsp;bytes&nbsp;of&nbsp;length&nbsp;1<br>
+alphabet:&nbsp;should&nbsp;contains&nbsp;char_data&nbsp;and&nbsp;char_key<br>
+alphabet_length:&nbsp;should&nbsp;be&nbsp;the&nbsp;alphabet&nbsp;length<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-viginere">viginere</a>('A',&nbsp;'C',&nbsp;string.ascii_uppercase)<br>
+'C'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-viginere">viginere</a>(b'A',&nbsp;b'C',&nbsp;string.ascii_uppercase.encode('ascii'))<br>
+67</tt></dd></dl>
+ <dl><dt><a name="-xor"><strong>xor</strong></a>(a, b, /)</dt><dd><tt>Same&nbsp;as&nbsp;a&nbsp;^&nbsp;b.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['CustomCrypto', 'xor', 'viginere', 'decipher_viginere', 'monoalphabetique', 'decipher_monoalphabetique']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>CustomCrypto  Copyright (C) 2021  Maurice Lambe...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build your custom ciper.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/CustomCrypto'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
