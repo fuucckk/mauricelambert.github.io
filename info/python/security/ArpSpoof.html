@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ArpSpoof</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ArpSpoof</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="arpspoof.py">arpspoof.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;an&nbsp;ARP&nbsp;Spoofer&nbsp;for&nbsp;MIM<br>
+(Man-In-the-Middle)&nbsp;or&nbsp;DoS&nbsp;(Denial&nbsp;of&nbsp;Service)&nbsp;attacks.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('172.16.10.1',&nbsp;'172.16.0.35')<br>
+&gt;&gt;&gt;&nbsp;spoofer.active_cache_poisonning()<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('172.16.10.1',&nbsp;'172.16.0.35',&nbsp;conf.iface,&nbsp;False,&nbsp;0.5)<br>
+&gt;&gt;&gt;&nbsp;spoofer.passive_cache_poisonning(asynchronous=True)<br>
+&gt;&gt;&gt;&nbsp;spoofer.run&nbsp;=&nbsp;False<br>
+&gt;&gt;&gt;&nbsp;spoofer.sniffer.stop()&nbsp;&nbsp;#&nbsp;only&nbsp;with&nbsp;asynchronous&nbsp;mode<br>
+&gt;&gt;&gt;&nbsp;spoofer.restore()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;only&nbsp;with&nbsp;asynchronous&nbsp;mode<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;172.16.10.1&nbsp;172.16.0.33<br>
+[13/01/2022&nbsp;11:12:13&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;Start&nbsp;ARP&nbsp;spoof&nbsp;between&nbsp;172.16.10.1&nbsp;(2e:d7:11:94:e4:82)&nbsp;and&nbsp;172.16.0.33&nbsp;(85:43:71:78:55:54).<br>
+[13/01/2022&nbsp;11:12:15&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
+[13/01/2022&nbsp;11:12:33&nbsp;AM]&nbsp;CRITICAL&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
+~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;172.16.10.1&nbsp;172.16.0.33&nbsp;-p&nbsp;-s&nbsp;-v&nbsp;-t&nbsp;1&nbsp;-i&nbsp;172.16.10.<br>
+[13/01/2022&nbsp;11:02:55&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Logging&nbsp;is&nbsp;configured.<br>
+[13/01/2022&nbsp;11:02:55&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface&nbsp;argument&nbsp;match&nbsp;with&nbsp;(172.16.10.34&nbsp;cf:e4:cf:5f:8a:4c&nbsp;WIFI)<br>
+[13/01/2022&nbsp;11:02:55&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Network&nbsp;interface&nbsp;is&nbsp;configured&nbsp;(IP:&nbsp;172.16.10.34,&nbsp;MAC:&nbsp;cf:e4:cf:5f:8a:4c&nbsp;and&nbsp;name:&nbsp;WIFI)<br>
+[13/01/2022&nbsp;11:02:55&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;IP&nbsp;and&nbsp;MAC&nbsp;addresses...<br>
+[13/01/2022&nbsp;11:02:59&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gateway:&nbsp;172.16.10.1&nbsp;2e:d7:11:94:e4:82<br>
+[13/01/2022&nbsp;11:02:59&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spoof:&nbsp;172.16.0.33&nbsp;85:43:71:78:55:54<br>
+[13/01/2022&nbsp;11:02:59&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;packets&nbsp;are&nbsp;built.<br>
+[13/01/2022&nbsp;11:02:59&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;Start&nbsp;ARP&nbsp;spoof&nbsp;between&nbsp;172.16.10.1&nbsp;(2e:d7:11:94:e4:82)&nbsp;and&nbsp;172.16.0.33&nbsp;(85:43:71:78:55:54).<br>
+[13/01/2022&nbsp;11:02:59&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;gateway&nbsp;IP...<br>
+[13/01/2022&nbsp;11:03:01&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spoof&nbsp;172.16.10.1&nbsp;for&nbsp;172.16.0.33<br>
+[13/01/2022&nbsp;11:03:01&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
+[13/01/2022&nbsp;11:03:01&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Restoring&nbsp;ARP&nbsp;tables&nbsp;for&nbsp;the&nbsp;target...<br>
+[13/01/2022&nbsp;11:03:19&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;target's&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
+[13/01/2022&nbsp;11:03:19&nbsp;AM]&nbsp;CRITICAL&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="scapy.html">scapy</a><br>
+</td><td width="25%" valign=top><a href="socket.html">socket</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ArpSpoof.html#SpooferARP">SpooferARP</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SpooferARP">class <strong>SpooferARP</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#SpooferARP">SpooferARP</a>(gateway:&nbsp;str,&nbsp;ip_spoof:&nbsp;str,&nbsp;iface:&nbsp;scapy.interfaces.NetworkInterface&nbsp;=&nbsp;NetworkInterface&nbsp;,&nbsp;semi:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;inter:&nbsp;float&nbsp;=&nbsp;0.5)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;arp&nbsp;spoofer&nbsp;(active&nbsp;and&nbsp;passive&nbsp;modes).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SpooferARP-__init__"><strong>__init__</strong></a>(self, gateway: str, ip_spoof: str, iface: scapy.interfaces.NetworkInterface = NetworkInterface, semi: bool = False, inter: float = 0.5)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="SpooferARP-active_cache_poisonning"><strong>active_cache_poisonning</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;start&nbsp;active&nbsp;ARP&nbsp;cache&nbsp;poisonning&nbsp;attack.</tt></dd></dl>
+
+<dl><dt><a name="SpooferARP-active_spoof"><strong>active_spoof</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;send&nbsp;spoofed&nbsp;packets&nbsp;in&nbsp;active&nbsp;cache&nbsp;poisonning&nbsp;attack.</tt></dd></dl>
+
+<dl><dt><a name="SpooferARP-filter"><strong>filter</strong></a>(self, packet: scapy.packet.Packet) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;a&nbsp;filter&nbsp;for&nbsp;passive&nbsp;attack.</tt></dd></dl>
+
+<dl><dt><a name="SpooferARP-passive_cache_poisonning"><strong>passive_cache_poisonning</strong></a>(self, asynchronous: bool = False) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;a&nbsp;passive&nbsp;cache&nbsp;poisonning&nbsp;attack.</tt></dd></dl>
+
+<dl><dt><a name="SpooferARP-passive_spoof"><strong>passive_spoof</strong></a>(self, packet: scapy.packet.Packet) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;spoofs&nbsp;ARP&nbsp;in&nbsp;passive&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="SpooferARP-restore"><strong>restore</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;restore&nbsp;ARP&nbsp;tables&nbsp;after&nbsp;ARP&nbsp;cache&nbsp;poisonning.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['SpooferARP']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>ArpSpoof  Copyright (C) 2021  Maurice Lambert<font color="#c040c0">\n</font>T...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements an ARP Spoofer for MIM<font color="#c040c0">\n</font>...-the-Middle) or DoS (Denial of Service) attacks.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/ArpSpoof'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

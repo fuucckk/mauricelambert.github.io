@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module NetbiosSpoof</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>NetbiosSpoof</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="netbiosspoof.py">netbiosspoof.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;a&nbsp;Hostname&nbsp;Spoofer&nbsp;(Netbios,&nbsp;LLMNR&nbsp;and&nbsp;Local&nbsp;DNS).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>()<br>
+&gt;&gt;&gt;&nbsp;spoofer.start(True)<br>
+&gt;&gt;&gt;&nbsp;spoofer.stop()<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>("172.17.0.")<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py<br>
+[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;starts&nbsp;up...<br>
+[22/06/2022&nbsp;06:19:32&nbsp;AM]&nbsp;CRITICAL&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;is&nbsp;stopped.<br>
+~#&nbsp;python3&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py&nbsp;-v&nbsp;-i&nbsp;172.17.0.<br>
+[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Logging&nbsp;is&nbsp;configured.<br>
+[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;network&nbsp;interface&nbsp;detection...<br>
+[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface&nbsp;argument&nbsp;match&nbsp;with&nbsp;(172.17.0.2&nbsp;89:3c:10:40:61:b1&nbsp;WIFI)<br>
+[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;network&nbsp;interface&nbsp;WIFI<br>
+[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;starts&nbsp;up...<br>
+[22/06/2022&nbsp;06:19:24&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protocol&nbsp;DNS,&nbsp;spoof&nbsp;b'kali.local.'&nbsp;for&nbsp;172.17.0.3<br>
+[22/06/2022&nbsp;06:19:32&nbsp;AM]&nbsp;CRITICAL&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;is&nbsp;stopped.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="scapy.html">scapy</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="NetbiosSpoof.html#NetbiosSpoof">NetbiosSpoof</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NetbiosSpoof">class <strong>NetbiosSpoof</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#NetbiosSpoof">NetbiosSpoof</a>(interface:&nbsp;str&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;netbios&nbsp;spoofer.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="NetbiosSpoof-__init__"><strong>__init__</strong></a>(self, interface: str = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_DNSv6_response"><strong>craft_DNSv6_response</strong></a>(self, name: str) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;crafts&nbsp;a&nbsp;IPv6-DNS&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_LLMNR_IP"><strong>craft_LLMNR_IP</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;craft&nbsp;an&nbsp;IP-LLMNR&nbsp;packet.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_LLMNR_IP_type_28"><strong>craft_LLMNR_IP_type_28</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;craft&nbsp;an&nbsp;IP-LLMNR&nbsp;packet,&nbsp;type&nbsp;28.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_LLMNR_IPv6"><strong>craft_LLMNR_IPv6</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;craft&nbsp;an&nbsp;IPv6-LLMNR&nbsp;packet.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_LLMNR_IPv6_type_28"><strong>craft_LLMNR_IPv6_type_28</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;craft&nbsp;an&nbsp;IPv6-LLMNR&nbsp;packet,&nbsp;type&nbsp;28.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_MDNS_IP"><strong>craft_MDNS_IP</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;crafts&nbsp;a&nbsp;MDNS-IP&nbsp;packet.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_MDNS_IPv6"><strong>craft_MDNS_IPv6</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;crafts&nbsp;a&nbsp;MDNS-IPv6&nbsp;packet.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-craft_NBNS_response"><strong>craft_NBNS_response</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;crafts&nbsp;the&nbsp;Netbios&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-detect_LLMNR_type"><strong>detect_LLMNR_type</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;detects&nbsp;the&nbsp;IP&nbsp;version&nbsp;and&nbsp;DNSQR<br>
+type&nbsp;to&nbsp;forge&nbsp;the&nbsp;LLMNR&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-detect_ip_version_DNS"><strong>detect_ip_version_DNS</strong></a>(self, packet: scapy.packet.Packet) -&gt; scapy.packet.Packet</dt><dd><tt>This&nbsp;function&nbsp;crafts&nbsp;the&nbsp;DNS&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-get_iface"><strong>get_iface</strong></a>(self) -&gt; scapy.interfaces.NetworkInterface</dt><dd><tt>This&nbsp;function&nbsp;get&nbsp;a&nbsp;NetworkInterface&nbsp;from&nbsp;iface&nbsp;arguments<br>
+(a&nbsp;part&nbsp;of&nbsp;IP&nbsp;or&nbsp;MAC&nbsp;addresses&nbsp;or&nbsp;interface&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-identify_packet"><strong>identify_packet</strong></a>(self, packet: scapy.packet.Packet) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;detects&nbsp;the&nbsp;request&nbsp;type&nbsp;and&nbsp;send&nbsp;the&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-start"><strong>start</strong></a>(self, asynchronous: bool = False) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;netbios&nbsp;spoofer&nbsp;(and&nbsp;the&nbsp;network&nbsp;sniffer).</tt></dd></dl>
+
+<dl><dt><a name="NetbiosSpoof-stop"><strong>stop</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;stops&nbsp;the&nbsp;netbios&nbsp;spoofer&nbsp;(and&nbsp;the&nbsp;network&nbsp;sniffer).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;netbios&nbsp;spoofer&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['NetbiosSpoof', 'main']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>NetbiosSpoof  Copyright (C) 2021  Maurice Lambe...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements a Hostname Spoofer (Netbios, LLMNR and Local DNS).<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/NetbiosSpoof'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
