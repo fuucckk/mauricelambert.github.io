@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>NetbiosSpoof</strong></big></big> (version 1.0.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>NetbiosSpoof</strong></big></big> (version 1.0.1)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="netbiosspoof.py">netbiosspoof.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;a&nbsp;Hostname&nbsp;Spoofer&nbsp;(Netbios,&nbsp;LLMNR&nbsp;and&nbsp;Local&nbsp;DNS).<br>
@@ -17,16 +17,16 @@
 &gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>("172.17.0.")<br>
 &nbsp;<br>
 ~#&nbsp;python3&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py<br>
-[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;starts&nbsp;up...<br>
-[22/06/2022&nbsp;06:19:32&nbsp;AM]&nbsp;CRITICAL&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;is&nbsp;stopped.<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:451}&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;starts&nbsp;up...<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:470}&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;is&nbsp;stopped.<br>
 ~#&nbsp;python3&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py&nbsp;-v&nbsp;-i&nbsp;172.17.0.<br>
-[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Logging&nbsp;is&nbsp;configured.<br>
-[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;network&nbsp;interface&nbsp;detection...<br>
-[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface&nbsp;argument&nbsp;match&nbsp;with&nbsp;(172.17.0.2&nbsp;89:3c:10:40:61:b1&nbsp;WIFI)<br>
-[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;network&nbsp;interface&nbsp;WIFI<br>
-[22/06/2022&nbsp;06:19:21&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;starts&nbsp;up...<br>
-[22/06/2022&nbsp;06:19:24&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protocol&nbsp;DNS,&nbsp;spoof&nbsp;b'kali.local.'&nbsp;for&nbsp;172.17.0.3<br>
-[22/06/2022&nbsp;06:19:32&nbsp;AM]&nbsp;CRITICAL&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;is&nbsp;stopped.</tt></p>
+[22/06/2022&nbsp;06:19:32]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:497}&nbsp;Logging&nbsp;is&nbsp;configured.<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:141}&nbsp;Start&nbsp;network&nbsp;interface&nbsp;detection...<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:150}&nbsp;Interface&nbsp;argument&nbsp;match&nbsp;with&nbsp;(172.17.0.2&nbsp;89:3c:10:40:61:b1&nbsp;WIFI)<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:157}&nbsp;Use&nbsp;network&nbsp;interface&nbsp;WIFI<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:451}&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;starts&nbsp;up...<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:430}&nbsp;Protocol&nbsp;DNS,&nbsp;spoof&nbsp;b'kali.local.'&nbsp;for&nbsp;172.17.0.3<br>
+[22/06/2022&nbsp;06:19:32]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetbiosSpoof">NetbiosSpoof</a>.py:470}&nbsp;The&nbsp;netbios&nbsp;spoofer&nbsp;is&nbsp;stopped.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -120,6 +120,7 @@ Data descriptors defined here:<br>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['NetbiosSpoof', 'main']<br>
+<strong>__annotations__</strong> = {'logger': &lt;class 'logging.Logger'&gt;}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>NetbiosSpoof  Copyright (C) 2021  Maurice Lambe...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements a Hostname Spoofer (Netbios, LLMNR and Local DNS).<font color="#c040c0">\n</font>'<br>
