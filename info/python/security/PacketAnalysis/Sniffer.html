@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Sniffer</strong></big></big> (version 1.0.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Sniffer</strong></big></big> (version 1.0.1)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="sniffer.py">sniffer.py</a></font></td></tr></table>
     <p><tt>This&nbsp;file&nbsp;implements&nbsp;a&nbsp;network&nbsp;sniffer.<br>
@@ -18,25 +18,24 @@
 &gt;&gt;&gt;&nbsp;sniffer&nbsp;=&nbsp;<a href="#Sniffer">Sniffer</a>(PacketPrinter(),&nbsp;filetoread="capture.pcap")<br>
 &nbsp;<br>
 ~#&nbsp;python3&nbsp;<a href="#Sniffer">Sniffer</a>.py<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;Start&nbsp;the&nbsp;network&nbsp;sniffer&nbsp;on&nbsp;WIFI&nbsp;(IP:&nbsp;172.16.10.55,&nbsp;MAC:&nbsp;ee:80:3d:0a:f9:2f).<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:302}&nbsp;Start&nbsp;the&nbsp;network&nbsp;sniffer&nbsp;on&nbsp;WIFI&nbsp;(IP:&nbsp;172.16.10.55,&nbsp;MAC:&nbsp;ee:80:3d:0a:f9:2f).<br>
 &lt;packets&nbsp;...&gt;<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;CRITICAL&nbsp;Network&nbsp;traffic&nbsp;analysis&nbsp;is&nbsp;stopped.<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:312}&nbsp;Network&nbsp;traffic&nbsp;analysis&nbsp;is&nbsp;stopped.<br>
 ~#&nbsp;python3&nbsp;<a href="#Sniffer">Sniffer</a>.py&nbsp;-v&nbsp;-H&nbsp;-s&nbsp;-d&nbsp;-D&nbsp;-p&nbsp;-r&nbsp;-i&nbsp;-f&nbsp;"tcp&nbsp;port&nbsp;80&nbsp;or&nbsp;udp"&nbsp;-S&nbsp;capture.pcap&nbsp;-I&nbsp;172.16.10.<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Logging&nbsp;is&nbsp;configured.<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;PacketPrinter&nbsp;is&nbsp;created.<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;network&nbsp;interface&nbsp;detection...<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface&nbsp;argument&nbsp;match&nbsp;with&nbsp;(172.16.10.55&nbsp;ee:80:3d:0a:f9:2f&nbsp;WIFI)<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;network&nbsp;interface&nbsp;WIFI<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Sniffer">Sniffer</a>&nbsp;is&nbsp;created.<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;Start&nbsp;the&nbsp;network&nbsp;sniffer&nbsp;on&nbsp;WIFI&nbsp;(IP:&nbsp;172.16.10.55,&nbsp;MAC:&nbsp;ee:80:3d:0a:f9:2f).<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;the&nbsp;scapy.sendrecv.sniff&nbsp;function...<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:280}&nbsp;Logging&nbsp;is&nbsp;configured.<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:291}&nbsp;PacketPrinter&nbsp;is&nbsp;created.<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:165}&nbsp;Start&nbsp;network&nbsp;interface&nbsp;detection...<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:181}&nbsp;Use&nbsp;network&nbsp;interface&nbsp;WIFI<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:300}&nbsp;<a href="#Sniffer">Sniffer</a>&nbsp;is&nbsp;created.<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:302}&nbsp;Start&nbsp;the&nbsp;network&nbsp;sniffer&nbsp;on&nbsp;WIFI&nbsp;(IP:&nbsp;172.16.10.55,&nbsp;MAC:&nbsp;ee:80:3d:0a:f9:2f).<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:142}&nbsp;Start&nbsp;the&nbsp;scapy.sendrecv.sniff&nbsp;function...<br>
 &lt;packets&nbsp;...&gt;<br>
-[22/06/2022&nbsp;02:53:16&nbsp;AM]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;the&nbsp;captured&nbsp;traffic.<br>
-[22/06/2022&nbsp;02:53:16&nbsp;AM]&nbsp;CRITICAL&nbsp;Network&nbsp;traffic&nbsp;analysis&nbsp;is&nbsp;stopped.<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:192}&nbsp;Save&nbsp;the&nbsp;captured&nbsp;traffic.<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:312}&nbsp;Network&nbsp;traffic&nbsp;analysis&nbsp;is&nbsp;stopped.<br>
 ~#&nbsp;python3&nbsp;<a href="#Sniffer">Sniffer</a>.py&nbsp;-R&nbsp;capture.pcap<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;WARNING&nbsp;&nbsp;Start&nbsp;the&nbsp;network&nbsp;sniffer&nbsp;on&nbsp;WIFI&nbsp;(IP:&nbsp;172.16.10.55,&nbsp;MAC:&nbsp;ee:80:3d:0a:f9:2f).<br>
+[22/06/2022&nbsp;02:53:11]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:302}&nbsp;Start&nbsp;the&nbsp;network&nbsp;sniffer&nbsp;on&nbsp;WIFI&nbsp;(IP:&nbsp;172.16.10.55,&nbsp;MAC:&nbsp;ee:80:3d:0a:f9:2f).<br>
 &lt;packets&nbsp;...&gt;<br>
-[22/06/2022&nbsp;02:53:11&nbsp;AM]&nbsp;CRITICAL&nbsp;Network&nbsp;traffic&nbsp;analysis&nbsp;is&nbsp;stopped.</tt></p>
+[22/06/2022&nbsp;02:53:11]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;<a href="#Sniffer">Sniffer</a>.py:312}&nbsp;Network&nbsp;traffic&nbsp;analysis&nbsp;is&nbsp;stopped.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -109,6 +108,7 @@ sniffer&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['Sniffer', 'main']<br>
+<strong>__annotations__</strong> = {'logger': &lt;class 'logging.Logger'&gt;}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PacketAnalysis  Copyright (C) 2021  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This file implements a network sniffer.<font color="#c040c0">\n</font>'<br>
