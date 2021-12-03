@@ -49,6 +49,10 @@
  - [PasswordsSniffer](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.html)
  - [PyProgressTerm](https://mauricelambert.github.io/info/python/code/PyProgressTerm.html)
  - [RC6Encryption](https://mauricelambert.github.io/info/python/security/RC6Encryption.html)
+ - [RC4Encryption](https://mauricelambert.github.io/info/python/security/RC4Encryption.html)
+ - [CustomCrypto](https://mauricelambert.github.io/info/python/security/CustomCrypto.html)
+ - [ViginereBreaker](https://mauricelambert.github.io/info/python/security/ViginereBreaker.html)
+ - [GSMEncoding](https://mauricelambert.github.io/info/python/code/GSMEncoding.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
@@ -78,3 +82,5 @@
  - [PasswordsSniffer](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.pyz)
  - [PyProgressTerm](https://mauricelambert.github.io/info/python/code/PyProgressTerm.pyz)
  - [RC6Encryption](https://mauricelambert.github.io/info/python/security/RC6Encryption.pyz)
+ - [RC4Encryption](https://mauricelambert.github.io/info/python/security/RC4Encryption.pyz)
+ - [ViginereBreaker](https://mauricelambert.github.io/info/python/security/ViginereBreaker.pyz)
