@@ -1,7 +1,7 @@
-HTTP/1.1 200 OK
-Date: Mon, 27 Sep 2021 17:52:04 GMT
-Server: WebScripts 1.4.13
-Content-Type: text/css; charset=utf-8
+HTTP/1.1 301 Moved Permanently
+Date: Thu, 02 Dec 2021 19:03:02 GMT
+Server: WebScripts 2.4.1
+Content-Type: text/html; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
 X-Frame-Options: deny
@@ -10,39 +10,14 @@ X-Content-Type-Options: nosniff
 Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
-Clear-Site-Data: *
+Clear-Site-Data: "cache", "executionContexts"
 Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
 Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 874
+Location: /web/
+Content-Length: 165
 
-/*
-
-    Style for index page
-    Copyright (C) 2021  Maurice Lambert
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-*/
-
-.category_content {
-	width: 15%;
-	padding: 1%%;
-	display: inline-block;
-    margin-bottom: 2%;
-    margin-right: 2%;
-}
+<!-- To use API go to this URL: /api/ --><html><body><h1>Index page is /web/</h1><a href="/web/">Please click here</a><script>window.location="/web/"</script></html>

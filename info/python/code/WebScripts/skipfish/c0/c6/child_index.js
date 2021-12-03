@@ -1,5 +1,0 @@
-var child = [
-  { 'dupe': false, 'type': 4, 'name': 'doc', 'dir': 'c0', 'linked': 2, 'url': 'http://127.0.0.1:8000/web/doc/', 'fetched': true, 'code': 404, 'len': 10749, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 1, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xef7edef2 },
-  { 'dupe': false, 'type': 4, 'name': 'scripts', 'dir': 'c1', 'linked': 2, 'url': 'http://127.0.0.1:8000/web/scripts/', 'fetched': true, 'code': 404, 'len': 10749, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 1, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xfffafff9 },
-  { 'dupe': false, 'type': 16, 'name': 'auth', 'dir': 'c2', 'linked': 2, 'url': 'http://127.0.0.1:8000/web/auth', 'fetched': true, 'code': 200, 'len': 8228, 'decl_mime': 'text/html', 'sniff_mime': 'application/javascript', 'cset': 'utf-8', 'missing': false, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 1, 0, 0, 0, 0 ], 'sig': 0xf7afc54b }
-];

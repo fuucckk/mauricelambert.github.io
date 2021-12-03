@@ -1,7 +1,7 @@
 HTTP/1.1 200 OK
-Date: Mon, 27 Sep 2021 17:56:00 GMT
-Server: WebScripts 1.4.13
-Content-Type: image/jpeg
+Date: Thu, 02 Dec 2021 19:06:42 GMT
+Server: WebScripts 2.4.1
+Content-Type: image/png
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
 X-Frame-Options: deny
@@ -10,13 +10,14 @@ X-Content-Type-Options: nosniff
 Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
-Clear-Site-Data: *
+Clear-Site-Data: "cache", "executionContexts"
 Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
 Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 44039
+Content-Length: 95444
 
-ÿØÿà
+‰PNG
+

@@ -1,6 +1,6 @@
 HTTP/1.1 200 OK
-Date: Mon, 27 Sep 2021 17:52:04 GMT
-Server: WebScripts 1.4.13
+Date: Thu, 02 Dec 2021 19:03:03 GMT
+Server: WebScripts 2.4.1
 Content-Type: text/javascript; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
@@ -10,14 +10,14 @@ X-Content-Type-Options: nosniff
 Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
-Clear-Site-Data: *
+Clear-Site-Data: "cache", "executionContexts"
 Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
 Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 2263
+Content-Length: 2534
 
 /*
 
@@ -38,7 +38,6 @@ Content-Length: 2263
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 */
-
 function build_categories(scripts) {
     let content = document.getElementById("webscripts_content");
     let categories = {};
@@ -50,28 +49,35 @@ function build_categories(scripts) {
 
         if (script.name !== "/auth/") {
             script_string = `
-					<li class="category script_bullet_point"><a class="category script_link inline" href="/web/scripts/${script.name}">${script.name}</a> <p class="description inline">(${script.description})</p></li>
-			`
+                    <li class="category script_bullet_point">` +
+                `<a class="category script_link inline" href="` +
+                `/web/scripts/${script.name}">${script.name}</a> ` +
+                `<p class="description inline">(` +
+                `${script.description})</p></li>
+            `;
         } else {
             script_string = `
-					<li class="category script_bullet_point"><a class="category script_link inline" href="/web/auth/">${script.name}</a> <p class="description inline">(${script.description})</p></li>
-			`
+                    <li class="category script_bullet_point">` +
+                `<a class="category script_link inline" href="` +
+                `/web/auth/">${script.name}</a> <p class="description ` +
+                `inline">(${script.description})</p></li>
+            `;
         }
 
-        if (script.category !== undefined && categories[script.category] ===
+        if (script.category && categories[script.category] ===
             undefined) {
             categories[script.category] = `
-			<div class="category category_content">
-				<h3 class="category category_title">${script.category}</h3>
+            <div class="category category_content">
+                <h3 class="category category_title">${script.category}</h3>
 
-				<ul class="category scripts_list">
-					${script_string}
-					<!---->
-				</ul>
-			</div>
-			`;
-        } else if (script.category !== undefined && categories[script
-            .category] !== undefined) {
+                <ul class="category scripts_list">
+                    ${script_string}
+                    <!---->
+                </ul>
+            </div>
+            `;
+        } else if (script.category && categories[script
+                .category] !== undefined) {
             categories[script.category] = categories[script.category].replace(
                 "<!---->", script_string + "<!---->");
         }

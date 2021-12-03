@@ -1,62 +1,69 @@
-GET http://127.0.0.1:8000/ name=http://127.0.0.1:8000/ type=serv linked=yes browsers=0 browser_used=FAST dup=0 code=301 len=165 notes=8 sig=0x73ee36eb
-GET http://127.0.0.1:8000/auth/ name=auth type=dir linked=no browsers=0 browser_used=FAST dup=0 code=500 len=10754 notes=3 sig=0xfff9861c
-GET http://127.0.0.1:8000/error_pages/ name=error_pages type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0x21094210
-GET http://127.0.0.1:8000/error_pages/Report/ name=Report type=dir linked=yes browsers=0 browser_used=FAST dup=0 code=500 len=10754 notes=2 sig=0x1fef9f0
-GET http://127.0.0.1:8000/error_pages/Report/new name=new type=pathinfo linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=10737 notes=2 sig=0xffece1f0
-GET http://127.0.0.1:8000/error_pages/Report/new// name= type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0x42158428
-GET http://127.0.0.1:8000/error_pages/Report/new/${xhttp.status} name={xhttp.status} type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=10827 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/get/ name=get type=dir linked=no browsers=0 browser_used=FAST dup=1 code=500 len=10754 notes=3 sig=0xfff9861c
-GET http://127.0.0.1:8000/js/ name=js type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0xc1c88c58
-GET http://127.0.0.1:8000/js/webscripts_index_js_scripts.js name=webscripts_index_js_scripts.js type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=2263 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/js/webscripts_js_scripts.js name=webscripts_js_scripts.js type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=4326 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/js/webscripts_script_js_scripts.js name=webscripts_script_js_scripts.js type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=21573 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/ name=static type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0xcda0410c
-GET http://127.0.0.1:8000/static/commons.html name=commons.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=43873 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/ name=http://127.0.0.1:8000/ type=serv linked=yes browsers=0 browser_used=FAST dup=0 code=301 len=165 notes=7 sig=0x17efb8c9
+GET http://127.0.0.1:8000/auth/ name=auth type=dir linked=no browsers=0 browser_used=FAST dup=0 code=500 len=14420 notes=3 sig=0xfff9861c
+GET http://127.0.0.1:8000/js/ name=js type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=0 sig=0x552bb5d1
+GET http://127.0.0.1:8000/js/`%20%2B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20`/ name=`\x20+\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20` type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=1 sig=0x117fef8d
+GET http://127.0.0.1:8000/js/`%20%2B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20`/web/ name=web type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=0 sig=0x137d2101
+GET http://127.0.0.1:8000/js/`%20%2B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20`/web/auth/ name=auth type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=0 sig=0xfffbffff
+GET http://127.0.0.1:8000/js/`%20%2B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20`/web/scripts/ name=scripts type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=0 sig=0xfffafff9
+GET http://127.0.0.1:8000/js/`%20%2B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20`/web/scripts// name= type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=0 sig=0xbc15fbff
+GET http://127.0.0.1:8000/js/`%20%2B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20`/web/scripts/${script.name} name={script.name} type=unknown linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/js/webscripts_index_js_scripts.js name=webscripts_index_js_scripts.js type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=2534 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/js/webscripts_js_scripts.js name=webscripts_js_scripts.js type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=4612 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/js/webscripts_script_js_scripts.js name=webscripts_script_js_scripts.js type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=25799 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/static/ name=static type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=14415 notes=1 sig=0x4b11e53a
+GET http://127.0.0.1:8000/static/commons.html name=commons.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=43944 notes=1 sig=0xe73080f7
+GET http://127.0.0.1:8000/static/csp.html name=csp.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=4295 notes=0 sig=0xfff7ffff
 GET http://127.0.0.1:8000/static/error_pages.html name=error_pages.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=8560 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/Errors.html name=Errors.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=32865 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/manage_defaults_databases.html name=manage_defaults_databases.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=27643 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/Pages.html name=Pages.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=7545 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/requests_management.html name=requests_management.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=11938 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/uploads_management.html name=uploads_management.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=13731 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/utils.html name=utils.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=16998 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/WebScripts.html name=WebScripts.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=20348 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/webscripts_header.jpg name=webscripts_header.jpg type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=44039 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/webscripts_icon.png name=webscripts_icon.png type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=1741 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/static/Errors.html name=Errors.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=32853 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/static/index.html name=index.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=19469 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/static/manage_defaults_databases.html name=manage_defaults_databases.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=27643 notes=1 sig=0xe73080f7
+GET http://127.0.0.1:8000/static/Pages.html name=Pages.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=7729 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/static/requests_management.html name=requests_management.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=11934 notes=1 sig=0x726a29bd
+GET http://127.0.0.1:8000/static/share.html name=share.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=6757 notes=1 sig=0xf7b4a1ff
+GET http://127.0.0.1:8000/static/uploads_management.html name=uploads_management.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=14190 notes=1 sig=0xf7b4a1ff
+GET http://127.0.0.1:8000/static/utils.html name=utils.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=30944 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/static/WebScripts.html name=WebScripts.html type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=20402 notes=1 sig=0x5b207b29
+GET http://127.0.0.1:8000/static/webscripts_header.png name=webscripts_header.png type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=95444 notes=0 sig=0xfff7ffff
+GET http://127.0.0.1:8000/static/webscripts_icon.png name=webscripts_icon.png type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=95082 notes=1 sig=0x20fe8c94
 GET http://127.0.0.1:8000/static/webscripts_index_style.css name=webscripts_index_style.css type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=874 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/webscripts_script_style.css name=webscripts_script_style.css type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=2039 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/webscripts_style.css name=webscripts_style.css type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=5195 notes=0 sig=0xfff7ffff
-GET http://127.0.0.1:8000/static/__init__.py name=__init__.py type=unknown linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/abc.html name=abc.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/builtins.html name=builtins.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/collections.abc.html name=collections.abc.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/commons.py name=commons.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/csv.html name=csv.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/error_pages.py name=error_pages.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/errors.py name=errors.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/json.html name=json.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/locale.html name=locale.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/logging.html name=logging.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/manage_defaults_databases.py name=manage_defaults_databases.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/ntpath.html name=ntpath.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/pages.py name=pages.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/platform.html name=platform.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/requests_management.py name=requests_management.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/secrets.html name=secrets.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/types.html name=types.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/uploads_management.py name=uploads_management.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/utils.py name=utils.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/WebScripts.__main__.html name=WebScripts.__main__.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/WebScripts.commons.html name=WebScripts.commons.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/WebScripts.Errors.html name=WebScripts.Errors.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/WebScripts.Pages.html name=WebScripts.Pages.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/WebScripts.utils.html name=WebScripts.utils.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/WebScripts.WebScripts.html name=WebScripts.WebScripts.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/static/win32evtlog.html name=win32evtlog.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/api name=api type=pathinfo linked=no browsers=0 browser_used=FAST dup=0 code=200 len=20055 notes=1 sig=0xffefffff
-GET http://127.0.0.1:8000/web name=web type=pathinfo linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=7028 notes=2 sig=0x86379325
-GET http://127.0.0.1:8000/web/doc/ name=doc type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0xef7edef2
-GET http://127.0.0.1:8000/web/doc/auth/ name=auth type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0xfffbffff
-GET http://127.0.0.1:8000/web/scripts/ name=scripts type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0xfffafff9
-GET http://127.0.0.1:8000/web/scripts// name= type=dir linked=yes browsers=0 browser_used=FAST dup=0 returns_404 code=404 len=10749 notes=0 sig=0xbc15fbff
-GET http://127.0.0.1:8000/web/scripts/${script.name} name={script.name} type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=10749 notes=0 sig=0xffdfffff
-GET http://127.0.0.1:8000/web/auth name=auth type=pathinfo linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=8228 notes=1 sig=0xf7afc54b
+GET http://127.0.0.1:8000/static/webscripts_style.css name=webscripts_style.css type=file linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=5195 notes=1 sig=0xf7b4a1ff
+GET http://127.0.0.1:8000/static/__init__.py name=__init__.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/abc.html name=abc.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/builtins.html name=builtins.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/collections.abc.html name=collections.abc.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/commons.py name=commons.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/csp.py name=csp.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/csv.html name=csv.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/error_pages.py name=error_pages.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/errors.py name=errors.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/gzip.html name=gzip.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/json.html name=json.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/locale.html name=locale.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/logging.handlers.html name=logging.handlers.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/logging.html name=logging.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/manage_defaults_databases.py name=manage_defaults_databases.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/ntpath.html name=ntpath.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/os.html name=os.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/pages.py name=pages.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/platform.html name=platform.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/requests_management.py name=requests_management.py type=unknown linked=yes browsers=0 browser_used=FAST dup=0 code=0 len=0 notes=1 sig=0x6a841831
+GET http://127.0.0.1:8000/static/secrets.html name=secrets.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/share.py name=share.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/sys.html name=sys.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/types.html name=types.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/uploads_management.py name=uploads_management.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/utils.py name=utils.py type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/WebScripts.__main__.html name=WebScripts.__main__.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/WebScripts.commons.html name=WebScripts.commons.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/WebScripts.Errors.html name=WebScripts.Errors.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/WebScripts.hardening.html name=WebScripts.hardening.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/WebScripts.Pages.html name=WebScripts.Pages.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/WebScripts.utils.html name=WebScripts.utils.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/WebScripts.WebScripts.html name=WebScripts.WebScripts.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/static/webscripts_script_style.css name=webscripts_script_style.css type=unknown linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=3389 notes=1 sig=0x20d68c94
+GET http://127.0.0.1:8000/static/win32evtlog.html name=win32evtlog.html type=unknown linked=yes browsers=0 browser_used=FAST dup=1 returns_404 code=404 len=14415 notes=0 sig=0xffdfffff
+GET http://127.0.0.1:8000/api name=api type=pathinfo linked=no browsers=0 browser_used=FAST dup=0 code=200 len=20339 notes=1 sig=0xffefffff
+GET http://127.0.0.1:8000/web name=web type=pathinfo linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=7579 notes=2 sig=0x192caa86
+GET http://127.0.0.1:8000/web/doc/ name=doc type=dir linked=yes browsers=0 browser_used=FAST dup=0 code=0 len=0 notes=1 sig=0x7bd9b93c
+GET http://127.0.0.1:8000/web/doc/auth/ name=auth type=dir linked=yes browsers=0 browser_used=FAST dup=0 code=0 len=0 notes=1 sig=0x6b5f9831
+GET http://127.0.0.1:8000/web/auth name=auth type=pathinfo linked=yes browsers=0 browser_used=FAST dup=0 code=200 len=8780 notes=1 sig=0xf7afc54b

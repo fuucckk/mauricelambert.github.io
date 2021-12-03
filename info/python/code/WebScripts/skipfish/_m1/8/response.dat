@@ -1,6 +1,6 @@
 HTTP/1.1 200 OK
-Date: Mon, 27 Sep 2021 17:55:12 GMT
-Server: WebScripts 1.4.13
+Date: Thu, 02 Dec 2021 19:05:56 GMT
+Server: WebScripts 2.4.1
 Content-Type: text/html; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
@@ -10,14 +10,14 @@ X-Content-Type-Options: nosniff
 Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
-Clear-Site-Data: *
+Clear-Site-Data: "cache", "executionContexts"
 Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
 Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 11938
+Content-Length: 11934
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module requests_management</title>
@@ -41,9 +41,8 @@ This&nbsp;file&nbsp;implement&nbsp;some&nbsp;functions&nbsp;to&nbsp;manage&nbsp;
     
 <tr><td bgcolor="#75B4AD"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="csv.html">csv</a><br>
-</td><td width="25%" valign=top><a href="json.html">json</a><br>
 </td><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
-</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#C89B48">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -189,7 +188,7 @@ Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<b
 <td width="100%"><strong>__all__</strong> = ['Request', 'get_requests', 'get_request', 'delete_request']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WebScripts  Copyright (C) 2021  Maurice Lambert...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
-<strong>__description__</strong> = '<font color="#c040c0">\n</font>This tools run scripts and display the result i...unctions to manage requests/reports on WebScripts'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This tools run scripts and display the result i...nctions to manage requests/reports on WebScripts<font color="#c040c0">\n</font>'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>

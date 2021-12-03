@@ -1,6 +1,6 @@
 HTTP/1.1 200 OK
-Date: Mon, 27 Sep 2021 17:55:39 GMT
-Server: WebScripts 1.4.13
+Date: Thu, 02 Dec 2021 19:06:24 GMT
+Server: WebScripts 2.4.1
 Content-Type: text/html; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
@@ -10,14 +10,14 @@ X-Content-Type-Options: nosniff
 Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
-Clear-Site-Data: *
+Clear-Site-Data: "cache", "executionContexts"
 Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
 Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Resource-Policy: same-origin
 X-Server: WebScripts
-Content-Length: 7545
+Content-Length: 7729
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module Pages</title>
@@ -27,12 +27,13 @@ Content-Length: 7545
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#9286C2">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Pages</strong></big></big> (version 0.1.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Pages</strong></big></big> (version 1.0.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="pages.py">pages.py</a></font></td></tr></table>
     <p><tt>This&nbsp;tools&nbsp;run&nbsp;scripts&nbsp;and&nbsp;display&nbsp;the&nbsp;result&nbsp;in&nbsp;a&nbsp;Web&nbsp;Interface.<br>
 &nbsp;<br>
-This&nbsp;file&nbsp;implement&nbsp;<a href="#Pages">Pages</a>&nbsp;(Api&nbsp;and&nbsp;Web&nbsp;system),&nbsp;script&nbsp;execution&nbsp;and&nbsp;right&nbsp;system.</tt></p>
+This&nbsp;file&nbsp;implement&nbsp;<a href="#Pages">Pages</a>&nbsp;(Api&nbsp;and&nbsp;Web&nbsp;system),&nbsp;script&nbsp;execution&nbsp;and&nbsp;right<br>
+system.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#75B4AD">
@@ -67,7 +68,8 @@ This&nbsp;file&nbsp;implement&nbsp;<a href="#Pages">Pages</a>&nbsp;(Api&nbsp;and
 <td colspan=2><tt>This&nbsp;class&nbsp;implement&nbsp;Web&nbsp;<a href="#Pages">Pages</a>&nbsp;for&nbsp;WebScripts&nbsp;server.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="Pages-__call__"><strong>__call__</strong></a>(self, environ: os._Environ, user: commons.User, server_configuration: ~ServerConfiguration, filename: str, commande: List[str], inputs: List[str], csrf_token: str = None) -&gt; Tuple[str, Dict[str, str], str]</dt><dd><tt>A&nbsp;redirect&nbsp;page&nbsp;(Error&nbsp;code&nbsp;301,&nbsp;javascript&nbsp;redirect&nbsp;and&nbsp;redirect&nbsp;title)&nbsp;to&nbsp;/web/&nbsp;or&nbsp;/api/.</tt></dd></dl>
+<dl><dt><a name="Pages-__call__"><strong>__call__</strong></a>(self, environ: os._Environ, user: commons.User, server_configuration: ~ServerConfiguration, filename: str, commande: List[str], inputs: List[str], csrf_token: str = None) -&gt; Tuple[str, Dict[str, str], str]</dt><dd><tt>A&nbsp;redirect&nbsp;page&nbsp;(Error&nbsp;code&nbsp;301,&nbsp;javascript&nbsp;redirect&nbsp;and&nbsp;redirect<br>
+title)&nbsp;to&nbsp;/web/&nbsp;or&nbsp;/api/.</tt></dd></dl>
 
 <dl><dt><a name="Pages-auth"><strong>auth</strong></a>(self, environ: os._Environ, user: commons.User, server_configuration: ~ServerConfiguration, filename: str, commande: List[str], inputs: List[str], csrf_token: str = None) -&gt; Tuple[str, Dict[str, str], str]</dt><dd><tt>This&nbsp;function&nbsp;return&nbsp;check&nbsp;auth&nbsp;and&nbsp;return&nbsp;headers,&nbsp;error&nbsp;and&nbsp;page.</tt></dd></dl>
 
@@ -88,11 +90,13 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__annotations__</strong> = {'ip_blacklist': typing.Dict[str, commons.Blacklist], 'js_paths': typing.Dict[str, commons.CallableFile], 'packages': &lt;class 'utils.DefaultNamespace'&gt;, 'scripts': typing.Dict[str, commons.ScriptConfig], 'sessions': typing.Dict[int, commons.Session], 'statics_paths': typing.Dict[str, commons.CallableFile], 'user_blacklist': typing.Dict[str, commons.Blacklist]}</dl>
+<dl><dt><strong>__annotations__</strong> = {'ip_blacklist': typing.Dict[str, commons.Blacklist], 'js_paths': typing.Dict[str, commons.CallableFile], 'packages': &lt;class 'utils.DefaultNamespace'&gt;, 'processes': typing.Dict[str, Pages.Process], 'scripts': typing.Dict[str, commons.ScriptConfig], 'sessions': typing.Dict[int, commons.Session], 'statics_paths': typing.Dict[str, commons.CallableFile], 'user_blacklist': typing.Dict[str, commons.Blacklist]}</dl>
 
 <dl><dt><strong>api</strong> = &lt;Pages.Api object&gt;</dl>
 
 <dl><dt><strong>ip_blacklist</strong> = {}</dl>
+
+<dl><dt><strong>processes</strong> = {}</dl>
 
 <dl><dt><strong>sessions</strong> = {}</dl>
 
@@ -110,7 +114,7 @@ Data and other attributes defined here:<br>
 <td width="100%"><strong>__all__</strong> = ['Pages']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WebScripts  Copyright (C) 2021  Maurice Lambert...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
-<strong>__description__</strong> = 'This tools run scripts and display the result in...d Web system), script execution and right system.'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This tools run scripts and display the result i... Web system), script execution and right<font color="#c040c0">\n</font>system.<font color="#c040c0">\n</font>'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>

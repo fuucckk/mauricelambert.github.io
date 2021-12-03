@@ -1,6 +1,6 @@
 HTTP/1.1 301 Moved Permanently
-Date: Mon, 27 Sep 2021 17:52:02 GMT
-Server: WebScripts 1.4.13
+Date: Thu, 02 Dec 2021 19:03:02 GMT
+Server: WebScripts 2.4.1
 Content-Type: text/html; charset=utf-8
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Content-Security-Policy: default-src 'self'; form-action 'none'; frame-ancestors 'none'
@@ -10,7 +10,7 @@ X-Content-Type-Options: nosniff
 Referrer-Policy: origin-when-cross-origin
 Cache-Control: no-store
 Pragma: no-store
-Clear-Site-Data: *
+Clear-Site-Data: "cache", "executionContexts"
 Feature-Policy: payment 'none'; geolocation 'none'; microphone 'none'; camera 'none'
 Permissions-Policy: microphone=(),camera=(),payment=(),geolocation=()
 Cross-Origin-Embedder-Policy: require-corp
