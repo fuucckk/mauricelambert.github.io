@@ -5,6 +5,8 @@
  - [CustomShell Documentation](https://mauricelambert.github.io/info/python/code/CustomShell.html)
  - [PacketAnalysis.PacketPrinter Documentation](https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketPrinter.html)
  - [PacketAnalysis.Sniffer Documentation](https://mauricelambert.github.io/info/python/security/PacketAnalysis/Sniffer.html)
+ - [ArpSpoof Documentation](https://mauricelambert.github.io/info/python/security/ArpSpoof.html)
+ - [NetbiosSpoof Documentation](https://mauricelambert.github.io/info/python/security/NetbiosSpoof.html)
  - [WebSiteCloner.HTTPLogger Documentation](https://mauricelambert.github.io/info/python/security/WebSiteCloner/HTTPLogger.html)
  - [WebSiteCloner.WebSiteCloner Documentation](https://mauricelambert.github.io/info/python/security/WebSiteCloner/WebSiteCloner.html)
  - [PyEmailTools.Email Documentation](https://mauricelambert.github.io/info/python/security/PyEmailTools/Email.html)
@@ -50,7 +52,9 @@
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
- - [PacketAnalysis](https://mauricelambert.github.io/info/python/security/PacketAnalysis.pyz)
+ - [PacketAnalysis](https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketAnalysis.pyz)
+ - [ArpSpoof](https://mauricelambert.github.io/info/python/security/ArpSpoof.pyz)
+ - [NetbiosSpoof](https://mauricelambert.github.io/info/python/security/NetbiosSpoof.pyz)
  - [PyEmailTools](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
  - [RansomWare](https://mauricelambert.github.io/info/python/security/RansomWare.pz)
@@ -60,7 +64,6 @@
  - [SpyWare.DomainsLogger](https://mauricelambert.github.io/info/python/security/SpyWare/DomainsLogger.pyz)
  - [SpyWare.FilesLogger](https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.pyz)
  - [SpyWare.KeyLogger](https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.pyz)
- - [SpyWare.ScreenLogger](https://mauricelambert.github.io/info/python/security/SpyWare/ScreenLogger.pyz)
  - [SpyWare.WebcamLogger](https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.pyz)
  - [ChromePasswordsStealer](https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.pyz)
  - [FileAnalysis](https://mauricelambert.github.io/info/python/security/FileAnalysis.pyz)
