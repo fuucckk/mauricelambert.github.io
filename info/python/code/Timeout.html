@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Timeout</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Timeout</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Timeout.py.py">Timeout.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Timeout&nbsp;import&nbsp;*<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;time&nbsp;import&nbsp;sleep<br>
+&gt;&gt;&gt;&nbsp;class&nbsp;A:<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>a</strong>&nbsp;=&nbsp;"a"<br>
+...<br>
+&gt;&gt;&gt;&nbsp;@<a href="#-thread_timeout">thread_timeout</a>(2)<br>
+...&nbsp;def&nbsp;test():<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;1:<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("pass")<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep(1)<br>
+...<br>
+&gt;&gt;&gt;&nbsp;test()<br>
+pass<br>
+pass<br>
+pass<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TimeoutError:&nbsp;TimeoutError&nbsp;in&nbsp;"test"<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+KeyboardInterrupt<br>
+&gt;&gt;&gt;&nbsp;@<a href="#-thread_timeout">thread_timeout</a>(2)<br>
+...&nbsp;def&nbsp;test():<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("pass")<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep(1)<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;A()<br>
+...<br>
+&gt;&gt;&gt;&nbsp;test()<br>
+pass<br>
+&lt;__main__.A&nbsp;object&nbsp;at&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;@signal_timeout(2)<br>
+...&nbsp;def&nbsp;test():<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;1:<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("pass")<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep(1)<br>
+...<br>
+&gt;&gt;&gt;&nbsp;test()<br>
+pass<br>
+pass<br>
+pass<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TimeoutError<br>
+&gt;&gt;&gt;&nbsp;@signal_timeout(2)<br>
+...&nbsp;def&nbsp;test():<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("pass")<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep(1)<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;A()<br>
+...<br>
+&gt;&gt;&gt;&nbsp;test()<br>
+pass<br>
+&lt;__main__.A&nbsp;object&nbsp;at&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;@<a href="#-process_timeout">process_timeout</a>(2)<br>
+...&nbsp;def&nbsp;test():<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("pass")<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep(1)<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;A()<br>
+...<br>
+&gt;&gt;&gt;&nbsp;test()<br>
+pass<br>
+&lt;__main__.A&nbsp;object&nbsp;at&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;@<a href="#-process_timeout">process_timeout</a>(2)<br>
+...&nbsp;def&nbsp;test():<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;1:<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("pass")<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep(1)<br>
+...<br>
+&gt;&gt;&gt;&nbsp;test()<br>
+pass<br>
+pass<br>
+pass<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TimeoutError:&nbsp;TimeoutError&nbsp;in&nbsp;"test"<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+KeyboardInterrupt</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-process_timeout"><strong>process_timeout</strong></a>(seconds: int) -&gt; collections.abc.Callable</dt><dd><tt>This&nbsp;decorator&nbsp;implements&nbsp;a&nbsp;function&nbsp;timeout.</tt></dd></dl>
+ <dl><dt><a name="-thread_timeout"><strong>thread_timeout</strong></a>(seconds: int) -&gt; collections.abc.Callable</dt><dd><tt>This&nbsp;decorator&nbsp;implements&nbsp;a&nbsp;function&nbsp;timeout.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['thread_timeout', 'process_timeout']<br>
+<strong>__annotations__</strong> = {'current_pid': &lt;class 'str'&gt;, 'pid': &lt;class 'str'&gt;}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PyCommons  Copyright (C) 2022  Maurice Lambert<font color="#c040c0">\n</font>...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PyCommons'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

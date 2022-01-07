@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Terminal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Terminal</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Terminal.py.py">Terminal.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Terminal.html#Terminal">Terminal</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Terminal">class <strong>Terminal</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;function&nbsp;to&nbsp;use&nbsp;ANSI&nbsp;console<br>
+characters.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Terminal-add_first_line"><strong>add_first_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;empty&nbsp;first&nbsp;line<br>
+(the&nbsp;contents&nbsp;of&nbsp;the&nbsp;rows&nbsp;are&nbsp;moved<br>
+to&nbsp;the&nbsp;next&nbsp;row).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-change_background_color"><strong>change_background_color</strong></a>(color: str, mode: int = 1) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;background&nbsp;color.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-change_background_color_3bytes"><strong>change_background_color_3bytes</strong></a>(red: int, green: int, blue: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;background&nbsp;color<br>
+using&nbsp;the&nbsp;3&nbsp;bytes&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-change_background_color_8bits"><strong>change_background_color_8bits</strong></a>(color: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;background&nbsp;color<br>
+using&nbsp;the&nbsp;8&nbsp;bits&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-change_font"><strong>change_font</strong></a>(font: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;font.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-change_foreground_color"><strong>change_foreground_color</strong></a>(color: str, mode: int = 1) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;foreground&nbsp;color.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-change_foreground_color_3bytes"><strong>change_foreground_color_3bytes</strong></a>(red: int, green: int, blue: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;foreground&nbsp;color<br>
+using&nbsp;the&nbsp;3&nbsp;bytes&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-change_foreground_color_8bits"><strong>change_foreground_color_8bits</strong></a>(color: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;foreground&nbsp;color<br>
+using&nbsp;the&nbsp;8&nbsp;bits&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-clean"><strong>clean</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;cleans&nbsp;the&nbsp;console.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-clean_next_line"><strong>clean_next_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;cleans&nbsp;the&nbsp;next&nbsp;line<br>
+(take&nbsp;position&nbsp;on&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;cleaned&nbsp;line).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-clean_next_lines"><strong>clean_next_lines</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;cleans&nbsp;the&nbsp;next&nbsp;lines<br>
+(take&nbsp;position&nbsp;on&nbsp;the&nbsp;next&nbsp;line).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-delete_first_line"><strong>delete_first_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;the&nbsp;first&nbsp;line<br>
+(the&nbsp;contents&nbsp;of&nbsp;the&nbsp;rows&nbsp;are&nbsp;moved<br>
+to&nbsp;the&nbsp;previous&nbsp;row).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-goto"><strong>goto</strong></a>(line: int, position: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;line:position.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_bold"><strong>mode_bold</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;bold.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_default"><strong>mode_default</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;bold.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_hide"><strong>mode_hide</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;hide.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_intensity"><strong>mode_intensity</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;intensity.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_italic"><strong>mode_italic</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;italic.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_no_bold"><strong>mode_no_bold</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;bold.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_no_hide"><strong>mode_no_hide</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;hide.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_no_intensity"><strong>mode_no_intensity</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;intensity.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_no_italic"><strong>mode_no_italic</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;italic.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_no_reverse"><strong>mode_no_reverse</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;replace&nbsp;colors&nbsp;(background/foreground).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_no_underline"><strong>mode_no_underline</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;underline.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_reverse"><strong>mode_reverse</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;reverses&nbsp;colors&nbsp;(background/foreground).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-mode_underline"><strong>mode_underline</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;underline.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-next_char"><strong>next_char</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;next&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-next_line"><strong>next_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;got&nbsp;to&nbsp;the&nbsp;next&nbsp;line<br>
+(keep&nbsp;the&nbsp;same&nbsp;position&nbsp;on&nbsp;the&nbsp;next&nbsp;line).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-precedent_char"><strong>precedent_char</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-precedent_line"><strong>precedent_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;line<br>
+(keep&nbsp;the&nbsp;same&nbsp;position&nbsp;on&nbsp;the&nbsp;precedent&nbsp;line).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-reset_background"><strong>reset_background</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;the&nbsp;background&nbsp;color.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-reset_colors"><strong>reset_colors</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;colors&nbsp;(background&nbsp;and&nbsp;foreground).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-reset_foreground"><strong>reset_foreground</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;the&nbsp;foreground&nbsp;color.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-restore_position"><strong>restore_position</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;restore&nbsp;the&nbsp;saved&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-save_position"><strong>save_position</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;saves&nbsp;the&nbsp;cursor&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-start_line"><strong>start_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;line.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-start_next_line"><strong>start_next_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;next&nbsp;line<br>
+(on&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;the&nbsp;next&nbsp;line).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-start_precedent_line"><strong>start_precedent_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;line<br>
+(on&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;the&nbsp;precedent&nbsp;line).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Terminal']<br>
+<strong>__annotations__</strong> = {'char_ANSI': &lt;class 'str'&gt;, 'char_special_ANSI': &lt;class 'str'&gt;, 'stdout_flush': &lt;class 'collections.abc.Callable'&gt;, 'stdout_write': &lt;class 'collections.abc.Callable'&gt;}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PyCommons  Copyright (C) 2022  Maurice Lambert<font color="#c040c0">\n</font>...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PyCommons'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
