@@ -66,7 +66,6 @@
  - [PyCommons.Report](https://mauricelambert.github.io/info/python/code/PyCommons/Report.html)
  - [PyCommons.urlopen](https://mauricelambert.github.io/info/python/code/PyCommons/urlopen.html)
  - [PyCommons.cleandict](https://mauricelambert.github.io/info/python/code/PyCommons/cleandict.html)
- - [PyCommons.Timeout](https://mauricelambert.github.io/info/python/code/PyCommons/Timeout.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
