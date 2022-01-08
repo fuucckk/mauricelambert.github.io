@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Process</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Process</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Process.py.py">Process.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line,&nbsp;error,&nbsp;code&nbsp;in&nbsp;<a href="#-real_time_process_output">real_time_process_output</a>("./program1&nbsp;&amp;&amp;&nbsp;./program2",&nbsp;shell=True):&nbsp;print(line)<br>
+...<br>
+b"&lt;output&nbsp;line&nbsp;1&gt;"<br>
+b"&lt;output&nbsp;line&nbsp;2&gt;"<br>
+b"&lt;output&nbsp;line&nbsp;...&gt;"<br>
+b"&lt;output&nbsp;line&nbsp;n&gt;"<br>
+&gt;&gt;&gt;&nbsp;print(code,&nbsp;error)<br>
+0,&nbsp;b"&lt;error&nbsp;lines&gt;"<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line,&nbsp;error,&nbsp;code&nbsp;in&nbsp;<a href="#-real_time_process_output">real_time_process_output</a>('python&nbsp;-c&nbsp;"print(input());print(input())"',&nbsp;input=b'test\n',&nbsp;timeout=2,&nbsp;shell=True):&nbsp;print(line)<br>
+...<br>
+b'test\n'<br>
+&gt;&gt;&gt;&nbsp;print(code,&nbsp;error)<br>
+1&nbsp;b'Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):\r\n&nbsp;&nbsp;File&nbsp;"&lt;string&gt;",&nbsp;line&nbsp;1,&nbsp;in&nbsp;&lt;module&gt;\r\nEOFError:&nbsp;EOF&nbsp;when&nbsp;reading&nbsp;a&nbsp;line\r\n'<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line,&nbsp;error,&nbsp;code&nbsp;in&nbsp;<a href="#-real_time_process_output">real_time_process_output</a>('python&nbsp;-c&nbsp;"print(input());print(input())"',&nbsp;input=b'test\ntest2\n',&nbsp;timeout=2,&nbsp;shell=True):&nbsp;print(line)<br>
+...<br>
+b'test\r\n'<br>
+b'test2\r\n'<br>
+&gt;&gt;&gt;&nbsp;print(code,&nbsp;error)<br>
+0&nbsp;b''<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-real_time_process_output"><strong>real_time_process_output</strong></a>(*args, input: bytes = b'', timeout: int = 0, **kwargs) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;lines&nbsp;of&nbsp;process&nbsp;in&nbsp;real&nbsp;time.<br>
+&nbsp;<br>
+args&nbsp;and&nbsp;kwargs&nbsp;are&nbsp;sent&nbsp;to&nbsp;subprocess.Popen.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['real_time_process_output']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

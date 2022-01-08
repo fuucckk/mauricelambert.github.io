@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module DictObject</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>DictObject</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="DictObject.py.py">DictObject.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;<a href="#DictObject">DictObject</a>({"_1":&nbsp;1})<br>
+&gt;&gt;&gt;&nbsp;d._1<br>
+1<br>
+&gt;&gt;&gt;&nbsp;d["_1"]<br>
+1<br>
+&gt;&gt;&gt;&nbsp;d.get("_1")<br>
+1<br>
+&gt;&gt;&gt;&nbsp;d.get("_2")<br>
+&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;<a href="#DictObject">DictObject</a>({"-1":&nbsp;1})<br>
+&gt;&gt;&gt;&nbsp;d["_1"]<br>
+1<br>
+&gt;&gt;&gt;&nbsp;d["_2"]&nbsp;=&nbsp;2<br>
+&gt;&gt;&gt;&nbsp;d["_2"]<br>
+2<br>
+&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;<a href="#JsonDeserializer">JsonDeserializer</a>('{"-1":&nbsp;1}')<br>
+&gt;&gt;&gt;&nbsp;d._1<br>
+1<br>
+&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;<a href="#JsonDeserializer">JsonDeserializer</a>('{"-1":&nbsp;{"-1":&nbsp;1}}')<br>
+&gt;&gt;&gt;&nbsp;d._1._1<br>
+1<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;StringIO<br>
+&gt;&gt;&gt;&nbsp;csv&nbsp;=&nbsp;<a href="#CsvDeserializer">CsvDeserializer</a>(StringIO("-1,-2\n1,2\n3,4"))<br>
+&gt;&gt;&gt;&nbsp;[(d._1,&nbsp;d._2)&nbsp;for&nbsp;d&nbsp;in&nbsp;csv]<br>
+[('1',&nbsp;'2'),&nbsp;('3',&nbsp;'4')]<br>
+&gt;&gt;&gt;&nbsp;csv&nbsp;=&nbsp;<a href="#CsvDeserializer">CsvDeserializer</a>(StringIO("-1,-2\n1,2\n3,4"))<br>
+&gt;&gt;&gt;&nbsp;[d&nbsp;for&nbsp;d&nbsp;in&nbsp;csv]<br>
+[&lt;<a href="#DictObject">DictObject</a>.<a href="#DictObject">DictObject</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;at&nbsp;...&gt;,&nbsp;&lt;<a href="#DictObject">DictObject</a>.<a href="#DictObject">DictObject</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;at&nbsp;...&gt;]<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="DictObject.html#CsvDeserializer">CsvDeserializer</a>
+</font></dt><dt><font face="helvetica, arial"><a href="DictObject.html#DictObject">DictObject</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="DictObject.html#JsonDeserializer">JsonDeserializer</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CsvDeserializer">class <strong>CsvDeserializer</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CsvDeserializer">CsvDeserializer</a>(csv:&nbsp;_io.TextIOWrapper,&nbsp;*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+DictObjects&nbsp;from&nbsp;CSV.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="CsvDeserializer-__init__"><strong>__init__</strong></a>(self, csv: _io.TextIOWrapper, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="CsvDeserializer-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DictObject">class <strong>DictObject</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DictObject">DictObject</a>(data:&nbsp;dict)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;create&nbsp;<a href="builtins.html#object">object</a>&nbsp;and&nbsp;sub-<a href="builtins.html#object">object</a>&nbsp;from&nbsp;Json&nbsp;Structure.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DictObject-__getitem__"><strong>__getitem__</strong></a>(self, item: str) -&gt; Any</dt></dl>
+
+<dl><dt><a name="DictObject-__init__"><strong>__init__</strong></a>(self, data: dict)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="DictObject-__setitem__"><strong>__setitem__</strong></a>(self, item: str, value: Any) -&gt; None</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="JsonDeserializer">class <strong>JsonDeserializer</strong></a>(<a href="DictObject.html#DictObject">DictObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#JsonDeserializer">JsonDeserializer</a>(json:&nbsp;Union[str,&nbsp;bytes,&nbsp;_io.TextIOWrapper],&nbsp;*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+<a href="#DictObject">DictObject</a>&nbsp;for&nbsp;Json.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="DictObject.html#JsonDeserializer">JsonDeserializer</a></dd>
+<dd><a href="DictObject.html#DictObject">DictObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="JsonDeserializer-__init__"><strong>__init__</strong></a>(self, json: Union[str, bytes, _io.TextIOWrapper], *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="DictObject.html#DictObject">DictObject</a>:<br>
+<dl><dt><a name="JsonDeserializer-__getitem__"><strong>__getitem__</strong></a>(self, item: str) -&gt; Any</dt></dl>
+
+<dl><dt><a name="JsonDeserializer-__setitem__"><strong>__setitem__</strong></a>(self, item: str, value: Any) -&gt; None</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="DictObject.html#DictObject">DictObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['DictObject', 'JsonDeserializer', 'CsvDeserializer']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
