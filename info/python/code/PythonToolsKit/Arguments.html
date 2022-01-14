@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Arguments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Arguments</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Arguments.py.py">Arguments.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Arguments&nbsp;import&nbsp;*<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#ArgumentParser">ArgumentParser</a>()<br>
+&gt;&gt;&gt;&nbsp;a.add_password()<br>
+(&lt;argparse._MutuallyExclusiveGroup&nbsp;object&nbsp;at&nbsp;0x00000204D515EA00&gt;,&nbsp;_StoreAction(option_strings=['-p',&nbsp;'--password'],&nbsp;dest='password',&nbsp;nargs=None,&nbsp;const=None,&nbsp;default=None,&nbsp;type=None,&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None),&nbsp;_StoreAction(option_strings=['-P',&nbsp;'--password-prompt'],&nbsp;dest='password_prompt',&nbsp;nargs=None,&nbsp;const=None,&nbsp;default=None,&nbsp;type=None,&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None))<br>
+&gt;&gt;&gt;&nbsp;a.add_input_file("-i")<br>
+_StoreAction(option_strings=['-i'],&nbsp;dest='i',&nbsp;nargs='?',&nbsp;const=&lt;_io.TextIOWrapper&nbsp;name='&lt;stdin&gt;'&nbsp;mode='r'&nbsp;encoding='utf-8'&gt;,&nbsp;default=None,&nbsp;type=FileType('r'),&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None)<br>
+&gt;&gt;&gt;&nbsp;a.add_output_file("-o")<br>
+_StoreAction(option_strings=['-o'],&nbsp;dest='o',&nbsp;nargs='?',&nbsp;const=None,&nbsp;default=&lt;_io.TextIOWrapper&nbsp;name='&lt;stdout&gt;'&nbsp;mode='w'&nbsp;encoding='utf-8'&gt;,&nbsp;type=FileType('w'),&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None)<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#ArgumentParser">ArgumentParser</a>(description="description")<br>
+&gt;&gt;&gt;&nbsp;a.add_password(password_args=["-a",&nbsp;"--api-key"],&nbsp;prompt_args=["-A",&nbsp;"--api-key-prompt"],&nbsp;prompt_function=input,&nbsp;prompt_function_args="API&nbsp;Key:",&nbsp;password_kwargs={"help":&nbsp;"Help&nbsp;message"},&nbsp;prompt_kwargs={"help",&nbsp;"Help&nbsp;message"},&nbsp;mutually_group_kwargs={"required",&nbsp;True})<br>
+(&lt;argparse._MutuallyExclusiveGroup&nbsp;object&nbsp;at&nbsp;0x000001EC567EF730&gt;,&nbsp;_StoreAction(option_strings=['-a',&nbsp;'--api-key'],&nbsp;dest='api_key',&nbsp;nargs=None,&nbsp;const=None,&nbsp;default=None,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Help&nbsp;message',&nbsp;metavar=None),&nbsp;_StoreAction(option_strings=['-A',&nbsp;'--api-key-prompt'],&nbsp;dest='api_key_prompt',&nbsp;nargs=None,&nbsp;const=None,&nbsp;default=None,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Help&nbsp;message',&nbsp;metavar=None))<br>
+&gt;&gt;&gt;&nbsp;a.add_input_file("-i",&nbsp;"--input",&nbsp;file_args=["rb"],&nbsp;file_kwargs={"encoding":&nbsp;None},&nbsp;help="Help&nbsp;message")<br>
+_StoreAction(option_strings=['-i',&nbsp;'--input'],&nbsp;dest='input',&nbsp;nargs='?',&nbsp;const=&lt;_io.BufferedReader&nbsp;name='&lt;stdin&gt;'&gt;,&nbsp;default=None,&nbsp;type=FileType('rb'),&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None)<br>
+&gt;&gt;&gt;&nbsp;a.add_output_file("-o",&nbsp;"--output",&nbsp;file_args=["wb"],&nbsp;file_kwargs={"encoding":&nbsp;None},&nbsp;help="Help&nbsp;message")<br>
+_StoreAction(option_strings=['-o',&nbsp;'--output'],&nbsp;dest='output',&nbsp;nargs='?',&nbsp;const=None,&nbsp;default=&lt;_io.BufferedWriter&nbsp;name='&lt;stdout&gt;'&gt;,&nbsp;type=FileType('wb'),&nbsp;choices=None,&nbsp;help='Help&nbsp;message',&nbsp;metavar=None)<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>(<a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>, <a href="argparse.html#_ActionsContainer">argparse._ActionsContainer</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Arguments.html#ArgumentParser">ArgumentParser</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ArgumentParser">class <strong>ArgumentParser</strong></a>(<a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ArgumentParser">ArgumentParser</a>(prog=None,&nbsp;usage=None,&nbsp;description=None,&nbsp;epilog=None,&nbsp;parents=[],&nbsp;formatter_class=&amp;lt;class&nbsp;'argparse.HelpFormatter'&amp;gt;,&nbsp;prefix_chars='-',&nbsp;fromfile_prefix_chars=None,&nbsp;argument_default=None,&nbsp;conflict_handler='error',&nbsp;add_help=True,&nbsp;allow_abbrev=True,&nbsp;exit_on_error=True)<br>
+&nbsp;<br>
+argparse.<a href="#ArgumentParser">ArgumentParser</a>&nbsp;+&nbsp;preconfigured&nbsp;and&nbsp;commons&nbsp;arguments.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Arguments.html#ArgumentParser">ArgumentParser</a></dd>
+<dd><a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="argparse.html#_ActionsContainer">argparse._ActionsContainer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ArgumentParser-add_input_file"><strong>add_input_file</strong></a>(self, *args, file_args: List[Any] = [], file_kwargs: Dict[str, Any] = {}, **kwargs) -&gt; argparse._StoreAction</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;input&nbsp;file&nbsp;argument.<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;if&nbsp;not&nbsp;present&nbsp;in&nbsp;the&nbsp;command&nbsp;line<br>
+the&nbsp;value&nbsp;is&nbsp;None.&nbsp;If&nbsp;is&nbsp;present&nbsp;in&nbsp;the&nbsp;command&nbsp;line<br>
+but&nbsp;no&nbsp;value&nbsp;follow&nbsp;use&nbsp;the&nbsp;stdin.&nbsp;If&nbsp;present&nbsp;with&nbsp;a<br>
+value,&nbsp;the&nbsp;<a href="#ArgumentParser">ArgumentParser</a>&nbsp;will&nbsp;try&nbsp;to&nbsp;open&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+The&nbsp;function&nbsp;accepts&nbsp;the&nbsp;binary&nbsp;mode&nbsp;("rb").</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-add_output_file"><strong>add_output_file</strong></a>(self, *args, file_args: List[Any] = ['w'], file_kwargs: Dict[str, Any] = {}, **kwargs) -&gt; argparse._StoreAction</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;output&nbsp;file&nbsp;argument.<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;if&nbsp;not&nbsp;present&nbsp;in&nbsp;the&nbsp;command&nbsp;line<br>
+the&nbsp;value&nbsp;is&nbsp;stdout.&nbsp;If&nbsp;is&nbsp;present&nbsp;in&nbsp;the&nbsp;command&nbsp;line<br>
+but&nbsp;no&nbsp;value&nbsp;follow&nbsp;use&nbsp;the&nbsp;stdout.&nbsp;If&nbsp;present&nbsp;with&nbsp;a<br>
+value,&nbsp;the&nbsp;<a href="#ArgumentParser">ArgumentParser</a>&nbsp;will&nbsp;try&nbsp;to&nbsp;open&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+The&nbsp;function&nbsp;accepts&nbsp;the&nbsp;binary&nbsp;mode&nbsp;("wb").</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-add_password"><strong>add_password</strong></a>(self, password_args: List[Any] = ['-p', '--password'], prompt_args: List[Any] = ['-P', '--password-prompt'], prompt_function: collections.abc.Callable = &lt;function win_getpass at 0x000001E2B3944DC0&gt;, prompt_function_args: List[Any] = [], prompt_function_kwargs: List[Any] = {}, password_kwargs: Dict[str, Any] = {}, prompt_kwargs: Dict[str, Any] = {}, mutually_group_kwargs: Dict[str, Any] = {}) -&gt; Tuple[argparse._MutuallyExclusiveGroup, argparse._StoreAction, argparse._StoreAction]</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;password&nbsp;argument&nbsp;and&nbsp;password&nbsp;prompt<br>
+arguments.</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-parse_args"><strong>parse_args</strong></a>(self, *args, **kwargs) -&gt; argparse.Namespace</dt><dd><tt>This&nbsp;function&nbsp;parse&nbsp;command&nbsp;line&nbsp;arguments.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>:<br>
+<dl><dt><a name="ArgumentParser-__init__"><strong>__init__</strong></a>(self, prog=None, usage=None, description=None, epilog=None, parents=[], formatter_class=&lt;class 'argparse.HelpFormatter'&gt;, prefix_chars='-', fromfile_prefix_chars=None, argument_default=None, conflict_handler='error', add_help=True, allow_abbrev=True, exit_on_error=True)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-add_subparsers"><strong>add_subparsers</strong></a>(self, **kwargs)</dt><dd><tt>#&nbsp;==================================<br>
+#&nbsp;Optional/Positional&nbsp;adding&nbsp;methods<br>
+#&nbsp;==================================</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-convert_arg_line_to_args"><strong>convert_arg_line_to_args</strong></a>(self, arg_line)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-error"><strong>error</strong></a>(self, message)</dt><dd><tt><a href="#ArgumentParser-error">error</a>(message:&nbsp;string)<br>
+&nbsp;<br>
+Prints&nbsp;a&nbsp;usage&nbsp;message&nbsp;incorporating&nbsp;the&nbsp;message&nbsp;to&nbsp;stderr&nbsp;and<br>
+exits.<br>
+&nbsp;<br>
+If&nbsp;you&nbsp;override&nbsp;this&nbsp;in&nbsp;a&nbsp;subclass,&nbsp;it&nbsp;should&nbsp;not&nbsp;return&nbsp;--&nbsp;it<br>
+should&nbsp;either&nbsp;exit&nbsp;or&nbsp;raise&nbsp;an&nbsp;exception.</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-exit"><strong>exit</strong></a>(self, status=0, message=None)</dt><dd><tt>#&nbsp;===============<br>
+#&nbsp;Exiting&nbsp;methods<br>
+#&nbsp;===============</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-format_help"><strong>format_help</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-format_usage"><strong>format_usage</strong></a>(self)</dt><dd><tt>#&nbsp;=======================<br>
+#&nbsp;Help-formatting&nbsp;methods<br>
+#&nbsp;=======================</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-parse_intermixed_args"><strong>parse_intermixed_args</strong></a>(self, args=None, namespace=None)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-parse_known_args"><strong>parse_known_args</strong></a>(self, args=None, namespace=None)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-parse_known_intermixed_args"><strong>parse_known_intermixed_args</strong></a>(self, args=None, namespace=None)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-print_help"><strong>print_help</strong></a>(self, file=None)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-print_usage"><strong>print_usage</strong></a>(self, file=None)</dt><dd><tt>#&nbsp;=====================<br>
+#&nbsp;Help-printing&nbsp;methods<br>
+#&nbsp;=====================</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="ArgumentParser-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="argparse.html#_ActionsContainer">argparse._ActionsContainer</a>:<br>
+<dl><dt><a name="ArgumentParser-add_argument"><strong>add_argument</strong></a>(self, *args, **kwargs)</dt><dd><tt><a href="#ArgumentParser-add_argument">add_argument</a>(dest,&nbsp;...,&nbsp;name=value,&nbsp;...)<br>
+<a href="#ArgumentParser-add_argument">add_argument</a>(option_string,&nbsp;option_string,&nbsp;...,&nbsp;name=value,&nbsp;...)</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-add_argument_group"><strong>add_argument_group</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-add_mutually_exclusive_group"><strong>add_mutually_exclusive_group</strong></a>(self, **kwargs)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-get_default"><strong>get_default</strong></a>(self, dest)</dt></dl>
+
+<dl><dt><a name="ArgumentParser-register"><strong>register</strong></a>(self, registry_name, value, object)</dt><dd><tt>#&nbsp;====================<br>
+#&nbsp;Registration&nbsp;methods<br>
+#&nbsp;====================</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-set_defaults"><strong>set_defaults</strong></a>(self, **kwargs)</dt><dd><tt>#&nbsp;==================================<br>
+#&nbsp;Namespace&nbsp;default&nbsp;accessor&nbsp;methods<br>
+#&nbsp;==================================</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['ArgumentParser']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

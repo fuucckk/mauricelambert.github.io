@@ -6,32 +6,40 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PrintF</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PrintF</strong></big></big> (version 0.0.3)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="PrintF.py.py">PrintF.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;from&nbsp;PrintF&nbsp;import&nbsp;printf<br>
-&gt;&gt;&gt;&nbsp;import&nbsp;PrintF<br>
-&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message")<br>
+&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>('My&nbsp;message')<br>
 [+]&nbsp;My&nbsp;message<br>
 &gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;state="NOK")<br>
 [-]&nbsp;My&nbsp;message<br>
 &gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;colored=False,&nbsp;state="ERROR")<br>
-[+]&nbsp;My&nbsp;message<br>
+[!]&nbsp;My&nbsp;message<br>
 &gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;end="\n\n",&nbsp;state="INFO")<br>
 [*]&nbsp;My&nbsp;message<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;start="\n",&nbsp;state="TODO")<br>
 &nbsp;<br>
 [#]&nbsp;My&nbsp;message<br>
-&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=20,&nbsp;state="ASK")&nbsp;or&nbsp;print()<br>
+&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=20,&nbsp;state="ASK")&nbsp;or&nbsp;print("\n")<br>
 [?]&nbsp;My&nbsp;message<br>
-[*]&nbsp;20%<br>
-&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=20)&nbsp;or&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=55)&nbsp;or&nbsp;print()<br>
+[?]&nbsp;20%&nbsp;|████&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=20)&nbsp;or&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=55)&nbsp;or&nbsp;print("\n")<br>
+[+]&nbsp;My&nbsp;message<br>
+[+]&nbsp;55%&nbsp;|███████████&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=20)&nbsp;or&nbsp;print()&nbsp;or&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;pourcent=55)&nbsp;or&nbsp;print("\n")<br>
 [+]&nbsp;My&nbsp;message<br>
 [+]&nbsp;My&nbsp;message<br>
-[*]&nbsp;55%<br>
+[+]&nbsp;55%&nbsp;|███████████&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;add_progressbar=False,&nbsp;pourcent=55)&nbsp;or&nbsp;print("\n")<br>
+[+]&nbsp;My&nbsp;message<br>
+[+]&nbsp;55%<br>
+&gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;message",&nbsp;oneline_progress=True,&nbsp;pourcent=55)&nbsp;or&nbsp;print()<br>
+[+]&nbsp;My&nbsp;message&nbsp;55%&nbsp;|███████████&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;PrintF<br>
 &gt;&gt;&gt;&nbsp;PrintF.STATES["TEST"]&nbsp;=&nbsp;("[T]",&nbsp;"\x1b[37m")<br>
 &gt;&gt;&gt;&nbsp;<a href="#-printf">printf</a>("My&nbsp;OK&nbsp;message",&nbsp;state="TEST")<br>
 [T]&nbsp;My&nbsp;OK&nbsp;message<br>
@@ -43,7 +51,7 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-printf"><strong>printf</strong></a>(string: str, state: str = 'OK', colored: bool = True, pourcent: Union[int, str] = None, start: str = '', **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;colored&nbsp;information.</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-printf"><strong>printf</strong></a>(string: str, state: str = 'OK', colored: bool = True, pourcent: Union[int, str] = None, start: str = '', end: str = '\n', add_progressbar: bool = True, oneline_progress: bool = False, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;colored&nbsp;information.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -52,7 +60,7 @@
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>COLOR</strong> = True<br>
-<strong>STATES</strong> = {'ASK': ('[?]', '<font color="#c040c0">\x1b</font>[36m'), 'ERROR': ('[+]', '<font color="#c040c0">\x1b</font>[31m'), 'INFO': ('[*]', '<font color="#c040c0">\x1b</font>[34m'), 'NOK': ('[-]', '<font color="#c040c0">\x1b</font>[33m'), 'OK': ('[+]', '<font color="#c040c0">\x1b</font>[32m'), 'TODO': ('[#]', '<font color="#c040c0">\x1b</font>[35m')}<br>
+<strong>STATES</strong> = {'ASK': ('[?]', '<font color="#c040c0">\x1b</font>[36m'), 'ERROR': ('[!]', '<font color="#c040c0">\x1b</font>[31m'), 'INFO': ('[*]', '<font color="#c040c0">\x1b</font>[34m'), 'NOK': ('[-]', '<font color="#c040c0">\x1b</font>[33m'), 'OK': ('[+]', '<font color="#c040c0">\x1b</font>[32m'), 'TODO': ('[#]', '<font color="#c040c0">\x1b</font>[35m')}<br>
 <strong>__all__</strong> = ['printf', 'STATES', 'COLOR']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
