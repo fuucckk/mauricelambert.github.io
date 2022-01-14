@@ -65,7 +65,8 @@
  - [PythonToolsKit.DictObject](https://mauricelambert.github.io/info/python/code/PythonToolsKit/DictObject.html)
  - [PythonToolsKit.Report](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Report.html)
  - [PythonToolsKit.urlopen](https://mauricelambert.github.io/info/python/code/PythonToolsKit/urlopen.html)
- - [PythonToolsKit.cleandict](https://mauricelambert.github.io/info/python/code/PythonToolsKit/cleandict.html)
+ - [PythonToolsKit.Dict](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Dict.html)
+ - [PythonToolsKit.Arguments](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Arguments.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
