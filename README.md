@@ -67,6 +67,9 @@
  - [PythonToolsKit.urlopen](https://mauricelambert.github.io/info/python/code/PythonToolsKit/urlopen.html)
  - [PythonToolsKit.Dict](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Dict.html)
  - [PythonToolsKit.Arguments](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Arguments.html)
+ - [PythonToolsKit.Function](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Function.html)
+ - [PythonToolsKit.List](https://mauricelambert.github.io/info/python/code/PythonToolsKit/List.html)
+ - [PythonToolsKit.Tuple](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Tuple.html)
 
 ## Executables
  - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
