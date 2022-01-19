@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module SynFlood</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>SynFlood</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="synflood.py">synflood.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;a&nbsp;SYN&nbsp;flood&nbsp;attack&nbsp;(DOS&nbsp;attack:&nbsp;Denial&nbsp;Of&nbsp;Service).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;SynFlood&nbsp;import&nbsp;synflood,&nbsp;conf_iface<br>
+&gt;&gt;&gt;&nbsp;<a href="#-synflood">synflood</a>("8.8.8.8",&nbsp;80,&nbsp;"0.0.0.0",&nbsp;45586)<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{SynFlood&nbsp;-&nbsp;SynFlood.py:158}&nbsp;Start&nbsp;the&nbsp;SynFlood&nbsp;attack...<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+KeyboardInterrupt<br>
+&gt;&gt;&gt;&nbsp;<a href="#-synflood">synflood</a>("8.8.8.8",&nbsp;80,&nbsp;"0.0.0.0",&nbsp;45586,&nbsp;b"abc",&nbsp;conf_iface)<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{SynFlood&nbsp;-&nbsp;SynFlood.py:158}&nbsp;Start&nbsp;the&nbsp;SynFlood&nbsp;attack...<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+KeyboardInterrupt<br>
+&nbsp;<br>
+~#&nbsp;SynFlood&nbsp;8.8.8.8<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:146}&nbsp;Start&nbsp;the&nbsp;SynFlood&nbsp;attack...<br>
+[2016-06-22&nbsp;12:35:25]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:197}&nbsp;KeyboardInterrupt&nbsp;is&nbsp;raised,&nbsp;stop&nbsp;the&nbsp;SynFlood&nbsp;attack...<br>
+[2016-06-22&nbsp;12:35:25]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:199}&nbsp;End&nbsp;of&nbsp;the&nbsp;SynFlood&nbsp;attack.<br>
+~#&nbsp;SynFlood&nbsp;-v&nbsp;-p&nbsp;80&nbsp;-s&nbsp;0.0.0.0&nbsp;-P&nbsp;45586&nbsp;-i&nbsp;172.16.0.&nbsp;-d&nbsp;abc&nbsp;8.8.8.8<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:161}&nbsp;Logging&nbsp;is&nbsp;configured.<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:171}&nbsp;Interface&nbsp;argument&nbsp;match&nbsp;with&nbsp;(172.16.0.10&nbsp;00:0f:ae:db:52:5c&nbsp;WIFI)<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:178}&nbsp;Network&nbsp;interface&nbsp;is&nbsp;configured&nbsp;(IP:&nbsp;172.16.0.10,&nbsp;MAC:&nbsp;00:0f:ae:db:52:5c&nbsp;and&nbsp;name:&nbsp;WIFI)<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:126}&nbsp;Build&nbsp;the&nbsp;packet...<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:129}&nbsp;Build&nbsp;send&nbsp;function...<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:138}&nbsp;Add&nbsp;raw&nbsp;data...<br>
+[2016-06-22&nbsp;12:35:05]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:146}&nbsp;Start&nbsp;the&nbsp;SynFlood&nbsp;attack...<br>
+[2016-06-22&nbsp;12:35:25]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:197}&nbsp;KeyboardInterrupt&nbsp;is&nbsp;raised,&nbsp;stop&nbsp;the&nbsp;SynFlood&nbsp;attack...<br>
+[2016-06-22&nbsp;12:35:25]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;SynFlood.py:199}&nbsp;End&nbsp;of&nbsp;the&nbsp;SynFlood&nbsp;attack.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;executes&nbsp;this&nbsp;script&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
+ <dl><dt><a name="-synflood"><strong>synflood</strong></a>(target: str, dport: int, source: str, sport: int, data: bytes = None, iface: scapy.interfaces.NetworkInterface = &lt;NetworkInterface&gt;) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;the&nbsp;SynFlood&nbsp;attack.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['main', 'synflood']<br>
+<strong>__annotations__</strong> = {'IS_LINUX': &lt;class 'bool'&gt;, 'conf_iface': &lt;class 'scapy.interfaces.NetworkInterface'&gt;, 'logger': &lt;class 'logging.Logger'&gt;, 'logger_critical': &lt;class 'collections.abc.Callable'&gt;, 'logger_debug': &lt;class 'collections.abc.Callable'&gt;, 'logger_error': &lt;class 'collections.abc.Callable'&gt;, 'logger_info': &lt;class 'collections.abc.Callable'&gt;, 'logger_warning': &lt;class 'collections.abc.Callable'&gt;}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>SynFlood  Copyright (C) 2021, 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements a SYN flood attack (DOS attack: Denial Of Service).<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/SynFlood'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
