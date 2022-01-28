@@ -1,0 +1,221 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#TRAP">TRAP</a>
+    <ul>
+      <li><a href="#NAME">NAME</a></li>
+      <li><a href="#VERSION">VERSION</a></li>
+      <li><a href="#SYNOPSIS">SYNOPSIS</a>
+        <ul>
+          <li><a href="#Perl">Perl</a></li>
+          <li><a href="#Command-line">Command line</a></li>
+        </ul>
+      </li>
+      <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+      <li><a href="#REQUIREMENTS">REQUIREMENTS</a></li>
+      <li><a href="#INSTALLATION">INSTALLATION</a></li>
+      <li><a href="#METHODS">METHODS</a>
+        <ul>
+          <li>
+            <ul>
+              <li><a href="#analysis">analysis</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#OSNAMES">OSNAMES</a></li>
+      <li><a href="#SCRIPT-CATEGORIES">SCRIPT CATEGORIES</a></li>
+      <li><a href="#DOCUMENTATION">DOCUMENTATION</a></li>
+      <li><a href="#SUPPORT">SUPPORT</a>
+        <ul>
+          <li>
+            <ul>
+              <li><a href="#Bugs-Feature-Requests">Bugs / Feature Requests</a></li>
+              <li><a href="#Source-Code">Source Code</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#AUTHORS">AUTHORS</a></li>
+      <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="TRAP">TRAP</h1>
+
+<h2 id="NAME">NAME</h2>
+
+<p>TRAP - Tool for Regex Analysis with Perl</p>
+
+<h2 id="VERSION">VERSION</h2>
+
+<p>version 0.0.1</p>
+
+<h2 id="SYNOPSIS">SYNOPSIS</h2>
+
+<h3 id="Perl">Perl</h3>
+
+<pre><code>    use TRAP;
+    open my $report, &quot;&gt;&gt;&quot;, &quot;report.json&quot;;
+    my $csv = Text::CSV-&gt;new ( { binary =&gt; 1, sep_char =&gt; &quot;,&quot; } );
+    my %files = (CSV =&gt; $csv, report =&gt; $report);
+    analysis &quot;myfile.bak&quot;, \%files;</code></pre>
+
+<h3 id="Command-line">Command line</h3>
+
+<pre><code>    ~# perl TRAP.pm -h
+    ~# perl TRAP.pm --help
+    ~# perl TRAP.pm -t
+    ~# ./TRAP.pm --test --debug --no-color
+    ~# perl TRAP.pm -c -d -f *.txt,*.bak,*.bin
+    ~# ./TRAP.pm --files *.txt,*.bak,*.bin</code></pre>
+
+<h2 id="DESCRIPTION">DESCRIPTION</h2>
+
+<p>A forensic tool to extract some informations from files.</p>
+
+<p>I created this tool following an investigation of an infected backup file. This file was only part of a backup and it was necessary to identify the server to which this piece of backup corresponded. I finally found the server by analyzing the file, strings after strings. Some strings allowed the absolute identification of the server. I chose to create this tool in order to avoid long search to other people in a similar case.</p>
+
+<p>It was also important to find out why the file was detected as infected. This tool will allow you to identify certain payloads or abnormal elements on a server.</p>
+
+<p>I make this tool in perl because it is pre-integrated on all Linux systems and it is particularly optimized for regular expression.</p>
+
+<h2 id="REQUIREMENTS">REQUIREMENTS</h2>
+
+<ul>
+
+<li><p><code>perl</code> - Perl (v5.26)</p>
+
+</li>
+<li><p><code>perl standard library</code> - Perl Standard Library</p>
+
+</li>
+</ul>
+
+<p>Modules used:</p>
+
+<ul>
+
+<li><p><code>strict</code> - strict</p>
+
+</li>
+<li><p><code>JSON::PP</code> - JSON::PP</p>
+
+</li>
+<li><p><code>Text::CSV</code> - Text::CSV</p>
+
+</li>
+<li><p><code>Pod::Usage</code> - Pod::Usage</p>
+
+</li>
+<li><p><code>Time::Piece</code> - Time::Piece</p>
+
+</li>
+<li><p><code>Getopt::Long</code> - Getopt::Long</p>
+
+</li>
+<li><p><code>File::Basename</code> - File::Basename</p>
+
+</li>
+<li><p><code>Term::ANSIColor</code> - Term::ANSIColor</p>
+
+</li>
+<li><p><code>File::Map</code> - File::Map</p>
+
+</li>
+</ul>
+
+<h2 id="INSTALLATION">INSTALLATION</h2>
+
+<pre><code>    ~# git clone https://github.com/MauriceLambert/TRAP.git</code></pre>
+
+<h2 id="METHODS">METHODS</h2>
+
+<h4 id="analysis">analysis</h4>
+
+<pre><code>    use TRAP;
+    open my $report, &quot;&gt;&gt;&quot;, &quot;report.json&quot;;
+    my $csv = Text::CSV-&gt;new ( { binary =&gt; 1, sep_char =&gt; &quot;,&quot; } );
+    my %files = (CSV =&gt; $csv, report =&gt; $report);
+    analysis &quot;myfile.bak&quot;, \%files;</code></pre>
+
+<p>This method does not return any values.</p>
+
+<ul>
+
+<li><p><code>filename</code> - The path and name of the file to be analysed.</p>
+
+</li>
+</ul>
+
+<p>This method analyses a file and saves matches found in CSV files.</p>
+
+<h2 id="OSNAMES">OSNAMES</h2>
+
+<p>any</p>
+
+<h2 id="SCRIPT-CATEGORIES">SCRIPT CATEGORIES</h2>
+
+<p>Forensic/Investigation</p>
+
+<h2 id="DOCUMENTATION">DOCUMENTATION</h2>
+
+<ul>
+
+<li><p><a href="https://mauricelambert.github.io/info/perl/code/TRAP.html">https://mauricelambert.github.io/info/perl/code/TRAP.html</a></p>
+
+</li>
+</ul>
+
+<h2 id="SUPPORT">SUPPORT</h2>
+
+<h4 id="Bugs-Feature-Requests">Bugs / Feature Requests</h4>
+
+<p>Please report any bugs or feature requests through the issue tracker at <a href="https://github.com/MauriceLambert/TRAP/issues">https://github.com/MauriceLambert/TRAP/issues</a>. You will be notified automatically of any progress on your issue.</p>
+
+<h4 id="Source-Code">Source Code</h4>
+
+<p>This is open source software. The code repository is available for public review and contribution under the terms of the license.</p>
+
+<p><a href="https://github.com/MauriceLambert/TRAP">https://github.com/MauriceLambert/TRAP</a></p>
+
+<pre><code>  git clone https://github.com/MauriceLambert/TRAP.git</code></pre>
+
+<h2 id="AUTHORS">AUTHORS</h2>
+
+<ul>
+
+<li><p>Maurice LAMBERT &lt;mauricelambert434@gmail.com&gt;</p>
+
+</li>
+</ul>
+
+<h2 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h2>
+
+<p>TRAP Copyright (C) 2022 Maurice Lambert This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.</p>
+
+<ul>
+
+<li><p><a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a> - Licensed under the GPL, version 3. (GPL-3.0 License)</p>
+
+</li>
+</ul>
+
+
+</body>
+
+</html>
+
+
