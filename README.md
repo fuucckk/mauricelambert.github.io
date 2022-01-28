@@ -1,12 +1,10 @@
 # Projects Files
 
-## Documentation
+## Python
+
+### Security tools
+
  - [PickleExploit Documentation](https://mauricelambert.github.io/info/python/security/PickleExploit.html)
- - [CustomShell Documentation](https://mauricelambert.github.io/info/python/code/CustomShell.html)
- - [PacketAnalysis.PacketPrinter Documentation](https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketPrinter.html)
- - [PacketAnalysis.Sniffer Documentation](https://mauricelambert.github.io/info/python/security/PacketAnalysis/Sniffer.html)
- - [ArpSpoof Documentation](https://mauricelambert.github.io/info/python/security/ArpSpoof.html)
- - [NetbiosSpoof Documentation](https://mauricelambert.github.io/info/python/security/NetbiosSpoof.html)
  - [WebSiteCloner.HTTPLogger Documentation](https://mauricelambert.github.io/info/python/security/WebSiteCloner/HTTPLogger.html)
  - [WebSiteCloner.WebSiteCloner Documentation](https://mauricelambert.github.io/info/python/security/WebSiteCloner/WebSiteCloner.html)
  - [PyEmailTools.Email Documentation](https://mauricelambert.github.io/info/python/security/PyEmailTools/Email.html)
@@ -26,15 +24,57 @@
  - [SpyWare.WebcamLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/webcamSpy.conf)
  - [ChromePasswordsStealer Documentation](https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.html)
  - [FileAnalysis Documentation](https://mauricelambert.github.io/info/python/security/FileAnalysis.html)
- - [BinaryFileReader.HexaReader Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/HexaReader.html)
- - [BinaryFileReader.Strings Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/Strings.html)
- - [LatinUtilities Documentation](https://mauricelambert.github.io/info/python/security/LatinUtilities.html)
- - [WifiDeauth Documentation](https://mauricelambert.github.io/info/python/security/WifiDeauth.html)
  - [PyObfuscator Documentation](https://mauricelambert.github.io/info/python/security/PyObfuscator.html)
  - [PyWCGIshell Documentation](https://mauricelambert.github.io/info/python/security/PyWCGIshell.html)
  - [WordListGenerator Documentation](https://mauricelambert.github.io/info/python/security/WordListGenerator.html)
  - [SteganograPy Documentation](https://mauricelambert.github.io/info/python/security/SteganograPy.html)
- - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
+
+ - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
+ - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
+ - [RansomWare Executable](https://mauricelambert.github.io/info/python/security/RansomWare.pz)
+ - [SpyWare Executable](https://mauricelambert.github.io/info/python/security/SpyWare.pyz)
+ - [SpyWare.AudioLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/AudioLogger.pyz)
+ - [SpyWare.CopyLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/CopyLogger.pyz)
+ - [SpyWare.DomainsLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/DomainsLogger.pyz)
+ - [SpyWare.FilesLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.pyz)
+ - [SpyWare.KeyLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.pyz)
+ - [SpyWare.WebcamLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.pyz)
+ - [ChromePasswordsStealer Executable](https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.pyz)
+ - [FileAnalysis Executable](https://mauricelambert.github.io/info/python/security/FileAnalysis.pyz)
+ - [PyObfuscator Executable](https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz)
+ - [WordListGenerator Executable](https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz)
+ - [SteganograPy Executable](https://mauricelambert.github.io/info/python/security/SteganograPy.pyz)
+
+#### Network
+
+ - [PacketAnalysis.PacketPrinter Documentation](https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketPrinter.html)
+ - [PacketAnalysis.Sniffer Documentation](https://mauricelambert.github.io/info/python/security/PacketAnalysis/Sniffer.html)
+ - [ArpSpoof Documentation](https://mauricelambert.github.io/info/python/security/ArpSpoof.html)
+ - [NetbiosSpoof Documentation](https://mauricelambert.github.io/info/python/security/NetbiosSpoof.html)
+ - [WifiDeauth Documentation](https://mauricelambert.github.io/info/python/security/WifiDeauth.html)
+ - [PasswordsSniffer Documentation](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.html)
+ - [SynFlood Documentation](https://mauricelambert.github.io/info/python/security/SynFlood.html)
+
+ - [PacketAnalysis Executable](https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketAnalysis.pyz)
+ - [ArpSpoof Executable](https://mauricelambert.github.io/info/python/security/ArpSpoof.pyz)
+ - [NetbiosSpoof Executable](https://mauricelambert.github.io/info/python/security/NetbiosSpoof.pyz)
+ - [WifiDeauth Executable](https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz)
+ - [PasswordsSniffer Executable](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.pyz)
+ - [SynFlood Executable](https://mauricelambert.github.io/info/python/security/SynFlood.pyz)
+
+#### Crypto
+
+ - [RC6Encryption Documentation](https://mauricelambert.github.io/info/python/security/RC6Encryption.html)
+ - [RC4Encryption Documentation](https://mauricelambert.github.io/info/python/security/RC4Encryption.html)
+ - [CustomCrypto Documentation](https://mauricelambert.github.io/info/python/security/CustomCrypto.html)
+ - [ViginereBreaker Documentation](https://mauricelambert.github.io/info/python/security/ViginereBreaker.html)
+
+ - [RC6Encryption Executable](https://mauricelambert.github.io/info/python/security/RC6Encryption.pyz)
+ - [RC4Encryption Executable](https://mauricelambert.github.io/info/python/security/RC4Encryption.pyz)
+ - [ViginereBreaker Executable](https://mauricelambert.github.io/info/python/security/ViginereBreaker.pyz)
+
+### WebScripts
+
  - [WebScripts.__init__ Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/)
  - [WebScripts.WebScripts Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.html)
  - [WebScripts.Pages Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/Pages.html)
@@ -45,62 +85,51 @@
  - [Default upload manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html)
  - [Default request manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/requests_management.html)
  - [Default module errors for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/error_pages.html)
- - [WebScriptsClient](https://mauricelambert.github.io/info/python/code/WebScriptsClient.html)
- - [UpgradePipPackages](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
- - [PasswordsSniffer](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.html)
- - [PyProgressTerm](https://mauricelambert.github.io/info/python/code/PyProgressTerm.html)
- - [RC6Encryption](https://mauricelambert.github.io/info/python/security/RC6Encryption.html)
- - [RC4Encryption](https://mauricelambert.github.io/info/python/security/RC4Encryption.html)
- - [CustomCrypto](https://mauricelambert.github.io/info/python/security/CustomCrypto.html)
- - [ViginereBreaker](https://mauricelambert.github.io/info/python/security/ViginereBreaker.html)
- - [GSMEncoding](https://mauricelambert.github.io/info/python/code/GSMEncoding.html)
- - [PythonToolsKit.Timeout](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Timeout.html)
- - [PythonToolsKit.Terminal](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Terminal.html)
- - [PythonToolsKit.StringF](https://mauricelambert.github.io/info/python/code/PythonToolsKit/StringF.html)
- - [PythonToolsKit.PrintF](https://mauricelambert.github.io/info/python/code/PythonToolsKit/PrintF.html)
- - [PythonToolsKit.Process](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Process.html)
- - [PythonToolsKit.Logs](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Logs.html)
- - [PythonToolsKit.GetPass](https://mauricelambert.github.io/info/python/code/PythonToolsKit/GetPass.html)
- - [PythonToolsKit.Encodings](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Encodings.html)
- - [PythonToolsKit.DictObject](https://mauricelambert.github.io/info/python/code/PythonToolsKit/DictObject.html)
- - [PythonToolsKit.Report](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Report.html)
- - [PythonToolsKit.urlopen](https://mauricelambert.github.io/info/python/code/PythonToolsKit/urlopen.html)
- - [PythonToolsKit.Dict](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Dict.html)
- - [PythonToolsKit.Arguments](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Arguments.html)
- - [PythonToolsKit.Function](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Function.html)
- - [PythonToolsKit.List](https://mauricelambert.github.io/info/python/code/PythonToolsKit/List.html)
- - [PythonToolsKit.Tuple](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Tuple.html)
- - [SynFlood](https://mauricelambert.github.io/info/python/security/SynFlood.html)
+ - [WebScriptsClient Documentation](https://mauricelambert.github.io/info/python/code/WebScriptsClient.html)
 
-## Executables
- - [CustomShell](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
- - [PacketAnalysis](https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketAnalysis.pyz)
- - [ArpSpoof](https://mauricelambert.github.io/info/python/security/ArpSpoof.pyz)
- - [NetbiosSpoof](https://mauricelambert.github.io/info/python/security/NetbiosSpoof.pyz)
- - [PyEmailTools](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
- - [WebSiteCloner](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
- - [RansomWare](https://mauricelambert.github.io/info/python/security/RansomWare.pz)
- - [SpyWare](https://mauricelambert.github.io/info/python/security/SpyWare.pyz)
- - [SpyWare.AudioLogger](https://mauricelambert.github.io/info/python/security/SpyWare/AudioLogger.pyz)
- - [SpyWare.CopyLogger](https://mauricelambert.github.io/info/python/security/SpyWare/CopyLogger.pyz)
- - [SpyWare.DomainsLogger](https://mauricelambert.github.io/info/python/security/SpyWare/DomainsLogger.pyz)
- - [SpyWare.FilesLogger](https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.pyz)
- - [SpyWare.KeyLogger](https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.pyz)
- - [SpyWare.WebcamLogger](https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.pyz)
- - [ChromePasswordsStealer](https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.pyz)
- - [FileAnalysis](https://mauricelambert.github.io/info/python/security/FileAnalysis.pyz)
- - [BinaryFileReader](https://mauricelambert.github.io/info/python/code/BinaryFileReader.pyz)
- - [LatinUtilities](https://mauricelambert.github.io/info/python/security/LatinUtilities.pyz)
- - [WifiDeauth](https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz)
- - [PyObfuscator](https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz)
- - [WordListGenerator](https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz)
- - [SteganograPy](https://mauricelambert.github.io/info/python/security/SteganograPy.pyz)
- - [HttpClientMultipart](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz)
- - [UpgradePipPackages](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
- - [PasswordsSniffer](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.pyz)
- - [PyProgressTerm](https://mauricelambert.github.io/info/python/code/PyProgressTerm.pyz)
- - [RC6Encryption](https://mauricelambert.github.io/info/python/security/RC6Encryption.pyz)
- - [RC4Encryption](https://mauricelambert.github.io/info/python/security/RC4Encryption.pyz)
- - [ViginereBreaker](https://mauricelambert.github.io/info/python/security/ViginereBreaker.pyz)
- - [WebScriptsClient](https://mauricelambert.github.io/info/python/code/WebScriptsClient.pyz)
- - [SynFlood](https://mauricelambert.github.io/info/python/security/SynFlood.pyz)
+ - [WebScriptsClient Executable](https://mauricelambert.github.io/info/python/code/WebScriptsClient.pyz)
+
+### Dev tools
+
+ - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
+ - [LatinUtilities Documentation](https://mauricelambert.github.io/info/python/code/LatinUtilities.html)
+ - [BinaryFileReader.HexaReader Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/HexaReader.html)
+ - [BinaryFileReader.Strings Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/Strings.html)
+
+ - [BinaryFileReader Executable](https://mauricelambert.github.io/info/python/code/BinaryFileReader.pyz)
+ - [LatinUtilities Executable](https://mauricelambert.github.io/info/python/code/LatinUtilities.pyz)
+ - [HttpClientMultipart Executable](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz)
+
+#### Network
+
+ - [GSMEncoding Documentation](https://mauricelambert.github.io/info/python/code/GSMEncoding.html)
+
+#### Console && terminal tools
+
+ - [CustomShell Documentation](https://mauricelambert.github.io/info/python/code/CustomShell.html)
+ - [PyProgressTerm Documentation](https://mauricelambert.github.io/info/python/code/PyProgressTerm.html)
+
+ - [CustomShell Executable](https://mauricelambert.github.io/info/python/code/CustomShell.pyz)
+ - [PyProgressTerm Executable](https://mauricelambert.github.io/info/python/code/PyProgressTerm.pyz)
+
+#### Python dev tools
+
+ - [PythonToolsKit.Timeout Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Timeout.html)
+ - [PythonToolsKit.Terminal Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Terminal.html)
+ - [PythonToolsKit.StringF Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/StringF.html)
+ - [PythonToolsKit.PrintF Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/PrintF.html)
+ - [PythonToolsKit.Process Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Process.html)
+ - [PythonToolsKit.Logs Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Logs.html)
+ - [PythonToolsKit.GetPass Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/GetPass.html)
+ - [PythonToolsKit.Encodings Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Encodings.html)
+ - [PythonToolsKit.DictObject Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/DictObject.html)
+ - [PythonToolsKit.Report Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Report.html)
+ - [PythonToolsKit.urlopen Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/urlopen.html)
+ - [PythonToolsKit.Dict Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Dict.html)
+ - [PythonToolsKit.Arguments Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Arguments.html)
+ - [PythonToolsKit.Function Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Function.html)
+ - [PythonToolsKit.List Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/List.html)
+ - [PythonToolsKit.Tuple Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Tuple.html)
+ - [UpgradePipPackages Documentation](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
+
+ - [UpgradePipPackages Executable](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
