@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ArpSpoof</strong></big></big> (version 1.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ArpSpoof</strong></big></big> (version 1.1.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="arpspoof.py">arpspoof.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;an&nbsp;ARP&nbsp;Spoofer&nbsp;for&nbsp;MIM<br>
@@ -40,17 +40,6 @@
 [2021-12-01&nbsp;22:13:06]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:428}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#aa55cc">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="logging.html">logging</a><br>
-</td><td width="25%" valign=top><a href="scapy.html">scapy</a><br>
-</td><td width="25%" valign=top><a href="socket.html">socket</a><br>
-</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
-</td></tr></table></td></tr></table><p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
@@ -71,12 +60,12 @@
 <font color="#000000" face="helvetica, arial"><a name="SpooferARP">class <strong>SpooferARP</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#SpooferARP">SpooferARP</a>(gateway:&nbsp;str,&nbsp;ip_spoof:&nbsp;str,&nbsp;iface:&nbsp;scapy.interfaces.NetworkInterface&nbsp;=&nbsp;&amp;lt;NetworkInterface_Win&nbsp;Intel(R)&nbsp;Ethernet&nbsp;Connection&nbsp;(4)&nbsp;I219-V&nbsp;[UP+RUNNING+DISCONNECTED]&amp;gt;,&nbsp;semi:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;inter:&nbsp;float&nbsp;=&nbsp;0.5)<br>
+<td colspan=2><tt><a href="#SpooferARP">SpooferARP</a>(gateway:&nbsp;str,&nbsp;ip_spoof:&nbsp;str,&nbsp;iface:&nbsp;scapy.interfaces.NetworkInterface&nbsp;=&nbsp;&amp;lt;NetworkInterface_Win&nbsp;Intel(R)&nbsp;Dual&nbsp;Band&nbsp;Wireless-AC&nbsp;8265&nbsp;[UP+RUNNING+WIRELESS+OK]&amp;gt;,&nbsp;semi:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;inter:&nbsp;float&nbsp;=&nbsp;0.5)<br>
 &nbsp;<br>
 This&nbsp;class&nbsp;implements&nbsp;a&nbsp;arp&nbsp;spoofer.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="SpooferARP-__init__"><strong>__init__</strong></a>(self, gateway: str, ip_spoof: str, iface: scapy.interfaces.NetworkInterface = &lt;NetworkInterface_Win Intel(R) Ethernet Connection (4) I219-V [UP+RUNNING+DISCONNECTED]&gt;, semi: bool = False, inter: float = 0.5)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="SpooferARP-__init__"><strong>__init__</strong></a>(self, gateway: str, ip_spoof: str, iface: scapy.interfaces.NetworkInterface = &lt;NetworkInterface_Win Intel(R) Dual Band Wireless-AC 8265 [UP+RUNNING+WIRELESS+OK]&gt;, semi: bool = False, inter: float = 0.5)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <dl><dt><a name="SpooferARP-active_cache_poisonning"><strong>active_cache_poisonning</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;start&nbsp;active&nbsp;ARP&nbsp;cache&nbsp;poisonning&nbsp;attack.</tt></dd></dl>
 
@@ -106,7 +95,7 @@ Data descriptors defined here:<br>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['SpooferARP']<br>
-<strong>__annotations__</strong> = {'logger': &lt;class 'logging.Logger'&gt;}<br>
+<strong>__annotations__</strong> = {'logger': &lt;class 'logging.Logger'&gt;, 'logger_critical': &lt;class 'collections.abc.Callable'&gt;, 'logger_debug': &lt;class 'collections.abc.Callable'&gt;, 'logger_error': &lt;class 'collections.abc.Callable'&gt;, 'logger_info': &lt;class 'collections.abc.Callable'&gt;, 'logger_warning': &lt;class 'collections.abc.Callable'&gt;}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>ArpSpoof  Copyright (C) 2021  Maurice Lambert<font color="#c040c0">\n</font>T...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements an ARP Spoofer for MIM<font color="#c040c0">\n</font>...-the-Middle) or DoS (Denial of Service) attacks.<font color="#c040c0">\n</font>'<br>
