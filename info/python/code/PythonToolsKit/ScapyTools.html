@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ScapyTools</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ScapyTools</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="ScapyTools.py.py">ScapyTools.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;arg&nbsp;=&nbsp;<a href="#ScapyArguments">ScapyArguments</a>()<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args().iface<br>
+&lt;NetworkInterface&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args(["-i",&nbsp;"eth0"]).iface<br>
+&lt;NetworkInterface&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args(["--interface",&nbsp;"eth"]).iface<br>
+&lt;NetworkInterface&nbsp;...&gt;<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;arg&nbsp;=&nbsp;<a href="#ScapyArguments">ScapyArguments</a>(interface_args=["++custom",&nbsp;"|c"],&nbsp;prefix_chars="+|")<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args().iface<br>
+&lt;NetworkInterface&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args(["|c",&nbsp;"127.0.0"]).iface<br>
+&lt;NetworkInterface&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args(["++custom",&nbsp;"00:00:00:"]).iface<br>
+&lt;NetworkInterface&nbsp;...&gt;<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;arg&nbsp;=&nbsp;<a href="#ScapyArguments">ScapyArguments</a>(interface_kwargs={"required",&nbsp;True},&nbsp;description="My&nbsp;program&nbsp;description")<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args(["-i",&nbsp;"172.16.10."]).iface<br>
+&lt;NetworkInterface&nbsp;...&gt;<br>
+&gt;&gt;&gt;&nbsp;arg.parse_args(["--interface",&nbsp;"0A:00:34:"]).iface<br>
+&lt;NetworkInterface&nbsp;...&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>(<a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>, <a href="argparse.html#_ActionsContainer">argparse._ActionsContainer</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ScapyTools.html#ScapyArguments">ScapyArguments</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ScapyArguments">class <strong>ScapyArguments</strong></a>(<a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ScapyArguments">ScapyArguments</a>(*args,&nbsp;interface_args=['--interface',&nbsp;'-i'],&nbsp;interface_kwargs={'help':&nbsp;'Part&nbsp;of&nbsp;the&nbsp;IP,&nbsp;MAC&nbsp;or&nbsp;name&nbsp;of&nbsp;the&nbsp;interface'},&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;ArgumentsParser&nbsp;with<br>
+interface&nbsp;argument&nbsp;and&nbsp;iface&nbsp;research.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ScapyTools.html#ScapyArguments">ScapyArguments</a></dd>
+<dd><a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="argparse.html#_ActionsContainer">argparse._ActionsContainer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ScapyArguments-__init__"><strong>__init__</strong></a>(self, *args, interface_args=['--interface', '-i'], interface_kwargs={'help': 'Part of the IP, MAC or name of the interface'}, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ScapyArguments-parse_args"><strong>parse_args</strong></a>(self, args: List[str] = None, namespace: argparse.Namespace = None) -&gt; argparse.Namespace</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;the&nbsp;iface<br>
+research&nbsp;from&nbsp;interface&nbsp;arguments.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'interface_args': &lt;class 'list'&gt;, 'interface_kwargs': &lt;class 'dict'&gt;}</dl>
+
+<dl><dt><strong>interface_args</strong> = ['--interface', '-i']</dl>
+
+<dl><dt><strong>interface_kwargs</strong> = {'help': 'Part of the IP, MAC or name of the interface'}</dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>:<br>
+<dl><dt><a name="ScapyArguments-add_subparsers"><strong>add_subparsers</strong></a>(self, **kwargs)</dt><dd><tt>#&nbsp;==================================<br>
+#&nbsp;Optional/Positional&nbsp;adding&nbsp;methods<br>
+#&nbsp;==================================</tt></dd></dl>
+
+<dl><dt><a name="ScapyArguments-convert_arg_line_to_args"><strong>convert_arg_line_to_args</strong></a>(self, arg_line)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-error"><strong>error</strong></a>(self, message)</dt><dd><tt><a href="#ScapyArguments-error">error</a>(message:&nbsp;string)<br>
+&nbsp;<br>
+Prints&nbsp;a&nbsp;usage&nbsp;message&nbsp;incorporating&nbsp;the&nbsp;message&nbsp;to&nbsp;stderr&nbsp;and<br>
+exits.<br>
+&nbsp;<br>
+If&nbsp;you&nbsp;override&nbsp;this&nbsp;in&nbsp;a&nbsp;subclass,&nbsp;it&nbsp;should&nbsp;not&nbsp;return&nbsp;--&nbsp;it<br>
+should&nbsp;either&nbsp;exit&nbsp;or&nbsp;raise&nbsp;an&nbsp;exception.</tt></dd></dl>
+
+<dl><dt><a name="ScapyArguments-exit"><strong>exit</strong></a>(self, status=0, message=None)</dt><dd><tt>#&nbsp;===============<br>
+#&nbsp;Exiting&nbsp;methods<br>
+#&nbsp;===============</tt></dd></dl>
+
+<dl><dt><a name="ScapyArguments-format_help"><strong>format_help</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-format_usage"><strong>format_usage</strong></a>(self)</dt><dd><tt>#&nbsp;=======================<br>
+#&nbsp;Help-formatting&nbsp;methods<br>
+#&nbsp;=======================</tt></dd></dl>
+
+<dl><dt><a name="ScapyArguments-parse_intermixed_args"><strong>parse_intermixed_args</strong></a>(self, args=None, namespace=None)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-parse_known_args"><strong>parse_known_args</strong></a>(self, args=None, namespace=None)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-parse_known_intermixed_args"><strong>parse_known_intermixed_args</strong></a>(self, args=None, namespace=None)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-print_help"><strong>print_help</strong></a>(self, file=None)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-print_usage"><strong>print_usage</strong></a>(self, file=None)</dt><dd><tt>#&nbsp;=====================<br>
+#&nbsp;Help-printing&nbsp;methods<br>
+#&nbsp;=====================</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="ScapyArguments-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="argparse.html#_ActionsContainer">argparse._ActionsContainer</a>:<br>
+<dl><dt><a name="ScapyArguments-add_argument"><strong>add_argument</strong></a>(self, *args, **kwargs)</dt><dd><tt><a href="#ScapyArguments-add_argument">add_argument</a>(dest,&nbsp;...,&nbsp;name=value,&nbsp;...)<br>
+<a href="#ScapyArguments-add_argument">add_argument</a>(option_string,&nbsp;option_string,&nbsp;...,&nbsp;name=value,&nbsp;...)</tt></dd></dl>
+
+<dl><dt><a name="ScapyArguments-add_argument_group"><strong>add_argument_group</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-add_mutually_exclusive_group"><strong>add_mutually_exclusive_group</strong></a>(self, **kwargs)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-get_default"><strong>get_default</strong></a>(self, dest)</dt></dl>
+
+<dl><dt><a name="ScapyArguments-register"><strong>register</strong></a>(self, registry_name, value, object)</dt><dd><tt>#&nbsp;====================<br>
+#&nbsp;Registration&nbsp;methods<br>
+#&nbsp;====================</tt></dd></dl>
+
+<dl><dt><a name="ScapyArguments-set_defaults"><strong>set_defaults</strong></a>(self, **kwargs)</dt><dd><tt>#&nbsp;==================================<br>
+#&nbsp;Namespace&nbsp;default&nbsp;accessor&nbsp;methods<br>
+#&nbsp;==================================</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['ScapyArguments']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
