@@ -86,6 +86,7 @@
  - [Default request manager for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/requests_management.html)
  - [Default module errors for WebScripts](https://mauricelambert.github.io/info/python/code/WebScripts/error_pages.html)
  - [WebScriptsClient Documentation](https://mauricelambert.github.io/info/python/code/WebScriptsClient.html)
+ - [WebScriptsTools Documentation](https://mauricelambert.github.io/info/python/code/WebScriptsTools.html)
 
  - [WebScriptsClient Executable](https://mauricelambert.github.io/info/python/code/WebScriptsClient.pyz)
 
@@ -133,3 +134,8 @@
  - [UpgradePipPackages Documentation](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
 
  - [UpgradePipPackages Executable](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
+
+## Perl
+
+### Forensic
+ - [TRAP Documentation](https://mauricelambert.github.io/info/perl/code/TRAP.html)
