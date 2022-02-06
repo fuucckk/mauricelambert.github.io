@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module SpyWare</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>SpyWare</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="SpyWare.html.py">SpyWare.html</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;implements&nbsp;a&nbsp;complete&nbsp;spyware.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-join"><strong>join</strong></a>(path, *paths)</dt><dd><tt>#&nbsp;Join&nbsp;two&nbsp;(or&nbsp;more)&nbsp;paths.</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;launchs&nbsp;the&nbsp;SpyWare&nbsp;modules&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
+ <dl><dt><a name="-spy"><strong>spy</strong></a>(modules: Dict[str, str]) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;spy&nbsp;modules&nbsp;and&nbsp;stop&nbsp;it&nbsp;on&nbsp;KeyboardInterrupt.</tt></dd></dl>
+ <dl><dt><a name="-stop_deamons"><strong>stop_deamons</strong></a>(*daemons: List[threading.Thread]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sent&nbsp;daemon's&nbsp;stop&nbsp;signal.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['spy', 'join', 'stop_deamons', 'main', 'modules']<br>
+<strong>__annotations__</strong> = {'modules': typing.Dict[str, str], 'system': &lt;class 'str'&gt;}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>SpyWare  Copyright (C) 2021, 2022  Maurice Lamb...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This file implements a complete spyware.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/SpyWare'<br>
+<strong>modules</strong> = {'audio': 'audioSpy.conf', 'clipboard': 'clipboardSpy.conf', 'domains': 'domainsSpy.conf', 'files': 'filesSpy.conf', 'key': 'keySpy.conf', 'screen': 'screenSpy.conf', 'webcam': 'webcamSpy.conf'}</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

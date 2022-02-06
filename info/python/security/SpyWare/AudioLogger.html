@@ -6,20 +6,20 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>AudioLogger</strong></big></big></font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>AudioLogger</strong></big></big> (version 1.0.0)</font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="audiologger.py">audiologger.py</a></font></td></tr></table>
-    <p><tt>This&nbsp;file&nbsp;implement&nbsp;a&nbsp;SpyWare&nbsp;to&nbsp;record&nbsp;from&nbsp;microphone.</tt></p>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="AudioLogger.html.py">AudioLogger.html</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;a&nbsp;SpyWare&nbsp;to&nbsp;record&nbsp;from&nbsp;microphone.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;AudioLogger.py&nbsp;audioSpy.conf<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;os&nbsp;import&nbsp;environ<br>
+&gt;&gt;&gt;&nbsp;environ['audioSpy.conf']&nbsp;=&nbsp;'audioSpy.conf'<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;SpyWare.AudioLogger&nbsp;import&nbsp;audioSpy<br>
+&gt;&gt;&gt;&nbsp;audioSpy()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;(using&nbsp;env)&nbsp;OR<br>
+&gt;&gt;&gt;&nbsp;audioSpy('audioSpy.conf')&nbsp;#&nbsp;(using&nbsp;config&nbsp;file&nbsp;name)&nbsp;OR<br>
+&gt;&gt;&gt;&nbsp;audioSpy(argv=["AudioLogger.py",&nbsp;"audioSpy.conf"])&nbsp;#&nbsp;(using&nbsp;argv)</tt></p>
 <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#aa55cc">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
-</td><td width="25%" valign=top><a href="wave.html">wave</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -41,12 +41,14 @@
 <font color="#000000" face="helvetica, arial"><a name="Daemon">class <strong>Daemon</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>This&nbsp;class&nbsp;implement&nbsp;a&nbsp;loop&nbsp;to&nbsp;record&nbsp;from&nbsp;microphone.<br>&nbsp;</tt></td></tr>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;loop&nbsp;to&nbsp;record&nbsp;from&nbsp;microphone.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="Daemon-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <dl><dt><a name="Daemon-run_for_ever"><strong>run_for_ever</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;record&nbsp;from&nbsp;microphone&nbsp;and&nbsp;sleep&nbsp;for&nbsp;ever.</tt></dd></dl>
+
+<dl><dt><a name="Daemon-save_record"><strong>save_record</strong></a>(self, filename: str, time: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;records&nbsp;from&nbsp;microphone&nbsp;and&nbsp;save&nbsp;in&nbsp;wave&nbsp;file.</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -63,8 +65,9 @@ Data descriptors defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-config_load"><strong>config_load</strong></a>(filename: str = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;load&nbsp;the&nbsp;config&nbsp;file.</tt></dd></dl>
- <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt></dl>
+<td width="100%"><dl><dt><a name="-config_load"><strong>config_load</strong></a>(filename: str = None, argv: List[str] = ['C:\\Program Files\\Python\\lib\\pydoc.py', '-w', 'AudioLogger']) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;loads&nbsp;the&nbsp;configuration&nbsp;using&nbsp;a&nbsp;the&nbsp;configuration&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>(config_filename: str = None, argv: List[str] = ['C:\\Program Files\\Python\\lib\\pydoc.py', '-w', 'AudioLogger']) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;recorder<br>
+daemon&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -72,5 +75,19 @@ Data descriptors defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['main', 'Daemon', 'config_load']</td></tr></table>
+<td width="100%"><strong>__all__</strong> = ['main', 'Daemon', 'config_load']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>SpyWare  Copyright (C) 2021, 2022  Maurice Lamb...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This module implements a SpyWare to record from microphone.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/SpyWare'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
 </body></html>
