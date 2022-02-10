@@ -22,7 +22,12 @@
           <li><a href="#Command-line">Command line</a></li>
         </ul>
       </li>
-      <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+      <li><a href="#DESCRIPTION">DESCRIPTION</a>
+        <ul>
+          <li><a href="#TRAP1">TRAP</a></li>
+          <li><a href="#TRAP::Compare">TRAP::Compare</a></li>
+        </ul>
+      </li>
       <li><a href="#REQUIREMENTS">REQUIREMENTS</a></li>
       <li><a href="#INSTALLATION">INSTALLATION</a></li>
       <li><a href="#METHODS">METHODS</a>
@@ -57,32 +62,30 @@
 
 <h2 id="NAME">NAME</h2>
 
-<p>TRAP - Tool for Regex Analysis with Perl</p>
+<p>TRAP::Compare. TRAP - Tool for Regex Analysis with Perl</p>
 
 <h2 id="VERSION">VERSION</h2>
 
-<p>version 0.2.0</p>
+<p>version 0.0.1</p>
 
 <h2 id="SYNOPSIS">SYNOPSIS</h2>
 
 <h3 id="Perl">Perl</h3>
 
-<pre><code>    use TRAP;
-    open my $report, &quot;&gt;&gt;&quot;, &quot;report.json&quot;;
-    my $csv = Text::CSV-&gt;new ( { binary =&gt; 1, sep_char =&gt; &quot;,&quot; } );
-    my %files = (CSV =&gt; $csv, report =&gt; $report);
-    analysis &quot;myfile.bak&quot;, \%files;</code></pre>
+<pre><code>    use TRAP::Compare;
+    my @directories = (&quot;TRAP_*&quot;, &quot;report_*&quot;);
+    my $reports = analysis \@directories;
+    report($reports);</code></pre>
 
 <h3 id="Command-line">Command line</h3>
 
-<pre><code>    ~# perl TRAP.pm -h
-    ~# perl TRAP.pm --help
-    ~# perl TRAP.pm -t
-    ~# ./TRAP.pm --test --debug --no-color
-    ~# perl TRAP.pm -c -d -f *.txt,*.bak,*.bin
-    ~# ./TRAP.pm --files *.txt,*.bak,*.bin</code></pre>
+<pre><code>    ~# perl TRAP.pm -f &quot;forensic_files*,other_files*&quot;
+    ~# perl TRAP/Compare.pm
+    ~# perl TRAP/Compare.pm &quot;custom_report_directories*&quot; &quot;second_report_directory*&quot;</code></pre>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
+
+<h3 id="TRAP1">TRAP</h3>
 
 <p>A forensic tool to extract some informations from files.</p>
 
@@ -91,6 +94,10 @@
 <p>It was also important to find out why the file was detected as infected. This tool will allow you to identify certain payloads or abnormal elements on a server.</p>
 
 <p>I make this tool in perl because it is pre-integrated on all Linux systems and it is particularly optimized for regular expression.</p>
+
+<h3 id="TRAP::Compare">TRAP::Compare</h3>
+
+<p>This file compare reports by filename and saves and prints matches with multiple filenames.</p>
 
 <h2 id="REQUIREMENTS">REQUIREMENTS</h2>
 
@@ -111,28 +118,7 @@
 <li><p><code>strict</code> - strict</p>
 
 </li>
-<li><p><code>JSON::PP</code> - JSON::PP</p>
-
-</li>
 <li><p><code>Text::CSV</code> - Text::CSV</p>
-
-</li>
-<li><p><code>Pod::Usage</code> - Pod::Usage</p>
-
-</li>
-<li><p><code>Time::Piece</code> - Time::Piece</p>
-
-</li>
-<li><p><code>Getopt::Long</code> - Getopt::Long</p>
-
-</li>
-<li><p><code>File::Basename</code> - File::Basename</p>
-
-</li>
-<li><p><code>Term::ANSIColor</code> - Term::ANSIColor</p>
-
-</li>
-<li><p><code>File::Map</code> - File::Map</p>
 
 </li>
 </ul>
@@ -145,22 +131,21 @@
 
 <h4 id="analysis">analysis</h4>
 
-<pre><code>    use TRAP;
-    open my $report, &quot;&gt;&gt;&quot;, &quot;report.json&quot;;
-    my $csv = Text::CSV-&gt;new ( { binary =&gt; 1, sep_char =&gt; &quot;,&quot; } );
-    my %files = (CSV =&gt; $csv, report =&gt; $report);
-    analysis &quot;myfile.bak&quot;, \%files;</code></pre>
+<pre><code>    use TRAP::Compare;
+    my @directories = (&quot;TRAP_*&quot;, &quot;report_*&quot;);
+    my $reports = analysis \@directories;
+    report($reports);</code></pre>
 
-<p>This method does not return any values.</p>
+<p>This method returns a HASH of HASHES -&gt; {match =&gt; {filename =&gt; 1}}.</p>
 
 <ul>
 
-<li><p><code>filename</code> - The path and name of the file to be analysed.</p>
+<li><p><code>directories</code> - Array of glob syntax of report directories to be analysed.</p>
 
 </li>
 </ul>
 
-<p>This method analyses a file and saves matches found in CSV files.</p>
+<p>This method analyses reports to extract matches with multiple filenames.</p>
 
 <h2 id="OSNAMES">OSNAMES</h2>
 
@@ -174,7 +159,7 @@
 
 <ul>
 
-<li><p><a href="https://mauricelambert.github.io/info/perl/code/TRAP.html">https://mauricelambert.github.io/info/perl/code/TRAP.html</a></p>
+<li><p><a href="https://mauricelambert.github.io/info/perl/code/TRAP_Compare.html">https://mauricelambert.github.io/info/perl/code/TRAP_Compare.html</a></p>
 
 </li>
 </ul>
