@@ -143,3 +143,4 @@
 
 ### Forensic
  - [TRAP Documentation](https://mauricelambert.github.io/info/perl/code/TRAP.html)
+ - [TRAP::Compare Documentation](https://mauricelambert.github.io/info/perl/code/TRAP_Compare.html)
