@@ -6,38 +6,207 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ArpSpoof</strong></big></big> (version 1.1.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ArpSpoof</strong></big></big> (version 1.1.1)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="arpspoof.py">arpspoof.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;an&nbsp;ARP&nbsp;Spoofer&nbsp;for&nbsp;MIM<br>
 (Man-In-the-Middle)&nbsp;or&nbsp;DoS&nbsp;(Denial&nbsp;of&nbsp;Service)&nbsp;attacks.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('172.16.10.1',&nbsp;'172.16.0.35')<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;scapy.all&nbsp;import&nbsp;conf<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;ArpSpoof&nbsp;import&nbsp;<a href="#SpooferARP">SpooferARP</a><br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+ArpSpoof&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('127.0.0.1',&nbsp;'127.0.0.2')<br>
 &gt;&gt;&gt;&nbsp;spoofer.active_cache_poisonning()<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{ArpSpoof&nbsp;-&nbsp;ArpSpoof.py:323}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.2.<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+KeyboardInterrupt<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('127.0.0.1',&nbsp;'127.0.0.2,127.0.0.3')<br>
+&gt;&gt;&gt;&nbsp;spoofer.active_cache_poisonning()<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{ArpSpoof&nbsp;-&nbsp;ArpSpoof.py:323}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.2,&nbsp;127.0.0.3.<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+KeyboardInterrupt<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('127.0.0.1',&nbsp;'127.0.0.2-127.0.0.5')<br>
+&gt;&gt;&gt;&nbsp;spoofer.active_cache_poisonning()<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{ArpSpoof&nbsp;-&nbsp;ArpSpoof.py:323}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.2,&nbsp;127.0.0.3,&nbsp;127.0.0.4.<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+KeyboardInterrupt<br>
+&gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('127.0.0.1',&nbsp;'127.0.0.0/30')<br>
+&gt;&gt;&gt;&nbsp;spoofer.active_cache_poisonning()<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{ArpSpoof&nbsp;-&nbsp;ArpSpoof.py:323}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.1,&nbsp;127.0.0.2.<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+KeyboardInterrupt<br>
 &gt;&gt;&gt;&nbsp;spoofer&nbsp;=&nbsp;<a href="#SpooferARP">SpooferARP</a>('172.16.10.1',&nbsp;'172.16.0.35',&nbsp;conf.iface,&nbsp;False,&nbsp;0.5)<br>
 &gt;&gt;&gt;&nbsp;spoofer.passive_cache_poisonning(asynchronous=True)<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{ArpSpoof&nbsp;-&nbsp;ArpSpoof.py:380}&nbsp;Start&nbsp;passive&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;172.16.10.1&nbsp;[None].&nbsp;Targets:&nbsp;172.16.0.35.<br>
 &gt;&gt;&gt;&nbsp;spoofer.run&nbsp;=&nbsp;False<br>
 &gt;&gt;&gt;&nbsp;spoofer.sniffer.stop()&nbsp;&nbsp;#&nbsp;only&nbsp;with&nbsp;asynchronous&nbsp;mode<br>
+&lt;Sniffed:&nbsp;TCP:0&nbsp;UDP:0&nbsp;ICMP:0&nbsp;Other:0&gt;<br>
 &gt;&gt;&gt;&nbsp;spoofer.restore()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;only&nbsp;with&nbsp;asynchronous&nbsp;mode<br>
 &nbsp;<br>
-~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;172.16.10.1&nbsp;172.16.0.33<br>
-[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:183}&nbsp;Start&nbsp;ARP&nbsp;spoof&nbsp;between&nbsp;172.16.10.1&nbsp;(2e:d7:11:94:e4:82)&nbsp;and&nbsp;172.16.0.33&nbsp;(85:43:71:78:55:54).<br>
-[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:426}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
-[2022-06-22&nbsp;11:13:25]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:428}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
-~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;172.16.10.1&nbsp;172.16.0.33&nbsp;-p&nbsp;-s&nbsp;-v&nbsp;-t&nbsp;1&nbsp;-i&nbsp;172.16.10.<br>
-[2021-12-01&nbsp;22:12:43]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:383}&nbsp;Logging&nbsp;is&nbsp;configured.<br>
-[2021-12-01&nbsp;22:12:43]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:393}&nbsp;Interface&nbsp;argument&nbsp;match&nbsp;with&nbsp;(172.16.10.34&nbsp;cf:e4:cf:5f:8a:4c&nbsp;WIFI)<br>
-[2021-12-01&nbsp;22:12:43]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:400}&nbsp;Network&nbsp;interface&nbsp;is&nbsp;configured&nbsp;(IP:&nbsp;172.16.10.34,&nbsp;MAC:&nbsp;cf:e4:cf:5f:8a:4c&nbsp;and&nbsp;name:&nbsp;WIFI)<br>
-[2021-12-01&nbsp;22:12:43]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:153}&nbsp;Get&nbsp;IP&nbsp;and&nbsp;MAC&nbsp;addresses...<br>
-[2021-12-01&nbsp;22:12:46]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:160}&nbsp;Gateway:&nbsp;172.16.10.1&nbsp;2e:d7:11:94:e4:82<br>
-[2021-12-01&nbsp;22:12:46]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:161}&nbsp;Spoof:&nbsp;172.16.0.33&nbsp;85:43:71:78:55:54<br>
-[2021-12-01&nbsp;22:12:46]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:175}&nbsp;The&nbsp;packets&nbsp;are&nbsp;built.<br>
-[2021-12-01&nbsp;22:12:46]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:225}&nbsp;Start&nbsp;passive&nbsp;ARP&nbsp;spoof&nbsp;between&nbsp;172.16.10.1&nbsp;(2e:d7:11:94:e4:82)&nbsp;and&nbsp;172.16.0.33&nbsp;(85:43:71:78:55:54).<br>
-[13/01/2022&nbsp;11:03:01]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:213}&nbsp;Spoof&nbsp;172.16.10.1&nbsp;for&nbsp;172.16.0.33<br>
-[2021-12-01&nbsp;22:13:02]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:426}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
-[2021-12-01&nbsp;22:13:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:295}&nbsp;Restoring&nbsp;ARP&nbsp;tables&nbsp;for&nbsp;the&nbsp;target...<br>
-[2021-12-01&nbsp;22:13:06]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:309}&nbsp;The&nbsp;target's&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
-[2021-12-01&nbsp;22:13:06]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:428}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.</tt></p>
+~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;127.0.0.1&nbsp;127.0.0.2<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+ArpSpoof&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:209}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.2.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:471}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:473}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;-v&nbsp;127.0.0.1&nbsp;127.0.0.2,127.0.0.5<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+ArpSpoof&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:433}&nbsp;Logging&nbsp;is&nbsp;configured.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:435}&nbsp;Network&nbsp;interface&nbsp;is&nbsp;configured&nbsp;(IP:&nbsp;169.254.155.222,&nbsp;MAC:&nbsp;e8:6a:64:bc:b5:fa&nbsp;and&nbsp;name:&nbsp;WiFi&nbsp;or&nbsp;WiFi)<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:151}&nbsp;Get&nbsp;IP&nbsp;and&nbsp;MAC&nbsp;addresses...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:160}&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff]<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:161}&nbsp;Spoof:&nbsp;127.0.0.2,&nbsp;127.0.0.5<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:180}&nbsp;Start&nbsp;packets&nbsp;crafting&nbsp;for&nbsp;127.0.0.2&nbsp;[ff:ff:ff:ff:ff:ff]...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:180}&nbsp;Start&nbsp;packets&nbsp;crafting&nbsp;for&nbsp;127.0.0.5&nbsp;[ff:ff:ff:ff:ff:ff]...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:194}&nbsp;Packets&nbsp;are&nbsp;built.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:202}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.2,&nbsp;127.0.0.5.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:228}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;target&nbsp;'127.0.0.2'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:236}&nbsp;Spoof&nbsp;'127.0.0.2'&nbsp;for&nbsp;'127.0.0.1'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:228}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;target&nbsp;'127.0.0.5'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:236}&nbsp;Spoof&nbsp;'127.0.0.5'&nbsp;for&nbsp;'127.0.0.1'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:240}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;gateway&nbsp;'127.0.0.1'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:250}&nbsp;Spoof&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:240}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;gateway&nbsp;'127.0.0.1'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:250}&nbsp;Spoof&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:228}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;target&nbsp;'127.0.0.2'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:236}&nbsp;Spoof&nbsp;'127.0.0.2'&nbsp;for&nbsp;'127.0.0.1'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:228}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;target&nbsp;'127.0.0.5'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:236}&nbsp;Spoof&nbsp;'127.0.0.5'&nbsp;for&nbsp;'127.0.0.1'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:240}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;gateway&nbsp;'127.0.0.1'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:250}&nbsp;Spoof&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:240}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;to&nbsp;spoof&nbsp;gateway&nbsp;'127.0.0.1'...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:250}&nbsp;Spoof&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:464}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:337}&nbsp;Restoring&nbsp;ARP&nbsp;tables&nbsp;for&nbsp;the&nbsp;target...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(0/6)...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'&nbsp;(0/6)...<br>
+[2022-06-22&nbsp;11:13:23]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(1/6)...<br>
+[2022-06-22&nbsp;11:13:23]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'&nbsp;(1/6)...<br>
+[2022-06-22&nbsp;11:13:23]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(2/6)...<br>
+[2022-06-22&nbsp;11:13:23]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'&nbsp;(2/6)...<br>
+[2022-06-22&nbsp;11:13:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(3/6)...<br>
+[2022-06-22&nbsp;11:13:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'&nbsp;(3/6)...<br>
+[2022-06-22&nbsp;11:13:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(4/6)...<br>
+[2022-06-22&nbsp;11:13:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'&nbsp;(4/6)...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(5/6)...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'&nbsp;(5/6)...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(6/6)...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:345}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.5'&nbsp;(6/6)...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:466}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;127.0.0.1&nbsp;127.0.0.2-127.0.0.5<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+ArpSpoof&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:202}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.2,&nbsp;127.0.0.3,&nbsp;127.0.0.4.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:464}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:466}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;ArpSpoof.py&nbsp;127.0.0.1&nbsp;-t&nbsp;1&nbsp;127.0.0.0/29<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+ArpSpoof&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:202}&nbsp;Start&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.1,&nbsp;127.0.0.2,&nbsp;127.0.0.3,&nbsp;127.0.0.4,&nbsp;127.0.0.5,&nbsp;127.0.0.6.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:464}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...<br>
+[2022-06-22&nbsp;11:13:25]&nbsp;CRITICAL&nbsp;(50)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:466}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;The&nbsp;ARP&nbsp;tables&nbsp;are&nbsp;restored.<br>
+&nbsp;<br>
+~#&nbsp;python&nbsp;ArpSpoof.py&nbsp;127.0.0.1&nbsp;127.0.0.2,127.0.0.3&nbsp;-p&nbsp;-s&nbsp;-v&nbsp;-t&nbsp;1&nbsp;-i&nbsp;127.0.0.<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+ArpSpoof&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:541}&nbsp;Logging&nbsp;is&nbsp;configured.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:543}&nbsp;Network&nbsp;interface&nbsp;is&nbsp;configured&nbsp;(IP:&nbsp;,&nbsp;MAC:&nbsp;&nbsp;and&nbsp;name:&nbsp;loopback&nbsp;or&nbsp;loopback)<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:243}&nbsp;Get&nbsp;IP&nbsp;and&nbsp;MAC&nbsp;addresses...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:252}&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff]<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:253}&nbsp;Spoof:&nbsp;127.0.0.2,&nbsp;127.0.0.3<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:272}&nbsp;Start&nbsp;packets&nbsp;crafting&nbsp;for&nbsp;127.0.0.2&nbsp;[ff:ff:ff:ff:ff:ff]...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:272}&nbsp;Start&nbsp;packets&nbsp;crafting&nbsp;for&nbsp;127.0.0.3&nbsp;[ff:ff:ff:ff:ff:ff]...<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:286}&nbsp;Packets&nbsp;are&nbsp;built.<br>
+[2022-06-22&nbsp;11:12:13]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:351}&nbsp;Start&nbsp;passive&nbsp;ARP&nbsp;spoof...&nbsp;Gateway:&nbsp;127.0.0.1&nbsp;[ff:ff:ff:ff:ff:ff].&nbsp;Targets:&nbsp;127.0.0.2,&nbsp;127.0.0.3.<br>
+[2022-06-22&nbsp;11:12:15]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:399}&nbsp;Spoof&nbsp;127.0.0.1&nbsp;for&nbsp;127.0.0.3<br>
+[2022-06-22&nbsp;11:12:15]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:399}&nbsp;Spoof&nbsp;127.0.0.1&nbsp;for&nbsp;127.0.0.3<br>
+[2022-06-22&nbsp;11:12:16]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:406}&nbsp;Spoof&nbsp;127.0.0.2&nbsp;for&nbsp;127.0.0.1<br>
+[2022-06-22&nbsp;11:12:16]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:406}&nbsp;Spoof&nbsp;127.0.0.2&nbsp;for&nbsp;127.0.0.1<br>
+[2022-06-22&nbsp;11:12:16]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:445}&nbsp;Restoring&nbsp;ARP&nbsp;tables...<br>
+[2022-06-22&nbsp;11:12:16]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(0/6)...<br>
+[2022-06-22&nbsp;11:12:16]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.3'&nbsp;(0/6)...<br>
+[2022-06-22&nbsp;11:12:17]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(1/6)...<br>
+[2022-06-22&nbsp;11:12:17]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.3'&nbsp;(1/6)...<br>
+[2022-06-22&nbsp;11:12:18]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(2/6)...<br>
+[2022-06-22&nbsp;11:12:18]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.3'&nbsp;(2/6)...<br>
+[2022-06-22&nbsp;11:12:18]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(3/6)...<br>
+[2022-06-22&nbsp;11:12:18]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.3'&nbsp;(3/6)...<br>
+[2022-06-22&nbsp;11:12:19]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(4/6)...<br>
+[2022-06-22&nbsp;11:12:19]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.3'&nbsp;(4/6)...<br>
+[2022-06-22&nbsp;11:12:19]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(5/6)...<br>
+[2022-06-22&nbsp;11:12:19]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.3'&nbsp;(5/6)...<br>
+[2022-06-22&nbsp;11:12:20]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.2'&nbsp;(6/6)...<br>
+[2022-06-22&nbsp;11:12:20]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:453}&nbsp;Restore&nbsp;'127.0.0.1'&nbsp;for&nbsp;'127.0.0.3'&nbsp;(6/6)...<br>
+[2022-06-22&nbsp;11:12:20]&nbsp;WARNING&nbsp;&nbsp;(30)&nbsp;{__main__&nbsp;-&nbsp;ArpSpoof.py:572}&nbsp;End&nbsp;of&nbsp;ARP&nbsp;spoofing.&nbsp;Restore&nbsp;ARP&nbsp;table...</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
@@ -60,18 +229,20 @@
 <font color="#000000" face="helvetica, arial"><a name="SpooferARP">class <strong>SpooferARP</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#SpooferARP">SpooferARP</a>(gateway:&nbsp;str,&nbsp;ip_spoof:&nbsp;str,&nbsp;iface:&nbsp;scapy.interfaces.NetworkInterface&nbsp;=&nbsp;&amp;lt;NetworkInterface_Win&nbsp;Intel(R)&nbsp;Dual&nbsp;Band&nbsp;Wireless-AC&nbsp;8265&nbsp;[UP+RUNNING+WIRELESS+OK]&amp;gt;,&nbsp;semi:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;inter:&nbsp;float&nbsp;=&nbsp;0.5)<br>
+<td colspan=2><tt><a href="#SpooferARP">SpooferARP</a>(gateway:&nbsp;str,&nbsp;targets:&nbsp;str,&nbsp;iface:&nbsp;scapy.interfaces.NetworkInterface&nbsp;=&nbsp;&amp;lt;NetworkInterface_Win&nbsp;Intel(R)&nbsp;Ethernet&nbsp;Connection&nbsp;(4)&nbsp;I219-V&nbsp;[UP+RUNNING+DISCONNECTED]&amp;gt;,&nbsp;semi:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;inter:&nbsp;float&nbsp;=&nbsp;0.5)<br>
 &nbsp;<br>
 This&nbsp;class&nbsp;implements&nbsp;a&nbsp;arp&nbsp;spoofer.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="SpooferARP-__init__"><strong>__init__</strong></a>(self, gateway: str, ip_spoof: str, iface: scapy.interfaces.NetworkInterface = &lt;NetworkInterface_Win Intel(R) Dual Band Wireless-AC 8265 [UP+RUNNING+WIRELESS+OK]&gt;, semi: bool = False, inter: float = 0.5)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="SpooferARP-__init__"><strong>__init__</strong></a>(self, gateway: str, targets: str, iface: scapy.interfaces.NetworkInterface = &lt;NetworkInterface_Win Intel(R) Ethernet Connection (4) I219-V [UP+RUNNING+DISCONNECTED]&gt;, semi: bool = False, inter: float = 0.5)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <dl><dt><a name="SpooferARP-active_cache_poisonning"><strong>active_cache_poisonning</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;start&nbsp;active&nbsp;ARP&nbsp;cache&nbsp;poisonning&nbsp;attack.</tt></dd></dl>
 
 <dl><dt><a name="SpooferARP-active_spoof"><strong>active_spoof</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;send&nbsp;spoofed&nbsp;packets&nbsp;in&nbsp;active&nbsp;cache&nbsp;poisonning&nbsp;attack.</tt></dd></dl>
 
-<dl><dt><a name="SpooferARP-filter"><strong>filter</strong></a>(self, packet: scapy.packet.Packet) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;a&nbsp;filter&nbsp;for&nbsp;passive&nbsp;attack.</tt></dd></dl>
+<dl><dt><a name="SpooferARP-build_packets"><strong>build_packets</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;crafts&nbsp;packets.</tt></dd></dl>
+
+<dl><dt><a name="SpooferARP-filter"><strong>filter</strong></a>(self, packet: scapy.packet.Packet, mac_addresses: ValuesView = ()) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;a&nbsp;filter&nbsp;for&nbsp;passive&nbsp;attack.</tt></dd></dl>
 
 <dl><dt><a name="SpooferARP-passive_cache_poisonning"><strong>passive_cache_poisonning</strong></a>(self, asynchronous: bool = False) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;a&nbsp;passive&nbsp;cache&nbsp;poisonning&nbsp;attack.</tt></dd></dl>
 
@@ -95,9 +266,9 @@ Data descriptors defined here:<br>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['SpooferARP']<br>
-<strong>__annotations__</strong> = {'logger': &lt;class 'logging.Logger'&gt;, 'logger_critical': &lt;class 'collections.abc.Callable'&gt;, 'logger_debug': &lt;class 'collections.abc.Callable'&gt;, 'logger_error': &lt;class 'collections.abc.Callable'&gt;, 'logger_info': &lt;class 'collections.abc.Callable'&gt;, 'logger_warning': &lt;class 'collections.abc.Callable'&gt;}<br>
+<strong>__annotations__</strong> = {'conf_iface': &lt;class 'scapy.interfaces.NetworkInterface'&gt;, 'logger': &lt;class 'logging.Logger'&gt;, 'logger_critical': &lt;class 'collections.abc.Callable'&gt;, 'logger_debug': &lt;class 'collections.abc.Callable'&gt;, 'logger_error': &lt;class 'collections.abc.Callable'&gt;, 'logger_info': &lt;class 'collections.abc.Callable'&gt;, 'logger_warning': &lt;class 'collections.abc.Callable'&gt;}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>ArpSpoof  Copyright (C) 2021  Maurice Lambert<font color="#c040c0">\n</font>T...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>ArpSpoof  Copyright (C) 2021, 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements an ARP Spoofer for MIM<font color="#c040c0">\n</font>...-the-Middle) or DoS (Denial of Service) attacks.<font color="#c040c0">\n</font>'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
