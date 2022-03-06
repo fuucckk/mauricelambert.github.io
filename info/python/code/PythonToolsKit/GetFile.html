@@ -8,13 +8,13 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>GetFile</strong></big></big> (version 0.0.1)</font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="GetFile.py.py">GetFile.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="GetFile.html.py">GetFile.html</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;file&nbsp;=&nbsp;<a href="#-open">open</a>("./configuration.conf")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;File&nbsp;should&nbsp;exist<br>
 &gt;&gt;&gt;&nbsp;file.close()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;File&nbsp;should&nbsp;be&nbsp;closed<br>
 &gt;&gt;&gt;&nbsp;file&nbsp;=&nbsp;<a href="#-open">open</a>("./configuration.conf",&nbsp;"wb")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;File&nbsp;should&nbsp;exist<br>
-&gt;&gt;&gt;&nbsp;file.write("my&nbsp;configuration")<br>
+&gt;&gt;&gt;&nbsp;file.write(b"my&nbsp;configuration")<br>
 &gt;&gt;&gt;&nbsp;file.close()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;File&nbsp;should&nbsp;be&nbsp;closed<br>
 &gt;&gt;&gt;&nbsp;filename&nbsp;=&nbsp;<a href="#-get_real_path">get_real_path</a>("./data.db")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;File&nbsp;should&nbsp;exist,&nbsp;slower<br>
 &gt;&gt;&gt;&nbsp;filename&nbsp;=&nbsp;<a href="#-get_real_path">get_real_path</a>("./data.db",&nbsp;__FILE__)&nbsp;#&nbsp;File&nbsp;should&nbsp;exist,&nbsp;faster<br>

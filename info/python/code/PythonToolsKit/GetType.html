@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module GetType</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>GetType</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="GetType.html.py">GetType.html</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("1")<br>
+1.0<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("yes")<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("null")<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("my&nbsp;string")<br>
+'my&nbsp;string'<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('true')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('FALSE')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,5-6.6:0.5")]<br>
+[4.1,&nbsp;5.0,&nbsp;5.5,&nbsp;6.0,&nbsp;6.5]<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_number">is_number</a>("1.1",&nbsp;True)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-drange">drange</a>(0.1,&nbsp;0.5,&nbsp;0.2):&nbsp;i<br>
+...<br>
+0.1<br>
+0.3<br>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
+Run&nbsp;tests:<br>
+&nbsp;~#&nbsp;python&nbsp;-m&nbsp;doctest&nbsp;GetType.py<br>
+&nbsp;~#&nbsp;python&nbsp;GetType.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verbose&nbsp;mode<br>
+&nbsp;<br>
+10&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;10&nbsp;tests&nbsp;in&nbsp;__main__<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.drange<br>
+&nbsp;&nbsp;22&nbsp;tests&nbsp;in&nbsp;__main__.get_boolean<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.get_ips<br>
+&nbsp;&nbsp;14&nbsp;tests&nbsp;in&nbsp;__main__.get_ipv4_addresses<br>
+&nbsp;&nbsp;15&nbsp;tests&nbsp;in&nbsp;__main__.get_numbers<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;__main__.get_step<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;__main__.is_ip<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;__main__.is_number<br>
+&nbsp;&nbsp;19&nbsp;tests&nbsp;in&nbsp;__main__.try_type<br>
+108&nbsp;tests&nbsp;in&nbsp;10&nbsp;items.<br>
+108&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+~#&nbsp;coverage&nbsp;run&nbsp;GetType.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+--------------------------------<br>
+GetType.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;130&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+--------------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;130&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-drange"><strong>drange</strong></a>(start: float, stop: float, step: float = 1) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;range&nbsp;for&nbsp;Decimal&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-drange">drange</a>(0,&nbsp;5,&nbsp;2):&nbsp;i<br>
+...<br>
+0.0<br>
+2.0<br>
+4.0<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-drange">drange</a>(0.1,&nbsp;0.5,&nbsp;0.2):&nbsp;i<br>
+...<br>
+0.1<br>
+0.3<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-drange">drange</a>(0,&nbsp;100,&nbsp;0.1)][-1]<br>
+99.9<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_boolean"><strong>get_boolean</strong></a>(value: str, raise_exception: bool = True, default: Any = None, case_sensitive: bool = False, true_values: collections.abc.Iterator = ('yes', 'on', '1', 'true', 'y'), false_values: collections.abc.Iterator = ('no', 'off', '0', 'false', 'n')) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;boolean&nbsp;from&nbsp;string&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('true')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('yes')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('on')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('1')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('y')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('false')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('off')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('no')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('n')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('0')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('FALSE')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('TRUE')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('+',&nbsp;true_values=['+'],&nbsp;false_values=['-',&nbsp;'X'])<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('-',&nbsp;true_values=['+'],&nbsp;false_values=['-',&nbsp;'X'])<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('X',&nbsp;true_values=['+'],&nbsp;false_values=['-',&nbsp;'X'])<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('x',&nbsp;true_values=['+'],&nbsp;false_values=['-',&nbsp;'X'])<br>
+False<br>
+&gt;&gt;&gt;&nbsp;try:&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'invalid',<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true_values=['+'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false_values=['-',&nbsp;'X'],<br>
+...&nbsp;)<br>
+...&nbsp;except&nbsp;ValueError:&nbsp;print("ValueError:&nbsp;'invalid'&nbsp;is&nbsp;not&nbsp;in&nbsp;['-',&nbsp;'x',&nbsp;'+']")<br>
+...<br>
+ValueError:&nbsp;'invalid'&nbsp;is&nbsp;not&nbsp;in&nbsp;['-',&nbsp;'x',&nbsp;'+']<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'invalid',<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true_values=['+'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false_values=['-',&nbsp;'X'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise_exception=False,<br>
+...&nbsp;)<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'invalid',<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true_values=['+'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false_values=['-',&nbsp;'X'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise_exception=False,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default="invalid",<br>
+...&nbsp;)<br>
+'invalid'<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'x',<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true_values=['+'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false_values=['-',&nbsp;'X'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise_exception=False,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default="invalid",<br>
+...&nbsp;)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'x',<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true_values=['+'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false_values=['-',&nbsp;'X'],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise_exception=False,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default="invalid",<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case_sensitive=True,<br>
+...&nbsp;)<br>
+'invalid'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_ipv4_addresses"><strong>get_ipv4_addresses</strong></a>(value: str, default: Any = None, separator: str = ',', generator_char: str = '-', raise_exception: bool = True) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;ip&nbsp;addresses.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.10-10.10.10.0")]<br>
+['10.10.10.0',&nbsp;'10.10.10.1',&nbsp;'10.10.10.2',&nbsp;'10.10.10.3',&nbsp;'10.10.10.4',&nbsp;'10.10.10.5',&nbsp;'10.10.10.6',&nbsp;'10.10.10.7',&nbsp;'10.10.10.8',&nbsp;'10.10.10.9']<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0/29")]<br>
+['10.10.10.1',&nbsp;'10.10.10.2',&nbsp;'10.10.10.3',&nbsp;'10.10.10.4',&nbsp;'10.10.10.5',&nbsp;'10.10.10.6']<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0")]<br>
+['10.10.10.0']<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0/33")]<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'10.10.10.0/33'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;network&nbsp;(example:&nbsp;127.0.0.1/29)&nbsp;[&lt;valid&nbsp;ip&gt;/&lt;0-32&gt;].<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0/abc")]<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'10.10.10.0/abc'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;network&nbsp;(example:&nbsp;127.0.0.1/29)&nbsp;[&lt;valid&nbsp;ip&gt;/&lt;0-32&gt;].<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0/abc",&nbsp;raise_exception=False)]<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0/abc",&nbsp;default="0.0.0.0",&nbsp;raise_exception=False)]<br>
+['0.0.0.0']<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0?10.10.10.2",&nbsp;generator_char="?")]<br>
+['10.10.10.0',&nbsp;'10.10.10.1']<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0/10.10.10.2",&nbsp;generator_char="/")]<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;separator/generator_char&nbsp;should&nbsp;not&nbsp;be&nbsp;'/'&nbsp;(reserved&nbsp;by&nbsp;network)<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.0/10.10.10.2",&nbsp;separator="/")]<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;separator/generator_char&nbsp;should&nbsp;not&nbsp;be&nbsp;'/'&nbsp;(reserved&nbsp;by&nbsp;network)<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("abc",&nbsp;default="0.0.0.0",&nbsp;raise_exception=False)]<br>
+['0.0.0.0']<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("abc-def",&nbsp;default="0.0.0.0",&nbsp;raise_exception=False)]<br>
+['0.0.0.0']<br>
+&gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("127.0.0.1,127.0.0.2")]<br>
+['127.0.0.1',&nbsp;'127.0.0.2']<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_numbers"><strong>get_numbers</strong></a>(value: str, default: Any = None, separator: str = ',', step_char: str = ':', step_default: int = 1, generator_char: str = '-', raise_exception: bool = True) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;integers&nbsp;from&nbsp;string&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4")]<br>
+[4.0]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1")]<br>
+[4.1]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,5")]<br>
+[4.1,&nbsp;5.0]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,5-7")]<br>
+[4.1,&nbsp;5.0,&nbsp;6.0]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1?5-6.6:0.5",&nbsp;separator="?")]<br>
+[4.1,&nbsp;5.0,&nbsp;5.5,&nbsp;6.0,&nbsp;6.5]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,5-6.6?invalid",&nbsp;step_char="?")]<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'invalid'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;number.<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,invalid?6.6:0.1",&nbsp;generator_char="?")]<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'invalid'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;number.<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,??,",&nbsp;generator_char="?")]<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Generator&nbsp;should&nbsp;be&nbsp;'&lt;float&gt;?&lt;float&gt;:&lt;float&gt;'&nbsp;or&nbsp;'&lt;float&gt;?&lt;float&gt;'&nbsp;or&nbsp;'[float]'&nbsp;(examples:&nbsp;'0?5.5:0.2'&nbsp;'0?5.5'&nbsp;'4')&nbsp;not&nbsp;'??'<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,??,",&nbsp;raise_exception=False)]<br>
+[4.1]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,??,5.2-5.8:0.2",&nbsp;raise_exception=False)]<br>
+[4.1,&nbsp;5.2,&nbsp;5.4,&nbsp;5.6]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,??,5.2-5.8:abc",&nbsp;raise_exception=False)]<br>
+[4.1,&nbsp;5.2]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4.1,??,5.2-5.8:abc",&nbsp;raise_exception=False,&nbsp;step_default=0.2)]<br>
+[4.1,&nbsp;5.2,&nbsp;5.4,&nbsp;5.6]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("1,?,abc-def,5.2-5.8:abc",&nbsp;raise_exception=False,&nbsp;default=0)]<br>
+[1.0,&nbsp;0,&nbsp;0,&nbsp;5.2]<br>
+&gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("5.2-5.8-abGetType.html",&nbsp;raise_exception=False,&nbsp;default=0)]<br>
+[0]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-is_ip"><strong>is_ip</strong></a>(value: str, raise_exception: bool) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;valids&nbsp;IPv4&nbsp;addresses.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("0.0.0.0",&nbsp;True)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("255.255.255.255",&nbsp;True)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("255.255.255",&nbsp;True)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'255.255.255'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;IPv4&nbsp;address(should&nbsp;be&nbsp;4&nbsp;byte&nbsp;values&nbsp;separate&nbsp;by&nbsp;'.',&nbsp;examples:&nbsp;0.0.0.0&nbsp;255.255.255.255)<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("255.255.255.256",&nbsp;True)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'255.255.255.256'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;IPv4&nbsp;address&nbsp;('256'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;byte&nbsp;value).<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("255.255.255.abc",&nbsp;True)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'255.255.255.abc'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;IPv4&nbsp;address&nbsp;('abc'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;byte&nbsp;value).<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("255.255.255.01",&nbsp;True)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'255.255.255.01'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;IPv4&nbsp;address&nbsp;('01'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;byte&nbsp;value).<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("255.255.255.01",&nbsp;False)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_ip">is_ip</a>("255.255.255",&nbsp;False)<br>
+False<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-is_number"><strong>is_number</strong></a>(value: str, raise_exception: bool) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;value&nbsp;for&nbsp;valid&nbsp;number.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_number">is_number</a>("1",&nbsp;True)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_number">is_number</a>("1.1",&nbsp;True)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_number">is_number</a>("abc",&nbsp;True)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+ValueError:&nbsp;'abc'&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;number.<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-is_number">is_number</a>("abc",&nbsp;False)<br>
+False<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-try_type"><strong>try_type</strong></a>(value: str) -&gt; Any</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;typed&nbsp;value&nbsp;(be&nbsp;careful&nbsp;with&nbsp;this&nbsp;function,<br>
+detection&nbsp;can&nbsp;be&nbsp;bad&nbsp;(example:&nbsp;if&nbsp;you&nbsp;want&nbsp;a&nbsp;string&nbsp;of&nbsp;number&nbsp;this<br>
+function&nbsp;will&nbsp;return&nbsp;a&nbsp;float)).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("1")<br>
+1.0<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("1.5")<br>
+1.5<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("yes")<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("on")<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("y")<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("true")<br>
+True<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("false")<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("n")<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("no")<br>
+False<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("0")<br>
+0.0<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("")<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("null")<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("None")<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("none")<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("NULL")<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("abc")<br>
+'abc'<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("my&nbsp;string")<br>
+'my&nbsp;string'<br>
+&gt;&gt;&gt;&nbsp;GetType.<a href="#-try_type">try_type</a>("Y")<br>
+True<br>
+&gt;&gt;&gt;</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['get_boolean', 'get_numbers', 'drange', 'try_type', 'is_number', 'get_ipv4_addresses', 'is_ip']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
