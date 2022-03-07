@@ -150,4 +150,5 @@
 
 ### Metasploit
 
- - [IIS DOS - CVE-2022-21907](https://mauricelambert.github.io/info/ruby/code/table_of_contents.html#pages)
+ - [IIS DOS - CVE-2022-21907](https://mauricelambert.github.io/info/ruby/code/CVE-2022-21907/table_of_contents.html#pages)
+ - [IIS DOS - CVE-2021-31166](https://mauricelambert.github.io/info/ruby/code/CVE-2021-31166/table_of_contents.html#pages)
