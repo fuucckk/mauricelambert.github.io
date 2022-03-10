@@ -148,7 +148,7 @@
 
 ## Ruby
 
-### Metasploit
-
  - [IIS DOS - CVE-2022-21907](https://mauricelambert.github.io/info/ruby/code/CVE-2022-21907/table_of_contents.html#pages)
  - [IIS DOS - CVE-2021-31166](https://mauricelambert.github.io/info/ruby/code/CVE-2021-31166/table_of_contents.html#pages)
+ - [Apache HTTPD RCE & Local File Disclosure - CVE-2021-41773](https://mauricelambert.github.io/info/ruby/security/CVE-2021-41773/table_of_contents.html#pages)
+ - [Apache HTTPD RCE & Local File Disclosure - CVE-2021-42013](https://mauricelambert.github.io/info/ruby/security/CVE-2021-42013/table_of_contents.html#pages)
