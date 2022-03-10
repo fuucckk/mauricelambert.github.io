@@ -90,6 +90,11 @@
 
  - [WebScriptsClient Executable](https://mauricelambert.github.io/info/python/code/WebScriptsClient.pyz)
 
+### Vulnerability
+
+ - [Apache HTTPD RCE & Local File Disclosure - CVE-2021-41773](https://mauricelambert.github.io/info/python/security/CVE202141773.html)
+ - [Apache HTTPD RCE & Local File Disclosure - CVE-2021-42013](https://mauricelambert.github.io/info/python/security/CVE202142013.html)
+
 ### Dev tools
 
  - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
@@ -147,6 +152,8 @@
  - [TRAP::Compare Documentation](https://mauricelambert.github.io/info/perl/code/TRAP_Compare.html)
 
 ## Ruby
+
+### Vulnerability
 
  - [IIS DOS - CVE-2022-21907](https://mauricelambert.github.io/info/ruby/code/CVE-2022-21907/table_of_contents.html#pages)
  - [IIS DOS - CVE-2021-31166](https://mauricelambert.github.io/info/ruby/code/CVE-2021-31166/table_of_contents.html#pages)
