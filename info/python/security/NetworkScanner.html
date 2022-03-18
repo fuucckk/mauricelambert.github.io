@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module NetworkScanner</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>NetworkScanner</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="networkscanner.py">networkscanner.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;implements&nbsp;a&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-t&nbsp;172.18.0.1-172.18.0.15<br>
+&nbsp;<br>
+<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+172.18.0.9<br>
+172.18.0.13<br>
+172.18.0.14<br>
+172.18.0.10<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-d&nbsp;--noping&nbsp;--hostname&nbsp;--ports&nbsp;22&nbsp;80&nbsp;-p&nbsp;445&nbsp;139&nbsp;443&nbsp;-T&nbsp;1&nbsp;-R&nbsp;-s&nbsp;-t&nbsp;172.18.0.0/28<br>
+&nbsp;<br>
+<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+[2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:490}&nbsp;Build&nbsp;<a href="#NetworkScanner">NetworkScanner</a>...<br>
+[2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:501}&nbsp;Configure&nbsp;real&nbsp;time...<br>
+[2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:509}&nbsp;The&nbsp;scan&nbsp;begins...<br>
+[2016-06-22&nbsp;05:01:12]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:295}&nbsp;Run&nbsp;asynchronous&nbsp;scan&nbsp;(without&nbsp;scapy).<br>
+[2016-06-22&nbsp;05:01:12]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:204}&nbsp;Start&nbsp;asynchronous&nbsp;scan&nbsp;without&nbsp;scapy...<br>
+[2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.11'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.11'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:01:21]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.11'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:01:21]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.2'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:01:21]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.2'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:01:30]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.2'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:01:30]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.3'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:01:30]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.3'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:01:39]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.3'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:01:39]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.7'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:01:39]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.7'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:01:48]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.7'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:01:48]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.4'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:01:48]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.4'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:01:57]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.4'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:01:57]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.13'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:01:57]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.13'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:03]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.13'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:02:03]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.14'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:03]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.14'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:07]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.14'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:02:07]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.6'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:08]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.6'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:17]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.6'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:02:17]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.10'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:17]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.10'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:21]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.10'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:02:21]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.8'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:21]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.8'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:26]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.8'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:02:26]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.5'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:26]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.5'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:35]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.5'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:02:35]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.9'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:35]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.9'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:40]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:317}&nbsp;Start&nbsp;handle_UP&nbsp;for&nbsp;'172.18.0.9'...<br>
+[2016-06-22&nbsp;05:02:40]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:319}&nbsp;Quit&nbsp;handle_UP&nbsp;for&nbsp;'172.18.0.9'.<br>
+[2016-06-22&nbsp;05:02:40]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.1'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:40]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.1'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:49]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.1'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:02:49]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:350}&nbsp;Check&nbsp;'172.18.0.12'&nbsp;(step&nbsp;1:&nbsp;PING)...<br>
+[2016-06-22&nbsp;05:02:49]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:355}&nbsp;Check&nbsp;'172.18.0.12'&nbsp;(step&nbsp;2:&nbsp;HOSTNAME)...<br>
+[2016-06-22&nbsp;05:02:58]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:365}&nbsp;Check&nbsp;'172.18.0.12'&nbsp;(step&nbsp;3:&nbsp;TCP&nbsp;connections)...<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.14'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.6'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.3'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.13'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.11'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.4'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.7'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.5'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.8'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.2'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.10'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:02]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.1'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:03]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:381}&nbsp;'172.18.0.12'&nbsp;is&nbsp;probably&nbsp;not&nbsp;up.<br>
+[2016-06-22&nbsp;05:03:03]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:215}&nbsp;Start&nbsp;ARP&nbsp;detection...<br>
+[2016-06-22&nbsp;05:03:04]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:227}&nbsp;Scan&nbsp;end.<br>
+[2016-06-22&nbsp;05:03:04]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:511}&nbsp;Scan&nbsp;end.<br>
+UP:&nbsp;172.18.0.9<br>
+DOWN:<br>
+&nbsp;<br>
+~#&nbsp;python&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-d&nbsp;-t&nbsp;172.18.0.0/28<br>
+&nbsp;<br>
+<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:651}&nbsp;Build&nbsp;<a href="#NetworkScanner">NetworkScanner</a>...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:662}&nbsp;Configure&nbsp;real&nbsp;time...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:670}&nbsp;The&nbsp;scan&nbsp;begins...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:445}&nbsp;Run&nbsp;scapy&nbsp;scan.<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:385}&nbsp;Start&nbsp;AsyncSniffer&nbsp;using&nbsp;Scapy...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:402}&nbsp;Sending&nbsp;ARP&nbsp;packets...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.6'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.9'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.8'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.5'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.10'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.13'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.14'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.4'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.7'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.3'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.12'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.11'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.1'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:309}&nbsp;Send&nbsp;ARP&nbsp;packet&nbsp;for&nbsp;'172.18.0.2'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:407}&nbsp;Sending&nbsp;ICMP&nbsp;packets...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.6'<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:369}&nbsp;ARP&nbsp;detected&nbsp;in&nbsp;packet...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:470}&nbsp;Start&nbsp;handle_UP&nbsp;for&nbsp;'172.18.0.9'&nbsp;(ARPa4:ee:57:35:c0:a8)...<br>
+172.18.0.9<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:476}&nbsp;Quit&nbsp;handle_UP&nbsp;for&nbsp;'172.18.0.9'.<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:369}&nbsp;ARP&nbsp;detected&nbsp;in&nbsp;packet...<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:470}&nbsp;Start&nbsp;handle_UP&nbsp;for&nbsp;'172.18.0.10'&nbsp;(ARP62:66:e6:d0:e0:b0)...<br>
+172.18.0.10<br>
+[2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:476}&nbsp;Quit&nbsp;handle_UP&nbsp;for&nbsp;'172.18.0.10'.<br>
+[2016-06-22&nbsp;05:02:26]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.9'<br>
+[2016-06-22&nbsp;05:02:26]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.8'<br>
+[2016-06-22&nbsp;05:02:28]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.5'<br>
+[2016-06-22&nbsp;05:02:30]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.10'<br>
+[2016-06-22&nbsp;05:02:32]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.13'<br>
+[2016-06-22&nbsp;05:02:34]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.14'<br>
+[2016-06-22&nbsp;05:02:36]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.4'<br>
+[2016-06-22&nbsp;05:02:38]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.7'<br>
+[2016-06-22&nbsp;05:02:40]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.3'<br>
+[2016-06-22&nbsp;05:02:42]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.12'<br>
+[2016-06-22&nbsp;05:02:44]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.11'<br>
+[2016-06-22&nbsp;05:02:46]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.1'<br>
+[2016-06-22&nbsp;05:02:48]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:300}&nbsp;Send&nbsp;ICMP&nbsp;packet&nbsp;for&nbsp;'172.18.0.2'<br>
+[2016-06-22&nbsp;05:02:50]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:414}&nbsp;Sending&nbsp;TCP&nbsp;packets...<br>
+[2016-06-22&nbsp;05:02:50]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:420}&nbsp;Packets,&nbsp;are&nbsp;sent.&nbsp;Wait&nbsp;for&nbsp;timeout...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:426}&nbsp;Get&nbsp;IP&nbsp;addresses&nbsp;down...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.1'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.1'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.8'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.8'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.11'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.11'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.5'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.5'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.14'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.14'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.4'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.4'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.7'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.7'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.13'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.13'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.12'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.12'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.3'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.3'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.6'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.6'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:497}&nbsp;Start&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.2'...<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:499}&nbsp;Quit&nbsp;handle_DOWN&nbsp;for&nbsp;'172.18.0.2'.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:433}&nbsp;Stop&nbsp;AsyncSniffer,&nbsp;scan&nbsp;end.<br>
+[2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:672}&nbsp;Scan&nbsp;end.<br>
+&nbsp;<br>
+~#&nbsp;python&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;--noping&nbsp;--hostname&nbsp;--ports&nbsp;22&nbsp;80&nbsp;-p&nbsp;445&nbsp;139&nbsp;443&nbsp;-T&nbsp;1&nbsp;-R&nbsp;-s&nbsp;-t&nbsp;172.18.0.0/28<br>
+&nbsp;<br>
+<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+&nbsp;<br>
+PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+UP:&nbsp;172.18.0.9<br>
+UP:&nbsp;172.18.0.10<br>
+DOWN:&nbsp;172.18.0.13<br>
+DOWN:&nbsp;172.18.0.5<br>
+DOWN:&nbsp;172.18.0.12<br>
+DOWN:&nbsp;172.18.0.14<br>
+DOWN:&nbsp;172.18.0.7<br>
+DOWN:&nbsp;172.18.0.4<br>
+DOWN:&nbsp;172.18.0.11<br>
+DOWN:&nbsp;172.18.0.3<br>
+DOWN:&nbsp;172.18.0.6<br>
+DOWN:&nbsp;172.18.0.2<br>
+DOWN:&nbsp;172.18.0.1<br>
+DOWN:&nbsp;172.18.0.8<br>
+&nbsp;<br>
+~#<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;<a href="#NetworkScanner">NetworkScanner</a>&nbsp;import&nbsp;<a href="#NetworkScanner">NetworkScanner</a>,&nbsp;logger<br>
+&gt;&gt;&gt;&nbsp;scanner&nbsp;=&nbsp;<a href="#NetworkScanner">NetworkScanner</a>({"172.18.0.1",&nbsp;"172.18.0.3"})<br>
+&gt;&gt;&gt;&nbsp;scanner.scan()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Without&nbsp;scapy<br>
+IP:&nbsp;'172.18.0.1'&nbsp;is&nbsp;UP&nbsp;('ARP',&nbsp;None).<br>
+IP:&nbsp;'172.18.0.3'&nbsp;is&nbsp;UP&nbsp;('ARP',&nbsp;None).<br>
+[True,&nbsp;True]<br>
+&gt;&gt;&gt;&nbsp;def&nbsp;do_IP_UP(ip,&nbsp;reason,&nbsp;detail&nbsp;=&nbsp;None):<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"{ip}&nbsp;is&nbsp;UP&nbsp;({reason}&nbsp;{detail})")<br>
+...<br>
+&gt;&gt;&gt;&nbsp;scanner.handle_UP&nbsp;=&nbsp;do_IP_UP<br>
+&gt;&gt;&gt;&nbsp;scanner.scan(True)&nbsp;&nbsp;#&nbsp;With&nbsp;scapy<br>
+172.18.0.1&nbsp;is&nbsp;UP&nbsp;(ARP&nbsp;01:02:03:04:05:06)<br>
+172.18.0.3&nbsp;is&nbsp;UP&nbsp;(ARP&nbsp;FF:EE:DD:CC:BB:AA)<br>
+[True,&nbsp;True]<br>
+&gt;&gt;&gt;&nbsp;scanner.hosts_up<br>
+['172.18.0.3',&nbsp;'172.18.0.1']<br>
+&gt;&gt;&gt;&nbsp;scanner.hosts_down<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;scapy.all&nbsp;import&nbsp;*<br>
+&gt;&gt;&gt;&nbsp;scanner&nbsp;=&nbsp;<a href="#NetworkScanner">NetworkScanner</a>({"172.18.0.1"},&nbsp;False,&nbsp;[22,&nbsp;80],&nbsp;False,&nbsp;True,&nbsp;False,&nbsp;1,&nbsp;conf.iface)<br>
+&gt;&gt;&gt;&nbsp;scanner.handle_UP&nbsp;=&nbsp;do_IP_UP<br>
+&gt;&gt;&gt;&nbsp;scanner.handle_DOWN&nbsp;=&nbsp;print<br>
+&gt;&gt;&gt;&nbsp;scanner.scan()<br>
+172.18.0.1<br>
+[False]<br>
+&gt;&gt;&gt;&nbsp;logger.setLevel(10)&nbsp;&nbsp;#&nbsp;debug&nbsp;mode<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="NetworkScanner.html#NetworkScanner">NetworkScanner</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NetworkScanner">class <strong>NetworkScanner</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#NetworkScanner">NetworkScanner</a>(targets:&nbsp;Set[str],&nbsp;ping:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;ports:&nbsp;List[int]&nbsp;=&nbsp;[],&nbsp;arp:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;hostname:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;real_time:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;timeout:&nbsp;int&nbsp;=&nbsp;3,&nbsp;iface:&nbsp;scapy.interfaces.NetworkInterface&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;an&nbsp;asynchronous&nbsp;network&nbsp;scanner.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="NetworkScanner-__init__"><strong>__init__</strong></a>(self, targets: Set[str], ping: bool = True, ports: List[int] = [], arp: bool = True, hostname: bool = True, real_time: bool = True, timeout: int = 3, iface: scapy.interfaces.NetworkInterface = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-handle_DOWN"><strong>handle_DOWN</strong></a>(self, ip: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;the&nbsp;default&nbsp;behavior&nbsp;when&nbsp;IP&nbsp;is&nbsp;DOWN.<br>
+&nbsp;<br>
+Print&nbsp;the&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-handle_UP"><strong>handle_UP</strong></a>(self, ip: str, reason: str, detail: Any = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;the&nbsp;default&nbsp;behavior&nbsp;when&nbsp;IP&nbsp;is&nbsp;UP.<br>
+&nbsp;<br>
+Print&nbsp;the&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt>async <a name="NetworkScanner-no_scapy_check_ip"><strong>no_scapy_check_ip</strong></a>(self, ip: str) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;the&nbsp;IP&nbsp;address&nbsp;to&nbsp;see&nbsp;if&nbsp;it&nbsp;is&nbsp;being&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-no_scapy_scan"><strong>no_scapy_scan</strong></a>(self) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;scan&nbsp;without&nbsp;scapy.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-scan"><strong>scan</strong></a>(self, scapy: bool = False) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;scan&nbsp;(using&nbsp;scapy<br>
+if&nbsp;available&nbsp;otherwise&nbsp;an&nbsp;asynchronous&nbsp;scanner).</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-scapy_arp"><strong>scapy_arp</strong></a>(self, ip: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;send&nbsp;an&nbsp;ARP&nbsp;request&nbsp;with&nbsp;Scapy.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-scapy_match"><strong>scapy_match</strong></a>(self, packet: scapy.packet.Packet) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;IP&nbsp;address&nbsp;of&nbsp;matching&nbsp;packets&nbsp;with&nbsp;scapy.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-scapy_ping"><strong>scapy_ping</strong></a>(self, ip: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;pings&nbsp;a&nbsp;host&nbsp;with&nbsp;Scapy.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-scapy_scan"><strong>scapy_scan</strong></a>(self) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;scapy&nbsp;scan.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-scapy_tcp"><strong>scapy_tcp</strong></a>(self, ip: str, dport: int, sport: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;send&nbsp;a&nbsp;TCP&nbsp;packet&nbsp;with&nbsp;Scapy.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-start_scapy_scan"><strong>start_scapy_scan</strong></a>(self) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;AsyncSniffer&nbsp;and&nbsp;scapy&nbsp;scan,<br>
+finally&nbsp;stops&nbsp;AsyncSniffer.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;executes&nbsp;this&nbsp;program&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['NetworkScanner', 'main']<br>
+<strong>__annotations__</strong> = {'critical': &lt;class 'collections.abc.Callable'&gt;, 'debug': &lt;class 'collections.abc.Callable'&gt;, 'error': &lt;class 'collections.abc.Callable'&gt;, 'info': &lt;class 'collections.abc.Callable'&gt;, 'logger': &lt;class 'logging.Logger'&gt;, 'warning': &lt;class 'collections.abc.Callable'&gt;}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>NetworkScanner  Copyright (C) 2021, 2022  Mauri...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This module implements a NetworkScanner.'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/NetworkScanner'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
