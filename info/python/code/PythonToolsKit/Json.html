@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Json</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Json</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Json.html.py">Json.html</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Json&nbsp;import&nbsp;invalid_json_example1,&nbsp;invalid_json_example2<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Json&nbsp;import&nbsp;get_valid_json,&nbsp;load_invalid_json<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;json&nbsp;import&nbsp;loads<br>
+&gt;&gt;&gt;&nbsp;loads(<a href="#-get_valid_json">get_valid_json</a>(invalid_json_example1))<br>
+{'true':&nbsp;True,&nbsp;'false':&nbsp;False,&nbsp;'null':&nbsp;None,&nbsp;'15,45':&nbsp;[15,&nbsp;45,&nbsp;15,&nbsp;45,&nbsp;15,&nbsp;45]}<br>
+&gt;&gt;&gt;&nbsp;<a href="#-load_invalid_json">load_invalid_json</a>(invalid_json_example2)<br>
+{True:&nbsp;'true',&nbsp;False:&nbsp;'false',&nbsp;None:&nbsp;None,&nbsp;'\n\tabc\n\t':&nbsp;'\n\tqwerty\n\t',&nbsp;15.45:&nbsp;15.45}<br>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
+Run&nbsp;tests:<br>
+&nbsp;~#&nbsp;python&nbsp;-m&nbsp;doctest&nbsp;Json.py<br>
+&nbsp;~#&nbsp;python&nbsp;Json.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verbose&nbsp;mode<br>
+&nbsp;<br>
+3&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;__main__<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.get_valid_json<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.load_invalid_json<br>
+13&nbsp;tests&nbsp;in&nbsp;3&nbsp;items.<br>
+13&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+~#&nbsp;coverage&nbsp;run&nbsp;Json.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+-----------------------------<br>
+Json.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+-----------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_valid_json"><strong>get_valid_json</strong></a>(json: str) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;valid&nbsp;JSON&nbsp;from&nbsp;invalid&nbsp;JSON.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Json&nbsp;import&nbsp;invalid_json_example1,&nbsp;invalid_json_example2<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Json&nbsp;import&nbsp;get_valid_json,&nbsp;load_invalid_json<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;json&nbsp;import&nbsp;loads<br>
+&gt;&gt;&gt;&nbsp;loads(<a href="#-get_valid_json">get_valid_json</a>(invalid_json_example1))<br>
+{'true':&nbsp;True,&nbsp;'false':&nbsp;False,&nbsp;'null':&nbsp;None,&nbsp;'15,45':&nbsp;[15,&nbsp;45,&nbsp;15,&nbsp;45,&nbsp;15,&nbsp;45]}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-load_invalid_json"><strong>load_invalid_json</strong></a>(json: str) -&gt; Any</dt><dd><tt>This&nbsp;function&nbsp;load&nbsp;invalid&nbsp;JSON.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Json&nbsp;import&nbsp;invalid_json_example1,&nbsp;invalid_json_example2<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;Json&nbsp;import&nbsp;get_valid_json,&nbsp;load_invalid_json<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;json&nbsp;import&nbsp;loads<br>
+&gt;&gt;&gt;&nbsp;<a href="#-load_invalid_json">load_invalid_json</a>(invalid_json_example2)<br>
+{True:&nbsp;'true',&nbsp;False:&nbsp;'false',&nbsp;None:&nbsp;None,&nbsp;'\n\tabc\n\t':&nbsp;'\n\tqwerty\n\t',&nbsp;15.45:&nbsp;15.45}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['load_invalid_json', 'get_valid_json']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

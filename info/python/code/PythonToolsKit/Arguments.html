@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Arguments</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Arguments</strong></big></big> (version 1.0.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Arguments.html.py">Arguments.html</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
@@ -19,6 +19,12 @@
 _StoreAction(option_strings=['-i'],&nbsp;dest='i',&nbsp;nargs='?',&nbsp;const=&lt;_io.TextIOWrapper&nbsp;name='&lt;stdin&gt;'&nbsp;mode='r'&nbsp;encoding='utf-8'&gt;,&nbsp;default=None,&nbsp;type=FileType('r'),&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None)<br>
 &gt;&gt;&gt;&nbsp;a.add_output_file("-o")<br>
 _StoreAction(option_strings=['-o'],&nbsp;dest='o',&nbsp;nargs='?',&nbsp;const=None,&nbsp;default=&lt;_io.TextIOWrapper&nbsp;name='&lt;stdout&gt;'&nbsp;mode='w'&nbsp;encoding='utf-8'&gt;,&nbsp;type=FileType('w'),&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None)<br>
+&gt;&gt;&gt;&nbsp;a.add_verbose()<br>
+_StoreTrueAction(option_strings=['--verbose',&nbsp;'-v'],&nbsp;dest='verbose',&nbsp;nargs=0,&nbsp;const=True,&nbsp;default=False,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Active&nbsp;verbose&nbsp;mode.',&nbsp;metavar=None)<br>
+&gt;&gt;&gt;&nbsp;a.add_debug()<br>
+_StoreTrueAction(option_strings=['--debug',&nbsp;'-d'],&nbsp;dest='debug',&nbsp;nargs=0,&nbsp;const=True,&nbsp;default=False,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Active&nbsp;debugging&nbsp;mode&nbsp;(set&nbsp;level&nbsp;debug&nbsp;for&nbsp;all&nbsp;loggers).',&nbsp;metavar=None)<br>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
 &gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#ArgumentParser">ArgumentParser</a>(description="description")<br>
 &gt;&gt;&gt;&nbsp;a.add_password(password_args=["-a",&nbsp;"--api-key"],&nbsp;prompt_args=["-A",&nbsp;"--api-key-prompt"],&nbsp;prompt_function=input,&nbsp;prompt_function_args="API&nbsp;Key:",&nbsp;password_kwargs={"help":&nbsp;"Help&nbsp;message"},&nbsp;prompt_kwargs={"help",&nbsp;"Help&nbsp;message"},&nbsp;mutually_group_kwargs={"required",&nbsp;True})<br>
 (&lt;argparse._MutuallyExclusiveGroup&nbsp;object&nbsp;at&nbsp;0x000001EC567EF730&gt;,&nbsp;_StoreAction(option_strings=['-a',&nbsp;'--api-key'],&nbsp;dest='api_key',&nbsp;nargs=None,&nbsp;const=None,&nbsp;default=None,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Help&nbsp;message',&nbsp;metavar=None),&nbsp;_StoreAction(option_strings=['-A',&nbsp;'--api-key-prompt'],&nbsp;dest='api_key_prompt',&nbsp;nargs=None,&nbsp;const=None,&nbsp;default=None,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Help&nbsp;message',&nbsp;metavar=None))<br>
@@ -26,6 +32,10 @@ _StoreAction(option_strings=['-o'],&nbsp;dest='o',&nbsp;nargs='?',&nbsp;const=No
 _StoreAction(option_strings=['-i',&nbsp;'--input'],&nbsp;dest='input',&nbsp;nargs='?',&nbsp;const=&lt;_io.BufferedReader&nbsp;name='&lt;stdin&gt;'&gt;,&nbsp;default=None,&nbsp;type=FileType('rb'),&nbsp;choices=None,&nbsp;help=None,&nbsp;metavar=None)<br>
 &gt;&gt;&gt;&nbsp;a.add_output_file("-o",&nbsp;"--output",&nbsp;file_args=["wb"],&nbsp;file_kwargs={"encoding":&nbsp;None},&nbsp;help="Help&nbsp;message")<br>
 _StoreAction(option_strings=['-o',&nbsp;'--output'],&nbsp;dest='output',&nbsp;nargs='?',&nbsp;const=None,&nbsp;default=&lt;_io.BufferedWriter&nbsp;name='&lt;stdout&gt;'&gt;,&nbsp;type=FileType('wb'),&nbsp;choices=None,&nbsp;help='Help&nbsp;message',&nbsp;metavar=None)<br>
+&gt;&gt;&gt;&nbsp;a.add_verbose('-V',&nbsp;'--VERBOSE-MODE',&nbsp;function&nbsp;=&nbsp;print,&nbsp;help="Verbose&nbsp;mode.")<br>
+_StoreTrueAction(option_strings=['--VERBOSE-MODE',&nbsp;'-V'],&nbsp;dest='VERBOSE_MODE',&nbsp;nargs=0,&nbsp;const=True,&nbsp;default=False,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Verbose&nbsp;mode.',&nbsp;metavar=None)<br>
+&gt;&gt;&gt;&nbsp;a.add_debug('-D',&nbsp;'--DEBUG-MODE',&nbsp;help="Debug&nbsp;mode.")<br>
+_StoreTrueAction(option_strings=['--DEBUG-MODE',&nbsp;'-d'],&nbsp;dest='DEBUG_MODE',&nbsp;nargs=0,&nbsp;const=True,&nbsp;default=False,&nbsp;type=None,&nbsp;choices=None,&nbsp;help='Debug&nbsp;mode',&nbsp;metavar=None)<br>
 &gt;&gt;&gt;</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -49,7 +59,7 @@ _StoreAction(option_strings=['-o',&nbsp;'--output'],&nbsp;dest='output',&nbsp;na
 <font color="#000000" face="helvetica, arial"><a name="ArgumentParser">class <strong>ArgumentParser</strong></a>(<a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#ArgumentParser">ArgumentParser</a>(prog=None,&nbsp;usage=None,&nbsp;description=None,&nbsp;epilog=None,&nbsp;parents=[],&nbsp;formatter_class=&amp;lt;class&nbsp;'argparse.HelpFormatter'&amp;gt;,&nbsp;prefix_chars='-',&nbsp;fromfile_prefix_chars=None,&nbsp;argument_default=None,&nbsp;conflict_handler='error',&nbsp;add_help=True,&nbsp;allow_abbrev=True,&nbsp;exit_on_error=True)<br>
+<td colspan=2><tt><a href="#ArgumentParser">ArgumentParser</a>(*args,&nbsp;**kwargs)<br>
 &nbsp;<br>
 argparse.<a href="#ArgumentParser">ArgumentParser</a>&nbsp;+&nbsp;preconfigured&nbsp;and&nbsp;commons&nbsp;arguments.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
@@ -62,6 +72,10 @@ argparse.<a href="#ArgumentParser">ArgumentParser</a>&nbsp;+&nbsp;preconfigured&
 </dl>
 <hr>
 Methods defined here:<br>
+<dl><dt><a name="ArgumentParser-__init__"><strong>__init__</strong></a>(self, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-add_debug"><strong>add_debug</strong></a>(self, *args, **kwargs) -&gt; argparse._StoreAction</dt><dd><tt>This&nbsp;method&nbsp;adds&nbsp;debug&nbsp;argument&nbsp;to&nbsp;the&nbsp;parser.</tt></dd></dl>
+
 <dl><dt><a name="ArgumentParser-add_input_file"><strong>add_input_file</strong></a>(self, *args, file_args: List[Any] = [], file_kwargs: Dict[str, Any] = {}, **kwargs) -&gt; argparse._StoreAction</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;input&nbsp;file&nbsp;argument.<br>
 &nbsp;<br>
 By&nbsp;default&nbsp;if&nbsp;not&nbsp;present&nbsp;in&nbsp;the&nbsp;command&nbsp;line<br>
@@ -80,15 +94,15 @@ value,&nbsp;the&nbsp;<a href="#ArgumentParser">ArgumentParser</a>&nbsp;will&nbsp
 &nbsp;<br>
 The&nbsp;function&nbsp;accepts&nbsp;the&nbsp;binary&nbsp;mode&nbsp;("wb").</tt></dd></dl>
 
-<dl><dt><a name="ArgumentParser-add_password"><strong>add_password</strong></a>(self, password_args: List[Any] = ['-p', '--password'], prompt_args: List[Any] = ['-P', '--password-prompt'], prompt_function: collections.abc.Callable = &lt;function win_getpass at 0x00000270E2273DC0&gt;, prompt_function_args: List[Any] = [], prompt_function_kwargs: List[Any] = {}, password_kwargs: Dict[str, Any] = {}, prompt_kwargs: Dict[str, Any] = {}, mutually_group_kwargs: Dict[str, Any] = {}) -&gt; Tuple[argparse._MutuallyExclusiveGroup, argparse._StoreAction, argparse._StoreAction]</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;password&nbsp;argument&nbsp;and&nbsp;password&nbsp;prompt<br>
+<dl><dt><a name="ArgumentParser-add_password"><strong>add_password</strong></a>(self, password_args: List[Any] = ['-p', '--password'], prompt_args: List[Any] = ['-P', '--password-prompt'], prompt_function: collections.abc.Callable = &lt;function win_getpass at 0x000001AF9D62ED30&gt;, prompt_function_args: List[Any] = [], prompt_function_kwargs: List[Any] = {}, password_kwargs: Dict[str, Any] = {}, prompt_kwargs: Dict[str, Any] = {}, mutually_group_kwargs: Dict[str, Any] = {}) -&gt; Tuple[argparse._MutuallyExclusiveGroup, argparse._StoreAction, argparse._StoreAction]</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;password&nbsp;argument&nbsp;and&nbsp;password&nbsp;prompt<br>
 arguments.</tt></dd></dl>
+
+<dl><dt><a name="ArgumentParser-add_verbose"><strong>add_verbose</strong></a>(self, *args, function: collections.abc.Callable = functools.partial(&lt;built-in function print&gt;, '[V]'), **kwargs) -&gt; argparse._StoreAction</dt><dd><tt>This&nbsp;method&nbsp;adds&nbsp;verbose&nbsp;argument&nbsp;to&nbsp;the&nbsp;parser.</tt></dd></dl>
 
 <dl><dt><a name="ArgumentParser-parse_args"><strong>parse_args</strong></a>(self, *args, **kwargs) -&gt; argparse.Namespace</dt><dd><tt>This&nbsp;function&nbsp;parse&nbsp;command&nbsp;line&nbsp;arguments.</tt></dd></dl>
 
 <hr>
 Methods inherited from <a href="argparse.html#ArgumentParser">argparse.ArgumentParser</a>:<br>
-<dl><dt><a name="ArgumentParser-__init__"><strong>__init__</strong></a>(self, prog=None, usage=None, description=None, epilog=None, parents=[], formatter_class=&lt;class 'argparse.HelpFormatter'&gt;, prefix_chars='-', fromfile_prefix_chars=None, argument_default=None, conflict_handler='error', add_help=True, allow_abbrev=True, exit_on_error=True)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
-
 <dl><dt><a name="ArgumentParser-add_subparsers"><strong>add_subparsers</strong></a>(self, **kwargs)</dt><dd><tt>#&nbsp;==================================<br>
 #&nbsp;Optional/Positional&nbsp;adding&nbsp;methods<br>
 #&nbsp;==================================</tt></dd></dl>
@@ -158,12 +172,20 @@ Methods inherited from <a href="argparse.html#_ActionsContainer">argparse._Actio
 
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><strong>verbose</strong> <em>lambda</em> *x</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['ArgumentParser']<br>
+<td width="100%"><strong>__all__</strong> = ['ArgumentParser', 'verbose']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
