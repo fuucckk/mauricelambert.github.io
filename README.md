@@ -141,6 +141,7 @@
  - [PythonToolsKit.Import Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Import.html)
  - [PythonToolsKit.ScapyTools Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/ScapyTools.html)
  - [PythonToolsKit.Thread Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Thread.html)
+ - [PythonToolsKit.Json Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Json.html)
  - [UpgradePipPackages Documentation](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
 
  - [UpgradePipPackages Executable](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
