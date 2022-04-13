@@ -6,11 +6,19 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WebScriptsTools</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WebScriptsTools</strong></big></big> (version 0.0.2)</font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="webscriptstools.py">webscriptstools.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="fwebscriptstools.py">webscriptstools.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;for&nbsp;WebScripts&nbsp;Scripts.</tt></p>
 <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -24,6 +32,8 @@ for&nbsp;WebScripts&nbsp;scripts.</tt></dd></dl>
  <dl><dt><a name="-get_webscripts_data_path"><strong>get_webscripts_data_path</strong></a>() -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;path&nbsp;to&nbsp;the&nbsp;data&nbsp;directory.</tt></dd></dl>
  <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;execute&nbsp;scripts<br>
 tools&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
+ <dl><dt><a name="-set_excepthook"><strong>set_excepthook</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;sys.excepthook&nbsp;to&nbsp;secure<br>
+sensible&nbsp;informations&nbsp;on&nbsp;python&nbsp;errors.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -31,7 +41,7 @@ tools&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['get_webscripts_data_path', 'get_upload_module', 'get_log_file', 'get_user', 'main']<br>
+<td width="100%"><strong>__all__</strong> = ['get_webscripts_data_path', 'get_upload_module', 'set_excepthook', 'get_log_file', 'get_user', 'main']<br>
 <strong>__annotations__</strong> = {'environ_get': &lt;class 'collections.abc.Callable'&gt;}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WebScriptsTools  Copyright (C) 2022  Maurice La...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
