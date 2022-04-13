@@ -6,20 +6,79 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Encodings</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Encodings</strong></big></big> (version 0.0.2)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Encodings.html.py">Encodings.html</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;for&nbsp;encoding&nbsp;in&nbsp;<a href="#-get_encodings">get_encodings</a>():&nbsp;print(encoding)<br>
-...<br>
-"..."<br>
-"..."<br>
-"utf-8"<br>
-"cp1252"<br>
-"latin-1"<br>
-&gt;&gt;&gt;&nbsp;<a href="#-decode_data">decode_data</a>(bytes(range(256)))<br>
-"..."</tt></p>
+&gt;&gt;&gt;&nbsp;from&nbsp;Encodings&nbsp;import&nbsp;*<br>
+&gt;&gt;&gt;&nbsp;[encoding&nbsp;for&nbsp;i,&nbsp;encoding&nbsp;in&nbsp;enumerate(<a href="#-get_encodings">get_encodings</a>())&nbsp;if&nbsp;i&nbsp;&gt;&nbsp;1]<br>
+['utf-8',&nbsp;'cp1252',&nbsp;'latin-1']<br>
+&gt;&gt;&gt;&nbsp;len(<a href="#-decode_data">decode_data</a>(bytes(range(256))))<br>
+256<br>
+&gt;&gt;&gt;&nbsp;<a href="#-urlsafe_b64encode">urlsafe_b64encode</a>(bytes(range(256)))<br>
+b'AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0-P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn-AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq-wsbKztLW2t7i5uru8vb6_wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t_g4eLj5OXm5-jp6uvs7e7v8PHy8_T19vf4-fr7_P3-_w=='<br>
+&gt;&gt;&gt;&nbsp;<a href="#-urlsafe_b64decode">urlsafe_b64decode</a>(b'AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0-P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn-AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq-wsbKztLW2t7i5uru8vb6_wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t_g4eLj5OXm5-jp6uvs7e7v8PHy8_T19vf4-fr7_P3-_w==')<br>
+b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f&nbsp;!"#$%&amp;\'()*+,+./0123456789:;&lt;=\x0f\xd0\x10P\x90\xd1\x11Q\x91\xd2\x12R\x92\xd3\x13S\x93\xd4\x14T\x94\xd5\x15U\x95\xd6\x16V\x96\xd7\x17W\x97\xd8\x18X\x98\xd9\x19Y\x99\xda\x1aZ\x9a\xdb\x1b[\x9b\xdc\x1c\\\x9c\xdd\x1d]\x9d\xde\x1e^\x9e\xdf\x1f/\x9c\x08\x18(8HXhx\x88\x98\xa8\xb8\xc8\xd8\xe8\xf9\t\x19)9IYiy\x89\x99\xa9\xb9\xc9\xd9\xe9\xfa\n\x1a*:JZjz\x8a\x9a\xaa\xba\xca\xda\xea\xc2\xc6\xca\xce\xd2\xd6\xda\xde\xe2\xe6\xea\xee\xf2\xf6\xfa\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xd88x\xb8\xf99y\xb9\x8e\x9e\xae\xbe\xce\xde\xee\xff\x0f\x1f/\x13\xd7\xdb\xdf\xe1\xfa\xfb?|'<br>
+&gt;&gt;&gt;&nbsp;b64encode(b'abc')<br>
+b'YWJj'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-b64decode">b64decode</a>(b'YWJj')<br>
+b'abc'<br>
+&gt;&gt;&gt;&nbsp;standard_b64encode(b'abc')<br>
+b'YWJj'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-standard_b64decode">standard_b64decode</a>(b'YWJj')<br>
+b'abc'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-b16encode">b16encode</a>(b'abc')<br>
+b'616263'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-b16decode">b16decode</a>(b'616263')<br>
+b'abc'<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;BytesIO()<br>
+&gt;&gt;&gt;&nbsp;<a href="#-b64encode_file">b64encode_file</a>(BytesIO(bytes(range(256))),&nbsp;b)<br>
+&gt;&gt;&gt;&nbsp;print(b.getvalue().decode(),&nbsp;end="")<br>
+AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4<br>
+OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3Bx<br>
+cnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmq<br>
+q6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj<br>
+5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w==<br>
+&gt;&gt;&gt;&nbsp;b.seek(0)<br>
+0<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;BytesIO()<br>
+&gt;&gt;&gt;&nbsp;<a href="#-b64decode_file">b64decode_file</a>(b,&nbsp;a)<br>
+&gt;&gt;&gt;&nbsp;a.getvalue()<br>
+b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f&nbsp;!"#$%&amp;\'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff'<br>
+&gt;&gt;&gt;&nbsp;print(<a href="#-b64encode_lines">b64encode_lines</a>(bytes(range(256))).decode(),&nbsp;end="")<br>
+AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4<br>
+OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3Bx<br>
+cnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmq<br>
+q6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj<br>
+5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w==<br>
+&gt;&gt;&gt;&nbsp;<a href="#-b64decode_lines">b64decode_lines</a>(b.getvalue())<br>
+b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f&nbsp;!"#$%&amp;\'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff'<br>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
+Run&nbsp;tests:<br>
+&nbsp;~#&nbsp;python&nbsp;-m&nbsp;doctest&nbsp;Encodings.py<br>
+&nbsp;~#&nbsp;python&nbsp;Encodings.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verbose&nbsp;mode<br>
+&nbsp;<br>
+5&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;21&nbsp;tests&nbsp;in&nbsp;__main__<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.decode_data<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.get_encodings<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.urlsafe_b64decode<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.urlsafe_b64encode<br>
+25&nbsp;tests&nbsp;in&nbsp;5&nbsp;items.<br>
+25&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+~#&nbsp;coverage&nbsp;run&nbsp;Encodings.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+----------------------------------<br>
+Encodings.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+----------------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+~#</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
@@ -27,8 +86,46 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-decode_data"><strong>decode_data</strong></a>(data: bytes) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;data&nbsp;(try&nbsp;some&nbsp;encodings).</tt></dd></dl>
- <dl><dt><a name="-get_encodings"><strong>get_encodings</strong></a>()</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;probable&nbsp;encodings.</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-b16decode"><strong>b16decode</strong></a> = unhexlify(hexstr, /)</dt><dd><tt>Binary&nbsp;data&nbsp;of&nbsp;hexadecimal&nbsp;representation.<br>
+&nbsp;<br>
+hexstr&nbsp;must&nbsp;contain&nbsp;an&nbsp;even&nbsp;number&nbsp;of&nbsp;hex&nbsp;digits&nbsp;(upper&nbsp;or&nbsp;lower&nbsp;case).</tt></dd></dl>
+ <dl><dt><a name="-b16encode"><strong>b16encode</strong></a> = hexlify(...)</dt><dd><tt>Hexadecimal&nbsp;representation&nbsp;of&nbsp;binary&nbsp;data.<br>
+&nbsp;<br>
+&nbsp;&nbsp;sep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;optional&nbsp;single&nbsp;character&nbsp;or&nbsp;byte&nbsp;to&nbsp;separate&nbsp;hex&nbsp;bytes.<br>
+&nbsp;&nbsp;bytes_per_sep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;How&nbsp;many&nbsp;bytes&nbsp;between&nbsp;separators.&nbsp;&nbsp;Positive&nbsp;values&nbsp;count&nbsp;from&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;right,&nbsp;negative&nbsp;values&nbsp;count&nbsp;from&nbsp;the&nbsp;left.<br>
+&nbsp;<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;bytes&nbsp;object.&nbsp;&nbsp;This&nbsp;function&nbsp;is&nbsp;also<br>
+available&nbsp;as&nbsp;"b2a_hex()".</tt></dd></dl>
+ <dl><dt><a name="-b64decode"><strong>b64decode</strong></a> = a2b_base64(data, /)</dt><dd><tt>Decode&nbsp;a&nbsp;line&nbsp;of&nbsp;base64&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-b64decode_file"><strong>b64decode_file</strong></a> = decode(input, output)</dt><dd><tt>Decode&nbsp;a&nbsp;file;&nbsp;input&nbsp;and&nbsp;output&nbsp;are&nbsp;binary&nbsp;files.</tt></dd></dl>
+ <dl><dt><a name="-b64decode_lines"><strong>b64decode_lines</strong></a> = decodebytes(s)</dt><dd><tt>Decode&nbsp;a&nbsp;bytestring&nbsp;of&nbsp;base-64&nbsp;data&nbsp;into&nbsp;a&nbsp;bytes&nbsp;object.</tt></dd></dl>
+ <dl><dt><a name="-b64encode_file"><strong>b64encode_file</strong></a> = encode(input, output)</dt><dd><tt>Encode&nbsp;a&nbsp;file;&nbsp;input&nbsp;and&nbsp;output&nbsp;are&nbsp;binary&nbsp;files.</tt></dd></dl>
+ <dl><dt><a name="-b64encode_lines"><strong>b64encode_lines</strong></a> = encodebytes(s)</dt><dd><tt>Encode&nbsp;a&nbsp;bytestring&nbsp;into&nbsp;a&nbsp;bytes&nbsp;object&nbsp;containing&nbsp;multiple&nbsp;lines<br>
+of&nbsp;base-64&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-decode_data"><strong>decode_data</strong></a>(data: bytes) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;data&nbsp;(try&nbsp;some&nbsp;encodings).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;len(<a href="#-decode_data">decode_data</a>(bytes(range(256))))<br>
+256<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_encodings"><strong>get_encodings</strong></a>()</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;probable&nbsp;encodings.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;[encoding&nbsp;for&nbsp;i,&nbsp;encoding&nbsp;in&nbsp;enumerate(<a href="#-get_encodings">get_encodings</a>())&nbsp;if&nbsp;i&nbsp;&gt;&nbsp;1]<br>
+['utf-8',&nbsp;'cp1252',&nbsp;'latin-1']<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-standard_b64decode"><strong>standard_b64decode</strong></a> = a2b_base64(data, /)</dt><dd><tt>Decode&nbsp;a&nbsp;line&nbsp;of&nbsp;base64&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-urlsafe_b64decode"><strong>urlsafe_b64decode</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>Same&nbsp;as&nbsp;base64.urlsafe_b64decode<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-urlsafe_b64decode">urlsafe_b64decode</a>(b'AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0-P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn-AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq-wsbKztLW2t7i5uru8vb6_wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t_g4eLj5OXm5-jp6uvs7e7v8PHy8_T19vf4-fr7_P3-_w==')<br>
+b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f&nbsp;!"#$%&amp;\'()*+,+./0123456789:;&lt;=\x0f\xd0\x10P\x90\xd1\x11Q\x91\xd2\x12R\x92\xd3\x13S\x93\xd4\x14T\x94\xd5\x15U\x95\xd6\x16V\x96\xd7\x17W\x97\xd8\x18X\x98\xd9\x19Y\x99\xda\x1aZ\x9a\xdb\x1b[\x9b\xdc\x1c\\\x9c\xdd\x1d]\x9d\xde\x1e^\x9e\xdf\x1f/\x9c\x08\x18(8HXhx\x88\x98\xa8\xb8\xc8\xd8\xe8\xf9\t\x19)9IYiy\x89\x99\xa9\xb9\xc9\xd9\xe9\xfa\n\x1a*:JZjz\x8a\x9a\xaa\xba\xca\xda\xea\xc2\xc6\xca\xce\xd2\xd6\xda\xde\xe2\xe6\xea\xee\xf2\xf6\xfa\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xd88x\xb8\xf99y\xb9\x8e\x9e\xae\xbe\xce\xde\xee\xff\x0f\x1f/\x13\xd7\xdb\xdf\xe1\xfa\xfb?|'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-urlsafe_b64encode"><strong>urlsafe_b64encode</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>Same&nbsp;as&nbsp;base64.urlsafe_b64encode<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-urlsafe_b64encode">urlsafe_b64encode</a>(bytes(range(256)))<br>
+b'AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0-P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn-AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq-wsbKztLW2t7i5uru8vb6_wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t_g4eLj5OXm5-jp6uvs7e7v8PHy8_T19vf4-fr7_P3-_w=='<br>
+&gt;&gt;&gt;</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -36,14 +133,16 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['get_encodings', 'decode_data']<br>
+<td width="100%"><strong>__all__</strong> = ['get_encodings', 'decode_data', 'b64encode', 'b64decode', 'standard_b64encode', 'standard_b64decode', 'b16encode', 'b16decode', 'b64encode_file', 'b64decode_file', 'b64encode_lines', 'b64decode_lines', 'urlsafe_b64encode', 'urlsafe_b64decode']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'<br>
+<strong>b64encode</strong> = functools.partial(&lt;built-in function b2a_base64&gt;, newline=False)<br>
+<strong>standard_b64encode</strong> = functools.partial(&lt;built-in function b2a_base64&gt;, newline=False)</td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#7799ee">
 <td colspan=3 valign=bottom>&nbsp;<br>

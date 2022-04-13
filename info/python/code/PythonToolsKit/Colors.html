@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Colors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Colors</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Colors.html.py">Colors.html</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+For&nbsp;all&nbsp;these&nbsp;features,&nbsp;you&nbsp;have&nbsp;the&nbsp;basic&nbsp;method,&nbsp;the&nbsp;"check"&nbsp;method<br>
+and&nbsp;the&nbsp;"safe"&nbsp;method.&nbsp;The&nbsp;"check"&nbsp;method&nbsp;verifies&nbsp;the&nbsp;validity&nbsp;of&nbsp;the<br>
+arguments&nbsp;and&nbsp;raises&nbsp;a&nbsp;ValueError&nbsp;when&nbsp;the&nbsp;arguments&nbsp;are&nbsp;invalid.&nbsp;The<br>
+"safe"&nbsp;can&nbsp;construct&nbsp;valid&nbsp;parameters&nbsp;from&nbsp;invalid&nbsp;parameters.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;<a href="#Colors">Colors</a>&nbsp;import&nbsp;*<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.int_to_html(255,&nbsp;0,&nbsp;150)<br>
+'#ff0096'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.html_to_int('#ff0096')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.html_to_int('#FF0096')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.rgb_to_int('rgb(255,&nbsp;0,&nbsp;150)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.rgba_to_int('rgba(255,&nbsp;0,&nbsp;150,&nbsp;0.5)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.int_to_rgba(255,&nbsp;0,&nbsp;150)<br>
+'rgba(255,&nbsp;0,&nbsp;150,&nbsp;1)'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.int_to_rgb(255,&nbsp;0,&nbsp;150)<br>
+'rgb(255,&nbsp;0,&nbsp;150)'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.get_8bits_color(7,&nbsp;7,&nbsp;3)<br>
+255<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.get_8bits_color(0,&nbsp;0,&nbsp;0)<br>
+0<br>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
+Run&nbsp;tests:<br>
+&nbsp;~#&nbsp;python&nbsp;-m&nbsp;doctest&nbsp;<a href="#Colors">Colors</a>.py<br>
+&nbsp;~#&nbsp;python&nbsp;<a href="#Colors">Colors</a>.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verbose&nbsp;mode<br>
+&nbsp;<br>
+22&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;10&nbsp;tests&nbsp;in&nbsp;__main__<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.check_get_8bits_color<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.check_html_to_int<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.check_int_to_html<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.check_int_to_rgb<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.check_int_to_rgba<br>
+&nbsp;&nbsp;10&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.check_rgb_to_int<br>
+&nbsp;&nbsp;12&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.check_rgba_to_int<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.get_8bits_color<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.html_to_int<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.int_to_html<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.int_to_rgb<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.int_to_rgba<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.rgb_to_int<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.rgba_to_int<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.safe_get_8bits_color<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.safe_html_to_int<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.safe_int_to_html<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.safe_int_to_rgb<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.safe_int_to_rgba<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.safe_rgb_to_int<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;__main__.<a href="#Colors">Colors</a>.safe_rgba_to_int<br>
+78&nbsp;tests&nbsp;in&nbsp;23&nbsp;items.<br>
+78&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+~#&nbsp;coverage&nbsp;run&nbsp;<a href="#Colors">Colors</a>.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+-------------------------------<br>
+<a href="#Colors">Colors</a>.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;176&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+-------------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;176&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Colors.html#Colors">Colors</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Colors">class <strong>Colors</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;functions&nbsp;to&nbsp;translate&nbsp;colors.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Colors-check_get_8bits_color"><strong>check_get_8bits_color</strong></a>(*args) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;get_8bits_color<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_get_8bits_color">check_get_8bits_color</a>(7,&nbsp;7,&nbsp;3)<br>
+255<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_get_8bits_color">check_get_8bits_color</a>(255,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.get_8bits_color&nbsp;the&nbsp;first&nbsp;two&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;7&nbsp;and&nbsp;the&nbsp;third&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;4&nbsp;(255&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_get_8bits_color">check_get_8bits_color</a>(6,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.get_8bits_color&nbsp;the&nbsp;first&nbsp;two&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;7&nbsp;and&nbsp;the&nbsp;third&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;4&nbsp;(-1&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_get_8bits_color">check_get_8bits_color</a>(6,&nbsp;0,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.get_8bits_color&nbsp;the&nbsp;first&nbsp;two&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;7&nbsp;and&nbsp;the&nbsp;third&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;4&nbsp;('invalid'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-check_html_to_int"><strong>check_html_to_int</strong></a>(color: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;html_to_int<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_html_to_int">check_html_to_int</a>('#FF0096')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_html_to_int">check_html_to_int</a>(7)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;hexadecimal&nbsp;string&nbsp;of&nbsp;length&nbsp;7&nbsp;starting&nbsp;with&nbsp;'#'&nbsp;(7&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_html_to_int">check_html_to_int</a>('')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;hexadecimal&nbsp;string&nbsp;of&nbsp;length&nbsp;7&nbsp;starting&nbsp;with&nbsp;'#'&nbsp;(''&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_html_to_int">check_html_to_int</a>('!FF0096')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;hexadecimal&nbsp;string&nbsp;of&nbsp;length&nbsp;7&nbsp;starting&nbsp;with&nbsp;'#'&nbsp;('!FF0096'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_html_to_int">check_html_to_int</a>('#ZF0096')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;hexadecimal&nbsp;string&nbsp;of&nbsp;length&nbsp;7&nbsp;starting&nbsp;with&nbsp;'#'&nbsp;('#ZF0096'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-check_int_to_html"><strong>check_int_to_html</strong></a>(*args) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;int_to_html<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_html">check_int_to_html</a>(255,&nbsp;0,&nbsp;150)<br>
+'#ff0096'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_html">check_int_to_html</a>(256,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_html&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;(256&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_html">check_int_to_html</a>(255,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_html&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;(-1&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_html">check_int_to_html</a>(255,&nbsp;0,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_html&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;('invalid'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-check_int_to_rgb"><strong>check_int_to_rgb</strong></a>(*args) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;int_to_rgb<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgb">check_int_to_rgb</a>(255,&nbsp;0,&nbsp;150)<br>
+'rgb(255,&nbsp;0,&nbsp;150)'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgb">check_int_to_rgb</a>(256,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_rgb&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;(256&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgb">check_int_to_rgb</a>(255,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_rgb&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;(-1&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgb">check_int_to_rgb</a>(255,&nbsp;0,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_rgb&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;('invalid'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-check_int_to_rgba"><strong>check_int_to_rgba</strong></a>(*args) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;int_to_rgba<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgba">check_int_to_rgba</a>(255,&nbsp;0,&nbsp;150,&nbsp;0.5)<br>
+'rgba(255,&nbsp;0,&nbsp;150,&nbsp;0.5)'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgba">check_int_to_rgba</a>(256,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_rgba&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;(256&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgba">check_int_to_rgba</a>(255,&nbsp;-1,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_rgba&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;(-1&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_int_to_rgba">check_int_to_rgba</a>(255,&nbsp;0,&nbsp;"invalid")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Colors">Colors</a>.int_to_rgba&nbsp;arguments&nbsp;should&nbsp;be&nbsp;int&nbsp;between&nbsp;0&nbsp;and&nbsp;255&nbsp;('invalid'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-check_rgb_to_int"><strong>check_rgb_to_int</strong></a>(color: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;rgb_to_int<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb(255,&nbsp;0,&nbsp;150)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb&nbsp;(&nbsp;255&nbsp;,&nbsp;0&nbsp;,&nbsp;150&nbsp;)&nbsp;')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>(7)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;(7&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;(''&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;('rgb'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb(')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;('rgb('&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb()')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;('rgb()'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb(,,)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;('rgb(,,)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb(256,&nbsp;-1,&nbsp;5)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;('rgb(256,&nbsp;-1,&nbsp;5)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgb_to_int">check_rgb_to_int</a>('rgb(255,&nbsp;-1,&nbsp;5)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbg'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;(example:&nbsp;'rgb(255,&nbsp;0,&nbsp;2)')&nbsp;('rgb(255,&nbsp;-1,&nbsp;5)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-check_rgba_to_int"><strong>check_rgba_to_int</strong></a>(color: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;rgba_to_int<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba(255,&nbsp;0,&nbsp;150,&nbsp;0.0)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-rgba_to_int">rgba_to_int</a>('rgba&nbsp;(&nbsp;255&nbsp;,&nbsp;0&nbsp;,&nbsp;150&nbsp;,&nbsp;1)&nbsp;')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>(7)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;(7&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;(''&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba(')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba('&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba()')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba()'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba(,,)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba(,,)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba(256,&nbsp;-1,&nbsp;5,&nbsp;0.5)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba(256,&nbsp;-1,&nbsp;5,&nbsp;0.5)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba(255,&nbsp;-1,&nbsp;5,&nbsp;0.5)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba(255,&nbsp;-1,&nbsp;5,&nbsp;0.5)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba(255,&nbsp;0,&nbsp;5,&nbsp;0.5.5)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba(255,&nbsp;0,&nbsp;5,&nbsp;0.5.5)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-check_rgba_to_int">check_rgba_to_int</a>('rgba(255,&nbsp;0,&nbsp;5,&nbsp;1.5)')<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Color&nbsp;should&nbsp;be&nbsp;a&nbsp;string&nbsp;of&nbsp;'rbga'&nbsp;call&nbsp;with&nbsp;three&nbsp;byte&nbsp;values&nbsp;separated&nbsp;by&nbsp;commas&nbsp;and&nbsp;a&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;1&nbsp;(example:&nbsp;'rgba(255,&nbsp;0,&nbsp;2,&nbsp;0.5)')&nbsp;('rgba(255,&nbsp;0,&nbsp;5,&nbsp;1.5)'&nbsp;is&nbsp;invalid).<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-get_8bits_color"><strong>get_8bits_color</strong></a>(red: int, green: int, blue: int) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;integer&nbsp;(0-255)&nbsp;representing&nbsp;8bits-1byte&nbsp;colors.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-get_8bits_color">get_8bits_color</a>(7,&nbsp;7,&nbsp;3)<br>
+255<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-get_8bits_color">get_8bits_color</a>(0,&nbsp;0,&nbsp;0)<br>
+0<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-html_to_int"><strong>html_to_int</strong></a>(colors: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;translates&nbsp;HTML&nbsp;colors&nbsp;to&nbsp;integers&nbsp;colors.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-html_to_int">html_to_int</a>('#FF0096')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-html_to_int">html_to_int</a>('#ff0096')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-int_to_html"><strong>int_to_html</strong></a>(red: int, green: int, blue: int) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;translates&nbsp;integers&nbsp;colors&nbsp;to&nbsp;HTML&nbsp;colors.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-int_to_html">int_to_html</a>(255,&nbsp;0,&nbsp;150)<br>
+'#ff0096'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-int_to_rgb"><strong>int_to_rgb</strong></a>(red: int, green: int, blue: int) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;translates&nbsp;integers<br>
+colors&nbsp;to&nbsp;RGB&nbsp;(CSS&nbsp;function)&nbsp;colors.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-int_to_rgb">int_to_rgb</a>(255,&nbsp;0,&nbsp;150)<br>
+'rgb(255,&nbsp;0,&nbsp;150)'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-int_to_rgba"><strong>int_to_rgba</strong></a>(red: int, green: int, blue: int, transparency: float = 1) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;translates&nbsp;integers<br>
+colors&nbsp;to&nbsp;RGBA&nbsp;(CSS&nbsp;function)&nbsp;colors.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-int_to_rgba">int_to_rgba</a>(255,&nbsp;0,&nbsp;150)<br>
+'rgba(255,&nbsp;0,&nbsp;150,&nbsp;1)'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-rgb_to_int"><strong>rgb_to_int</strong></a>(colors: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;translates&nbsp;RGB&nbsp;(CSS&nbsp;function)<br>
+colors&nbsp;to&nbsp;integers&nbsp;colors.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-rgb_to_int">rgb_to_int</a>('rgb(255,&nbsp;0,&nbsp;150)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-rgba_to_int"><strong>rgba_to_int</strong></a>(colors: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;translates&nbsp;RGBA&nbsp;(CSS&nbsp;function)<br>
+colors&nbsp;to&nbsp;integers&nbsp;colors.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-rgba_to_int">rgba_to_int</a>('rgba(255,&nbsp;0,&nbsp;150,&nbsp;0.5)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-safe_get_8bits_color"><strong>safe_get_8bits_color</strong></a>(*args) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;get_8bits_color<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_get_8bits_color">safe_get_8bits_color</a>(7,&nbsp;7,&nbsp;3)<br>
+255<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_get_8bits_color">safe_get_8bits_color</a>(255,&nbsp;150,&nbsp;"abc")<br>
+248<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-safe_html_to_int"><strong>safe_html_to_int</strong></a>(color: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;html_to_int<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_html_to_int">safe_html_to_int</a>('#FF0096')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_html_to_int">safe_html_to_int</a>('!FF0Z')<br>
+(255,&nbsp;0,&nbsp;0)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-safe_int_to_html"><strong>safe_int_to_html</strong></a>(*args) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;int_to_html<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_int_to_html">safe_int_to_html</a>(255,&nbsp;0,&nbsp;150)<br>
+'#ff0096'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_int_to_html">safe_int_to_html</a>(256,&nbsp;-1,&nbsp;"invalid")<br>
+'#00ff00'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-safe_int_to_rgb"><strong>safe_int_to_rgb</strong></a>(*args) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;int_to_rgb<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_int_to_rgb">safe_int_to_rgb</a>(255,&nbsp;0,&nbsp;150)<br>
+'rgb(255,&nbsp;0,&nbsp;150)'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_int_to_rgb">safe_int_to_rgb</a>(256,&nbsp;-1,&nbsp;"invalid")<br>
+'rgb(0,&nbsp;255,&nbsp;0)'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-safe_int_to_rgba"><strong>safe_int_to_rgba</strong></a>(*args) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;int_to_rgba<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_int_to_rgba">safe_int_to_rgba</a>(255,&nbsp;0,&nbsp;150)<br>
+'rgba(255,&nbsp;0,&nbsp;150,&nbsp;1)'<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_int_to_rgba">safe_int_to_rgba</a>(256,&nbsp;-1,&nbsp;"invalid",&nbsp;1.9)<br>
+'rgba(0,&nbsp;255,&nbsp;0,&nbsp;0.9)'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-safe_rgb_to_int"><strong>safe_rgb_to_int</strong></a>(color: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;rgb_to_int<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_rgb_to_int">safe_rgb_to_int</a>('rgb(255,&nbsp;0,&nbsp;150)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_rgb_to_int">safe_rgb_to_int</a>('rgb(255,&nbsp;0,&nbsp;150,)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_rgb_to_int">safe_rgb_to_int</a>('azerty&nbsp;|&nbsp;qwe255,&nbsp;rty1500&nbsp;|')<br>
+(255,&nbsp;220,&nbsp;0)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Colors-safe_rgba_to_int"><strong>safe_rgba_to_int</strong></a>(color: str) -&gt; Tuple[int, int, int]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;checks&nbsp;for&nbsp;rgba_to_int<br>
+arguments&nbsp;and&nbsp;call&nbsp;it.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_rgba_to_int">safe_rgba_to_int</a>('rgba(255,&nbsp;0,&nbsp;150,&nbsp;0.5)')<br>
+(255,&nbsp;0,&nbsp;150)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_rgba_to_int">safe_rgba_to_int</a>('rgba(0.5)')<br>
+(5,&nbsp;0,&nbsp;0)<br>
+&gt;&gt;&gt;&nbsp;<a href="#Colors">Colors</a>.<a href="#Colors-safe_rgba_to_int">safe_rgba_to_int</a>('azerty&nbsp;|&nbsp;qwe255,&nbsp;rty1500,&nbsp;0.2&nbsp;|')<br>
+(255,&nbsp;220,&nbsp;2)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Colors']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

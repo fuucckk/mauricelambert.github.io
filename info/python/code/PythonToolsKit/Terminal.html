@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Terminal</strong></big></big> (version 0.0.3)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Terminal</strong></big></big> (version 0.0.4)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Terminal.html.py">Terminal.html</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.</tt></p>
@@ -18,7 +18,7 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+<dt><font face="helvetica, arial">Terminal(<a href="builtins.html#object">builtins.object</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="Terminal.html#Terminal">Terminal</a>
@@ -29,13 +29,19 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Terminal">class <strong>Terminal</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Terminal">class <strong>Terminal</strong></a>(Terminal)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;function&nbsp;to&nbsp;use&nbsp;ANSI&nbsp;console<br>
 characters.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
-<td width="100%">Methods defined here:<br>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Terminal.html#Terminal">Terminal</a></dd>
+<dd>Terminal</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from Terminal:<br>
 <dl><dt><a name="Terminal-add_first_line"><strong>add_first_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;empty&nbsp;first&nbsp;line<br>
 (the&nbsp;contents&nbsp;of&nbsp;the&nbsp;rows&nbsp;are&nbsp;moved<br>
 to&nbsp;the&nbsp;next&nbsp;row).</tt></dd></dl>
@@ -56,7 +62,17 @@ using&nbsp;the&nbsp;8&nbsp;bits&nbsp;mode.</tt></dd></dl>
 using&nbsp;the&nbsp;3&nbsp;bytes&nbsp;mode.</tt></dd></dl>
 
 <dl><dt><a name="Terminal-change_foreground_color_8bits"><strong>change_foreground_color_8bits</strong></a>(color: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;foreground&nbsp;color<br>
-using&nbsp;the&nbsp;8&nbsp;bits&nbsp;mode.</tt></dd></dl>
+using&nbsp;the&nbsp;8&nbsp;bits&nbsp;mode.<br>
+&nbsp;<br>
+2**3&nbsp;==&nbsp;8&nbsp;-&gt;&nbsp;RED<br>
+2**3&nbsp;==&nbsp;8&nbsp;-&gt;&nbsp;GREEN<br>
+2**2&nbsp;==&nbsp;4&nbsp;-&gt;&nbsp;BLUE<br>
+&nbsp;<br>
+RRRGGGBB<br>
+&nbsp;<br>
+(0b111&nbsp;&lt;&lt;&nbsp;5)&nbsp;+&nbsp;(0b111&nbsp;&lt;&lt;&nbsp;2)&nbsp;+&nbsp;0b11<br>
+&nbsp;<br>
+(7&nbsp;&lt;&lt;&nbsp;5)&nbsp;+&nbsp;(7&nbsp;&lt;&lt;&nbsp;2)&nbsp;+&nbsp;3</tt></dd></dl>
 
 <dl><dt><a name="Terminal-clean"><strong>clean</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;cleans&nbsp;the&nbsp;console.</tt></dd></dl>
 
@@ -124,7 +140,7 @@ to&nbsp;the&nbsp;previous&nbsp;row).</tt></dd></dl>
 (on&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;the&nbsp;precedent&nbsp;line).</tt></dd></dl>
 
 <hr>
-Data descriptors defined here:<br>
+Data descriptors inherited from Terminal:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>

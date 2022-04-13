@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module WindowsTerminal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WindowsTerminal</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="WindowsTerminal.html.py">WindowsTerminal.html</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;WindowsTerminal&nbsp;import&nbsp;*<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+←[32mabc←[0m<br>
+&gt;&gt;&gt;&nbsp;<a href="#-active_virtual_terminal">active_virtual_terminal</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+abc<br>
+&gt;&gt;&gt;&nbsp;<a href="#-desactive_virtual_terminal">desactive_virtual_terminal</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+←[32mabc←[0m<br>
+&gt;&gt;&gt;&nbsp;<a href="#-desactive_virtual_terminal">desactive_virtual_terminal</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#-active_virtual_terminal">active_virtual_terminal</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-active_virtual_terminal">active_virtual_terminal</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#-persistent_virtual_terminal">persistent_virtual_terminal</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#-delete_persistent_virtual_terminal">delete_persistent_virtual_terminal</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#-persistent_terminal_transparency">persistent_terminal_transparency</a>(0x4d)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-delete_persistent_terminal_transparency">delete_persistent_terminal_transparency</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_terminal_transparency">set_terminal_transparency</a>(0)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_terminal_transparency">set_terminal_transparency</a>(255)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_color_transparency">set_color_transparency</a>(0x00000000)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_color_transparency">set_color_transparency</a>(0x000000FF)<br>
+True<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-active_virtual_terminal"><strong>active_virtual_terminal</strong></a>() -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;active&nbsp;terminal&nbsp;colors&nbsp;on&nbsp;Windows.<br>
+&nbsp;<br>
+return&nbsp;True&nbsp;on&nbsp;success&nbsp;and&nbsp;False&nbsp;on&nbsp;fail.<br>
+&nbsp;<br>
+doc:&nbsp;<a href="https://docs.microsoft.com/fr-fr/windows/console/console-virtual-terminal-sequences#code-try-1">https://docs.microsoft.com/fr-fr/windows/console/console-virtual-terminal-sequences#code-try-1</a><br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+←[32mabc←[0m<br>
+&gt;&gt;&gt;&nbsp;<a href="#-active_virtual_terminal">active_virtual_terminal</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+abc<br>
+&gt;&gt;&gt;&nbsp;<a href="#-active_virtual_terminal">active_virtual_terminal</a>()<br>
+False<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-delete_persistent_terminal_transparency"><strong>delete_persistent_terminal_transparency</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;the&nbsp;terminal&nbsp;transparency<br>
+persistent&nbsp;configuration&nbsp;using&nbsp;the&nbsp;registry.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-delete_persistent_terminal_transparency">delete_persistent_terminal_transparency</a>()<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-delete_persistent_virtual_terminal"><strong>delete_persistent_virtual_terminal</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;the&nbsp;virtual&nbsp;terminal&nbsp;persistent<br>
+configuration&nbsp;using&nbsp;the&nbsp;registry.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-delete_persistent_virtual_terminal">delete_persistent_virtual_terminal</a>()<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-desactive_virtual_terminal"><strong>desactive_virtual_terminal</strong></a>() -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;desactive&nbsp;terminal&nbsp;colors&nbsp;on&nbsp;Windows.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+←[32mabc←[0m<br>
+&gt;&gt;&gt;&nbsp;<a href="#-active_virtual_terminal">active_virtual_terminal</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+abc<br>
+&gt;&gt;&gt;&nbsp;<a href="#-desactive_virtual_terminal">desactive_virtual_terminal</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print("\x1b[32mabc\x1b[0m")<br>
+←[32mabc←[0m<br>
+&gt;&gt;&gt;&nbsp;<a href="#-desactive_virtual_terminal">desactive_virtual_terminal</a>()<br>
+False<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-persistent_terminal_transparency"><strong>persistent_terminal_transparency</strong></a>(level: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;terminal&nbsp;transparency&nbsp;persistent<br>
+configuration&nbsp;using&nbsp;the&nbsp;registry.<br>
+&nbsp;<br>
+'level'&nbsp;argument&nbsp;should&nbsp;be&nbsp;an&nbsp;integer&nbsp;between&nbsp;77-255<br>
+(77&nbsp;(0x4D)&nbsp;is&nbsp;the&nbsp;most&nbsp;transparent&nbsp;level&nbsp;and&nbsp;255<br>
+(0xFF)&nbsp;is&nbsp;the&nbsp;most&nbsp;opaque&nbsp;level)<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-persistent_terminal_transparency">persistent_terminal_transparency</a>(0x4d)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-persistent_virtual_terminal"><strong>persistent_virtual_terminal</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;virtual&nbsp;terminal&nbsp;persistent<br>
+configuration&nbsp;using&nbsp;the&nbsp;registry.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-persistent_virtual_terminal">persistent_virtual_terminal</a>()<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-set_color_transparency"><strong>set_color_transparency</strong></a>(color: int) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;the&nbsp;transparent&nbsp;color&nbsp;of&nbsp;the&nbsp;window.<br>
+&nbsp;<br>
+'level'&nbsp;argument&nbsp;should&nbsp;be&nbsp;an&nbsp;integer&nbsp;between&nbsp;0-4294967295<br>
+(0&nbsp;(0x00000000)&nbsp;is&nbsp;black,&nbsp;16777215&nbsp;(0x00FFFFFF)&nbsp;is&nbsp;white,<br>
+255&nbsp;(0x000000FF)&nbsp;is&nbsp;blue,&nbsp;65280&nbsp;(0x0000FF00)&nbsp;is&nbsp;green&nbsp;and<br>
+16711680&nbsp;(0x00FF0000)&nbsp;is&nbsp;red)<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_color_transparency">set_color_transparency</a>(0x00000000)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_color_transparency">set_color_transparency</a>(0x000000FF)<br>
+True<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-set_terminal_transparency"><strong>set_terminal_transparency</strong></a>(level: int) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;the&nbsp;terminal&nbsp;transparency&nbsp;on&nbsp;Windows.<br>
+&nbsp;<br>
+'level'&nbsp;argument&nbsp;should&nbsp;be&nbsp;an&nbsp;integer&nbsp;between&nbsp;0-255<br>
+(0&nbsp;is&nbsp;the&nbsp;most&nbsp;transparent&nbsp;level&nbsp;and<br>
+255&nbsp;is&nbsp;the&nbsp;most&nbsp;opaque&nbsp;level)<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_terminal_transparency">set_terminal_transparency</a>(0)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-set_terminal_transparency">set_terminal_transparency</a>(255)<br>
+True<br>
+&gt;&gt;&gt;</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['desactive_virtual_terminal', 'active_virtual_terminal', 'persistent_virtual_terminal', 'delete_persistent_virtual_terminal', 'persistent_terminal_transparency', 'delete_persistent_terminal_transparency', 'set_terminal_transparency', 'set_color_transparency']<br>
+<strong>__annotations__</strong> = {'GetConsoleMode': &lt;class 'ctypes.CDLL.__init__.&lt;locals&gt;._FuncPtr'&gt;, 'GetStdHandle': &lt;class 'ctypes.CDLL.__init__.&lt;locals&gt;._FuncPtr'&gt;, 'IN_ENABLE_VIRTUAL_TERMINAL_INPUT': &lt;class 'int'&gt;, 'LWA_ALPHA': &lt;class 'ctypes.c_ulong'&gt;, 'LWA_COLORKEY': &lt;class 'ctypes.c_ulong'&gt;, 'OUT_DISABLE_NEWLINE_AUTO_RETURN': &lt;class 'int'&gt;, 'OUT_ENABLE_VIRTUAL_TERMINAL_PROCESSING': &lt;class 'int'&gt;, 'STDERR': &lt;class 'int'&gt;, 'STDIN': &lt;class 'int'&gt;, 'STDOUT': &lt;class 'int'&gt;, ...}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
