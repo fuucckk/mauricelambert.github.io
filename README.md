@@ -28,6 +28,8 @@
  - [PyWCGIshell Documentation](https://mauricelambert.github.io/info/python/security/PyWCGIshell.html)
  - [WordListGenerator Documentation](https://mauricelambert.github.io/info/python/security/WordListGenerator.html)
  - [SteganograPy Documentation](https://mauricelambert.github.io/info/python/security/SteganograPy.html)
+ - [ZipSteganograPy Documentation](https://mauricelambert.github.io/info/python/security/ZipSteganograPy.html)
+ - [WebServerIdentifier Documentation](https://mauricelambert.github.io/info/python/security/WebServerIdentifier.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
@@ -44,6 +46,8 @@
  - [PyObfuscator Executable](https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz)
  - [WordListGenerator Executable](https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz)
  - [SteganograPy Executable](https://mauricelambert.github.io/info/python/security/SteganograPy.pyz)
+ - [ZipSteganograPy Executable](https://mauricelambert.github.io/info/python/security/ZipSteganograPy.pyz)
+ - [WebServerIdentifier Executable](https://mauricelambert.github.io/info/python/security/WebServerIdentifier.pyz)
 
 #### Network
 
