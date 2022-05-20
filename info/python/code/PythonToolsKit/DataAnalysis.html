@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module DataAnalysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>DataAnalysis</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="DataAnalysis.html.py">DataAnalysis.html</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;<a href="#DataAnalysis">DataAnalysis</a>&nbsp;import&nbsp;<a href="#DataAnalysis">DataAnalysis</a><br>
+&gt;&gt;&gt;&nbsp;from&nbsp;pprint&nbsp;import&nbsp;pprint<br>
+&gt;&gt;&gt;&nbsp;data&nbsp;=&nbsp;[<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;45,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pay":&nbsp;80000,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"level":&nbsp;12,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;18,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pay":&nbsp;25000,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"level":&nbsp;3,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;45,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pay":&nbsp;40000,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"level":&nbsp;3,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+...&nbsp;]<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data)<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_medians()])<br>
+[statistictype(key='age',&nbsp;value=45),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=40000),<br>
+&nbsp;statistictype(key='level',&nbsp;value=3)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_deviations()])<br>
+[statistictype(key='age',&nbsp;value=12.727922061357855),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=23213.98046197353),<br>
+&nbsp;statistictype(key='level',&nbsp;value=4.242640687119285)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_variances()])<br>
+[statistictype(key='age',&nbsp;value=243),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=808333333.3333334),<br>
+&nbsp;statistictype(key='level',&nbsp;value=27)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_averages()])<br>
+[statistictype(key='age',&nbsp;value=36.0),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=48333.333333333336),<br>
+&nbsp;statistictype(key='level',&nbsp;value=6.0)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_maximums()])<br>
+[statistictype(key='age',&nbsp;value=valuetype(key='age',&nbsp;value=45,&nbsp;counter=2)),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1)),<br>
+&nbsp;statistictype(key='level',&nbsp;value=valuetype(key='level',&nbsp;value=12,&nbsp;counter=1))]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_minimums()])<br>
+[statistictype(key='age',&nbsp;value=valuetype(key='age',&nbsp;value=18,&nbsp;counter=1)),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1)),<br>
+&nbsp;statistictype(key='level',&nbsp;value=valuetype(key='level',&nbsp;value=3,&nbsp;counter=2))]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.count_values_by_keys()])<br>
+[statistictype(key='age',&nbsp;value=2),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=3),<br>
+&nbsp;statistictype(key='level',&nbsp;value=2)]<br>
+&gt;&gt;&gt;&nbsp;analyse.count_values_by_key('level')<br>
+statistictype(key='level',&nbsp;value=2)<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.sort_by_value()])<br>
+[valuetype(key='level',&nbsp;value=3,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.sort_values_by_sum()])<br>
+[valuetype(key='level',&nbsp;value=3,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.sort_keys_by_sum()])<br>
+[('pay',&nbsp;145000),&nbsp;('age',&nbsp;108),&nbsp;('level',&nbsp;18)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.sort_by_counter()])<br>
+[valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='level',&nbsp;value=3,&nbsp;counter=2)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.sort_by_key()])<br>
+[valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='level',&nbsp;value=3,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.keys_frequences()])<br>
+[statistictype(key='age',&nbsp;value=0.07441809186500006),<br>
+&nbsp;statistictype(key='pay',&nbsp;value=99.91317889282416),<br>
+&nbsp;statistictype(key='level',&nbsp;value=0.012403015310833345)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.keys_values_frequences()])<br>
+[statistictype(key=valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),&nbsp;value=0.06201507655416673),<br>
+&nbsp;statistictype(key=valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),&nbsp;value=0.012403015310833345),<br>
+&nbsp;statistictype(key=valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),&nbsp;value=55.12451249259265),<br>
+&nbsp;statistictype(key=valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),&nbsp;value=17.226410153935202),<br>
+&nbsp;statistictype(key=valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1),&nbsp;value=27.562256246296325),<br>
+&nbsp;statistictype(key=valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),&nbsp;value=0.008268676873888896),<br>
+&nbsp;statistictype(key=valuetype(key='level',&nbsp;value=3,&nbsp;counter=2),&nbsp;value=0.004134338436944448)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.keys_values_count_frequences()])<br>
+[statistictype(key=valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),&nbsp;value=22.22222222222222),<br>
+&nbsp;statistictype(key=valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1),&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=valuetype(key='level',&nbsp;value=3,&nbsp;counter=2),&nbsp;value=22.22222222222222)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.values_frequences()])<br>
+[statistictype(key=45,&nbsp;value=22.22222222222222),<br>
+&nbsp;statistictype(key=18,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=80000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=25000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=40000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=12,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=3,&nbsp;value=22.22222222222222)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.value_frequence(45)])<br>
+[45,&nbsp;22.22222222222222]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.key_value_count_frequence(analyse.valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1))])<br>
+[valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),&nbsp;11.11111111111111]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.key_value_frequence(analyse.valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1))])<br>
+[valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),&nbsp;55.12451249259265]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.key_frequence('pay')])<br>
+['pay',&nbsp;99.91317889282416]<br>
+&gt;&gt;&gt;&nbsp;statistictypes&nbsp;=&nbsp;[<a href="#DataAnalysis">DataAnalysis</a>.statistictype(key=45,&nbsp;value=22.22222222222222),<br>
+...&nbsp;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.statistictype(key=18,&nbsp;value=11.11111111111111),<br>
+...&nbsp;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.statistictype(key=80000,&nbsp;value=11.11111111111111),<br>
+...&nbsp;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.statistictype(key=25000,&nbsp;value=11.11111111111111),<br>
+...&nbsp;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.statistictype(key=40000,&nbsp;value=11.11111111111111),<br>
+...&nbsp;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.statistictype(key=12,&nbsp;value=11.11111111111111),<br>
+...&nbsp;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.statistictype(key=3,&nbsp;value=22.22222222222222)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.sort_statistictype_by_key(statistictypes)])<br>
+[statistictype(key=3,&nbsp;value=22.22222222222222),<br>
+&nbsp;statistictype(key=12,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=18,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=45,&nbsp;value=22.22222222222222),<br>
+&nbsp;statistictype(key=25000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=40000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=80000,&nbsp;value=11.11111111111111)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.sort_statistictype_by_value(statistictypes)])<br>
+[statistictype(key=18,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=80000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=25000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=40000,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=12,&nbsp;value=11.11111111111111),<br>
+&nbsp;statistictype(key=45,&nbsp;value=22.22222222222222),<br>
+&nbsp;statistictype(key=3,&nbsp;value=22.22222222222222)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.sort_dict_by_value({"a":&nbsp;2,&nbsp;"b":&nbsp;1,&nbsp;"c":&nbsp;3})])<br>
+['b',&nbsp;'a',&nbsp;'c']<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_values_by_key('pay')])<br>
+[valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1)]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_gt(<a href="#DataAnalysis">DataAnalysis</a>.valuetype(key='level',&nbsp;value=3,&nbsp;counter=2))])<br>
+[valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=80000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='pay',&nbsp;value=40000,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),<br>
+&nbsp;None]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_lt(<a href="#DataAnalysis">DataAnalysis</a>.valuetype(key='level',&nbsp;value=3,&nbsp;counter=2))])<br>
+[None,&nbsp;None,&nbsp;None,&nbsp;None,&nbsp;None,&nbsp;None,&nbsp;None]<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_lt(<a href="#DataAnalysis">DataAnalysis</a>.valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1))])<br>
+[valuetype(key='age',&nbsp;value=45,&nbsp;counter=2),<br>
+&nbsp;valuetype(key='age',&nbsp;value=18,&nbsp;counter=1),<br>
+&nbsp;None,<br>
+&nbsp;None,<br>
+&nbsp;None,<br>
+&nbsp;valuetype(key='level',&nbsp;value=12,&nbsp;counter=1),<br>
+&nbsp;valuetype(key='level',&nbsp;value=3,&nbsp;counter=2)]<br>
+&gt;&gt;&gt;&nbsp;analyse.count_lt(<a href="#DataAnalysis">DataAnalysis</a>.valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1))<br>
+6<br>
+&gt;&gt;&gt;&nbsp;analyse.count_gt(<a href="#DataAnalysis">DataAnalysis</a>.valuetype(key='pay',&nbsp;value=25000,&nbsp;counter=1))<br>
+2<br>
+&gt;&gt;&gt;&nbsp;analyse.count_value('level',&nbsp;3)<br>
+valuetype(key='level',&nbsp;value=3,&nbsp;counter=2)<br>
+&gt;&gt;&gt;&nbsp;analyse.get_minimum('level')<br>
+statistictype(key='level',&nbsp;value=valuetype(key='level',&nbsp;value=3,&nbsp;counter=2))<br>
+&gt;&gt;&gt;&nbsp;analyse.get_maximum('level')<br>
+statistictype(key='level',&nbsp;value=valuetype(key='level',&nbsp;value=12,&nbsp;counter=1))<br>
+&gt;&gt;&gt;&nbsp;analyse.get_sum('level')<br>
+statistictype(key='level',&nbsp;value=18)<br>
+&gt;&gt;&gt;&nbsp;analyse.get_average('level')<br>
+statistictype(key='level',&nbsp;value=6.0)<br>
+&gt;&gt;&gt;&nbsp;analyse.get_variance('level')<br>
+statistictype(key='level',&nbsp;value=27)<br>
+&gt;&gt;&gt;&nbsp;analyse.get_deviation('level')<br>
+statistictype(key='level',&nbsp;value=4.242640687119285)<br>
+&gt;&gt;&gt;&nbsp;analyse.get_median('level')<br>
+statistictype(key='level',&nbsp;value=3)<br>
+&gt;&gt;&gt;&nbsp;data&nbsp;=&nbsp;[<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"filename":&nbsp;"__init__.py",<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"size":&nbsp;255,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"lines":&nbsp;5,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"modification":&nbsp;datetime.now(),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"filename":&nbsp;"WebScripts.py",<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"size":&nbsp;256520,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"lines":&nbsp;3214,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"modification":&nbsp;datetime(2016,&nbsp;6,&nbsp;22,&nbsp;12,&nbsp;25,&nbsp;48),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"filename":&nbsp;"future_python_file.py",<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+...&nbsp;]<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data)<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_sums()])<br>
+[statistictype(key='filename',&nbsp;value=None),<br>
+&nbsp;statistictype(key='size',&nbsp;value=256775),<br>
+&nbsp;statistictype(key='lines',&nbsp;value=3219),<br>
+&nbsp;statistictype(key='modification',&nbsp;value=None)]<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data,&nbsp;fields=['size',&nbsp;'lines',&nbsp;'modification'])<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_sums()])<br>
+[statistictype(key='size',&nbsp;value=256775),<br>
+&nbsp;statistictype(key='lines',&nbsp;value=3219),<br>
+&nbsp;statistictype(key='modification',&nbsp;value=None)]<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data,&nbsp;filter_=lambda&nbsp;x:&nbsp;x.get("size"))<br>
+&gt;&gt;&gt;&nbsp;len(analyse.keys['filename'])<br>
+2<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data)<br>
+&gt;&gt;&gt;&nbsp;len(analyse.keys['filename'])<br>
+3<br>
+&gt;&gt;&gt;&nbsp;data&nbsp;=&nbsp;(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1,2,3),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(500,&nbsp;412,&nbsp;561),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(721,&nbsp;216,&nbsp;683),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(10,25,56),<br>
+...&nbsp;)<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data)<br>
+&gt;&gt;&gt;&nbsp;len(analyse.keys[0])<br>
+4<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data,&nbsp;filters={0:&nbsp;lambda&nbsp;x:&nbsp;x&nbsp;&lt;&nbsp;100})<br>
+&gt;&gt;&gt;&nbsp;len(analyse.keys[0])<br>
+2<br>
+&gt;&gt;&gt;&nbsp;analyse&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data,&nbsp;fields=[1,3])<br>
+&gt;&gt;&gt;&nbsp;len(analyse.keys[0])<br>
+0<br>
+&gt;&gt;&gt;&nbsp;pprint([x&nbsp;for&nbsp;x&nbsp;in&nbsp;analyse.get_all_values()])<br>
+[valuetype(key=1,&nbsp;value=2,&nbsp;counter=1),<br>
+&nbsp;valuetype(key=1,&nbsp;value=412,&nbsp;counter=1),<br>
+&nbsp;valuetype(key=1,&nbsp;value=216,&nbsp;counter=1),<br>
+&nbsp;valuetype(key=1,&nbsp;value=25,&nbsp;counter=1)]<br>
+&gt;&gt;&gt;&nbsp;data&nbsp;=&nbsp;[{"key1":&nbsp;1,&nbsp;"key2":&nbsp;2}]&nbsp;*&nbsp;3&nbsp;+&nbsp;[{"key1":&nbsp;2,&nbsp;"key2":&nbsp;1}]&nbsp;*&nbsp;2<br>
+&gt;&gt;&gt;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.print_data(data,&nbsp;{"key1":&nbsp;"Column&nbsp;name",&nbsp;"key2":&nbsp;5},&nbsp;True)<br>
+|Column&nbsp;name|key2&nbsp;|<br>
+|-----------|-----|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.print_data(data,&nbsp;{"key1":&nbsp;"Column&nbsp;name",&nbsp;"key2":&nbsp;2},&nbsp;True)<br>
+|Column&nbsp;name|ke|<br>
+|-----------|--|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;|<br>
+|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;|<br>
+|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.print_data(data)<br>
+|key1|key2|<br>
+|----|----|<br>
+|1&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;|<br>
+|1&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;|<br>
+|2&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;|<br>
+|2&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;analysis&nbsp;=&nbsp;<a href="#DataAnalysis">DataAnalysis</a>(data)<br>
+&gt;&gt;&gt;&nbsp;analysis.statistictypes_printer(analysis.get_deviations())<br>
+|key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|-----------------------|-------------------|<br>
+|key1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|0.4898979485566356&nbsp;|<br>
+|key2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|0.4898979485566356&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;analysis.statistictypes_printer(analysis.get_averages())<br>
+|key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|-----------------------|-------------------|<br>
+|key1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|key2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;analysis.valuetypes_printer(analysis.get_gt(analysis.valuetype(key="key1",&nbsp;value=0.5,&nbsp;counter=0)))<br>
+|key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|counter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|-----------------------|-------------------|------------|<br>
+|key1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|key1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|key2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|key2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;<a href="#DataAnalysis">DataAnalysis</a>&nbsp;import&nbsp;PYPLOT<br>
+&gt;&gt;&gt;&nbsp;if&nbsp;PYPLOT:&nbsp;analysis.statistictypes_chart(analysis.get_averages())<br>
+...<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;x&nbsp;in&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.get_grouped_DataAnalysis(data,&nbsp;("key1",&nbsp;"key2")):&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.valuetypes_printer(x.get_values());&nbsp;print()<br>
+...<br>
+|key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|counter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|-----------------------|-------------------|------------|<br>
+|key1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|key2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&lt;BLANKLINE&gt;<br>
+|key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|counter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|-----------------------|-------------------|------------|<br>
+|key1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|key2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&lt;BLANKLINE&gt;<br>
+&gt;&gt;&gt;&nbsp;if&nbsp;PYPLOT:&nbsp;analysis.valuetypes_values_chart(analysis.get_all_values())<br>
+...<br>
+&gt;&gt;&gt;&nbsp;if&nbsp;PYPLOT:&nbsp;analysis.valuetypes_counters_chart(analysis.get_values())<br>
+...<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;sys<br>
+&gt;&gt;&gt;&nbsp;sys.modules["matplotlib"]&nbsp;=&nbsp;sys<br>
+&gt;&gt;&gt;&nbsp;sys.modules["matplotlib.pyplot"]&nbsp;=&nbsp;sys<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;importlib&nbsp;import&nbsp;reload<br>
+&gt;&gt;&gt;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>&nbsp;=&nbsp;reload(sys.modules["<a href="#DataAnalysis">DataAnalysis</a>"]).<a href="#DataAnalysis">DataAnalysis</a><br>
+&gt;&gt;&gt;&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.show_chart<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;...<br>
+AttributeError:&nbsp;type&nbsp;<a href="builtins.html#object">object</a>&nbsp;'<a href="#DataAnalysis">DataAnalysis</a>'&nbsp;has&nbsp;no&nbsp;attribute&nbsp;'show_chart'<br>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
+Run&nbsp;tests:<br>
+&nbsp;~#&nbsp;python&nbsp;-m&nbsp;doctest&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.py<br>
+&nbsp;~#&nbsp;python&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verbose&nbsp;mode<br>
+&nbsp;<br>
+1&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;79&nbsp;tests&nbsp;in&nbsp;__main__<br>
+79&nbsp;tests&nbsp;in&nbsp;65&nbsp;items.<br>
+79&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+~#&nbsp;coverage&nbsp;run&nbsp;<a href="#DataAnalysis">DataAnalysis</a>.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+-------------------------------------<br>
+<a href="#DataAnalysis">DataAnalysis</a>.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;290&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+-------------------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;290&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="DataAnalysis.html#DataAnalysis">DataAnalysis</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DataAnalysis">class <strong>DataAnalysis</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DataAnalysis">DataAnalysis</a>(data:&nbsp;collections.abc.Iterable,&nbsp;fields:&nbsp;List[collections.abc.Hashable]&nbsp;=&nbsp;None,&nbsp;filter_:&nbsp;collections.abc.Callable&nbsp;=&nbsp;None,&nbsp;filters:&nbsp;Dict[collections.abc.Hashable,&nbsp;collections.abc.Callable]&nbsp;=&nbsp;{})<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DataAnalysis-__init__"><strong>__init__</strong></a>(self, data: collections.abc.Iterable, fields: List[collections.abc.Hashable] = None, filter_: collections.abc.Callable = None, filters: Dict[collections.abc.Hashable, collections.abc.Callable] = {})</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-build_keys"><strong>build_keys</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;data&nbsp;keys&nbsp;(reqired&nbsp;for&nbsp;all&nbsp;functions).</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-compare_event_action"><strong>compare_event_action</strong></a>(self, ref_value: DataAnalysis.valuetype, event: collections.abc.Callable, match_action: collections.abc.Callable, not_match_action: collections.abc.Callable = &lt;function DataAnalysis.&lt;lambda&gt; at 0x0000029E780EEC10&gt;) -&gt; Any</dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;match_action&nbsp;if&nbsp;event<br>
+return&nbsp;is&nbsp;True&nbsp;else&nbsp;calls&nbsp;not_match_action.<br>
+&nbsp;<br>
+event&nbsp;signature:&nbsp;event(tested_value:&nbsp;valuetype,&nbsp;ref_value:&nbsp;valuetype)&nbsp;-&gt;&nbsp;bool<br>
+match_action&nbsp;signature:&nbsp;match_action(value:&nbsp;valuetype)&nbsp;-&gt;&nbsp;Any<br>
+not_match_action&nbsp;signature:&nbsp;not_match_action(value:&nbsp;valuetype)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-compare_values"><strong>compare_values</strong></a>(self, function: collections.abc.Callable, value1: DataAnalysis.valuetype, value2: DataAnalysis.valuetype) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;compares&nbsp;valuetypes.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-count_gt"><strong>count_gt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;counts&nbsp;values&nbsp;greater&nbsp;than&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-count_lt"><strong>count_lt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;counts&nbsp;values&nbsp;lesser&nbsp;than&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-count_value"><strong>count_value</strong></a>(self, key: collections.abc.Hashable, value: ~Value) -&gt; DataAnalysis.valuetype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;valuetype&nbsp;representing<br>
+a&nbsp;key&nbsp;value&nbsp;and&nbsp;counter&nbsp;of&nbsp;this&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-count_values_by_key"><strong>count_values_by_key</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;with<br>
+key&nbsp;and&nbsp;counter&nbsp;of&nbsp;differents&nbsp;values&nbsp;for&nbsp;this&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-count_values_by_keys"><strong>count_values_by_keys</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;with<br>
+key&nbsp;and&nbsp;counter&nbsp;of&nbsp;differents&nbsp;values&nbsp;for&nbsp;this&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_all_values"><strong>get_all_values</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of<br>
+all&nbsp;keys,&nbsp;values&nbsp;and&nbsp;counters.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_average"><strong>get_average</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;average&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_averages"><strong>get_averages</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;averages.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_deviation"><strong>get_deviation</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;deviation&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_deviations"><strong>get_deviations</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;deviations.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_gt"><strong>get_gt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;valuetype&nbsp;greater&nbsp;than&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_keys_counter"><strong>get_keys_counter</strong></a>(self) -&gt; collections.Counter</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;Counter&nbsp;<a href="builtins.html#object">object</a><br>
+representing&nbsp;key&nbsp;and&nbsp;sum&nbsp;of&nbsp;the&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_keys_values_count_counter"><strong>get_keys_values_count_counter</strong></a>(self) -&gt; collections.Counter</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;Counter&nbsp;<a href="builtins.html#object">object</a><br>
+representing&nbsp;valuetypes&nbsp;and&nbsp;values&nbsp;count.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_keys_values_counter"><strong>get_keys_values_counter</strong></a>(self) -&gt; collections.Counter</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;Counter&nbsp;<a href="builtins.html#object">object</a><br>
+representing&nbsp;valuetypes&nbsp;and&nbsp;sum&nbsp;of&nbsp;the&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_lt"><strong>get_lt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;valuetype&nbsp;lesser&nbsp;than&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_maximum"><strong>get_maximum</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;maximum&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_maximums"><strong>get_maximums</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;maximums.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_median"><strong>get_median</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;median&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_medians"><strong>get_medians</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;medians.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_minimum"><strong>get_minimum</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;minimum&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_minimums"><strong>get_minimums</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;minimums.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_numbers_by_key"><strong>get_numbers_by_key</strong></a>(self, key: collections.abc.Hashable) -&gt; Optional[List[Union[int, float]]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;numbers&nbsp;by&nbsp;key&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_statistic"><strong>get_statistic</strong></a>(self, key: collections.abc.Hashable, function: collections.abc.Callable, valuegetter: collections.abc.Callable = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;specific&nbsp;statistic&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_statistics"><strong>get_statistics</strong></a>(self, function: collections.abc.Callable, valuegetter: collections.abc.Callable = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;specific&nbsp;statistics.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_sum"><strong>get_sum</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;sum&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_sums"><strong>get_sums</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;sums.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_values"><strong>get_values</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of<br>
+each&nbsp;keys,&nbsp;values&nbsp;and&nbsp;counters.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_values_by_key"><strong>get_values_by_key</strong></a>(self, key: collections.abc.Hashable) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;list&nbsp;of<br>
+keys,&nbsp;values&nbsp;and&nbsp;counters&nbsp;for&nbsp;a&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_values_counter"><strong>get_values_counter</strong></a>(self) -&gt; collections.Counter</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;Counter&nbsp;<a href="builtins.html#object">object</a><br>
+representing&nbsp;values&nbsp;and&nbsp;values&nbsp;count.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_variance"><strong>get_variance</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;variance&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_variances"><strong>get_variances</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;variances.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-key_frequence"><strong>key_frequence</strong></a>(self, key: collections.abc.Hashable, pourcent: bool = True, counter: collections.Counter = None, all_sum: Union[int, float] = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;of&nbsp;key&nbsp;frequence.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-key_value_count_frequence"><strong>key_value_count_frequence</strong></a>(self, value: DataAnalysis.valuetype, pourcent: bool = True, counter: collections.Counter = None, all_sum: Union[int, float] = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;of<br>
+the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in<br>
+the&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-key_value_frequence"><strong>key_value_frequence</strong></a>(self, value: DataAnalysis.valuetype, pourcent: bool = True, counter: collections.Counter = None, all_sum: Union[int, float] = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;of<br>
+the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in<br>
+the&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-keys_frequences"><strong>keys_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of&nbsp;keys&nbsp;frequences.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-keys_values_count_frequences"><strong>keys_values_count_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of<br>
+the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in<br>
+the&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-keys_values_frequences"><strong>keys_values_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of<br>
+the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in<br>
+the&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_by_counter"><strong>sort_by_counter</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
+and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;counters.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_by_key"><strong>sort_by_key</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values&nbsp;and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;counters.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_by_value"><strong>sort_by_value</strong></a>(self, *args, **kwargs) -&gt; DataAnalysis.valuetype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
+and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_keys_by_sum"><strong>sort_keys_by_sum</strong></a>(self, counter: collections.Counter = None) -&gt; List[Tuple[collections.abc.Hashable, ~Value]]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys&nbsp;and<br>
+values&nbsp;sorted&nbsp;by&nbsp;sum&nbsp;of&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_values_by_sum"><strong>sort_values_by_sum</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
+and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;sum&nbsp;of&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-value_frequence"><strong>value_frequence</strong></a>(self, value: ~Value, pourcent: bool = True, counter: collections.Counter = None, all_sum: Union[int, float] = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;of&nbsp;value&nbsp;frequence.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-values_frequences"><strong>values_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of&nbsp;values&nbsp;frequences.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="DataAnalysis-get_grouped_DataAnalysis"><strong>get_grouped_DataAnalysis</strong></a>(data: collections.abc.Iterable, columns: Tuple[collections.abc.Hashable], *args, **kwargs) -&gt; collections.abc.Iterable<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;<a href="#DataAnalysis">DataAnalysis</a>&nbsp;instance<br>
+for&nbsp;each&nbsp;group&nbsp;formatted&nbsp;by&nbsp;columns&nbsp;values.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="DataAnalysis-frequence"><strong>frequence</strong></a>(all_sum: Union[int, float], sample_sum: Union[int, float], pourcent: bool = True) -&gt; Union[int, float]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;frequence&nbsp;of&nbsp;sample&nbsp;in&nbsp;all.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-get_iterator_tuples"><strong>get_iterator_tuples</strong></a>(data: collections.abc.Iterable) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;an&nbsp;iterator&nbsp;of&nbsp;tuples&nbsp;from&nbsp;dict&nbsp;or&nbsp;Iterable.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-print_data"><strong>print_data</strong></a>(data: collections.abc.Iterable, headers: Dict[collections.abc.Hashable, Union[str, int]] = {}, onetime: bool = False) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;data.<br>
+&nbsp;<br>
+The&nbsp;headers&nbsp;are&nbsp;printed&nbsp;on&nbsp;the&nbsp;first<br>
+row&nbsp;and&nbsp;set&nbsp;the&nbsp;width&nbsp;of&nbsp;the&nbsp;columns.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-show_chart"><strong>show_chart</strong></a>(values: collections.abc.Iterable, keys: collections.abc.Iterable, chart_title: str = 'DataAnalysis chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_dict_by_value"><strong>sort_dict_by_value</strong></a>(data: Dict[collections.abc.Hashable, ~Value], *args, **kwargs) -&gt; Dict[collections.abc.Hashable, ~Value]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;the&nbsp;dict&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_statistictype_by_key"><strong>sort_statistictype_by_key</strong></a>(data: collections.abc.Iterable, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;sorted&nbsp;by&nbsp;keys.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-sort_statistictype_by_value"><strong>sort_statistictype_by_value</strong></a>(data: collections.abc.Iterable, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-statistictypes_chart"><strong>statistictypes_chart</strong></a>(data: collections.abc.Iterable, chart_title: str = 'Statistictypes chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart&nbsp;of&nbsp;statistictypes.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-statistictypes_printer"><strong>statistictypes_printer</strong></a>(data: collections.abc.Iterable) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;statistictypes.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-valuetypes_counters_chart"><strong>valuetypes_counters_chart</strong></a>(data: collections.abc.Iterable, chart_title: str = 'Valuetypes (counters) chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart&nbsp;of&nbsp;statistictypes.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-valuetypes_printer"><strong>valuetypes_printer</strong></a>(data: collections.abc.Iterable) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;valuetypes.</tt></dd></dl>
+
+<dl><dt><a name="DataAnalysis-valuetypes_values_chart"><strong>valuetypes_values_chart</strong></a>(data: collections.abc.Iterable, chart_title: str = 'Valuetypes (values) chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart&nbsp;of&nbsp;valuetypes.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>statistictype</strong> = &lt;class 'DataAnalysis.statistictype'&gt;<dd><tt><a href="#DataAnalysis-statistictype">statistictype</a>(key,&nbsp;value)</tt></dl>
+
+<dl><dt><strong>valuetype</strong> = &lt;class 'DataAnalysis.valuetype'&gt;<dd><tt><a href="#DataAnalysis-valuetype">valuetype</a>(key,&nbsp;value,&nbsp;counter)</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['DataAnalysis']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

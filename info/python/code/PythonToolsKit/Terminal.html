@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Terminal</strong></big></big> (version 0.0.4)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Terminal</strong></big></big> (version 0.1.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Terminal.html.py">Terminal.html</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.</tt></p>
@@ -42,9 +42,13 @@ characters.<br>&nbsp;</tt></td></tr>
 </dl>
 <hr>
 Methods inherited from Terminal:<br>
-<dl><dt><a name="Terminal-add_first_line"><strong>add_first_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;empty&nbsp;first&nbsp;line<br>
-(the&nbsp;contents&nbsp;of&nbsp;the&nbsp;rows&nbsp;are&nbsp;moved<br>
-to&nbsp;the&nbsp;next&nbsp;row).</tt></dd></dl>
+<dl><dt><a name="Terminal-backspace"><strong>backspace</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;places&nbsp;the&nbsp;cursor&nbsp;on&nbsp;the&nbsp;precedent&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-bell"><strong>bell</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;play&nbsp;system&nbsp;sound.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-bold"><strong>bold</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;bold.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-carriage_return"><strong>carriage_return</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;places&nbsp;the&nbsp;cursor&nbsp;on&nbsp;the&nbsp;first&nbsp;column.</tt></dd></dl>
 
 <dl><dt><a name="Terminal-change_background_color"><strong>change_background_color</strong></a>(color: str, mode: int = 1) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;background&nbsp;color.</tt></dd></dl>
 
@@ -53,8 +57,6 @@ using&nbsp;the&nbsp;3&nbsp;bytes&nbsp;mode.</tt></dd></dl>
 
 <dl><dt><a name="Terminal-change_background_color_8bits"><strong>change_background_color_8bits</strong></a>(color: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;background&nbsp;color<br>
 using&nbsp;the&nbsp;8&nbsp;bits&nbsp;mode.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-change_font"><strong>change_font</strong></a>(font: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;font.</tt></dd></dl>
 
 <dl><dt><a name="Terminal-change_foreground_color"><strong>change_foreground_color</strong></a>(color: str, mode: int = 1) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;foreground&nbsp;color.</tt></dd></dl>
 
@@ -76,68 +78,96 @@ RRRGGGBB<br>
 
 <dl><dt><a name="Terminal-clean"><strong>clean</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;cleans&nbsp;the&nbsp;console.</tt></dd></dl>
 
-<dl><dt><a name="Terminal-clean_next_line"><strong>clean_next_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;cleans&nbsp;the&nbsp;next&nbsp;line<br>
-(take&nbsp;position&nbsp;on&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;cleaned&nbsp;line).</tt></dd></dl>
+<dl><dt><a name="Terminal-cursor_back"><strong>cursor_back</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;character.</tt></dd></dl>
 
-<dl><dt><a name="Terminal-delete_first_line"><strong>delete_first_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;the&nbsp;first&nbsp;line<br>
-(the&nbsp;contents&nbsp;of&nbsp;the&nbsp;rows&nbsp;are&nbsp;moved<br>
-to&nbsp;the&nbsp;previous&nbsp;row).</tt></dd></dl>
-
-<dl><dt><a name="Terminal-goto"><strong>goto</strong></a>(line: int, position: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;line:position.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_bold"><strong>mode_bold</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;bold.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_default"><strong>mode_default</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;bold.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_hide"><strong>mode_hide</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;hide.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_intensity"><strong>mode_intensity</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;intensity.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_italic"><strong>mode_italic</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;italic.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_no_bold"><strong>mode_no_bold</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;bold.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_no_hide"><strong>mode_no_hide</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;hide.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_no_intensity"><strong>mode_no_intensity</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;intensity.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_no_italic"><strong>mode_no_italic</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;italic.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_no_reverse"><strong>mode_no_reverse</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;replace&nbsp;colors&nbsp;(background/foreground).</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_no_underline"><strong>mode_no_underline</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;underline.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_reverse"><strong>mode_reverse</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;reverses&nbsp;colors&nbsp;(background/foreground).</tt></dd></dl>
-
-<dl><dt><a name="Terminal-mode_underline"><strong>mode_underline</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;underline.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-next_char"><strong>next_char</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;next&nbsp;character.</tt></dd></dl>
-
-<dl><dt><a name="Terminal-next_line"><strong>next_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;got&nbsp;to&nbsp;the&nbsp;next&nbsp;line<br>
+<dl><dt><a name="Terminal-cursor_down"><strong>cursor_down</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;got&nbsp;to&nbsp;the&nbsp;next&nbsp;line<br>
 (keep&nbsp;the&nbsp;same&nbsp;position&nbsp;on&nbsp;the&nbsp;next&nbsp;line).</tt></dd></dl>
 
-<dl><dt><a name="Terminal-precedent_char"><strong>precedent_char</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;character.</tt></dd></dl>
+<dl><dt><a name="Terminal-cursor_forward"><strong>cursor_forward</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;next&nbsp;character.</tt></dd></dl>
 
-<dl><dt><a name="Terminal-precedent_line"><strong>precedent_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;line<br>
+<dl><dt><a name="Terminal-cursor_horizontal_absolute"><strong>cursor_horizontal_absolute</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;line.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-cursor_horizontale_verticale_position"><strong>cursor_horizontale_verticale_position</strong></a>(line: int, position: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;line:position.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-cursor_next_line"><strong>cursor_next_line</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;next&nbsp;line<br>
+(on&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;the&nbsp;next&nbsp;line).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-cursor_position"><strong>cursor_position</strong></a>(line: int, position: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;line:position.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-cursor_previous_line"><strong>cursor_previous_line</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;line<br>
+(on&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;the&nbsp;precedent&nbsp;line).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-cursor_up"><strong>cursor_up</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;line<br>
 (keep&nbsp;the&nbsp;same&nbsp;position&nbsp;on&nbsp;the&nbsp;precedent&nbsp;line).</tt></dd></dl>
 
-<dl><dt><a name="Terminal-reset_background"><strong>reset_background</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;the&nbsp;background&nbsp;color.</tt></dd></dl>
+<dl><dt><a name="Terminal-device_status_report"><strong>device_status_report</strong></a>() -&gt; Tuple[bytes, bytes]</dt><dd><tt>This&nbsp;function&nbsp;reports&nbsp;the&nbsp;cursor&nbsp;position.</tt></dd></dl>
 
-<dl><dt><a name="Terminal-reset_colors"><strong>reset_colors</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;colors&nbsp;(background&nbsp;and&nbsp;foreground).</tt></dd></dl>
+<dl><dt><a name="Terminal-erase_in_display"><strong>erase_in_display</strong></a>(mode: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;clears&nbsp;a&nbsp;part&nbsp;of&nbsp;the&nbsp;screen.<br>
+&nbsp;<br>
+mode&nbsp;==&nbsp;0&nbsp;-&gt;&nbsp;clear&nbsp;screen&nbsp;between&nbsp;cursor&nbsp;and&nbsp;end.<br>
+mode&nbsp;==&nbsp;1&nbsp;-&gt;&nbsp;clear&nbsp;screen&nbsp;between&nbsp;cursor&nbsp;and&nbsp;start.<br>
+mode&nbsp;==&nbsp;2&nbsp;-&gt;&nbsp;clear&nbsp;screen.<br>
+mode&nbsp;==&nbsp;3&nbsp;-&gt;&nbsp;clear&nbsp;screen&nbsp;and&nbsp;saved&nbsp;buffer.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-erase_in_line"><strong>erase_in_line</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;clears&nbsp;a&nbsp;part&nbsp;of&nbsp;the&nbsp;line.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-faint"><strong>faint</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;intensity.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-font"><strong>font</strong></a>(font: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;font.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-gothic"><strong>gothic</strong></a>() -&gt; None</dt><dd><tt>Characters&nbsp;legible&nbsp;but&nbsp;marked&nbsp;as&nbsp;if&nbsp;for&nbsp;deletion.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-hide"><strong>hide</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;hide.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-italic"><strong>italic</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;italic.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-line_feed"><strong>line_feed</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;places&nbsp;the&nbsp;cursor&nbsp;on&nbsp;the&nbsp;next&nbsp;line.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-no_blink"><strong>no_blink</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;underline.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-no_bold"><strong>no_bold</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;bold.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-no_hide"><strong>no_hide</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;hide.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-no_intensity"><strong>no_intensity</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;intensity.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-no_italic"><strong>no_italic</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;italic.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-no_reverse"><strong>no_reverse</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;replace&nbsp;colors&nbsp;(background/foreground).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-no_underline"><strong>no_underline</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;underline.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-not_crossed_out"><strong>not_crossed_out</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;hide.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-rapid_blink"><strong>rapid_blink</strong></a>() -&gt; None</dt><dd><tt>Sets&nbsp;blinking&nbsp;to&nbsp;greter&nbsp;than&nbsp;150&nbsp;times&nbsp;per&nbsp;minute.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-reset"><strong>reset</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;colors&nbsp;(background&nbsp;and&nbsp;foreground).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-reset_background"><strong>reset_background</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;the&nbsp;background&nbsp;color.</tt></dd></dl>
 
 <dl><dt><a name="Terminal-reset_foreground"><strong>reset_foreground</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;the&nbsp;foreground&nbsp;color.</tt></dd></dl>
 
 <dl><dt><a name="Terminal-restore_position"><strong>restore_position</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;restore&nbsp;the&nbsp;saved&nbsp;position.</tt></dd></dl>
 
+<dl><dt><a name="Terminal-restore_saved_cursor_position"><strong>restore_saved_cursor_position</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;save&nbsp;the&nbsp;cursor&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-reverse"><strong>reverse</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;reverses&nbsp;colors&nbsp;(background/foreground).</tt></dd></dl>
+
+<dl><dt><a name="Terminal-save_current_cursor_position"><strong>save_current_cursor_position</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;save&nbsp;the&nbsp;cursor&nbsp;position.</tt></dd></dl>
+
 <dl><dt><a name="Terminal-save_position"><strong>save_position</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;saves&nbsp;the&nbsp;cursor&nbsp;position.</tt></dd></dl>
 
-<dl><dt><a name="Terminal-start_line"><strong>start_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;line.</tt></dd></dl>
+<dl><dt><a name="Terminal-scroll_down"><strong>scroll_down</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;scroll&nbsp;whole&nbsp;page&nbsp;down.</tt></dd></dl>
 
-<dl><dt><a name="Terminal-start_next_line"><strong>start_next_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;next&nbsp;line<br>
-(on&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;the&nbsp;next&nbsp;line).</tt></dd></dl>
+<dl><dt><a name="Terminal-scroll_up"><strong>scroll_up</strong></a>(n: int = 0) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;scroll&nbsp;whole&nbsp;page&nbsp;up.</tt></dd></dl>
 
-<dl><dt><a name="Terminal-start_precedent_line"><strong>start_precedent_line</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;go&nbsp;to&nbsp;the&nbsp;precedent&nbsp;line<br>
-(on&nbsp;the&nbsp;first&nbsp;character&nbsp;of&nbsp;the&nbsp;precedent&nbsp;line).</tt></dd></dl>
+<dl><dt><a name="Terminal-slow_blink"><strong>slow_blink</strong></a>() -&gt; None</dt><dd><tt>Sets&nbsp;blinking&nbsp;to&nbsp;less&nbsp;than&nbsp;150&nbsp;times&nbsp;per&nbsp;minute.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-strike"><strong>strike</strong></a>() -&gt; None</dt><dd><tt>Characters&nbsp;legible&nbsp;but&nbsp;marked&nbsp;as&nbsp;if&nbsp;for&nbsp;deletion.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-tab"><strong>tab</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;places&nbsp;the&nbsp;cursor&nbsp;on&nbsp;the&nbsp;next&nbsp;multiple&nbsp;of&nbsp;8.</tt></dd></dl>
+
+<dl><dt><a name="Terminal-underline"><strong>underline</strong></a>() -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;underline.</tt></dd></dl>
 
 <hr>
 Data descriptors inherited from Terminal:<br>
