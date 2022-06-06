@@ -80,15 +80,19 @@ else&nbsp;to&nbsp;the&nbsp;thread.</tt></dd></dl>
 Methods inherited from <a href="threading.html#Thread">threading.Thread</a>:<br>
 <dl><dt><a name="SimpleThread-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
 
-<dl><dt><a name="SimpleThread-getName"><strong>getName</strong></a>(self)</dt></dl>
+<dl><dt><a name="SimpleThread-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;string&nbsp;used&nbsp;for&nbsp;identification&nbsp;purposes&nbsp;only.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;name&nbsp;attribute&nbsp;instead.</tt></dd></dl>
 
-<dl><dt><a name="SimpleThread-isDaemon"><strong>isDaemon</strong></a>(self)</dt></dl>
+<dl><dt><a name="SimpleThread-isDaemon"><strong>isDaemon</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;daemon&nbsp;attribute&nbsp;instead.</tt></dd></dl>
 
 <dl><dt><a name="SimpleThread-is_alive"><strong>is_alive</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;the&nbsp;thread&nbsp;is&nbsp;alive.<br>
 &nbsp;<br>
 This&nbsp;method&nbsp;returns&nbsp;True&nbsp;just&nbsp;before&nbsp;the&nbsp;<a href="#SimpleThread-run">run</a>()&nbsp;method&nbsp;starts&nbsp;until&nbsp;just<br>
-after&nbsp;the&nbsp;<a href="#SimpleThread-run">run</a>()&nbsp;method&nbsp;terminates.&nbsp;The&nbsp;module&nbsp;function&nbsp;enumerate()<br>
-returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;alive&nbsp;threads.</tt></dd></dl>
+after&nbsp;the&nbsp;<a href="#SimpleThread-run">run</a>()&nbsp;method&nbsp;terminates.&nbsp;See&nbsp;also&nbsp;the&nbsp;module&nbsp;function<br>
+enumerate().</tt></dd></dl>
 
 <dl><dt><a name="SimpleThread-join"><strong>join</strong></a>(self, timeout=None)</dt><dd><tt>Wait&nbsp;until&nbsp;the&nbsp;thread&nbsp;terminates.<br>
 &nbsp;<br>
@@ -119,9 +123,13 @@ invokes&nbsp;the&nbsp;callable&nbsp;object&nbsp;passed&nbsp;to&nbsp;the&nbsp;obj
 target&nbsp;argument,&nbsp;if&nbsp;any,&nbsp;with&nbsp;sequential&nbsp;and&nbsp;keyword&nbsp;arguments&nbsp;taken<br>
 from&nbsp;the&nbsp;args&nbsp;and&nbsp;kwargs&nbsp;arguments,&nbsp;respectively.</tt></dd></dl>
 
-<dl><dt><a name="SimpleThread-setDaemon"><strong>setDaemon</strong></a>(self, daemonic)</dt></dl>
+<dl><dt><a name="SimpleThread-setDaemon"><strong>setDaemon</strong></a>(self, daemonic)</dt><dd><tt>Set&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;.daemon&nbsp;property&nbsp;instead.</tt></dd></dl>
 
-<dl><dt><a name="SimpleThread-setName"><strong>setName</strong></a>(self, name)</dt></dl>
+<dl><dt><a name="SimpleThread-setName"><strong>setName</strong></a>(self, name)</dt><dd><tt>Set&nbsp;the&nbsp;name&nbsp;string&nbsp;for&nbsp;this&nbsp;thread.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;name&nbsp;attribute&nbsp;instead.</tt></dd></dl>
 
 <dl><dt><a name="SimpleThread-start"><strong>start</strong></a>(self)</dt><dd><tt>Start&nbsp;the&nbsp;thread's&nbsp;activity.<br>
 &nbsp;<br>

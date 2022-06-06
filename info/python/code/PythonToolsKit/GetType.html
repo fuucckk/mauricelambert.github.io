@@ -67,7 +67,7 @@ TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;130&nbsp;&nbsp;
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-drange"><strong>drange</strong></a>(start: float, stop: float, step: float = 1) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;range&nbsp;for&nbsp;Decimal&nbsp;value.<br>
+<td width="100%"><dl><dt><a name="-drange"><strong>drange</strong></a>(start: float, stop: float, step: float = 1) -&gt; collections.abc.Iterator[float]</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;range&nbsp;for&nbsp;Decimal&nbsp;value.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
 &gt;&gt;&gt;&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-drange">drange</a>(0,&nbsp;5,&nbsp;2):&nbsp;i<br>
@@ -82,7 +82,7 @@ TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;130&nbsp;&nbsp;
 &gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-drange">drange</a>(0,&nbsp;100,&nbsp;0.1)][-1]<br>
 99.9<br>
 &gt;&gt;&gt;</tt></dd></dl>
- <dl><dt><a name="-get_boolean"><strong>get_boolean</strong></a>(value: str, raise_exception: bool = True, default: Any = None, case_sensitive: bool = False, true_values: collections.abc.Iterator = ('yes', 'on', '1', 'true', 'y'), false_values: collections.abc.Iterator = ('no', 'off', '0', 'false', 'n')) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;boolean&nbsp;from&nbsp;string&nbsp;value.<br>
+ <dl><dt><a name="-get_boolean"><strong>get_boolean</strong></a>(value: str, raise_exception: bool = True, default: Any = None, case_sensitive: bool = False, true_values: collections.abc.Iterator[str] = ('yes', 'on', '1', 'true', 'y'), false_values: collections.abc.Iterator[str] = ('no', 'off', '0', 'false', 'n')) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;boolean&nbsp;from&nbsp;string&nbsp;value.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
 &gt;&gt;&gt;&nbsp;GetType.<a href="#-get_boolean">get_boolean</a>('true')<br>
@@ -157,7 +157,7 @@ False<br>
 ...&nbsp;)<br>
 'invalid'<br>
 &gt;&gt;&gt;</tt></dd></dl>
- <dl><dt><a name="-get_ipv4_addresses"><strong>get_ipv4_addresses</strong></a>(value: str, default: Any = None, separator: str = ',', generator_char: str = '-', raise_exception: bool = True) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;ip&nbsp;addresses.<br>
+ <dl><dt><a name="-get_ipv4_addresses"><strong>get_ipv4_addresses</strong></a>(value: str, default: Any = None, separator: str = ',', generator_char: str = '-', raise_exception: bool = True) -&gt; collections.abc.Iterator[ipaddress.IPv4Address]</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;ip&nbsp;addresses.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
 &gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("10.10.10.10-10.10.10.0")]<br>
@@ -195,7 +195,7 @@ ValueError:&nbsp;separator/generator_char&nbsp;should&nbsp;not&nbsp;be&nbsp;'/'&
 &gt;&gt;&gt;&nbsp;[str(i)&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_ipv4_addresses">get_ipv4_addresses</a>("127.0.0.1,127.0.0.2")]<br>
 ['127.0.0.1',&nbsp;'127.0.0.2']<br>
 &gt;&gt;&gt;</tt></dd></dl>
- <dl><dt><a name="-get_numbers"><strong>get_numbers</strong></a>(value: str, default: Any = None, separator: str = ',', step_char: str = ':', step_default: int = 1, generator_char: str = '-', raise_exception: bool = True) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;integers&nbsp;from&nbsp;string&nbsp;value.<br>
+ <dl><dt><a name="-get_numbers"><strong>get_numbers</strong></a>(value: str, default: Any = None, separator: str = ',', step_char: str = ':', step_default: int = 1, generator_char: str = '-', raise_exception: bool = True) -&gt; collections.abc.Iterator[float]</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;integers&nbsp;from&nbsp;string&nbsp;value.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;import&nbsp;GetType<br>
 &gt;&gt;&gt;&nbsp;[i&nbsp;for&nbsp;i&nbsp;in&nbsp;GetType.<a href="#-get_numbers">get_numbers</a>("4")]<br>

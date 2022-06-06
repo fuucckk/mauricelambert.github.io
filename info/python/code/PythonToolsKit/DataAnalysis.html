@@ -368,16 +368,16 @@ TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 <font color="#000000" face="helvetica, arial"><a name="DataAnalysis">class <strong>DataAnalysis</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#DataAnalysis">DataAnalysis</a>(data:&nbsp;collections.abc.Iterable,&nbsp;fields:&nbsp;List[collections.abc.Hashable]&nbsp;=&nbsp;None,&nbsp;filter_:&nbsp;collections.abc.Callable&nbsp;=&nbsp;None,&nbsp;filters:&nbsp;Dict[collections.abc.Hashable,&nbsp;collections.abc.Callable]&nbsp;=&nbsp;{})<br>
+<td colspan=2><tt><a href="#DataAnalysis">DataAnalysis</a>(data:&nbsp;collections.abc.Iterable[typing.Dict[collections.abc.Hashable,&nbsp;~Value],&nbsp;collections.abc.Iterable[~Value]],&nbsp;fields:&nbsp;List[collections.abc.Hashable]&nbsp;=&nbsp;None,&nbsp;filter_:&nbsp;collections.abc.Callable&nbsp;=&nbsp;None,&nbsp;filters:&nbsp;Dict[collections.abc.Hashable,&nbsp;collections.abc.Callable]&nbsp;=&nbsp;{})<br>
 &nbsp;<br>
 <br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="DataAnalysis-__init__"><strong>__init__</strong></a>(self, data: collections.abc.Iterable, fields: List[collections.abc.Hashable] = None, filter_: collections.abc.Callable = None, filters: Dict[collections.abc.Hashable, collections.abc.Callable] = {})</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-__init__"><strong>__init__</strong></a>(self, data: collections.abc.Iterable[typing.Dict[collections.abc.Hashable, ~Value], collections.abc.Iterable[~Value]], fields: List[collections.abc.Hashable] = None, filter_: collections.abc.Callable = None, filters: Dict[collections.abc.Hashable, collections.abc.Callable] = {})</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-build_keys"><strong>build_keys</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;data&nbsp;keys&nbsp;(reqired&nbsp;for&nbsp;all&nbsp;functions).</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-compare_event_action"><strong>compare_event_action</strong></a>(self, ref_value: DataAnalysis.valuetype, event: collections.abc.Callable, match_action: collections.abc.Callable, not_match_action: collections.abc.Callable = &lt;function DataAnalysis.&lt;lambda&gt; at 0x0000029E780EEC10&gt;) -&gt; Any</dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;match_action&nbsp;if&nbsp;event<br>
+<dl><dt><a name="DataAnalysis-compare_event_action"><strong>compare_event_action</strong></a>(self, ref_value: DataAnalysis.valuetype, event: collections.abc.Callable, match_action: collections.abc.Callable, not_match_action: collections.abc.Callable = &lt;function DataAnalysis.&lt;lambda&gt; at 0x00000132117AD6C0&gt;) -&gt; Any</dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;match_action&nbsp;if&nbsp;event<br>
 return&nbsp;is&nbsp;True&nbsp;else&nbsp;calls&nbsp;not_match_action.<br>
 &nbsp;<br>
 event&nbsp;signature:&nbsp;event(tested_value:&nbsp;valuetype,&nbsp;ref_value:&nbsp;valuetype)&nbsp;-&gt;&nbsp;bool<br>
@@ -396,21 +396,21 @@ a&nbsp;key&nbsp;value&nbsp;and&nbsp;counter&nbsp;of&nbsp;this&nbsp;value.</tt></
 <dl><dt><a name="DataAnalysis-count_values_by_key"><strong>count_values_by_key</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;with<br>
 key&nbsp;and&nbsp;counter&nbsp;of&nbsp;differents&nbsp;values&nbsp;for&nbsp;this&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-count_values_by_keys"><strong>count_values_by_keys</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;with<br>
+<dl><dt><a name="DataAnalysis-count_values_by_keys"><strong>count_values_by_keys</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;with<br>
 key&nbsp;and&nbsp;counter&nbsp;of&nbsp;differents&nbsp;values&nbsp;for&nbsp;this&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_all_values"><strong>get_all_values</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of<br>
+<dl><dt><a name="DataAnalysis-get_all_values"><strong>get_all_values</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of<br>
 all&nbsp;keys,&nbsp;values&nbsp;and&nbsp;counters.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_average"><strong>get_average</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;average&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_averages"><strong>get_averages</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;averages.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_averages"><strong>get_averages</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;averages.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_deviation"><strong>get_deviation</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;deviation&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_deviations"><strong>get_deviations</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;deviations.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_deviations"><strong>get_deviations</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;deviations.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_gt"><strong>get_gt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;valuetype&nbsp;greater&nbsp;than&nbsp;value.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_gt"><strong>get_gt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;valuetype&nbsp;greater&nbsp;than&nbsp;value.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_keys_counter"><strong>get_keys_counter</strong></a>(self) -&gt; collections.Counter</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;Counter&nbsp;<a href="builtins.html#object">object</a><br>
 representing&nbsp;key&nbsp;and&nbsp;sum&nbsp;of&nbsp;the&nbsp;values.</tt></dd></dl>
@@ -421,34 +421,34 @@ representing&nbsp;valuetypes&nbsp;and&nbsp;values&nbsp;count.</tt></dd></dl>
 <dl><dt><a name="DataAnalysis-get_keys_values_counter"><strong>get_keys_values_counter</strong></a>(self) -&gt; collections.Counter</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;Counter&nbsp;<a href="builtins.html#object">object</a><br>
 representing&nbsp;valuetypes&nbsp;and&nbsp;sum&nbsp;of&nbsp;the&nbsp;values.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_lt"><strong>get_lt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;valuetype&nbsp;lesser&nbsp;than&nbsp;value.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_lt"><strong>get_lt</strong></a>(self, value: DataAnalysis.valuetype) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;valuetype&nbsp;lesser&nbsp;than&nbsp;value.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_maximum"><strong>get_maximum</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;maximum&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_maximums"><strong>get_maximums</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;maximums.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_maximums"><strong>get_maximums</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;maximums.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_median"><strong>get_median</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;median&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_medians"><strong>get_medians</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;medians.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_medians"><strong>get_medians</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;medians.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_minimum"><strong>get_minimum</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;minimum&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_minimums"><strong>get_minimums</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;minimums.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_minimums"><strong>get_minimums</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;minimums.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_numbers_by_key"><strong>get_numbers_by_key</strong></a>(self, key: collections.abc.Hashable) -&gt; Optional[List[Union[int, float]]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;numbers&nbsp;by&nbsp;key&nbsp;value.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_statistic"><strong>get_statistic</strong></a>(self, key: collections.abc.Hashable, function: collections.abc.Callable, valuegetter: collections.abc.Callable = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;specific&nbsp;statistic&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_statistics"><strong>get_statistics</strong></a>(self, function: collections.abc.Callable, valuegetter: collections.abc.Callable = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;specific&nbsp;statistics.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_statistics"><strong>get_statistics</strong></a>(self, function: collections.abc.Callable, valuegetter: collections.abc.Callable = None) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;specific&nbsp;statistics.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_sum"><strong>get_sum</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;sum&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_sums"><strong>get_sums</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;sums.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_sums"><strong>get_sums</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;sums.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_values"><strong>get_values</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of<br>
+<dl><dt><a name="DataAnalysis-get_values"><strong>get_values</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of<br>
 each&nbsp;keys,&nbsp;values&nbsp;and&nbsp;counters.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_values_by_key"><strong>get_values_by_key</strong></a>(self, key: collections.abc.Hashable) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;list&nbsp;of<br>
+<dl><dt><a name="DataAnalysis-get_values_by_key"><strong>get_values_by_key</strong></a>(self, key: collections.abc.Hashable) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;list&nbsp;of<br>
 keys,&nbsp;values&nbsp;and&nbsp;counters&nbsp;for&nbsp;a&nbsp;key.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_values_counter"><strong>get_values_counter</strong></a>(self) -&gt; collections.Counter</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;Counter&nbsp;<a href="builtins.html#object">object</a><br>
@@ -456,7 +456,7 @@ representing&nbsp;values&nbsp;and&nbsp;values&nbsp;count.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-get_variance"><strong>get_variance</strong></a>(self, key: collections.abc.Hashable) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;variance&nbsp;for&nbsp;a&nbsp;specific&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_variances"><strong>get_variances</strong></a>(self) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;variances.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_variances"><strong>get_variances</strong></a>(self) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;variances.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-key_frequence"><strong>key_frequence</strong></a>(self, key: collections.abc.Hashable, pourcent: bool = True, counter: collections.Counter = None, all_sum: Union[int, float] = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;of&nbsp;key&nbsp;frequence.</tt></dd></dl>
 
@@ -468,20 +468,20 @@ the&nbsp;key.</tt></dd></dl>
 the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in<br>
 the&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-keys_frequences"><strong>keys_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of&nbsp;keys&nbsp;frequences.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-keys_frequences"><strong>keys_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of&nbsp;keys&nbsp;frequences.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-keys_values_count_frequences"><strong>keys_values_count_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of<br>
+<dl><dt><a name="DataAnalysis-keys_values_count_frequences"><strong>keys_values_count_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of<br>
 the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in<br>
 the&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-keys_values_frequences"><strong>keys_values_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of<br>
+<dl><dt><a name="DataAnalysis-keys_values_frequences"><strong>keys_values_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of<br>
 the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;the&nbsp;values&nbsp;in<br>
 the&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-sort_by_counter"><strong>sort_by_counter</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
+<dl><dt><a name="DataAnalysis-sort_by_counter"><strong>sort_by_counter</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
 and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;counters.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-sort_by_key"><strong>sort_by_key</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values&nbsp;and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;counters.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-sort_by_key"><strong>sort_by_key</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values&nbsp;and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;counters.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-sort_by_value"><strong>sort_by_value</strong></a>(self, *args, **kwargs) -&gt; DataAnalysis.valuetype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
 and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
@@ -489,46 +489,38 @@ and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
 <dl><dt><a name="DataAnalysis-sort_keys_by_sum"><strong>sort_keys_by_sum</strong></a>(self, counter: collections.Counter = None) -&gt; List[Tuple[collections.abc.Hashable, ~Value]]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys&nbsp;and<br>
 values&nbsp;sorted&nbsp;by&nbsp;sum&nbsp;of&nbsp;values.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-sort_values_by_sum"><strong>sort_values_by_sum</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
+<dl><dt><a name="DataAnalysis-sort_values_by_sum"><strong>sort_values_by_sum</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Iterable[DataAnalysis.valuetype]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;keys,&nbsp;values<br>
 and&nbsp;counters&nbsp;sorted&nbsp;by&nbsp;sum&nbsp;of&nbsp;values.</tt></dd></dl>
 
 <dl><dt><a name="DataAnalysis-value_frequence"><strong>value_frequence</strong></a>(self, value: ~Value, pourcent: bool = True, counter: collections.Counter = None, all_sum: Union[int, float] = None) -&gt; DataAnalysis.statistictype</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;a&nbsp;statistictype&nbsp;of&nbsp;value&nbsp;frequence.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-values_frequences"><strong>values_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of&nbsp;values&nbsp;frequences.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-values_frequences"><strong>values_frequences</strong></a>(self, pourcent: bool = True, counter: collections.Counter = None) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;statistictypes&nbsp;of&nbsp;values&nbsp;frequences.</tt></dd></dl>
 
 <hr>
 Class methods defined here:<br>
-<dl><dt><a name="DataAnalysis-get_grouped_DataAnalysis"><strong>get_grouped_DataAnalysis</strong></a>(data: collections.abc.Iterable, columns: Tuple[collections.abc.Hashable], *args, **kwargs) -&gt; collections.abc.Iterable<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;<a href="#DataAnalysis">DataAnalysis</a>&nbsp;instance<br>
+<dl><dt><a name="DataAnalysis-get_grouped_DataAnalysis"><strong>get_grouped_DataAnalysis</strong></a>(data: collections.abc.Iterable[typing.Dict[collections.abc.Hashable, ~Value], collections.abc.Iterable[~Value]], columns: Tuple[collections.abc.Hashable], *args, **kwargs) -&gt; collections.abc.Iterable[~DataAnalysis]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;<a href="#DataAnalysis">DataAnalysis</a>&nbsp;instance<br>
 for&nbsp;each&nbsp;group&nbsp;formatted&nbsp;by&nbsp;columns&nbsp;values.</tt></dd></dl>
 
 <hr>
 Static methods defined here:<br>
 <dl><dt><a name="DataAnalysis-frequence"><strong>frequence</strong></a>(all_sum: Union[int, float], sample_sum: Union[int, float], pourcent: bool = True) -&gt; Union[int, float]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;frequence&nbsp;of&nbsp;sample&nbsp;in&nbsp;all.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-get_iterator_tuples"><strong>get_iterator_tuples</strong></a>(data: collections.abc.Iterable) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;an&nbsp;iterator&nbsp;of&nbsp;tuples&nbsp;from&nbsp;dict&nbsp;or&nbsp;Iterable.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-get_iterator_tuples"><strong>get_iterator_tuples</strong></a>(data: collections.abc.Iterable[typing.Dict[collections.abc.Hashable, ~Value], collections.abc.Iterable[~Value]]) -&gt; collections.abc.Iterable[typing.Tuple[collections.abc.Hashable, ~Value]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;an&nbsp;iterator&nbsp;of&nbsp;tuples&nbsp;from&nbsp;dict&nbsp;or&nbsp;Iterable.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-print_data"><strong>print_data</strong></a>(data: collections.abc.Iterable, headers: Dict[collections.abc.Hashable, Union[str, int]] = {}, onetime: bool = False) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;data.<br>
+<dl><dt><a name="DataAnalysis-print_data"><strong>print_data</strong></a>(data: collections.abc.Iterable[typing.Dict[collections.abc.Hashable, ~Value], collections.abc.Iterable[~Value]], headers: Dict[collections.abc.Hashable, Union[str, int]] = {}, onetime: bool = False) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;data.<br>
 &nbsp;<br>
 The&nbsp;headers&nbsp;are&nbsp;printed&nbsp;on&nbsp;the&nbsp;first<br>
 row&nbsp;and&nbsp;set&nbsp;the&nbsp;width&nbsp;of&nbsp;the&nbsp;columns.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-show_chart"><strong>show_chart</strong></a>(values: collections.abc.Iterable, keys: collections.abc.Iterable, chart_title: str = 'DataAnalysis chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart.</tt></dd></dl>
-
 <dl><dt><a name="DataAnalysis-sort_dict_by_value"><strong>sort_dict_by_value</strong></a>(data: Dict[collections.abc.Hashable, ~Value], *args, **kwargs) -&gt; Dict[collections.abc.Hashable, ~Value]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;the&nbsp;dict&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-sort_statistictype_by_key"><strong>sort_statistictype_by_key</strong></a>(data: collections.abc.Iterable, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;sorted&nbsp;by&nbsp;keys.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-sort_statistictype_by_key"><strong>sort_statistictype_by_key</strong></a>(data: collections.abc.Iterable[DataAnalysis.statistictype], *args, **kwargs) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;sorted&nbsp;by&nbsp;keys.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-sort_statistictype_by_value"><strong>sort_statistictype_by_value</strong></a>(data: collections.abc.Iterable, *args, **kwargs) -&gt; collections.abc.Iterable</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-sort_statistictype_by_value"><strong>sort_statistictype_by_value</strong></a>(data: collections.abc.Iterable[DataAnalysis.statistictype], *args, **kwargs) -&gt; collections.abc.Iterable[DataAnalysis.statistictype]</dt><dd><tt>This&nbsp;functions&nbsp;returns&nbsp;statistictypes&nbsp;sorted&nbsp;by&nbsp;values.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-statistictypes_chart"><strong>statistictypes_chart</strong></a>(data: collections.abc.Iterable, chart_title: str = 'Statistictypes chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart&nbsp;of&nbsp;statistictypes.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-statistictypes_printer"><strong>statistictypes_printer</strong></a>(data: collections.abc.Iterable[DataAnalysis.statistictype]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;statistictypes.</tt></dd></dl>
 
-<dl><dt><a name="DataAnalysis-statistictypes_printer"><strong>statistictypes_printer</strong></a>(data: collections.abc.Iterable) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;statistictypes.</tt></dd></dl>
-
-<dl><dt><a name="DataAnalysis-valuetypes_counters_chart"><strong>valuetypes_counters_chart</strong></a>(data: collections.abc.Iterable, chart_title: str = 'Valuetypes (counters) chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart&nbsp;of&nbsp;statistictypes.</tt></dd></dl>
-
-<dl><dt><a name="DataAnalysis-valuetypes_printer"><strong>valuetypes_printer</strong></a>(data: collections.abc.Iterable) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;valuetypes.</tt></dd></dl>
-
-<dl><dt><a name="DataAnalysis-valuetypes_values_chart"><strong>valuetypes_values_chart</strong></a>(data: collections.abc.Iterable, chart_title: str = 'Valuetypes (values) chart', *args, color=None, **kwargs) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;a&nbsp;matplotlib&nbsp;chart&nbsp;of&nbsp;valuetypes.</tt></dd></dl>
+<dl><dt><a name="DataAnalysis-valuetypes_printer"><strong>valuetypes_printer</strong></a>(data: collections.abc.Iterable[DataAnalysis.valuetype]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;valuetypes.</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>

@@ -6,13 +6,13 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>StringF</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>StringF</strong></big></big> (version 0.1.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="StringF.html.py">StringF.html</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-string_lengthformat">string_lengthformat</a>("azerty")<br>
-'azerty,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<br>
+'azerty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,'<br>
 &gt;&gt;&gt;&nbsp;<a href="#-string_lengthformat">string_lengthformat</a>("azertyazertyazerty")<br>
 'azertyazer...,'<br>
 &gt;&gt;&gt;&nbsp;print(<a href="#-strings_tableformat">strings_tableformat</a>([(0,&nbsp;1),&nbsp;("a"&nbsp;*&nbsp;50,&nbsp;"b"&nbsp;*&nbsp;50)]))<br>
@@ -21,7 +21,11 @@
 &gt;&gt;&gt;&nbsp;print(<a href="#-strings_tableformat">strings_tableformat</a>([(0,&nbsp;1),&nbsp;("a"&nbsp;*&nbsp;50,&nbsp;"b"&nbsp;*&nbsp;50)],&nbsp;length=[13,&nbsp;26]))<br>
 |0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
 |aaaaaaaaaa...|bbbbbbbbbbbbbbbbbbbbbbb...|<br>
-&gt;&gt;&gt;&nbsp;print(<a href="#-strings_tableformat">strings_tableformat</a>([(0,&nbsp;1),&nbsp;("a"&nbsp;*&nbsp;50,&nbsp;"b"&nbsp;*&nbsp;50)],&nbsp;length=[13,&nbsp;26]))<br>
+&gt;&gt;&gt;&nbsp;print(<a href="#-strings_tableformat">strings_tableformat</a>([["a"&nbsp;*&nbsp;5,&nbsp;"b"&nbsp;*&nbsp;25]]&nbsp;*&nbsp;2,&nbsp;length=[5,&nbsp;25],&nbsp;columns=["1"&nbsp;*&nbsp;5,&nbsp;"2"&nbsp;*&nbsp;25]))<br>
+|11111|2222222222222222222222222|<br>
+|-----|-------------------------|<br>
+|aaaaa|bbbbbbbbbbbbbbbbbbbbbbbbb|<br>
+|aaaaa|bbbbbbbbbbbbbbbbbbbbbbbbb|<br>
 &gt;&gt;&gt;&nbsp;class&nbsp;A:<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>a</strong>&nbsp;=&nbsp;"a"<br>
@@ -38,7 +42,28 @@ A<br>
 |a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
 |b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
 |azerty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&gt;&gt;&gt;</tt></p>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
+Run&nbsp;tests:<br>
+&nbsp;~#&nbsp;python&nbsp;-m&nbsp;doctest&nbsp;StringF.py<br>
+&nbsp;~#&nbsp;python&nbsp;StringF.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Verbose&nbsp;mode<br>
+&nbsp;<br>
+3&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;__main__<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;__main__.string_lengthformat<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;__main__.strings_tableformat<br>
+14&nbsp;tests&nbsp;in&nbsp;6&nbsp;items.<br>
+14&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+~#&nbsp;coverage&nbsp;run&nbsp;StringF.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+--------------------------------<br>
+StringF.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;67&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+--------------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;67&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+~#</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
@@ -85,8 +110,27 @@ Data descriptors defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-string_lengthformat"><strong>string_lengthformat</strong></a>(string: str, length: int = 13, end: str = '...', separator: str = ',') -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;formats&nbsp;string&nbsp;length.</tt></dd></dl>
- <dl><dt><a name="-strings_tableformat"><strong>strings_tableformat</strong></a>(strings: collections.abc.Iterator, length: Union[collections.abc.Sequence[int], int] = 13, end: str = '...', separator: str = '|', columns: collections.abc.Iterator = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;formatted&nbsp;table&nbsp;of&nbsp;strings.</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-string_lengthformat"><strong>string_lengthformat</strong></a>(string: str, length: int = 13, end: str = '...', separator: str = ',') -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;formats&nbsp;string&nbsp;length.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-string_lengthformat">string_lengthformat</a>("azerty")<br>
+'azerty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-string_lengthformat">string_lengthformat</a>("azertyazertyazerty")<br>
+'azertyazer...,'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-strings_tableformat"><strong>strings_tableformat</strong></a>(strings: collections.abc.Iterator[collections.abc.Iterator[str]], length: Union[collections.abc.Sequence[int], int] = 13, end: str = '...', separator: str = '|', columns: collections.abc.Iterator[str] = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;formatted&nbsp;table&nbsp;of&nbsp;strings.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;print(<a href="#-strings_tableformat">strings_tableformat</a>([(0,&nbsp;1),&nbsp;("a"&nbsp;*&nbsp;50,&nbsp;"b"&nbsp;*&nbsp;50)]))<br>
+|0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|aaaaaaaaaa...|bbbbbbbbbb...|<br>
+&gt;&gt;&gt;&nbsp;print(<a href="#-strings_tableformat">strings_tableformat</a>([(0,&nbsp;1),&nbsp;("a"&nbsp;*&nbsp;50,&nbsp;"b"&nbsp;*&nbsp;50)],&nbsp;length=[13,&nbsp;26]))<br>
+|0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|aaaaaaaaaa...|bbbbbbbbbbbbbbbbbbbbbbb...|<br>
+&gt;&gt;&gt;&nbsp;print(<a href="#-strings_tableformat">strings_tableformat</a>([["a"&nbsp;*&nbsp;5,&nbsp;"b"&nbsp;*&nbsp;25]]&nbsp;*&nbsp;2,&nbsp;length=[5,&nbsp;25],&nbsp;columns=["1"&nbsp;*&nbsp;5,&nbsp;"2"&nbsp;*&nbsp;25]))<br>
+|11111|2222222222222222222222222|<br>
+|-----|-------------------------|<br>
+|aaaaa|bbbbbbbbbbbbbbbbbbbbbbbbb|<br>
+|aaaaa|bbbbbbbbbbbbbbbbbbbbbbbbb|<br>
+&gt;&gt;&gt;</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">

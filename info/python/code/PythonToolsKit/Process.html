@@ -38,7 +38,7 @@ b'test2\r\n'<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-real_time_process_output"><strong>real_time_process_output</strong></a>(*args, input: bytes = b'', timeout: int = 0, **kwargs) -&gt; collections.abc.Iterator</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;lines&nbsp;of&nbsp;process&nbsp;in&nbsp;real&nbsp;time.<br>
+<td width="100%"><dl><dt><a name="-real_time_process_output"><strong>real_time_process_output</strong></a>(*args, input: bytes = b'', timeout: int = 0, **kwargs) -&gt; collections.abc.Iterator[typing.Tuple[bytes, bytes, int]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;lines&nbsp;of&nbsp;process&nbsp;in&nbsp;real&nbsp;time.<br>
 &nbsp;<br>
 args&nbsp;and&nbsp;kwargs&nbsp;are&nbsp;sent&nbsp;to&nbsp;subprocess.Popen.</tt></dd></dl>
 </td></tr></table><p>

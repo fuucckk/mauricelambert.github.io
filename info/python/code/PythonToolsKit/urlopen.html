@@ -80,7 +80,7 @@ Methods defined here:<br>
 
 <dl><dt><a name="DefaultHandler-http_response"><strong>http_response</strong></a>(self, request: urllib.request.Request, response: http.client.HTTPResponse) -&gt; None</dt></dl>
 
-<dl><dt><a name="DefaultHandler-httpcode"><strong>httpcode</strong></a>(self, *args: collections.abc.Sequence) -&gt; collections.abc.Callable</dt><dd><tt>This&nbsp;decorator&nbsp;change&nbsp;action&nbsp;on&nbsp;HTTP&nbsp;error<br>
+<dl><dt><a name="DefaultHandler-httpcode"><strong>httpcode</strong></a>(self, *args: collections.abc.Sequence[int]) -&gt; collections.abc.Callable</dt><dd><tt>This&nbsp;decorator&nbsp;change&nbsp;action&nbsp;on&nbsp;HTTP&nbsp;error<br>
 code.</tt></dd></dl>
 
 <dl><dt><a name="DefaultHandler-https_response"><strong>https_response</strong></a> = <a href="#DefaultHandler-http_response">http_response</a>(self, request: urllib.request.Request, response: http.client.HTTPResponse) -&gt; None</dt></dl>
@@ -122,7 +122,7 @@ Data and other attributes inherited from <a href="urllib.request.html#BaseHandle
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl><dt><a name="-build_opener"><strong>build_opener</strong></a>(functions: Dict[int, collections.abc.Callable] = None) -&gt; urlopen.OpenerDirector</dt><dd><tt>This&nbsp;function&nbsp;creates&nbsp;an&nbsp;opener&nbsp;object<br>
 using&nbsp;default&nbsp;handlers.</tt></dd></dl>
- <dl><dt><a name="-httpcode"><strong>httpcode</strong></a>(*args: collections.abc.Sequence) -&gt; collections.abc.Callable</dt><dd><tt>This&nbsp;decorator&nbsp;change&nbsp;action&nbsp;on&nbsp;HTTP&nbsp;error<br>
+ <dl><dt><a name="-httpcode"><strong>httpcode</strong></a>(*args: collections.abc.Sequence[int]) -&gt; collections.abc.Callable</dt><dd><tt>This&nbsp;decorator&nbsp;change&nbsp;action&nbsp;on&nbsp;HTTP&nbsp;error<br>
 code.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -139,8 +139,7 @@ code.</tt></dd></dl>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'<br>
-<strong>__warningregistry__</strong> = {'version': 0}</td></tr></table><p>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#7799ee">
 <td colspan=3 valign=bottom>&nbsp;<br>
