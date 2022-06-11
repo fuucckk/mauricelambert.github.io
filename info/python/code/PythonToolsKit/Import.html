@@ -6,12 +6,13 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Import</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Import</strong></big></big> (version 0.1.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="Import.html.py">Import.html</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#-import_from_filename">import_from_filename</a>("./test.py")</tt></p>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#-import_from_filename">import_from_filename</a>("./test.py")<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;<a href="#-reload">reload</a>(test)</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
@@ -20,6 +21,7 @@
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl><dt><a name="-import_from_filename"><strong>import_from_filename</strong></a>(filename: str) -&gt; module</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;module&nbsp;from&nbsp;path/filename.</tt></dd></dl>
+ <dl><dt><a name="-reload"><strong>reload</strong></a>(module: module) -&gt; module</dt><dd><tt>This&nbsp;function&nbsp;reload&nbsp;a&nbsp;module.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -27,7 +29,7 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['import_from_filename']<br>
+<td width="100%"><strong>__all__</strong> = ['import_from_filename', 'reload']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
