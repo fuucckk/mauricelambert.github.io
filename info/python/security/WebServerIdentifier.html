@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WebServerIdentifier</strong></big></big> (version 1.0.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WebServerIdentifier</strong></big></big> (version 1.1.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="webserveridentifier.py">webserveridentifier.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;identifies&nbsp;Web&nbsp;servers&nbsp;using&nbsp;an&nbsp;aggressive<br>
@@ -232,7 +232,7 @@ under&nbsp;certain&nbsp;conditions.<br>
 &gt;&gt;&gt;&nbsp;for&nbsp;size,&nbsp;r&nbsp;in&nbsp;identifier.get_max_URI_size():&nbsp;pass<br>
 ...<br>
 &gt;&gt;&gt;&nbsp;size<br>
-12212<br>
+16283<br>
 &gt;&gt;&gt;&nbsp;for&nbsp;size,&nbsp;r&nbsp;in&nbsp;identifier.get_max_URI_size(method="HEAD"):&nbsp;pass<br>
 ...<br>
 &gt;&gt;&gt;&nbsp;for&nbsp;r,&nbsp;size,&nbsp;servers&nbsp;in&nbsp;identifier.identify_server():&nbsp;pass<br>
@@ -240,12 +240,10 @@ under&nbsp;certain&nbsp;conditions.<br>
 &gt;&gt;&gt;&nbsp;for&nbsp;r,&nbsp;size,&nbsp;servers&nbsp;in&nbsp;identifier.identify_server(method="HEAD"):&nbsp;pass<br>
 ...<br>
 &gt;&gt;&gt;&nbsp;size<br>
-12213<br>
+16283<br>
 &gt;&gt;&gt;&nbsp;servers<br>
 {'IIS'}<br>
 &gt;&gt;&gt;&nbsp;name&nbsp;=&nbsp;servers.pop()<br>
-&gt;&gt;&gt;&nbsp;size<br>
-12213<br>
 &gt;&gt;&gt;&nbsp;name<br>
 'IIS'<br>
 &gt;&gt;&gt;<br>
@@ -287,7 +285,7 @@ Test&nbsp;passed.<br>
 <font color="#000000" face="helvetica, arial"><a name="WebServerIdentifier">class <strong>WebServerIdentifier</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#WebServerIdentifier">WebServerIdentifier</a>(target:&nbsp;str,&nbsp;baseuri:&nbsp;str&nbsp;=&nbsp;'/',&nbsp;ssl:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;interval:&nbsp;float&nbsp;=&nbsp;0,&nbsp;user_agent:&nbsp;str&nbsp;=&nbsp;'<a href="#WebServerIdentifier">WebServerIdentifier</a>&nbsp;1.0.0',&nbsp;*args,&nbsp;**kwargs)<br>
+<td colspan=2><tt><a href="#WebServerIdentifier">WebServerIdentifier</a>(target:&nbsp;str,&nbsp;baseuri:&nbsp;str&nbsp;=&nbsp;'/',&nbsp;ssl:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;interval:&nbsp;float&nbsp;=&nbsp;0,&nbsp;user_agent:&nbsp;str&nbsp;=&nbsp;'<a href="#WebServerIdentifier">WebServerIdentifier</a>&nbsp;1.1.0',&nbsp;*args,&nbsp;**kwargs)<br>
 &nbsp;<br>
 This&nbsp;class&nbsp;implements&nbsp;the&nbsp;Web&nbsp;Server&nbsp;Identifier.<br>
 &nbsp;<br>
@@ -295,14 +293,14 @@ target:&nbsp;The&nbsp;target&nbsp;host&nbsp;(examples:&nbsp;"10.101.10.101:8000"
 ssl:&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;HTTPS&nbsp;(SSL,&nbsp;Encryption)<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="WebServerIdentifier-__init__"><strong>__init__</strong></a>(self, target: str, baseuri: str = '/', ssl: bool = False, interval: float = 0, user_agent: str = 'WebServerIdentifier 1.0.0', *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="WebServerIdentifier-__init__"><strong>__init__</strong></a>(self, target: str, baseuri: str = '/', ssl: bool = False, interval: float = 0, user_agent: str = 'WebServerIdentifier 1.1.0', *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <dl><dt><a name="WebServerIdentifier-compare_matching_servers"><strong>compare_matching_servers</strong></a>(self, maxsize: int, server: Set[str], status_responses: Set[int]) -&gt; List[str]</dt><dd><tt>This&nbsp;function&nbsp;compares&nbsp;Web&nbsp;servers&nbsp;matching<br>
 with&nbsp;the&nbsp;max&nbsp;URI&nbsp;size&nbsp;(using&nbsp;error&nbsp;codes).</tt></dd></dl>
 
-<dl><dt><a name="WebServerIdentifier-get_max_URI_size"><strong>get_max_URI_size</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Generator</dt><dd><tt>This&nbsp;function&nbsp;detects&nbsp;the&nbsp;max&nbsp;URI&nbsp;length&nbsp;of&nbsp;the&nbsp;target.</tt></dd></dl>
+<dl><dt><a name="WebServerIdentifier-get_max_URI_size"><strong>get_max_URI_size</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Generator[typing.Tuple[int, http.client.HTTPResponse]]</dt><dd><tt>This&nbsp;function&nbsp;detects&nbsp;the&nbsp;max&nbsp;URI&nbsp;length&nbsp;of&nbsp;the&nbsp;target.</tt></dd></dl>
 
-<dl><dt><a name="WebServerIdentifier-identify_server"><strong>identify_server</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Generator</dt><dd><tt>This&nbsp;function&nbsp;identifies&nbsp;the&nbsp;target's&nbsp;web&nbsp;server.</tt></dd></dl>
+<dl><dt><a name="WebServerIdentifier-identify_server"><strong>identify_server</strong></a>(self, *args, **kwargs) -&gt; collections.abc.Generator[http.client.HTTPResponse, int, typing.Dict[int, str], collections.abc.Iterable[str]]</dt><dd><tt>This&nbsp;function&nbsp;identifies&nbsp;the&nbsp;target's&nbsp;web&nbsp;server.</tt></dd></dl>
 
 <dl><dt><a name="WebServerIdentifier-request"><strong>request</strong></a>(self, method: str = 'GET', size: int = 0) -&gt; http.client.HTTPResponse</dt><dd><tt>This&nbsp;function&nbsp;requests&nbsp;the&nbsp;Web&nbsp;Server.<br>
 &nbsp;<br>
@@ -330,7 +328,7 @@ Data descriptors defined here:<br>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['WebServerIdentifier']<br>
-<strong>__annotations__</strong> = {'APACHE_content': &lt;class 'bytes'&gt;, 'APACHE_hash': &lt;class 'bytes'&gt;, 'CADDY_content': &lt;class 'bytes'&gt;, 'CADDY_hash': &lt;class 'bytes'&gt;, 'ERLANG_content': &lt;class 'bytes'&gt;, 'ERLANG_hash': &lt;class 'bytes'&gt;, 'H2O_content': &lt;class 'bytes'&gt;, 'H2O_hash': &lt;class 'bytes'&gt;, 'IIS_400_content': &lt;class 'bytes'&gt;, 'IIS_400_content2': &lt;class 'bytes'&gt;, ...}<br>
+<strong>__annotations__</strong> = {'APACHE_content': &lt;class 'bytes'&gt;, 'APACHE_hash': &lt;class 'bytes'&gt;, 'CADDY_content': &lt;class 'bytes'&gt;, 'CADDY_hash': &lt;class 'bytes'&gt;, 'CHEROKEE_content': &lt;class 'bytes'&gt;, 'CHEROKEE_hash': &lt;class 'bytes'&gt;, 'ERLANG_content': &lt;class 'bytes'&gt;, 'ERLANG_hash': &lt;class 'bytes'&gt;, 'H2O_content': &lt;class 'bytes'&gt;, 'H2O_hash': &lt;class 'bytes'&gt;, ...}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WebServerIdentifier  Copyright (C) 2022  Mauric...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package identifies Web servers using an ag...<font color="#c040c0">\n</font>technique based on the maximum size of the URI.<font color="#c040c0">\n</font>'<br>
