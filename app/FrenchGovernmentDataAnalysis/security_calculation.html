@@ -8,7 +8,8 @@
 		<script type="text/javascript" src="brython/brython_stdlib.js"></script>
 		<!-- <script type="text/javascript" src="lib/gzip.js"></script> -->
 		<meta name="description" content="This page analyzes the data of the French Government related to security by department, with the aim of ordering the departments by security risk.">
-		
+		<meta name="keywords" content="security, evaluation, departments, French"/>
+
 		<style type="text/css">
 			body {
 				font-family: "Courier", "Lucida Console", "Consolas", "sans-serif";
@@ -24,7 +25,7 @@
 	</head>
 
 	<body onload="brython(1)">
-		<h1>Security calculation by French department</h1>
+		<h1>Evaluate and compare the security of french departments</h1>
 
 		<label for="name">Department name: </label>
 		<select name="name" id="name" disabled="disabled" onchange="window.print_result(null);">
