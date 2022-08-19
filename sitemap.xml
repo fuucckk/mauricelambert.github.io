@@ -23,4 +23,27 @@
     <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
+  <url>
+    <loc>http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en"
+               href="http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_calculation.html"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="fr"
+               href="http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html"/>
+  </url>
+  <url>
+    <loc>http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>http://mauricelambert.github.io/</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
 </urlset>
