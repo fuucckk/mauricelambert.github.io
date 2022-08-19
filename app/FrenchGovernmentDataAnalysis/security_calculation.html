@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Security by French departments</title>
+		<script type="text/javascript" src="brython/brython.js"></script>
+		<script type="text/javascript" src="brython/brython_stdlib.js"></script>
+		<!-- <script type="text/javascript" src="lib/gzip.js"></script> -->
+		
+		<style type="text/css">
+			body {
+				font-family: "Courier", "Lucida Console", "Consolas", "sans-serif";
+				background-color: #888888;
+				color: orange;
+				margin: 1%;
+			}
+			
+			h1 {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body onload="brython(1)">
+		<h1>Security calculation by French department</h1>
+
+		<label for="name">Department name: </label>
+		<select name="name" id="name" disabled="disabled" onchange="window.print_result(null);">
+			<option value="">Please choose a department (required)</option>
+		</select>
+
+		<p id="text"></p>
+
+		<progress id="progress" max="100" style="width: 90%; height: 2%"></progress>
+
+		<script type="text/python">
+			from browser import document, html, ajax, timer, window
+			from dataclasses import dataclass
+			from io import StringIO #, BytesIO
+			from collections import Counter
+			# from gzip import GzipFile
+			from typing import Dict
+			from csv import reader
+			
+			# decompress = window.Zlib.Gunzip("\x1f\x8b\x08\x00\xc9\x8b\xfeb\x02\xffKLJ\x06\x00\xc2A$5\x03\x00\x00\x00")
+			# print(decompress.decompress())
+			
+			@dataclass
+			class DepartmentSecurity:
+				name: str
+				code: str
+				order: int
+				score: int
+				pourcent: float
+				number: int
+			
+			ready = False
+			departments: Dict[str, str] = {}
+
+			element_progress = document["progress"]
+			element_name = document["name"]
+			element_text = document["text"]
+
+			last: int = 0
+			max: int = 0
+			min: int = 0
+			
+			security_order: Dict[int, DepartmentSecurity] = {}
+			codes_order: Dict[str, DepartmentSecurity] = {}
+			
+			element_text.text = "Please wait... i'm loading data."
+
+			def print_result(event):
+				code = element_name.selectedOptions[0].value[:2]
+
+				if not code.isdigit():
+					return
+
+				result0 = security_order[0]
+				result_max = security_order[last]
+				result = codes_order[code]
+
+				result_l1 = security_order[result.order - 1] if result.order else result
+				result_g1 = security_order[result.order + 1] if result.order != last else result
+
+				element_text.text = "Results are:"
+				results = html.UL()
+				results <= html.LI("First: &#8195;" + result0.name + f"&#8195; (score: {result0.score}, risk (per 1000 inhabitants): {result0.pourcent}, victims (who filed complaints): {result0.number})")
+				results <= html.LI("Before: &#8195;" + result_l1.name + f"&#8195; (score: {result_l1.score}, risk (per 1000 inhabitants): {result_l1.pourcent}, victims (who filed complaints): {result_l1.number})")
+				results <= html.LI("Your choice: &#8195;" + result.name + f"&#8195; (score: {result.score}, risk (per 1000 inhabitants): {result.pourcent}, victims (who filed complaints): {result.number})")
+				results <= html.LI("After: &#8195;" + result_g1.name + f"&#8195; (score: {result_g1.score}, risk (per 1000 inhabitants): {result_g1.pourcent}, victims (who filed complaints): {result_g1.number})")
+				results <= html.LI("Last: &#8195;" + result_max.name + f"&#8195; (score: {result_max.score}, risk (per 1000 inhabitants): {result_max.pourcent}, victims (who filed complaints): {result_max.number})")
+				element_text <= results
+
+				element_progress.value = result.score - min
+
+			def is_loaded():
+				global ready, max, min
+
+				if ready:
+					element_name.disabled = False
+					min = security_order[0].score
+					max = security_order[last].score - min
+					element_progress.max = max
+					element_text.text = "Ready to use ! Please choose a French department."
+					element_progress.value = 0
+				else:
+					ready = True
+			
+			def load_departments(request):
+				global departments
+
+				data = reader(StringIO(request.text))
+				next(data)                                                  # first line == headers
+				for code, region, cheflieu, _, f_name, name, name_ in data:
+					departments[code] = name
+					element = html.OPTION(code + " " + name)
+					element_name <= element
+
+				is_loaded()
+				
+			def load_security_reports(request):
+				global departments, security_order, codes_order, last
+
+				if not len(departments):
+					timer.set_timeout(load_security_reports, 100, request)
+					return
+
+				# data = reader(StringIO(GzipFile(fileobj=BytesIO(request.text)).read().decode("utf-8")), delimiter=";")
+				data = reader(StringIO(request.text), delimiter=";")
+				next(data)
+
+				by_pourcent = Counter()
+				by_department = Counter()
+				pourcent_divide = Counter()
+
+				for classe, annee, department, region, region_name, unite, mPOP, mLOG, number, pop, log, forMille in data:
+				    by_department[department + " - " + departments[department]] += float(number)
+				    by_pourcent[department + " - " + departments[department]] += float(forMille.replace(",", "."))
+				    pourcent_divide[department + " - " + departments[department]] += 1
+
+				for department, value in pourcent_divide.items():
+				    by_pourcent[department] = by_pourcent[department] / pourcent_divide[department]
+
+				data = by_department.most_common()
+				data.reverse()
+
+				by_department_ = {}
+				for i, (name, value) in enumerate(data):
+					by_department_[name] = (i, value)
+
+				# by_department_ = {name: (i, value) for i, (name, value) in enumerate(data)}
+				scores = Counter()
+				data = by_pourcent.most_common()
+				data.reverse()
+
+				for position2, (department, value) in enumerate(data):
+					position1, number = by_department_[department]
+					score = position1 + position2
+					scores[department] = score
+
+				data = scores.most_common()
+				data.reverse()
+
+				for i, (department, score) in enumerate(data):
+					code = department[:2]
+					security = DepartmentSecurity(department, code, i, score, by_pourcent[department], by_department[department])
+					security_order[i] = security
+					codes_order[code] = security
+
+				last = i
+				is_loaded()
+
+			ajax.get("https://www.insee.fr/fr/statistiques/fichier/6051727/departement_2022.csv", encoding="utf-8", oncomplete=load_departments)
+			# ajax.get("https://static.data.gouv.fr/resources/bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales/20220609-151700/donnee-dep-corr.csv.gz", mode="binary", oncomplete=load_security_reports)
+			ajax.get("data/donnee-dep-corr.csv", encoding="utf-8", oncomplete=load_security_reports)
+			
+			window.print_result = print_result
+			element_name.bind("onchange", print_result)
+		</script>
+		
+		<br><br><strong>This data is provided by the government between 2016 and 2022. It is important to note that classified complaints do not appear there (about 3/4 are closed in 2017). It is also important to remember that only complaints are counted (example: only 12% of victims of sexual violence file complaints, so 88% of these acts are not listed).</strong>
+	</body>
+
+</html>
