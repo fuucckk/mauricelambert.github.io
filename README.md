@@ -1,5 +1,3 @@
-# Projects Files
-
 ## Web App
 
  - [Government Data Analysis](https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/)
