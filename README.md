@@ -32,6 +32,7 @@
  - [SteganograPy Documentation](https://mauricelambert.github.io/info/python/security/SteganograPy.html)
  - [ZipSteganograPy Documentation](https://mauricelambert.github.io/info/python/security/ZipSteganograPy.html)
  - [WebServerIdentifier Documentation](https://mauricelambert.github.io/info/python/security/WebServerIdentifier.html)
+ - [SimpleHttpProxy Documentation](https://mauricelambert.github.io/info/python/code/SimpleHttpProxy.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
@@ -50,6 +51,7 @@
  - [SteganograPy Executable](https://mauricelambert.github.io/info/python/security/SteganograPy.pyz)
  - [ZipSteganograPy Executable](https://mauricelambert.github.io/info/python/security/ZipSteganograPy.pyz)
  - [WebServerIdentifier Executable](https://mauricelambert.github.io/info/python/security/WebServerIdentifier.pyz)
+ - [SimpleHttpProxy Executable](https://mauricelambert.github.io/info/python/code/ProxyPrinter.pyz)
 
 #### Network
 
