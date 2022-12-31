@@ -33,6 +33,8 @@
  - [ZipSteganograPy Documentation](https://mauricelambert.github.io/info/python/security/ZipSteganograPy.html)
  - [WebServerIdentifier Documentation](https://mauricelambert.github.io/info/python/security/WebServerIdentifier.html)
  - [SimpleHttpProxy Documentation](https://mauricelambert.github.io/info/python/code/SimpleHttpProxy.html)
+ - [PDForensic Documentation](https://mauricelambert.github.io/info/python/security/PDForensic.html)
+ - [WebPayloadsEncodings Documentation](https://mauricelambert.github.io/info/python/security/WebPayloadsEncodings.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
@@ -52,6 +54,8 @@
  - [ZipSteganograPy Executable](https://mauricelambert.github.io/info/python/security/ZipSteganograPy.pyz)
  - [WebServerIdentifier Executable](https://mauricelambert.github.io/info/python/security/WebServerIdentifier.pyz)
  - [SimpleHttpProxy Executable](https://mauricelambert.github.io/info/python/code/ProxyPrinter.pyz)
+ - [PDForensic Executable](https://mauricelambert.github.io/info/python/security/PDForensic.pyz)
+ - [WebPayloadsEncodings Executable](https://mauricelambert.github.io/info/python/security/WebPayloadsEncodings.pyz)
 
 #### Network
 
