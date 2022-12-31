@@ -1,30 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><title>Python: module Obfuscator</title>
+<html><head><title>Python: module PyObfuscator</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Obfuscator</strong></big></big></font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PyObfuscator</strong></big></big> (version 0.1.0)</font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="obfuscator.py">obfuscator.py</a></font></td></tr></table>
-    <p><tt>This&nbsp;file&nbsp;implement&nbsp;a&nbsp;python&nbsp;code&nbsp;<a href="#Obfuscator">Obfuscator</a>.<br>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="PyObfuscator.py">PyObfuscator.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;obfuscates&nbsp;python&nbsp;code.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;with&nbsp;open("code.py",&nbsp;"w")&nbsp;as&nbsp;f:&nbsp;n&nbsp;=&nbsp;f.write("print('Hello&nbsp;world&nbsp;!')")<br>
-&gt;&gt;&gt;&nbsp;<a href="#Obfuscator">Obfuscator</a>("code.py",&nbsp;deobfuscate_file=False).default_obfuscation()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Obfuscator">Obfuscator</a>("code.py",&nbsp;deobfuscate=False).default_obfuscation()<br>
 &gt;&gt;&gt;&nbsp;with&nbsp;open("code_obfu.py")&nbsp;as&nbsp;f:&nbsp;exec(f.read())<br>
 Hello&nbsp;world&nbsp;!<br>
 &gt;&gt;&gt;&nbsp;from&nbsp;os&nbsp;import&nbsp;remove;&nbsp;remove("code.py");&nbsp;remove("code_obfu.py")<br>
 &nbsp;<br>
-To&nbsp;run&nbsp;some&nbsp;simples&nbsp;tests&nbsp;use:&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;<a href="#Obfuscator">Obfuscator</a>.py<br>
-&nbsp;<br>
-To&nbsp;run&nbsp;all&nbsp;tests&nbsp;use:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;./test/Test_Obfuscator.py<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;python3&nbsp;test/Test_Obfuscator.py&nbsp;-v&nbsp;#&nbsp;with&nbsp;verbose&nbsp;mode<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;python3&nbsp;-m&nbsp;unittest&nbsp;-v&nbsp;test/Test_Obfuscator.py&nbsp;#&nbsp;using&nbsp;unittest&nbsp;module&nbsp;command&nbsp;(verbose&nbsp;mode)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;cd&nbsp;test;&nbsp;python3&nbsp;-m&nbsp;unittest&nbsp;discover&nbsp;#&nbsp;using&nbsp;unittest&nbsp;module&nbsp;and&nbsp;discover&nbsp;mode</tt></p>
+Tests:<br>
+&nbsp;-&nbsp;python3.11&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;PyObfuscator.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;22&nbsp;tests&nbsp;in&nbsp;58&nbsp;items.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;22&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;passed.<br>
+&nbsp;-&nbsp;python3.11&nbsp;-m&nbsp;unittest&nbsp;discover&nbsp;-s&nbsp;tests&nbsp;-p&nbsp;Test*.py&nbsp;-v<br>
+&nbsp;&nbsp;&nbsp;&nbsp;................................<br>
+&nbsp;&nbsp;&nbsp;&nbsp;----------------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Ran&nbsp;39&nbsp;tests&nbsp;in&nbsp;0.150s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OK<br>
+&nbsp;-&nbsp;python3.11&nbsp;-m&nbsp;coverage&nbsp;report<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Name">Name</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-----------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PyObfuscator.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;99%<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-----------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;99%</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -32,14 +40,8 @@ To&nbsp;run&nbsp;all&nbsp;tests&nbsp;use:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ast.html">ast</a><br>
-<a href="builtins.html">builtins</a><br>
-</td><td width="25%" valign=top><a href="json.html">json</a><br>
-<a href="logging.html">logging</a><br>
-</td><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
-<a href="random.html">random</a><br>
-</td><td width="25%" valign=top><a href="string.html">string</a><br>
-</td></tr></table></td></tr></table><p>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="builtins.html">builtins</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -50,70 +52,19 @@ To&nbsp;run&nbsp;all&nbsp;tests&nbsp;use:<br>
 <dt><font face="helvetica, arial"><a href="ast.html#NodeTransformer">ast.NodeTransformer</a>(<a href="ast.html#NodeVisitor">ast.NodeVisitor</a>)
 </font></dt><dd>
 <dl>
-<dt><font face="helvetica, arial"><a href="Obfuscator.html#ChangeAttributes">ChangeAttributes</a>
-</font></dt><dt><font face="helvetica, arial"><a href="Obfuscator.html#Obfuscator">Obfuscator</a>
-</font></dt></dl>
-</dd>
-<dt><font face="helvetica, arial"><a href="builtins.html#Exception">builtins.Exception</a>(<a href="builtins.html#BaseException">builtins.BaseException</a>)
-</font></dt><dd>
-<dl>
-<dt><font face="helvetica, arial"><a href="Obfuscator.html#ObfuscationError">ObfuscationError</a>
+<dt><font face="helvetica, arial"><a href="PyObfuscator.html#Obfuscator">Obfuscator</a>
 </font></dt></dl>
 </dd>
 <dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
 </font></dt><dd>
 <dl>
-<dt><font face="helvetica, arial"><a href="Obfuscator.html#DocLevels">DocLevels</a>
-</font></dt><dt><font face="helvetica, arial"><a href="Obfuscator.html#DocPassword">DocPassword</a>
-</font></dt><dt><font face="helvetica, arial"><a href="Obfuscator.html#Name">Name</a>
+<dt><font face="helvetica, arial"><a href="PyObfuscator.html#DocLevels">DocLevels</a>
+</font></dt><dt><font face="helvetica, arial"><a href="PyObfuscator.html#DocPassword">DocPassword</a>
+</font></dt><dt><font face="helvetica, arial"><a href="PyObfuscator.html#Name">Name</a>
 </font></dt></dl>
 </dd>
 </dl>
  <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ffc8d8">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="ChangeAttributes">class <strong>ChangeAttributes</strong></a>(<a href="ast.html#NodeTransformer">ast.NodeTransformer</a>)</font></td></tr>
-    
-<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#ChangeAttributes">ChangeAttributes</a>(default_names:&nbsp;Dict[str,&nbsp;<a href="#Obfuscator">Obfuscator</a>.<a href="#Name">Name</a>],&nbsp;obfu_names:&nbsp;Dict[str,&nbsp;<a href="#Obfuscator">Obfuscator</a>.<a href="#Name">Name</a>])<br>
-&nbsp;<br>
-This&nbsp;class&nbsp;change&nbsp;attribute&nbsp;if&nbsp;is&nbsp;defined&nbsp;in&nbsp;code.<br>&nbsp;</tt></td></tr>
-<tr><td>&nbsp;</td>
-<td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="Obfuscator.html#ChangeAttributes">ChangeAttributes</a></dd>
-<dd><a href="ast.html#NodeTransformer">ast.NodeTransformer</a></dd>
-<dd><a href="ast.html#NodeVisitor">ast.NodeVisitor</a></dd>
-<dd><a href="builtins.html#object">builtins.object</a></dd>
-</dl>
-<hr>
-Methods defined here:<br>
-<dl><dt><a name="ChangeAttributes-__init__"><strong>__init__</strong></a>(self, default_names: Dict[str, Obfuscator.Name], obfu_names: Dict[str, Obfuscator.Name])</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
-
-<dl><dt><a name="ChangeAttributes-visit_Attribute"><strong>visit_Attribute</strong></a>(self, parsed_code: ast.Attribute) -&gt; ast.Attribute</dt><dd><tt>This&nbsp;function&nbsp;change&nbsp;attribute&nbsp;name&nbsp;if&nbsp;attribute&nbsp;is&nbsp;defined.<br>
-&nbsp;<br>
-parsed_code:&nbsp;ast.Attribute&nbsp;<a href="builtins.html#object">object</a><br>
-return&nbsp;an&nbsp;ast.Attribute&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;same&nbsp;name&nbsp;or&nbsp;with&nbsp;her&nbsp;obfuscate&nbsp;name</tt></dd></dl>
-
-<hr>
-Methods inherited from <a href="ast.html#NodeTransformer">ast.NodeTransformer</a>:<br>
-<dl><dt><a name="ChangeAttributes-generic_visit"><strong>generic_visit</strong></a>(self, node)</dt><dd><tt>Called&nbsp;if&nbsp;no&nbsp;explicit&nbsp;visitor&nbsp;function&nbsp;exists&nbsp;for&nbsp;a&nbsp;node.</tt></dd></dl>
-
-<hr>
-Methods inherited from <a href="ast.html#NodeVisitor">ast.NodeVisitor</a>:<br>
-<dl><dt><a name="ChangeAttributes-visit"><strong>visit</strong></a>(self, node)</dt><dd><tt>Visit&nbsp;a&nbsp;node.</tt></dd></dl>
-
-<dl><dt><a name="ChangeAttributes-visit_Constant"><strong>visit_Constant</strong></a>(self, node)</dt></dl>
-
-<hr>
-Data descriptors inherited from <a href="ast.html#NodeVisitor">ast.NodeVisitor</a>:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-</td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -130,26 +81,25 @@ if&nbsp;level&nbsp;equal&nbsp;1:<br>
 if&nbsp;level&nbsp;equal&nbsp;2:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;level&nbsp;1<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;strings&nbsp;are&nbsp;encrypted&nbsp;(using&nbsp;<a href="#Obfuscator">Obfuscator</a>.crypt_strings&nbsp;function)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;strings&nbsp;become&nbsp;illegible&nbsp;but&nbsp;longer&nbsp;code&nbsp;execution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;strings&nbsp;become&nbsp;illegible&nbsp;but&nbsp;execution&nbsp;is&nbsp;longer<br>
 if&nbsp;level&nbsp;equal&nbsp;3:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;level&nbsp;2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;gzip&nbsp;the&nbsp;code&nbsp;(using&nbsp;<a href="#Obfuscator">Obfuscator</a>.gzip_encode&nbsp;function)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;code&nbsp;structure&nbsp;becomes&nbsp;invisible&nbsp;but&nbsp;longer&nbsp;code&nbsp;execution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;code&nbsp;is&nbsp;compressed&nbsp;using&nbsp;GZIP<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;code&nbsp;structure&nbsp;becomes&nbsp;invisible&nbsp;but&nbsp;execution&nbsp;is&nbsp;longer<br>
 if&nbsp;level&nbsp;equal&nbsp;4:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;level&nbsp;3<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;xor&nbsp;(using&nbsp;<a href="#Obfuscator">Obfuscator</a>.xor_code&nbsp;function)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encrypt&nbsp;the&nbsp;code&nbsp;but&nbsp;longer&nbsp;code&nbsp;execution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;encrypt&nbsp;the&nbsp;code&nbsp;but&nbsp;execution&nbsp;is&nbsp;longer<br>
 if&nbsp;level&nbsp;equal&nbsp;5:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;level&nbsp;4<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;base85&nbsp;(using&nbsp;<a href="#Obfuscator">Obfuscator</a>.base85_encode&nbsp;function)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bigger&nbsp;file&nbsp;size&nbsp;and&nbsp;longer&nbsp;code&nbsp;execution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;encode&nbsp;code&nbsp;using&nbsp;base85<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bigger&nbsp;file&nbsp;size&nbsp;and&nbsp;execution&nbsp;is&nbsp;longer<br>
 if&nbsp;level&nbsp;equal&nbsp;6:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;level&nbsp;5<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;"hexa&nbsp;code"&nbsp;('a'&nbsp;become&nbsp;'\x061')&nbsp;(using&nbsp;<a href="#Obfuscator">Obfuscator</a>.hexa_encode&nbsp;function)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;encode&nbsp;your&nbsp;code&nbsp;as&nbsp;hexadecimal&nbsp;escape&nbsp;('a'&nbsp;become&nbsp;'\x061')<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;size&nbsp;*&nbsp;4<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="DocLevels-print_the_doc"><strong>print_the_doc</strong></a>()</dt></dl>
+<dl><dt><a name="DocLevels-print_the_doc"><strong>print_the_doc</strong></a>() -&gt; None</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -176,10 +126,10 @@ if&nbsp;password&nbsp;is&nbsp;a&nbsp;string:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;code&nbsp;you&nbsp;must&nbsp;enter&nbsp;the&nbsp;password&nbsp;(console&nbsp;mode)<br>
 &nbsp;<br>
 Note:&nbsp;this&nbsp;password&nbsp;is&nbsp;not&nbsp;use&nbsp;if&nbsp;you&nbsp;don't&nbsp;use<br>
-<a href="#Obfuscator">Obfuscator</a>.xor_code&nbsp;function&nbsp;or&nbsp;Level&nbsp;is&nbsp;less&nbsp;than&nbsp;4.<br>&nbsp;</tt></td></tr>
+<a href="#Obfuscator">Obfuscator</a>.xor&nbsp;function&nbsp;or&nbsp;Level&nbsp;is&nbsp;less&nbsp;than&nbsp;4.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="DocPassword-print_the_doc"><strong>print_the_doc</strong></a>()</dt></dl>
+<dl><dt><a name="DocPassword-print_the_doc"><strong>print_the_doc</strong></a>() -&gt; None</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -196,21 +146,21 @@ Data descriptors defined here:<br>
 <font color="#000000" face="helvetica, arial"><a name="Name">class <strong>Name</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#Name">Name</a>(name:&nbsp;str,&nbsp;obfu_name:&nbsp;str,&nbsp;is_defined:&nbsp;bool,&nbsp;namespace_name:&nbsp;str)&nbsp;-&gt;&nbsp;None<br>
+<td colspan=2><tt><a href="#Name">Name</a>(name:&nbsp;str,&nbsp;obfuscation:&nbsp;str,&nbsp;is_defined:&nbsp;bool,&nbsp;namespace_name:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
 &nbsp;<br>
-Dataclass&nbsp;with&nbsp;default&nbsp;name,&nbsp;obfu&nbsp;name,&nbsp;definition&nbsp;and&nbsp;namespace.<br>
+Dataclass&nbsp;with&nbsp;default&nbsp;name,&nbsp;obfuscation&nbsp;name,&nbsp;definition&nbsp;and&nbsp;namespace.<br>
 &nbsp;<br>
 name(str):&nbsp;default&nbsp;variable&nbsp;name<br>
-obfu_name(str):&nbsp;variable&nbsp;name&nbsp;obfuscation&nbsp;(a&nbsp;random&nbsp;name)<br>
+obfuscation(str):&nbsp;variable&nbsp;name&nbsp;after&nbsp;obfuscation&nbsp;(a&nbsp;random&nbsp;name)<br>
 is_defined(bool):&nbsp;a&nbsp;boolean&nbsp;representing&nbsp;the&nbsp;definition&nbsp;in&nbsp;file<br>
 namespace_name(str):&nbsp;the&nbsp;namespace&nbsp;(None&nbsp;or&nbsp;&lt;class&nbsp;name&gt;&nbsp;or&nbsp;&lt;class&nbsp;name&gt;.&lt;function&nbsp;name&gt;)<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="Name-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+<dl><dt><a name="Name-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
 
-<dl><dt><a name="Name-__init__"><strong>__init__</strong></a>(self, name: str, obfu_name: str, is_defined: bool, namespace_name: str) -&gt; None</dt></dl>
+<dl><dt><a name="Name-__init__"><strong>__init__</strong></a>(self, name: str, obfuscation: str, is_defined: bool, namespace_name: str) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<dl><dt><a name="Name-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+<dl><dt><a name="Name-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -222,82 +172,16 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__annotations__</strong> = {'is_defined': &lt;class 'bool'&gt;, 'name': &lt;class 'str'&gt;, 'namespace_name': &lt;class 'str'&gt;, 'obfu_name': &lt;class 'str'&gt;}</dl>
+<dl><dt><strong>__annotations__</strong> = {'is_defined': &lt;class 'bool'&gt;, 'name': &lt;class 'str'&gt;, 'namespace_name': &lt;class 'str'&gt;, 'obfuscation': &lt;class 'str'&gt;}</dl>
 
-<dl><dt><strong>__dataclass_fields__</strong> = {'is_defined': Field(name='is_defined',type=&lt;class 'bool'&gt;,defa...rue,metadata=mappingproxy({}),_field_type=_FIELD), 'name': Field(name='name',type=&lt;class 'str'&gt;,default=&lt;da...rue,metadata=mappingproxy({}),_field_type=_FIELD), 'namespace_name': Field(name='namespace_name',type=&lt;class 'str'&gt;,d...rue,metadata=mappingproxy({}),_field_type=_FIELD), 'obfu_name': Field(name='obfu_name',type=&lt;class 'str'&gt;,defaul...rue,metadata=mappingproxy({}),_field_type=_FIELD)}</dl>
+<dl><dt><strong>__dataclass_fields__</strong> = {'is_defined': Field(name='is_defined',type=&lt;class 'bool'&gt;,defa...appingproxy({}),kw_only=False,_field_type=_FIELD), 'name': Field(name='name',type=&lt;class 'str'&gt;,default=&lt;da...appingproxy({}),kw_only=False,_field_type=_FIELD), 'namespace_name': Field(name='namespace_name',type=&lt;class 'str'&gt;,d...appingproxy({}),kw_only=False,_field_type=_FIELD), 'obfuscation': Field(name='obfuscation',type=&lt;class 'str'&gt;,defa...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
 
 <dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
 
 <dl><dt><strong>__hash__</strong> = None</dl>
 
-</td></tr></table> <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ffc8d8">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="ObfuscationError">class <strong>ObfuscationError</strong></a>(<a href="builtins.html#Exception">builtins.Exception</a>)</font></td></tr>
-    
-<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>This&nbsp;class&nbsp;is&nbsp;used&nbsp;to&nbsp;raise&nbsp;an&nbsp;<a href="#ObfuscationError">ObfuscationError</a>.<br>
-&nbsp;<br>
-&gt;&gt;&gt;&nbsp;raise&nbsp;<a href="#ObfuscationError">ObfuscationError</a>("Obfuscation&nbsp;test&nbsp;error")<br>
-Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
-&nbsp;&nbsp;&nbsp;...<br>
-<a href="#Obfuscator">Obfuscator</a>.<a href="#ObfuscationError">ObfuscationError</a>:&nbsp;Obfuscation&nbsp;test&nbsp;error<br>&nbsp;</tt></td></tr>
-<tr><td>&nbsp;</td>
-<td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="Obfuscator.html#ObfuscationError">ObfuscationError</a></dd>
-<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
-<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
-<dd><a href="builtins.html#object">builtins.object</a></dd>
-</dl>
-<hr>
-Data descriptors defined here:<br>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<hr>
-Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
-<dl><dt><a name="ObfuscationError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><strong>__match_args__</strong> = ('name', 'obfuscation', 'is_defined', 'namespace_name')</dl>
 
-<hr>
-Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
-<dl><dt><a name="ObfuscationError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
-
-<hr>
-Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
-<dl><dt><a name="ObfuscationError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
-
-<dl><dt><a name="ObfuscationError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
-
-<dl><dt><a name="ObfuscationError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
-
-<dl><dt><a name="ObfuscationError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
-
-<dl><dt><a name="ObfuscationError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
-
-<dl><dt><a name="ObfuscationError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ObfuscationError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
-
-<dl><dt><a name="ObfuscationError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#ObfuscationError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
-set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
-
-<hr>
-Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
-<dl><dt><strong>__cause__</strong></dt>
-<dd><tt>exception&nbsp;cause</tt></dd>
-</dl>
-<dl><dt><strong>__context__</strong></dt>
-<dd><tt>exception&nbsp;context</tt></dd>
-</dl>
-<dl><dt><strong>__dict__</strong></dt>
-</dl>
-<dl><dt><strong>__suppress_context__</strong></dt>
-</dl>
-<dl><dt><strong>__traceback__</strong></dt>
-</dl>
-<dl><dt><strong>args</strong></dt>
-</dl>
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
@@ -305,184 +189,203 @@ Data descriptors inherited from <a href="builtins.html#BaseException">builtins.B
 <font color="#000000" face="helvetica, arial"><a name="Obfuscator">class <strong>Obfuscator</strong></a>(<a href="ast.html#NodeTransformer">ast.NodeTransformer</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#Obfuscator">Obfuscator</a>(filename:&nbsp;str,&nbsp;output_filename:&nbsp;str&nbsp;=&nbsp;None,&nbsp;level:&nbsp;int&nbsp;=&nbsp;6,&nbsp;names:&nbsp;Dict[str,&nbsp;<a href="#Obfuscator">Obfuscator</a>.<a href="#Name">Name</a>]&nbsp;=&nbsp;{},&nbsp;deobfuscate_file:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;password:&nbsp;str&nbsp;=&nbsp;None,&nbsp;file_encoding:&nbsp;str&nbsp;=&nbsp;'utf-8',&nbsp;names_size:&nbsp;int&nbsp;=&nbsp;12)<br>
+<td colspan=2><tt><a href="#Obfuscator">Obfuscator</a>(filename:&nbsp;str,&nbsp;output_filename:&nbsp;str&nbsp;=&nbsp;None,&nbsp;level:&nbsp;int&nbsp;=&nbsp;6,&nbsp;names:&nbsp;Dict[str,&nbsp;PyObfuscator.<a href="#Name">Name</a>]&nbsp;=&nbsp;{},&nbsp;deobfuscate:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;password:&nbsp;str&nbsp;=&nbsp;None,&nbsp;encoding:&nbsp;str&nbsp;=&nbsp;'utf-8',&nbsp;names_size:&nbsp;int&nbsp;=&nbsp;12)<br>
 &nbsp;<br>
-This&nbsp;class&nbsp;obfuscate&nbsp;python&nbsp;file.<br>
+This&nbsp;class&nbsp;obfuscates&nbsp;python&nbsp;code.<br>
 &nbsp;<br>
-filename(str):&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;python&nbsp;file&nbsp;to&nbsp;obscate<br>
-output_filename(str)&nbsp;=&nbsp;None:&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;obfuscate&nbsp;python&nbsp;file<br>
-level(int)&nbsp;=&nbsp;5:&nbsp;is&nbsp;the&nbsp;obfuscation&nbsp;level&nbsp;(see&nbsp;the&nbsp;<a href="#DocLevels">DocLevels</a>'s&nbsp;doc&nbsp;string&nbsp;for&nbsp;more&nbsp;information)<br>
-names(Dict[str,&nbsp;<a href="#Name">Name</a>])&nbsp;=&nbsp;{}:&nbsp;pre-defined&nbsp;name&nbsp;(for&nbsp;example&nbsp;to&nbsp;import&nbsp;class&nbsp;or&nbsp;method&nbsp;in&nbsp;other&nbsp;file&nbsp;you&nbsp;need&nbsp;to&nbsp;know&nbsp;the&nbsp;name)<br>
+filename(str):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;filename&nbsp;to&nbsp;obfuscate<br>
+output_filename(str)&nbsp;=&nbsp;None:&nbsp;&nbsp;&nbsp;obfuscate&nbsp;python&nbsp;filename<br>
+level(int)&nbsp;=&nbsp;6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obfuscation&nbsp;level&nbsp;(see&nbsp;<a href="#DocLevels">DocLevels</a>)<br>
+names(Dict[str,&nbsp;<a href="#Name">Name</a>])&nbsp;=&nbsp;{}:&nbsp;&nbsp;&nbsp;names&nbsp;you&nbsp;need&nbsp;to&nbsp;know&nbsp;(define&nbsp;your&nbsp;obfuscation&nbsp;names&nbsp;for&nbsp;import)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;exemple:&nbsp;to&nbsp;import&nbsp;class&nbsp;named&nbsp;'<a href="#Obfuscator">Obfuscator</a>'&nbsp;as&nbsp;'Fdg6jsT_2',&nbsp;names&nbsp;must&nbsp;be<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"{'<a href="#Obfuscator">Obfuscator</a>':&nbsp;<a href="#Name">Name</a>('<a href="#Obfuscator">Obfuscator</a>',&nbsp;'Fdg6jsT_2',&nbsp;False,&nbsp;None)}".<br>
-deobfuscate_file(bool)&nbsp;=&nbsp;True:&nbsp;if&nbsp;True&nbsp;write&nbsp;old&nbsp;variable&nbsp;name&nbsp;and&nbsp;new&nbsp;variable&nbsp;name&nbsp;in&nbsp;json&nbsp;file&nbsp;to&nbsp;reverse&nbsp;obfuscation<br>
-password(str)&nbsp;=&nbsp;None:&nbsp;password&nbsp;for&nbsp;xor&nbsp;encrypt&nbsp;(see&nbsp;the&nbsp;<a href="#DocPassword">DocPassword</a>'s&nbsp;doc&nbsp;string&nbsp;for&nbsp;more&nbsp;information)<br>
-file_encoding(str)&nbsp;=&nbsp;utf-8:&nbsp;python&nbsp;file&nbsp;enconding<br>
-names_size(int)&nbsp;=&nbsp;12:&nbsp;size&nbsp;to&nbsp;generate&nbsp;random&nbsp;variables&nbsp;names<br>&nbsp;</tt></td></tr>
+deobfuscate(bool)&nbsp;=&nbsp;True:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;save&nbsp;names&nbsp;in&nbsp;a&nbsp;JSON&nbsp;file&nbsp;to&nbsp;reverse&nbsp;name&nbsp;obfuscation<br>
+password(str)&nbsp;=&nbsp;None:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;for&nbsp;encryption&nbsp;(see&nbsp;<a href="#DocPassword">DocPassword</a>)<br>
+encoding(str)&nbsp;=&nbsp;'utf-8':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;file&nbsp;encoding<br>
+names_size(int)&nbsp;=&nbsp;12:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;to&nbsp;generate&nbsp;random&nbsp;variables&nbsp;names<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="Obfuscator.html#Obfuscator">Obfuscator</a></dd>
+<dd><a href="PyObfuscator.html#Obfuscator">Obfuscator</a></dd>
 <dd><a href="ast.html#NodeTransformer">ast.NodeTransformer</a></dd>
 <dd><a href="ast.html#NodeVisitor">ast.NodeVisitor</a></dd>
 <dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Obfuscator-__init__"><strong>__init__</strong></a>(self, filename: str, output_filename: str = None, level: int = 6, names: Dict[str, Obfuscator.Name] = {}, deobfuscate_file: bool = True, password: str = None, file_encoding: str = 'utf-8', names_size: int = 12)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="Obfuscator-__init__"><strong>__init__</strong></a>(self, filename: str, output_filename: str = None, level: int = 6, names: Dict[str, PyObfuscator.Name] = {}, deobfuscate: bool = True, password: str = None, encoding: str = 'utf-8', names_size: int = 12)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-add_builtins"><strong>add_builtins</strong></a>(self) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;builtins&nbsp;obfuscation&nbsp;on&nbsp;the&nbsp;top&nbsp;of&nbsp;the&nbsp;file<br>
-and&nbsp;return&nbsp;the&nbsp;new&nbsp;code&nbsp;(self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;wih&nbsp;the&nbsp;new&nbsp;code).<br>
+<dl><dt><a name="Obfuscator-add_builtins"><strong>add_builtins</strong></a>(self) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;builtins&nbsp;obfuscation&nbsp;on&nbsp;the&nbsp;top&nbsp;of&nbsp;the&nbsp;code<br>
+and&nbsp;returns&nbsp;it.<br>
 &nbsp;<br>
-This&nbsp;function&nbsp;raise&nbsp;<a href="#ObfuscationError">ObfuscationError</a>&nbsp;if&nbsp;builtins&nbsp;are&nbsp;not&nbsp;obfuscate.<br>
-(Use&nbsp;<a href="#Obfuscator">Obfuscator</a>.init_vars&nbsp;function&nbsp;to&nbsp;obfuscate&nbsp;builtins)<br>
+This&nbsp;function&nbsp;raises&nbsp;RuntimeError&nbsp;if&nbsp;builtins&nbsp;are&nbsp;not&nbsp;obfuscate.<br>
 &nbsp;<br>
-This&nbsp;function&nbsp;raise&nbsp;<a href="#ObfuscationError">ObfuscationError</a>&nbsp;if&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;None.</tt></dd></dl>
+This&nbsp;function&nbsp;raises&nbsp;RuntimeError&nbsp;if&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;None.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-base85_encode"><strong>base85_encode</strong></a>(self, code: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;transform&nbsp;python&nbsp;code&nbsp;into&nbsp;base85&nbsp;python&nbsp;code.<br>
+<dl><dt><a name="Obfuscator-add_super_arguments"><strong>add_super_arguments</strong></a>(self, code: str = None) -&gt; Tuple[str, ast.AST]</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;super&nbsp;arguments&nbsp;because&nbsp;super<br>
+can't&nbsp;defined&nbsp;it's&nbsp;arguments&nbsp;after&nbsp;obfuscation.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;code&nbsp;=&nbsp;"class&nbsp;A:\n\tdef&nbsp;<a href="#Obfuscator-__init__">__init__</a>(self):super().<a href="#Obfuscator-__init__">__init__</a>()"<br>
+&gt;&gt;&gt;&nbsp;code,&nbsp;_&nbsp;=&nbsp;<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-add_super_arguments">add_super_arguments</a>(code)<br>
+&gt;&gt;&gt;&nbsp;code<br>
+'class&nbsp;A:\n\tdef&nbsp;<a href="#Obfuscator-__init__">__init__</a>(self):super(self.<strong>__class__</strong>,&nbsp;self).<a href="#Obfuscator-__init__">__init__</a>()'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Obfuscator-base85"><strong>base85</strong></a>(self, code: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;python&nbsp;code&nbsp;with&nbsp;base85.<br>
 &nbsp;&nbsp;&nbsp;(Level&nbsp;5)<br>
 &nbsp;<br>
 -&nbsp;if&nbsp;code&nbsp;is&nbsp;None&nbsp;this&nbsp;function&nbsp;use&nbsp;self.<strong>code</strong><br>
--&nbsp;in&nbsp;this&nbsp;function&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;base85&nbsp;python&nbsp;code<br>
--&nbsp;this&nbsp;function&nbsp;return&nbsp;the&nbsp;base85&nbsp;python&nbsp;code<br>
+-&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;encoded&nbsp;code<br>
+-&nbsp;returns&nbsp;the&nbsp;base85&nbsp;encoded&nbsp;code<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;exec(<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-base85_encode">base85_encode</a>("print('Hello&nbsp;World&nbsp;!')"))<br>
-Hello&nbsp;World&nbsp;!</tt></dd></dl>
+&gt;&gt;&gt;&nbsp;exec(<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-base85">base85</a>("print('Hello&nbsp;World&nbsp;!')"))<br>
+Hello&nbsp;World&nbsp;!<br>
+&gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-default_obfuscation"><strong>default_obfuscation</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;launch&nbsp;the&nbsp;default&nbsp;obfuscation.<br>
+<dl><dt><a name="Obfuscator-default_obfuscation"><strong>default_obfuscation</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;default&nbsp;obfuscation&nbsp;process.<br>
 &nbsp;<br>
 -&nbsp;get&nbsp;the&nbsp;code<br>
 -&nbsp;initialize&nbsp;obfuscation<br>
--&nbsp;change&nbsp;code&nbsp;(variables&nbsp;names,&nbsp;string)<br>
--&nbsp;change&nbsp;structure&nbsp;(stringify&nbsp;and&nbsp;obfuscate&nbsp;this&nbsp;string)<br>
--&nbsp;write&nbsp;code&nbsp;and&nbsp;save&nbsp;names&nbsp;(random&nbsp;names&nbsp;+&nbsp;default&nbsp;names)</tt></dd></dl>
+-&nbsp;obfuscate&nbsp;names&nbsp;and&nbsp;values<br>
+-&nbsp;obfuscate&nbsp;structure<br>
+-&nbsp;save&nbsp;obfuscation,&nbsp;configuration&nbsp;and&nbsp;names&nbsp;to&nbsp;reverse&nbsp;obfuscation</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-delete_annotations"><strong>delete_annotations</strong></a>(self, parsed_code: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;delete&nbsp;annotations&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+<dl><dt><a name="Obfuscator-delete_annotations"><strong>delete_annotations</strong></a>(self, element: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;annotations&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-delete_doc_string"><strong>delete_doc_string</strong></a>(self, parsed_code: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;delete&nbsp;doc&nbsp;string&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+<dl><dt><a name="Obfuscator-delete_field"><strong>delete_field</strong></a>(self, element: ast.AST, field: str) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;field&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-delete_field"><strong>delete_field</strong></a>(self, parsed_code: ast.AST, field: str) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;delete&nbsp;field&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+<dl><dt><a name="Obfuscator-delete_returns"><strong>delete_returns</strong></a>(self, element: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;returns&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-delete_returns"><strong>delete_returns</strong></a>(self, parsed_code: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;delete&nbsp;returns&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
-
-<dl><dt><a name="Obfuscator-get_attributes_from"><strong>get_attributes_from</strong></a>(self, new_ast: ast.AST, old_ast: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;attribute&nbsp;for&nbsp;new&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>&nbsp;from<br>
-default&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.<br>
+<dl><dt><a name="Obfuscator-get_attributes_from"><strong>get_attributes_from</strong></a>(self, new_ast: ast.AST, old_ast: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;attributes&nbsp;from&nbsp;default&nbsp;AST&nbsp;to&nbsp;obfuscate&nbsp;AST.<br>
 &nbsp;<br>
-new_ast(AST):&nbsp;new&nbsp;AST&nbsp;without&nbsp;all&nbsp;attributes<br>
+new_ast(AST):&nbsp;obfuscate&nbsp;AST&nbsp;without&nbsp;all&nbsp;attributes<br>
 old_ast(AST):&nbsp;default&nbsp;AST&nbsp;with&nbsp;all&nbsp;attributes</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-get_code"><strong>get_code</strong></a>(self) -&gt; Tuple[str, ast.AST]</dt><dd><tt>This&nbsp;function&nbsp;return&nbsp;content&nbsp;and&nbsp;AST&nbsp;from&nbsp;python&nbsp;file.</tt></dd></dl>
+<dl><dt><a name="Obfuscator-get_code"><strong>get_code</strong></a>(self) -&gt; Tuple[str, ast.AST]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;content&nbsp;and&nbsp;AST&nbsp;from&nbsp;python&nbsp;file.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-get_random_name"><strong>get_random_name</strong></a>(self, first_name: str, is_defined: bool = False) -&gt; Obfuscator.Name</dt><dd><tt>This&nbsp;function&nbsp;return&nbsp;a&nbsp;random&nbsp;variable&nbsp;name.<br>
+<dl><dt><a name="Obfuscator-get_random_name"><strong>get_random_name</strong></a>(self, first_name: str, is_defined: bool = False) -&gt; PyObfuscator.Name</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;random&nbsp;variable&nbsp;name.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-get_random_name">get_random_name</a>("test").name<br>
-'test'</tt></dd></dl>
+'test'<br>
+&gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-get_targets_and_value_from_import_from"><strong>get_targets_and_value_from_import_from</strong></a>(self, module: str, elements: List[ast.alias]) -&gt; Tuple[ast.Tuple, ast.Tuple]</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;Tuples&nbsp;for&nbsp;a&nbsp;custom&nbsp;"from&nbsp;...&nbsp;import&nbsp;..."</tt></dd></dl>
+<dl><dt><a name="Obfuscator-get_targets_and_value_for_import"><strong>get_targets_and_value_for_import</strong></a>(self, module: str, elements: List[ast.alias], is_from_import: bool = True) -&gt; Tuple[ast.Tuple, ast.Tuple]</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;'from&nbsp;...&nbsp;import&nbsp;...'.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-gzip_encode"><strong>gzip_encode</strong></a>(self, code: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;transform&nbsp;python&nbsp;code&nbsp;into&nbsp;gzip-ed&nbsp;python&nbsp;code.<br>
+<dl><dt><a name="Obfuscator-gzip"><strong>gzip</strong></a>(self, code: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;compress&nbsp;python&nbsp;code&nbsp;with&nbsp;gzip.<br>
 &nbsp;&nbsp;&nbsp;(Level&nbsp;3)<br>
 &nbsp;<br>
 -&nbsp;if&nbsp;code&nbsp;is&nbsp;None&nbsp;this&nbsp;function&nbsp;use&nbsp;self.<strong>code</strong><br>
--&nbsp;in&nbsp;this&nbsp;function&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;gzip-ed&nbsp;python&nbsp;code<br>
--&nbsp;this&nbsp;function&nbsp;return&nbsp;the&nbsp;gzip-ed&nbsp;python&nbsp;code<br>
+-&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;compressed&nbsp;using&nbsp;GZIP<br>
+-&nbsp;returns&nbsp;the&nbsp;compressed&nbsp;code<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;exec(<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-gzip_encode">gzip_encode</a>("print('Hello&nbsp;World&nbsp;!')"))<br>
-Hello&nbsp;World&nbsp;!</tt></dd></dl>
+&gt;&gt;&gt;&nbsp;code&nbsp;=&nbsp;"print('Hello&nbsp;World&nbsp;!')"<br>
+&gt;&gt;&gt;&nbsp;obfu&nbsp;=&nbsp;<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-gzip">gzip</a>(code)<br>
+&gt;&gt;&gt;&nbsp;code&nbsp;!=&nbsp;obfu<br>
+True<br>
+&gt;&gt;&gt;&nbsp;exec(obfu)<br>
+Hello&nbsp;World&nbsp;!<br>
+&gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-hexa_encode"><strong>hexa_encode</strong></a>(self, code: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;transform&nbsp;python&nbsp;code&nbsp;into&nbsp;python&nbsp;hexa&nbsp;code&nbsp;('a'&nbsp;become&nbsp;'\x61').<br>
+<dl><dt><a name="Obfuscator-hexadecimal"><strong>hexadecimal</strong></a>(self, code: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;python&nbsp;code&nbsp;as&nbsp;hexadecimal&nbsp;('a'&nbsp;become&nbsp;'\x61').<br>
 &nbsp;&nbsp;&nbsp;(Level&nbsp;6)<br>
 &nbsp;<br>
 -&nbsp;if&nbsp;code&nbsp;is&nbsp;None&nbsp;this&nbsp;function&nbsp;use&nbsp;self.<strong>code</strong><br>
--&nbsp;in&nbsp;this&nbsp;function&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;hexa&nbsp;python&nbsp;code<br>
--&nbsp;this&nbsp;function&nbsp;return&nbsp;the&nbsp;hexa&nbsp;python&nbsp;code<br>
+-&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;encoded&nbsp;as&nbsp;hexadecimal<br>
+-&nbsp;returns&nbsp;the&nbsp;hexadecimal&nbsp;encoded&nbsp;code<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;exec(<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-hexa_encode">hexa_encode</a>("print('Hello&nbsp;World&nbsp;!')"))<br>
-Hello&nbsp;World&nbsp;!</tt></dd></dl>
+&gt;&gt;&gt;&nbsp;code&nbsp;=&nbsp;"print('Hello&nbsp;World&nbsp;!')"<br>
+&gt;&gt;&gt;&nbsp;obfu&nbsp;=&nbsp;<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-hexadecimal">hexadecimal</a>(code)<br>
+&gt;&gt;&gt;&nbsp;code&nbsp;!=&nbsp;obfu<br>
+True<br>
+&gt;&gt;&gt;&nbsp;exec(obfu)<br>
+Hello&nbsp;World&nbsp;!<br>
+&gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-init_crypt_strings"><strong>init_crypt_strings</strong></a>(self, code: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;to&nbsp;the&nbsp;code&nbsp;a&nbsp;xor&nbsp;lambda&nbsp;to&nbsp;encrypt&nbsp;strings.<br>
+<dl><dt><a name="Obfuscator-init_builtins"><strong>init_builtins</strong></a>(self) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;default&nbsp;variables&nbsp;and&nbsp;builtins&nbsp;names.</tt></dd></dl>
+
+<dl><dt><a name="Obfuscator-init_crypt_strings"><strong>init_crypt_strings</strong></a>(self, code: str = None) -&gt; Tuple[str, ast.AST]</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;the&nbsp;decrypt&nbsp;function&nbsp;to&nbsp;decrypt&nbsp;obfuscated/encrypted&nbsp;strings.<br>
 &nbsp;<br>
 code(str)&nbsp;=&nbsp;None:&nbsp;if&nbsp;code&nbsp;this&nbsp;function&nbsp;use&nbsp;this&nbsp;code&nbsp;else&nbsp;it&nbsp;use&nbsp;self.<strong>code</strong><br>
 self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;new&nbsp;code<br>
-Return&nbsp;the&nbsp;new&nbsp;code.</tt></dd></dl>
+Return&nbsp;the&nbsp;new&nbsp;code&nbsp;and&nbsp;AST.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-init_vars"><strong>init_vars</strong></a>(self) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;obfuscate&nbsp;default&nbsp;names&nbsp;like&nbsp;__builtins__&nbsp;and<br>
-other&nbsp;default&nbsp;names.<br>
+<dl><dt><a name="Obfuscator-init_import"><strong>init_import</strong></a>(self, code: str = None) -&gt; Tuple[str, ast.AST]</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;an&nbsp;import&nbsp;function&nbsp;to&nbsp;try&nbsp;module&nbsp;'from&nbsp;&lt;module&gt;.&lt;module&gt;&nbsp;import&nbsp;&lt;module&gt;'.<br>
 &nbsp;<br>
-Return&nbsp;constant&nbsp;definition&nbsp;code.</tt></dd></dl>
+code(str)&nbsp;=&nbsp;None:&nbsp;if&nbsp;code&nbsp;this&nbsp;function&nbsp;use&nbsp;this&nbsp;code&nbsp;else&nbsp;it&nbsp;use&nbsp;self.<strong>code</strong><br>
+self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;new&nbsp;code<br>
+Return&nbsp;the&nbsp;new&nbsp;code&nbsp;and&nbsp;AST.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-set_current_name"><strong>set_current_name</strong></a>(self, name: str) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;set&nbsp;current&nbsp;name&nbsp;of&nbsp;namespace.<br>
+<dl><dt><a name="Obfuscator-set_namespace_name"><strong>set_namespace_name</strong></a>(self, name: str) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;current&nbsp;namespace&nbsp;name.<br>
 &nbsp;<br>
-return&nbsp;old&nbsp;current&nbsp;name<br>
+returns&nbsp;old&nbsp;namespace&nbsp;name<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;obfu&nbsp;=&nbsp;<a href="#Obfuscator">Obfuscator</a>("")<br>
-&gt;&gt;&gt;&nbsp;obfu.<a href="#Obfuscator-set_current_name">set_current_name</a>("Test")<br>
-&gt;&gt;&gt;&nbsp;obfu.<a href="#Obfuscator-set_current_name">set_current_name</a>("test")<br>
+&gt;&gt;&gt;&nbsp;obfu.<a href="#Obfuscator-set_namespace_name">set_namespace_name</a>("Test")<br>
+&gt;&gt;&gt;&nbsp;obfu.<a href="#Obfuscator-set_namespace_name">set_namespace_name</a>("test")<br>
 'Test'<br>
 &gt;&gt;&gt;&nbsp;obfu.current_class<br>
-'Test.test'</tt></dd></dl>
+'Test.test'<br>
+&gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_AnnAssign"><strong>visit_AnnAssign</strong></a>(self, parsed_code: ast.AnnAssign) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;a&nbsp;ast.Assign&nbsp;<a href="builtins.html#object">object</a>&nbsp;from<br>
-ast.AnnAssign&nbsp;objet&nbsp;to&nbsp;delete&nbsp;annotation.<br>
+<dl><dt><a name="Obfuscator-visit_AnnAssign"><strong>visit_AnnAssign</strong></a>(self, astcode: ast.AnnAssign) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;assignation.&nbsp;<br>
 &nbsp;<br>
-parsed_code(AnnAssign):&nbsp;assign&nbsp;with&nbsp;annotation<br>
-return&nbsp;Assign</tt></dd></dl>
+astcode(AnnAssign):&nbsp;assign&nbsp;with&nbsp;annotation<br>
+return&nbsp;an&nbsp;Assign&nbsp;obfuscated</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_ClassDef"><strong>visit_ClassDef</strong></a>(self, parsed_code: ast.ClassDef) -&gt; ast.ClassDef</dt><dd><tt>This&nbsp;function&nbsp;change&nbsp;ClassDef.name&nbsp;and&nbsp;delete&nbsp;doc&nbsp;string<br>
+<dl><dt><a name="Obfuscator-visit_ClassDef"><strong>visit_ClassDef</strong></a>(self, astcode: ast.ClassDef) -&gt; ast.ClassDef</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;the&nbsp;class&nbsp;name&nbsp;and&nbsp;delete&nbsp;the&nbsp;doc&nbsp;string.<br>
 &nbsp;<br>
-parsed_code(ClassDef):&nbsp;the&nbsp;ClassDef<br>
-return&nbsp;same&nbsp;ClassDef&nbsp;with&nbsp;different&nbsp;name</tt></dd></dl>
+astcode(ClassDef):&nbsp;the&nbsp;class&nbsp;to&nbsp;obfuscate<br>
+returns&nbsp;a&nbsp;ClassDef&nbsp;with&nbsp;different&nbsp;name&nbsp;without&nbsp;doc&nbsp;string</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_Constant"><strong>visit_Constant</strong></a>(self, parsed_code: ast.Constant = None) -&gt; ast.Call</dt><dd><tt>This&nbsp;function&nbsp;crypt&nbsp;strings/bytes&nbsp;of&nbsp;python&nbsp;code.<br>
+<dl><dt><a name="Obfuscator-visit_Constant"><strong>visit_Constant</strong></a>(self, astcode: ast.Constant) -&gt; ast.Call</dt><dd><tt>This&nbsp;function&nbsp;encrypts&nbsp;python&nbsp;constants&nbsp;data.<br>
 &nbsp;&nbsp;&nbsp;(Level&nbsp;2)<br>
 &nbsp;<br>
--&nbsp;if&nbsp;parsed_code&nbsp;is&nbsp;None&nbsp;this&nbsp;function&nbsp;use&nbsp;self.<strong>parsed_code</strong><br>
--&nbsp;in&nbsp;this&nbsp;function&nbsp;self.<strong>parsed_code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;new&nbsp;parsed&nbsp;python&nbsp;code<br>
--&nbsp;this&nbsp;function&nbsp;return&nbsp;the&nbsp;new&nbsp;parsed&nbsp;python&nbsp;code</tt></dd></dl>
+-&nbsp;self.<strong>astcode</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;obfuscate&nbsp;ast&nbsp;code<br>
+-&nbsp;returns&nbsp;the&nbsp;obfuscate&nbsp;ast&nbsp;code</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_FunctionDef"><strong>visit_FunctionDef</strong></a>(self, parsed_code: ast.FunctionDef) -&gt; ast.FunctionDef</dt><dd><tt>This&nbsp;function&nbsp;change&nbsp;FunctionDef.name&nbsp;if&nbsp;don't&nbsp;start&nbsp;and&nbsp;end&nbsp;with&nbsp;"__".<br>
+<dl><dt><a name="Obfuscator-visit_FunctionDef"><strong>visit_FunctionDef</strong></a>(self, astcode: ast.FunctionDef) -&gt; ast.FunctionDef</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;function&nbsp;name&nbsp;if&nbsp;isn't&nbsp;a&nbsp;magic&nbsp;method.<br>
 &nbsp;<br>
-parsed_code(FunctionDef):&nbsp;the&nbsp;FunctionDef<br>
-return&nbsp;same&nbsp;FunctionDef&nbsp;with&nbsp;different&nbsp;name</tt></dd></dl>
+astcode(FunctionDef):&nbsp;function&nbsp;to&nbsp;obfuscate<br>
+returns&nbsp;a&nbsp;FunctionDef&nbsp;with&nbsp;different&nbsp;name</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_Global"><strong>visit_Global</strong></a>(self, parsed_code: ast.Global) -&gt; ast.Global</dt><dd><tt>This&nbsp;function&nbsp;change&nbsp;Global.names<br>
+<dl><dt><a name="Obfuscator-visit_Global"><strong>visit_Global</strong></a>(self, astcode: ast.Global) -&gt; ast.Global</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;global&nbsp;names<br>
 &nbsp;<br>
-parsed_code(Global):&nbsp;the&nbsp;Global<br>
-return&nbsp;same&nbsp;Global&nbsp;with&nbsp;different&nbsp;names</tt></dd></dl>
+astcode(Global):&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;obfuscate<br>
+returns&nbsp;a&nbsp;Global&nbsp;with&nbsp;different&nbsp;names</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_Import"><strong>visit_Import</strong></a>(self, parsed_code: ast.Import) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;a&nbsp;obfuscate&nbsp;"import&nbsp;..."</tt></dd></dl>
+<dl><dt><a name="Obfuscator-visit_Import"><strong>visit_Import</strong></a>(self, astcode: ast.Import) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;'import&nbsp;...'</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_ImportFrom"><strong>visit_ImportFrom</strong></a>(self, parsed_code: ast.ImportFrom) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;a&nbsp;obfuscate&nbsp;"from&nbsp;...&nbsp;import&nbsp;..."</tt></dd></dl>
+<dl><dt><a name="Obfuscator-visit_ImportFrom"><strong>visit_ImportFrom</strong></a>(self, astcode: ast.ImportFrom) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;a&nbsp;obfuscate&nbsp;'from&nbsp;...&nbsp;import&nbsp;...'</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_Module"><strong>visit_Module</strong></a>(self, parsed_code: ast.Module) -&gt; ast.Module</dt><dd><tt>This&nbsp;function&nbsp;delete&nbsp;doc&nbsp;of&nbsp;ast.Module.<br>
+<dl><dt><a name="Obfuscator-visit_Module"><strong>visit_Module</strong></a>(self, astcode: ast.Module) -&gt; ast.Module</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;the&nbsp;Module&nbsp;doc&nbsp;string.<br>
 &nbsp;<br>
-module(ast.Module):&nbsp;is&nbsp;the&nbsp;module.<br>
+module(Module):&nbsp;module&nbsp;to&nbsp;obfuscate.<br>
 if&nbsp;this&nbsp;module&nbsp;have&nbsp;doc&nbsp;string,&nbsp;doc&nbsp;string&nbsp;is&nbsp;delete.<br>
-return&nbsp;module.</tt></dd></dl>
+returns&nbsp;module.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_Name"><strong>visit_Name</strong></a>(self, parsed_code: ast.Name) -&gt; ast.Name</dt><dd><tt>This&nbsp;function&nbsp;change&nbsp;<a href="#Name">Name</a>.id<br>
+<dl><dt><a name="Obfuscator-visit_Name"><strong>visit_Name</strong></a>(self, astcode: ast.Name) -&gt; ast.Name</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;name.<br>
 &nbsp;<br>
-parsed_code(<a href="#Name">Name</a>):&nbsp;the&nbsp;<a href="#Name">Name</a><br>
-return&nbsp;same&nbsp;<a href="#Name">Name</a>&nbsp;with&nbsp;different&nbsp;id</tt></dd></dl>
+astcode(<a href="#Name">Name</a>):&nbsp;the&nbsp;name&nbsp;to&nbsp;obfuscate<br>
+returns&nbsp;a&nbsp;<a href="#Name">Name</a>&nbsp;with&nbsp;different&nbsp;id</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_arg"><strong>visit_arg</strong></a>(self, parsed_code: ast.arg) -&gt; ast.arg</dt><dd><tt>This&nbsp;function&nbsp;change&nbsp;arg.arg<br>
+<dl><dt><a name="Obfuscator-visit_arg"><strong>visit_arg</strong></a>(self, astcode: ast.arg) -&gt; ast.arg</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;AST&nbsp;arg<br>
 &nbsp;<br>
-parsed_code(arg):&nbsp;the&nbsp;arg<br>
-return&nbsp;same&nbsp;arg&nbsp;with&nbsp;different&nbsp;arg</tt></dd></dl>
+astcode(arg):&nbsp;the&nbsp;arg&nbsp;to&nbsp;obfuscate<br>
+returns&nbsp;a&nbsp;AST&nbsp;arg&nbsp;with&nbsp;different&nbsp;arg&nbsp;name</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-write_code"><strong>write_code</strong></a>(self) -&gt; Tuple[str, ast.AST]</dt><dd><tt>This&nbsp;function&nbsp;write&nbsp;obfuscate&nbsp;code&nbsp;in&nbsp;output&nbsp;file,<br>
-return&nbsp;an&nbsp;obfuscate&nbsp;code.<br>
+<dl><dt><a name="Obfuscator-write_code"><strong>write_code</strong></a>(self) -&gt; Tuple[str, ast.AST]</dt><dd><tt>This&nbsp;function&nbsp;writes&nbsp;obfuscate&nbsp;code&nbsp;in&nbsp;output&nbsp;file<br>
+and&nbsp;returns&nbsp;the&nbsp;obfuscate&nbsp;code.<br>
 &nbsp;<br>
-This&nbsp;function&nbsp;raise&nbsp;<a href="#ObfuscationError">ObfuscationError</a>&nbsp;if&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;None.</tt></dd></dl>
+This&nbsp;function&nbsp;raises&nbsp;RuntimeError&nbsp;if&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;None.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-write_deobfuscate"><strong>write_deobfuscate</strong></a>(self)</dt><dd><tt>This&nbsp;function&nbsp;write&nbsp;a&nbsp;file&nbsp;with&nbsp;obfuscate&nbsp;and&nbsp;default&nbsp;names<br>
-to&nbsp;reverse&nbsp;name&nbsp;obfuscation.</tt></dd></dl>
+<dl><dt><a name="Obfuscator-write_deobfuscate"><strong>write_deobfuscate</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;saves&nbsp;configuration&nbsp;and&nbsp;the&nbsp;mapping&nbsp;between<br>
+variable&nbsp;names&nbsp;and&nbsp;obfuscation&nbsp;names.</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-xor"><strong>xor</strong></a>(self, data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;encrypt&nbsp;data&nbsp;(string&nbsp;or&nbsp;bytes).<br>
+<dl><dt><a name="Obfuscator-xor"><strong>xor</strong></a>(self, data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;encrypts&nbsp;data.<br>
 &nbsp;<br>
 data(bytes):&nbsp;data&nbsp;to&nbsp;encrypt<br>
 return&nbsp;encrypted&nbsp;bytes</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-xor_code"><strong>xor_code</strong></a>(self, code: str = None, password: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;transform&nbsp;python&nbsp;code&nbsp;into&nbsp;xor-ed&nbsp;python&nbsp;code.<br>
+<dl><dt><a name="Obfuscator-xor_code"><strong>xor_code</strong></a>(self, code: str = None, password: str = None) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;encrypts&nbsp;code&nbsp;using&nbsp;xor.<br>
 &nbsp;&nbsp;&nbsp;(Level&nbsp;4)<br>
 &nbsp;<br>
 -&nbsp;if&nbsp;code&nbsp;is&nbsp;None&nbsp;this&nbsp;function&nbsp;use&nbsp;self.<strong>code</strong><br>
@@ -490,11 +393,16 @@ return&nbsp;encrypted&nbsp;bytes</tt></dd></dl>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(see&nbsp;the&nbsp;<a href="#DocPassword">DocPassword</a>'s&nbsp;doc&nbsp;string&nbsp;for&nbsp;more&nbsp;information)<br>
 -&nbsp;if&nbsp;self.<strong>password</strong>&nbsp;is&nbsp;None&nbsp;this&nbsp;function&nbsp;generate&nbsp;a&nbsp;random&nbsp;password<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(see&nbsp;the&nbsp;<a href="#DocPassword">DocPassword</a>'s&nbsp;doc&nbsp;string&nbsp;for&nbsp;more&nbsp;information)<br>
--&nbsp;in&nbsp;this&nbsp;function&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;xor-ed&nbsp;python&nbsp;code<br>
--&nbsp;this&nbsp;function&nbsp;return&nbsp;the&nbsp;xor-ed&nbsp;python&nbsp;code<br>
+-&nbsp;self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;encrypted&nbsp;code<br>
+-&nbsp;returns&nbsp;the&nbsp;encrypted&nbsp;code<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;exec(<a href="#Obfuscator">Obfuscator</a>("").<a href="#Obfuscator-xor_code">xor_code</a>("print('Hello&nbsp;World&nbsp;!')"))<br>
-Hello&nbsp;World&nbsp;!</tt></dd></dl>
+Hello&nbsp;World&nbsp;!<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Obfuscator-delete_doc_string"><strong>delete_doc_string</strong></a>(astcode: ast.AST) -&gt; ast.AST</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;doc&nbsp;string&nbsp;in&nbsp;AST&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
 
 <hr>
 Methods inherited from <a href="ast.html#NodeTransformer">ast.NodeTransformer</a>:<br>
@@ -519,8 +427,7 @@ Data descriptors inherited from <a href="ast.html#NodeVisitor">ast.NodeVisitor</
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt><dd><tt>Command&nbsp;line&nbsp;main&nbsp;function&nbsp;to&nbsp;launch<br>
-Obfuscation&nbsp;from&nbsp;your&nbsp;terminal.</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;this&nbsp;tool&nbsp;from&nbsp;command&nbsp;line.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -528,5 +435,19 @@ Obfuscation&nbsp;from&nbsp;your&nbsp;terminal.</tt></dd></dl>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['Obfuscator', 'ChangeAttributes', 'main', 'Name', 'ObfuscationError', 'DocPassword', 'DocLevels']</td></tr></table>
+<td width="100%"><strong>__all__</strong> = ['Obfuscator', 'main', 'Name', 'DocPassword', 'DocLevels']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PDForensic  Copyright (C) 2022  Maurice Lambert...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This module obfuscates python code.'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PyObfuscator/'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
 </body></html>
