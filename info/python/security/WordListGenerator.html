@@ -1,17 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module WordListGenerator</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WordListGenerator</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WordListGenerator</strong></big></big> (version 0.1.0)</font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="wordlistgenerator.py">wordlistgenerator.py</a></font></td></tr></table>
-    <p><tt>This&nbsp;package&nbsp;build&nbsp;a&nbsp;custom&nbsp;<a href="#WordList">WordList</a>&nbsp;(BruteForce).<br>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="WordListGenerator.py">WordListGenerator.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;builds&nbsp;custom&nbsp;WordLists&nbsp;(for&nbsp;BruteForce).<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;import&nbsp;io<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO,&nbsp;StringIO<br>
 &gt;&gt;&gt;&nbsp;wordlist&nbsp;=&nbsp;<a href="#WordList">WordList</a>(<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"%(123)":&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a>("123",&nbsp;"123",&nbsp;False,&nbsp;None),<br>
@@ -21,7 +21,7 @@
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_words=5<br>
 ...&nbsp;)<br>
-&gt;&gt;&gt;&nbsp;wordlist.output&nbsp;=&nbsp;io.StringIO()<br>
+&gt;&gt;&gt;&nbsp;wordlist.output&nbsp;=&nbsp;StringIO()<br>
 &gt;&gt;&gt;&nbsp;wordlist.output.close&nbsp;=&nbsp;lambda:&nbsp;None<br>
 &gt;&gt;&gt;&nbsp;wordlist.patterns["%(123)"].build_chars()<br>
 &gt;&gt;&gt;&nbsp;wordlist.patterns["%(aAbBc)"].build_chars()<br>
@@ -29,7 +29,67 @@
 &gt;&gt;&gt;&nbsp;wordlist.patterns["%(file)"].build_chars()<br>
 &gt;&gt;&gt;&nbsp;wordlist.run("A%(aAbBc)B%(file)C%(num)%(words)D")<br>
 &gt;&gt;&gt;&nbsp;len(wordlist.output.getvalue().split())<br>
-5</tt></p>
+5<br>
+&gt;&gt;&gt;&nbsp;<br>
+&nbsp;<br>
+~#&nbsp;python3.11&nbsp;WordListGenerator.py&nbsp;-e&nbsp;"a=[1-3]"&nbsp;-p&nbsp;'ABC%(a){2}'<br>
+ABC22<br>
+ABC23<br>
+ABC21<br>
+ABC32<br>
+ABC33<br>
+ABC31<br>
+ABC12<br>
+ABC13<br>
+ABC11<br>
+~#&nbsp;python3.11&nbsp;WordListGenerator.py&nbsp;-w&nbsp;"b=test.txt"&nbsp;-e&nbsp;"123"&nbsp;-p&nbsp;'%(b)%(123)'<br>
+abcc13<br>
+abcc11<br>
+abcc12<br>
+abcc33<br>
+abcc31<br>
+abcc32<br>
+abcc23<br>
+abcc21<br>
+abcc22<br>
+abcb13<br>
+abcb11<br>
+abcb12<br>
+abcb33<br>
+abcb31<br>
+abcb32<br>
+~#&nbsp;python3.11&nbsp;WordListGenerator.py&nbsp;-w&nbsp;"b=test.txt"&nbsp;-e&nbsp;"a=123"&nbsp;-t&nbsp;0.0004&nbsp;-p&nbsp;'%(b)%(a)'<br>
+abcc11<br>
+abcc12<br>
+abcc13<br>
+abcc31<br>
+abcc32<br>
+abcc33<br>
+abcc21<br>
+abcc22<br>
+abcc23<br>
+abcb11<br>
+abcb12<br>
+abcb13<br>
+abcb31<br>
+abcb32<br>
+abcb33<br>
+~#&nbsp;python3.11&nbsp;WordListGenerator.py&nbsp;-w&nbsp;"b=test.txt"&nbsp;-e&nbsp;"a=123"&nbsp;-m&nbsp;5&nbsp;-p&nbsp;'%(b)%(a)'<br>
+abcc13<br>
+abcc12<br>
+abcc11<br>
+abcc33<br>
+abcc32<br>
+~#&nbsp;python3.11&nbsp;WordListGenerator.py&nbsp;-w&nbsp;"b=test.txt"&nbsp;-e&nbsp;"123"&nbsp;-m&nbsp;5&nbsp;-p&nbsp;'%(b)%(123)'&nbsp;-E&nbsp;ascii&nbsp;-f&nbsp;"abc.txt"<br>
+~#&nbsp;python3.11&nbsp;WordListGenerator.py&nbsp;-e&nbsp;"123"&nbsp;-p&nbsp;'ABC%(123)'&nbsp;-E&nbsp;ascii&nbsp;-d&nbsp;","<br>
+ABC3,ABC1,ABC2,<br>
+~#<br>
+&nbsp;<br>
+Tests:<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;WordListGenerator.py<br>
+40&nbsp;tests&nbsp;in&nbsp;16&nbsp;items.<br>
+40&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -37,10 +97,8 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="io.html">io</a><br>
-</td><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
-</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
-</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="posixpath.html">posixpath</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -65,16 +123,16 @@
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt><a href="#PatternEnumerator">PatternEnumerator</a>(name:&nbsp;str,&nbsp;chars:&nbsp;str,&nbsp;is_file:&nbsp;bool,&nbsp;filename:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
 &nbsp;<br>
-<a href="#PatternEnumerator">PatternEnumerator</a>(name:&nbsp;str,&nbsp;chars:&nbsp;str,&nbsp;is_file:&nbsp;bool,&nbsp;filename:&nbsp;str)<br>&nbsp;</tt></td></tr>
+This&nbsp;class&nbsp;is&nbsp;a&nbsp;strings&nbsp;generator.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="PatternEnumerator-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+<dl><dt><a name="PatternEnumerator-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
 
-<dl><dt><a name="PatternEnumerator-__init__"><strong>__init__</strong></a>(self, name: str, chars: str, is_file: bool, filename: str) -&gt; None</dt></dl>
+<dl><dt><a name="PatternEnumerator-__init__"><strong>__init__</strong></a>(self, name: str, chars: str, is_file: bool, filename: str) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<dl><dt><a name="PatternEnumerator-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+<dl><dt><a name="PatternEnumerator-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
 
-<dl><dt><a name="PatternEnumerator-build_chars"><strong>build_chars</strong></a>(self)</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;list&nbsp;of&nbsp;characters&nbsp;from&nbsp;pattern.<br>
+<dl><dt><a name="PatternEnumerator-build_chars"><strong>build_chars</strong></a>(self)</dt><dd><tt>This&nbsp;function&nbsp;builds&nbsp;string&nbsp;from&nbsp;pattern.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;p&nbsp;=&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a>("1",&nbsp;"a[1-3]B",&nbsp;False,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;p.<a href="#PatternEnumerator-build_chars">build_chars</a>()<br>
@@ -88,7 +146,7 @@
 &gt;&gt;&gt;&nbsp;p.<a href="#PatternEnumerator-build_chars">build_chars</a>()<br>
 &gt;&gt;&gt;&nbsp;p.chars</tt></dd></dl>
 
-<dl><dt><a name="PatternEnumerator-get_values"><strong>get_values</strong></a>(self, encoding: str = 'utf-8', delimiter: str = '\n')</dt><dd><tt>Generator&nbsp;to&nbsp;return&nbsp;values&nbsp;from&nbsp;pattern.<br>
+<dl><dt><a name="PatternEnumerator-get_values"><strong>get_values</strong></a>(self, encoding: str = 'utf-8', delimiter: str = '\n')</dt><dd><tt>This&nbsp;generator&nbsp;returns&nbsp;values&nbsp;from&nbsp;pattern.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;p&nbsp;=&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a>("1",&nbsp;{'1',&nbsp;'2'},&nbsp;False,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;print(*sorted(p.<a href="#PatternEnumerator-get_values">get_values</a>()))<br>
@@ -97,11 +155,13 @@
 &gt;&gt;&gt;&nbsp;list_&nbsp;=&nbsp;list(p.<a href="#PatternEnumerator-get_values">get_values</a>());&nbsp;print(list_[0])<br>
 abcc1<br>
 &gt;&gt;&gt;&nbsp;len(list_)<br>
-5</tt></dd></dl>
+5<br>
+&gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="PatternEnumerator-get_word_from_file"><strong>get_word_from_file</strong></a>(self, file: _io.TextIOWrapper, delimiter: str = '\n')</dt><dd><tt>This&nbsp;function&nbsp;return&nbsp;word&nbsp;from&nbsp;custom&nbsp;<a href="#WordList">WordList</a>.<br>
+<dl><dt><a name="PatternEnumerator-get_word_from_file"><strong>get_word_from_file</strong></a>(self, file: _io.TextIOWrapper, delimiter: str = '\n')</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;word&nbsp;from&nbsp;custom&nbsp;<a href="#WordList">WordList</a>.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;io.TextIOWrapper(io.BytesIO(b'abc\n123\ntest'))<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;TextIOWrapper(BytesIO(b'abc\n123\ntest'))<br>
 &gt;&gt;&gt;&nbsp;p&nbsp;=&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a>("1",&nbsp;None,&nbsp;True,&nbsp;"filename.txt")<br>
 &gt;&gt;&gt;&nbsp;w=True<br>
 &gt;&gt;&gt;&nbsp;while&nbsp;w:&nbsp;print(w:=p.<a href="#PatternEnumerator-get_word_from_file">get_word_from_file</a>(a))<br>
@@ -123,11 +183,13 @@ Data descriptors defined here:<br>
 Data and other attributes defined here:<br>
 <dl><dt><strong>__annotations__</strong> = {'chars': &lt;class 'str'&gt;, 'filename': &lt;class 'str'&gt;, 'is_file': &lt;class 'bool'&gt;, 'name': &lt;class 'str'&gt;}</dl>
 
-<dl><dt><strong>__dataclass_fields__</strong> = {'chars': Field(name='chars',type=&lt;class 'str'&gt;,default=&lt;d...rue,metadata=mappingproxy({}),_field_type=_FIELD), 'filename': Field(name='filename',type=&lt;class 'str'&gt;,default...rue,metadata=mappingproxy({}),_field_type=_FIELD), 'is_file': Field(name='is_file',type=&lt;class 'bool'&gt;,default...rue,metadata=mappingproxy({}),_field_type=_FIELD), 'name': Field(name='name',type=&lt;class 'str'&gt;,default=&lt;da...rue,metadata=mappingproxy({}),_field_type=_FIELD)}</dl>
+<dl><dt><strong>__dataclass_fields__</strong> = {'chars': Field(name='chars',type=&lt;class 'str'&gt;,default=&lt;d...appingproxy({}),kw_only=False,_field_type=_FIELD), 'filename': Field(name='filename',type=&lt;class 'str'&gt;,default...appingproxy({}),kw_only=False,_field_type=_FIELD), 'is_file': Field(name='is_file',type=&lt;class 'bool'&gt;,default...appingproxy({}),kw_only=False,_field_type=_FIELD), 'name': Field(name='name',type=&lt;class 'str'&gt;,default=&lt;da...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
 
 <dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
 
 <dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('name', 'chars', 'is_file', 'filename')</dl>
 
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -148,8 +210,8 @@ AB1<br>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="WordList-__init__"><strong>__init__</strong></a>(self, patterns: dict, filename: str = None, delimiter: str = '\n', max_words: int = None, max_time: float = None, encoding: str = 'utf-8')</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<dl><dt><a name="WordList-launch_pattern_loop"><strong>launch_pattern_loop</strong></a>(self, string: str, pattern: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;get&nbsp;the&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a>,&nbsp;replace&nbsp;the&nbsp;pattern<br>
-and&nbsp;call&nbsp;visit_pattern&nbsp;with&nbsp;the&nbsp;new&nbsp;string.<br>
+<dl><dt><a name="WordList-launch_pattern_loop"><strong>launch_pattern_loop</strong></a>(self, string: str, pattern: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;replaces&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a><br>
+and&nbsp;generates&nbsp;strings&nbsp;from&nbsp;pattern.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;w&nbsp;=&nbsp;<a href="#WordList">WordList</a>({"%(1)":&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a>("1",&nbsp;["1",&nbsp;"2"],&nbsp;False,&nbsp;None)})<br>
 &gt;&gt;&gt;&nbsp;for&nbsp;word&nbsp;in&nbsp;w.<a href="#WordList-visit_pattern">visit_pattern</a>('AB%(1)'):&nbsp;print(word)<br>
@@ -165,6 +227,8 @@ AB1<br>
 &gt;&gt;&gt;&nbsp;w&nbsp;=&nbsp;<a href="#WordList">WordList</a>({"%(1)":&nbsp;<a href="#PatternEnumerator">PatternEnumerator</a>("1",&nbsp;["1",&nbsp;"2"],&nbsp;False,&nbsp;None)},&nbsp;max_time=0)<br>
 &gt;&gt;&gt;&nbsp;w.<a href="#WordList-run">run</a>('AB%(1)')<br>
 AB1<br>
+&gt;&gt;&gt;&nbsp;w.<a href="#WordList-run">run</a>('AB%(1){2}')<br>
+AB11<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="WordList-visit_pattern"><strong>visit_pattern</strong></a>(self, string: str) -&gt; ~StringOrNone</dt><dd><tt>This&nbsp;function&nbsp;find&nbsp;first&nbsp;pattern&nbsp;in&nbsp;a&nbsp;string.<br>
@@ -192,8 +256,8 @@ Data descriptors defined here:<br>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['PatternEnumerator', 'WordList']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WordListGenerator  Copyright (C) 2021  Maurice ...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
-<strong>__description__</strong> = 'This package build a custom WordList (BruteForce).'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WordListGenerator  Copyright (C) 2021, 2022  Ma...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This package builds custom WordLists (for BruteForce).'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__url__</strong> = 'https://github.com/mauricelambert/WordListGenerator'</td></tr></table><p>
