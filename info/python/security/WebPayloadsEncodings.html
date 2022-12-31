@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module WebPayloadsEncodings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WebPayloadsEncodings</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="WebPayloadsEncodings.py">WebPayloadsEncodings.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;tool&nbsp;encodes&nbsp;Web&nbsp;payloads&nbsp;with&nbsp;some&nbsp;different&nbsp;encoding.<br>
+&nbsp;<br>
+~#&nbsp;python3.11&nbsp;WebPayloadsEncodings.py&nbsp;javascript&nbsp;'this&nbsp;is&nbsp;my&nbsp;test'<br>
+String.fromCharCode(116,104,105,115,32,105,115,32,109,121,32,116,101,115,116)<br>
+~#&nbsp;python3.11&nbsp;WebPayloadsEncodings.py&nbsp;pourcent&nbsp;'this&nbsp;is&nbsp;my&nbsp;test'<br>
+%74%68%69%73%20%69%73%20%6d%79%20%74%65%73%74<br>
+~#&nbsp;python3.11&nbsp;WebPayloadsEncodings.py&nbsp;'this&nbsp;is&nbsp;my&nbsp;test'<br>
+'ms',&nbsp;'sql&nbsp;server',&nbsp;'sql_server',&nbsp;'ms&nbsp;sql',&nbsp;'ms_sql'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char(116)+char(104)+char(105)+char(115)+char(32)+char(105)+char(115)+char(32)+char(109)+char(121)+char(32)+char(116)+char(101)+char(115)+char(116)<br>
+'sqlite',&nbsp;'oracle',&nbsp;'oracle&nbsp;sql',&nbsp;'oracle_sql',&nbsp;'postgre',&nbsp;'postgresql'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char(116)||char(104)||char(105)||char(115)||char(32)||char(105)||char(115)||char(32)||char(109)||char(121)||char(32)||char(116)||char(101)||char(115)||char(116)<br>
+'mysql',&nbsp;'mariadb'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONCAT(char(116),char(104),char(105),char(115),char(32),char(105),char(115),char(32),char(109),char(121),char(32),char(116),char(101),char(115),char(116))<br>
+'unicode'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\u{0074}\u{0068}\u{0069}\u{0073}\u{0020}\u{0069}\u{0073}\u{0020}\u{006d}\u{0079}\u{0020}\u{0074}\u{0065}\u{0073}\u{0074}<br>
+'javascript',&nbsp;'script'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String.fromCharCode(116,104,105,115,32,105,115,32,109,121,32,116,101,115,116)<br>
+'html&nbsp;unicode',&nbsp;'html_unicode',&nbsp;'unicode&nbsp;html',&nbsp;'unicode_html'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;bsol;u{0074}&amp;bsol;u{0068}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{006d}&amp;bsol;u{0079}&amp;bsol;u{0020}&amp;bsol;u{0074}&amp;bsol;u{0065}&amp;bsol;u{0073}&amp;bsol;u{0074}<br>
+'hexa&nbsp;escaping',&nbsp;'hexadecimal&nbsp;escaping',&nbsp;'hexa_escaping',&nbsp;'hexadecimal_escaping',&nbsp;'hexa&nbsp;escape',&nbsp;'hexa_escape',&nbsp;'hexadecimal&nbsp;escape',&nbsp;'hexadecimal_escape'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\x74\x68\x69\x73\x20\x69\x73\x20\x6d\x79\x20\x74\x65\x73\x74<br>
+'hexadecimal',&nbsp;'hexa'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x74686973206973206d792074657374<br>
+'html',&nbsp;'html_decimal',&nbsp;'html&nbsp;decimal'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;#116;&amp;#104;&amp;#105;&amp;#115;&amp;#32;&amp;#105;&amp;#115;&amp;#32;&amp;#109;&amp;#121;&amp;#32;&amp;#116;&amp;#101;&amp;#115;&amp;#116;<br>
+'html&nbsp;hexadecimal',&nbsp;'html_hexadecimal',&nbsp;'html&nbsp;hexa',&nbsp;'html_hexa'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;#x74;&amp;#x68;&amp;#x69;&amp;#x73;&amp;#x20;&amp;#x69;&amp;#x73;&amp;#x20;&amp;#x6d;&amp;#x79;&amp;#x20;&amp;#x74;&amp;#x65;&amp;#x73;&amp;#x74;<br>
+'url',&nbsp;'uri',&nbsp;'pourcent'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%74%68%69%73%20%69%73%20%6d%79%20%74%65%73%74<br>
+'2pourcent',&nbsp;'pourcent2',&nbsp;'double&nbsp;pourcent',&nbsp;'double_pourcent'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%2574%2568%2569%2573%2520%2569%2573%2520%256d%2579%2520%2574%2565%2573%2574<br>
+~#&nbsp;<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;code&nbsp;=&nbsp;<a href="#-payloads_encodings">payloads_encodings</a>("html",&nbsp;'this&nbsp;is&nbsp;my&nbsp;test')<br>
+&amp;#116;&amp;#104;&amp;#105;&amp;#115;&amp;#32;&amp;#105;&amp;#115;&amp;#32;&amp;#109;&amp;#121;&amp;#32;&amp;#116;&amp;#101;&amp;#115;&amp;#116;<br>
+&gt;&gt;&gt;&nbsp;code&nbsp;=&nbsp;<a href="#-payloads_encodings">payloads_encodings</a>("all",&nbsp;'this&nbsp;is&nbsp;my&nbsp;test')<br>
+'ms',&nbsp;'sql&nbsp;server',&nbsp;'sql_server',&nbsp;'ms&nbsp;sql',&nbsp;'ms_sql'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char(116)+char(104)+char(105)+char(115)+char(32)+char(105)+char(115)+char(32)+char(109)+char(121)+char(32)+char(116)+char(101)+char(115)+char(116)<br>
+'sqlite',&nbsp;'oracle',&nbsp;'oracle&nbsp;sql',&nbsp;'oracle_sql',&nbsp;'postgre',&nbsp;'postgresql'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char(116)||char(104)||char(105)||char(115)||char(32)||char(105)||char(115)||char(32)||char(109)||char(121)||char(32)||char(116)||char(101)||char(115)||char(116)<br>
+'mysql',&nbsp;'mariadb'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CONCAT(char(116),char(104),char(105),char(115),char(32),char(105),char(115),char(32),char(109),char(121),char(32),char(116),char(101),char(115),char(116))<br>
+'unicode'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;\u{0074}\u{0068}\u{0069}\u{0073}\u{0020}\u{0069}\u{0073}\u{0020}\u{006d}\u{0079}\u{0020}\u{0074}\u{0065}\u{0073}\u{0074}<br>
+'javascript',&nbsp;'script'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String.fromCharCode(116,104,105,115,32,105,115,32,109,121,32,116,101,115,116)<br>
+'html&nbsp;unicode',&nbsp;'html_unicode',&nbsp;'unicode&nbsp;html',&nbsp;'unicode_html'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&amp;bsol;u{0074}&amp;bsol;u{0068}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{006d}&amp;bsol;u{0079}&amp;bsol;u{0020}&amp;bsol;u{0074}&amp;bsol;u{0065}&amp;bsol;u{0073}&amp;bsol;u{0074}<br>
+'hexa&nbsp;escaping',&nbsp;'hexadecimal&nbsp;escaping',&nbsp;'hexa_escaping',&nbsp;'hexadecimal_escaping',&nbsp;'hexa&nbsp;escape',&nbsp;'hexa_escape',&nbsp;'hexadecimal&nbsp;escape',&nbsp;'hexadecimal_escape'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;\x74\x68\x69\x73\x20\x69\x73\x20\x6d\x79\x20\x74\x65\x73\x74<br>
+'hexadecimal',&nbsp;'hexa'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0x74686973206973206d792074657374<br>
+'html',&nbsp;'html_decimal',&nbsp;'html&nbsp;decimal'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&amp;#116;&amp;#104;&amp;#105;&amp;#115;&amp;#32;&amp;#105;&amp;#115;&amp;#32;&amp;#109;&amp;#121;&amp;#32;&amp;#116;&amp;#101;&amp;#115;&amp;#116;<br>
+'html&nbsp;hexadecimal',&nbsp;'html_hexadecimal',&nbsp;'html&nbsp;hexa',&nbsp;'html_hexa'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&amp;#x74;&amp;#x68;&amp;#x69;&amp;#x73;&amp;#x20;&amp;#x69;&amp;#x73;&amp;#x20;&amp;#x6d;&amp;#x79;&amp;#x20;&amp;#x74;&amp;#x65;&amp;#x73;&amp;#x74;<br>
+'url',&nbsp;'uri',&nbsp;'pourcent'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;%74%68%69%73%20%69%73%20%6d%79%20%74%65%73%74<br>
+'2pourcent',&nbsp;'pourcent2',&nbsp;'double&nbsp;pourcent',&nbsp;'double_pourcent'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;%2574%2568%2569%2573%2520%2569%2573%2520%256d%2579%2520%2574%2565%2573%2574<br>
+&gt;&gt;&gt;<br>
+&nbsp;<br>
+Tests:<br>
+~#&nbsp;python3.11&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;WebPayloadsEncodings.py<br>
+22&nbsp;tests&nbsp;in&nbsp;17&nbsp;items.<br>
+22&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-payloads_encodings"><strong>payloads_encodings</strong></a>(encoding: str, *payloads: Iterable[str]) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;payloads.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['payloads_encodings']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WebPayloadsEncodings  Copyright (C) 2022  Mauri...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This tool encodes Web payloads with some different encoding.'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/WebPayloadsEncodings'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
