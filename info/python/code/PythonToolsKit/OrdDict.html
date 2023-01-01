@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module OrdDict</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>OrdDict</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="OrdDict.py">OrdDict.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;=&nbsp;<a href="#OrdDict">OrdDict</a>({"key1":&nbsp;"value1",&nbsp;"key2":&nbsp;"value2"},&nbsp;{"key3":&nbsp;"value3"},&nbsp;key4="value4")<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key6"]&nbsp;=&nbsp;"value6"<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.insert(4,&nbsp;"key5",&nbsp;"value5")<br>
+&gt;&gt;&gt;&nbsp;len(my_ord_dict)<br>
+6<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key1"]<br>
+'value1'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key2"]<br>
+'value2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key3"]<br>
+'value3'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key4"]<br>
+'value4'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key5"]<br>
+'value5'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key6"]<br>
+'value6'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(1)<br>
+'value2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(2)<br>
+'value3'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(3)<br>
+'value4'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(4)<br>
+'value5'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(5)<br>
+'value6'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.to_dict()<br>
+{'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3',&nbsp;'key4':&nbsp;'value4',&nbsp;'key5':&nbsp;'value5',&nbsp;'key6':&nbsp;'value6'}<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.move(1,&nbsp;"key3")<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(1)<br>
+'value3'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(2)<br>
+'value2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.delete("key3")<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(1)<br>
+'value2'<br>
+&gt;&gt;&gt;&nbsp;len(my_ord_dict)<br>
+5<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key2"]&nbsp;=&nbsp;"new&nbsp;value"<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key2"]<br>
+'new&nbsp;value'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.insert(0,&nbsp;"new&nbsp;key",&nbsp;"new&nbsp;value")<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["new&nbsp;key"]<br>
+'new&nbsp;value'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(0)<br>
+'new&nbsp;value'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(1)<br>
+'value1'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.insert(1,&nbsp;"new&nbsp;key",&nbsp;"new&nbsp;value")<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Can't&nbsp;insert&nbsp;'new&nbsp;key',&nbsp;item&nbsp;exists.<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.insert(1,&nbsp;"new&nbsp;key",&nbsp;"new&nbsp;value",&nbsp;error=False)<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(1)<br>
+'new&nbsp;value'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_value(0)<br>
+'value1'<br>
+&gt;&gt;&gt;&nbsp;del&nbsp;my_ord_dict["new&nbsp;key"]<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_key(1)<br>
+'key2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.update({"update1":&nbsp;"update",&nbsp;"key2":&nbsp;"value2"})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["update1"]<br>
+'update'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict["key2"]<br>
+'value2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_key(1)<br>
+'key2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index_key(-1)<br>
+'update1'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.clear()<br>
+&gt;&gt;&gt;&nbsp;len(my_ord_dict)<br>
+0<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.to_dict()<br>
+{}<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.update({"key1":&nbsp;"value1",&nbsp;"key2":&nbsp;"value2"})<br>
+&gt;&gt;&gt;&nbsp;next(my_ord_dict)<br>
+('key1',&nbsp;'value1')<br>
+&gt;&gt;&gt;&nbsp;next(my_ord_dict)<br>
+('key2',&nbsp;'value2')<br>
+&gt;&gt;&gt;&nbsp;next(my_ord_dict)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+StopIteration<br>
+&gt;&gt;&gt;&nbsp;str(my_ord_dict)<br>
+"<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value2'})"<br>
+&gt;&gt;&gt;&nbsp;print(repr(my_ord_dict))<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value2'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;==&nbsp;{'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value2'}<br>
+True<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;==&nbsp;<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value2'})<br>
+True<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;==&nbsp;{'key2':&nbsp;'value2',&nbsp;'key1':&nbsp;'value1'}<br>
+False<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;==&nbsp;{'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value3'}<br>
+False<br>
+&gt;&gt;&gt;&nbsp;'key1'&nbsp;in&nbsp;my_ord_dict<br>
+True<br>
+&gt;&gt;&gt;&nbsp;'value1'&nbsp;in&nbsp;my_ord_dict<br>
+False<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;+&nbsp;{'key1':&nbsp;'new&nbsp;value',&nbsp;'key3':&nbsp;'value3'}<br>
+{'key1':&nbsp;'new&nbsp;value',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3'}<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;+=&nbsp;{'key1':&nbsp;'new&nbsp;value',&nbsp;'key3':&nbsp;'value3'}<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'new&nbsp;value',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;!=&nbsp;{'key1':&nbsp;'new&nbsp;value',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3'}<br>
+False<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;!=&nbsp;<a href="#OrdDict">OrdDict</a>({'key':&nbsp;'value'})<br>
+True<br>
+&gt;&gt;&gt;&nbsp;list(reversed(my_ord_dict))<br>
+[('key3',&nbsp;'value3'),&nbsp;('key2',&nbsp;'value2'),&nbsp;('key1',&nbsp;'new&nbsp;value')]<br>
+&gt;&gt;&gt;&nbsp;<a href="#OrdDict">OrdDict</a>()&nbsp;|&nbsp;{"abc":&nbsp;"def"}<br>
+<a href="#OrdDict">OrdDict</a>({'abc':&nbsp;'def'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;|&nbsp;<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'abc':&nbsp;'def'})<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3',&nbsp;'abc':&nbsp;'def'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.add('new&nbsp;key',&nbsp;'value4')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.add('key1',&nbsp;'value1')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict['key1']<br>
+'value1'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.get_key_value(0)<br>
+('key1',&nbsp;'value1')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.get_key_value(-1)<br>
+('new&nbsp;key',&nbsp;'value4')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.modify('new&nbsp;key',&nbsp;'new&nbsp;value')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.get_key_value(-1)<br>
+('new&nbsp;key',&nbsp;'new&nbsp;value')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.modify('not&nbsp;exists',&nbsp;None)<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;Can't&nbsp;modify&nbsp;'not&nbsp;exists',&nbsp;item&nbsp;doesn't&nbsp;exists.<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.modify('not&nbsp;exists',&nbsp;'value',&nbsp;error=False)<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.get_key_value(-1)<br>
+('not&nbsp;exists',&nbsp;'value')<br>
+&gt;&gt;&gt;&nbsp;list(my_ord_dict.values())<br>
+['value1',&nbsp;'value2',&nbsp;'value3',&nbsp;'new&nbsp;value',&nbsp;'value']<br>
+&gt;&gt;&gt;&nbsp;list(my_ord_dict.keys())<br>
+['key1',&nbsp;'key2',&nbsp;'key3',&nbsp;'new&nbsp;key',&nbsp;'not&nbsp;exists']<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.popitem()<br>
+('not&nbsp;exists',&nbsp;'value')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.pop('new&nbsp;key')<br>
+'new&nbsp;value'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.pop_index(1)<br>
+('key2',&nbsp;'value2')<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'key3':&nbsp;'value3'})<br>
+&gt;&gt;&gt;&nbsp;list(my_ord_dict.items())<br>
+[('key1',&nbsp;'value1'),&nbsp;('key3',&nbsp;'value3')]<br>
+&gt;&gt;&gt;&nbsp;list(iter(my_ord_dict))<br>
+[('key1',&nbsp;'value1'),&nbsp;('key3',&nbsp;'value3')]<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.extend({'key1':&nbsp;'new&nbsp;value',&nbsp;'key2':&nbsp;'value2'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'key3':&nbsp;'value3',&nbsp;'key2':&nbsp;'value2'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.sort()<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'value1',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;|=&nbsp;{'key1':&nbsp;'new&nbsp;value',&nbsp;'key4':&nbsp;'value4'}<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'new&nbsp;value',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3',&nbsp;'key4':&nbsp;'value4'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict&nbsp;|=&nbsp;<a href="#OrdDict">OrdDict</a>({'key4':&nbsp;'new&nbsp;value',&nbsp;'key5':&nbsp;'value5'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key1':&nbsp;'new&nbsp;value',&nbsp;'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3',&nbsp;'key4':&nbsp;'new&nbsp;value',&nbsp;'key5':&nbsp;'value5'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.remove(0)<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3',&nbsp;'key4':&nbsp;'new&nbsp;value',&nbsp;'key5':&nbsp;'value5'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.get('key2')<br>
+'value2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.setdefault('key2',&nbsp;'new&nbsp;value')<br>
+'value2'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.setdefault('key6',&nbsp;'value6')<br>
+'value6'<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key2':&nbsp;'value2',&nbsp;'key3':&nbsp;'value3',&nbsp;'key4':&nbsp;'new&nbsp;value',&nbsp;'key5':&nbsp;'value5',&nbsp;'key6':&nbsp;'value6'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.reverse()<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict<br>
+<a href="#OrdDict">OrdDict</a>({'key6':&nbsp;'value6',&nbsp;'key5':&nbsp;'value5',&nbsp;'key4':&nbsp;'new&nbsp;value',&nbsp;'key3':&nbsp;'value3',&nbsp;'key2':&nbsp;'value2'})<br>
+&gt;&gt;&gt;&nbsp;my_ord_dict.index('key6')<br>
+0<br>
+&gt;&gt;&gt;&nbsp;<br>
+&nbsp;<br>
+Tests:<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;<a href="#OrdDict">OrdDict</a>.py<br>
+97&nbsp;tests&nbsp;in&nbsp;44&nbsp;items.<br>
+97&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+~#&nbsp;coverage&nbsp;run&nbsp;-m&nbsp;doctest&nbsp;<a href="#OrdDict">OrdDict</a>.py<br>
+~#&nbsp;coverage&nbsp;run&nbsp;<a href="#OrdDict">OrdDict</a>.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+--------------------------------<br>
+<a href="#OrdDict">OrdDict</a>.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;172&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+--------------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;172&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;100%<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="OrdDict.html#OrdDict">OrdDict</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="OrdDict">class <strong>OrdDict</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#OrdDict">OrdDict</a>(*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;fast&nbsp;and&nbsp;powerful&nbsp;ordered&nbsp;dict.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="OrdDict-__add__"><strong>__add__</strong></a>(self, dict_: Dict[collections.abc.Hashable, Any]) -&gt; Dict[collections.abc.Hashable, Any]</dt></dl>
+
+<dl><dt><a name="OrdDict-__contains__"><strong>__contains__</strong></a>(self, item: collections.abc.Hashable) -&gt; bool</dt></dl>
+
+<dl><dt><a name="OrdDict-__delitem__"><strong>__delitem__</strong></a>(self, item: collections.abc.Hashable) -&gt; None</dt></dl>
+
+<dl><dt><a name="OrdDict-__eq__"><strong>__eq__</strong></a>(self, other: Dict[collections.abc.Hashable, Any]) -&gt; Any</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-__getitem__"><strong>__getitem__</strong></a>(self, item: collections.abc.Hashable) -&gt; Any</dt></dl>
+
+<dl><dt><a name="OrdDict-__iadd__"><strong>__iadd__</strong></a>(self, dict_: Dict[collections.abc.Hashable, Any]) -&gt; ~OrdDict</dt></dl>
+
+<dl><dt><a name="OrdDict-__init__"><strong>__init__</strong></a>(self, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-__ior__"><strong>__ior__</strong></a>(self, dict_: ~OrdDict) -&gt; ~OrdDict</dt></dl>
+
+<dl><dt><a name="OrdDict-__iter__"><strong>__iter__</strong></a>(self) -&gt; Iterable[Tuple[collections.abc.Hashable, Any]]</dt></dl>
+
+<dl><dt><a name="OrdDict-__len__"><strong>__len__</strong></a>(self) -&gt; int</dt></dl>
+
+<dl><dt><a name="OrdDict-__ne__"><strong>__ne__</strong></a>(self, other: Dict[collections.abc.Hashable, Any]) -&gt; bool</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-__next__"><strong>__next__</strong></a>(self) -&gt; Tuple[collections.abc.Hashable, Any]</dt></dl>
+
+<dl><dt><a name="OrdDict-__or__"><strong>__or__</strong></a>(self, dict_: ~OrdDict) -&gt; ~OrdDict</dt><dd><tt>Return&nbsp;self|value.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-__repr__"><strong>__repr__</strong></a>(self) -&gt; Dict[collections.abc.Hashable, Any]</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-__reversed__"><strong>__reversed__</strong></a>(self) -&gt; Iterable[Tuple[collections.abc.Hashable, Any]]</dt></dl>
+
+<dl><dt><a name="OrdDict-__setitem__"><strong>__setitem__</strong></a>(self, item: collections.abc.Hashable, value: Any) -&gt; None</dt></dl>
+
+<dl><dt><a name="OrdDict-__str__"><strong>__str__</strong></a>(self) -&gt; Dict[collections.abc.Hashable, Any]</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-add"><strong>add</strong></a>(self, item: collections.abc.Hashable, value: Any) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;adds&nbsp;an&nbsp;item&nbsp;to&nbsp;<a href="#OrdDict">OrdDict</a>&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-clear"><strong>clear</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;clears&nbsp;<a href="#OrdDict">OrdDict</a>.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-copy"><strong>copy</strong></a>(self) -&gt; ~OrdDict</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;an&nbsp;<a href="#OrdDict">OrdDict</a>&nbsp;with<br>
+same&nbsp;postions,&nbsp;keys&nbsp;and&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-delete"><strong>delete</strong></a>(self, item: collections.abc.Hashable) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;deletes&nbsp;an&nbsp;item.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-extend"><strong>extend</strong></a>(self, dict_: Dict[collections.abc.Hashable, Any]) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;setdefaults&nbsp;all&nbsp;keys&nbsp;and&nbsp;values&nbsp;from&nbsp;dict.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-get"><strong>get</strong></a>(self, item: collections.abc.Hashable) -&gt; Any</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;value&nbsp;from&nbsp;item</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-get_key_value"><strong>get_key_value</strong></a>(self, index: int) -&gt; Tuple[collections.abc.Hashable, Any]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;item&nbsp;and&nbsp;value&nbsp;from&nbsp;index.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-index"><strong>index</strong></a>(self, item: collections.abc.Hashable) -&gt; int</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;position's&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-index_key"><strong>index_key</strong></a>(self, index: int) -&gt; collections.abc.Hashable</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;item's&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-index_value"><strong>index_value</strong></a>(self, index: int) -&gt; Any</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;value's&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-insert"><strong>insert</strong></a>(self, index: int, item: collections.abc.Hashable, value: Any, error: bool = True) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;inserts&nbsp;an&nbsp;item&nbsp;in&nbsp;'index'&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-items"><strong>items</strong></a>(self) -&gt; Iterable[Tuple[collections.abc.Hashable, Any]]</dt><dd><tt>This&nbsp;method&nbsp;yields&nbsp;keys&nbsp;and&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-keys"><strong>keys</strong></a>(self) -&gt; Iterable[collections.abc.Hashable]</dt><dd><tt>This&nbsp;method&nbsp;yields&nbsp;keys.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-modify"><strong>modify</strong></a>(self, item: collections.abc.Hashable, value: Any, error: bool = True) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;updates&nbsp;value&nbsp;for&nbsp;an&nbsp;item.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-move"><strong>move</strong></a>(self, index: int, item: collections.abc.Hashable) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;moves&nbsp;an&nbsp;item.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-pop"><strong>pop</strong></a>(self, item: collections.abc.Hashable) -&gt; Any</dt><dd><tt>This&nbsp;method&nbsp;deletes&nbsp;and&nbsp;returns&nbsp;a&nbsp;value&nbsp;from&nbsp;item.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-pop_index"><strong>pop_index</strong></a>(self, index: int = -1) -&gt; Tuple[collections.abc.Hashable, Any]</dt><dd><tt>This&nbsp;method&nbsp;deletes&nbsp;and&nbsp;returns&nbsp;key&nbsp;and&nbsp;value&nbsp;from&nbsp;index.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-popitem"><strong>popitem</strong></a>(self) -&gt; Tuple[collections.abc.Hashable, Any]</dt><dd><tt>This&nbsp;method&nbsp;deletes&nbsp;and&nbsp;returns&nbsp;the&nbsp;last&nbsp;key&nbsp;and&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-remove"><strong>remove</strong></a>(self, index: int) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;deletes&nbsp;items&nbsp;from&nbsp;index.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-reverse"><strong>reverse</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;deletes&nbsp;items&nbsp;from&nbsp;index.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-setdefault"><strong>setdefault</strong></a>(self, item: collections.abc.Hashable, value: Any) -&gt; Any</dt><dd><tt>This&nbsp;method&nbsp;sets&nbsp;the&nbsp;value&nbsp;and&nbsp;returns&nbsp;it&nbsp;or&nbsp;returns&nbsp;the&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-sort"><strong>sort</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;sorts&nbsp;<a href="#OrdDict">OrdDict</a>&nbsp;by&nbsp;keys.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-to_dict"><strong>to_dict</strong></a>(self) -&gt; Dict[collections.abc.Hashable, Any]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;dict&nbsp;from&nbsp;<a href="#OrdDict">OrdDict</a>&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-update"><strong>update</strong></a>(self, dict_: Dict[collections.abc.Hashable, Any]) -&gt; Any</dt><dd><tt>This&nbsp;method&nbsp;changes&nbsp;values&nbsp;or&nbsp;adds&nbsp;items<br>
+from&nbsp;a&nbsp;dict.</tt></dd></dl>
+
+<dl><dt><a name="OrdDict-values"><strong>values</strong></a>(self) -&gt; Iterable[Any]</dt><dd><tt>This&nbsp;method&nbsp;yields&nbsp;values.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['OrdDict']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python p...mport doctest<font color="#c040c0">\n\n</font>    doctest.testmod(verbose=True)<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
