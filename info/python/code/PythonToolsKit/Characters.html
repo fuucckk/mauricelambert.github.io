@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Characters</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Characters</strong></big></big> (version 0.1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/christophe/Documents/Code/Python/PythonToolsKit/PythonToolsKit/Characters.py">/home/christophe/Documents/Code/Python/PythonToolsKit/PythonToolsKit/Characters.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;tools&nbsp;to&nbsp;build&nbsp;python&nbsp;package&nbsp;and&nbsp;tools.<br>
+&nbsp;<br>
+This&nbsp;tool&nbsp;shows&nbsp;int,&nbsp;hexa,&nbsp;binary&nbsp;and&nbsp;latin1&nbsp;from&nbsp;int,&nbsp;hexa,&nbsp;binary&nbsp;or&nbsp;latin1.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;chars&nbsp;=&nbsp;Characters()<br>
+&gt;&gt;&gt;&nbsp;chars.from_string("abc")<br>
+('abc',&nbsp;[97,&nbsp;98,&nbsp;99],&nbsp;'61&nbsp;62&nbsp;63',&nbsp;['01100001',&nbsp;'01100010',&nbsp;'01100011'])<br>
+&gt;&gt;&gt;&nbsp;str(chars)<br>
+'TEXT:&nbsp;abc\nINT:&nbsp;97&nbsp;98&nbsp;99\nHEXA:&nbsp;61&nbsp;62&nbsp;63\nBINARY:&nbsp;01100001&nbsp;01100010&nbsp;01100011'<br>
+&gt;&gt;&gt;&nbsp;print(chars)<br>
+TEXT:&nbsp;abc<br>
+INT:&nbsp;97&nbsp;98&nbsp;99<br>
+HEXA:&nbsp;61&nbsp;62&nbsp;63<br>
+BINARY:&nbsp;01100001&nbsp;01100010&nbsp;01100011<br>
+&gt;&gt;&gt;&nbsp;repr(chars)<br>
+'Characters(TEXT:&nbsp;abc\nINT:&nbsp;97&nbsp;98&nbsp;99\nHEXA:&nbsp;61&nbsp;62&nbsp;63\nBINARY:&nbsp;01100001&nbsp;01100010&nbsp;01100011)'<br>
+&gt;&gt;&gt;&nbsp;code&nbsp;=&nbsp;main()<br>
+TEXT:&nbsp;Characters.py<br>
+INT:&nbsp;67&nbsp;104&nbsp;97&nbsp;114&nbsp;97&nbsp;99&nbsp;116&nbsp;101&nbsp;114&nbsp;115&nbsp;46&nbsp;112&nbsp;121<br>
+HEXA:&nbsp;43&nbsp;68&nbsp;61&nbsp;72&nbsp;61&nbsp;63&nbsp;74&nbsp;65&nbsp;72&nbsp;73&nbsp;2e&nbsp;70&nbsp;79<br>
+BINARY:&nbsp;01000011&nbsp;01101000&nbsp;01100001&nbsp;01110010&nbsp;01100001&nbsp;01100011&nbsp;01110100&nbsp;01100101&nbsp;01110010&nbsp;01110011&nbsp;00101110&nbsp;01110000&nbsp;01111001<br>
+&gt;&gt;&gt;&nbsp;code<br>
+0<br>
+&gt;&gt;&gt;&nbsp;<br>
+&nbsp;<br>
+Tests:<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;Characters.py<br>
+22&nbsp;tests&nbsp;in&nbsp;11&nbsp;items.<br>
+22&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+~#&nbsp;coverage&nbsp;run&nbsp;-m&nbsp;doctest&nbsp;Characters.py<br>
+~#&nbsp;coverage&nbsp;report<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stmts&nbsp;&nbsp;&nbsp;Miss&nbsp;&nbsp;Cover<br>
+-----------------------------------<br>
+Characters.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;78%<br>
+-----------------------------------<br>
+TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;78%<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['get_boolean', 'get_numbers', 'drange', 'try_type', 'is_number', 'get_ipv4_addresses', 'is_ip']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PythonToolsKit  Copyright (C) 2022, 2023  Mauri...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements tools to build python package and tools.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PythonToolsKit'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
