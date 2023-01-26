@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WebPayloadsEncodings</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WebPayloadsEncodings</strong></big></big> (version 0.0.2)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="WebPayloadsEncodings.py">WebPayloadsEncodings.py</a></font></td></tr></table>
     <p><tt>This&nbsp;tool&nbsp;encodes&nbsp;Web&nbsp;payloads&nbsp;with&nbsp;some&nbsp;different&nbsp;encoding.<br>
@@ -30,6 +30,8 @@ String.fromCharCode(116,104,105,115,32,105,115,32,109,121,32,116,101,115,116)<br
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;bsol;u{0074}&amp;bsol;u{0068}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{006d}&amp;bsol;u{0079}&amp;bsol;u{0020}&amp;bsol;u{0074}&amp;bsol;u{0065}&amp;bsol;u{0073}&amp;bsol;u{0074}<br>
 'hexa&nbsp;escaping',&nbsp;'hexadecimal&nbsp;escaping',&nbsp;'hexa_escaping',&nbsp;'hexadecimal_escaping',&nbsp;'hexa&nbsp;escape',&nbsp;'hexa_escape',&nbsp;'hexadecimal&nbsp;escape',&nbsp;'hexadecimal_escape'<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\x74\x68\x69\x73\x20\x69\x73\x20\x6d\x79\x20\x74\x65\x73\x74<br>
+'octal&nbsp;escaping',&nbsp;'octal_escaping',&nbsp;'octal&nbsp;escape',&nbsp;'octal_escape'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\164\150\151\163\040\151\163\040\155\171\040\164\145\163\164<br>
 'hexadecimal',&nbsp;'hexa'<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x74686973206973206d792074657374<br>
 'html',&nbsp;'html_decimal',&nbsp;'html&nbsp;decimal'<br>
@@ -59,6 +61,8 @@ String.fromCharCode(116,104,105,115,32,105,115,32,109,121,32,116,101,115,116)<br
 &nbsp;&nbsp;&nbsp;&nbsp;&amp;bsol;u{0074}&amp;bsol;u{0068}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{0069}&amp;bsol;u{0073}&amp;bsol;u{0020}&amp;bsol;u{006d}&amp;bsol;u{0079}&amp;bsol;u{0020}&amp;bsol;u{0074}&amp;bsol;u{0065}&amp;bsol;u{0073}&amp;bsol;u{0074}<br>
 'hexa&nbsp;escaping',&nbsp;'hexadecimal&nbsp;escaping',&nbsp;'hexa_escaping',&nbsp;'hexadecimal_escaping',&nbsp;'hexa&nbsp;escape',&nbsp;'hexa_escape',&nbsp;'hexadecimal&nbsp;escape',&nbsp;'hexadecimal_escape'<br>
 &nbsp;&nbsp;&nbsp;&nbsp;\x74\x68\x69\x73\x20\x69\x73\x20\x6d\x79\x20\x74\x65\x73\x74<br>
+'octal&nbsp;escaping',&nbsp;'octal_escaping',&nbsp;'octal&nbsp;escape',&nbsp;'octal_escape'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;\164\150\151\163\040\151\163\040\155\171\040\164\145\163\164<br>
 'hexadecimal',&nbsp;'hexa'<br>
 &nbsp;&nbsp;&nbsp;&nbsp;0x74686973206973206d792074657374<br>
 'html',&nbsp;'html_decimal',&nbsp;'html&nbsp;decimal'<br>
@@ -73,8 +77,8 @@ String.fromCharCode(116,104,105,115,32,105,115,32,109,121,32,116,101,115,116)<br
 &nbsp;<br>
 Tests:<br>
 ~#&nbsp;python3.11&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;WebPayloadsEncodings.py<br>
-22&nbsp;tests&nbsp;in&nbsp;17&nbsp;items.<br>
-22&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+23&nbsp;tests&nbsp;in&nbsp;18&nbsp;items.<br>
+23&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
 Test&nbsp;passed.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -93,7 +97,7 @@ Test&nbsp;passed.</tt></p>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['payloads_encodings']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WebPayloadsEncodings  Copyright (C) 2022  Mauri...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>WebPayloadsEncodings  Copyright (C) 2022, 2023 ...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = 'This tool encodes Web payloads with some different encoding.'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
