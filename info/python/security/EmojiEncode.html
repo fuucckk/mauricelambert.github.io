@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module EmojiEncode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>EmojiEncode</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="EmojiEncode.py">EmojiEncode.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;encodes&nbsp;and&nbsp;decodes&nbsp;data&nbsp;into&nbsp;partially&nbsp;random&nbsp;Unicode&nbsp;Emoji,<br>
+it's&nbsp;like&nbsp;a&nbsp;steganography&nbsp;in&nbsp;message&nbsp;or&nbsp;social&nbsp;network.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;EmojiEncode.py&nbsp;mytest<br>
+&lt;unicode&nbsp;emoji&nbsp;charaters&gt;<br>
+~#&nbsp;python3&nbsp;EmojiEncode.py&nbsp;--html&nbsp;my&nbsp;test<br>
+&amp;#x0001f66d&amp;#x0001f379<br>
+&amp;#x0001f674&amp;#x0001f365&amp;#x0001f373&amp;#x0001f674<br>
+~#&nbsp;python3&nbsp;EmojiEncode.py&nbsp;--html&nbsp;--decode&nbsp;'&amp;#x0001f674&amp;#x0001f365&amp;#x0001f373&amp;#x0001f674'<br>
+test<br>
+~#&nbsp;python3&nbsp;EmojiEncode.py&nbsp;--decode&nbsp;'&lt;unicode&nbsp;emoji&nbsp;charaters&gt;'<br>
+&lt;data&nbsp;encoded&gt;<br>
+~#<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;data&nbsp;=&nbsp;bytes(list(range(256)))<br>
+&gt;&gt;&gt;&nbsp;emojis1&nbsp;=&nbsp;<a href="#-encode">encode</a>(data)<br>
+&gt;&gt;&gt;&nbsp;emojis2&nbsp;=&nbsp;<a href="#-encode">encode</a>(data)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;emojis1&nbsp;!=&nbsp;emojis2<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;isinstance(emojis1,&nbsp;str)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;isinstance(emojis2,&nbsp;str)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;data&nbsp;==&nbsp;<a href="#-decode">decode</a>(emojis1)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;data&nbsp;==&nbsp;<a href="#-decode">decode</a>(emojis2)<br>
+&gt;&gt;&gt;&nbsp;emojis1&nbsp;=&nbsp;<a href="#-html_encode">html_encode</a>(data)<br>
+&gt;&gt;&gt;&nbsp;emojis2&nbsp;=&nbsp;<a href="#-html_encode">html_encode</a>(data)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;emojis1&nbsp;!=&nbsp;emojis2<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;isinstance(emojis1,&nbsp;str)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;isinstance(emojis2,&nbsp;str)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;data&nbsp;==&nbsp;<a href="#-html_decode">html_decode</a>(emojis1)<br>
+&gt;&gt;&gt;&nbsp;assert&nbsp;data&nbsp;==&nbsp;<a href="#-html_decode">html_decode</a>(emojis2)<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;EmojiEncode.py<br>
+15&nbsp;tests&nbsp;in&nbsp;5&nbsp;items.<br>
+15&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-decode"><strong>decode</strong></a>(emojis: str) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;emoji&nbsp;encoding&nbsp;as&nbsp;bytes.</tt></dd></dl>
+ <dl><dt><a name="-encode"><strong>encode</strong></a>(data: bytes) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;data&nbsp;as&nbsp;emoji&nbsp;encoding.</tt></dd></dl>
+ <dl><dt><a name="-html_decode"><strong>html_decode</strong></a>(emojis: str) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;emoji&nbsp;encoding&nbsp;as&nbsp;bytes.</tt></dd></dl>
+ <dl><dt><a name="-html_encode"><strong>html_encode</strong></a>(data: bytes) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;data&nbsp;as&nbsp;HTML&nbsp;emoji&nbsp;encoding.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['encode', 'decode', 'html_encode', 'html_decode']<br>
+<strong>__annotations__</strong> = {'html_mapping': typing.Dict[int, typing.List[str]], 'html_mapping_temp': typing.Dict[int, typing.List[str]], 'mapping': typing.Dict[int, typing.List[str]], 'mapping_temp': typing.Dict[int, typing.List[str]]}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>EmojiEncode  Copyright (C) 2023  Maurice Lamber...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This module encodes and decodes data into partia...ike a steganography in message or social network.'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/EmojiEncode'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
