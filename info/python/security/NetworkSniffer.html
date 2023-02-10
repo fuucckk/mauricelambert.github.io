@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module NetworkSniffer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>NetworkSniffer</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="NetworkSniffer.py">NetworkSniffer.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;sniffs&nbsp;network&nbsp;communications&nbsp;without&nbsp;any&nbsp;requirements<br>
+&nbsp;<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-c<br>
+0000&nbsp;&nbsp;00&nbsp;00&nbsp;00&nbsp;45&nbsp;56&nbsp;ab&nbsp;00&nbsp;00&nbsp;00&nbsp;ba&nbsp;65&nbsp;54&nbsp;08&nbsp;00&nbsp;45&nbsp;00&nbsp;&nbsp;RT..5...'..g..E.<br>
+0010&nbsp;&nbsp;00&nbsp;54&nbsp;42&nbsp;e4&nbsp;40&nbsp;00&nbsp;40&nbsp;01&nbsp;db&nbsp;a6&nbsp;0a&nbsp;00&nbsp;02&nbsp;0f&nbsp;08&nbsp;08&nbsp;&nbsp;.TB.@.@.........<br>
+0020&nbsp;&nbsp;08&nbsp;08&nbsp;08&nbsp;00&nbsp;71&nbsp;3c&nbsp;5a&nbsp;9c&nbsp;00&nbsp;01&nbsp;1f&nbsp;63&nbsp;e5&nbsp;63&nbsp;00&nbsp;00&nbsp;&nbsp;....q&lt;Z....c.c..<br>
+0030&nbsp;&nbsp;00&nbsp;00&nbsp;68&nbsp;8c&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;10&nbsp;11&nbsp;12&nbsp;13&nbsp;14&nbsp;15&nbsp;&nbsp;..h.............<br>
+0040&nbsp;&nbsp;16&nbsp;17&nbsp;18&nbsp;19&nbsp;1a&nbsp;1b&nbsp;1c&nbsp;1d&nbsp;1e&nbsp;1f&nbsp;20&nbsp;21&nbsp;22&nbsp;23&nbsp;24&nbsp;25&nbsp;&nbsp;..........&nbsp;!"#$%<br>
+0050&nbsp;&nbsp;26&nbsp;27&nbsp;28&nbsp;29&nbsp;2a&nbsp;2b&nbsp;2c&nbsp;2d&nbsp;2e&nbsp;2f&nbsp;30&nbsp;31&nbsp;32&nbsp;33&nbsp;34&nbsp;35&nbsp;&nbsp;&amp;'()*+,-./012345<br>
+0060&nbsp;&nbsp;36&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;67<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;ICMP][64]&nbsp;10.0.2.15(00:00:00:ba:65:54):0&nbsp;-&gt;&nbsp;8.8.8.8(00:00:00:45:56:ab):0<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-X&nbsp;-c<br>
+0000&nbsp;&nbsp;47&nbsp;45&nbsp;54&nbsp;20&nbsp;2f&nbsp;20&nbsp;48&nbsp;54&nbsp;54&nbsp;50&nbsp;2f&nbsp;31&nbsp;2e&nbsp;31&nbsp;0d&nbsp;0a&nbsp;&nbsp;GET&nbsp;/&nbsp;HTTP/1.1..<br>
+0010&nbsp;&nbsp;48&nbsp;6f&nbsp;73&nbsp;74&nbsp;3a&nbsp;20&nbsp;65&nbsp;78&nbsp;61&nbsp;6d&nbsp;70&nbsp;6c&nbsp;65&nbsp;2e&nbsp;63&nbsp;6f&nbsp;&nbsp;Host:&nbsp;example.co&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+0020&nbsp;&nbsp;6d&nbsp;0d&nbsp;0a&nbsp;55&nbsp;73&nbsp;65&nbsp;72&nbsp;2d&nbsp;41&nbsp;67&nbsp;65&nbsp;6e&nbsp;74&nbsp;3a&nbsp;20&nbsp;63&nbsp;&nbsp;m..User-Agent:&nbsp;c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+0030&nbsp;&nbsp;75&nbsp;72&nbsp;6c&nbsp;2f&nbsp;37&nbsp;2e&nbsp;38&nbsp;37&nbsp;2e&nbsp;30&nbsp;0d&nbsp;0a&nbsp;41&nbsp;63&nbsp;63&nbsp;65&nbsp;&nbsp;url/7.87.0..Acce&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+0040&nbsp;&nbsp;70&nbsp;74&nbsp;3a&nbsp;20&nbsp;2a&nbsp;2f&nbsp;2a&nbsp;0d&nbsp;0a&nbsp;0d&nbsp;0a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pt:&nbsp;*/*....<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-r&nbsp;-c<br>
+&lt;raw&nbsp;data&gt;<br>
+GET&nbsp;/&nbsp;HTTP/1.1<br>
+Host:&nbsp;example.com<br>
+User-Agent:&nbsp;python/5.72<br>
+Accept:&nbsp;*/*<br>
+&lt;raw&nbsp;data&gt;<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-R&nbsp;-c<br>
+GET&nbsp;/&nbsp;HTTP/1.1<br>
+Host:&nbsp;example.com<br>
+User-Agent:&nbsp;Python5.72<br>
+Accept:&nbsp;*/*<br>
+&nbsp;<br>
+HTTP/1.1&nbsp;200&nbsp;OK<br>
+Age:&nbsp;278171<br>
+Cache-Control:&nbsp;max-age=604800<br>
+Content-Type:&nbsp;text/html;&nbsp;charset=UTF-8<br>
+Date:&nbsp;Thu,&nbsp;22&nbsp;Jun&nbsp;2016&nbsp;07:18:26&nbsp;GMT<br>
+Etag:&nbsp;"3147526947+ident"<br>
+Expires:&nbsp;Thu,&nbsp;22&nbsp;Jun&nbsp;2016&nbsp;07:18:26&nbsp;GMT<br>
+Last-Modified:&nbsp;Thu,&nbsp;22&nbsp;Jun&nbsp;2016&nbsp;07:18:26&nbsp;GMT<br>
+Server:&nbsp;ECS&nbsp;(dcb/7F83)<br>
+Vary:&nbsp;Accept-Encoding<br>
+X-Cache:&nbsp;HIT<br>
+Content-Length:&nbsp;1256<br>
+&nbsp;<br>
+&lt;HTTP&nbsp;body&nbsp;content&gt;<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-t&nbsp;-c<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;TCP&nbsp;Flags:&nbsp;S][0]&nbsp;10.0.2.15(00:00:00:ba:65:54):38974&nbsp;-&gt;&nbsp;93.184.216.34(00:00:00:45:56:ab):80<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-u&nbsp;-c<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;UDP][282]&nbsp;192.168.56.101(08:00:27:c5:14:72):68&nbsp;-&gt;&nbsp;192.168.56.100(08:00:27:e6:dc:08):67<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-4&nbsp;-c<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;ICMP][64]&nbsp;10.0.2.15(00:00:00:ba:65:54):0&nbsp;-&gt;&nbsp;8.8.8.8(00:00:00:45:56:ab):0<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-6&nbsp;-c<br>
+[Internet&nbsp;Protocol&nbsp;Version&nbsp;6&nbsp;(IPv6)&nbsp;IPv6-ICMP][64]&nbsp;fe80:0000:0000:0000:2541:637:8596:fedc(00:00:00:00:00:00):0&nbsp;-&gt;&nbsp;fe80:0000:0000:0000:2541:637:8596:fedc(00:00:00:00:00:00):0<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c&nbsp;-n&nbsp;'192.168.56.0/24'<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;TCP&nbsp;Flags:&nbsp;S][0]&nbsp;192.168.56.1(0a:00:27:00:00:0f):65385&nbsp;-&gt;&nbsp;192.168.56.101(08:00:27:c5:14:72):8000<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c&nbsp;-n&nbsp;'10.0.0.0/8'&nbsp;'192.168.56.0/24'<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;ICMP][64]&nbsp;10.0.2.15(00:00:00:ba:65:54):0&nbsp;-&gt;&nbsp;8.8.8.8(00:00:00:45:56:ab):0<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c&nbsp;-p&nbsp;80&nbsp;53<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;UDP&nbsp;Flags:&nbsp;F][36]&nbsp;10.0.2.15(00:00:00:ba:65:54):53678&nbsp;-&gt;&nbsp;172.16.0.1(00:00:00:45:56:ab):53<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c&nbsp;-m&nbsp;'00:00:00:00:00:00'<br>
+[Internet&nbsp;Protocol&nbsp;Version&nbsp;6&nbsp;(IPv6)&nbsp;IPv6-ICMP][64]&nbsp;fe80:0000:0000:0000:2541:637:8596:fedc(00:00:00:00:00:00):0&nbsp;-&gt;&nbsp;fe80:0000:0000:0000:2541:637:8596:fedc(00:00:00:00:00:00):0<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c&nbsp;-m&nbsp;'00:00:00:00:00:00'&nbsp;'00:00:00:ba:65:54'<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;ICMP][64]&nbsp;10.0.2.15(00:00:00:ba:65:54):0&nbsp;-&gt;&nbsp;8.8.8.8(00:00:00:45:56:ab):0<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c&nbsp;-i&nbsp;'192.168.56.101'<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;UDP][282]&nbsp;192.168.56.101(08:00:27:c5:14:72):68&nbsp;-&gt;&nbsp;192.168.56.100(08:00:27:e6:dc:08):67<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-c&nbsp;-i&nbsp;'192.168.56.101'&nbsp;'10.0.2.15'<br>
+[Internet&nbsp;Protocol&nbsp;version&nbsp;4&nbsp;(IPv4)&nbsp;ICMP][64]&nbsp;10.0.2.15(00:00:00:ba:65:54):0&nbsp;-&gt;&nbsp;8.8.8.8(00:00:00:45:56:ab):0<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-c&nbsp;-l&nbsp;20<br>
+0000&nbsp;&nbsp;00&nbsp;00&nbsp;00&nbsp;45&nbsp;56&nbsp;ab&nbsp;00&nbsp;00&nbsp;00&nbsp;ba&nbsp;65&nbsp;54&nbsp;08&nbsp;00&nbsp;45&nbsp;00&nbsp;00&nbsp;54&nbsp;9f&nbsp;1a&nbsp;&nbsp;RT..5...'..g..E..T..<br>
+0014&nbsp;&nbsp;40&nbsp;00&nbsp;40&nbsp;01&nbsp;7f&nbsp;70&nbsp;0a&nbsp;00&nbsp;02&nbsp;0f&nbsp;08&nbsp;08&nbsp;08&nbsp;08&nbsp;08&nbsp;00&nbsp;f3&nbsp;11&nbsp;ff&nbsp;34&nbsp;&nbsp;@.@..p.............4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+0028&nbsp;&nbsp;00&nbsp;01&nbsp;5a&nbsp;65&nbsp;e5&nbsp;63&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;03&nbsp;1c&nbsp;04&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;10&nbsp;11&nbsp;&nbsp;..Ze.c..............&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+003c&nbsp;&nbsp;12&nbsp;13&nbsp;14&nbsp;15&nbsp;16&nbsp;17&nbsp;18&nbsp;19&nbsp;1a&nbsp;1b&nbsp;1c&nbsp;1d&nbsp;1e&nbsp;1f&nbsp;20&nbsp;21&nbsp;22&nbsp;23&nbsp;24&nbsp;25&nbsp;&nbsp;..............&nbsp;!"#$%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+0050&nbsp;&nbsp;26&nbsp;27&nbsp;28&nbsp;29&nbsp;2a&nbsp;2b&nbsp;2c&nbsp;2d&nbsp;2e&nbsp;2f&nbsp;30&nbsp;31&nbsp;32&nbsp;33&nbsp;34&nbsp;35&nbsp;36&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;'()*+,-./01234567<br>
+~#&nbsp;python3.11&nbsp;NetworkSniffer.py&nbsp;-x&nbsp;-s&nbsp;-f&nbsp;'test.txt'<br>
+~#<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;sniffer&nbsp;=&nbsp;<a href="#Sniffer">Sniffer</a>(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('172.17.0.1',&nbsp;0),&nbsp;('192.168.56.1',&nbsp;0)],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('fe80:0000:0000:0000:1425:3647:5869:abcd',&nbsp;0,&nbsp;0,&nbsp;18)],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(summary,&nbsp;hexadecimal),<br>
+...&nbsp;)<br>
+&gt;&gt;&gt;&nbsp;sniffer.sniff()<br>
+&lt;sniffed&nbsp;data&gt;<br>
+&gt;&gt;&gt;&nbsp;<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;SnifferFilters&nbsp;=&nbsp;new_class(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SnifferFilters",<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a href="#TcpFilter">TcpFilter</a>,&nbsp;<a href="#Sniffer">Sniffer</a>),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{},<br>
+...&nbsp;)<br>
+&gt;&gt;&gt;&nbsp;sniffer&nbsp;=&nbsp;SnifferFilters(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('172.17.0.1',&nbsp;0),&nbsp;('192.168.56.1',&nbsp;0)],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('fe80:0000:0000:0000:1425:3647:5869:abcd',&nbsp;0,&nbsp;0,&nbsp;18)],<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(summary,&nbsp;hexadecimal),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tcp_filter=True,<br>
+...&nbsp;)<br>
+&gt;&gt;&gt;&nbsp;sniffer.sniff()<br>
+&lt;sniffed&nbsp;data&gt;<br>
+&gt;&gt;&gt;&nbsp;<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;ipv4_addresses,&nbsp;ipv6_addresses&nbsp;=&nbsp;<a href="#-get_addresses">get_addresses</a>()<br>
+&gt;&gt;&gt;&nbsp;sniffer&nbsp;=&nbsp;<a href="#Sniffer">Sniffer</a>(<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ipv4_addresses,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ipv6_addresses,<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(raw,),<br>
+...&nbsp;)<br>
+&gt;&gt;&gt;&nbsp;sniffer.sniff()<br>
+&lt;sniffed&nbsp;data&gt;<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="NetworkSniffer.html#IPv4Filter">IPv4Filter</a>
+</font></dt><dt><font face="helvetica, arial"><a href="NetworkSniffer.html#IPv6Filter">IPv6Filter</a>
+</font></dt><dt><font face="helvetica, arial"><a href="NetworkSniffer.html#IpFilter">IpFilter</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="NetworkSniffer.html#NetworksFilter">NetworksFilter</a>
+</font></dt><dt><font face="helvetica, arial"><a href="NetworkSniffer.html#PortsFilter">PortsFilter</a>
+</font></dt><dt><font face="helvetica, arial"><a href="NetworkSniffer.html#TcpFilter">TcpFilter</a>
+</font></dt><dt><font face="helvetica, arial"><a href="NetworkSniffer.html#UdpFilter">UdpFilter</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="NetworkSniffer.html#MacFilter">MacFilter</a>
+</font></dt><dt><font face="helvetica, arial"><a href="NetworkSniffer.html#Sniffer">Sniffer</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IPv4Filter">class <strong>IPv4Filter</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#IPv4Filter">IPv4Filter</a>(*args,&nbsp;ipv4_filter:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;filter&nbsp;on&nbsp;IPv4.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="IPv4Filter-__init__"><strong>__init__</strong></a>(self, *args, ipv4_filter: bool = False, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="IPv4Filter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;IPv4.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IPv6Filter">class <strong>IPv6Filter</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#IPv6Filter">IPv6Filter</a>(*args,&nbsp;ipv6_filter:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;filter&nbsp;on&nbsp;IPv6.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="IPv6Filter-__init__"><strong>__init__</strong></a>(self, *args, ipv6_filter: bool = False, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="IPv6Filter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;IPv6.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IpFilter">class <strong>IpFilter</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;IP&nbsp;protocols&nbsp;filter.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="IpFilter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;IP&nbsp;protocols.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MacFilter">class <strong>MacFilter</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#MacFilter">MacFilter</a>(*args,&nbsp;mac_filters:&nbsp;List[str]&nbsp;=&nbsp;None,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;filter&nbsp;on&nbsp;MAC&nbsp;addresses.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MacFilter-__init__"><strong>__init__</strong></a>(self, *args, mac_filters: List[str] = None, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="MacFilter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;MAC&nbsp;addresses.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NetworksFilter">class <strong>NetworksFilter</strong></a>(<a href="NetworkSniffer.html#IpFilter">IpFilter</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#NetworksFilter">NetworksFilter</a>(*args,&nbsp;network_filters:&nbsp;List[Union[ipaddress.IPv4Network,&nbsp;ipaddress.IPv6Network]]&nbsp;=&nbsp;None,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;sniffer&nbsp;with&nbsp;IPv4<br>
+and&nbsp;IPv6&nbsp;networks&nbsp;filters.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="NetworkSniffer.html#NetworksFilter">NetworksFilter</a></dd>
+<dd><a href="NetworkSniffer.html#IpFilter">IpFilter</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NetworksFilter-__init__"><strong>__init__</strong></a>(self, *args, network_filters: List[Union[ipaddress.IPv4Network, ipaddress.IPv6Network]] = None, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="NetworksFilter-ipv4_parse"><strong>ipv4_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv4</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;IPv4&nbsp;networks.</tt></dd></dl>
+
+<dl><dt><a name="NetworksFilter-ipv6_parse"><strong>ipv6_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv6</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;IPv6&nbsp;networks.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><a name="NetworksFilter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;IP&nbsp;protocols.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PortsFilter">class <strong>PortsFilter</strong></a>(<a href="NetworkSniffer.html#IpFilter">IpFilter</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#PortsFilter">PortsFilter</a>(*args,&nbsp;port_filters:&nbsp;List[int]&nbsp;=&nbsp;None,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;filter&nbsp;on&nbsp;ports.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="NetworkSniffer.html#PortsFilter">PortsFilter</a></dd>
+<dd><a href="NetworkSniffer.html#IpFilter">IpFilter</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="PortsFilter-__init__"><strong>__init__</strong></a>(self, *args, port_filters: List[int] = None, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="PortsFilter-ipv4_parse"><strong>ipv4_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv4</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;IPv4&nbsp;protocols&nbsp;(TCP&nbsp;or&nbsp;UDP).</tt></dd></dl>
+
+<dl><dt><a name="PortsFilter-ipv6_parse"><strong>ipv6_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv6</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;IPv6&nbsp;protocols&nbsp;(TCP&nbsp;or&nbsp;UDP).</tt></dd></dl>
+
+<dl><dt><a name="PortsFilter-tcp_parse"><strong>tcp_parse</strong></a>(self, segment: bytes) -&gt; NetworkSniffer.TCP</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;ports.</tt></dd></dl>
+
+<dl><dt><a name="PortsFilter-udp_parse"><strong>udp_parse</strong></a>(self, segment: bytes) -&gt; NetworkSniffer.UDP</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;ports.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><a name="PortsFilter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;IP&nbsp;protocols.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Sniffer">class <strong>Sniffer</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Sniffer">Sniffer</a>(ipv4s:&nbsp;List[Tuple[str,&nbsp;int]],&nbsp;ipv6s:&nbsp;List[Tuple[str,&nbsp;int,&nbsp;int,&nbsp;int]],&nbsp;callbacks:&nbsp;Iterable[collections.abc.Callable])<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;multi-platform&nbsp;sniffer<br>
+without&nbsp;any&nbsp;external&nbsp;package.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Sniffer-__init__"><strong>__init__</strong></a>(self, ipv4s: List[Tuple[str, int]], ipv6s: List[Tuple[str, int, int, int]], callbacks: Iterable[collections.abc.Callable])</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-linux_do_receive"><strong>linux_do_receive</strong></a>(self, frame: bytes, ip_source: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;frame,&nbsp;packet&nbsp;and&nbsp;segment&nbsp;on&nbsp;Linux&nbsp;platform.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-linux_sniff"><strong>linux_sniff</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;starts&nbsp;the&nbsp;raw&nbsp;socket&nbsp;and&nbsp;sniffs&nbsp;ethernet&nbsp;frames.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-sniff"><strong>sniff</strong></a> = <a href="#Sniffer-linux_sniff">linux_sniff</a>(self) -&gt; None</dt></dl>
+
+<dl><dt><a name="Sniffer-windows_do_receive_ipv4"><strong>windows_do_receive_ipv4</strong></a>(self, packet: bytes, ip_source: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;IPv4&nbsp;packet&nbsp;and&nbsp;segment&nbsp;on&nbsp;Windows&nbsp;platform.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-windows_do_receive_ipv6"><strong>windows_do_receive_ipv6</strong></a>(self, packet: bytes, ip_source: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;IPv6&nbsp;packet&nbsp;and&nbsp;segment&nbsp;on&nbsp;Windows&nbsp;platform.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-windows_sniff"><strong>windows_sniff</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;starts&nbsp;the&nbsp;raw&nbsp;socket&nbsp;on&nbsp;Windows<br>
+platform&nbsp;and&nbsp;sniffs&nbsp;IP&nbsp;packets.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Sniffer-ethernet_parser"><strong>ethernet_parser</strong></a>(frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;ethernet&nbsp;fields&nbsp;in&nbsp;frame.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-ipv4_parse"><strong>ipv4_parse</strong></a>(packet: bytes) -&gt; NetworkSniffer.IPv4</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;IP&nbsp;fields&nbsp;in&nbsp;packet.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-ipv6_parse"><strong>ipv6_parse</strong></a>(packet: bytes) -&gt; NetworkSniffer.IPv6</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;IP&nbsp;fields&nbsp;in&nbsp;packet.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-tcp_parse"><strong>tcp_parse</strong></a>(segment: bytes) -&gt; NetworkSniffer.TCP</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;TCP&nbsp;fields&nbsp;in&nbsp;segment.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-udp_parse"><strong>udp_parse</strong></a>(segment: bytes) -&gt; NetworkSniffer.UDP</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;UDP&nbsp;fields&nbsp;in&nbsp;segment.</tt></dd></dl>
+
+<dl><dt><a name="Sniffer-unknow_parse"><strong>unknow_parse</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;not&nbsp;implemented&nbsp;types&nbsp;and&nbsp;protocols.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TcpFilter">class <strong>TcpFilter</strong></a>(<a href="NetworkSniffer.html#IpFilter">IpFilter</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#TcpFilter">TcpFilter</a>(*args,&nbsp;tcp_filter:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;filter&nbsp;on&nbsp;TCP&nbsp;(Transmission&nbsp;Control&nbsp;Protocol).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="NetworkSniffer.html#TcpFilter">TcpFilter</a></dd>
+<dd><a href="NetworkSniffer.html#IpFilter">IpFilter</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TcpFilter-__init__"><strong>__init__</strong></a>(self, *args, tcp_filter: bool = False, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="TcpFilter-ipv4_parse"><strong>ipv4_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv4</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;TCP&nbsp;(Transmission&nbsp;Control&nbsp;Protocol).</tt></dd></dl>
+
+<dl><dt><a name="TcpFilter-ipv6_parse"><strong>ipv6_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv6</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;TCP&nbsp;(Transmission&nbsp;Control&nbsp;Protocol).</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><a name="TcpFilter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;IP&nbsp;protocols.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UdpFilter">class <strong>UdpFilter</strong></a>(<a href="NetworkSniffer.html#IpFilter">IpFilter</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#UdpFilter">UdpFilter</a>(*args,&nbsp;udp_filter:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;filter&nbsp;on&nbsp;UDP&nbsp;(User&nbsp;Datagram&nbsp;Protocol).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="NetworkSniffer.html#UdpFilter">UdpFilter</a></dd>
+<dd><a href="NetworkSniffer.html#IpFilter">IpFilter</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="UdpFilter-__init__"><strong>__init__</strong></a>(self, *args, udp_filter: bool = False, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="UdpFilter-ipv4_parse"><strong>ipv4_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv4</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;UDP&nbsp;(User&nbsp;Datagram&nbsp;Protocol).</tt></dd></dl>
+
+<dl><dt><a name="UdpFilter-ipv6_parse"><strong>ipv6_parse</strong></a>(self, packet: bytes) -&gt; NetworkSniffer.IPv6</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;on&nbsp;UDP&nbsp;(User&nbsp;Datagram&nbsp;Protocol).</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><a name="UdpFilter-ethernet_parser"><strong>ethernet_parser</strong></a>(self, frame: bytes) -&gt; Tuple[str, str, int, bytes]</dt><dd><tt>This&nbsp;method&nbsp;filters&nbsp;on&nbsp;IP&nbsp;protocols.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="NetworkSniffer.html#IpFilter">IpFilter</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_addresses"><strong>get_addresses</strong></a>() -&gt; Tuple[List[ipaddress.IPv4Address], List[ipaddress.IPv6Address]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;all&nbsp;addresses.</tt></dd></dl>
+ <dl><dt><a name="-hexadecimal"><strong>hexadecimal</strong></a>(data: bytes, frame: NetworkSniffer.Ethernet, packet: Union[NetworkSniffer.IPv4, NetworkSniffer.IPv6, NetworkSniffer.Unknow], segment: Union[NetworkSniffer.TCP, NetworkSniffer.UDP, NetworkSniffer.Unknow], color: bool = True) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;data&nbsp;as&nbsp;hexadecimal.</tt></dd></dl>
+ <dl><dt><a name="-hexadecimal_data"><strong>hexadecimal_data</strong></a>(data: bytes, frame: NetworkSniffer.Ethernet, packet: Union[NetworkSniffer.IPv4, NetworkSniffer.IPv6, NetworkSniffer.Unknow], segment: Union[NetworkSniffer.TCP, NetworkSniffer.UDP, NetworkSniffer.Unknow], color: bool = True) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;data&nbsp;as&nbsp;hexadecimal.</tt></dd></dl>
+ <dl><dt><a name="-raw"><strong>raw</strong></a>(data: bytes, frame: NetworkSniffer.Ethernet, packet: Union[NetworkSniffer.IPv4, NetworkSniffer.IPv6, NetworkSniffer.Unknow], segment: Union[NetworkSniffer.TCP, NetworkSniffer.UDP, NetworkSniffer.Unknow]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;data&nbsp;as&nbsp;raw.</tt></dd></dl>
+ <dl><dt><a name="-raw_data"><strong>raw_data</strong></a>(data: bytes, frame: NetworkSniffer.Ethernet, packet: Union[NetworkSniffer.IPv4, NetworkSniffer.IPv6, NetworkSniffer.Unknow], segment: Union[NetworkSniffer.TCP, NetworkSniffer.UDP, NetworkSniffer.Unknow]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;data&nbsp;as&nbsp;raw.</tt></dd></dl>
+ <dl><dt><a name="-summary"><strong>summary</strong></a>(data: bytes, frame: NetworkSniffer.Ethernet, packet: Union[NetworkSniffer.IPv4, NetworkSniffer.IPv6, NetworkSniffer.Unknow], segment: Union[NetworkSniffer.TCP, NetworkSniffer.UDP, NetworkSniffer.Unknow], color: bool = True) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;a&nbsp;frame,&nbsp;packet&nbsp;and&nbsp;segment&nbsp;summary.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Sniffer', 'MacFilter', 'IpFilter', 'PortsFilter', 'TcpFilter', 'UdpFilter', 'IPv4Filter', 'IPv6Filter', 'NetworksFilter', 'hexadecimal', 'hexadecimal_data', 'raw', 'raw_data', 'summary', 'get_addresses']<br>
+<strong>__annotations__</strong> = {'Ethernet': &lt;class 'type'&gt;, 'IPv4': &lt;class 'type'&gt;, 'IPv6': &lt;class 'type'&gt;, 'IpFlags': &lt;class 'type'&gt;, 'TCP': &lt;class 'type'&gt;, 'TcpFlags': &lt;class 'type'&gt;, 'TrafficClass': &lt;class 'type'&gt;, 'UDP': &lt;class 'type'&gt;, 'Unknow': &lt;class 'type'&gt;, 'ethernet_types': typing.Dict[int, str], ...}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>NetworkSniffer  Copyright (C) 2023  Maurice Lam...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This module sniffs network communications without any requirements'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/NetworkSniffer'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
