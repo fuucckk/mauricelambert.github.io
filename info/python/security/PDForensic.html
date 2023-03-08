@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PDForensic</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PDForensic</strong></big></big> (version 0.2.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="PDForensic.py">PDForensic.py</a></font></td></tr></table>
     <p><tt>This&nbsp;tool&nbsp;analyses&nbsp;PDF&nbsp;files&nbsp;for&nbsp;Forensic&nbsp;Investigations<br>
@@ -348,7 +348,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"raw&nbsp;data&nbsp;-&nbsp;hexadecimal":&nbsp;[]<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }<br>
-python3.11&nbsp;<a href="#PDForensic">PDForensic</a>.py&nbsp;objstm.pdf&nbsp;--data&nbsp;--hexa&nbsp;000102<br>
+~#&nbsp;python3.11&nbsp;<a href="#PDForensic">PDForensic</a>.py&nbsp;objstm.pdf&nbsp;--data&nbsp;--hexa&nbsp;000102<br>
 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pdf_tag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b'%PDF-1.5\n'<br>
 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b'7&nbsp;0&nbsp;obj\n&lt;&lt;&nbsp;/Type&nbsp;/XRef&nbsp;/Length&nbsp;32&nbsp;/W&nbsp;[&nbsp;1&nbsp;2&nbsp;1&nbsp;]&nbsp;/Root&nbsp;2&nbsp;0&nbsp;R&nbsp;/Size&nbsp;8&nbsp;/ID&nbsp;[&lt;98e68406a8333cc2a3429ac0e8aa1fed&gt;&lt;05fa7af561f775eeb73f00cd09fe19e7&gt;]&nbsp;&gt;&gt;\nstream\n\x00\x00\x00\x00\x01\x00\x0f\x00\x02\x00\x01\x00\x02\x00\x01\x01\x02\x00\x01\x02\x02\x00\x01\x03\x01\x01J\x00\x01\x01\xb4\x00\nendstream\nendobj'<br>
 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startxref&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
@@ -380,6 +380,7 @@ python3.11&nbsp;<a href="#PDForensic">PDForensic</a>.py&nbsp;objstm.pdf&nbsp;--d
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }<br>
+~#&nbsp;<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;from&nbsp;<a href="#PDForensic">PDForensic</a>&nbsp;import&nbsp;<a href="#PDForensic">PDForensic</a><br>
 &gt;&gt;&gt;&nbsp;class&nbsp;MyPDFparser(<a href="#PDForensic">PDForensic</a>):<br>
@@ -434,7 +435,7 @@ eof_tag&nbsp;b'%%EOF\n'&nbsp;<br>
 <font color="#000000" face="helvetica, arial"><a name="PDForensic">class <strong>PDForensic</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#PDForensic">PDForensic</a>(file:&nbsp;str,&nbsp;process_data:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;process_tags:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;filter_:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;strings:&nbsp;collections.abc.Iterable[str]&nbsp;=&nbsp;[],&nbsp;hexa:&nbsp;collections.abc.Iterable[str]&nbsp;=&nbsp;[],&nbsp;regexs:&nbsp;collections.abc.Iterable[str]&nbsp;=&nbsp;[],&nbsp;types:&nbsp;collections.abc.Iterable[str]&nbsp;=&nbsp;[],&nbsp;ids:&nbsp;collections.abc.Iterable[int]&nbsp;=&nbsp;[])<br>
+<td colspan=2><tt><a href="#PDForensic">PDForensic</a>(file:&nbsp;str,&nbsp;process_data:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;process_tags:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;filter_:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;strings:&nbsp;Iterable[str]&nbsp;=&nbsp;[],&nbsp;hexa:&nbsp;Iterable[str]&nbsp;=&nbsp;[],&nbsp;regexs:&nbsp;Iterable[str]&nbsp;=&nbsp;[],&nbsp;types:&nbsp;Iterable[str]&nbsp;=&nbsp;[],&nbsp;ids:&nbsp;Iterable[int]&nbsp;=&nbsp;[])<br>
 &nbsp;<br>
 This&nbsp;class&nbsp;parses&nbsp;and&nbsp;analyses&nbsp;PDF&nbsp;files&nbsp;for&nbsp;Forensic&nbsp;Investigations.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
@@ -445,11 +446,11 @@ This&nbsp;class&nbsp;parses&nbsp;and&nbsp;analyses&nbsp;PDF&nbsp;files&nbsp;for&
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="PDForensic-__init__"><strong>__init__</strong></a>(self, file: str, process_data: bool = False, process_tags: bool = True, filter_: bool = True, strings: collections.abc.Iterable[str] = [], hexa: collections.abc.Iterable[str] = [], regexs: collections.abc.Iterable[str] = [], types: collections.abc.Iterable[str] = [], ids: collections.abc.Iterable[int] = [])</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="PDForensic-__init__"><strong>__init__</strong></a>(self, file: str, process_data: bool = False, process_tags: bool = True, filter_: bool = True, strings: Iterable[str] = [], hexa: Iterable[str] = [], regexs: Iterable[str] = [], types: Iterable[str] = [], ids: Iterable[int] = [])</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<dl><dt><a name="PDForensic-filter"><strong>filter</strong></a>(self, data: bytes) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;objects.</tt></dd></dl>
+<dl><dt><a name="PDForensic-filter"><strong>filter</strong></a>(self, data: bytes, decoded_data: bytes = None) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;objects.</tt></dd></dl>
 
-<dl><dt><a name="PDForensic-get_data_process"><strong>get_data_process</strong></a>(self, match: re.Match) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;only&nbsp;data&nbsp;to&nbsp;process&nbsp;to&nbsp;filter.</tt></dd></dl>
+<dl><dt><a name="PDForensic-get_data_process"><strong>get_data_process</strong></a>(self, match: re.Match) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;only&nbsp;data&nbsp;to&nbsp;process&nbsp;to&nbsp;filters.</tt></dd></dl>
 
 <dl><dt><a name="PDForensic-get_malicious_score"><strong>get_malicious_score</strong></a>(self) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;calculates&nbsp;malicious&nbsp;score.</tt></dd></dl>
 
@@ -457,11 +458,25 @@ Methods defined here:<br>
 
 <dl><dt><a name="PDForensic-parse"><strong>parse</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;PDF&nbsp;data.</tt></dd></dl>
 
+<dl><dt><a name="PDForensic-pdf_unfilter"><strong>pdf_unfilter</strong></a>(self, tags: bytes, full_data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;and&nbsp;decompress&nbsp;PDF&nbsp;streams.</tt></dd></dl>
+
+<dl><dt><a name="PDForensic-read_file"><strong>read_file</strong></a>(self) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;data&nbsp;readed&nbsp;from&nbsp;PDF&nbsp;file.</tt></dd></dl>
+
 <dl><dt><a name="PDForensic-report"><strong>report</strong></a>(self) -&gt; Dict[str, Union[str, int]]</dt><dd><tt>This&nbsp;function&nbsp;reports&nbsp;PDF&nbsp;analysis.</tt></dd></dl>
 
 <dl><dt><a name="PDForensic-to_handle"><strong>to_handle</strong></a>(self, type_: str, data: bytes, typename: str = '') -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;inherited&nbsp;'handle_object'&nbsp;methods.</tt></dd></dl>
 
 <dl><dt><a name="PDForensic-type_filter"><strong>type_filter</strong></a>(self, type_: str, data: bytes, processed: bool = None) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;filters&nbsp;objects&nbsp;by&nbsp;type.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="PDForensic-deobfuscation"><strong>deobfuscation</strong></a>(tags: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;deobfuscates&nbsp;tags.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#PDForensic">PDForensic</a>.<a href="#PDForensic-deobfuscation">deobfuscation</a>(r'#61(\142)#63'.encode())<br>
+b'a(b)c'<br>
+&gt;&gt;&gt;&nbsp;<a href="#PDForensic">PDForensic</a>.<a href="#PDForensic-deobfuscation">deobfuscation</a>(r')'.encode())<br>
+[2016-06-22&nbsp;17:58:15]&nbsp;ERROR&nbsp;&nbsp;&nbsp;&nbsp;(40)&nbsp;{<a href="#PDForensic">PDForensic</a>&nbsp;-&nbsp;<a href="#PDForensic">PDForensic</a>.py:722}&nbsp;PDF&nbsp;syntax&nbsp;error<br>
+&gt;&gt;&gt;</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -477,6 +492,8 @@ Data and other attributes defined here:<br>
 
 <dl><dt><strong>__annotations__</strong> = {'malicious_scoring': typing.Dict[str, int]}</dl>
 
+<dl><dt><strong>filters</strong> = {'A85': &lt;function a85decode&gt;, 'AHx': &lt;function hex_decode&gt;, 'ASCII85Decode': &lt;function a85decode&gt;, 'ASCIIHexDecode': &lt;function hex_decode&gt;, 'Fl': &lt;function deflate&gt;, 'FlateDecode': &lt;function deflate&gt;, 'LZW': &lt;bound method LzwDecode.decode of &lt;PDForensic.LzwDecode object&gt;&gt;, 'LZWDecode': &lt;bound method LzwDecode.decode of &lt;PDForensic.LzwDecode object&gt;&gt;, 'R': &lt;function runlength_decode&gt;, 'RunLengthDecode': &lt;function runlength_decode&gt;}</dl>
+
 <dl><dt><strong>malicious_scoring</strong> = {'AA_script_starter': 75, 'GoTo': 15, 'OpenAction_script_starter': 75, 'URI': 25, 'acroform': 15, 'command': 100, 'embedded': 25, 'form': 25, 'malicious_image': 10, 'media': 10, ...}</dl>
 
 </td></tr></table></td></tr></table><p>
@@ -487,9 +504,9 @@ Data and other attributes defined here:<br>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['PDForensic']<br>
-<strong>__annotations__</strong> = {'logger': &lt;class 'logging.Logger'&gt;, 'logger_critical': &lt;class 'collections.abc.Callable'&gt;, 'logger_debug': &lt;class 'collections.abc.Callable'&gt;, 'logger_error': &lt;class 'collections.abc.Callable'&gt;, 'logger_info': &lt;class 'collections.abc.Callable'&gt;, 'logger_log': &lt;class 'collections.abc.Callable'&gt;, 'logger_warning': &lt;class 'collections.abc.Callable'&gt;, 'pdf_parser': &lt;class 're.Pattern'&gt;, 'tags_parser': &lt;class 're.Pattern'&gt;}<br>
+<strong>__annotations__</strong> = {'logger': &lt;class 'logging.Logger'&gt;, 'logger_critical': &lt;class 'collections.abc.Callable'&gt;, 'logger_debug': &lt;class 'collections.abc.Callable'&gt;, 'logger_error': &lt;class 'collections.abc.Callable'&gt;, 'logger_info': &lt;class 'collections.abc.Callable'&gt;, 'logger_log': &lt;class 'collections.abc.Callable'&gt;, 'logger_warning': &lt;class 'collections.abc.Callable'&gt;, 'pdf_filters': &lt;class 're.Pattern'&gt;, 'pdf_parser': &lt;class 're.Pattern'&gt;, 'pdf_streams': &lt;class 're.Pattern'&gt;, ...}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PDForensic  Copyright (C) 2022  Maurice Lambert...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PDForensic  Copyright (C) 2022, 2023  Maurice L...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = 'This tool analyses PDF files for Forensic Investigations'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
