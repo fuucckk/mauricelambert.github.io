@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module LocalResolver</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>LocalResolver</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="localresolver.py">localresolver.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;implements&nbsp;local&nbsp;hostname&nbsp;resolver&nbsp;tool&nbsp;with&nbsp;scapy.<br>
+&nbsp;<br>
+Useful&nbsp;wireshark&nbsp;filter:<br>
+&nbsp;-&nbsp;udp.port&nbsp;==&nbsp;53&nbsp;||&nbsp;udp.port&nbsp;==&nbsp;5355&nbsp;||&nbsp;udp.port&nbsp;==&nbsp;5353&nbsp;||&nbsp;udp.port&nbsp;==&nbsp;137<br>
+&nbsp;<br>
+Linux&nbsp;tools/services&nbsp;to&nbsp;resolve&nbsp;hostname:<br>
+~#&nbsp;sudo&nbsp;apt&nbsp;install&nbsp;samba<br>
+~#&nbsp;sudo&nbsp;nano&nbsp;/etc/samba/smb.conf<br>
+[global]<br>
+&nbsp;&nbsp;&nbsp;netbios&nbsp;name&nbsp;=&nbsp;MYHOST<br>
+&nbsp;&nbsp;&nbsp;workgroup&nbsp;=&nbsp;MYGROUP<br>
+&nbsp;&nbsp;&nbsp;wins&nbsp;support&nbsp;=&nbsp;yes<br>
+&nbsp;&nbsp;&nbsp;name&nbsp;resolve&nbsp;order&nbsp;=&nbsp;lmhosts&nbsp;wins&nbsp;bcast&nbsp;host<br>
+~#&nbsp;sudo&nbsp;apt&nbsp;install&nbsp;avahi-daemon&nbsp;&nbsp;#&nbsp;MDNS<br>
+~#&nbsp;sudo&nbsp;apt&nbsp;install&nbsp;systemd-resolved&nbsp;#&nbsp;LLMNR<br>
+~#&nbsp;sudo&nbsp;nano&nbsp;/etc/systemd/resolved.conf<br>
+LLMNR=yes<br>
+~#&nbsp;sudo&nbsp;systemctl&nbsp;restart&nbsp;winbind<br>
+~#&nbsp;sudo&nbsp;systemctl&nbsp;restart&nbsp;systemd-resolved<br>
+~#&nbsp;sudo&nbsp;systemctl&nbsp;start&nbsp;nmbd<br>
+~#&nbsp;sudo&nbsp;systemctl&nbsp;start&nbsp;avahi-daemon<br>
+~#&nbsp;sudo&nbsp;responder&nbsp;-I&nbsp;eth0<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="LocalResolver.html#LocalResolver">LocalResolver</a>
+</font></dt><dt><font face="helvetica, arial"><a href="LocalResolver.html#Result">Result</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="LocalResolver">class <strong>LocalResolver</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#LocalResolver">LocalResolver</a>(name:&nbsp;str&nbsp;=&nbsp;None,&nbsp;ip:&nbsp;str&nbsp;=&nbsp;None,&nbsp;retry:&nbsp;int&nbsp;=&nbsp;2,&nbsp;inter:&nbsp;int&nbsp;=&nbsp;1,&nbsp;timeout:&nbsp;int&nbsp;=&nbsp;3)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;resolve&nbsp;hostname&nbsp;using&nbsp;Netbios,&nbsp;LLMNR,&nbsp;MDNS&nbsp;and&nbsp;DNS.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="LocalResolver-__init__"><strong>__init__</strong></a>(self, name: str = None, ip: str = None, retry: int = 2, inter: int = 1, timeout: int = 3)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_dns_ip_response"><strong>parse_dns_ip_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;DNS&nbsp;response&nbsp;and&nbsp;returns&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_dns_name_response"><strong>parse_dns_name_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;DNS&nbsp;response&nbsp;and&nbsp;returns&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_llmnr_ip_response"><strong>parse_llmnr_ip_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;LLMNR&nbsp;response&nbsp;and&nbsp;returns&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_llmnr_name_response"><strong>parse_llmnr_name_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;LLMNR&nbsp;response&nbsp;and&nbsp;returns&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_mdns_ip_response"><strong>parse_mdns_ip_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;MDNS&nbsp;response&nbsp;and&nbsp;returns&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_mdns_name_response"><strong>parse_mdns_name_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;MDNS&nbsp;response&nbsp;and&nbsp;returns&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_netbios_ip_response"><strong>parse_netbios_ip_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;netbios&nbsp;response&nbsp;and&nbsp;returns&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-parse_netbios_name_response"><strong>parse_netbios_name_response</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;netbios&nbsp;response&nbsp;and&nbsp;returns&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-redirect"><strong>redirect</strong></a>(self, packet: 'Packet') -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;callbacks&nbsp;for&nbsp;sniffed&nbsp;packets.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_dns_ip"><strong>resolve_dns_ip</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;DNS&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;name&nbsp;from&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_dns_name"><strong>resolve_dns_name</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;DNS&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;IP&nbsp;address&nbsp;from&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_llmnr_ip"><strong>resolve_llmnr_ip</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;LLMNR&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;hostname&nbsp;from&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_llmnr_name"><strong>resolve_llmnr_name</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;LLMNR&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;IP&nbsp;address&nbsp;from&nbsp;hostname.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_mdns_ip"><strong>resolve_mdns_ip</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;MDNS&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;name&nbsp;from&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_mdns_name"><strong>resolve_mdns_name</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;MDNS&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;IP&nbsp;address&nbsp;from&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_netbios_ip"><strong>resolve_netbios_ip</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;Netbios&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;hostname&nbsp;from&nbsp;IP&nbsp;address.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-resolve_netbios_name"><strong>resolve_netbios_name</strong></a>(self, callback: collections.abc.Callable = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;Netbios&nbsp;queries<br>
+requests&nbsp;to&nbsp;get&nbsp;IP&nbsp;address&nbsp;from&nbsp;hostname.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-sender"><strong>sender</strong></a>(self, packet: 'Packet') -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;a&nbsp;query.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-sniff"><strong>sniff</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;sniffer.</tt></dd></dl>
+
+<dl><dt><a name="LocalResolver-wait_threads"><strong>wait_threads</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;waits&nbsp;all&nbsp;<a href="#LocalResolver">LocalResolver</a>&nbsp;threads.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Result">class <strong>Result</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Result">Result</a>(source:&nbsp;str,&nbsp;ip:&nbsp;str,&nbsp;hostname:&nbsp;str,&nbsp;type_:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+<a href="#Result">Result</a>(source:&nbsp;str,&nbsp;ip:&nbsp;str,&nbsp;hostname:&nbsp;str,&nbsp;type_:&nbsp;str)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Result-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="Result-__hash__"><strong>__hash__</strong></a>(self)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="Result-__init__"><strong>__init__</strong></a>(self, source: str, ip: str, hostname: str, type_: str) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Result-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'hostname': &lt;class 'str'&gt;, 'ip': &lt;class 'str'&gt;, 'source': &lt;class 'str'&gt;, 'type_': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'hostname': Field(name='hostname',type=&lt;class 'str'&gt;,default...appingproxy({}),kw_only=False,_field_type=_FIELD), 'ip': Field(name='ip',type=&lt;class 'str'&gt;,default=&lt;data...appingproxy({}),kw_only=False,_field_type=_FIELD), 'source': Field(name='source',type=&lt;class 'str'&gt;,default=&lt;...appingproxy({}),kw_only=False,_field_type=_FIELD), 'type_': Field(name='type_',type=&lt;class 'str'&gt;,default=&lt;d...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('source', 'ip', 'hostname', 'type_')</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-netbios_decode"><strong>netbios_decode</strong></a>(encoded_name: str) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;name&nbsp;in&nbsp;Netbios&nbsp;encoding.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-netbios_decode">netbios_decode</a>('EGFCEFEECACACACACACACACACACACACA')<br>
+'FRED'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-netbios_decode">netbios_decode</a>('CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')<br>
+'*'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-netbios_encode"><strong>netbios_encode</strong></a>(name: str) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;name&nbsp;in&nbsp;Netbios&nbsp;encoding.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-netbios_encode">netbios_encode</a>('FRED')<br>
+'EGFCEFEECACACACACACACACACACACACA'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-netbios_encode">netbios_encode</a>('*')<br>
+'CKCACACACACACACACACACACACACACACA'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-resolve_local_ip"><strong>resolve_local_ip</strong></a>(ip: str, retry: int = 2, inter: int = 1, timeout: int = 3, netbios: bool = True, llmnr: bool = True, mdns: bool = True, dns: bool = True) -&gt; Iterable[LocalResolver.Result]</dt><dd><tt>This&nbsp;function&nbsp;use&nbsp;<a href="#LocalResolver">LocalResolver</a><br>
+to&nbsp;get&nbsp;hostname&nbsp;from&nbsp;IP&nbsp;address.</tt></dd></dl>
+ <dl><dt><a name="-resolve_local_name"><strong>resolve_local_name</strong></a>(hostname: str, retry: int = 2, inter: int = 1, timeout: int = 3, netbios: bool = True, llmnr: bool = True, mdns: bool = True, dns: bool = True) -&gt; Iterable[LocalResolver.Result]</dt><dd><tt>This&nbsp;function&nbsp;use&nbsp;<a href="#LocalResolver">LocalResolver</a><br>
+to&nbsp;get&nbsp;IP&nbsp;address&nbsp;from&nbsp;hostname.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['LocalResolver', 'resolve_local_ip', 'resolve_local_name', 'Result', 'netbios_encode', 'netbios_decode']<br>
+<strong>__annotations__</strong> = {'is_windows': &lt;class 'bool'&gt;}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>LocalResolver  Copyright (C) 2021, 2023  Mauric...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = 'This package implements local hostname resolver tool with scapy.'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/LocalResolver/'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
