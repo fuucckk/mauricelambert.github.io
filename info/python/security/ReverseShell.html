@@ -1,0 +1,976 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ReverseShell</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ReverseShell</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="reverseshell.py">reverseshell.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;an&nbsp;advanced&nbsp;reverse&nbsp;shell<br>
+console&nbsp;(supports:&nbsp;TCP,&nbsp;UDP,&nbsp;IRC,&nbsp;HTTP&nbsp;and&nbsp;DNS).</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShell.html#ReverseShellSocketTcp">ReverseShellSocketTcp</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="cmd.html#Cmd">cmd.Cmd</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShell.html#ReverseShell">ReverseShell</a>(<a href="cmd.html#Cmd">cmd.Cmd</a>, <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShell.html#DnsReverseShell">DnsReverseShell</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ReverseShell.html#HttpReverseShell">HttpReverseShell</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ReverseShell.html#IrcReverseShell">IrcReverseShell</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShell.html#ReverseShell">ReverseShell</a>(<a href="cmd.html#Cmd">cmd.Cmd</a>, <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShell.html#DnsReverseShell">DnsReverseShell</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ReverseShell.html#HttpReverseShell">HttpReverseShell</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ReverseShell.html#IrcReverseShell">IrcReverseShell</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="socketserver.html#TCPServer">socketserver.TCPServer</a>(<a href="socketserver.html#BaseServer">socketserver.BaseServer</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShell.html#ReverseShellTcp">ReverseShellTcp</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="socketserver.html#UDPServer">socketserver.UDPServer</a>(<a href="socketserver.html#TCPServer">socketserver.TCPServer</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ReverseShell.html#ReverseShellUdp">ReverseShellUdp</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DnsReverseShell">class <strong>DnsReverseShell</strong></a>(<a href="ReverseShell.html#ReverseShell">ReverseShell</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DnsReverseShell">DnsReverseShell</a>(*args,&nbsp;key:&nbsp;bytes&nbsp;=&nbsp;None,&nbsp;encoding:&nbsp;str&nbsp;=&nbsp;'cp437')<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;reverse&nbsp;shell&nbsp;using&nbsp;DNS&nbsp;(UDP).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ReverseShell.html#DnsReverseShell">DnsReverseShell</a></dd>
+<dd><a href="ReverseShell.html#ReverseShell">ReverseShell</a></dd>
+<dd><a href="cmd.html#Cmd">cmd.Cmd</a></dd>
+<dd><a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DnsReverseShell-default"><strong>default</strong></a>(self, data: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;generates&nbsp;HTTP&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-parse_data"><strong>parse_data</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;DNS&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="ReverseShell.html#ReverseShell">ReverseShell</a>:<br>
+<dl><dt><a name="DnsReverseShell-__init__"><strong>__init__</strong></a>(self, *args, key: bytes = None, encoding: str = 'cp437')</dt><dd><tt>Instantiate&nbsp;a&nbsp;line-oriented&nbsp;interpreter&nbsp;framework.<br>
+&nbsp;<br>
+The&nbsp;optional&nbsp;argument&nbsp;'completekey'&nbsp;is&nbsp;the&nbsp;readline&nbsp;name&nbsp;of&nbsp;a<br>
+completion&nbsp;key;&nbsp;it&nbsp;defaults&nbsp;to&nbsp;the&nbsp;Tab&nbsp;key.&nbsp;If&nbsp;completekey&nbsp;is<br>
+not&nbsp;None&nbsp;and&nbsp;the&nbsp;readline&nbsp;module&nbsp;is&nbsp;available,&nbsp;command&nbsp;completion<br>
+is&nbsp;done&nbsp;automatically.&nbsp;The&nbsp;optional&nbsp;arguments&nbsp;stdin&nbsp;and&nbsp;stdout<br>
+specify&nbsp;alternate&nbsp;input&nbsp;and&nbsp;output&nbsp;file&nbsp;objects;&nbsp;if&nbsp;not&nbsp;specified,<br>
+sys.stdin&nbsp;and&nbsp;sys.stdout&nbsp;are&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-completedefault"><strong>completedefault</strong></a> = <a href="#DnsReverseShell-completenames">completenames</a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt></dl>
+
+<dl><dt><a name="DnsReverseShell-completenames"><strong>completenames</strong></a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;default&nbsp;list&nbsp;for&nbsp;completion.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-defined_context"><strong>defined_context</strong></a>(self, data: Dict[str, ~Json]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;context.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-do_exit"><strong>do_exit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;exits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-do_quit"><strong>do_quit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;quits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-encrypt"><strong>encrypt</strong></a>(self, data: bytes, decrypt: bool = False) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;encrypts/decrypts&nbsp;data&nbsp;with&nbsp;RC4.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-handle"><strong>handle</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;methods&nbsp;gets&nbsp;TCP&nbsp;data&nbsp;and&nbsp;send&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-init_key"><strong>init_key</strong></a>(self, key_text: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;sets&nbsp;RC4&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-postcmd"><strong>postcmd</strong></a>(self, stop: bool, line: str) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;stop&nbsp;the&nbsp;cmdloop&nbsp;for&nbsp;each&nbsp;packet&nbsp;sended.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-recv"><strong>recv</strong></a>(self) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;gets&nbsp;all&nbsp;packets&nbsp;sent.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="ReverseShell.html#ReverseShell">ReverseShell</a>:<br>
+<dl><dt><strong>color</strong> = True</dl>
+
+<dl><dt><strong>prompt</strong> = '~$ '</dl>
+
+<hr>
+Methods inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><a name="DnsReverseShell-cmdloop"><strong>cmdloop</strong></a>(self, intro=None)</dt><dd><tt>Repeatedly&nbsp;issue&nbsp;a&nbsp;prompt,&nbsp;accept&nbsp;input,&nbsp;parse&nbsp;an&nbsp;initial&nbsp;prefix<br>
+off&nbsp;the&nbsp;received&nbsp;input,&nbsp;and&nbsp;dispatch&nbsp;to&nbsp;action&nbsp;methods,&nbsp;passing&nbsp;them<br>
+the&nbsp;remainder&nbsp;of&nbsp;the&nbsp;line&nbsp;as&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-columnize"><strong>columnize</strong></a>(self, list, displaywidth=80)</dt><dd><tt>Display&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;as&nbsp;a&nbsp;compact&nbsp;set&nbsp;of&nbsp;columns.<br>
+&nbsp;<br>
+Each&nbsp;column&nbsp;is&nbsp;only&nbsp;as&nbsp;wide&nbsp;as&nbsp;necessary.<br>
+Columns&nbsp;are&nbsp;separated&nbsp;by&nbsp;two&nbsp;spaces&nbsp;(one&nbsp;was&nbsp;not&nbsp;legible&nbsp;enough).</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-complete"><strong>complete</strong></a>(self, text, state)</dt><dd><tt>Return&nbsp;the&nbsp;next&nbsp;possible&nbsp;completion&nbsp;for&nbsp;'text'.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;command&nbsp;has&nbsp;not&nbsp;been&nbsp;entered,&nbsp;then&nbsp;complete&nbsp;against&nbsp;command&nbsp;list.<br>
+Otherwise&nbsp;try&nbsp;to&nbsp;call&nbsp;complete_&lt;command&gt;&nbsp;to&nbsp;get&nbsp;list&nbsp;of&nbsp;completions.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-complete_help"><strong>complete_help</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="DnsReverseShell-do_help"><strong>do_help</strong></a>(self, arg)</dt><dd><tt>List&nbsp;available&nbsp;commands&nbsp;with&nbsp;"help"&nbsp;or&nbsp;detailed&nbsp;help&nbsp;with&nbsp;"help&nbsp;cmd".</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-emptyline"><strong>emptyline</strong></a>(self)</dt><dd><tt>Called&nbsp;when&nbsp;an&nbsp;empty&nbsp;line&nbsp;is&nbsp;entered&nbsp;in&nbsp;response&nbsp;to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+If&nbsp;this&nbsp;method&nbsp;is&nbsp;not&nbsp;overridden,&nbsp;it&nbsp;repeats&nbsp;the&nbsp;last&nbsp;nonempty<br>
+command&nbsp;entered.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-get_names"><strong>get_names</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DnsReverseShell-onecmd"><strong>onecmd</strong></a>(self, line)</dt><dd><tt>Interpret&nbsp;the&nbsp;argument&nbsp;as&nbsp;though&nbsp;it&nbsp;had&nbsp;been&nbsp;typed&nbsp;in&nbsp;response<br>
+to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;overridden,&nbsp;but&nbsp;should&nbsp;not&nbsp;normally&nbsp;need&nbsp;to&nbsp;be;<br>
+see&nbsp;the&nbsp;<a href="#DnsReverseShell-precmd">precmd</a>()&nbsp;and&nbsp;<a href="#DnsReverseShell-postcmd">postcmd</a>()&nbsp;methods&nbsp;for&nbsp;useful&nbsp;execution&nbsp;hooks.<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;flag&nbsp;indicating&nbsp;whether&nbsp;interpretation&nbsp;of<br>
+commands&nbsp;by&nbsp;the&nbsp;interpreter&nbsp;should&nbsp;stop.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-parseline"><strong>parseline</strong></a>(self, line)</dt><dd><tt>Parse&nbsp;the&nbsp;line&nbsp;into&nbsp;a&nbsp;command&nbsp;name&nbsp;and&nbsp;a&nbsp;string&nbsp;containing<br>
+the&nbsp;arguments.&nbsp;&nbsp;Returns&nbsp;a&nbsp;tuple&nbsp;containing&nbsp;(command,&nbsp;args,&nbsp;line).<br>
+'command'&nbsp;and&nbsp;'args'&nbsp;may&nbsp;be&nbsp;None&nbsp;if&nbsp;the&nbsp;line&nbsp;couldn't&nbsp;be&nbsp;parsed.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-postloop"><strong>postloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#DnsReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;about&nbsp;to<br>
+return.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-precmd"><strong>precmd</strong></a>(self, line)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;just&nbsp;before&nbsp;the&nbsp;command&nbsp;line&nbsp;is<br>
+interpreted,&nbsp;but&nbsp;after&nbsp;the&nbsp;input&nbsp;prompt&nbsp;is&nbsp;generated&nbsp;and&nbsp;issued.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-preloop"><strong>preloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#DnsReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="DnsReverseShell-print_topics"><strong>print_topics</strong></a>(self, header, cmds, cmdlen, maxcol)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>doc_header</strong> = 'Documented commands (type help &lt;topic&gt;):'</dl>
+
+<dl><dt><strong>doc_leader</strong> = ''</dl>
+
+<dl><dt><strong>identchars</strong> = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'</dl>
+
+<dl><dt><strong>intro</strong> = None</dl>
+
+<dl><dt><strong>lastcmd</strong> = ''</dl>
+
+<dl><dt><strong>misc_header</strong> = 'Miscellaneous help topics:'</dl>
+
+<dl><dt><strong>nohelp</strong> = '*** No help on %s'</dl>
+
+<dl><dt><strong>ruler</strong> = '='</dl>
+
+<dl><dt><strong>undoc_header</strong> = 'Undocumented commands:'</dl>
+
+<dl><dt><strong>use_rawinput</strong> = 1</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>:<br>
+<dl><dt><a name="DnsReverseShell-finish"><strong>finish</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DnsReverseShell-setup"><strong>setup</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="HttpReverseShell">class <strong>HttpReverseShell</strong></a>(<a href="ReverseShell.html#ReverseShell">ReverseShell</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#HttpReverseShell">HttpReverseShell</a>(*args,&nbsp;key:&nbsp;bytes&nbsp;=&nbsp;None,&nbsp;encoding:&nbsp;str&nbsp;=&nbsp;'cp437')<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;reverse&nbsp;shell&nbsp;using&nbsp;HTTP.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ReverseShell.html#HttpReverseShell">HttpReverseShell</a></dd>
+<dd><a href="ReverseShell.html#ReverseShell">ReverseShell</a></dd>
+<dd><a href="cmd.html#Cmd">cmd.Cmd</a></dd>
+<dd><a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="HttpReverseShell-default"><strong>default</strong></a>(self, data: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;generates&nbsp;HTTP&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-parse_data"><strong>parse_data</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;HTTP&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="ReverseShell.html#ReverseShell">ReverseShell</a>:<br>
+<dl><dt><a name="HttpReverseShell-__init__"><strong>__init__</strong></a>(self, *args, key: bytes = None, encoding: str = 'cp437')</dt><dd><tt>Instantiate&nbsp;a&nbsp;line-oriented&nbsp;interpreter&nbsp;framework.<br>
+&nbsp;<br>
+The&nbsp;optional&nbsp;argument&nbsp;'completekey'&nbsp;is&nbsp;the&nbsp;readline&nbsp;name&nbsp;of&nbsp;a<br>
+completion&nbsp;key;&nbsp;it&nbsp;defaults&nbsp;to&nbsp;the&nbsp;Tab&nbsp;key.&nbsp;If&nbsp;completekey&nbsp;is<br>
+not&nbsp;None&nbsp;and&nbsp;the&nbsp;readline&nbsp;module&nbsp;is&nbsp;available,&nbsp;command&nbsp;completion<br>
+is&nbsp;done&nbsp;automatically.&nbsp;The&nbsp;optional&nbsp;arguments&nbsp;stdin&nbsp;and&nbsp;stdout<br>
+specify&nbsp;alternate&nbsp;input&nbsp;and&nbsp;output&nbsp;file&nbsp;objects;&nbsp;if&nbsp;not&nbsp;specified,<br>
+sys.stdin&nbsp;and&nbsp;sys.stdout&nbsp;are&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-completedefault"><strong>completedefault</strong></a> = <a href="#HttpReverseShell-completenames">completenames</a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt></dl>
+
+<dl><dt><a name="HttpReverseShell-completenames"><strong>completenames</strong></a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;default&nbsp;list&nbsp;for&nbsp;completion.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-defined_context"><strong>defined_context</strong></a>(self, data: Dict[str, ~Json]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;context.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-do_exit"><strong>do_exit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;exits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-do_quit"><strong>do_quit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;quits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-encrypt"><strong>encrypt</strong></a>(self, data: bytes, decrypt: bool = False) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;encrypts/decrypts&nbsp;data&nbsp;with&nbsp;RC4.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-handle"><strong>handle</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;methods&nbsp;gets&nbsp;TCP&nbsp;data&nbsp;and&nbsp;send&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-init_key"><strong>init_key</strong></a>(self, key_text: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;sets&nbsp;RC4&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-postcmd"><strong>postcmd</strong></a>(self, stop: bool, line: str) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;stop&nbsp;the&nbsp;cmdloop&nbsp;for&nbsp;each&nbsp;packet&nbsp;sended.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-recv"><strong>recv</strong></a>(self) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;gets&nbsp;all&nbsp;packets&nbsp;sent.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="ReverseShell.html#ReverseShell">ReverseShell</a>:<br>
+<dl><dt><strong>color</strong> = True</dl>
+
+<dl><dt><strong>prompt</strong> = '~$ '</dl>
+
+<hr>
+Methods inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><a name="HttpReverseShell-cmdloop"><strong>cmdloop</strong></a>(self, intro=None)</dt><dd><tt>Repeatedly&nbsp;issue&nbsp;a&nbsp;prompt,&nbsp;accept&nbsp;input,&nbsp;parse&nbsp;an&nbsp;initial&nbsp;prefix<br>
+off&nbsp;the&nbsp;received&nbsp;input,&nbsp;and&nbsp;dispatch&nbsp;to&nbsp;action&nbsp;methods,&nbsp;passing&nbsp;them<br>
+the&nbsp;remainder&nbsp;of&nbsp;the&nbsp;line&nbsp;as&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-columnize"><strong>columnize</strong></a>(self, list, displaywidth=80)</dt><dd><tt>Display&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;as&nbsp;a&nbsp;compact&nbsp;set&nbsp;of&nbsp;columns.<br>
+&nbsp;<br>
+Each&nbsp;column&nbsp;is&nbsp;only&nbsp;as&nbsp;wide&nbsp;as&nbsp;necessary.<br>
+Columns&nbsp;are&nbsp;separated&nbsp;by&nbsp;two&nbsp;spaces&nbsp;(one&nbsp;was&nbsp;not&nbsp;legible&nbsp;enough).</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-complete"><strong>complete</strong></a>(self, text, state)</dt><dd><tt>Return&nbsp;the&nbsp;next&nbsp;possible&nbsp;completion&nbsp;for&nbsp;'text'.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;command&nbsp;has&nbsp;not&nbsp;been&nbsp;entered,&nbsp;then&nbsp;complete&nbsp;against&nbsp;command&nbsp;list.<br>
+Otherwise&nbsp;try&nbsp;to&nbsp;call&nbsp;complete_&lt;command&gt;&nbsp;to&nbsp;get&nbsp;list&nbsp;of&nbsp;completions.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-complete_help"><strong>complete_help</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="HttpReverseShell-do_help"><strong>do_help</strong></a>(self, arg)</dt><dd><tt>List&nbsp;available&nbsp;commands&nbsp;with&nbsp;"help"&nbsp;or&nbsp;detailed&nbsp;help&nbsp;with&nbsp;"help&nbsp;cmd".</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-emptyline"><strong>emptyline</strong></a>(self)</dt><dd><tt>Called&nbsp;when&nbsp;an&nbsp;empty&nbsp;line&nbsp;is&nbsp;entered&nbsp;in&nbsp;response&nbsp;to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+If&nbsp;this&nbsp;method&nbsp;is&nbsp;not&nbsp;overridden,&nbsp;it&nbsp;repeats&nbsp;the&nbsp;last&nbsp;nonempty<br>
+command&nbsp;entered.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-get_names"><strong>get_names</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="HttpReverseShell-onecmd"><strong>onecmd</strong></a>(self, line)</dt><dd><tt>Interpret&nbsp;the&nbsp;argument&nbsp;as&nbsp;though&nbsp;it&nbsp;had&nbsp;been&nbsp;typed&nbsp;in&nbsp;response<br>
+to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;overridden,&nbsp;but&nbsp;should&nbsp;not&nbsp;normally&nbsp;need&nbsp;to&nbsp;be;<br>
+see&nbsp;the&nbsp;<a href="#HttpReverseShell-precmd">precmd</a>()&nbsp;and&nbsp;<a href="#HttpReverseShell-postcmd">postcmd</a>()&nbsp;methods&nbsp;for&nbsp;useful&nbsp;execution&nbsp;hooks.<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;flag&nbsp;indicating&nbsp;whether&nbsp;interpretation&nbsp;of<br>
+commands&nbsp;by&nbsp;the&nbsp;interpreter&nbsp;should&nbsp;stop.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-parseline"><strong>parseline</strong></a>(self, line)</dt><dd><tt>Parse&nbsp;the&nbsp;line&nbsp;into&nbsp;a&nbsp;command&nbsp;name&nbsp;and&nbsp;a&nbsp;string&nbsp;containing<br>
+the&nbsp;arguments.&nbsp;&nbsp;Returns&nbsp;a&nbsp;tuple&nbsp;containing&nbsp;(command,&nbsp;args,&nbsp;line).<br>
+'command'&nbsp;and&nbsp;'args'&nbsp;may&nbsp;be&nbsp;None&nbsp;if&nbsp;the&nbsp;line&nbsp;couldn't&nbsp;be&nbsp;parsed.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-postloop"><strong>postloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#HttpReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;about&nbsp;to<br>
+return.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-precmd"><strong>precmd</strong></a>(self, line)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;just&nbsp;before&nbsp;the&nbsp;command&nbsp;line&nbsp;is<br>
+interpreted,&nbsp;but&nbsp;after&nbsp;the&nbsp;input&nbsp;prompt&nbsp;is&nbsp;generated&nbsp;and&nbsp;issued.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-preloop"><strong>preloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#HttpReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="HttpReverseShell-print_topics"><strong>print_topics</strong></a>(self, header, cmds, cmdlen, maxcol)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>doc_header</strong> = 'Documented commands (type help &lt;topic&gt;):'</dl>
+
+<dl><dt><strong>doc_leader</strong> = ''</dl>
+
+<dl><dt><strong>identchars</strong> = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'</dl>
+
+<dl><dt><strong>intro</strong> = None</dl>
+
+<dl><dt><strong>lastcmd</strong> = ''</dl>
+
+<dl><dt><strong>misc_header</strong> = 'Miscellaneous help topics:'</dl>
+
+<dl><dt><strong>nohelp</strong> = '*** No help on %s'</dl>
+
+<dl><dt><strong>ruler</strong> = '='</dl>
+
+<dl><dt><strong>undoc_header</strong> = 'Undocumented commands:'</dl>
+
+<dl><dt><strong>use_rawinput</strong> = 1</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>:<br>
+<dl><dt><a name="HttpReverseShell-finish"><strong>finish</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="HttpReverseShell-setup"><strong>setup</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IrcReverseShell">class <strong>IrcReverseShell</strong></a>(<a href="ReverseShell.html#ReverseShell">ReverseShell</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#IrcReverseShell">IrcReverseShell</a>(*args,&nbsp;key:&nbsp;bytes&nbsp;=&nbsp;None,&nbsp;encoding:&nbsp;str&nbsp;=&nbsp;'cp437')<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;fake&nbsp;IRC&nbsp;server&nbsp;for&nbsp;a&nbsp;reverse&nbsp;shell.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ReverseShell.html#IrcReverseShell">IrcReverseShell</a></dd>
+<dd><a href="ReverseShell.html#ReverseShell">ReverseShell</a></dd>
+<dd><a href="cmd.html#Cmd">cmd.Cmd</a></dd>
+<dd><a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="IrcReverseShell-default"><strong>default</strong></a>(self, data: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;generates&nbsp;IRC&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-parse_data"><strong>parse_data</strong></a> = <a href="#IrcReverseShell-parse_data_step0">parse_data_step0</a>(self, data: bytes) -&gt; str</dt></dl>
+
+<dl><dt><a name="IrcReverseShell-parse_data_step0"><strong>parse_data_step0</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;the&nbsp;USER&nbsp;IRC&nbsp;command&nbsp;(first&nbsp;packet<br>
+for&nbsp;IRC&nbsp;initialization).</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-parse_data_step1"><strong>parse_data_step1</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;the&nbsp;NICK&nbsp;IRC&nbsp;command&nbsp;(second&nbsp;packet<br>
+for&nbsp;IRC&nbsp;initialization).</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-parse_data_step2"><strong>parse_data_step2</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;the&nbsp;JOIN&nbsp;IRC&nbsp;command&nbsp;(third&nbsp;packet<br>
+for&nbsp;IRC&nbsp;initialization).</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-parse_data_step3"><strong>parse_data_step3</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;the&nbsp;JOIN&nbsp;IRC&nbsp;command&nbsp;(third&nbsp;packet<br>
+for&nbsp;IRC&nbsp;initialization).</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-parse_data_step4"><strong>parse_data_step4</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;the&nbsp;PRIVMSG&nbsp;IRC&nbsp;packets&nbsp;used&nbsp;for&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="IrcReverseShell-random_message"><strong>random_message</strong></a>() -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;generates&nbsp;a&nbsp;random&nbsp;message.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="ReverseShell.html#ReverseShell">ReverseShell</a>:<br>
+<dl><dt><a name="IrcReverseShell-__init__"><strong>__init__</strong></a>(self, *args, key: bytes = None, encoding: str = 'cp437')</dt><dd><tt>Instantiate&nbsp;a&nbsp;line-oriented&nbsp;interpreter&nbsp;framework.<br>
+&nbsp;<br>
+The&nbsp;optional&nbsp;argument&nbsp;'completekey'&nbsp;is&nbsp;the&nbsp;readline&nbsp;name&nbsp;of&nbsp;a<br>
+completion&nbsp;key;&nbsp;it&nbsp;defaults&nbsp;to&nbsp;the&nbsp;Tab&nbsp;key.&nbsp;If&nbsp;completekey&nbsp;is<br>
+not&nbsp;None&nbsp;and&nbsp;the&nbsp;readline&nbsp;module&nbsp;is&nbsp;available,&nbsp;command&nbsp;completion<br>
+is&nbsp;done&nbsp;automatically.&nbsp;The&nbsp;optional&nbsp;arguments&nbsp;stdin&nbsp;and&nbsp;stdout<br>
+specify&nbsp;alternate&nbsp;input&nbsp;and&nbsp;output&nbsp;file&nbsp;objects;&nbsp;if&nbsp;not&nbsp;specified,<br>
+sys.stdin&nbsp;and&nbsp;sys.stdout&nbsp;are&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-completedefault"><strong>completedefault</strong></a> = <a href="#IrcReverseShell-completenames">completenames</a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt></dl>
+
+<dl><dt><a name="IrcReverseShell-completenames"><strong>completenames</strong></a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;default&nbsp;list&nbsp;for&nbsp;completion.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-defined_context"><strong>defined_context</strong></a>(self, data: Dict[str, ~Json]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;context.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-do_exit"><strong>do_exit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;exits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-do_quit"><strong>do_quit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;quits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-encrypt"><strong>encrypt</strong></a>(self, data: bytes, decrypt: bool = False) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;encrypts/decrypts&nbsp;data&nbsp;with&nbsp;RC4.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-handle"><strong>handle</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;methods&nbsp;gets&nbsp;TCP&nbsp;data&nbsp;and&nbsp;send&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-init_key"><strong>init_key</strong></a>(self, key_text: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;sets&nbsp;RC4&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-postcmd"><strong>postcmd</strong></a>(self, stop: bool, line: str) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;stop&nbsp;the&nbsp;cmdloop&nbsp;for&nbsp;each&nbsp;packet&nbsp;sended.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-recv"><strong>recv</strong></a>(self) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;gets&nbsp;all&nbsp;packets&nbsp;sent.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="ReverseShell.html#ReverseShell">ReverseShell</a>:<br>
+<dl><dt><strong>color</strong> = True</dl>
+
+<dl><dt><strong>prompt</strong> = '~$ '</dl>
+
+<hr>
+Methods inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><a name="IrcReverseShell-cmdloop"><strong>cmdloop</strong></a>(self, intro=None)</dt><dd><tt>Repeatedly&nbsp;issue&nbsp;a&nbsp;prompt,&nbsp;accept&nbsp;input,&nbsp;parse&nbsp;an&nbsp;initial&nbsp;prefix<br>
+off&nbsp;the&nbsp;received&nbsp;input,&nbsp;and&nbsp;dispatch&nbsp;to&nbsp;action&nbsp;methods,&nbsp;passing&nbsp;them<br>
+the&nbsp;remainder&nbsp;of&nbsp;the&nbsp;line&nbsp;as&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-columnize"><strong>columnize</strong></a>(self, list, displaywidth=80)</dt><dd><tt>Display&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;as&nbsp;a&nbsp;compact&nbsp;set&nbsp;of&nbsp;columns.<br>
+&nbsp;<br>
+Each&nbsp;column&nbsp;is&nbsp;only&nbsp;as&nbsp;wide&nbsp;as&nbsp;necessary.<br>
+Columns&nbsp;are&nbsp;separated&nbsp;by&nbsp;two&nbsp;spaces&nbsp;(one&nbsp;was&nbsp;not&nbsp;legible&nbsp;enough).</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-complete"><strong>complete</strong></a>(self, text, state)</dt><dd><tt>Return&nbsp;the&nbsp;next&nbsp;possible&nbsp;completion&nbsp;for&nbsp;'text'.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;command&nbsp;has&nbsp;not&nbsp;been&nbsp;entered,&nbsp;then&nbsp;complete&nbsp;against&nbsp;command&nbsp;list.<br>
+Otherwise&nbsp;try&nbsp;to&nbsp;call&nbsp;complete_&lt;command&gt;&nbsp;to&nbsp;get&nbsp;list&nbsp;of&nbsp;completions.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-complete_help"><strong>complete_help</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="IrcReverseShell-do_help"><strong>do_help</strong></a>(self, arg)</dt><dd><tt>List&nbsp;available&nbsp;commands&nbsp;with&nbsp;"help"&nbsp;or&nbsp;detailed&nbsp;help&nbsp;with&nbsp;"help&nbsp;cmd".</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-emptyline"><strong>emptyline</strong></a>(self)</dt><dd><tt>Called&nbsp;when&nbsp;an&nbsp;empty&nbsp;line&nbsp;is&nbsp;entered&nbsp;in&nbsp;response&nbsp;to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+If&nbsp;this&nbsp;method&nbsp;is&nbsp;not&nbsp;overridden,&nbsp;it&nbsp;repeats&nbsp;the&nbsp;last&nbsp;nonempty<br>
+command&nbsp;entered.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-get_names"><strong>get_names</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="IrcReverseShell-onecmd"><strong>onecmd</strong></a>(self, line)</dt><dd><tt>Interpret&nbsp;the&nbsp;argument&nbsp;as&nbsp;though&nbsp;it&nbsp;had&nbsp;been&nbsp;typed&nbsp;in&nbsp;response<br>
+to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;overridden,&nbsp;but&nbsp;should&nbsp;not&nbsp;normally&nbsp;need&nbsp;to&nbsp;be;<br>
+see&nbsp;the&nbsp;<a href="#IrcReverseShell-precmd">precmd</a>()&nbsp;and&nbsp;<a href="#IrcReverseShell-postcmd">postcmd</a>()&nbsp;methods&nbsp;for&nbsp;useful&nbsp;execution&nbsp;hooks.<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;flag&nbsp;indicating&nbsp;whether&nbsp;interpretation&nbsp;of<br>
+commands&nbsp;by&nbsp;the&nbsp;interpreter&nbsp;should&nbsp;stop.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-parseline"><strong>parseline</strong></a>(self, line)</dt><dd><tt>Parse&nbsp;the&nbsp;line&nbsp;into&nbsp;a&nbsp;command&nbsp;name&nbsp;and&nbsp;a&nbsp;string&nbsp;containing<br>
+the&nbsp;arguments.&nbsp;&nbsp;Returns&nbsp;a&nbsp;tuple&nbsp;containing&nbsp;(command,&nbsp;args,&nbsp;line).<br>
+'command'&nbsp;and&nbsp;'args'&nbsp;may&nbsp;be&nbsp;None&nbsp;if&nbsp;the&nbsp;line&nbsp;couldn't&nbsp;be&nbsp;parsed.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-postloop"><strong>postloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#IrcReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;about&nbsp;to<br>
+return.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-precmd"><strong>precmd</strong></a>(self, line)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;just&nbsp;before&nbsp;the&nbsp;command&nbsp;line&nbsp;is<br>
+interpreted,&nbsp;but&nbsp;after&nbsp;the&nbsp;input&nbsp;prompt&nbsp;is&nbsp;generated&nbsp;and&nbsp;issued.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-preloop"><strong>preloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#IrcReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="IrcReverseShell-print_topics"><strong>print_topics</strong></a>(self, header, cmds, cmdlen, maxcol)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>doc_header</strong> = 'Documented commands (type help &lt;topic&gt;):'</dl>
+
+<dl><dt><strong>doc_leader</strong> = ''</dl>
+
+<dl><dt><strong>identchars</strong> = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'</dl>
+
+<dl><dt><strong>intro</strong> = None</dl>
+
+<dl><dt><strong>lastcmd</strong> = ''</dl>
+
+<dl><dt><strong>misc_header</strong> = 'Miscellaneous help topics:'</dl>
+
+<dl><dt><strong>nohelp</strong> = '*** No help on %s'</dl>
+
+<dl><dt><strong>ruler</strong> = '='</dl>
+
+<dl><dt><strong>undoc_header</strong> = 'Undocumented commands:'</dl>
+
+<dl><dt><strong>use_rawinput</strong> = 1</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>:<br>
+<dl><dt><a name="IrcReverseShell-finish"><strong>finish</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="IrcReverseShell-setup"><strong>setup</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReverseShell">class <strong>ReverseShell</strong></a>(<a href="cmd.html#Cmd">cmd.Cmd</a>, <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ReverseShell">ReverseShell</a>(*args,&nbsp;key:&nbsp;bytes&nbsp;=&nbsp;None,&nbsp;encoding:&nbsp;str&nbsp;=&nbsp;'cp437')<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;reverse&nbsp;shell&nbsp;command&nbsp;line.<br>
+&nbsp;<br>
+key:&nbsp;if&nbsp;is&nbsp;not&nbsp;None&nbsp;decrypt&nbsp;received&nbsp;data&nbsp;and&nbsp;encrypt<br>
+data&nbsp;to&nbsp;send&nbsp;with&nbsp;the&nbsp;key.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ReverseShell.html#ReverseShell">ReverseShell</a></dd>
+<dd><a href="cmd.html#Cmd">cmd.Cmd</a></dd>
+<dd><a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ReverseShell-__init__"><strong>__init__</strong></a>(self, *args, key: bytes = None, encoding: str = 'cp437')</dt><dd><tt>Instantiate&nbsp;a&nbsp;line-oriented&nbsp;interpreter&nbsp;framework.<br>
+&nbsp;<br>
+The&nbsp;optional&nbsp;argument&nbsp;'completekey'&nbsp;is&nbsp;the&nbsp;readline&nbsp;name&nbsp;of&nbsp;a<br>
+completion&nbsp;key;&nbsp;it&nbsp;defaults&nbsp;to&nbsp;the&nbsp;Tab&nbsp;key.&nbsp;If&nbsp;completekey&nbsp;is<br>
+not&nbsp;None&nbsp;and&nbsp;the&nbsp;readline&nbsp;module&nbsp;is&nbsp;available,&nbsp;command&nbsp;completion<br>
+is&nbsp;done&nbsp;automatically.&nbsp;The&nbsp;optional&nbsp;arguments&nbsp;stdin&nbsp;and&nbsp;stdout<br>
+specify&nbsp;alternate&nbsp;input&nbsp;and&nbsp;output&nbsp;file&nbsp;objects;&nbsp;if&nbsp;not&nbsp;specified,<br>
+sys.stdin&nbsp;and&nbsp;sys.stdout&nbsp;are&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-completedefault"><strong>completedefault</strong></a> = <a href="#ReverseShell-completenames">completenames</a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt></dl>
+
+<dl><dt><a name="ReverseShell-completenames"><strong>completenames</strong></a>(self, text: str, line: str, begidx: int, endidx: int) -&gt; List[str]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;default&nbsp;list&nbsp;for&nbsp;completion.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-default"><strong>default</strong></a>(self, arg: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;sends&nbsp;data&nbsp;to&nbsp;socket&nbsp;shell&nbsp;client.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-defined_context"><strong>defined_context</strong></a>(self, data: Dict[str, ~Json]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;context.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-do_exit"><strong>do_exit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;exits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-do_quit"><strong>do_quit</strong></a>(self, arg: str) -&gt; bool</dt><dd><tt>This&nbsp;method&nbsp;quits&nbsp;the&nbsp;reverse&nbsp;shell.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-encrypt"><strong>encrypt</strong></a>(self, data: bytes, decrypt: bool = False) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;encrypts/decrypts&nbsp;data&nbsp;with&nbsp;RC4.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-handle"><strong>handle</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;methods&nbsp;gets&nbsp;TCP&nbsp;data&nbsp;and&nbsp;send&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-init_key"><strong>init_key</strong></a>(self, key_text: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;sets&nbsp;RC4&nbsp;key.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-parse_data"><strong>parse_data</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;TCP&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-postcmd"><strong>postcmd</strong></a>(self, stop: bool, line: str) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;stop&nbsp;the&nbsp;cmdloop&nbsp;for&nbsp;each&nbsp;packet&nbsp;sended.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-recv"><strong>recv</strong></a>(self) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;gets&nbsp;all&nbsp;packets&nbsp;sent.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'_set': &lt;class 'bool'&gt;, 'color': &lt;class 'bool'&gt;, 'prompt': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>color</strong> = True</dl>
+
+<dl><dt><strong>prompt</strong> = '~$ '</dl>
+
+<hr>
+Methods inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><a name="ReverseShell-cmdloop"><strong>cmdloop</strong></a>(self, intro=None)</dt><dd><tt>Repeatedly&nbsp;issue&nbsp;a&nbsp;prompt,&nbsp;accept&nbsp;input,&nbsp;parse&nbsp;an&nbsp;initial&nbsp;prefix<br>
+off&nbsp;the&nbsp;received&nbsp;input,&nbsp;and&nbsp;dispatch&nbsp;to&nbsp;action&nbsp;methods,&nbsp;passing&nbsp;them<br>
+the&nbsp;remainder&nbsp;of&nbsp;the&nbsp;line&nbsp;as&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-columnize"><strong>columnize</strong></a>(self, list, displaywidth=80)</dt><dd><tt>Display&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;as&nbsp;a&nbsp;compact&nbsp;set&nbsp;of&nbsp;columns.<br>
+&nbsp;<br>
+Each&nbsp;column&nbsp;is&nbsp;only&nbsp;as&nbsp;wide&nbsp;as&nbsp;necessary.<br>
+Columns&nbsp;are&nbsp;separated&nbsp;by&nbsp;two&nbsp;spaces&nbsp;(one&nbsp;was&nbsp;not&nbsp;legible&nbsp;enough).</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-complete"><strong>complete</strong></a>(self, text, state)</dt><dd><tt>Return&nbsp;the&nbsp;next&nbsp;possible&nbsp;completion&nbsp;for&nbsp;'text'.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;command&nbsp;has&nbsp;not&nbsp;been&nbsp;entered,&nbsp;then&nbsp;complete&nbsp;against&nbsp;command&nbsp;list.<br>
+Otherwise&nbsp;try&nbsp;to&nbsp;call&nbsp;complete_&lt;command&gt;&nbsp;to&nbsp;get&nbsp;list&nbsp;of&nbsp;completions.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-complete_help"><strong>complete_help</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="ReverseShell-do_help"><strong>do_help</strong></a>(self, arg)</dt><dd><tt>List&nbsp;available&nbsp;commands&nbsp;with&nbsp;"help"&nbsp;or&nbsp;detailed&nbsp;help&nbsp;with&nbsp;"help&nbsp;cmd".</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-emptyline"><strong>emptyline</strong></a>(self)</dt><dd><tt>Called&nbsp;when&nbsp;an&nbsp;empty&nbsp;line&nbsp;is&nbsp;entered&nbsp;in&nbsp;response&nbsp;to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+If&nbsp;this&nbsp;method&nbsp;is&nbsp;not&nbsp;overridden,&nbsp;it&nbsp;repeats&nbsp;the&nbsp;last&nbsp;nonempty<br>
+command&nbsp;entered.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-get_names"><strong>get_names</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShell-onecmd"><strong>onecmd</strong></a>(self, line)</dt><dd><tt>Interpret&nbsp;the&nbsp;argument&nbsp;as&nbsp;though&nbsp;it&nbsp;had&nbsp;been&nbsp;typed&nbsp;in&nbsp;response<br>
+to&nbsp;the&nbsp;prompt.<br>
+&nbsp;<br>
+This&nbsp;may&nbsp;be&nbsp;overridden,&nbsp;but&nbsp;should&nbsp;not&nbsp;normally&nbsp;need&nbsp;to&nbsp;be;<br>
+see&nbsp;the&nbsp;<a href="#ReverseShell-precmd">precmd</a>()&nbsp;and&nbsp;<a href="#ReverseShell-postcmd">postcmd</a>()&nbsp;methods&nbsp;for&nbsp;useful&nbsp;execution&nbsp;hooks.<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;flag&nbsp;indicating&nbsp;whether&nbsp;interpretation&nbsp;of<br>
+commands&nbsp;by&nbsp;the&nbsp;interpreter&nbsp;should&nbsp;stop.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-parseline"><strong>parseline</strong></a>(self, line)</dt><dd><tt>Parse&nbsp;the&nbsp;line&nbsp;into&nbsp;a&nbsp;command&nbsp;name&nbsp;and&nbsp;a&nbsp;string&nbsp;containing<br>
+the&nbsp;arguments.&nbsp;&nbsp;Returns&nbsp;a&nbsp;tuple&nbsp;containing&nbsp;(command,&nbsp;args,&nbsp;line).<br>
+'command'&nbsp;and&nbsp;'args'&nbsp;may&nbsp;be&nbsp;None&nbsp;if&nbsp;the&nbsp;line&nbsp;couldn't&nbsp;be&nbsp;parsed.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-postloop"><strong>postloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#ReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;about&nbsp;to<br>
+return.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-precmd"><strong>precmd</strong></a>(self, line)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;just&nbsp;before&nbsp;the&nbsp;command&nbsp;line&nbsp;is<br>
+interpreted,&nbsp;but&nbsp;after&nbsp;the&nbsp;input&nbsp;prompt&nbsp;is&nbsp;generated&nbsp;and&nbsp;issued.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-preloop"><strong>preloop</strong></a>(self)</dt><dd><tt>Hook&nbsp;method&nbsp;executed&nbsp;once&nbsp;when&nbsp;the&nbsp;<a href="#ReverseShell-cmdloop">cmdloop</a>()&nbsp;method&nbsp;is&nbsp;called.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShell-print_topics"><strong>print_topics</strong></a>(self, header, cmds, cmdlen, maxcol)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="cmd.html#Cmd">cmd.Cmd</a>:<br>
+<dl><dt><strong>doc_header</strong> = 'Documented commands (type help &lt;topic&gt;):'</dl>
+
+<dl><dt><strong>doc_leader</strong> = ''</dl>
+
+<dl><dt><strong>identchars</strong> = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'</dl>
+
+<dl><dt><strong>intro</strong> = None</dl>
+
+<dl><dt><strong>lastcmd</strong> = ''</dl>
+
+<dl><dt><strong>misc_header</strong> = 'Miscellaneous help topics:'</dl>
+
+<dl><dt><strong>nohelp</strong> = '*** No help on %s'</dl>
+
+<dl><dt><strong>ruler</strong> = '='</dl>
+
+<dl><dt><strong>undoc_header</strong> = 'Undocumented commands:'</dl>
+
+<dl><dt><strong>use_rawinput</strong> = 1</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>:<br>
+<dl><dt><a name="ReverseShell-finish"><strong>finish</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShell-setup"><strong>setup</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReverseShellSocketTcp">class <strong>ReverseShellSocketTcp</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ReverseShellSocketTcp">ReverseShellSocketTcp</a>(address:&nbsp;Tuple[str,&nbsp;int]&nbsp;=&nbsp;('0.0.0.0',&nbsp;1337),&nbsp;handler:&nbsp;type&nbsp;=&nbsp;&amp;lt;class&nbsp;'<a href="#ReverseShell">ReverseShell</a>.<a href="#ReverseShell">ReverseShell</a>'&amp;gt;,&nbsp;ssl:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;cert:&nbsp;str&nbsp;=&nbsp;'server.crt',&nbsp;key:&nbsp;str&nbsp;=&nbsp;'server.key')<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;one-socket&nbsp;TCP&nbsp;server.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ReverseShellSocketTcp-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellSocketTcp-__exit__"><strong>__exit__</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="ReverseShellSocketTcp-__init__"><strong>__init__</strong></a>(self, address: Tuple[str, int] = ('0.0.0.0', 1337), handler: type = &lt;class 'ReverseShell.ReverseShell'&gt;, ssl: bool = False, cert: str = 'server.crt', key: str = 'server.key')</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellSocketTcp-serve_forever"><strong>serve_forever</strong></a>(self)</dt><dd><tt>This&nbsp;method&nbsp;starts&nbsp;the&nbsp;socket&nbsp;of&nbsp;the&nbsp;reverse&nbsp;shell&nbsp;server.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReverseShellTcp">class <strong>ReverseShellTcp</strong></a>(<a href="socketserver.html#TCPServer">socketserver.TCPServer</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ReverseShellTcp">ReverseShellTcp</a>(address:&nbsp;Tuple[str,&nbsp;int]&nbsp;=&nbsp;('0.0.0.0',&nbsp;1337),&nbsp;handler:&nbsp;type&nbsp;=&nbsp;&amp;lt;class&nbsp;'<a href="#ReverseShell">ReverseShell</a>.<a href="#ReverseShell">ReverseShell</a>'&amp;gt;,&nbsp;ssl:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;cert:&nbsp;str&nbsp;=&nbsp;'server.crt',&nbsp;key:&nbsp;str&nbsp;=&nbsp;'server.key')<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;TCP&nbsp;server&nbsp;with&nbsp;ssl.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ReverseShell.html#ReverseShellTcp">ReverseShellTcp</a></dd>
+<dd><a href="socketserver.html#TCPServer">socketserver.TCPServer</a></dd>
+<dd><a href="socketserver.html#BaseServer">socketserver.BaseServer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ReverseShellTcp-__init__"><strong>__init__</strong></a>(self, address: Tuple[str, int] = ('0.0.0.0', 1337), handler: type = &lt;class 'ReverseShell.ReverseShell'&gt;, ssl: bool = False, cert: str = 'server.crt', key: str = 'server.key')</dt><dd><tt>Constructor.&nbsp;&nbsp;May&nbsp;be&nbsp;extended,&nbsp;do&nbsp;not&nbsp;override.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-get_request"><strong>get_request</strong></a>(self)</dt><dd><tt>This&nbsp;method&nbsp;sets&nbsp;SSL&nbsp;encryption&nbsp;for&nbsp;new&nbsp;connection.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#TCPServer">socketserver.TCPServer</a>:<br>
+<dl><dt><a name="ReverseShellTcp-close_request"><strong>close_request</strong></a>(self, request)</dt><dd><tt>Called&nbsp;to&nbsp;clean&nbsp;up&nbsp;an&nbsp;individual&nbsp;request.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-fileno"><strong>fileno</strong></a>(self)</dt><dd><tt>Return&nbsp;socket&nbsp;file&nbsp;number.<br>
+&nbsp;<br>
+Interface&nbsp;required&nbsp;by&nbsp;selector.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-server_activate"><strong>server_activate</strong></a>(self)</dt><dd><tt>Called&nbsp;by&nbsp;constructor&nbsp;to&nbsp;activate&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-server_bind"><strong>server_bind</strong></a>(self)</dt><dd><tt>Called&nbsp;by&nbsp;constructor&nbsp;to&nbsp;bind&nbsp;the&nbsp;socket.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-server_close"><strong>server_close</strong></a>(self)</dt><dd><tt>Called&nbsp;to&nbsp;clean-up&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-shutdown_request"><strong>shutdown_request</strong></a>(self, request)</dt><dd><tt>Called&nbsp;to&nbsp;shutdown&nbsp;and&nbsp;close&nbsp;an&nbsp;individual&nbsp;request.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="socketserver.html#TCPServer">socketserver.TCPServer</a>:<br>
+<dl><dt><strong>address_family</strong> = &lt;AddressFamily.AF_INET: 2&gt;</dl>
+
+<dl><dt><strong>allow_reuse_address</strong> = False</dl>
+
+<dl><dt><strong>request_queue_size</strong> = 5</dl>
+
+<dl><dt><strong>socket_type</strong> = &lt;SocketKind.SOCK_STREAM: 1&gt;</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#BaseServer">socketserver.BaseServer</a>:<br>
+<dl><dt><a name="ReverseShellTcp-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellTcp-__exit__"><strong>__exit__</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="ReverseShellTcp-finish_request"><strong>finish_request</strong></a>(self, request, client_address)</dt><dd><tt>Finish&nbsp;one&nbsp;request&nbsp;by&nbsp;instantiating&nbsp;RequestHandlerClass.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-handle_error"><strong>handle_error</strong></a>(self, request, client_address)</dt><dd><tt>Handle&nbsp;an&nbsp;error&nbsp;gracefully.&nbsp;&nbsp;May&nbsp;be&nbsp;overridden.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;is&nbsp;to&nbsp;print&nbsp;a&nbsp;traceback&nbsp;and&nbsp;continue.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-handle_request"><strong>handle_request</strong></a>(self)</dt><dd><tt>Handle&nbsp;one&nbsp;request,&nbsp;possibly&nbsp;blocking.<br>
+&nbsp;<br>
+Respects&nbsp;self.<strong>timeout</strong>.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-handle_timeout"><strong>handle_timeout</strong></a>(self)</dt><dd><tt>Called&nbsp;if&nbsp;no&nbsp;new&nbsp;request&nbsp;arrives&nbsp;within&nbsp;self.<strong>timeout</strong>.<br>
+&nbsp;<br>
+Overridden&nbsp;by&nbsp;ForkingMixIn.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-process_request"><strong>process_request</strong></a>(self, request, client_address)</dt><dd><tt>Call&nbsp;finish_request.<br>
+&nbsp;<br>
+Overridden&nbsp;by&nbsp;ForkingMixIn&nbsp;and&nbsp;ThreadingMixIn.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-serve_forever"><strong>serve_forever</strong></a>(self, poll_interval=0.5)</dt><dd><tt>Handle&nbsp;one&nbsp;request&nbsp;at&nbsp;a&nbsp;time&nbsp;until&nbsp;shutdown.<br>
+&nbsp;<br>
+Polls&nbsp;for&nbsp;shutdown&nbsp;every&nbsp;poll_interval&nbsp;seconds.&nbsp;Ignores<br>
+self.<strong>timeout</strong>.&nbsp;If&nbsp;you&nbsp;need&nbsp;to&nbsp;do&nbsp;periodic&nbsp;tasks,&nbsp;do&nbsp;them&nbsp;in<br>
+another&nbsp;thread.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-service_actions"><strong>service_actions</strong></a>(self)</dt><dd><tt>Called&nbsp;by&nbsp;the&nbsp;<a href="#ReverseShellTcp-serve_forever">serve_forever</a>()&nbsp;loop.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden&nbsp;by&nbsp;a&nbsp;subclass&nbsp;/&nbsp;Mixin&nbsp;to&nbsp;implement&nbsp;any&nbsp;code&nbsp;that<br>
+needs&nbsp;to&nbsp;be&nbsp;run&nbsp;during&nbsp;the&nbsp;loop.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-shutdown"><strong>shutdown</strong></a>(self)</dt><dd><tt>Stops&nbsp;the&nbsp;serve_forever&nbsp;loop.<br>
+&nbsp;<br>
+Blocks&nbsp;until&nbsp;the&nbsp;loop&nbsp;has&nbsp;finished.&nbsp;This&nbsp;must&nbsp;be&nbsp;called&nbsp;while<br>
+<a href="#ReverseShellTcp-serve_forever">serve_forever</a>()&nbsp;is&nbsp;running&nbsp;in&nbsp;another&nbsp;thread,&nbsp;or&nbsp;it&nbsp;will<br>
+deadlock.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellTcp-verify_request"><strong>verify_request</strong></a>(self, request, client_address)</dt><dd><tt>Verify&nbsp;the&nbsp;request.&nbsp;&nbsp;May&nbsp;be&nbsp;overridden.<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;we&nbsp;should&nbsp;proceed&nbsp;with&nbsp;this&nbsp;request.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="socketserver.html#BaseServer">socketserver.BaseServer</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="socketserver.html#BaseServer">socketserver.BaseServer</a>:<br>
+<dl><dt><strong>timeout</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReverseShellUdp">class <strong>ReverseShellUdp</strong></a>(<a href="socketserver.html#UDPServer">socketserver.UDPServer</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ReverseShellUdp">ReverseShellUdp</a>(address:&nbsp;Tuple[str,&nbsp;int]&nbsp;=&nbsp;('0.0.0.0',&nbsp;1337),&nbsp;handler:&nbsp;type&nbsp;=&nbsp;&amp;lt;class&nbsp;'<a href="#ReverseShell">ReverseShell</a>.<a href="#ReverseShell">ReverseShell</a>'&amp;gt;)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;UDP&nbsp;server.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ReverseShell.html#ReverseShellUdp">ReverseShellUdp</a></dd>
+<dd><a href="socketserver.html#UDPServer">socketserver.UDPServer</a></dd>
+<dd><a href="socketserver.html#TCPServer">socketserver.TCPServer</a></dd>
+<dd><a href="socketserver.html#BaseServer">socketserver.BaseServer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ReverseShellUdp-__init__"><strong>__init__</strong></a>(self, address: Tuple[str, int] = ('0.0.0.0', 1337), handler: type = &lt;class 'ReverseShell.ReverseShell'&gt;)</dt><dd><tt>Constructor.&nbsp;&nbsp;May&nbsp;be&nbsp;extended,&nbsp;do&nbsp;not&nbsp;override.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#UDPServer">socketserver.UDPServer</a>:<br>
+<dl><dt><a name="ReverseShellUdp-close_request"><strong>close_request</strong></a>(self, request)</dt><dd><tt>Called&nbsp;to&nbsp;clean&nbsp;up&nbsp;an&nbsp;individual&nbsp;request.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-get_request"><strong>get_request</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;request&nbsp;and&nbsp;client&nbsp;address&nbsp;from&nbsp;the&nbsp;socket.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-server_activate"><strong>server_activate</strong></a>(self)</dt><dd><tt>Called&nbsp;by&nbsp;constructor&nbsp;to&nbsp;activate&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-shutdown_request"><strong>shutdown_request</strong></a>(self, request)</dt><dd><tt>Called&nbsp;to&nbsp;shutdown&nbsp;and&nbsp;close&nbsp;an&nbsp;individual&nbsp;request.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="socketserver.html#UDPServer">socketserver.UDPServer</a>:<br>
+<dl><dt><strong>allow_reuse_address</strong> = False</dl>
+
+<dl><dt><strong>max_packet_size</strong> = 8192</dl>
+
+<dl><dt><strong>socket_type</strong> = &lt;SocketKind.SOCK_DGRAM: 2&gt;</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#TCPServer">socketserver.TCPServer</a>:<br>
+<dl><dt><a name="ReverseShellUdp-fileno"><strong>fileno</strong></a>(self)</dt><dd><tt>Return&nbsp;socket&nbsp;file&nbsp;number.<br>
+&nbsp;<br>
+Interface&nbsp;required&nbsp;by&nbsp;selector.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-server_bind"><strong>server_bind</strong></a>(self)</dt><dd><tt>Called&nbsp;by&nbsp;constructor&nbsp;to&nbsp;bind&nbsp;the&nbsp;socket.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-server_close"><strong>server_close</strong></a>(self)</dt><dd><tt>Called&nbsp;to&nbsp;clean-up&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="socketserver.html#TCPServer">socketserver.TCPServer</a>:<br>
+<dl><dt><strong>address_family</strong> = &lt;AddressFamily.AF_INET: 2&gt;</dl>
+
+<dl><dt><strong>request_queue_size</strong> = 5</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#BaseServer">socketserver.BaseServer</a>:<br>
+<dl><dt><a name="ReverseShellUdp-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ReverseShellUdp-__exit__"><strong>__exit__</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="ReverseShellUdp-finish_request"><strong>finish_request</strong></a>(self, request, client_address)</dt><dd><tt>Finish&nbsp;one&nbsp;request&nbsp;by&nbsp;instantiating&nbsp;RequestHandlerClass.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-handle_error"><strong>handle_error</strong></a>(self, request, client_address)</dt><dd><tt>Handle&nbsp;an&nbsp;error&nbsp;gracefully.&nbsp;&nbsp;May&nbsp;be&nbsp;overridden.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;is&nbsp;to&nbsp;print&nbsp;a&nbsp;traceback&nbsp;and&nbsp;continue.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-handle_request"><strong>handle_request</strong></a>(self)</dt><dd><tt>Handle&nbsp;one&nbsp;request,&nbsp;possibly&nbsp;blocking.<br>
+&nbsp;<br>
+Respects&nbsp;self.<strong>timeout</strong>.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-handle_timeout"><strong>handle_timeout</strong></a>(self)</dt><dd><tt>Called&nbsp;if&nbsp;no&nbsp;new&nbsp;request&nbsp;arrives&nbsp;within&nbsp;self.<strong>timeout</strong>.<br>
+&nbsp;<br>
+Overridden&nbsp;by&nbsp;ForkingMixIn.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-process_request"><strong>process_request</strong></a>(self, request, client_address)</dt><dd><tt>Call&nbsp;finish_request.<br>
+&nbsp;<br>
+Overridden&nbsp;by&nbsp;ForkingMixIn&nbsp;and&nbsp;ThreadingMixIn.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-serve_forever"><strong>serve_forever</strong></a>(self, poll_interval=0.5)</dt><dd><tt>Handle&nbsp;one&nbsp;request&nbsp;at&nbsp;a&nbsp;time&nbsp;until&nbsp;shutdown.<br>
+&nbsp;<br>
+Polls&nbsp;for&nbsp;shutdown&nbsp;every&nbsp;poll_interval&nbsp;seconds.&nbsp;Ignores<br>
+self.<strong>timeout</strong>.&nbsp;If&nbsp;you&nbsp;need&nbsp;to&nbsp;do&nbsp;periodic&nbsp;tasks,&nbsp;do&nbsp;them&nbsp;in<br>
+another&nbsp;thread.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-service_actions"><strong>service_actions</strong></a>(self)</dt><dd><tt>Called&nbsp;by&nbsp;the&nbsp;<a href="#ReverseShellUdp-serve_forever">serve_forever</a>()&nbsp;loop.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden&nbsp;by&nbsp;a&nbsp;subclass&nbsp;/&nbsp;Mixin&nbsp;to&nbsp;implement&nbsp;any&nbsp;code&nbsp;that<br>
+needs&nbsp;to&nbsp;be&nbsp;run&nbsp;during&nbsp;the&nbsp;loop.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-shutdown"><strong>shutdown</strong></a>(self)</dt><dd><tt>Stops&nbsp;the&nbsp;serve_forever&nbsp;loop.<br>
+&nbsp;<br>
+Blocks&nbsp;until&nbsp;the&nbsp;loop&nbsp;has&nbsp;finished.&nbsp;This&nbsp;must&nbsp;be&nbsp;called&nbsp;while<br>
+<a href="#ReverseShellUdp-serve_forever">serve_forever</a>()&nbsp;is&nbsp;running&nbsp;in&nbsp;another&nbsp;thread,&nbsp;or&nbsp;it&nbsp;will<br>
+deadlock.</tt></dd></dl>
+
+<dl><dt><a name="ReverseShellUdp-verify_request"><strong>verify_request</strong></a>(self, request, client_address)</dt><dd><tt>Verify&nbsp;the&nbsp;request.&nbsp;&nbsp;May&nbsp;be&nbsp;overridden.<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;we&nbsp;should&nbsp;proceed&nbsp;with&nbsp;this&nbsp;request.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="socketserver.html#BaseServer">socketserver.BaseServer</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="socketserver.html#BaseServer">socketserver.BaseServer</a>:<br>
+<dl><dt><strong>timeout</strong> = None</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;<a href="#ReverseShell">ReverseShell</a><br>
+from&nbsp;command&nbsp;line&nbsp;and&nbsp;returns&nbsp;the&nbsp;exit&nbsp;code.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['ReverseShell', 'IrcReverseShell', 'DnsReverseShell', 'HttpReverseShell', 'ReverseShellUdp', 'ReverseShellTcp', 'ReverseShellSocketTcp', 'main']<br>
+<strong>__annotations__</strong> = {'alphanum': &lt;class 'bytes'&gt;, 'letters': &lt;class 'bytes'&gt;}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>ReverseShell  Copyright (C) 2023  Maurice Lambe...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements an advanced reverse shell<font color="#c040c0">\n</font>console (supports: TCP, UDP, IRC, HTTP and DNS).<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/ReverseShell'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
