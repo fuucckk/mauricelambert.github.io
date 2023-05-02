@@ -6,42 +6,19 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>NetworkScanner</strong></big></big> (version 1.0.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>NetworkScanner</strong></big></big> (version 2.0.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="networkscanner.py">networkscanner.py</a></font></td></tr></table>
-    <p><tt>This&nbsp;module&nbsp;implements&nbsp;a&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.<br>
+    <p><tt>This&nbsp;module&nbsp;implements&nbsp;a&nbsp;passive&nbsp;<a href="#NetworkScanner">NetworkScanner</a>&nbsp;and&nbsp;an&nbsp;active&nbsp;<a href="#NetworkScanner">NetworkScanner</a><br>
+using&nbsp;ARP&nbsp;and&nbsp;ping&nbsp;scan&nbsp;IP&nbsp;sweep&nbsp;and&nbsp;hostname&nbsp;resolution.<br>
 &nbsp;<br>
-~#&nbsp;python3&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-t&nbsp;172.18.0.1-172.18.0.15<br>
-&nbsp;<br>
-<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
-&nbsp;<br>
-&nbsp;<br>
-PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
-&nbsp;<br>
+~#&nbsp;python3&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-I&nbsp;-t&nbsp;172.18.0.1-172.18.0.15<br>
 172.18.0.9<br>
 172.18.0.13<br>
 172.18.0.14<br>
 172.18.0.10<br>
 &nbsp;<br>
-~#&nbsp;python3&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-d&nbsp;--noping&nbsp;--hostname&nbsp;--ports&nbsp;22&nbsp;80&nbsp;-p&nbsp;445&nbsp;139&nbsp;443&nbsp;-T&nbsp;1&nbsp;-R&nbsp;-s&nbsp;-t&nbsp;172.18.0.0/28<br>
-&nbsp;<br>
-<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
-&nbsp;<br>
-&nbsp;<br>
-PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
-&nbsp;<br>
+~#&nbsp;python3&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-d&nbsp;--async&nbsp;--noping&nbsp;--hostname&nbsp;--ports&nbsp;22&nbsp;80&nbsp;-p&nbsp;445&nbsp;139&nbsp;443&nbsp;-T&nbsp;1&nbsp;-R&nbsp;-t&nbsp;172.18.0.0/28<br>
 [2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:490}&nbsp;Build&nbsp;<a href="#NetworkScanner">NetworkScanner</a>...<br>
 [2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:501}&nbsp;Configure&nbsp;real&nbsp;time...<br>
 [2016-06-22&nbsp;05:01:12]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:509}&nbsp;The&nbsp;scan&nbsp;begins...<br>
@@ -109,19 +86,7 @@ under&nbsp;certain&nbsp;conditions.<br>
 UP:&nbsp;172.18.0.9<br>
 DOWN:<br>
 &nbsp;<br>
-~#&nbsp;python&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-d&nbsp;-t&nbsp;172.18.0.0/28<br>
-&nbsp;<br>
-<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
-&nbsp;<br>
-&nbsp;<br>
-PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
-&nbsp;<br>
+~#&nbsp;python&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-d&nbsp;-I&nbsp;-t&nbsp;172.18.0.0/28<br>
 [2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:651}&nbsp;Build&nbsp;<a href="#NetworkScanner">NetworkScanner</a>...<br>
 [2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:662}&nbsp;Configure&nbsp;real&nbsp;time...<br>
 [2016-06-22&nbsp;05:02:24]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:670}&nbsp;The&nbsp;scan&nbsp;begins...<br>
@@ -195,34 +160,28 @@ under&nbsp;certain&nbsp;conditions.<br>
 [2016-06-22&nbsp;05:02:53]&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(20)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:433}&nbsp;Stop&nbsp;AsyncSniffer,&nbsp;scan&nbsp;end.<br>
 [2016-06-22&nbsp;05:02:53]&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;(10)&nbsp;{__main__&nbsp;-&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py:672}&nbsp;Scan&nbsp;end.<br>
 &nbsp;<br>
-~#&nbsp;python&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;--noping&nbsp;--hostname&nbsp;--ports&nbsp;22&nbsp;80&nbsp;-p&nbsp;445&nbsp;139&nbsp;443&nbsp;-T&nbsp;1&nbsp;-R&nbsp;-s&nbsp;-t&nbsp;172.18.0.0/28<br>
+~#&nbsp;python&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;--noping&nbsp;--hostname&nbsp;--ports&nbsp;22&nbsp;80&nbsp;-p&nbsp;445&nbsp;139&nbsp;443&nbsp;-T&nbsp;1&nbsp;-R&nbsp;-t&nbsp;172.18.0.0/28<br>
+[+]&nbsp;IP:&nbsp;'172.18.0.9'&nbsp;is&nbsp;UP&nbsp;and&nbsp;MAC&nbsp;address&nbsp;is&nbsp;'00:11:22:33:44:55'<br>
+[+]&nbsp;IP:&nbsp;'172.18.0.10'&nbsp;is&nbsp;UP&nbsp;and&nbsp;MAC&nbsp;address&nbsp;is&nbsp;'aa:bb:cc:dd:ee:ff'<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.13'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.5'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.12'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.14'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.7'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.4'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.11'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.3'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.6'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.2'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.1'&nbsp;is&nbsp;DOWN<br>
+[-]&nbsp;IP:&nbsp;'172.18.0.8'&nbsp;is&nbsp;DOWN<br>
 &nbsp;<br>
-<a href="#NetworkScanner">NetworkScanner</a>&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2021,&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
+~#<br>
 &nbsp;<br>
-&nbsp;<br>
-PythonToolsKit&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2022&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
-This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
-This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
-under&nbsp;certain&nbsp;conditions.<br>
-&nbsp;<br>
-UP:&nbsp;172.18.0.9<br>
-UP:&nbsp;172.18.0.10<br>
-DOWN:&nbsp;172.18.0.13<br>
-DOWN:&nbsp;172.18.0.5<br>
-DOWN:&nbsp;172.18.0.12<br>
-DOWN:&nbsp;172.18.0.14<br>
-DOWN:&nbsp;172.18.0.7<br>
-DOWN:&nbsp;172.18.0.4<br>
-DOWN:&nbsp;172.18.0.11<br>
-DOWN:&nbsp;172.18.0.3<br>
-DOWN:&nbsp;172.18.0.6<br>
-DOWN:&nbsp;172.18.0.2<br>
-DOWN:&nbsp;172.18.0.1<br>
-DOWN:&nbsp;172.18.0.8<br>
-&nbsp;<br>
+~#&nbsp;python&nbsp;<a href="#NetworkScanner">NetworkScanner</a>.py&nbsp;-i&nbsp;172.18.0.&nbsp;-P&nbsp;-t&nbsp;172.18.0.0/28<br>
+[+]&nbsp;IP:&nbsp;'172.18.0.9'&nbsp;is&nbsp;UP&nbsp;and&nbsp;MAC&nbsp;address&nbsp;is&nbsp;'00:11:22:33:44:55'<br>
+[+]&nbsp;IP:&nbsp;'172.18.0.10'&nbsp;is&nbsp;UP&nbsp;and&nbsp;MAC&nbsp;address&nbsp;is&nbsp;'aa:bb:cc:dd:ee:ff'<br>
+^C<br>
 ~#<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;from&nbsp;<a href="#NetworkScanner">NetworkScanner</a>&nbsp;import&nbsp;<a href="#NetworkScanner">NetworkScanner</a>,&nbsp;logger<br>
@@ -251,6 +210,7 @@ IP:&nbsp;'172.18.0.3'&nbsp;is&nbsp;UP&nbsp;('ARP',&nbsp;None).<br>
 172.18.0.1<br>
 [False]<br>
 &gt;&gt;&gt;&nbsp;logger.setLevel(10)&nbsp;&nbsp;#&nbsp;debug&nbsp;mode<br>
+&gt;&gt;&gt;&nbsp;scanner.scan(passive=True)&nbsp;#&nbsp;passive&nbsp;scan<br>
 &gt;&gt;&gt;</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -274,12 +234,12 @@ IP:&nbsp;'172.18.0.3'&nbsp;is&nbsp;UP&nbsp;('ARP',&nbsp;None).<br>
 <font color="#000000" face="helvetica, arial"><a name="NetworkScanner">class <strong>NetworkScanner</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#NetworkScanner">NetworkScanner</a>(targets:&nbsp;Set[str],&nbsp;ping:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;ports:&nbsp;List[int]&nbsp;=&nbsp;[],&nbsp;arp:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;hostname:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;real_time:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;timeout:&nbsp;int&nbsp;=&nbsp;3,&nbsp;iface:&nbsp;scapy.interfaces.NetworkInterface&nbsp;=&nbsp;None)<br>
+<td colspan=2><tt><a href="#NetworkScanner">NetworkScanner</a>(targets:&nbsp;Set[str],&nbsp;ping:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;ports:&nbsp;List[int]&nbsp;=&nbsp;[],&nbsp;arp:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;hostname:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;real_time:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;timeout:&nbsp;int&nbsp;=&nbsp;3,&nbsp;iface:&nbsp;~NetworkInterface&nbsp;=&nbsp;None)<br>
 &nbsp;<br>
 This&nbsp;class&nbsp;implements&nbsp;an&nbsp;asynchronous&nbsp;network&nbsp;scanner.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="NetworkScanner-__init__"><strong>__init__</strong></a>(self, targets: Set[str], ping: bool = True, ports: List[int] = [], arp: bool = True, hostname: bool = True, real_time: bool = True, timeout: int = 3, iface: scapy.interfaces.NetworkInterface = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="NetworkScanner-__init__"><strong>__init__</strong></a>(self, targets: Set[str], ping: bool = True, ports: List[int] = [], arp: bool = True, hostname: bool = True, real_time: bool = True, timeout: int = 3, iface: ~NetworkInterface = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <dl><dt><a name="NetworkScanner-handle_DOWN"><strong>handle_DOWN</strong></a>(self, ip: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;the&nbsp;default&nbsp;behavior&nbsp;when&nbsp;IP&nbsp;is&nbsp;DOWN.<br>
 &nbsp;<br>
@@ -293,18 +253,20 @@ Print&nbsp;the&nbsp;IP&nbsp;address.</tt></dd></dl>
 
 <dl><dt><a name="NetworkScanner-no_scapy_scan"><strong>no_scapy_scan</strong></a>(self) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;scan&nbsp;without&nbsp;scapy.</tt></dd></dl>
 
-<dl><dt><a name="NetworkScanner-scan"><strong>scan</strong></a>(self, scapy: bool = False) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;scan&nbsp;(using&nbsp;scapy<br>
+<dl><dt><a name="NetworkScanner-scan"><strong>scan</strong></a>(self, scapy: bool = False, passive: bool = False) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;scan&nbsp;(using&nbsp;scapy<br>
 if&nbsp;available&nbsp;otherwise&nbsp;an&nbsp;asynchronous&nbsp;scanner).</tt></dd></dl>
 
 <dl><dt><a name="NetworkScanner-scapy_arp"><strong>scapy_arp</strong></a>(self, ip: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;send&nbsp;an&nbsp;ARP&nbsp;request&nbsp;with&nbsp;Scapy.</tt></dd></dl>
 
-<dl><dt><a name="NetworkScanner-scapy_match"><strong>scapy_match</strong></a>(self, packet: scapy.packet.Packet) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;IP&nbsp;address&nbsp;of&nbsp;matching&nbsp;packets&nbsp;with&nbsp;scapy.</tt></dd></dl>
+<dl><dt><a name="NetworkScanner-scapy_match"><strong>scapy_match</strong></a>(self, packet: ~Packet) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;IP&nbsp;address&nbsp;of&nbsp;matching&nbsp;packets&nbsp;with&nbsp;scapy.</tt></dd></dl>
 
 <dl><dt><a name="NetworkScanner-scapy_ping"><strong>scapy_ping</strong></a>(self, ip: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;pings&nbsp;a&nbsp;host&nbsp;with&nbsp;Scapy.</tt></dd></dl>
 
 <dl><dt><a name="NetworkScanner-scapy_scan"><strong>scapy_scan</strong></a>(self) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;scapy&nbsp;scan.</tt></dd></dl>
 
 <dl><dt><a name="NetworkScanner-scapy_tcp"><strong>scapy_tcp</strong></a>(self, ip: str, dport: int, sport: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;send&nbsp;a&nbsp;TCP&nbsp;packet&nbsp;with&nbsp;Scapy.</tt></dd></dl>
+
+<dl><dt><a name="NetworkScanner-start_passive_scan"><strong>start_passive_scan</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;starts&nbsp;the&nbsp;passive&nbsp;scan&nbsp;(sniffer).</tt></dd></dl>
 
 <dl><dt><a name="NetworkScanner-start_scapy_scan"><strong>start_scapy_scan</strong></a>(self) -&gt; List[bool]</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;AsyncSniffer&nbsp;and&nbsp;scapy&nbsp;scan,<br>
 finally&nbsp;stops&nbsp;AsyncSniffer.</tt></dd></dl>
@@ -335,8 +297,8 @@ Data descriptors defined here:<br>
 <td width="100%"><strong>__all__</strong> = ['NetworkScanner', 'main']<br>
 <strong>__annotations__</strong> = {'critical': &lt;class 'collections.abc.Callable'&gt;, 'debug': &lt;class 'collections.abc.Callable'&gt;, 'error': &lt;class 'collections.abc.Callable'&gt;, 'info': &lt;class 'collections.abc.Callable'&gt;, 'logger': &lt;class 'logging.Logger'&gt;, 'warning': &lt;class 'collections.abc.Callable'&gt;}<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>NetworkScanner  Copyright (C) 2021, 2022  Mauri...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
-<strong>__description__</strong> = 'This module implements a NetworkScanner.'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>NetworkScanner  Copyright (C) 2021, 2022, 2023 ...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This module implements a passive NetworkScanner... and ping scan IP sweep and hostname resolution.<font color="#c040c0">\n</font>'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
