@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Cr0wl3r</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Cr0wl3r</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="cr0wl3r.py">cr0wl3r.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;implements&nbsp;a&nbsp;crawler&nbsp;to&nbsp;find&nbsp;all&nbsp;links&nbsp;and&nbsp;resources<br>
+on&nbsp;the&nbsp;target&nbsp;web&nbsp;site.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;Cr0wl3r.py&nbsp;<a href="https://github.com/mauricelambert">https://github.com/mauricelambert</a><br>
+form&nbsp;action&nbsp;<a href="https://github.com/settings/blocked_users">https://github.com/settings/blocked_users</a><br>
+a&nbsp;href&nbsp;<a href="https://docs.github.com/en/articles/blocking-a-user-from-your-personal-account">https://docs.github.com/en/articles/blocking-a-user-from-your-personal-account</a><br>
+a&nbsp;href&nbsp;<a href="https://docs.github.com/en/articles/reporting-abuse-or-spam">https://docs.github.com/en/articles/reporting-abuse-or-spam</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/contact/report-abuse?report=mauricelambert+%28user%29">https://github.com/contact/report-abuse?report=mauricelambert+%28user%29</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/WebScripts">https://github.com/mauricelambert/WebScripts</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/WebScripts/stargazers">https://github.com/mauricelambert/WebScripts/stargazers</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/WebScripts/forks">https://github.com/mauricelambert/WebScripts/forks</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/SpyWare">https://github.com/mauricelambert/SpyWare</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/SpyWare/stargazers">https://github.com/mauricelambert/SpyWare/stargazers</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/SpyWare/forks">https://github.com/mauricelambert/SpyWare/forks</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/CVE-2022-21907">https://github.com/mauricelambert/CVE-2022-21907</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/CVE-2022-21907/stargazers">https://github.com/mauricelambert/CVE-2022-21907/stargazers</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/CVE-2022-21907/forks">https://github.com/mauricelambert/CVE-2022-21907/forks</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/Vulnerability1-XSS-title">https://github.com/mauricelambert/Vulnerability1-XSS-title</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/CLEF">https://github.com/mauricelambert/CLEF</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/FastRC4">https://github.com/mauricelambert/FastRC4</a><br>
+a&nbsp;href&nbsp;<a href="https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile">https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert?tab=overview&amp;from=2023-05-01&amp;to=2023-05-19">https://github.com/mauricelambert?tab=overview&amp;from=2023-05-01&amp;to=2023-05-19</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert?tab=overview&amp;from=2022-12-01&amp;to=2022-12-31">https://github.com/mauricelambert?tab=overview&amp;from=2022-12-01&amp;to=2022-12-31</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert?tab=overview&amp;from=2021-12-01&amp;to=2021-12-31">https://github.com/mauricelambert?tab=overview&amp;from=2021-12-01&amp;to=2021-12-31</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert?tab=overview&amp;from=2020-12-01&amp;to=2020-12-31">https://github.com/mauricelambert?tab=overview&amp;from=2020-12-01&amp;to=2020-12-31</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert?tab=overview&amp;from=2019-12-01&amp;to=2019-12-31">https://github.com/mauricelambert?tab=overview&amp;from=2019-12-01&amp;to=2019-12-31</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/FastRC4/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/FastRC4/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/mauricelambert.github.io">https://github.com/mauricelambert/mauricelambert.github.io</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/mauricelambert.github.io/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/mauricelambert.github.io/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/EicarSpam">https://github.com/mauricelambert/EicarSpam</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/EicarSpam/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/EicarSpam/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/SIDAnalyzer">https://github.com/mauricelambert/SIDAnalyzer</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/SIDAnalyzer/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/SIDAnalyzer/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ProgramExecutableAnalyzer">https://github.com/mauricelambert/ProgramExecutableAnalyzer</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ProgramExecutableAnalyzer/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/ProgramExecutableAnalyzer/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell">https://github.com/mauricelambert/ReverseShell</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/ReverseShell/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/p0dalirius/pyLAPS">https://github.com/p0dalirius/pyLAPS</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/p0dalirius/pyLAPS/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/p0dalirius/pyLAPS/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/PythonToolsKit">https://github.com/mauricelambert/PythonToolsKit</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/PythonToolsKit/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/PythonToolsKit/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/NetworkScanner">https://github.com/mauricelambert/NetworkScanner</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/NetworkScanner/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20">https://github.com/mauricelambert/NetworkScanner/commits?author=mauricelambert&amp;since=2023-05-01&amp;until=2023-05-20</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/pyLAPS">https://github.com/mauricelambert/pyLAPS</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert?tab=overview&amp;from=2023-05-01&amp;to=2023-05-31">https://github.com/mauricelambert?tab=overview&amp;from=2023-05-01&amp;to=2023-05-31</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/p0dalirius/pyLAPS/pull/1">https://github.com/p0dalirius/pyLAPS/pull/1</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/8">https://github.com/mauricelambert/ReverseShell/issues/8</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/7">https://github.com/mauricelambert/ReverseShell/issues/7</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/6">https://github.com/mauricelambert/ReverseShell/issues/6</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/5">https://github.com/mauricelambert/ReverseShell/issues/5</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/4">https://github.com/mauricelambert/ReverseShell/issues/4</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/3">https://github.com/mauricelambert/ReverseShell/issues/3</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/2">https://github.com/mauricelambert/ReverseShell/issues/2</a><br>
+a&nbsp;href&nbsp;<a href="https://github.com/mauricelambert/ReverseShell/issues/1">https://github.com/mauricelambert/ReverseShell/issues/1</a><br>
+...&nbsp;(160&nbsp;lines)<br>
+~#&nbsp;python3&nbsp;Cr0wl3r.py&nbsp;-F&nbsp;test.json&nbsp;-l&nbsp;DEBUG&nbsp;-f&nbsp;test.log&nbsp;-R&nbsp;-S&nbsp;-d&nbsp;-c&nbsp;"test=test"&nbsp;-H&nbsp;"User-Agent:Chrome"&nbsp;-m&nbsp;3&nbsp;-t&nbsp;p&nbsp;-r&nbsp;<a href="https://github.com/mauricelambert">https://github.com/mauricelambert</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com">https://github.githubassets.com</a><br>
+link&nbsp;href&nbsp;<a href="https://avatars.githubusercontent.com">https://avatars.githubusercontent.com</a><br>
+link&nbsp;href&nbsp;<a href="https://github-cloud.s3.amazonaws.com">https://github-cloud.s3.amazonaws.com</a><br>
+link&nbsp;href&nbsp;<a href="https://user-images.githubusercontent.com/">https://user-images.githubusercontent.com/</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com/assets/light-0946cdc16f15.css">https://github.githubassets.com/assets/light-0946cdc16f15.css</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com/assets/dark-3946c959759a.css">https://github.githubassets.com/assets/dark-3946c959759a.css</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com/assets/primer-primitives-fb1d51d1ef66.css">https://github.githubassets.com/assets/primer-primitives-fb1d51d1ef66.css</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com/assets/primer-57c312e484b2.css">https://github.githubassets.com/assets/primer-57c312e484b2.css</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com/assets/global-0d04dfcdc794.css">https://github.githubassets.com/assets/global-0d04dfcdc794.css</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com/assets/github-c7a3a0ac71d4.css">https://github.githubassets.com/assets/github-c7a3a0ac71d4.css</a><br>
+link&nbsp;href&nbsp;<a href="https://github.githubassets.com/assets/profile-39867166a585.css">https://github.githubassets.com/assets/profile-39867166a585.css</a><br>
+script&nbsp;src&nbsp;<a href="https://github.githubassets.com/assets/wp-runtime-377d421cc9f7.js">https://github.githubassets.com/assets/wp-runtime-377d421cc9f7.js</a><br>
+script&nbsp;src&nbsp;<a href="https://github.githubassets.com/assets/vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-a4c183-ae93d3fba59c.js">https://github.githubassets.com/assets/vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-a4c183-ae93d3fba59c.js</a><br>
+script&nbsp;src&nbsp;<a href="https://github.githubassets.com/assets/ui_packages_failbot_failbot_ts-e38c93eab86e.js">https://github.githubassets.com/assets/ui_packages_failbot_failbot_ts-e38c93eab86e.js</a><br>
+script&nbsp;src&nbsp;<a href="https://github.githubassets.com/assets/environment-de3997b81651.js">https://github.githubassets.com/assets/environment-de3997b81651.js</a><br>
+...&nbsp;(385&nbsp;lines)<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="abc.html#ABC">abc.ABC</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Cr0wl3r.html#_Crawler">_Crawler</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Cr0wl3r.html#CrawlerPrinter">CrawlerPrinter</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#Exception">builtins.Exception</a>(<a href="builtins.html#BaseException">builtins.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Cr0wl3r.html#CriticalUrllibError">CriticalUrllibError</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#ValueError">builtins.ValueError</a>(<a href="builtins.html#Exception">builtins.Exception</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Cr0wl3r.html#ContentTypeError">ContentTypeError</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ContentTypeError">class <strong>ContentTypeError</strong></a>(<a href="builtins.html#ValueError">builtins.ValueError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="builtins.html#Exception">Exception</a>&nbsp;raised&nbsp;when&nbsp;the&nbsp;Content-Type<br>
+is&nbsp;not&nbsp;valid&nbsp;for&nbsp;web&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Cr0wl3r.html#ContentTypeError">ContentTypeError</a></dd>
+<dd><a href="builtins.html#ValueError">builtins.ValueError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#ValueError">builtins.ValueError</a>:<br>
+<dl><dt><a name="ContentTypeError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#ValueError">builtins.ValueError</a>:<br>
+<dl><dt><a name="ContentTypeError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="ContentTypeError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="ContentTypeError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="ContentTypeError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="ContentTypeError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="ContentTypeError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="ContentTypeError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ContentTypeError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="ContentTypeError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#ContentTypeError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CrawlerPrinter">class <strong>CrawlerPrinter</strong></a>(<a href="Cr0wl3r.html#_Crawler">_Crawler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CrawlerPrinter">CrawlerPrinter</a>(url:&nbsp;str,&nbsp;recursive:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;max_request:&nbsp;int&nbsp;=&nbsp;None,&nbsp;only_domain:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;headers:&nbsp;Dict[str,&nbsp;str]&nbsp;=&nbsp;{},&nbsp;robots:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;sitemap:&nbsp;bool&nbsp;=&nbsp;True)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Cr0wl3r.html#CrawlerPrinter">CrawlerPrinter</a></dd>
+<dd><a href="Cr0wl3r.html#_Crawler">_Crawler</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CrawlerPrinter-handle"><strong>handle</strong></a>(self, url: str, *sources: str) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;prints&nbsp;the&nbsp;URL&nbsp;found.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="Cr0wl3r.html#_Crawler">_Crawler</a>:<br>
+<dl><dt><a name="CrawlerPrinter-__init__"><strong>__init__</strong></a>(self, url: str, recursive: bool = True, max_request: int = None, only_domain: bool = True, headers: Dict[str, str] = {}, robots: bool = True, sitemap: bool = True)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-add"><strong>add</strong></a>(self, url: urllib.parse.ParseResult) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;adds&nbsp;an&nbsp;URL&nbsp;if&nbsp;not&nbsp;already&nbsp;added.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-add_domain_new_url"><strong>add_domain_new_url</strong></a>(self, url: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;new&nbsp;url&nbsp;to&nbsp;parse.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-ask_robots"><strong>ask_robots</strong></a>(self, url: urllib.parse.ParseResult) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;send&nbsp;request&nbsp;for&nbsp;robots.txt.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-ask_sitemap"><strong>ask_sitemap</strong></a>(self, url: urllib.parse.ParseResult) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;send&nbsp;request&nbsp;for&nbsp;robots.txt.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-crawl"><strong>crawl</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;crawler.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-decode"><strong>decode</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;try&nbsp;to&nbsp;decode&nbsp;data&nbsp;using&nbsp;utf-8&nbsp;and&nbsp;latin-1.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-get_complete_url"><strong>get_complete_url</strong></a>(self, url: urllib.parse.ParseResult) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;a&nbsp;complete&nbsp;url.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-get_data"><strong>get_data</strong></a>(self, url: urllib.parse.ParseResult) -&gt; http.client.HTTPResponse</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;HTTP&nbsp;request<br>
+and&nbsp;returns&nbsp;the&nbsp;HTTP&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-parse_sitemap"><strong>parse_sitemap</strong></a>(self, data: Union[http.client.HTTPResponse, str]) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;requests&nbsp;a&nbsp;sitemap&nbsp;URL&nbsp;and/or&nbsp;parse&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="CrawlerPrinter-reader"><strong>reader</strong></a>(self, response: http.client.HTTPResponse) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;excepts&nbsp;the&nbsp;IncompleteRead&nbsp;error.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="Cr0wl3r.html#_Crawler">_Crawler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CriticalUrllibError">class <strong>CriticalUrllibError</strong></a>(<a href="builtins.html#Exception">builtins.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="builtins.html#Exception">Exception</a>&nbsp;raised&nbsp;after&nbsp;urllib&nbsp;exception<br>
+when&nbsp;is&nbsp;critical.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Cr0wl3r.html#CriticalUrllibError">CriticalUrllibError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="CriticalUrllibError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="CriticalUrllibError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="CriticalUrllibError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="CriticalUrllibError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="CriticalUrllibError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="CriticalUrllibError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="CriticalUrllibError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="CriticalUrllibError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="CriticalUrllibError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="CriticalUrllibError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#CriticalUrllibError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="_Crawler">class <strong>_Crawler</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#_Crawler">_Crawler</a>(url:&nbsp;str,&nbsp;recursive:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;max_request:&nbsp;int&nbsp;=&nbsp;None,&nbsp;only_domain:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;headers:&nbsp;Dict[str,&nbsp;str]&nbsp;=&nbsp;{},&nbsp;robots:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;sitemap:&nbsp;bool&nbsp;=&nbsp;True)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;crawls&nbsp;a&nbsp;web&nbsp;page&nbsp;to&nbsp;get&nbsp;URLs&nbsp;and&nbsp;resources&nbsp;paths.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Cr0wl3r.html#_Crawler">_Crawler</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="_Crawler-__init__"><strong>__init__</strong></a>(self, url: str, recursive: bool = True, max_request: int = None, only_domain: bool = True, headers: Dict[str, str] = {}, robots: bool = True, sitemap: bool = True)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-add"><strong>add</strong></a>(self, url: urllib.parse.ParseResult) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;adds&nbsp;an&nbsp;URL&nbsp;if&nbsp;not&nbsp;already&nbsp;added.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-add_domain_new_url"><strong>add_domain_new_url</strong></a>(self, url: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;add&nbsp;new&nbsp;url&nbsp;to&nbsp;parse.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-ask_robots"><strong>ask_robots</strong></a>(self, url: urllib.parse.ParseResult) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;send&nbsp;request&nbsp;for&nbsp;robots.txt.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-ask_sitemap"><strong>ask_sitemap</strong></a>(self, url: urllib.parse.ParseResult) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;send&nbsp;request&nbsp;for&nbsp;robots.txt.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-crawl"><strong>crawl</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;crawler.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-decode"><strong>decode</strong></a>(self, data: bytes) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;try&nbsp;to&nbsp;decode&nbsp;data&nbsp;using&nbsp;utf-8&nbsp;and&nbsp;latin-1.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-get_complete_url"><strong>get_complete_url</strong></a>(self, url: urllib.parse.ParseResult) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;a&nbsp;complete&nbsp;url.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-get_data"><strong>get_data</strong></a>(self, url: urllib.parse.ParseResult) -&gt; http.client.HTTPResponse</dt><dd><tt>This&nbsp;function&nbsp;sends&nbsp;the&nbsp;HTTP&nbsp;request<br>
+and&nbsp;returns&nbsp;the&nbsp;HTTP&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-handle"><strong>handle</strong></a>(self, url: str, *sources: str) -&gt; None</dt></dl>
+
+<dl><dt><a name="_Crawler-parse_sitemap"><strong>parse_sitemap</strong></a>(self, data: Union[http.client.HTTPResponse, str]) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;requests&nbsp;a&nbsp;sitemap&nbsp;URL&nbsp;and/or&nbsp;parse&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="_Crawler-reader"><strong>reader</strong></a>(self, response: http.client.HTTPResponse) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;excepts&nbsp;the&nbsp;IncompleteRead&nbsp;error.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'handle'})</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;starts&nbsp;the&nbsp;script&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['_Crawler', 'CrawlerPrinter', 'main', 'CriticalUrllibError', 'ContentTypeError']<br>
+<strong>__annotations__</strong> = {'counters': typing.Dict[str, typing.Dict[str, int]], 'input_types': typing.Dict[str, int], 'interaction_tags': typing.Dict[str, int], 'url_attributes': typing.List[str]}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>Cr0wl3r  Copyright (C) 2023  Maurice Lambert<font color="#c040c0">\n</font>Th...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This module implements a crawler to find all links and resources<font color="#c040c0">\n</font>on the target web site.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/Cr0wl3r'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
