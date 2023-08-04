@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module EntropyEncoding</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>EntropyEncoding</strong></big></big> (version 0.0.2)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="entropyencoding.py">entropyencoding.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;implements&nbsp;an&nbsp;encoding&nbsp;to&nbsp;bypass&nbsp;entropy&nbsp;antivirus&nbsp;check.<br>
+&nbsp;<br>
+<a href="https://www.schellman.com/blog/cybersecurity/penetration-testing-methods-entropy">https://www.schellman.com/blog/cybersecurity/penetration-testing-methods-entropy</a><br>
+<a href="https://vanmieghem.io/blueprint-for-evading-edr-in-2022/">https://vanmieghem.io/blueprint-for-evading-edr-in-2022/</a><br>
+<a href="https://pentest.blog/art-of-anti-detection-1-introduction-to-av-detection-techniques/">https://pentest.blog/art-of-anti-detection-1-introduction-to-av-detection-techniques/</a><br>
+&nbsp;<br>
+Information&nbsp;based&nbsp;on&nbsp;a&nbsp;blog&nbsp;(red&nbsp;teamer&nbsp;test&nbsp;a&nbsp;not&nbsp;named&nbsp;EDR):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;antivirus&nbsp;detect&nbsp;potentially&nbsp;malicious&nbsp;entropy&nbsp;when&nbsp;entropy&nbsp;greater&nbsp;than&nbsp;7.2<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;EntropyEncoding.py<br>
+Entropy&nbsp;for&nbsp;non-encoded&nbsp;secrets:&nbsp;4.521591372417719<br>
+Entropy&nbsp;for&nbsp;non-encoded&nbsp;encrypted&nbsp;secrets:&nbsp;7.951320327821406<br>
+Entropy&nbsp;for&nbsp;entropy-encoded&nbsp;encrypted&nbsp;secrets:&nbsp;5.774096152750044<br>
+Entropy&nbsp;for&nbsp;non-encoded&nbsp;exe:&nbsp;5.22055339277441<br>
+Entropy&nbsp;for&nbsp;non-encoded&nbsp;encrypted&nbsp;exe:&nbsp;7.914685739354301<br>
+Entropy&nbsp;for&nbsp;entropy-encoded&nbsp;encrypted&nbsp;exe:&nbsp;5.759477906043907<br>
+~#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-entropy_decode"><strong>entropy_decode</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;entropy-encoding&nbsp;to&nbsp;retrieve<br>
+data&nbsp;from&nbsp;entropy-encoded&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-entropy_encode"><strong>entropy_encode</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;data&nbsp;to&nbsp;bypass&nbsp;entropy&nbsp;checks.</tt></dd></dl>
+ <dl><dt><a name="-shannon_entropy"><strong>shannon_entropy</strong></a>(data: bytes) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;shannon&nbsp;entropy&nbsp;for&nbsp;bytes.<br>
+&nbsp;<br>
+Greater&nbsp;entropy&nbsp;=&nbsp;more&nbsp;randomness<br>
+Max&nbsp;entropy:&nbsp;8<br>
+Min&nbsp;entropy:&nbsp;0</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['entropy_encode', 'entropy_decode', 'shannon_entropy']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>EntropyEncoding  Copyright (C) 2023  Maurice La...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements an encoding to bypass entropy antivirus check.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/EntropyEncoding'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
