@@ -20,11 +20,13 @@ Information&nbsp;based&nbsp;on&nbsp;a&nbsp;blog&nbsp;(red&nbsp;teamer&nbsp;test&
 &nbsp;<br>
 ~#&nbsp;python3&nbsp;EntropyEncoding.py<br>
 Entropy&nbsp;for&nbsp;non-encoded&nbsp;secrets:&nbsp;4.521591372417719<br>
-Entropy&nbsp;for&nbsp;non-encoded&nbsp;encrypted&nbsp;secrets:&nbsp;7.951320327821406<br>
-Entropy&nbsp;for&nbsp;entropy-encoded&nbsp;encrypted&nbsp;secrets:&nbsp;5.774096152750044<br>
+Entropy&nbsp;for&nbsp;non-encoded&nbsp;encrypted&nbsp;secrets:&nbsp;7.945422222752084<br>
+Entropy&nbsp;for&nbsp;entropy-encoded&nbsp;encrypted&nbsp;secrets:&nbsp;5.762166896848745<br>
+Entropy&nbsp;for&nbsp;entropy-encoded2&nbsp;encrypted&nbsp;secrets:&nbsp;5.748670434218312<br>
 Entropy&nbsp;for&nbsp;non-encoded&nbsp;exe:&nbsp;5.22055339277441<br>
-Entropy&nbsp;for&nbsp;non-encoded&nbsp;encrypted&nbsp;exe:&nbsp;7.914685739354301<br>
-Entropy&nbsp;for&nbsp;entropy-encoded&nbsp;encrypted&nbsp;exe:&nbsp;5.759477906043907<br>
+Entropy&nbsp;for&nbsp;non-encoded&nbsp;encrypted&nbsp;exe:&nbsp;7.923900258907012<br>
+Entropy&nbsp;for&nbsp;entropy-encoded&nbsp;encrypted&nbsp;exe:&nbsp;5.756072685391074<br>
+Entropy&nbsp;for&nbsp;entropy-encoded2&nbsp;encrypted&nbsp;exe:&nbsp;5.799741821347019<br>
 ~#</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -33,9 +35,15 @@ Entropy&nbsp;for&nbsp;entropy-encoded&nbsp;encrypted&nbsp;exe:&nbsp;5.7594779060
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-entropy_decode"><strong>entropy_decode</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;entropy-encoding&nbsp;to&nbsp;retrieve<br>
-data&nbsp;from&nbsp;entropy-encoded&nbsp;data.</tt></dd></dl>
- <dl><dt><a name="-entropy_encode"><strong>entropy_encode</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;data&nbsp;to&nbsp;bypass&nbsp;entropy&nbsp;checks.</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-entropy_decode"><strong>entropy_decode</strong></a>(data: bytes, version: int = 1) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;decodes&nbsp;entropy-encoding&nbsp;to&nbsp;retrieve<br>
+data&nbsp;from&nbsp;entropy-encoded&nbsp;data.<br>
+&nbsp;<br>
+version&nbsp;should&nbsp;be&nbsp;1&nbsp;or&nbsp;2.</tt></dd></dl>
+ <dl><dt><a name="-entropy_decode2"><strong>entropy_decode2</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>Call&nbsp;entropy_decode&nbsp;with&nbsp;version&nbsp;2.</tt></dd></dl>
+ <dl><dt><a name="-entropy_encode"><strong>entropy_encode</strong></a>(data: bytes, version: int = 1) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;encodes&nbsp;data&nbsp;to&nbsp;bypass&nbsp;entropy&nbsp;checks.<br>
+&nbsp;<br>
+version&nbsp;should&nbsp;be&nbsp;1&nbsp;or&nbsp;2.</tt></dd></dl>
+ <dl><dt><a name="-entropy_encode2"><strong>entropy_encode2</strong></a>(data: bytes) -&gt; bytes</dt><dd><tt>Call&nbsp;entropy_encode&nbsp;with&nbsp;version&nbsp;2.</tt></dd></dl>
  <dl><dt><a name="-shannon_entropy"><strong>shannon_entropy</strong></a>(data: bytes) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;shannon&nbsp;entropy&nbsp;for&nbsp;bytes.<br>
 &nbsp;<br>
 Greater&nbsp;entropy&nbsp;=&nbsp;more&nbsp;randomness<br>
@@ -48,7 +56,7 @@ Min&nbsp;entropy:&nbsp;0</tt></dd></dl>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['entropy_encode', 'entropy_decode', 'shannon_entropy']<br>
+<td width="100%"><strong>__all__</strong> = ['entropy_encode2', 'entropy_decode2', 'entropy_encode', 'entropy_decode', 'shannon_entropy']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>EntropyEncoding  Copyright (C) 2023  Maurice La...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements an encoding to bypass entropy antivirus check.<font color="#c040c0">\n</font>'<br>
