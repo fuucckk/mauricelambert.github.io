@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module EntropyAnalysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>EntropyAnalysis</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="entropyanalysis.py">entropyanalysis.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;package&nbsp;analyzes&nbsp;file&nbsp;entropy&nbsp;(shannon&nbsp;entropy)&nbsp;for&nbsp;forensic&nbsp;or<br>
+malware&nbsp;analysis</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-charts_chunks_file_entropy"><strong>charts_chunks_file_entropy</strong></a>(file: _io._IOBase, chunk_size: int = 2048, part_size: int = None) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;chunks&nbsp;shannon&nbsp;entropy&nbsp;in&nbsp;console.</tt></dd></dl>
+ <dl><dt><a name="-get_chunks_file_entropy"><strong>get_chunks_file_entropy</strong></a>(file: _io._IOBase, chunk_size: int = 2048) -&gt; Iterable[float]</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;all&nbsp;chunks&nbsp;shannon&nbsp;entropy<br>
+for&nbsp;the&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-get_full_file_entropy"><strong>get_full_file_entropy</strong></a>(file: _io._IOBase) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;reads&nbsp;all&nbsp;data&nbsp;in&nbsp;file&nbsp;and<br>
+returns&nbsp;the&nbsp;shannon&nbsp;entropy.</tt></dd></dl>
+ <dl><dt><a name="-get_parts_chunks_file_entropy"><strong>get_parts_chunks_file_entropy</strong></a>(file: _io._IOBase, chunk_size: int = 2048, part_size: int = 100) -&gt; Iterable[float]</dt><dd><tt>The&nbsp;function&nbsp;yields&nbsp;all&nbsp;the&nbsp;shannon&nbsp;entropy&nbsp;scores<br>
+of&nbsp;the&nbsp;parts&nbsp;of&nbsp;each&nbsp;chunk&nbsp;for&nbsp;the&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-print_chunks_file_entropy"><strong>print_chunks_file_entropy</strong></a>(file: _io._IOBase, chunk_size: int = 2048, colors: bool = True) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;chunks&nbsp;shannon&nbsp;entropy&nbsp;in&nbsp;console.</tt></dd></dl>
+ <dl><dt><a name="-print_parts_chunks_file_entropy"><strong>print_parts_chunks_file_entropy</strong></a>(file: _io._IOBase, chunk_size: int = 2048, part_size: int = 100, colors: bool = True) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;all&nbsp;the&nbsp;shannon&nbsp;entropy&nbsp;scores<br>
+of&nbsp;the&nbsp;parts&nbsp;of&nbsp;each&nbsp;chunk&nbsp;in&nbsp;console.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['get_full_file_entropy', 'get_chunks_file_entropy', 'get_parts_chunks_file_entropy', 'print_chunks_file_entropy', 'charts_chunks_file_entropy', 'print_parts_chunks_file_entropy']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>EntropyAnalysis  Copyright (C) 2023  Maurice La...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package analyzes file entropy (shannon entropy) for forensic or<font color="#c040c0">\n</font>malware analysis<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/EntropyAnalysis'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
