@@ -6,9 +6,9 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PyObfuscator</strong></big></big> (version 0.1.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PyObfuscator</strong></big></big> (version 0.1.5)</font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="PyObfuscator.py">PyObfuscator.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="pyobfuscator.py">pyobfuscator.py</a></font></td></tr></table>
     <p><tt>This&nbsp;module&nbsp;obfuscates&nbsp;python&nbsp;code.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;with&nbsp;open("code.py",&nbsp;"w")&nbsp;as&nbsp;f:&nbsp;n&nbsp;=&nbsp;f.write("print('Hello&nbsp;world&nbsp;!')")<br>
@@ -314,6 +314,8 @@ code(str)&nbsp;=&nbsp;None:&nbsp;if&nbsp;code&nbsp;this&nbsp;function&nbsp;use&n
 self.<strong>code</strong>&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;new&nbsp;code<br>
 Return&nbsp;the&nbsp;new&nbsp;code&nbsp;and&nbsp;AST.</tt></dd></dl>
 
+<dl><dt><a name="Obfuscator-int_call_obfuscation"><strong>int_call_obfuscation</strong></a>(self) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;obfuscates&nbsp;int&nbsp;calls&nbsp;for&nbsp;int&nbsp;obfuscation.</tt></dd></dl>
+
 <dl><dt><a name="Obfuscator-set_namespace_name"><strong>set_namespace_name</strong></a>(self, name: str) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;current&nbsp;namespace&nbsp;name.<br>
 &nbsp;<br>
 returns&nbsp;old&nbsp;namespace&nbsp;name<br>
@@ -326,10 +328,18 @@ returns&nbsp;old&nbsp;namespace&nbsp;name<br>
 'Test.test'<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Obfuscator-visit_AnnAssign"><strong>visit_AnnAssign</strong></a>(self, astcode: ast.AnnAssign) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;assignation.&nbsp;<br>
+<dl><dt><a name="Obfuscator-string_obfuscation"><strong>string_obfuscation</strong></a>(self, string: str, no_backlash: bool = False) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;obfuscate&nbsp;a&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="Obfuscator-visit_AnnAssign"><strong>visit_AnnAssign</strong></a>(self, astcode: ast.AnnAssign) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;assignation.<br>
 &nbsp;<br>
 astcode(AnnAssign):&nbsp;assign&nbsp;with&nbsp;annotation<br>
 return&nbsp;an&nbsp;Assign&nbsp;obfuscated</tt></dd></dl>
+
+<dl><dt><a name="Obfuscator-visit_AsyncFunctionDef"><strong>visit_AsyncFunctionDef</strong></a>(self, astcode: ast.AsyncFunctionDef) -&gt; ast.AsyncFunctionDef</dt><dd><tt>This&nbsp;methods&nbsp;obfuscates&nbsp;asynchronous&nbsp;function<br>
+using&nbsp;the&nbsp;function&nbsp;obfusction.<br>
+&nbsp;<br>
+astcode(AsyncFunctionDef):&nbsp;asynchronous&nbsp;function&nbsp;to&nbsp;obfuscate<br>
+returns&nbsp;a&nbsp;AsyncFunctionDef&nbsp;with&nbsp;different&nbsp;name</tt></dd></dl>
 
 <dl><dt><a name="Obfuscator-visit_ClassDef"><strong>visit_ClassDef</strong></a>(self, astcode: ast.ClassDef) -&gt; ast.ClassDef</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;the&nbsp;class&nbsp;name&nbsp;and&nbsp;delete&nbsp;the&nbsp;doc&nbsp;string.<br>
 &nbsp;<br>
@@ -355,6 +365,8 @@ returns&nbsp;a&nbsp;Global&nbsp;with&nbsp;different&nbsp;names</tt></dd></dl>
 <dl><dt><a name="Obfuscator-visit_Import"><strong>visit_Import</strong></a>(self, astcode: ast.Import) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;obfuscates&nbsp;'import&nbsp;...'</tt></dd></dl>
 
 <dl><dt><a name="Obfuscator-visit_ImportFrom"><strong>visit_ImportFrom</strong></a>(self, astcode: ast.ImportFrom) -&gt; ast.Assign</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;a&nbsp;obfuscate&nbsp;'from&nbsp;...&nbsp;import&nbsp;...'</tt></dd></dl>
+
+<dl><dt><a name="Obfuscator-visit_JoinedStr"><strong>visit_JoinedStr</strong></a>(self, astcode: ast.JoinedStr) -&gt; ast.JoinedStr</dt><dd><tt>This&nbsp;function&nbsp;changes&nbsp;the&nbsp;visit_Constant's&nbsp;behaviour.</tt></dd></dl>
 
 <dl><dt><a name="Obfuscator-visit_Module"><strong>visit_Module</strong></a>(self, astcode: ast.Module) -&gt; ast.Module</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;the&nbsp;Module&nbsp;doc&nbsp;string.<br>
 &nbsp;<br>
@@ -437,7 +449,7 @@ Data descriptors inherited from <a href="ast.html#NodeVisitor">ast.NodeVisitor</
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['Obfuscator', 'main', 'Name', 'DocPassword', 'DocLevels']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PDForensic  Copyright (C) 2022  Maurice Lambert...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PyObfuscator  Copyright (C) 2021, 2022, 2023  M...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = 'This module obfuscates python code.'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
