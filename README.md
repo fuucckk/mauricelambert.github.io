@@ -35,6 +35,13 @@
  - [SimpleHttpProxy Documentation](https://mauricelambert.github.io/info/python/code/SimpleHttpProxy.html)
  - [PDForensic Documentation](https://mauricelambert.github.io/info/python/security/PDForensic.html)
  - [WebPayloadsEncodings Documentation](https://mauricelambert.github.io/info/python/security/WebPayloadsEncodings.html)
+ - [MaliciousPDF Documentation](https://mauricelambert.github.io/info/python/security/MaliciousPDF.html)
+ - [EmojiEncode Documentation](https://mauricelambert.github.io/info/python/security/EmojiEncode.html)
+ - [PDForensic Documentation](https://mauricelambert.github.io/info/python/security/PDForensic.html)
+ - [Cr0wl3r Documentation](https://mauricelambert.github.io/info/python/security/Cr0wl3r.html)
+ - [ReverseShell Documentation](https://mauricelambert.github.io/info/python/security/ReverseShell.html)
+ - [EntropyEncoding Documentation](https://mauricelambert.github.io/info/python/security/EntropyEncoding.html)
+ - [EntropyAnalysis Documentation](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
@@ -56,6 +63,16 @@
  - [SimpleHttpProxy Executable](https://mauricelambert.github.io/info/python/code/ProxyPrinter.pyz)
  - [PDForensic Executable](https://mauricelambert.github.io/info/python/security/PDForensic.pyz)
  - [WebPayloadsEncodings Executable](https://mauricelambert.github.io/info/python/security/WebPayloadsEncodings.pyz)
+ - [MaliciousPDF Executable](https://mauricelambert.github.io/info/python/security/MaliciousPDF.pyz)
+ - [EmojiEncode Executable](https://mauricelambert.github.io/info/python/security/EmojiEncode.pyz)
+ - [PDForensic Executable](https://mauricelambert.github.io/info/python/security/PDForensic.pyz)
+ - [SIDAnalyzer Executable](https://mauricelambert.github.io/info/python/security/SIDAnalyzer.pyz)
+ - [Cr0wl3r Executable](https://mauricelambert.github.io/info/python/security/Cr0wl3r.pyz)
+ - [ReverseShell Executable](https://mauricelambert.github.io/info/python/security/ReverseShell.pyz)
+ - [ProgramExecutableAnalyzer Executable](https://mauricelambert.github.io/info/python/security/ProgramExecutableAnalyzer.pyz)
+ - [ProgramExecutableAnalyzer Windows Executable](https://mauricelambert.github.io/info/python/security/ProgramExecutableAnalyzer.exe)
+ - [EntropyAnalysis Executable](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.pyz)
+ - [EntropyAnalysis Windows Executable](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.exe)
 
 #### Network
 
@@ -66,6 +83,8 @@
  - [WifiDeauth Documentation](https://mauricelambert.github.io/info/python/security/WifiDeauth.html)
  - [PasswordsSniffer Documentation](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.html)
  - [SynFlood Documentation](https://mauricelambert.github.io/info/python/security/SynFlood.html)
+ - [NetworkSniffer Documentation](https://mauricelambert.github.io/info/python/security/NetworkSniffer.html)
+ - [NetworkScanner Documentation](https://mauricelambert.github.io/info/python/security/NetworkScanner.html)
 
  - [PacketAnalysis Executable](https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketAnalysis.pyz)
  - [ArpSpoof Executable](https://mauricelambert.github.io/info/python/security/ArpSpoof.pyz)
@@ -73,6 +92,8 @@
  - [WifiDeauth Executable](https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz)
  - [PasswordsSniffer Executable](https://mauricelambert.github.io/info/python/security/PasswordsSniffer.pyz)
  - [SynFlood Executable](https://mauricelambert.github.io/info/python/security/SynFlood.pyz)
+ - [NetworkSniffer Executable](https://mauricelambert.github.io/info/python/security/NetworkSniffer.pyz)
+ - [NetworkScanner Executable](https://mauricelambert.github.io/info/python/security/NetworkScanner.pyz)
 
 #### Crypto
 
@@ -121,6 +142,11 @@
 #### Network
 
  - [GSMEncoding Documentation](https://mauricelambert.github.io/info/python/code/GSMEncoding.html)
+ - [LocalResolver Documentation](https://mauricelambert.github.io/info/python/code/LocalResolver.html)
+ - [Tracert Documentation](https://mauricelambert.github.io/info/python/code/Tracert.html)
+
+ - [LocalResolver Executable](https://mauricelambert.github.io/info/python/code/LocalResolver.pyz)
+ - [Tracert Executable](https://mauricelambert.github.io/info/python/code/Tracert.pyz)
 
 #### Console && terminal tools
 
