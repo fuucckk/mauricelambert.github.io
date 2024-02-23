@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RC6Encryption</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RC6Encryption</strong></big></big> (version 0.0.4)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="rc6encryption.py">rc6encryption.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;RC6&nbsp;encryption.<br>
@@ -15,27 +15,34 @@
 &gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;rc6.blocks_to_data(rc6.encrypt(b'abcdefghijklmnop'))<br>
 &gt;&gt;&gt;&nbsp;rc6.blocks_to_data(rc6.decrypt(c))<br>
 b'abcdefghijklmnop'<br>
+&gt;&gt;&gt;<br>
 &nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;urllib.request&nbsp;import&nbsp;urlopen,&nbsp;Request<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;json&nbsp;import&nbsp;dumps,&nbsp;load<br>
+&gt;&gt;&gt;&nbsp;rc6&nbsp;=&nbsp;<a href="#RC6Encryption">RC6Encryption</a>(b'abcdefghijklmnop')<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;=&nbsp;rc6.blocks_to_data(rc6.encrypt(b'abcdefghijklmnop')).hex()<br>
+&gt;&gt;&gt;&nbsp;encrypt<br>
+'bb05a4b6c46a24a8bf70e1e2c0a33e51'<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;==&nbsp;load(urlopen(Request("<a href="https://www.lddgo.net/api/RC6?lang=en">https://www.lddgo.net/api/RC6?lang=en</a>",&nbsp;headers={"Content-Type":&nbsp;"application/json;charset=UTF-8"},&nbsp;data=dumps({"inputContent":"abcdefghijklmnop","model":"ECB","padding":"nopadding","inputPassword":"abcdefghijklmnop","inputIv":"","inputFormat":"string","outputFormat":"hex","charset":"UTF-8","encrypt":True}).encode())))["data"]<br>
+True<br>
+&gt;&gt;&gt;<br>
 &nbsp;<br>
-~#&nbsp;rc6&nbsp;abcdefghijklmnop&nbsp;-s&nbsp;abcdefghijklmnop&nbsp;-6<br>
-bM4cLTYlcjp3dk1z7LgsJg==<br>
-~#&nbsp;rc6&nbsp;abcdefghijklmnop&nbsp;-s&nbsp;bM4cLTYlcjp3dk1z7LgsJg==&nbsp;-n&nbsp;base64&nbsp;-d<br>
-abcdefghijklmnop<br>
-~#&nbsp;rc6&nbsp;abcdefghijklmnop&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;abcdefghijklmnop&nbsp;-6<br>
-w08njgYKPqiXDUcZxw8z7g==<br>
-~#&nbsp;rc6&nbsp;abcdefghijklmnop&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;w08njgYKPqiXDUcZxw8z7g==&nbsp;-n&nbsp;base64&nbsp;-d<br>
-abcdefghijklmnop</tt></p>
+~#&nbsp;rc6&nbsp;mykey&nbsp;-s&nbsp;mydatamydatamyda&nbsp;-6<br>
+a1wT9yfBYPBsPv6N0ScEqg==<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;-s&nbsp;a1wT9yfBYPBsPv6N0ScEqg==&nbsp;-n&nbsp;base64&nbsp;-d<br>
+mydatamydatamyda<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;mydatamydatamyda&nbsp;-6<br>
+RXj1hEJ12J2Iwp/S5G+ynA==<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;RXj1hEJ12J2Iwp/S5G+ynA==&nbsp;-n&nbsp;base64&nbsp;-d<br>
+mydatamydatamyda<br>
+~#&nbsp;<br>
+&nbsp;<br>
+1&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#RC6Encryption">RC6Encryption</a><br>
+9&nbsp;tests&nbsp;in&nbsp;20&nbsp;items.<br>
+9&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.</tt></p>
 <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#aa55cc">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="argparse.html">argparse</a><br>
-</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
-</td><td width="25%" valign=top><a href="warnings.html">warnings</a><br>
-</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -107,7 +114,7 @@ Data and other attributes defined here:<br>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['RC6Encryption']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>RC6Encryption  Copyright (C) 2021  Maurice Lamb...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>RC6Encryption  Copyright (C) 2021, 2023, 2024  ...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = 'This package implements RC6 encryption.'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
