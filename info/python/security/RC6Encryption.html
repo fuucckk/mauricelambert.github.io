@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RC6Encryption</strong></big></big> (version 0.0.4)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RC6Encryption</strong></big></big> (version 1.0.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="rc6encryption.py">rc6encryption.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;RC6&nbsp;encryption.<br>
@@ -25,22 +25,64 @@ b'abcdefghijklmnop'<br>
 'bb05a4b6c46a24a8bf70e1e2c0a33e51'<br>
 &gt;&gt;&gt;&nbsp;encrypt&nbsp;==&nbsp;load(urlopen(Request("<a href="https://www.lddgo.net/api/RC6?lang=en">https://www.lddgo.net/api/RC6?lang=en</a>",&nbsp;headers={"Content-Type":&nbsp;"application/json;charset=UTF-8"},&nbsp;data=dumps({"inputContent":"abcdefghijklmnop","model":"ECB","padding":"nopadding","inputPassword":"abcdefghijklmnop","inputIv":"","inputFormat":"string","outputFormat":"hex","charset":"UTF-8","encrypt":True}).encode())))["data"]<br>
 True<br>
-&gt;&gt;&gt;<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;=&nbsp;rc6.blocks_to_data(rc6.encrypt(b'abcdefghijklmnop')&nbsp;+&nbsp;rc6.encrypt(b'abcdefghijklmnop')).hex()<br>
+&gt;&gt;&gt;&nbsp;encrypt<br>
+'bb05a4b6c46a24a8bf70e1e2c0a33e51bb05a4b6c46a24a8bf70e1e2c0a33e51'<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;==&nbsp;load(urlopen(Request("<a href="https://www.lddgo.net/api/RC6?lang=en">https://www.lddgo.net/api/RC6?lang=en</a>",&nbsp;headers={"Content-Type":&nbsp;"application/json;charset=UTF-8"},&nbsp;data=dumps({"inputContent":"abcdefghijklmnopabcdefghijklmnop","model":"ECB","padding":"nopadding","inputPassword":"abcdefghijklmnop","inputIv":"","inputFormat":"string","outputFormat":"hex","charset":"UTF-8","encrypt":True}).encode())))["data"]<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-pkcs5_7padding">pkcs5_7padding</a>(b'abcdefghijklmno')<br>
+b'abcdefghijklmno\x01'<br>
+&gt;&gt;&gt;&nbsp;remove_pkcs_padding(<a href="#-pkcs5_7padding">pkcs5_7padding</a>(b'abcdefghijklmno'))&nbsp;==&nbsp;b'abcdefghijklmno'<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-pkcs5_7padding">pkcs5_7padding</a>(b'abcdefghijklm')<br>
+b'abcdefghijklm\x03\x03\x03'<br>
+&gt;&gt;&gt;&nbsp;remove_pkcs_padding(<a href="#-pkcs5_7padding">pkcs5_7padding</a>(b'abcdefghijklm'))&nbsp;==&nbsp;b'abcdefghijklm'<br>
+True<br>
+&gt;&gt;&gt;&nbsp;rc6&nbsp;=&nbsp;<a href="#RC6Encryption">RC6Encryption</a>(b'abcdefghijklm')<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;=&nbsp;rc6.blocks_to_data(rc6.encrypt(<a href="#-pkcs5_7padding">pkcs5_7padding</a>(b'abcdefghijklm'))).hex()<br>
+&gt;&gt;&gt;&nbsp;encrypt<br>
+'c5ee3509788662a5711822d5e01eb4c0'<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;==&nbsp;load(urlopen(Request("<a href="https://www.lddgo.net/api/RC6?lang=en">https://www.lddgo.net/api/RC6?lang=en</a>",&nbsp;headers={"Content-Type":&nbsp;"application/json;charset=UTF-8"},&nbsp;data=dumps({"inputContent":"abcdefghijklm","model":"ECB","padding":"pkcs5padding","inputPassword":"abcdefghijklm","inputIv":"","inputFormat":"string","outputFormat":"hex","charset":"UTF-8","encrypt":True}).encode())))["data"]<br>
+True<br>
+&gt;&gt;&gt;&nbsp;rc6&nbsp;=&nbsp;<a href="#RC6Encryption">RC6Encryption</a>(b'abcd')<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;=&nbsp;rc6.data_encryption_ECB(b'abcdefghijklmnop').hex()<br>
+&gt;&gt;&gt;&nbsp;encrypt<br>
+'78a64e37f7455f30aaf40750be1a065701bf2f308216c43c42c794285ffbf99e'<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;==&nbsp;load(urlopen(Request("<a href="https://www.lddgo.net/api/RC6?lang=en">https://www.lddgo.net/api/RC6?lang=en</a>",&nbsp;headers={"Content-Type":&nbsp;"application/json;charset=UTF-8"},&nbsp;data=dumps({"inputContent":"abcdefghijklmnop","model":"ECB","padding":"pkcs5padding","inputPassword":"abcd","inputIv":"","inputFormat":"string","outputFormat":"hex","charset":"UTF-8","encrypt":True}).encode())))["data"]<br>
+True<br>
+&gt;&gt;&gt;&nbsp;rc6.data_decryption_ECB(bytes.fromhex('78a64e37f7455f30aaf40750be1a065701bf2f308216c43c42c794285ffbf99e'))<br>
+b'abcdefghijklmnop'<br>
+&gt;&gt;&gt;&nbsp;rc6&nbsp;=&nbsp;<a href="#RC6Encryption">RC6Encryption</a>(b'abcd')<br>
+&gt;&gt;&gt;&nbsp;iv,&nbsp;encrypt&nbsp;=&nbsp;rc6.data_encryption_CBC(b'abcdefghijklmnopabcdefghijklmnopabcdefghijklm',&nbsp;b'IVTEST')<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;=&nbsp;encrypt.hex()<br>
+&gt;&gt;&gt;&nbsp;iv<br>
+b'IVTESTIVTESTIVTE'<br>
+&gt;&gt;&gt;&nbsp;encrypt<br>
+'8de91e69865825bbb6e1785e3b498f3a89708aaa2aff01a688cf9836bd7eea56c04fa0a14706d79bd94846e905bf070b'<br>
+&gt;&gt;&gt;&nbsp;encrypt&nbsp;==&nbsp;load(urlopen(Request("<a href="https://www.lddgo.net/api/RC6?lang=en">https://www.lddgo.net/api/RC6?lang=en</a>",&nbsp;headers={"Content-Type":&nbsp;"application/json;charset=UTF-8"},&nbsp;data=dumps({"inputContent":"abcdefghijklmnopabcdefghijklmnopabcdefghijklm","model":"CBC","padding":"pkcs5padding","inputPassword":"abcd","inputIv":iv.decode('latin-1'),"inputFormat":"string","outputFormat":"hex","charset":"UTF-8","encrypt":True}).encode())))["data"]<br>
+True<br>
+&gt;&gt;&gt;&nbsp;rc6.data_decryption_CBC(bytes.fromhex('8de91e69865825bbb6e1785e3b498f3a89708aaa2aff01a688cf9836bd7eea56c04fa0a14706d79bd94846e905bf070b'),&nbsp;iv)<br>
+b'abcdefghijklmnopabcdefghijklmnopabcdefghijklm'<br>
+&gt;&gt;&gt;&nbsp;<br>
 &nbsp;<br>
-~#&nbsp;rc6&nbsp;mykey&nbsp;-s&nbsp;mydatamydatamyda&nbsp;-6<br>
-a1wT9yfBYPBsPv6N0ScEqg==<br>
-~#&nbsp;rc6&nbsp;mykey&nbsp;-s&nbsp;a1wT9yfBYPBsPv6N0ScEqg==&nbsp;-n&nbsp;base64&nbsp;-d<br>
-mydatamydatamyda<br>
-~#&nbsp;rc6&nbsp;mykey&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;mydatamydatamyda&nbsp;-6<br>
-RXj1hEJ12J2Iwp/S5G+ynA==<br>
-~#&nbsp;rc6&nbsp;mykey&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;RXj1hEJ12J2Iwp/S5G+ynA==&nbsp;-n&nbsp;base64&nbsp;-d<br>
-mydatamydatamyda<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;-s&nbsp;mydata&nbsp;-6<br>
+0wS4TwM292nGa378oBuz/w==<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;-s&nbsp;0wS4TwM292nGa378oBuz/w==&nbsp;-n&nbsp;base64&nbsp;-d<br>
+mydata<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;mydata&nbsp;-6<br>
+vzliI0irqi3tZ8fULxJ14g==<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;--no-sha256&nbsp;-r&nbsp;12&nbsp;-s&nbsp;vzliI0irqi3tZ8fULxJ14g==&nbsp;-n&nbsp;base64&nbsp;-d<br>
+mydata<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;-m&nbsp;CBC&nbsp;-I&nbsp;myiv&nbsp;-s&nbsp;mydata&nbsp;-1<br>
+6D7969766D7969766D7969766D796976BF2F024053F74FE27920DE5C274935A6<br>
+~#&nbsp;rc6&nbsp;mykey&nbsp;-m&nbsp;CBC&nbsp;-d&nbsp;-s&nbsp;6D7969766D7969766D7969766D796976BF2F024053F74FE27920DE5C274935A6&nbsp;-n&nbsp;base16<br>
+mydata<br>
 ~#&nbsp;<br>
 &nbsp;<br>
 1&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
-&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#RC6Encryption">RC6Encryption</a><br>
-9&nbsp;tests&nbsp;in&nbsp;20&nbsp;items.<br>
-9&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+&nbsp;&nbsp;32&nbsp;tests&nbsp;in&nbsp;<a href="#RC6Encryption">RC6Encryption</a><br>
+32&nbsp;tests&nbsp;in&nbsp;25&nbsp;items.<br>
+32&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
 Test&nbsp;passed.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -73,9 +115,38 @@ Rounds&nbsp;possible&nbsp;values:&nbsp;{12,&nbsp;16,&nbsp;20}<br>&nbsp;</tt></td
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="RC6Encryption-__init__"><strong>__init__</strong></a>(self, key: bytes, rounds: int = 20, w_bit: int = 32, lgw: int = 5)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
+<dl><dt><a name="RC6Encryption-data_decryption_CBC"><strong>data_decryption_CBC</strong></a>(self, data: bytes, iv: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;full&nbsp;decryption&nbsp;using&nbsp;CBC&nbsp;mode:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;get&nbsp;blocks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;decrypt&nbsp;all&nbsp;blocks&nbsp;using&nbsp;CBC&nbsp;mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;convert&nbsp;blocks&nbsp;in&nbsp;bytes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;remove&nbsp;PKCS&nbsp;(5/7)&nbsp;padding<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;returns&nbsp;bytes</tt></dd></dl>
+
+<dl><dt><a name="RC6Encryption-data_decryption_ECB"><strong>data_decryption_ECB</strong></a>(self, data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;full&nbsp;decryption&nbsp;using&nbsp;ECB&nbsp;mode:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;get&nbsp;blocks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;decrypt&nbsp;all&nbsp;blocks&nbsp;using&nbsp;ECB&nbsp;mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;convert&nbsp;blocks&nbsp;in&nbsp;bytes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;remove&nbsp;PKCS&nbsp;(5/7)&nbsp;padding<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;returns&nbsp;bytes</tt></dd></dl>
+
+<dl><dt><a name="RC6Encryption-data_encryption_CBC"><strong>data_encryption_CBC</strong></a>(self, data: bytes, iv: bytes = None) -&gt; Tuple[bytes, bytes]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;full&nbsp;encryption&nbsp;using&nbsp;CBC&nbsp;mode:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;get/generate&nbsp;the&nbsp;IV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;add&nbsp;PKCS&nbsp;(5/7)&nbsp;padding<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;get&nbsp;blocks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;encrypt&nbsp;all&nbsp;blocks&nbsp;using&nbsp;CBC&nbsp;mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;convert&nbsp;blocks&nbsp;in&nbsp;bytes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;returns&nbsp;bytes</tt></dd></dl>
+
+<dl><dt><a name="RC6Encryption-data_encryption_ECB"><strong>data_encryption_ECB</strong></a>(self, data: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;full&nbsp;encryption&nbsp;using&nbsp;ECB&nbsp;mode:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;add&nbsp;PKCS&nbsp;(5/7)&nbsp;padding<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;get&nbsp;blocks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;encrypt&nbsp;all&nbsp;blocks&nbsp;using&nbsp;ECB&nbsp;mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;convert&nbsp;blocks&nbsp;in&nbsp;bytes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;returns&nbsp;bytes</tt></dd></dl>
+
 <dl><dt><a name="RC6Encryption-decrypt"><strong>decrypt</strong></a>(self, data: bytes) -&gt; List[int]</dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;a&nbsp;RC6&nbsp;decryption.</tt></dd></dl>
 
-<dl><dt><a name="RC6Encryption-encrypt"><strong>encrypt</strong></a>(self, data: bytes) -&gt; List[int]</dt><dd><tt>This&nbsp;functions&nbsp;performs&nbsp;RC6&nbsp;encryption.<br>
+<dl><dt><a name="RC6Encryption-encrypt"><strong>encrypt</strong></a>(self, data: Union[bytes, Tuple[int, int, int, int]]) -&gt; List[int]</dt><dd><tt>This&nbsp;functions&nbsp;performs&nbsp;RC6&nbsp;encryption&nbsp;on&nbsp;only&nbsp;one&nbsp;block.<br>
 &nbsp;<br>
 This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;4&nbsp;integers.</tt></dd></dl>
 
@@ -88,6 +159,8 @@ This&nbsp;function&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;4&nbsp;integers.</
 <hr>
 Static methods defined here:<br>
 <dl><dt><a name="RC6Encryption-blocks_to_data"><strong>blocks_to_data</strong></a>(blocks: List[int]) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;data&nbsp;from&nbsp;blocks&nbsp;(binary&nbsp;strings).</tt></dd></dl>
+
+<dl><dt><a name="RC6Encryption-enumerate_blocks"><strong>enumerate_blocks</strong></a>(data: bytes) -&gt; collections.abc.Iterator[typing.Tuple[int, int, int, int]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;tuple&nbsp;of&nbsp;4&nbsp;integers&nbsp;for&nbsp;each&nbsp;blocks.</tt></dd></dl>
 
 <dl><dt><a name="RC6Encryption-get_blocks"><strong>get_blocks</strong></a>(data: bytes) -&gt; Tuple[List[str], List[int]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;blocks&nbsp;(binary&nbsp;strings&nbsp;and&nbsp;integers)&nbsp;from&nbsp;data.</tt></dd></dl>
 
@@ -107,12 +180,20 @@ Data and other attributes defined here:<br>
 
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-pkcs5_7padding"><strong>pkcs5_7padding</strong></a>(data: bytes, size: int = 16) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;implements&nbsp;PKCS&nbsp;5/7&nbsp;padding.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__all__</strong> = ['RC6Encryption']<br>
+<td width="100%"><strong>__all__</strong> = ['RC6Encryption', 'pkcs5_7padding']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>RC6Encryption  Copyright (C) 2021, 2023, 2024  ...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = 'This package implements RC6 encryption.'<br>
