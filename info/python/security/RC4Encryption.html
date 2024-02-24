@@ -6,41 +6,41 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RC4Encryption</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RC4Encryption</strong></big></big> (version 0.0.2)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="rc4encryption.py">rc4encryption.py</a></font></td></tr></table>
     <p><tt>This&nbsp;file&nbsp;implements&nbsp;RC4&nbsp;cipher.<br>
 &nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;urllib.request&nbsp;import&nbsp;urlopen,&nbsp;Request<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;json&nbsp;import&nbsp;dumps,&nbsp;load<br>
 &gt;&gt;&gt;&nbsp;rc4&nbsp;=&nbsp;<a href="#RC4Encryption">RC4Encryption</a>(b'key')<br>
 &gt;&gt;&gt;&nbsp;rc4.make_key()<br>
-&gt;&gt;&gt;&nbsp;cipher&nbsp;=&nbsp;rc4.crypt(b'secrets')<br>
-&gt;&gt;&gt;&nbsp;cipher_continuation&nbsp;=&nbsp;rc4.crypt(b'secrets')<br>
+&gt;&gt;&gt;&nbsp;cipher&nbsp;=&nbsp;rc4.encrypt(b'secrets')<br>
+&gt;&gt;&gt;&nbsp;cipher.hex()&nbsp;==&nbsp;load(urlopen(Request("<a href="https://www.lddgo.net/api/RC4?lang=en">https://www.lddgo.net/api/RC4?lang=en</a>",&nbsp;headers={"Content-Type":&nbsp;"application/json;charset=UTF-8"},&nbsp;data=dumps({"inputContent":"secrets","inputPassword":"key","charset":"UTF-8","inputFormat":"string","outputFormat":"hex","encrypt":True}).encode())))["data"]<br>
+True<br>
+&gt;&gt;&gt;&nbsp;cipher_continuation&nbsp;=&nbsp;rc4.encrypt(b'secrets')<br>
 &gt;&gt;&gt;&nbsp;assert&nbsp;cipher_continuation&nbsp;!=&nbsp;cipher<br>
 &gt;&gt;&gt;&nbsp;rc4.reset(b'key')<br>
 &gt;&gt;&gt;&nbsp;rc4.make_key()<br>
-&gt;&gt;&gt;&nbsp;rc4.crypt(cipher)<br>
+&gt;&gt;&gt;&nbsp;rc4.encrypt(cipher)<br>
 b'secrets'<br>
-&gt;&gt;&gt;&nbsp;rc4.crypt(cipher_continuation)<br>
+&gt;&gt;&gt;&nbsp;rc4.encrypt(cipher_continuation)<br>
 b'secrets'<br>
+&gt;&gt;&gt;&nbsp;<br>
 &nbsp;<br>
-~#&nbsp;python3&nbsp;<a href="#RC4Encryption">RC4Encryption</a>.py&nbsp;-s&nbsp;secrets&nbsp;-6&nbsp;key<br>
-eyA34C6Mtw==<br>
-~#&nbsp;python3&nbsp;<a href="#RC4Encryption">RC4Encryption</a>.py&nbsp;-s&nbsp;eyA34C6Mtw==&nbsp;-n&nbsp;base64&nbsp;key<br>
-secrets<br>
+~#&nbsp;python3&nbsp;<a href="#RC4Encryption">RC4Encryption</a>.py&nbsp;-s&nbsp;mydata&nbsp;mykey&nbsp;-1<br>
+3B1FE10F0025<br>
+~#&nbsp;python3&nbsp;<a href="#RC4Encryption">RC4Encryption</a>.py&nbsp;-s&nbsp;3B1FE10F0025&nbsp;-n&nbsp;base16&nbsp;mykey<br>
+mydata<br>
 ~#&nbsp;python3&nbsp;<a href="#RC4Encryption">RC4Encryption</a>.py&nbsp;-i&nbsp;secrets.file&nbsp;-6&nbsp;-o&nbsp;cipher.b64&nbsp;key<br>
-~#&nbsp;python3&nbsp;<a href="#RC4Encryption">RC4Encryption</a>.py&nbsp;-o&nbsp;decipher.file&nbsp;-n&nbsp;base64&nbsp;-i&nbsp;cipher.b64&nbsp;key</tt></p>
+~#&nbsp;python3&nbsp;<a href="#RC4Encryption">RC4Encryption</a>.py&nbsp;-o&nbsp;decipher.file&nbsp;-n&nbsp;base64&nbsp;-i&nbsp;cipher.b64&nbsp;key<br>
+&nbsp;<br>
+1&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;12&nbsp;tests&nbsp;in&nbsp;RC4<br>
+12&nbsp;tests&nbsp;in&nbsp;14&nbsp;items.<br>
+12&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.</tt></p>
 <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#aa55cc">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="argparse.html">argparse</a><br>
-</td><td width="25%" valign=top><a href="locale.html">locale</a><br>
-</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
-</td><td width="25%" valign=top><a href="warnings.html">warnings</a><br>
-</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -69,11 +69,11 @@ This&nbsp;class&nbsp;implements&nbsp;RC4&nbsp;cipher.<br>&nbsp;</tt></td></tr>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="RC4Encryption-__init__"><strong>__init__</strong></a>(self, key: bytes)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<dl><dt><a name="RC4Encryption-crypt"><strong>crypt</strong></a>(self, secret: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;crypt&nbsp;secret&nbsp;using&nbsp;RC4.</tt></dd></dl>
+<dl><dt><a name="RC4Encryption-encrypt"><strong>encrypt</strong></a>(self, secret: bytes) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;encrypts&nbsp;secret&nbsp;using&nbsp;RC4.</tt></dd></dl>
 
-<dl><dt><a name="RC4Encryption-make_key"><strong>make_key</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;build&nbsp;the&nbsp;key.</tt></dd></dl>
+<dl><dt><a name="RC4Encryption-make_key"><strong>make_key</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;builds&nbsp;the&nbsp;key.</tt></dd></dl>
 
-<dl><dt><a name="RC4Encryption-reset"><strong>reset</strong></a>(self, key: bytes) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;reset&nbsp;key&nbsp;and&nbsp;other&nbsp;variables.</tt></dd></dl>
+<dl><dt><a name="RC4Encryption-reset"><strong>reset</strong></a>(self, key: bytes) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;resets&nbsp;key&nbsp;and&nbsp;other&nbsp;variables.</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -92,7 +92,7 @@ Data descriptors defined here:<br>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>__all__</strong> = ['RC4Encryption']<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
-<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>RC4Encryption  Copyright (C) 2021  Maurice Lamb...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>RC4Encryption  Copyright (C) 2021, 2024  Mauric...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
 <strong>__description__</strong> = 'This package implements RC4 encryption.'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
