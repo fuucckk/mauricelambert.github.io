@@ -42,10 +42,12 @@
  - [ReverseShell Documentation](https://mauricelambert.github.io/info/python/security/ReverseShell.html)
  - [EntropyEncoding Documentation](https://mauricelambert.github.io/info/python/security/EntropyEncoding.html)
  - [EntropyAnalysis Documentation](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.html)
+ - [ElfAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/ElfAnalyzer.html)
+ - [eicarspam Documentation](https://mauricelambert.github.io/info/Web/eicarspam.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
- - [RansomWare Executable](https://mauricelambert.github.io/info/python/security/RansomWare.pz)
+ - [RansomWare Executable](https://mauricelambert.github.io/info/python/security/RansomWare.pyz)
  - [SpyWare Executable](https://mauricelambert.github.io/info/python/security/SpyWare.pyz)
  - [SpyWare.AudioLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/AudioLogger.pyz)
  - [SpyWare.CopyLogger Executable](https://mauricelambert.github.io/info/python/security/SpyWare/CopyLogger.pyz)
@@ -73,6 +75,8 @@
  - [ProgramExecutableAnalyzer Windows Executable](https://mauricelambert.github.io/info/python/security/ProgramExecutableAnalyzer.exe)
  - [EntropyAnalysis Executable](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.pyz)
  - [EntropyAnalysis Windows Executable](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.exe)
+ - [AsyncRemoteShell Python Executable](https://mauricelambert.github.io/info/python/security/AsyncRemoteShell.pyz)
+ - [ElfAnalyzer Python Executable](https://mauricelambert.github.io/info/python/security/ElfAnalyzer.pyz)
 
 #### Network
 
@@ -121,7 +125,30 @@
  - [WebScriptsClient Documentation](https://mauricelambert.github.io/info/python/code/WebScriptsClient.html)
  - [WebScriptsTools Documentation](https://mauricelambert.github.io/info/python/code/WebScriptsTools.html)
 
+ - [cgi Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/cgi.html)
+ - [Configurations Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/Configurations.html)
+ - [csp Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/csp.html)
+ - [get_request Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/get_request.html)
+ - [hardening Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/hardening.html)
+ - [index Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/index.html)
+ - [JsonRpc Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/JsonRpc.html)
+ - [notification Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/notification.html)
+ - [rss Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/rss.html)
+ - [share Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/share.html)
+ - [\_\_init\_\_ Documentation](https://mauricelambert.github.io/info/python/code/WebScripts/__init__.html)
+
  - [WebScriptsClient Executable](https://mauricelambert.github.io/info/python/code/WebScriptsClient.pyz)
+
+#### Security audits
+
+ - [SkipFish](https://mauricelambert.github.io/info/python/code/WebScripts/skipfish/index.html)
+ - [ZAP](https://mauricelambert.github.io/info/python/code/WebScripts/ZAP.html)
+ - [nikto](https://mauricelambert.github.io/info/python/code/WebScripts/nikto.html)
+ - [audit Linux](https://mauricelambert.github.io/info/python/code/WebScripts/audit_linux.html)
+ - [audit Windows](https://mauricelambert.github.io/info/python/code/WebScripts/audit_windows.html)
+ - [Audit Docker Apache](https://mauricelambert.github.io/info/python/code/WebScripts/docker_apache_audit.html)
+ - [Audit Docker](https://mauricelambert.github.io/info/python/code/WebScripts/docker_audit.html)
+ - [Audit Docker nginx](https://mauricelambert.github.io/info/python/code/WebScripts/docker_nginx_audit.html)
 
 ### Vulnerability
 
@@ -132,6 +159,7 @@
 
  - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
  - [LatinUtilities Documentation](https://mauricelambert.github.io/info/python/code/LatinUtilities.html)
+ - [BinaryFileReader Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader.html)
  - [BinaryFileReader.HexaReader Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/HexaReader.html)
  - [BinaryFileReader.Strings Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/Strings.html)
 
@@ -144,9 +172,11 @@
  - [GSMEncoding Documentation](https://mauricelambert.github.io/info/python/code/GSMEncoding.html)
  - [LocalResolver Documentation](https://mauricelambert.github.io/info/python/code/LocalResolver.html)
  - [Tracert Documentation](https://mauricelambert.github.io/info/python/code/Tracert.html)
+ - [SimpleWhois Documentation](https://mauricelambert.github.io/info/python/code/SimpleWhois.html)
 
  - [LocalResolver Executable](https://mauricelambert.github.io/info/python/code/LocalResolver.pyz)
  - [Tracert Executable](https://mauricelambert.github.io/info/python/code/Tracert.pyz)
+ - [SimpleWhois Python Executable](https://mauricelambert.github.io/info/python/code/SimpleWhois.pyz)
 
 #### Console && terminal tools
 
@@ -186,6 +216,8 @@
  - [PythonToolsKit.DataAnalysis Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/DataAnalysis.html)
  - [PythonToolsKit.RecursionDebug Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/RecursionDebug.html)
  - [PythonToolsKit.OrdDict Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/OrdDict.html)
+ - [Characters Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Characters.html)
+ - [DebugEncoding Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/DebugEncoding.html)
  - [UpgradePipPackages Documentation](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
 
  - [UpgradePipPackages Executable](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
