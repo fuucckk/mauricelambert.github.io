@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maurice Lambert - repository links</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #0f0;
+            padding: 20px;
+            overflow: hidden;
+        }
+        h1, h2, h3, h4 {
+            color: #0f0;
+        }
+        h2 {
+            display: none;
+        }
+        .section {
+            margin-bottom: 20px;
+            overflow: auto;
+        }
+        .toggle-btn {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+        }
+        a {
+            color: #0ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #rainCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        #text_content {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="rainCanvas"></canvas>
+    <div id="text_content">
+        <h1 id="title">Maurice Lambert github website</h1>
+        <div class="section">
+            <h2>Talks & Lessons</h2>
+            <button class="toggle-btn" onclick="toggleSection('talks_&_lessons')">Talks & Lessons</button>
+            <div id="talks_&_lessons" class="content">
+                <ul>
+                    <li><a href="https://github.com/mauricelambert/Talk1.BankSecurity">Talk 1 - Bank security</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/AntivirusBypass.pdf">Talk 2 - Bypass antivirus</a></li>
+                    <li><a href="https://github.com/mauricelambert/BTS-SIO-SLAM-CYBER-INTERVENTION">BTS lesson 1 - Challenges Web Hacking</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/InterventionCyberBTS.pdf">BTS lesson 2 - Dev/Admin</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/InterventionCyberBTS2.pdf">BTS lesson 3 - Career</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.pdf">WebScripts explained</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="section">
+            <h2>Web App</h2>
+            <button class="toggle-btn" onclick="toggleSection('web_app')">Web App</button>
+            <div id="web_app" class="content">
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/">Government Data Analysis</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="section">
+            <h2>Python</h2>
+            <button class="toggle-btn" onclick="toggleSection('python')">Python</button>
+            <div id="python" class="content">
+            <h3>Security tools</h3>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PickleExploit.html">PickleExploit Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WebSiteCloner/HTTPLogger.html">WebSiteCloner.HTTPLogger Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WebSiteCloner/WebSiteCloner.html">WebSiteCloner.WebSiteCloner Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyEmailTools/Email.html">PyEmailTools.Email Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyEmailTools/Forger.html">PyEmailTools.Forger Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyEmailTools/ImapClient.html">PyEmailTools.ImapClient Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyEmailTools/PopClient.html">PyEmailTools.PopClient Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyEmailTools/Reader.html">PyEmailTools.Reader Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyEmailTools/SmtpClient.html">PyEmailTools.SmtpClient Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/RansomWare.html">RansomWare Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare.html">SpyWare Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/audioSpy.conf">Spyware - Audio Configuration</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/clipboardSpy.conf">Spyware - Clipboard Configuration</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/domainsSpy.conf">Spyware - DNS Configuration</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/filesSpy.conf">Spyware - File system Configuration</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/keySpy.conf">Spyware - Keylogger Configuration</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/screenSpy.conf">Spyware - Screen Configuration</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/webcamSpy.conf">Spyware - WebCam Configuration</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.html">ChromePasswordsStealer Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/FileAnalysis.html">FileAnalysis Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyObfuscator.html">PyObfuscator Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyWCGIshell.html">PyWCGIshell Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WordListGenerator.html">WordListGenerator Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SteganograPy.html">SteganograPy Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ZipSteganograPy.html">ZipSteganograPy Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WebServerIdentifier.html">WebServerIdentifier Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/SimpleHttpProxy.html">SimpleHttpProxy Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PDForensic.html">PDForensic Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WebPayloadsEncodings.html">WebPayloadsEncodings Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/MaliciousPDF.html">MaliciousPDF Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/EmojiEncode.html">EmojiEncode Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PDForensic.html">PDForensic Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/Cr0wl3r.html">Cr0wl3r Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ReverseShell.html">ReverseShell Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/EntropyEncoding.html">EntropyEncoding Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/EntropyAnalysis.html">EntropyAnalysis Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ElfAnalyzer.html">ElfAnalyzer Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/Web/eicarspam.html">eicarspam Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz">PyEmailTools Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz">WebSiteCloner Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/RansomWare.pyz">RansomWare Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare.pyz">SpyWare Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/AudioLogger.pyz">SpyWare.AudioLogger Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/CopyLogger.pyz">SpyWare.CopyLogger Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/DomainsLogger.pyz">SpyWare.DomainsLogger Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.pyz">SpyWare.FilesLogger Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.pyz">SpyWare.KeyLogger Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.pyz">SpyWare.WebcamLogger Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.pyz">ChromePasswordsStealer Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/FileAnalysis.pyz">FileAnalysis Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz">PyObfuscator Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz">WordListGenerator Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SteganograPy.pyz">SteganograPy Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ZipSteganograPy.pyz">ZipSteganograPy Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WebServerIdentifier.pyz">WebServerIdentifier Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/ProxyPrinter.pyz">SimpleHttpProxy Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PDForensic.pyz">PDForensic Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WebPayloadsEncodings.pyz">WebPayloadsEncodings Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/MaliciousPDF.pyz">MaliciousPDF Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/EmojiEncode.pyz">EmojiEncode Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PDForensic.pyz">PDForensic Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SIDAnalyzer.pyz">SIDAnalyzer Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/Cr0wl3r.pyz">Cr0wl3r Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ReverseShell.pyz">ReverseShell Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ProgramExecutableAnalyzer.pyz">ProgramExecutableAnalyzer Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ProgramExecutableAnalyzer.exe">ProgramExecutableAnalyzer Windows Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/EntropyAnalysis.pyz">EntropyAnalysis Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/EntropyAnalysis.exe">EntropyAnalysis Windows Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/AsyncRemoteShell.pyz">AsyncRemoteShell Python Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ElfAnalyzer.pyz">ElfAnalyzer Python Executable</a></li>
+                </ul>
+            <h4>Network</h4>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketPrinter.html">PacketAnalysis.PacketPrinter Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PacketAnalysis/Sniffer.html">PacketAnalysis.Sniffer Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ArpSpoof.html">ArpSpoof Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/NetbiosSpoof.html">NetbiosSpoof Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WifiDeauth.html">WifiDeauth Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PasswordsSniffer.html">PasswordsSniffer Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SynFlood.html">SynFlood Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/NetworkSniffer.html">NetworkSniffer Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/NetworkScanner.html">NetworkScanner Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketAnalysis.pyz">PacketAnalysis Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ArpSpoof.pyz">ArpSpoof Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/NetbiosSpoof.pyz">NetbiosSpoof Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz">WifiDeauth Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/PasswordsSniffer.pyz">PasswordsSniffer Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/SynFlood.pyz">SynFlood Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/NetworkSniffer.pyz">NetworkSniffer Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/NetworkScanner.pyz">NetworkScanner Executable</a></li>
+                </ul>
+            <h4>Crypto</h4>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/RC6Encryption.html">RC6Encryption Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/RC4Encryption.html">RC4Encryption Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/CustomCrypto.html">CustomCrypto Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ViginereBreaker.html">ViginereBreaker Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/RC6Encryption.pyz">RC6Encryption Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/RC4Encryption.pyz">RC4Encryption Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/ViginereBreaker.pyz">ViginereBreaker Executable</a></li>
+                </ul>
+            <h3>WebScripts</h3>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/">WebScripts.__init__ Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.html">WebScripts.WebScripts Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/Pages.html">WebScripts.Pages Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/commons.html">WebScripts.commons Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/utils.html">WebScripts.utils Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/Errors.html">WebScripts.Errors Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/manage_defaults_databases.html">Default database manager for WebScripts</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/uploads_management.html">Default upload manager for WebScripts</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/requests_management.html">Default request manager for WebScripts</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/error_pages.html">Default module errors for WebScripts</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScriptsClient.html">WebScriptsClient Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScriptsTools.html">WebScriptsTools Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/cgi.html">cgi Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/Configurations.html">Configurations Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/csp.html">csp Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/get_request.html">get_request Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/hardening.html">hardening Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/index.html">index Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/JsonRpc.html">JsonRpc Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/notification.html">notification Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/rss.html">rss Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/share.html">share Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/__init__.html">\_\_init\_\_ Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScriptsClient.pyz">WebScriptsClient Executable</a></li>
+                </ul>
+            <h4>Security audits</h4>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/skipfish/index.html">SkipFish</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/ZAP.html">ZAP</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/nikto.html">nikto</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/audit_linux.html">audit Linux</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/audit_windows.html">audit Windows</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/docker_apache_audit.html">Audit Docker Apache</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/docker_audit.html">Audit Docker</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/WebScripts/docker_nginx_audit.html">Audit Docker nginx</a></li>
+                </ul>
+            <h3>Vulnerability</h3>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/CVE202141773.html">Apache HTTPD RCE & Local File Disclosure - CVE-2021-41773</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/security/CVE202142013.html">Apache HTTPD RCE & Local File Disclosure - CVE-2021-42013</a></li>
+                </ul>
+            <h3>Dev tools</h3>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html">HttpClientMultipart Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/LatinUtilities.html">LatinUtilities Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/BinaryFileReader.html">BinaryFileReader Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/BinaryFileReader/HexaReader.html">BinaryFileReader.HexaReader Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/BinaryFileReader/Strings.html">BinaryFileReader.Strings Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/BinaryFileReader.pyz">BinaryFileReader Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/LatinUtilities.pyz">LatinUtilities Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz">HttpClientMultipart Executable</a></li>
+                </ul>
+            <h4>Network</h4>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/GSMEncoding.html">GSMEncoding Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/LocalResolver.html">LocalResolver Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/Tracert.html">Tracert Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/SimpleWhois.html">SimpleWhois Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/LocalResolver.pyz">LocalResolver Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/Tracert.pyz">Tracert Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/SimpleWhois.pyz">SimpleWhois Python Executable</a></li>
+                </ul>
+            <h4>Console && terminal tools</h4>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/CustomShell.html">CustomShell Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PyProgressTerm.html">PyProgressTerm Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/CustomShell.pyz">CustomShell Executable</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PyProgressTerm.pyz">PyProgressTerm Executable</a></li>
+                </ul>
+            <h4>Python dev tools</h4>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Timeout.html">PythonToolsKit.Timeout Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Terminal.html">PythonToolsKit.Terminal Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/StringF.html">PythonToolsKit.StringF Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/PrintF.html">PythonToolsKit.PrintF Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Process.html">PythonToolsKit.Process Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Logs.html">PythonToolsKit.Logs Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/GetPass.html">PythonToolsKit.GetPass Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Encodings.html">PythonToolsKit.Encodings Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/DictObject.html">PythonToolsKit.DictObject Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Report.html">PythonToolsKit.Report Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/urlopen.html">PythonToolsKit.urlopen Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Dict.html">PythonToolsKit.Dict Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Arguments.html">PythonToolsKit.Arguments Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Function.html">PythonToolsKit.Function Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/List.html">PythonToolsKit.List Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Tuple.html">PythonToolsKit.Tuple Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/GetFile.html">PythonToolsKit.GetFile Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/GetType.html">PythonToolsKit.GetType Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Import.html">PythonToolsKit.Import Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/ScapyTools.html">PythonToolsKit.ScapyTools Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Thread.html">PythonToolsKit.Thread Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Json.html">PythonToolsKit.Json Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Random.html">PythonToolsKit.Random Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/WindowsTerminal.html">PythonToolsKit.WindowsTerminal Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Colors.html">PythonToolsKit.Colors Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/DataAnalysis.html">PythonToolsKit.DataAnalysis Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/RecursionDebug.html">PythonToolsKit.RecursionDebug Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/OrdDict.html">PythonToolsKit.OrdDict Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/Characters.html">Characters Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/PythonToolsKit/DebugEncoding.html">DebugEncoding Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html">UpgradePipPackages Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz">UpgradePipPackages Executable</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="section">
+            <h2>Perl</h2>
+            <button class="toggle-btn" onclick="toggleSection('perl')">Perl</button>
+            <div id="perl" class="content">
+            <h3>Forensic</h3>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/perl/code/TRAP.html">TRAP Documentation</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/perl/code/TRAP_Compare.html">TRAP::Compare Documentation</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="section">
+            <h2>Ruby</h2>
+            <button class="toggle-btn" onclick="toggleSection('ruby')">Ruby</button>
+            <div id="ruby" class="content">
+            <h3>Vulnerability</h3>
+                <ul>
+                    <li><a href="https://mauricelambert.github.io/info/ruby/code/CVE-2022-21907/table_of_contents.html#pages">IIS DOS - CVE-2022-21907</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/ruby/code/CVE-2021-31166/table_of_contents.html#pages">IIS DOS - CVE-2021-31166</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/ruby/security/CVE-2021-41773/table_of_contents.html#pages">Apache HTTPD RCE & Local File Disclosure - CVE-2021-41773</a></li>
+                    <li><a href="https://mauricelambert.github.io/info/ruby/security/CVE-2021-42013/table_of_contents.html#pages">Apache HTTPD RCE & Local File Disclosure - CVE-2021-42013</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="section">
+            <h2>Metasploit</h2>
+            <button class="toggle-btn" onclick="toggleSection('metasploit')">Metasploit</button>
+            <div id="metasploit" class="content">
+                <ul>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/modules/exploits/linux/http/apache_rce_cve2021_41773.rb">[CVE-2021-41773][CODE] Apache Path Traversal 001</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/documentation/modules/exploit/linux/http/apache_rce_cve2021_41773.md">[CVE-2021-41773][DOCUMENTATION] Apache Path Traversal 001</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/modules/exploits/linux/http/apache_rce_cve2021_42013.rb">[CVE-2021-42013][CODE] Apache Path Traversal 002</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/documentation/modules/exploit/linux/http/apache_rce_cve2021_42013.md">[CVE-2021-42013][DOCUMENTATION] Apache Path Traversal 002</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/modules/auxiliary/dos/windows/iis/py_dos_iis_2021_31166.py">[CVE-2021-31166][CODE][Python] HTTP Protocol Stack Remote Code Execution Vulnerability 001</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/modules/auxiliary/dos/windows/iis/py_dos_iis_2022_21907.py">[CVE-2022-21907][CODE][Python] HTTP Protocol Stack Remote Code Execution Vulnerability 002</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/modules/auxiliary/dos/windows/iis/rb_dos_iis_2021_31166.rb">[CVE-2021-31166][CODE][Ruby] HTTP Protocol Stack Remote Code Execution Vulnerability 001</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/modules/auxiliary/dos/windows/iis/rb_dos_iis_2022_21907.rb">[CVE-2022-21907][CODE][Ruby] HTTP Protocol Stack Remote Code Execution Vulnerability 002</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/documentation/modules/auxiliary/dos/windows/iis/rb_dos_iis_2021_31166.md">[CVE-2021-31166][DOCUMENTATION][Ruby] HTTP Protocol Stack Remote Code Execution Vulnerability 001</a></li>
+                    <li><a href="https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/documentation/modules/auxiliary/dos/windows/iis/rb_dos_iis_2022_21907.md">[CVE-2022-21907][DOCUMENTATION][Ruby] HTTP Protocol Stack Remote Code Execution Vulnerability 002</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleSection(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            void content.offsetHeight;
+            adjustContentHeight(content);
+        }
+
+        function adjustContentHeight(element) {
+            const viewportHeight = window.innerHeight;
+            const rect = element.getBoundingClientRect();
+            const availableHeight = viewportHeight - rect.top - 20;
+            element.style.maxHeight = `${availableHeight}px`;
+            element.scrollTop = 0;
+        }
+
+        function hackerEffect(element) {
+            const text = element.innerText;
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+';
+            let iterations = 0;
+
+            const interval = setInterval(() => {
+                element.innerText = text.split('')
+                    .map((char, index) => {
+                        if (index < iterations) {
+                            return text[index];
+                        }
+                        return chars[Math.floor(Math.random() * chars.length)];
+                    })
+                    .join('');
+
+                if (iterations >= text.length) {
+                    clearInterval(interval);
+                }
+
+                iterations += 1 / 3;
+            }, 30);
+        }
+
+        hackerEffect(document.getElementById('title'));
+
+        // Digital Rain Animation
+        const canvas = document.getElementById('rainCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        const katakana = 'アァカサタナハマヤャラワガザダバパ';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const alphabet = katakana + latin + nums;
+
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function drawRain() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0'; // Green text
+            ctx.font = fontSize + 'px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawRain, 30);
+    </script>
+</body>
+</html>
