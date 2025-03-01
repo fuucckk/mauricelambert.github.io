@@ -29,7 +29,7 @@
  - [RansomWare Documentation](https://mauricelambert.github.io/info/python/security/RansomWare.html)
  - [SpyWare Documentation](https://mauricelambert.github.io/info/python/security/SpyWare.html)
  - [SpyWare.AudioLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/AudioLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/audioSpy.conf)
- - [SpyWare.CopyLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/CopyLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/clipboardSpy.conf)
+ - [ClipboardLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/ClipboardLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/clipboardSpy.conf)
  - [SpyWare.DomainsLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/DomainsLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/domainsSpy.conf)
  - [SpyWare.FilesLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/filesSpy.conf)
  - [SpyWare.KeyLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/keySpy.conf)
@@ -54,7 +54,13 @@
  - [EntropyEncoding Documentation](https://mauricelambert.github.io/info/python/security/EntropyEncoding.html)
  - [EntropyAnalysis Documentation](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.html)
  - [ElfAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/ElfAnalyzer.html)
- - [eicarspam Documentation](https://mauricelambert.github.io/info/Web/eicarspam.html)
+ - [mRemoteNGpasswordsStealer Documentation](https://mauricelambert.github.io/info/python/security/mRemoteNGpasswordsStealer.html)
+ - [PeInjector Documentation](https://mauricelambert.github.io/info/python/security/PeInjector.html)
+ - [PyPeLoader Documentation](https://mauricelambert.github.io/info/python/security/PyPeLoader.html)
+ - [PyPePacker Documentation](https://mauricelambert.github.io/info/python/security/PyPePacker.html)
+ - [PyPeUrlLoader Documentation](https://mauricelambert.github.io/info/python/security/PyPeUrlLoader.html)
+ - [QueryCombinedLogFormat Documentation](https://mauricelambert.github.io/info/python/security/QueryCombinedLogFormat.html)
+ - [TotpApp Documentation](https://mauricelambert.github.io/info/python/security/TotpApp.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
@@ -88,6 +94,13 @@
  - [EntropyAnalysis Windows Executable](https://mauricelambert.github.io/info/python/security/EntropyAnalysis.exe)
  - [AsyncRemoteShell Python Executable](https://mauricelambert.github.io/info/python/security/AsyncRemoteShell.pyz)
  - [ElfAnalyzer Python Executable](https://mauricelambert.github.io/info/python/security/ElfAnalyzer.pyz)
+ - [mRemoteNGpasswordsStealer Python Executable](https://mauricelambert.github.io/info/python/security/mRemoteNGpasswordsStealer.pyz)
+ - [PeInjector Python Executable](https://mauricelambert.github.io/info/python/security/PeInjector.pyz)
+ - [PyPeLoader Python Executable](https://mauricelambert.github.io/info/python/security/PyPeLoader.pyz)
+ - [PyPePacker Python Executable](https://mauricelambert.github.io/info/python/security/PyPePacker.pyz)
+ - [PyPeUrlLoader Python Executable](https://mauricelambert.github.io/info/python/security/PyPeUrlLoader.pyz)
+ - [QueryCombinedLogFormat Python Executable](https://mauricelambert.github.io/info/python/security/QueryCombinedLogFormat.pyz)
+ - [TotpApp Python Executable](https://mauricelambert.github.io/info/python/security/TotpApp.pyz)
 
 #### Network
 
@@ -260,3 +273,8 @@
  - [[CVE-2022-21907][CODE][Ruby] HTTP Protocol Stack Remote Code Execution Vulnerability 002](https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/modules/auxiliary/dos/windows/iis/rb_dos_iis_2022_21907.rb)
  - [[CVE-2021-31166][DOCUMENTATION][Ruby] HTTP Protocol Stack Remote Code Execution Vulnerability 001](https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/documentation/modules/auxiliary/dos/windows/iis/rb_dos_iis_2021_31166.md)
  - [[CVE-2022-21907][DOCUMENTATION][Ruby] HTTP Protocol Stack Remote Code Execution Vulnerability 002](https://github.com/mauricelambert/metasploit-framework/blob/mauricelambert/documentation/modules/auxiliary/dos/windows/iis/rb_dos_iis_2022_21907.md)
+
+## Web eicar tests
+
+ - [eicarspam HTML](https://mauricelambert.github.io/info/Web/eicarspam.html)
+ - [eicarspam PDF](https://mauricelambert.github.io/info/Web/EicarSpam.pdf)
