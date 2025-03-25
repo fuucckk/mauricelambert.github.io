@@ -61,6 +61,7 @@
  - [PyPeUrlLoader Documentation](https://mauricelambert.github.io/info/python/security/PyPeUrlLoader.html)
  - [QueryCombinedLogFormat Documentation](https://mauricelambert.github.io/info/python/security/QueryCombinedLogFormat.html)
  - [TotpApp Documentation](https://mauricelambert.github.io/info/python/security/TotpApp.html)
+ - [ComboundFileParser Documentation](https://mauricelambert.github.io/info/python/security/ComboundFileParser.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
