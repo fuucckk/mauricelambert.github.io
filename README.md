@@ -62,6 +62,9 @@
  - [QueryCombinedLogFormat Documentation](https://mauricelambert.github.io/info/python/security/QueryCombinedLogFormat.html)
  - [TotpApp Documentation](https://mauricelambert.github.io/info/python/security/TotpApp.html)
  - [ComboundFileParser Documentation](https://mauricelambert.github.io/info/python/security/ComboundFileParser.html)
+ - [DiskAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.html)
+ - [NtfsAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.html)
+ - [MftAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
@@ -102,6 +105,9 @@
  - [PyPeUrlLoader Python Executable](https://mauricelambert.github.io/info/python/security/PyPeUrlLoader.pyz)
  - [QueryCombinedLogFormat Python Executable](https://mauricelambert.github.io/info/python/security/QueryCombinedLogFormat.pyz)
  - [TotpApp Python Executable](https://mauricelambert.github.io/info/python/security/TotpApp.pyz)
+ - [DiskAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.pyz)
+ - [NtfsAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.pyz)
+ - [MftAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.pyz)
 
 #### Network
 
@@ -244,6 +250,7 @@
  - [Characters Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Characters.html)
  - [DebugEncoding Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/DebugEncoding.html)
  - [UpgradePipPackages Documentation](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
+ - [PegParser Documentation](https://mauricelambert.github.io/info/python/security/PegParser.html)
 
  - [UpgradePipPackages Executable](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
 
