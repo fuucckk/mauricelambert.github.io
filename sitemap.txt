@@ -202,3 +202,10 @@ https://mauricelambert.github.io/info/python/security/ElfAnalyzer.html
 https://mauricelambert.github.io/info/python/security/EmojiEncode.html
 https://mauricelambert.github.io/info/Web/eicarspam.html
 https://mauricelambert.github.io/info/Web/EicarSpam.pdf
+https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.html
+https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.html
+https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.html
+https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.pyz
+https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.pyz
+https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.pyz
+https://mauricelambert.github.io/info/python/security/PegParser.html
