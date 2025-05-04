@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/PyPeLoader.html</loc>
-    <lastmod>2025-02-16</lastmod>
+    <lastmod>2025-05-04</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/PyPeLoader.pyz</loc>
@@ -961,5 +961,13 @@
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/PegParser.html</loc>
     <lastmod>2025-05-03</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/Win32Hooking.html</loc>
+    <lastmod>2025-05-04</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/Win32Hooking.pyz</loc>
+    <lastmod>2025-05-04</lastmod>
   </url>
 </urlset>
