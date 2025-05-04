@@ -65,6 +65,7 @@
  - [DiskAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.html)
  - [NtfsAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.html)
  - [MftAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.html)
+ - [Win32Hooking Documentation](https://mauricelambert.github.io/info/python/security/Win32Hooking.html)
 
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
@@ -108,6 +109,7 @@
  - [DiskAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.pyz)
  - [NtfsAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.pyz)
  - [MftAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.pyz)
+ - [Win32Hooking Executable](https://mauricelambert.github.io/info/python/security/Win32Hooking.pyz)
 
 #### Network
 
