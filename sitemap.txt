@@ -209,3 +209,5 @@ https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.
 https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.pyz
 https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.pyz
 https://mauricelambert.github.io/info/python/security/PegParser.html
+https://mauricelambert.github.io/info/python/security/Win32Hooking.html
+https://mauricelambert.github.io/info/python/security/Win32Hooking.pyz
