@@ -6,13 +6,149 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PegParser</strong></big></big> (version 0.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PegParser</strong></big></big> (version 1.0.0)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="pegparser.py">pegparser.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;a&nbsp;PEG&nbsp;(Parsing&nbsp;Expression&nbsp;Grammar)&nbsp;to&nbsp;parse<br>
 syntax,&nbsp;i&nbsp;add&nbsp;rules&nbsp;to&nbsp;parse&nbsp;URL,&nbsp;HTTP&nbsp;request&nbsp;and&nbsp;response&nbsp;easily<br>
 with&nbsp;security&nbsp;and&nbsp;some&nbsp;format&nbsp;like&nbsp;hexadecimal,&nbsp;base32,&nbsp;base64,<br>
-base85...</tt></p>
+base85,&nbsp;CSV,&nbsp;JSON&nbsp;(strict&nbsp;and&nbsp;permissive)...<br>
+&nbsp;<br>
+Tests:<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;<a href="#PegParser">PegParser</a>.py<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;<a href="#PegParser">PegParser</a>.py<br>
+&nbsp;<br>
+39&nbsp;items&nbsp;had&nbsp;no&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__eq__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__init__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__repr__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpResponse">HttpResponse</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpResponse">HttpResponse</a>.__eq__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpResponse">HttpResponse</a>.__init__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpResponse">HttpResponse</a>.__repr__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#MatchList">MatchList</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#MatchList">MatchList</a>.__init__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#PegParser">PegParser</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#PegParser">PegParser</a>.and_predicate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#PegParser">PegParser</a>.not_predicate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#PegParser">PegParser</a>.one_or_more<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#PegParser">PegParser</a>.ordered_choice<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#PegParser">PegParser</a>.sequence<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#PegParser">PegParser</a>.zero_or_more<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.check_char<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.or_check_chars<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._base_path<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._character_subdelims_colon_commat<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._character_subdelims_colon_commat_slot_quest<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._characters<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._characters_subdelims_colon<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._characters_subdelims_colon_commat<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._optional_characters_subdelims_colon_commat<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._optional_characters_subdelims_colon_commat_slot_quest<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.get_http_content<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.match_getter<br>
+87&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__bytes__<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpResponse">HttpResponse</a>.__bytes__<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_blank<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_digit<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_hex<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_letter<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_lower<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_octal<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_printable<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_special<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_upper<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.full<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.line<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.line_delimiter<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.multi<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.quoted_value<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.value<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.values<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.base32<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.base64<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.base85<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.blanks<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.hex<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.integer<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.octal<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.optional_blanks<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.word<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.field_name<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.field_value<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.header<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.headers<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.is_text_char<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.magic<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.protocol_version<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.reason<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.request<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.response<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.response_start<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.status_code<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.text<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.token<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.verb<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.version<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.dict<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.false<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.full<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.<a href="builtins.html#list">list</a><br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.null<br>
+&nbsp;&nbsp;10&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.permissive_dict<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.permissive_false<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.permissive_full<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.permissive_list<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.permissive_null<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.permissive_simple_value<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.permissive_true<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.simple_value<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json.true<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.fqdn<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.host<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.host_port<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.hostname<br>
+&nbsp;&nbsp;12&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.ipv4<br>
+&nbsp;&nbsp;16&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.ipv6<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.ipv6_zoneid<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.ipvfuture<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.user_info<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.bool<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.digits<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.float<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.hex_integer<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.octal_integer<br>
+&nbsp;&nbsp;10&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.string<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.form_data<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.fragment<br>
+&nbsp;&nbsp;10&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.full<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.parameters<br>
+&nbsp;&nbsp;11&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.path<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.path_rootless<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.query<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.scheme<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.csv_file_parse<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.csv_files_parse<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.csv_parse<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_matchs<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_ordered_matchs<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.parse_http_request<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.parse_http_response<br>
+453&nbsp;tests&nbsp;in&nbsp;126&nbsp;items.<br>
+453&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
@@ -30,10 +166,12 @@ base85...</tt></p>
 <dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
 </font></dt><dd>
 <dl>
-<dt><font face="helvetica, arial">Format
+<dt><font face="helvetica, arial">Csv
+</font></dt><dt><font face="helvetica, arial">Format
 </font></dt><dt><font face="helvetica, arial">Http
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#HttpRequest">HttpRequest</a>
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#HttpResponse">HttpResponse</a>
+</font></dt><dt><font face="helvetica, arial">Json
 </font></dt><dt><font face="helvetica, arial">Network
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#PegParser">PegParser</a>
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#StandardMatch">StandardMatch</a>
@@ -59,11 +197,11 @@ base85...</tt></p>
 in&nbsp;the&nbsp;HTTP&nbsp;format.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;bytes(<a href="#HttpRequest">HttpRequest</a>('GET',&nbsp;'/',&nbsp;b'HTTP',&nbsp;1.0,&nbsp;[],&nbsp;b'body&nbsp;content'))<br>
-b"GET&nbsp;/&nbsp;HTTP/1.0\r\nContent-Length:&nbsp;12\r\nUser-Agent:&nbsp;Maumau's&nbsp;HTTP&nbsp;client\r\n\r\nbody&nbsp;content"<br>
+b"GET&nbsp;/&nbsp;HTTP/1.0\r\nContent-Length:&nbsp;12\r\nUser-Agent:&nbsp;Maurice&nbsp;Lambert's&nbsp;HTTP&nbsp;client\r\n\r\nbody&nbsp;content"<br>
 &gt;&gt;&gt;&nbsp;bytes(<a href="#HttpRequest">HttpRequest</a>('POST',&nbsp;'/upload',&nbsp;b'HTTP',&nbsp;1.1,&nbsp;[('Content-Length',&nbsp;'12'),&nbsp;('Content-Type',&nbsp;'application/json'),&nbsp;('User-Agent',&nbsp;'TestClient')],&nbsp;b'',&nbsp;10,&nbsp;'plain/text'))<br>
 b'POST&nbsp;/upload&nbsp;HTTP/1.1\r\nContent-Length:&nbsp;12\r\nContent-Type:&nbsp;application/json\r\nUser-Agent:&nbsp;TestClient\r\n\r\n'<br>
 &gt;&gt;&gt;&nbsp;bytes(<a href="#HttpRequest">HttpRequest</a>('HEAD',&nbsp;'/wp-admin?user=admin',&nbsp;b'HTTP',&nbsp;1.0,&nbsp;[],&nbsp;b'body&nbsp;content',&nbsp;10,&nbsp;'plain/text'))<br>
-b"HEAD&nbsp;/wp-admin?user=admin&nbsp;HTTP/1.0\r\nContent-Type:&nbsp;plain/text\r\nContent-Length:&nbsp;10\r\nUser-Agent:&nbsp;Maumau's&nbsp;HTTP&nbsp;client\r\n\r\nbody&nbsp;content"<br>
+b"HEAD&nbsp;/wp-admin?user=admin&nbsp;HTTP/1.0\r\nContent-Type:&nbsp;plain/text\r\nContent-Length:&nbsp;10\r\nUser-Agent:&nbsp;Maurice&nbsp;Lambert's&nbsp;HTTP&nbsp;client\r\n\r\nbody&nbsp;content"<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="HttpRequest-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
@@ -114,11 +252,11 @@ Data and other attributes defined here:<br>
 in&nbsp;the&nbsp;HTTP&nbsp;format.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;bytes(<a href="#HttpResponse">HttpResponse</a>(b'HTTP',&nbsp;1.0,&nbsp;200,&nbsp;'OK',&nbsp;[],&nbsp;b'body&nbsp;content'))<br>
-b"HTTP/1.0&nbsp;200&nbsp;OK\r\nContent-Length:&nbsp;12\r\nServer:&nbsp;Maumau's&nbsp;HTTP&nbsp;server\r\n\r\nbody&nbsp;content"<br>
+b"HTTP/1.0&nbsp;200&nbsp;OK\r\nContent-Length:&nbsp;12\r\nServer:&nbsp;Maurice&nbsp;Lambert's&nbsp;HTTP&nbsp;server\r\n\r\nbody&nbsp;content"<br>
 &gt;&gt;&gt;&nbsp;bytes(<a href="#HttpResponse">HttpResponse</a>(b'HTTP',&nbsp;1.1,&nbsp;201,&nbsp;'Created',&nbsp;[('Content-Length',&nbsp;'12'),&nbsp;('Content-Type',&nbsp;'application/json'),&nbsp;('Server',&nbsp;'TestServer')],&nbsp;b'',&nbsp;10,&nbsp;'plain/text'))<br>
 b'HTTP/1.1&nbsp;201&nbsp;Created\r\nContent-Length:&nbsp;12\r\nContent-Type:&nbsp;application/json\r\nServer:&nbsp;TestServer\r\n\r\n'<br>
 &gt;&gt;&gt;&nbsp;bytes(<a href="#HttpResponse">HttpResponse</a>(b'HTTP',&nbsp;1.0,&nbsp;202,&nbsp;'Accepted',&nbsp;[],&nbsp;b'body&nbsp;content',&nbsp;10,&nbsp;'plain/text'))<br>
-b"HTTP/1.0&nbsp;202&nbsp;Accepted\r\nContent-Type:&nbsp;plain/text\r\nContent-Length:&nbsp;10\r\nServer:&nbsp;Maumau's&nbsp;HTTP&nbsp;server\r\n\r\nbody&nbsp;content"<br>
+b"HTTP/1.0&nbsp;202&nbsp;Accepted\r\nContent-Type:&nbsp;plain/text\r\nContent-Length:&nbsp;10\r\nServer:&nbsp;Maurice&nbsp;Lambert's&nbsp;HTTP&nbsp;server\r\n\r\nbody&nbsp;content"<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="HttpResponse-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
@@ -459,9 +597,13 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
+<dl><dt><strong>Csv</strong> = &lt;class 'PegParser.StandardRules.Csv'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;complete&nbsp;parser&nbsp;for&nbsp;CSV&nbsp;and&nbsp;multi-CSV.</tt></dl>
+
 <dl><dt><strong>Format</strong> = &lt;class 'PegParser.StandardRules.Format'&gt;<dd><tt>This&nbsp;sub-class&nbsp;implements&nbsp;standard&nbsp;data&nbsp;formats&nbsp;parsing&nbsp;rules.</tt></dl>
 
 <dl><dt><strong>Http</strong> = &lt;class 'PegParser.StandardRules.Http'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;complete&nbsp;parser&nbsp;for&nbsp;http.</tt></dl>
+
+<dl><dt><strong>Json</strong> = &lt;class 'PegParser.StandardRules.Json'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;strict&nbsp;and&nbsp;permissive&nbsp;JSON&nbsp;parser.</tt></dl>
 
 <dl><dt><strong>Network</strong> = &lt;class 'PegParser.StandardRules.Network'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;methods&nbsp;to&nbsp;parse&nbsp;Network&nbsp;formats&nbsp;and&nbsp;data.</tt></dl>
 
@@ -469,6 +611,114 @@ Data and other attributes defined here:<br>
 
 <dl><dt><strong>Url</strong> = &lt;class 'PegParser.StandardRules.Url'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;methods&nbsp;to&nbsp;parse&nbsp;an&nbsp;URL.</tt></dl>
 
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>StandardRules_Csv</strong> = <a name="StandardRules_Csv">class Csv</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;complete&nbsp;parser&nbsp;for&nbsp;CSV&nbsp;and&nbsp;multi-CSV.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Csv-full"><strong>full</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, List[List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]]]]]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;the&nbsp;full&nbsp;CSV&nbsp;file.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-full">full</a>(b'"1","test""test","other"\n')<br>
+(24,&nbsp;[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;[b'"',&nbsp;b'"'],&nbsp;b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]]],&nbsp;[]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-full">full</a>(b'"1","test"test","other"\r\n')<br>
+(10,&nbsp;[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']]]],&nbsp;[]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-full">full</a>(b'"1","test\n')<br>
+(3,&nbsp;[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[]],&nbsp;[]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-full">full</a>(b'"1","test,"other"\n"2"')<br>
+(11,&nbsp;[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;b','],&nbsp;b'"']]]],&nbsp;[]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-full">full</a>(b'"1","","other"\n"2"\n"3","test"')<br>
+(29,&nbsp;[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]]],&nbsp;[[b'\n',&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[]]],&nbsp;[b'\n',&nbsp;[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']]]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-full">full</a>(b'"1"')<br>
+(3,&nbsp;[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[]],&nbsp;[]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-full">full</a>(b'')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Csv-line"><strong>line</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, List[List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;a&nbsp;CSV&nbsp;line.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line">line</a>(b'"1","test""test","other"')<br>
+(24,&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;[b'"',&nbsp;b'"'],&nbsp;b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line">line</a>(b'"1","test"test","other"')<br>
+(10,&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line">line</a>(b'"1","test')<br>
+(3,&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line">line</a>(b'"1","test,"other"')<br>
+(11,&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;b','],&nbsp;b'"']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line">line</a>(b'"1","","other"')<br>
+(14,&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line">line</a>(b'"1"')<br>
+(3,&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line">line</a>(b'')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Csv-line_delimiter"><strong>line_delimiter</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;the&nbsp;line&nbsp;delimiter&nbsp;('\n'&nbsp;or&nbsp;'\r\n').<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line_delimiter">line_delimiter</a>(b'\n')<br>
+(1,&nbsp;b'\n')<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line_delimiter">line_delimiter</a>(b'\r\n')<br>
+(2,&nbsp;[b'\r',&nbsp;b'\n'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line_delimiter">line_delimiter</a>(b'"')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-line_delimiter">line_delimiter</a>(b'test')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Csv-multi"><strong>multi</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, List[List[Union[bytes, List[List[List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]]]]]]]]]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;a&nbsp;multi-csv.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-multi">multi</a>(b'"1","","other"\n"2"\n"3","test"\n\r\n"1","","other"\r\n"2"\r\n"3","test"')<br>
+(63,&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]]],&nbsp;[[b'\n',&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[]]],&nbsp;[b'\n',&nbsp;[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']]]]]]],&nbsp;[[b'\n',&nbsp;[b'\r',&nbsp;b'\n'],&nbsp;[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]]],&nbsp;[[[b'\r',&nbsp;b'\n'],&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[]]],&nbsp;[[b'\r',&nbsp;b'\n'],&nbsp;[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']]]]]]]]]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Csv-quoted_value"><strong>quoted_value</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;a&nbsp;CSV&nbsp;quoted&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-quoted_value">quoted_value</a>(b'"test""test"')<br>
+(12,&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;[b'"',&nbsp;b'"'],&nbsp;b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-quoted_value">quoted_value</a>(b'"test"test"')<br>
+(6,&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-quoted_value">quoted_value</a>(b'"test')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-quoted_value">quoted_value</a>(b'""')<br>
+(2,&nbsp;[b'"',&nbsp;[],&nbsp;b'"'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Csv-value"><strong>value</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[Union[bytes, List[bytes]]]]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;a&nbsp;CSV&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-value">value</a>(b'test""test')<br>
+(10,&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;[b'"',&nbsp;b'"'],&nbsp;b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-value">value</a>(b'test"test')<br>
+(4,&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Csv-values"><strong>values</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, List[List[Union[bytes, List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;second&nbsp;to&nbsp;last&nbsp;value&nbsp;in&nbsp;the&nbsp;line.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-values">values</a>(b',"test""test","other"')<br>
+(21,&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;[b'"',&nbsp;b'"'],&nbsp;b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-values">values</a>(b',"test"test","other"')<br>
+(7,&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-values">values</a>(b',"test')<br>
+(0,&nbsp;[])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-values">values</a>(b',"test,"other"')<br>
+(8,&nbsp;[[b',',&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;b','],&nbsp;b'"']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-values">values</a>(b',"","other"')<br>
+(11,&nbsp;[[b',',&nbsp;[b'"',&nbsp;[],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'"',&nbsp;[b'o',&nbsp;b't',&nbsp;b'h',&nbsp;b'e',&nbsp;b'r'],&nbsp;b'"']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Csv.<a href="#StandardRules_Csv-values">values</a>(b'')<br>
+(0,&nbsp;[])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
@@ -537,6 +787,18 @@ Data and other attributes defined here:<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
+<dl><dt><a name="Format-blanks"><strong>blanks</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;multiples&nbsp;blank&nbsp;characters.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"\n&nbsp;\n\r\n&nbsp;&nbsp;")<br>
+(7,&nbsp;[b'\n',&nbsp;b'&nbsp;',&nbsp;b'\n',&nbsp;b'\r',&nbsp;b'\n',&nbsp;b'&nbsp;',&nbsp;b'&nbsp;'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"\r\t+")<br>
+(2,&nbsp;[b'\r',&nbsp;b'\t'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"&nbsp;;")<br>
+(1,&nbsp;[b'&nbsp;'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"a&nbsp;")<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
 <dl><dt><a name="Format-hex"><strong>hex</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;a&nbsp;word.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-hex">hex</a>(b"abcdef")<br>
@@ -583,6 +845,18 @@ Data and other attributes defined here:<br>
 (1,&nbsp;[b'0'])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-octal">octal</a>(b"a&nbsp;")<br>
 (0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Format-optional_blanks"><strong>optional_blanks</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;optional&nbsp;multiples&nbsp;blank&nbsp;characters.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"\n&nbsp;\n\r\n&nbsp;&nbsp;")<br>
+(7,&nbsp;[b'\n',&nbsp;b'&nbsp;',&nbsp;b'\n',&nbsp;b'\r',&nbsp;b'\n',&nbsp;b'&nbsp;',&nbsp;b'&nbsp;'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"\r\t+")<br>
+(2,&nbsp;[b'\r',&nbsp;b'\t'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"&nbsp;;")<br>
+(1,&nbsp;[b'&nbsp;'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"a&nbsp;")<br>
+(0,&nbsp;[])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Format-word"><strong>word</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;a&nbsp;word.<br>
@@ -757,6 +1031,271 @@ Data descriptors defined here:<br>
 (3,&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'0']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Http.<a href="#StandardRules_Http-version">version</a>(b'1.1')<br>
 (3,&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'1']])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>StandardRules_Json</strong> = <a name="StandardRules_Json">class Json</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;strict&nbsp;and&nbsp;permissive&nbsp;JSON&nbsp;parser.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Json-dict"><strong>dict</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;JSON&nbsp;dict.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null}')<br>
+(11,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null,&nbsp;"2":&nbsp;true}')<br>
+(22,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null,&nbsp;"2"&nbsp;:&nbsp;1.5&nbsp;,&nbsp;"3":&nbsp;{"test":&nbsp;true,&nbsp;"1":&nbsp;2},&nbsp;"4":&nbsp;[1,&nbsp;2,&nbsp;false]}')<br>
+(72,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[b'&nbsp;'],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b'&nbsp;']],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'2'],&nbsp;[]],&nbsp;[],&nbsp;b'}'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'4'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'2'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;b']'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1"&nbsp;null}')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1",&nbsp;null}')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null,}')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-false"><strong>false</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;false&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-false">false</a>(b'false')<br>
+(5,&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-false">false</a>(b'False')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-false">false</a>(b'FALSE')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-full"><strong>full</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;all&nbsp;JSON&nbsp;type&nbsp;(dict,&nbsp;<a href="builtins.html#list">list</a>,&nbsp;string,&nbsp;float,<br>
+integer,&nbsp;boolean,&nbsp;null).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'{}')<br>
+(2,&nbsp;[b'{',&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'{"key":&nbsp;"value",&nbsp;"test":&nbsp;"test"}')<br>
+(32,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'k',&nbsp;b'e',&nbsp;b'y'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'"',&nbsp;[b'v',&nbsp;b'a',&nbsp;b'l',&nbsp;b'u',&nbsp;b'e'],&nbsp;b'"'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'[]')<br>
+(2,&nbsp;[b'[',&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'[1,&nbsp;2.5,&nbsp;nul]')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'"string"')<br>
+(8,&nbsp;[b'"',&nbsp;[b's',&nbsp;b't',&nbsp;b'r',&nbsp;b'i',&nbsp;b'n',&nbsp;b'g'],&nbsp;b'"'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'1.5')<br>
+(3,&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'1')<br>
+(1,&nbsp;[b'1'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'true')<br>
+(4,&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'null')<br>
+(4,&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-list"><strong>list</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;JSON&nbsp;<a href="builtins.html#list">list</a>.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[]')<br>
+(2,&nbsp;[b'[',&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[&nbsp;]')<br>
+(3,&nbsp;[b'[',&nbsp;[b'&nbsp;'],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[null]')<br>
+(6,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[1,&nbsp;1.5,&nbsp;2&nbsp;,&nbsp;"test",&nbsp;true,&nbsp;[false,&nbsp;null],&nbsp;{"test":&nbsp;1,&nbsp;"1":&nbsp;null}]')<br>
+(65,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'2'],&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'[',&nbsp;[],&nbsp;[[[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[],&nbsp;b']'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'1'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;[],&nbsp;b'}'],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[1,]')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[1&nbsp;null]')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-null"><strong>null</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;null&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'null')<br>
+(4,&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'NulL')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'None')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'nonE')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'nil')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'nIl')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'undefined')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-null">null</a>(b'undeFined')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-permissive_dict"><strong>permissive_dict</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;a&nbsp;permissive&nbsp;JSON&nbsp;dict<br>
+(trailing&nbsp;comma,&nbsp;forgot&nbsp;comma,&nbsp;...).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{}')<br>
+(2,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1":&nbsp;nuLl}')<br>
+(11,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'L',&nbsp;b'l']],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{1:&nbsp;null&nbsp;"2":&nbsp;true}')<br>
+(19,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'1'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e']],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1"&nbsp;null,&nbsp;"2"&nbsp;:&nbsp;1.5&nbsp;,&nbsp;"3":&nbsp;{"test"&nbsp;true&nbsp;"1"&nbsp;2},"4"&nbsp;:[1&nbsp;2,&nbsp;false]}')<br>
+(66,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[[b'&nbsp;'],&nbsp;b':',&nbsp;[b'&nbsp;']],&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']]],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'2']],&nbsp;[],&nbsp;b'}']],&nbsp;[b',']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'4'],&nbsp;b'"'],&nbsp;[[b'&nbsp;'],&nbsp;b':'],&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b'2'],&nbsp;[b',',&nbsp;[b'&nbsp;']]]],&nbsp;[],&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;b']']],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1":&nbsp;null')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{true&nbsp;null}')<br>
+(11,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1"&nbsp;null,unDefinEd&nbsp;"2"}')<br>
+(24,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',']]],&nbsp;[],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'n',&nbsp;b'E',&nbsp;b'd'],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b'2'],&nbsp;b'"']],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1"&nbsp;niL&nbsp;unDefinEd&nbsp;"2"}')<br>
+(23,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'i',&nbsp;b'L']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'n',&nbsp;b'E',&nbsp;b'd'],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b'2'],&nbsp;b'"']],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1",&nbsp;null}')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{1.5:null,}')<br>
+(11,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b':'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',']]],&nbsp;b'}'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-permissive_false"><strong>permissive_false</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;false&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_false">permissive_false</a>(b'false')<br>
+(5,&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_false">permissive_false</a>(b'False')<br>
+(5,&nbsp;[b'F',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_false">permissive_false</a>(b'FALSE')<br>
+(5,&nbsp;[b'F',&nbsp;b'A',&nbsp;b'L',&nbsp;b'S',&nbsp;b'E'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-permissive_full"><strong>permissive_full</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;all&nbsp;JSON&nbsp;permissive&nbsp;type&nbsp;(dict,&nbsp;<a href="builtins.html#list">list</a>,&nbsp;string,&nbsp;float,<br>
+integer,&nbsp;boolean,&nbsp;null).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'{}')<br>
+(2,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'{NONE:&nbsp;FAlse&nbsp;1.5&nbsp;"test",&nbsp;,}')<br>
+(27,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'N',&nbsp;b'O',&nbsp;b'N',&nbsp;b'E'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'F',&nbsp;b'A',&nbsp;b'l',&nbsp;b's',&nbsp;b'e']],&nbsp;[[b'&nbsp;']]],&nbsp;[[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'&nbsp;'],&nbsp;b',']]],&nbsp;b'}'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'[]')<br>
+(2,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'[1,&nbsp;2.5,&nbsp;unDefiNed&nbsp;nIl&nbsp;,,,,&nbsp;]')<br>
+(29,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'2'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'N',&nbsp;b'e',&nbsp;b'd'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b'n',&nbsp;b'I',&nbsp;b'l'],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;[b'&nbsp;']]]],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'"string"')<br>
+(8,&nbsp;[b'"',&nbsp;[b's',&nbsp;b't',&nbsp;b'r',&nbsp;b'i',&nbsp;b'n',&nbsp;b'g'],&nbsp;b'"'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'1.5')<br>
+(3,&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'1')<br>
+(1,&nbsp;[b'1'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'trUe')<br>
+(4,&nbsp;[b't',&nbsp;b'r',&nbsp;b'U',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'nUll')<br>
+(4,&nbsp;[b'n',&nbsp;b'U',&nbsp;b'l',&nbsp;b'l'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-permissive_list"><strong>permissive_list</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;a&nbsp;permissive&nbsp;JSON&nbsp;<a href="builtins.html#list">list</a><br>
+(trailing&nbsp;comma,&nbsp;forgot&nbsp;comma,&nbsp;...).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[]')<br>
+(2,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[&nbsp;]')<br>
+(3,&nbsp;[b'[',&nbsp;[b'&nbsp;'],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[uNdefIned]')<br>
+(11,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[b'u',&nbsp;b'N',&nbsp;b'd',&nbsp;b'e',&nbsp;b'f',&nbsp;b'I',&nbsp;b'n',&nbsp;b'e',&nbsp;b'd'],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[1&nbsp;1.5,2&nbsp;,&nbsp;"test"&nbsp;trUE,,&nbsp;,&nbsp;,&nbsp;FalSe,&nbsp;&nbsp;&nbsp;nil]')<br>
+(42,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]],&nbsp;[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b',']],&nbsp;[[b'2'],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'U',&nbsp;b'E'],&nbsp;[b',',&nbsp;b',',&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'F',&nbsp;b'a',&nbsp;b'l',&nbsp;b'S',&nbsp;b'e'],&nbsp;[b',',&nbsp;[b'&nbsp;',&nbsp;b'&nbsp;',&nbsp;b'&nbsp;']]]],&nbsp;[],&nbsp;[b'n',&nbsp;b'i',&nbsp;b'l'],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[1,]')<br>
+(4,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[b',']]],&nbsp;b']'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[1&nbsp;noNe]')<br>
+(8,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[b'n',&nbsp;b'o',&nbsp;b'N',&nbsp;b'e'],&nbsp;[],&nbsp;b']'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-permissive_null"><strong>permissive_null</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;null&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'null')<br>
+(4,&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'NulL')<br>
+(4,&nbsp;[b'N',&nbsp;b'u',&nbsp;b'l',&nbsp;b'L'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'None')<br>
+(4,&nbsp;[b'N',&nbsp;b'o',&nbsp;b'n',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'nonE')<br>
+(4,&nbsp;[b'n',&nbsp;b'o',&nbsp;b'n',&nbsp;b'E'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'nil')<br>
+(3,&nbsp;[b'n',&nbsp;b'i',&nbsp;b'l'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'nIl')<br>
+(3,&nbsp;[b'n',&nbsp;b'I',&nbsp;b'l'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'undefined')<br>
+(9,&nbsp;[b'u',&nbsp;b'n',&nbsp;b'd',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'n',&nbsp;b'e',&nbsp;b'd'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_null">permissive_null</a>(b'undeFined')<br>
+(9,&nbsp;[b'u',&nbsp;b'n',&nbsp;b'd',&nbsp;b'e',&nbsp;b'F',&nbsp;b'i',&nbsp;b'n',&nbsp;b'e',&nbsp;b'd'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-permissive_simple_value"><strong>permissive_simple_value</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;`simple`&nbsp;value&nbsp;(null,&nbsp;boolean,&nbsp;integer,&nbsp;float,&nbsp;string).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'nUll')<br>
+(4,&nbsp;[b'n',&nbsp;b'U',&nbsp;b'l',&nbsp;b'l'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'tRue')<br>
+(4,&nbsp;[b't',&nbsp;b'R',&nbsp;b'u',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'faLSe')<br>
+(5,&nbsp;[b'f',&nbsp;b'a',&nbsp;b'L',&nbsp;b'S',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'1234567890')<br>
+(10,&nbsp;[b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'4',&nbsp;b'5',&nbsp;b'6',&nbsp;b'7',&nbsp;b'8',&nbsp;b'9',&nbsp;b'0'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'0x0123456789aBcDeF')<br>
+(18,&nbsp;[b'0',&nbsp;b'x',&nbsp;[b'0',&nbsp;b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'4',&nbsp;b'5',&nbsp;b'6',&nbsp;b'7',&nbsp;b'8',&nbsp;b'9',&nbsp;b'a',&nbsp;b'B',&nbsp;b'c',&nbsp;b'D',&nbsp;b'e',&nbsp;b'F']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'0o01234567')<br>
+(10,&nbsp;[b'0',&nbsp;b'o',&nbsp;[b'0',&nbsp;b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'4',&nbsp;b'5',&nbsp;b'6',&nbsp;b'7']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'1.23')<br>
+(4,&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'2',&nbsp;b'3']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'"test\\"abc"')<br>
+(11,&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;[b'\\',&nbsp;b'"'],&nbsp;b'a',&nbsp;b'b',&nbsp;b'c'],&nbsp;b'"'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-permissive_true"><strong>permissive_true</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;true&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_true">permissive_true</a>(b'true')<br>
+(4,&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_true">permissive_true</a>(b'True')<br>
+(4,&nbsp;[b'T',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_true">permissive_true</a>(b'TRUE')<br>
+(4,&nbsp;[b'T',&nbsp;b'R',&nbsp;b'U',&nbsp;b'E'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-simple_value"><strong>simple_value</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;`simple`&nbsp;value&nbsp;(null,<br>
+boolean,&nbsp;integer,&nbsp;float,&nbsp;string).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'null')<br>
+(4,&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'true')<br>
+(4,&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'false')<br>
+(5,&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'1234567890')<br>
+(10,&nbsp;[b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'4',&nbsp;b'5',&nbsp;b'6',&nbsp;b'7',&nbsp;b'8',&nbsp;b'9',&nbsp;b'0'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'0x0123456789aBcDeF')<br>
+(18,&nbsp;[b'0',&nbsp;b'x',&nbsp;[b'0',&nbsp;b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'4',&nbsp;b'5',&nbsp;b'6',&nbsp;b'7',&nbsp;b'8',&nbsp;b'9',&nbsp;b'a',&nbsp;b'B',&nbsp;b'c',&nbsp;b'D',&nbsp;b'e',&nbsp;b'F']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'0o01234567')<br>
+(10,&nbsp;[b'0',&nbsp;b'o',&nbsp;[b'0',&nbsp;b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'4',&nbsp;b'5',&nbsp;b'6',&nbsp;b'7']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'1.23')<br>
+(4,&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'2',&nbsp;b'3']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-simple_value">simple_value</a>(b'"test\\"abc"')<br>
+(11,&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't',&nbsp;[b'\\',&nbsp;b'"'],&nbsp;b'a',&nbsp;b'b',&nbsp;b'c'],&nbsp;b'"'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Json-true"><strong>true</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;true&nbsp;value.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-true">true</a>(b'true')<br>
+(4,&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-true">true</a>(b'True')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-true">true</a>(b'TRUE')<br>
+(0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <hr>
@@ -1280,13 +1819,42 @@ Data descriptors defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-get_http_content"><strong>get_http_content</strong></a>(data: Iterable[Union[bytes, Iterable]]) -&gt; Tuple[Dict[str, List[bytearray]], List[Tuple[str, str]], int, Optional[str], Optional[str]]</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;parsed&nbsp;HTTP&nbsp;response&nbsp;or&nbsp;request&nbsp;and&nbsp;use&nbsp;the&nbsp;parsing<br>
+<td width="100%"><dl><dt><a name="-csv_file_parse"><strong>csv_file_parse</strong></a>(file: _io._BufferedIOBase) -&gt; Iterable[List[str]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;CSV&nbsp;file&nbsp;and&nbsp;yield&nbsp;values&nbsp;for&nbsp;each&nbsp;lines.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;<a href="builtins.html#list">list</a>(<a href="#-csv_file_parse">csv_file_parse</a>(BytesIO(b'"1","","other"\n"2"\n"3","test"')))<br>
+[('1',&nbsp;'',&nbsp;'other'),&nbsp;('2',),&nbsp;('3',&nbsp;'test')]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-csv_files_parse"><strong>csv_files_parse</strong></a>(file: _io._BufferedIOBase) -&gt; Iterable[List[str]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;multi-CSV&nbsp;file,&nbsp;yield&nbsp;generator&nbsp;for&nbsp;each<br>
+file&nbsp;and&nbsp;yield&nbsp;values&nbsp;for&nbsp;each&nbsp;lines.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;[<a href="builtins.html#list">list</a>(x)&nbsp;for&nbsp;x&nbsp;in&nbsp;<a href="#-csv_files_parse">csv_files_parse</a>(BytesIO(b'"1","","other"\n"2"\n"3","test"\n\r\n"1","","other"\r\n"2"\r\n"3","test"'))]<br>
+[[('1',&nbsp;'',&nbsp;'other'),&nbsp;('2',),&nbsp;('3',&nbsp;'test')],&nbsp;[('1',&nbsp;'',&nbsp;'other'),&nbsp;('2',),&nbsp;('3',&nbsp;'test')]]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-csv_parse"><strong>csv_parse</strong></a>(data: bytes) -&gt; Iterable[Tuple[str]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;CSV&nbsp;lines&nbsp;and&nbsp;yield&nbsp;values&nbsp;for&nbsp;each&nbsp;lines.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="builtins.html#list">list</a>(<a href="#-csv_parse">csv_parse</a>(b'"1","","other"\n"2"\n"3","test"'))<br>
+[('1',&nbsp;'',&nbsp;'other'),&nbsp;('2',),&nbsp;('3',&nbsp;'test')]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_http_content"><strong>get_http_content</strong></a>(data: Iterable[Union[bytes, Iterable]]) -&gt; Tuple[Dict[str, List[bytearray]], List[Tuple[str, str]], int, Optional[str], Optional[str]]</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;parsed&nbsp;HTTP&nbsp;response&nbsp;or&nbsp;request&nbsp;and&nbsp;use&nbsp;the&nbsp;parsing<br>
 to&nbsp;transform&nbsp;into&nbsp;useful&nbsp;python&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
  <dl><dt><a name="-get_matchs"><strong>get_matchs</strong></a>(data: Iterable[Union[bytes, bool, Iterable]]) -&gt; Dict[str, List[bytearray]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;structured&nbsp;matches&nbsp;into&nbsp;a&nbsp;dict.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-get_matchs">get_matchs</a>(<a href="#StandardRules">StandardRules</a>.Url.full(b"<a href="https://my.full.url/with/path;and=parameters?query=too#fragment&quot;)[1">https://my.full.url/with/path;and=parameters?query=too#fragment&quot;)[1</a>])<br>
 defaultdict(&lt;class&nbsp;'<a href="builtins.html#list">list</a>'&gt;,&nbsp;{'url':&nbsp;[bytearray(b'<a href="https://my.full.url/with/path;and=parameters?query=too#fragment">https://my.full.url/with/path;and=parameters?query=too#fragment</a>')],&nbsp;'scheme':&nbsp;[bytearray(b'https')],&nbsp;'host':&nbsp;[bytearray(b'my.full.url')],&nbsp;'hostname':&nbsp;[bytearray(b'my'),&nbsp;bytearray(b'full'),&nbsp;bytearray(b'url')],&nbsp;'path':&nbsp;[bytearray(b'/with/path')],&nbsp;'parameters':&nbsp;[bytearray(b';and=parameters')],&nbsp;'form_data':&nbsp;[bytearray(b'and=parameters')],&nbsp;'query':&nbsp;[bytearray(b'?query=too')],&nbsp;'fragment':&nbsp;[bytearray(b'#fragment')]})<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_matchs">get_matchs</a>(<a href="#StandardRules">StandardRules</a>.Csv.full(b'"1","","other"\n"2"\n"3","test"')[1])<br>
+defaultdict(&lt;class&nbsp;'<a href="builtins.html#list">list</a>'&gt;,&nbsp;{'csv':&nbsp;[bytearray(b'"1","","other"\n"2"\n"3","test"')],&nbsp;'csv_line':&nbsp;[bytearray(b'"1","","other"'),&nbsp;bytearray(b'"2"'),&nbsp;bytearray(b'"3","test"')],&nbsp;'csv_quoted_value':&nbsp;[bytearray(b'"1"'),&nbsp;bytearray(b'""'),&nbsp;bytearray(b'"other"'),&nbsp;bytearray(b'"2"'),&nbsp;bytearray(b'"3"'),&nbsp;bytearray(b'"test"')],&nbsp;'csv_value':&nbsp;[bytearray(b'1'),&nbsp;bytearray(b''),&nbsp;bytearray(b'other'),&nbsp;bytearray(b'2'),&nbsp;bytearray(b'3'),&nbsp;bytearray(b'test')],&nbsp;'csv_values':&nbsp;[bytearray(b',"","other"'),&nbsp;bytearray(b''),&nbsp;bytearray(b',"test"')]})<br>
 &gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_ordered_matchs"><strong>get_ordered_matchs</strong></a>(data: Iterable[Union[bytes, bool, Iterable]]) -&gt; Dict[str, List[bytearray]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;ordered&nbsp;match&nbsp;into&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;tuple.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_ordered_matchs">get_ordered_matchs</a>(<a href="#StandardRules">StandardRules</a>.Csv.full(b'"1","","other"\n"2"\n"3","test"')[1])<br>
+[('csv',&nbsp;bytearray(b'"1","","other"\n"2"\n"3","test"')),&nbsp;('csv_line',&nbsp;bytearray(b'"1","","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"1"')),&nbsp;('csv_value',&nbsp;bytearray(b'1')),&nbsp;('csv_values',&nbsp;bytearray(b',"","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'""')),&nbsp;('csv_value',&nbsp;bytearray(b'')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"other"')),&nbsp;('csv_value',&nbsp;bytearray(b'other')),&nbsp;('csv_line',&nbsp;bytearray(b'"2"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"2"')),&nbsp;('csv_value',&nbsp;bytearray(b'2')),&nbsp;('csv_values',&nbsp;bytearray(b'')),&nbsp;('csv_line',&nbsp;bytearray(b'"3","test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"3"')),&nbsp;('csv_value',&nbsp;bytearray(b'3')),&nbsp;('csv_values',&nbsp;bytearray(b',"test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"test"')),&nbsp;('csv_value',&nbsp;bytearray(b'test'))]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_ordered_matchs">get_ordered_matchs</a>(<a href="#StandardRules">StandardRules</a>.Csv.multi(b'"1","","other"\n"2"\n"3","test"\n\r\n"1","","other"\r\n"2"\r\n"3","test"')[1])<br>
+[('multi_csv',&nbsp;bytearray(b'"1","","other"\n"2"\n"3","test"\n\r\n"1","","other"\r\n"2"\r\n"3","test"')),&nbsp;('csv',&nbsp;bytearray(b'"1","","other"\n"2"\n"3","test"')),&nbsp;('csv_line',&nbsp;bytearray(b'"1","","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"1"')),&nbsp;('csv_value',&nbsp;bytearray(b'1')),&nbsp;('csv_values',&nbsp;bytearray(b',"","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'""')),&nbsp;('csv_value',&nbsp;bytearray(b'')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"other"')),&nbsp;('csv_value',&nbsp;bytearray(b'other')),&nbsp;('csv_line',&nbsp;bytearray(b'"2"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"2"')),&nbsp;('csv_value',&nbsp;bytearray(b'2')),&nbsp;('csv_values',&nbsp;bytearray(b'')),&nbsp;('csv_line',&nbsp;bytearray(b'"3","test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"3"')),&nbsp;('csv_value',&nbsp;bytearray(b'3')),&nbsp;('csv_values',&nbsp;bytearray(b',"test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"test"')),&nbsp;('csv_value',&nbsp;bytearray(b'test')),&nbsp;('csv',&nbsp;bytearray(b'"1","","other"\r\n"2"\r\n"3","test"')),&nbsp;('csv_line',&nbsp;bytearray(b'"1","","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"1"')),&nbsp;('csv_value',&nbsp;bytearray(b'1')),&nbsp;('csv_values',&nbsp;bytearray(b',"","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'""')),&nbsp;('csv_value',&nbsp;bytearray(b'')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"other"')),&nbsp;('csv_value',&nbsp;bytearray(b'other')),&nbsp;('csv_line',&nbsp;bytearray(b'"2"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"2"')),&nbsp;('csv_value',&nbsp;bytearray(b'2')),&nbsp;('csv_values',&nbsp;bytearray(b'')),&nbsp;('csv_line',&nbsp;bytearray(b'"3","test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"3"')),&nbsp;('csv_value',&nbsp;bytearray(b'3')),&nbsp;('csv_values',&nbsp;bytearray(b',"test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"test"')),&nbsp;('csv_value',&nbsp;bytearray(b'test'))]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-match_getter"><strong>match_getter</strong></a>(data: Iterable[Union[bytes, bool, Iterable]], process: Callable[[str], bytearray]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;all&nbsp;matchs&nbsp;and&nbsp;call&nbsp;`process`<br>
+with&nbsp;`_match_name`&nbsp;and&nbsp;`data`&nbsp;as&nbsp;parameters.</tt></dd></dl>
  <dl><dt><a name="-parse_http_request"><strong>parse_http_request</strong></a>(data: bytes) -&gt; PegParser.HttpRequest</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;HTTP&nbsp;request&nbsp;bytes&nbsp;as&nbsp;arguments,<br>
 parses&nbsp;it&nbsp;and&nbsp;generates&nbsp;the&nbsp;<a href="#HttpRequest">HttpRequest</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
 &nbsp;<br>
@@ -1314,7 +1882,7 @@ parses&nbsp;it&nbsp;and&nbsp;generates&nbsp;the&nbsp;<a href="#HttpResponse">Htt
 <strong>Union</strong> = typing.Union<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PegParser  Copyright (C) 2025  Maurice Lambert<font color="#c040c0">\n</font>...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
-<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements a PEG (Parsing Expressi...rmat like hexadecimal, base32, base64,<font color="#c040c0">\n</font>base85...<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements a PEG (Parsing Expressi...64,<font color="#c040c0">\n</font>base85, CSV, JSON (strict and permissive)...<font color="#c040c0">\n</font>'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
