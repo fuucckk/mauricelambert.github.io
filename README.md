@@ -252,7 +252,7 @@
  - [Characters Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/Characters.html)
  - [DebugEncoding Documentation](https://mauricelambert.github.io/info/python/code/PythonToolsKit/DebugEncoding.html)
  - [UpgradePipPackages Documentation](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html)
- - [PegParser Documentation](https://mauricelambert.github.io/info/python/security/PegParser.html)
+ - [PegParser Documentation](https://mauricelambert.github.io/info/python/code/PegParser.html)
 
  - [UpgradePipPackages Executable](https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz)
 
