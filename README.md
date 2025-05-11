@@ -1,6 +1,6 @@
 # Maurice Lambert github website
 
-## Talks & Lessons
+## Talks, Research and Lessons
 
  - [Talk 1 - Bank security](https://github.com/mauricelambert/Talk1.BankSecurity)
  - [Talk 2 - Bypass antivirus](https://mauricelambert.github.io/info/AntivirusBypass.pdf)
@@ -8,6 +8,7 @@
  - [BTS lesson 2 - Dev/Admin](https://mauricelambert.github.io/info/InterventionCyberBTS.pdf)
  - [BTS lesson 3 - Career](https://mauricelambert.github.io/info/InterventionCyberBTS2.pdf)
  - [WebScripts explained](https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.pdf)
+ - [HTTP - Web Server Identifier](https://mauricelambert.github.io/info/python/security/Web-MaxUriIdentifier.pdf)
 
 ## Web App
 
