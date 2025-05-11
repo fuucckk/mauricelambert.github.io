@@ -211,3 +211,4 @@ https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.p
 https://mauricelambert.github.io/info/python/code/PegParser.html
 https://mauricelambert.github.io/info/python/security/Win32Hooking.html
 https://mauricelambert.github.io/info/python/security/Win32Hooking.pyz
+https://mauricelambert.github.io/info/python/security/Web-MaxUriIdentifier.pdf
