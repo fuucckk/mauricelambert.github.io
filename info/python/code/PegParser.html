@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PegParser</strong></big></big> (version 1.0.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PegParser</strong></big></big> (version 1.0.1)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="pegparser.py">pegparser.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;a&nbsp;PEG&nbsp;(Parsing&nbsp;Expression&nbsp;Grammar)&nbsp;to&nbsp;parse<br>
@@ -18,7 +18,7 @@ Tests:<br>
 ~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;<a href="#PegParser">PegParser</a>.py<br>
 ~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;<a href="#PegParser">PegParser</a>.py<br>
 &nbsp;<br>
-39&nbsp;items&nbsp;had&nbsp;no&nbsp;tests:<br>
+43&nbsp;items&nbsp;had&nbsp;no&nbsp;tests:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__eq__<br>
@@ -45,6 +45,10 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json._end_dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json._end_list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json._start_dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json._start_list<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url<br>
@@ -58,7 +62,7 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._optional_characters_subdelims_colon_commat_slot_quest<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.get_http_content<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.match_getter<br>
-87&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+90&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__bytes__<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpResponse">HttpResponse</a>.__bytes__<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_blank<br>
@@ -139,15 +143,18 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.path_rootless<br>
 &nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.query<br>
 &nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url.scheme<br>
-&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.csv_file_parse<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.csv_file_parse<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.csv_files_parse<br>
 &nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.csv_parse<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_json<br>
+&nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_json_from_ordered_matchs<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_matchs<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_ordered_matchs<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.mjson_file_parse<br>
 &nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.parse_http_request<br>
 &nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.parse_http_response<br>
-453&nbsp;tests&nbsp;in&nbsp;126&nbsp;items.<br>
-453&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+460&nbsp;tests&nbsp;in&nbsp;133&nbsp;items.<br>
+460&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
 Test&nbsp;passed.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -1054,11 +1061,11 @@ Data descriptors defined here:<br>
 <dl><dt><a name="Json-dict"><strong>dict</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;JSON&nbsp;dict.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null}')<br>
-(11,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+(11,&nbsp;[[b'{'],&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null,&nbsp;"2":&nbsp;true}')<br>
-(22,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+(22,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[]],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null,&nbsp;"2"&nbsp;:&nbsp;1.5&nbsp;,&nbsp;"3":&nbsp;{"test":&nbsp;true,&nbsp;"1":&nbsp;2},&nbsp;"4":&nbsp;[1,&nbsp;2,&nbsp;false]}')<br>
-(72,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[b'&nbsp;'],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b'&nbsp;']],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'2'],&nbsp;[]],&nbsp;[],&nbsp;b'}'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'4'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'2'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;b']'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+(72,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[b'&nbsp;'],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b'&nbsp;']],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'2'],&nbsp;[]],&nbsp;[],&nbsp;[b'}']],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'4'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[[b'['],&nbsp;[],&nbsp;[[[b'1'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'2'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;[b']']],&nbsp;[]],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1":&nbsp;null')<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-dict">dict</a>(b'{"1"&nbsp;null}')<br>
@@ -1083,11 +1090,11 @@ Data descriptors defined here:<br>
 integer,&nbsp;boolean,&nbsp;null).<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'{}')<br>
-(2,&nbsp;[b'{',&nbsp;[],&nbsp;b'}'])<br>
+(2,&nbsp;[[b'{'],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'{"key":&nbsp;"value",&nbsp;"test":&nbsp;"test"}')<br>
-(32,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'k',&nbsp;b'e',&nbsp;b'y'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'"',&nbsp;[b'v',&nbsp;b'a',&nbsp;b'l',&nbsp;b'u',&nbsp;b'e'],&nbsp;b'"'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[]],&nbsp;[],&nbsp;b'}'])<br>
+(32,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'k',&nbsp;b'e',&nbsp;b'y'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'"',&nbsp;[b'v',&nbsp;b'a',&nbsp;b'l',&nbsp;b'u',&nbsp;b'e'],&nbsp;b'"'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[]],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'[]')<br>
-(2,&nbsp;[b'[',&nbsp;[],&nbsp;b']'])<br>
+(2,&nbsp;[[b'['],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'[1,&nbsp;2.5,&nbsp;nul]')<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-full">full</a>(b'"string"')<br>
@@ -1105,13 +1112,13 @@ integer,&nbsp;boolean,&nbsp;null).<br>
 <dl><dt><a name="Json-list"><strong>list</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;strict&nbsp;JSON&nbsp;<a href="builtins.html#list">list</a>.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[]')<br>
-(2,&nbsp;[b'[',&nbsp;[],&nbsp;b']'])<br>
+(2,&nbsp;[[b'['],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[&nbsp;]')<br>
-(3,&nbsp;[b'[',&nbsp;[b'&nbsp;'],&nbsp;b']'])<br>
+(3,&nbsp;[[b'['],&nbsp;[b'&nbsp;'],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[null]')<br>
-(6,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[],&nbsp;b']'])<br>
+(6,&nbsp;[[b'['],&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[1,&nbsp;1.5,&nbsp;2&nbsp;,&nbsp;"test",&nbsp;true,&nbsp;[false,&nbsp;null],&nbsp;{"test":&nbsp;1,&nbsp;"1":&nbsp;null}]')<br>
-(65,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'2'],&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'[',&nbsp;[],&nbsp;[[[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[],&nbsp;b']'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'1'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;[],&nbsp;b'}'],&nbsp;[],&nbsp;b']'])<br>
+(65,&nbsp;[[b'['],&nbsp;[],&nbsp;[[[b'1'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'2'],&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']],&nbsp;[[[b'['],&nbsp;[],&nbsp;[[[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[],&nbsp;[b']']],&nbsp;[],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'1'],&nbsp;[]],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[],&nbsp;b':',&nbsp;[b'&nbsp;'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l'],&nbsp;[]],&nbsp;[],&nbsp;[b'}']],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[')<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-list">list</a>(b'[1,]')<br>
@@ -1144,25 +1151,25 @@ integer,&nbsp;boolean,&nbsp;null).<br>
 (trailing&nbsp;comma,&nbsp;forgot&nbsp;comma,&nbsp;...).<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{}')<br>
-(2,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;b'}'])<br>
+(2,&nbsp;[[b'{'],&nbsp;[],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1":&nbsp;nuLl}')<br>
-(11,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'L',&nbsp;b'l']],&nbsp;[],&nbsp;b'}'])<br>
+(11,&nbsp;[[b'{'],&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'L',&nbsp;b'l']],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{1:&nbsp;null&nbsp;"2":&nbsp;true}')<br>
-(19,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'1'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e']],&nbsp;[],&nbsp;b'}'])<br>
+(19,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'1'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e']],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1"&nbsp;null,&nbsp;"2"&nbsp;:&nbsp;1.5&nbsp;,&nbsp;"3":&nbsp;{"test"&nbsp;true&nbsp;"1"&nbsp;2},"4"&nbsp;:[1&nbsp;2,&nbsp;false]}')<br>
-(66,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[[b'&nbsp;'],&nbsp;b':',&nbsp;[b'&nbsp;']],&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']]],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'2']],&nbsp;[],&nbsp;b'}']],&nbsp;[b',']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'4'],&nbsp;b'"'],&nbsp;[[b'&nbsp;'],&nbsp;b':'],&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b'2'],&nbsp;[b',',&nbsp;[b'&nbsp;']]]],&nbsp;[],&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;b']']],&nbsp;[],&nbsp;b'}'])<br>
+(66,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'"',&nbsp;[b'2'],&nbsp;b'"'],&nbsp;[[b'&nbsp;'],&nbsp;b':',&nbsp;[b'&nbsp;']],&nbsp;[[b'1'],&nbsp;b'.',&nbsp;[b'5']]],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'"',&nbsp;[b'3'],&nbsp;b'"'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'2']],&nbsp;[],&nbsp;[b'}']]],&nbsp;[b',']]],&nbsp;[],&nbsp;[[b'"',&nbsp;[b'4'],&nbsp;b'"'],&nbsp;[[b'&nbsp;'],&nbsp;b':'],&nbsp;[[b'['],&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b'2'],&nbsp;[b',',&nbsp;[b'&nbsp;']]]],&nbsp;[],&nbsp;[b'f',&nbsp;b'a',&nbsp;b'l',&nbsp;b's',&nbsp;b'e'],&nbsp;[],&nbsp;[b']']]],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1":&nbsp;null')<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{true&nbsp;null}')<br>
-(11,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[],&nbsp;b'}'])<br>
+(11,&nbsp;[[b'{'],&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'u',&nbsp;b'e'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1"&nbsp;null,unDefinEd&nbsp;"2"}')<br>
-(24,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',']]],&nbsp;[],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'n',&nbsp;b'E',&nbsp;b'd'],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b'2'],&nbsp;b'"']],&nbsp;[],&nbsp;b'}'])<br>
+(24,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',']]],&nbsp;[],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'n',&nbsp;b'E',&nbsp;b'd'],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b'2'],&nbsp;b'"']],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1"&nbsp;niL&nbsp;unDefinEd&nbsp;"2"}')<br>
-(23,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'i',&nbsp;b'L']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'n',&nbsp;b'E',&nbsp;b'd'],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b'2'],&nbsp;b'"']],&nbsp;[],&nbsp;b'}'])<br>
+(23,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b'1'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'i',&nbsp;b'L']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'n',&nbsp;b'E',&nbsp;b'd'],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b'2'],&nbsp;b'"']],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{"1",&nbsp;null}')<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_dict">permissive_dict</a>(b'{1.5:null,}')<br>
-(11,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b':'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',']]],&nbsp;b'}'])<br>
+(11,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b':'],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'l',&nbsp;b'l']],&nbsp;[b',']]],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Json-permissive_false"><strong>permissive_false</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;false&nbsp;value.<br>
@@ -1179,13 +1186,13 @@ integer,&nbsp;boolean,&nbsp;null).<br>
 integer,&nbsp;boolean,&nbsp;null).<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'{}')<br>
-(2,&nbsp;[b'{',&nbsp;[],&nbsp;[],&nbsp;b'}'])<br>
+(2,&nbsp;[[b'{'],&nbsp;[],&nbsp;[],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'{NONE:&nbsp;FAlse&nbsp;1.5&nbsp;"test",&nbsp;,}')<br>
-(27,&nbsp;[b'{',&nbsp;[],&nbsp;[[[[b'N',&nbsp;b'O',&nbsp;b'N',&nbsp;b'E'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'F',&nbsp;b'A',&nbsp;b'l',&nbsp;b's',&nbsp;b'e']],&nbsp;[[b'&nbsp;']]],&nbsp;[[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'&nbsp;'],&nbsp;b',']]],&nbsp;b'}'])<br>
+(27,&nbsp;[[b'{'],&nbsp;[],&nbsp;[[[[b'N',&nbsp;b'O',&nbsp;b'N',&nbsp;b'E'],&nbsp;[b':',&nbsp;[b'&nbsp;']],&nbsp;[b'F',&nbsp;b'A',&nbsp;b'l',&nbsp;b's',&nbsp;b'e']],&nbsp;[[b'&nbsp;']]],&nbsp;[[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[[b'&nbsp;']],&nbsp;[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"']],&nbsp;[b',',&nbsp;[b'&nbsp;'],&nbsp;b',']]],&nbsp;[b'}']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'[]')<br>
-(2,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;b']'])<br>
+(2,&nbsp;[[b'['],&nbsp;[],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'[1,&nbsp;2.5,&nbsp;unDefiNed&nbsp;nIl&nbsp;,,,,&nbsp;]')<br>
-(29,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'2'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'N',&nbsp;b'e',&nbsp;b'd'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b'n',&nbsp;b'I',&nbsp;b'l'],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;[b'&nbsp;']]]],&nbsp;b']'])<br>
+(29,&nbsp;[[b'['],&nbsp;[],&nbsp;[[[b'1'],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'2'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'u',&nbsp;b'n',&nbsp;b'D',&nbsp;b'e',&nbsp;b'f',&nbsp;b'i',&nbsp;b'N',&nbsp;b'e',&nbsp;b'd'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b'n',&nbsp;b'I',&nbsp;b'l'],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;[b'&nbsp;']]]],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'"string"')<br>
 (8,&nbsp;[b'"',&nbsp;[b's',&nbsp;b't',&nbsp;b'r',&nbsp;b'i',&nbsp;b'n',&nbsp;b'g'],&nbsp;b'"'])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'1.5')<br>
@@ -1202,19 +1209,19 @@ integer,&nbsp;boolean,&nbsp;null).<br>
 (trailing&nbsp;comma,&nbsp;forgot&nbsp;comma,&nbsp;...).<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[]')<br>
-(2,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;b']'])<br>
+(2,&nbsp;[[b'['],&nbsp;[],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[&nbsp;]')<br>
-(3,&nbsp;[b'[',&nbsp;[b'&nbsp;'],&nbsp;[],&nbsp;b']'])<br>
+(3,&nbsp;[[b'['],&nbsp;[b'&nbsp;'],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[uNdefIned]')<br>
-(11,&nbsp;[b'[',&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[b'u',&nbsp;b'N',&nbsp;b'd',&nbsp;b'e',&nbsp;b'f',&nbsp;b'I',&nbsp;b'n',&nbsp;b'e',&nbsp;b'd'],&nbsp;[],&nbsp;b']'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[1&nbsp;1.5,2&nbsp;,&nbsp;"test"&nbsp;trUE,,&nbsp;,&nbsp;,&nbsp;FalSe,&nbsp;&nbsp;&nbsp;nil]')<br>
-(42,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]],&nbsp;[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b',']],&nbsp;[[b'2'],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'U',&nbsp;b'E'],&nbsp;[b',',&nbsp;b',',&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'F',&nbsp;b'a',&nbsp;b'l',&nbsp;b'S',&nbsp;b'e'],&nbsp;[b',',&nbsp;[b'&nbsp;',&nbsp;b'&nbsp;',&nbsp;b'&nbsp;']]]],&nbsp;[],&nbsp;[b'n',&nbsp;b'i',&nbsp;b'l'],&nbsp;[],&nbsp;b']'])<br>
+(11,&nbsp;[[b'['],&nbsp;[],&nbsp;[],&nbsp;[],&nbsp;[b'u',&nbsp;b'N',&nbsp;b'd',&nbsp;b'e',&nbsp;b'f',&nbsp;b'I',&nbsp;b'n',&nbsp;b'e',&nbsp;b'd'],&nbsp;[],&nbsp;[b']']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[1&nbsp;1.5,2&nbsp;,&nbsp;"test"&nbsp;trUE,,&nbsp;,&nbsp;,&nbsp;FalSe,&nbsp;&nbsp;&nbsp;nil,,&nbsp;{"test"&nbsp;fAlSe&nbsp;trUE&nbsp;nuLl}&nbsp;,,,,&nbsp;]')<br>
+(75,&nbsp;[[b'['],&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]],&nbsp;[[[b'1'],&nbsp;b'.',&nbsp;[b'5']],&nbsp;[b',']],&nbsp;[[b'2'],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']]],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'U',&nbsp;b'E'],&nbsp;[b',',&nbsp;b',',&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;'],&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[b'F',&nbsp;b'a',&nbsp;b'l',&nbsp;b'S',&nbsp;b'e'],&nbsp;[b',',&nbsp;[b'&nbsp;',&nbsp;b'&nbsp;',&nbsp;b'&nbsp;']]],&nbsp;[[b'n',&nbsp;b'i',&nbsp;b'l'],&nbsp;[b',',&nbsp;b',',&nbsp;[b'&nbsp;']]],&nbsp;[[[b'{'],&nbsp;[],&nbsp;[[[[b'"',&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;b'"'],&nbsp;[[b'&nbsp;']],&nbsp;[b'f',&nbsp;b'A',&nbsp;b'l',&nbsp;b'S',&nbsp;b'e']],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[[b't',&nbsp;b'r',&nbsp;b'U',&nbsp;b'E'],&nbsp;[[b'&nbsp;']],&nbsp;[b'n',&nbsp;b'u',&nbsp;b'L',&nbsp;b'l']],&nbsp;[],&nbsp;[b'}']],&nbsp;[[b'&nbsp;'],&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;b',',&nbsp;[b'&nbsp;']]]],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[')<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[1,]')<br>
-(4,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[b',']]],&nbsp;b']'])<br>
+(4,&nbsp;[[b'['],&nbsp;[],&nbsp;[[[b'1'],&nbsp;[b',']]],&nbsp;[b']']])<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_list">permissive_list</a>(b'[1&nbsp;noNe]')<br>
-(8,&nbsp;[b'[',&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[b'n',&nbsp;b'o',&nbsp;b'N',&nbsp;b'e'],&nbsp;[],&nbsp;b']'])<br>
+(8,&nbsp;[[b'['],&nbsp;[],&nbsp;[[[b'1'],&nbsp;[[b'&nbsp;']]]],&nbsp;[],&nbsp;[b'n',&nbsp;b'o',&nbsp;b'N',&nbsp;b'e'],&nbsp;[],&nbsp;[b']']])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Json-permissive_null"><strong>permissive_null</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;null&nbsp;value.<br>
@@ -1819,10 +1826,12 @@ Data descriptors defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-csv_file_parse"><strong>csv_file_parse</strong></a>(file: _io._BufferedIOBase) -&gt; Iterable[List[str]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;CSV&nbsp;file&nbsp;and&nbsp;yield&nbsp;values&nbsp;for&nbsp;each&nbsp;lines.<br>
+<td width="100%"><dl><dt><a name="-csv_file_parse"><strong>csv_file_parse</strong></a>(file: _io._BufferedIOBase) -&gt; Iterable[List[str]]</dt><dd><tt>This&nbsp;generator&nbsp;parses&nbsp;CSV&nbsp;file&nbsp;and&nbsp;yield&nbsp;values&nbsp;for&nbsp;each&nbsp;line.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
 &gt;&gt;&gt;&nbsp;<a href="builtins.html#list">list</a>(<a href="#-csv_file_parse">csv_file_parse</a>(BytesIO(b'"1","","other"\n"2"\n"3","test"')))<br>
+[('1',&nbsp;'',&nbsp;'other'),&nbsp;('2',),&nbsp;('3',&nbsp;'test')]<br>
+&gt;&gt;&gt;&nbsp;<a href="builtins.html#list">list</a>(<a href="#-csv_file_parse">csv_file_parse</a>(BytesIO(b'"1","","other"\n"2"\n"3","test"\n')))<br>
 [('1',&nbsp;'',&nbsp;'other'),&nbsp;('2',),&nbsp;('3',&nbsp;'test')]<br>
 &gt;&gt;&gt;</tt></dd></dl>
  <dl><dt><a name="-csv_files_parse"><strong>csv_files_parse</strong></a>(file: _io._BufferedIOBase) -&gt; Iterable[List[str]]</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;multi-CSV&nbsp;file,&nbsp;yield&nbsp;generator&nbsp;for&nbsp;each<br>
@@ -1837,8 +1846,27 @@ file&nbsp;and&nbsp;yield&nbsp;values&nbsp;for&nbsp;each&nbsp;lines.<br>
 &gt;&gt;&gt;&nbsp;<a href="builtins.html#list">list</a>(<a href="#-csv_parse">csv_parse</a>(b'"1","","other"\n"2"\n"3","test"'))<br>
 [('1',&nbsp;'',&nbsp;'other'),&nbsp;('2',),&nbsp;('3',&nbsp;'test')]<br>
 &gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-decode"><strong>decode</strong></a>(obj, encoding='utf-8', errors='strict')</dt><dd><tt>Decodes&nbsp;obj&nbsp;using&nbsp;the&nbsp;codec&nbsp;registered&nbsp;for&nbsp;encoding.<br>
+&nbsp;<br>
+Default&nbsp;encoding&nbsp;is&nbsp;'utf-8'.&nbsp;&nbsp;errors&nbsp;may&nbsp;be&nbsp;given&nbsp;to&nbsp;set&nbsp;a<br>
+different&nbsp;error&nbsp;handling&nbsp;scheme.&nbsp;&nbsp;Default&nbsp;is&nbsp;'strict'&nbsp;meaning&nbsp;that&nbsp;encoding<br>
+errors&nbsp;raise&nbsp;a&nbsp;ValueError.&nbsp;&nbsp;Other&nbsp;possible&nbsp;values&nbsp;are&nbsp;'ignore',&nbsp;'replace'<br>
+and&nbsp;'backslashreplace'&nbsp;as&nbsp;well&nbsp;as&nbsp;any&nbsp;other&nbsp;name&nbsp;registered&nbsp;with<br>
+codecs.register_error&nbsp;that&nbsp;can&nbsp;handle&nbsp;ValueErrors.</tt></dd></dl>
  <dl><dt><a name="-get_http_content"><strong>get_http_content</strong></a>(data: Iterable[Union[bytes, Iterable]]) -&gt; Tuple[Dict[str, List[bytearray]], List[Tuple[str, str]], int, Optional[str], Optional[str]]</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;parsed&nbsp;HTTP&nbsp;response&nbsp;or&nbsp;request&nbsp;and&nbsp;use&nbsp;the&nbsp;parsing<br>
 to&nbsp;transform&nbsp;into&nbsp;useful&nbsp;python&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+ <dl><dt><a name="-get_json"><strong>get_json</strong></a>(data: bytes, permissive: bool = False) -&gt; Union[List, Dict, bool, int, float, NoneType]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;JSON&nbsp;content&nbsp;as&nbsp;python&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_json">get_json</a>(b'{"1":&nbsp;null,&nbsp;"2"&nbsp;:&nbsp;1.5&nbsp;,&nbsp;"3":&nbsp;{"test":&nbsp;true,&nbsp;"1":&nbsp;2},&nbsp;"4":&nbsp;[1,&nbsp;2,&nbsp;false]}')<br>
+{'1':&nbsp;None,&nbsp;'2':&nbsp;1.5,&nbsp;'3':&nbsp;{'test':&nbsp;True,&nbsp;'1':&nbsp;2},&nbsp;'4':&nbsp;[1,&nbsp;2,&nbsp;False]}<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_json">get_json</a>(b"[1,&nbsp;2.5,&nbsp;unDefiNed&nbsp;nIl&nbsp;,,{'test\\n'&nbsp;trUE&nbsp;fALSe&nbsp;nUll},,&nbsp;]",&nbsp;True)<br>
+[1,&nbsp;2.5,&nbsp;None,&nbsp;None,&nbsp;{'test\n':&nbsp;True,&nbsp;False:&nbsp;None}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_json_from_ordered_matchs"><strong>get_json_from_ordered_matchs</strong></a>(data: List[Tuple[str, bytearray]]) -&gt; Union[List, Dict, bool, int, float, NoneType]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;python&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;the&nbsp;ordered&nbsp;matchs.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_json_from_ordered_matchs">get_json_from_ordered_matchs</a>(<a href="#-get_ordered_matchs">get_ordered_matchs</a>(<a href="#StandardRules">StandardRules</a>.Json.full(b'{"1":&nbsp;null,&nbsp;"2"&nbsp;:&nbsp;1.5&nbsp;,&nbsp;"3":&nbsp;{"test":&nbsp;true,&nbsp;"1":&nbsp;2},&nbsp;"4":&nbsp;[1,&nbsp;2,&nbsp;false]}')[1]))<br>
+{'1':&nbsp;None,&nbsp;'2':&nbsp;1.5,&nbsp;'3':&nbsp;{'test':&nbsp;True,&nbsp;'1':&nbsp;2},&nbsp;'4':&nbsp;[1,&nbsp;2,&nbsp;False]}<br>
+&gt;&gt;&gt;</tt></dd></dl>
  <dl><dt><a name="-get_matchs"><strong>get_matchs</strong></a>(data: Iterable[Union[bytes, bool, Iterable]]) -&gt; Dict[str, List[bytearray]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;structured&nbsp;matches&nbsp;into&nbsp;a&nbsp;dict.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-get_matchs">get_matchs</a>(<a href="#StandardRules">StandardRules</a>.Url.full(b"<a href="https://my.full.url/with/path;and=parameters?query=too#fragment&quot;)[1">https://my.full.url/with/path;and=parameters?query=too#fragment&quot;)[1</a>])<br>
@@ -1846,7 +1874,7 @@ defaultdict(&lt;class&nbsp;'<a href="builtins.html#list">list</a>'&gt;,&nbsp;{'u
 &gt;&gt;&gt;&nbsp;<a href="#-get_matchs">get_matchs</a>(<a href="#StandardRules">StandardRules</a>.Csv.full(b'"1","","other"\n"2"\n"3","test"')[1])<br>
 defaultdict(&lt;class&nbsp;'<a href="builtins.html#list">list</a>'&gt;,&nbsp;{'csv':&nbsp;[bytearray(b'"1","","other"\n"2"\n"3","test"')],&nbsp;'csv_line':&nbsp;[bytearray(b'"1","","other"'),&nbsp;bytearray(b'"2"'),&nbsp;bytearray(b'"3","test"')],&nbsp;'csv_quoted_value':&nbsp;[bytearray(b'"1"'),&nbsp;bytearray(b'""'),&nbsp;bytearray(b'"other"'),&nbsp;bytearray(b'"2"'),&nbsp;bytearray(b'"3"'),&nbsp;bytearray(b'"test"')],&nbsp;'csv_value':&nbsp;[bytearray(b'1'),&nbsp;bytearray(b''),&nbsp;bytearray(b'other'),&nbsp;bytearray(b'2'),&nbsp;bytearray(b'3'),&nbsp;bytearray(b'test')],&nbsp;'csv_values':&nbsp;[bytearray(b',"","other"'),&nbsp;bytearray(b''),&nbsp;bytearray(b',"test"')]})<br>
 &gt;&gt;&gt;</tt></dd></dl>
- <dl><dt><a name="-get_ordered_matchs"><strong>get_ordered_matchs</strong></a>(data: Iterable[Union[bytes, bool, Iterable]]) -&gt; Dict[str, List[bytearray]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;ordered&nbsp;match&nbsp;into&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;tuple.<br>
+ <dl><dt><a name="-get_ordered_matchs"><strong>get_ordered_matchs</strong></a>(data: Iterable[Union[bytes, bool, Iterable]]) -&gt; List[Tuple[str, bytearray]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;ordered&nbsp;match&nbsp;into&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;tuple.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-get_ordered_matchs">get_ordered_matchs</a>(<a href="#StandardRules">StandardRules</a>.Csv.full(b'"1","","other"\n"2"\n"3","test"')[1])<br>
 [('csv',&nbsp;bytearray(b'"1","","other"\n"2"\n"3","test"')),&nbsp;('csv_line',&nbsp;bytearray(b'"1","","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"1"')),&nbsp;('csv_value',&nbsp;bytearray(b'1')),&nbsp;('csv_values',&nbsp;bytearray(b',"","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'""')),&nbsp;('csv_value',&nbsp;bytearray(b'')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"other"')),&nbsp;('csv_value',&nbsp;bytearray(b'other')),&nbsp;('csv_line',&nbsp;bytearray(b'"2"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"2"')),&nbsp;('csv_value',&nbsp;bytearray(b'2')),&nbsp;('csv_values',&nbsp;bytearray(b'')),&nbsp;('csv_line',&nbsp;bytearray(b'"3","test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"3"')),&nbsp;('csv_value',&nbsp;bytearray(b'3')),&nbsp;('csv_values',&nbsp;bytearray(b',"test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"test"')),&nbsp;('csv_value',&nbsp;bytearray(b'test'))]<br>
@@ -1855,6 +1883,14 @@ defaultdict(&lt;class&nbsp;'<a href="builtins.html#list">list</a>'&gt;,&nbsp;{'c
 &gt;&gt;&gt;</tt></dd></dl>
  <dl><dt><a name="-match_getter"><strong>match_getter</strong></a>(data: Iterable[Union[bytes, bool, Iterable]], process: Callable[[str], bytearray]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;all&nbsp;matchs&nbsp;and&nbsp;call&nbsp;`process`<br>
 with&nbsp;`_match_name`&nbsp;and&nbsp;`data`&nbsp;as&nbsp;parameters.</tt></dd></dl>
+ <dl><dt><a name="-mjson_file_parse"><strong>mjson_file_parse</strong></a>(file: _io._BufferedIOBase, permissive: bool = False) -&gt; Iterable[Union[List, Dict, bool, int, float, NoneType]]</dt><dd><tt>This&nbsp;generator&nbsp;parses&nbsp;mJSON&nbsp;file&nbsp;and&nbsp;yield&nbsp;JSON&nbsp;for&nbsp;each&nbsp;line.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;<a href="builtins.html#list">list</a>(<a href="#-mjson_file_parse">mjson_file_parse</a>(BytesIO(b'{}\n{"1":&nbsp;1,&nbsp;"2":&nbsp;[true,&nbsp;false,&nbsp;null,&nbsp;1.5,&nbsp;{"test":&nbsp;[]}]}')))<br>
+[{},&nbsp;{'1':&nbsp;1,&nbsp;'2':&nbsp;[True,&nbsp;False,&nbsp;None,&nbsp;1.5,&nbsp;{'test':&nbsp;[]}]}]<br>
+&gt;&gt;&gt;&nbsp;<a href="builtins.html#list">list</a>(<a href="#-mjson_file_parse">mjson_file_parse</a>(BytesIO(b"{}\n{'1'&nbsp;1,'2'&nbsp;[true&nbsp;false,null&nbsp;1.5&nbsp;{'test'&nbsp;[]},,,],,&nbsp;}"),&nbsp;True))<br>
+[{},&nbsp;{'1':&nbsp;1,&nbsp;'2':&nbsp;[True,&nbsp;False,&nbsp;None,&nbsp;1.5,&nbsp;{'test':&nbsp;[]}]}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
  <dl><dt><a name="-parse_http_request"><strong>parse_http_request</strong></a>(data: bytes) -&gt; PegParser.HttpRequest</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;HTTP&nbsp;request&nbsp;bytes&nbsp;as&nbsp;arguments,<br>
 parses&nbsp;it&nbsp;and&nbsp;generates&nbsp;the&nbsp;<a href="#HttpRequest">HttpRequest</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
 &nbsp;<br>
