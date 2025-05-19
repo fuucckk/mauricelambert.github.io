@@ -67,7 +67,15 @@
  - [NtfsAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.html)
  - [MftAnalyzer Documentation](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.html)
  - [Win32Hooking Documentation](https://mauricelambert.github.io/info/python/security/Win32Hooking.html)
+ - [BinaryFileReader.HexaReader Documentation](https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.html)
+ - [BinaryFileReader.Strings Documentation](https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.html)
 
+ - [BinaryFileReader Python Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/BinaryFileReader.pyz)
+ - [Strings Python Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.pyz)
+ - [HexaReader Python Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.pyz)
+ - [BinaryFileReader Python Windows Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/BinaryFileReader.exe)
+ - [Strings Python Windows Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.exe)
+ - [HexaReader Python Windows Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.exe)
  - [PyEmailTools Executable](https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz)
  - [WebSiteCloner Executable](https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz)
  - [RansomWare Executable](https://mauricelambert.github.io/info/python/security/RansomWare.pyz)
@@ -194,10 +202,7 @@
  - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
  - [LatinUtilities Documentation](https://mauricelambert.github.io/info/python/code/LatinUtilities.html)
  - [BinaryFileReader Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader.html)
- - [BinaryFileReader.HexaReader Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/HexaReader.html)
- - [BinaryFileReader.Strings Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader/Strings.html)
 
- - [BinaryFileReader Executable](https://mauricelambert.github.io/info/python/code/BinaryFileReader.pyz)
  - [LatinUtilities Executable](https://mauricelambert.github.io/info/python/code/LatinUtilities.pyz)
  - [HttpClientMultipart Executable](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz)
 
