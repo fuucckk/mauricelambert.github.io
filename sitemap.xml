@@ -503,6 +503,14 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
+    <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStrings.html</loc>
+    <lastmod>2025-05-21</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStrings.pyz</loc>
+    <lastmod>2025-05-21</lastmod>
+  </url>
+  <url>
     <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.html</loc>
     <lastmod>2025-05-20</lastmod>
   </url>
@@ -960,7 +968,7 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/PegParser.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-21</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/Win32Hooking.html</loc>
