@@ -6,20 +6,24 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PegParser</strong></big></big> (version 1.0.1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>PegParser</strong></big></big> (version 1.1.3)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="pegparser.py">pegparser.py</a></font></td></tr></table>
     <p><tt>This&nbsp;package&nbsp;implements&nbsp;a&nbsp;PEG&nbsp;(Parsing&nbsp;Expression&nbsp;Grammar)&nbsp;to&nbsp;parse<br>
 syntax,&nbsp;i&nbsp;add&nbsp;rules&nbsp;to&nbsp;parse&nbsp;URL,&nbsp;HTTP&nbsp;request&nbsp;and&nbsp;response&nbsp;easily<br>
 with&nbsp;security&nbsp;and&nbsp;some&nbsp;format&nbsp;like&nbsp;hexadecimal,&nbsp;base32,&nbsp;base64,<br>
-base85,&nbsp;CSV,&nbsp;JSON&nbsp;(strict&nbsp;and&nbsp;permissive)...<br>
+base85,&nbsp;CSV,&nbsp;JSON&nbsp;(strict&nbsp;and&nbsp;permissive),&nbsp;system&nbsp;file&nbsp;path...<br>
 &nbsp;<br>
 Tests:<br>
 ~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;<a href="#PegParser">PegParser</a>.py<br>
 ~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;<a href="#PegParser">PegParser</a>.py<br>
 &nbsp;<br>
-43&nbsp;items&nbsp;had&nbsp;no&nbsp;tests:<br>
+51&nbsp;items&nbsp;had&nbsp;no&nbsp;tests:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#Format">Format</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#Format">Format</a>.__eq__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#Format">Format</a>.__init__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#Format">Format</a>.__repr__<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__eq__<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__init__<br>
@@ -42,7 +46,7 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.or_check_chars<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json._end_dict<br>
@@ -50,6 +54,10 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json._start_dict<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Json._start_list<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path._directories_file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path._directories_or_file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path._directory_file<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._base_path<br>
@@ -62,7 +70,7 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Url._optional_characters_subdelims_colon_commat_slot_quest<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.get_http_content<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#PegParser">PegParser</a>.match_getter<br>
-90&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+107&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpRequest">HttpRequest</a>.__bytes__<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#HttpResponse">HttpResponse</a>.__bytes__<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardMatch">StandardMatch</a>.is_blank<br>
@@ -81,15 +89,21 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.quoted_value<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.value<br>
 &nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Csv.values<br>
-&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.base32<br>
-&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.base64<br>
-&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.base85<br>
-&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.blanks<br>
-&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.hex<br>
-&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.integer<br>
-&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.octal<br>
-&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.optional_blanks<br>
-&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Format.word<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.base32<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.base32_insensitive<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.base32_lower<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.base64<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.base64_urlsafe<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.base85<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.blanks<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.hex<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.hexadecimal<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.integer<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.octal<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.optional_blanks<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.string_null_terminated_length<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.unicode_null_terminated_length<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.word<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.field_name<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.field_value<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Http.header<br>
@@ -129,6 +143,16 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;8&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.ipv6_zoneid<br>
 &nbsp;&nbsp;&nbsp;7&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.ipvfuture<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Network.user_info<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.base_filename<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.drive_path<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.extensions<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.filename<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.filename_extension<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.linux_path<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.nt_path<br>
+&nbsp;&nbsp;13&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.path<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.relative_path<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Path.windows_path<br>
 &nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.bool<br>
 &nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.digits<br>
 &nbsp;&nbsp;&nbsp;6&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.<a href="#StandardRules">StandardRules</a>.Types.float<br>
@@ -150,12 +174,12 @@ Tests:<br>
 &nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_json_from_ordered_matchs<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_matchs<br>
 &nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.get_ordered_matchs<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.match<br>
 &nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.mjson_file_parse<br>
 &nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.parse_http_request<br>
 &nbsp;&nbsp;&nbsp;1&nbsp;tests&nbsp;in&nbsp;<a href="#PegParser">PegParser</a>.parse_http_response<br>
-460&nbsp;tests&nbsp;in&nbsp;133&nbsp;items.<br>
-460&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
-Test&nbsp;passed.</tt></p>
+556&nbsp;tests&nbsp;in&nbsp;158&nbsp;items.<br>
+556&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
@@ -174,12 +198,14 @@ Test&nbsp;passed.</tt></p>
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial">Csv
+</font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#Format">Format</a>
 </font></dt><dt><font face="helvetica, arial">Format
 </font></dt><dt><font face="helvetica, arial">Http
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#HttpRequest">HttpRequest</a>
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#HttpResponse">HttpResponse</a>
 </font></dt><dt><font face="helvetica, arial">Json
 </font></dt><dt><font face="helvetica, arial">Network
+</font></dt><dt><font face="helvetica, arial">Path
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#PegParser">PegParser</a>
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#StandardMatch">StandardMatch</a>
 </font></dt><dt><font face="helvetica, arial"><a href="PegParser.html#StandardRules">StandardRules</a>
@@ -189,6 +215,56 @@ Test&nbsp;passed.</tt></p>
 </dd>
 </dl>
  <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Format">class <strong>Format</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Format">Format</a>(name:&nbsp;str,&nbsp;match:&nbsp;Callable,&nbsp;decode:&nbsp;Callable,&nbsp;probable_true_positive:&nbsp;Callable&nbsp;=&nbsp;&amp;lt;function&nbsp;<a href="#Format">Format</a>.&amp;lt;lambda&amp;gt;&nbsp;at&nbsp;0x0000020BC3832F80&amp;gt;,&nbsp;probable_false_positive:&nbsp;Callable&nbsp;=&nbsp;&amp;lt;function&nbsp;<a href="#Format">Format</a>.&amp;lt;lambda&amp;gt;&nbsp;at&nbsp;0x0000020BC3833010&amp;gt;)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+<a href="#Format">Format</a>&nbsp;is&nbsp;a&nbsp;dataclass&nbsp;used&nbsp;in&nbsp;formats&nbsp;dict&nbsp;to&nbsp;<a href="builtins.html#list">list</a>,&nbsp;check,<br>
+decode&nbsp;and&nbsp;verify&nbsp;probable&nbsp;validity&nbsp;for&nbsp;all&nbsp;formats.<br>
+&nbsp;<br>
+Formats&nbsp;was&nbsp;defined&nbsp;to&nbsp;check&nbsp;untrusted/identified&nbsp;strings,<br>
+there&nbsp;are&nbsp;probably&nbsp;lot&nbsp;of&nbsp;False&nbsp;positive&nbsp;because&nbsp;multiples&nbsp;formats<br>
+were&nbsp;very&nbsp;flexible.&nbsp;The&nbsp;`probable_true_positive`&nbsp;is&nbsp;used&nbsp;to&nbsp;identify<br>
+a&nbsp;probable&nbsp;real&nbsp;value&nbsp;for&nbsp;the&nbsp;format&nbsp;(by&nbsp;default&nbsp;return&nbsp;False),<br>
+and&nbsp;`probable_false_positive`&nbsp;is&nbsp;used&nbsp;to&nbsp;identify&nbsp;a&nbsp;probable&nbsp;false<br>
+value&nbsp;for&nbsp;the&nbsp;format&nbsp;(by&nbsp;default&nbsp;return&nbsp;True.)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Format-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="Format-__init__"><strong>__init__</strong></a>(self, name: str, match: Callable, decode: Callable, probable_true_positive: Callable = &lt;function Format.&lt;lambda&gt; at 0x0000020BC3832F80&gt;, probable_false_positive: Callable = &lt;function Format.&lt;lambda&gt; at 0x0000020BC3833010&gt;) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Format-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><strong>probable_false_positive</strong> <em>lambda</em> x</dt></dl>
+
+<dl><dt><strong>probable_true_positive</strong> <em>lambda</em> x</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'decode': typing.Callable, 'match': typing.Callable, 'name': &lt;class 'str'&gt;, 'probable_false_positive': typing.Callable, 'probable_true_positive': typing.Callable}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'decode': Field(name='decode',type=typing.Callable,default...appingproxy({}),kw_only=False,_field_type=_FIELD), 'match': Field(name='match',type=typing.Callable,default=...appingproxy({}),kw_only=False,_field_type=_FIELD), 'name': Field(name='name',type=&lt;class 'str'&gt;,default=&lt;da...appingproxy({}),kw_only=False,_field_type=_FIELD), 'probable_false_positive': Field(name='probable_false_positive',type=typing...appingproxy({}),kw_only=False,_field_type=_FIELD), 'probable_true_positive': Field(name='probable_true_positive',type=typing....appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('name', 'match', 'decode', 'probable_true_positive', 'probable_false_positive')</dl>
+
+</td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -459,7 +535,7 @@ Data descriptors defined here:<br>
 <font color="#000000" face="helvetica, arial"><a name="StandardMatch">class <strong>StandardMatch</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;method&nbsp;for&nbsp;standard&nbsp;match&nbsp;element.<br>&nbsp;</tt></td></tr>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;methods&nbsp;to&nbsp;match&nbsp;standard&nbsp;characters&nbsp;groups.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="StandardMatch-check_char"><strong>check_char</strong></a>(char: int) -&gt; Callable</dt><dd><tt>Generic&nbsp;method&nbsp;to&nbsp;generate&nbsp;a&nbsp;check&nbsp;for&nbsp;a&nbsp;specific&nbsp;character.</tt></dd></dl>
@@ -500,7 +576,8 @@ Data descriptors defined here:<br>
 22<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="StandardMatch-is_letter"><strong>is_letter</strong></a>(data: bytes, position: int) -&gt; Tuple[int, Optional[bytes]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;a&nbsp;position&nbsp;for&nbsp;an&nbsp;ASCII&nbsp;letter&nbsp;(upper&nbsp;or&nbsp;lower&nbsp;case).<br>
+<dl><dt><a name="StandardMatch-is_letter"><strong>is_letter</strong></a>(data: bytes, position: int) -&gt; Tuple[int, Optional[bytes]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;a&nbsp;position&nbsp;for&nbsp;an&nbsp;ASCII&nbsp;letter<br>
+(upper&nbsp;or&nbsp;lower&nbsp;case).<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardMatch">StandardMatch</a>.<a href="#StandardMatch-is_letter">is_letter</a>(b"a1Bc",&nbsp;0)<br>
 (1,&nbsp;b'a')<br>
@@ -576,7 +653,8 @@ True<br>
 26<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="StandardMatch-or_check_chars"><strong>or_check_chars</strong></a>(*chars: int) -&gt; Callable</dt><dd><tt>Generic&nbsp;method&nbsp;to&nbsp;generate&nbsp;wrapper&nbsp;for&nbsp;`check_char`&nbsp;with&nbsp;`ordered_choice`.</tt></dd></dl>
+<dl><dt><a name="StandardMatch-or_check_chars"><strong>or_check_chars</strong></a>(*chars: int) -&gt; Callable</dt><dd><tt>Generic&nbsp;method&nbsp;to&nbsp;generate&nbsp;wrapper&nbsp;for&nbsp;`check_char`<br>
+with&nbsp;`ordered_choice`.</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -606,7 +684,7 @@ Data descriptors defined here:<br>
 Data and other attributes defined here:<br>
 <dl><dt><strong>Csv</strong> = &lt;class 'PegParser.StandardRules.Csv'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;complete&nbsp;parser&nbsp;for&nbsp;CSV&nbsp;and&nbsp;multi-CSV.</tt></dl>
 
-<dl><dt><strong>Format</strong> = &lt;class 'PegParser.StandardRules.Format'&gt;<dd><tt>This&nbsp;sub-class&nbsp;implements&nbsp;standard&nbsp;data&nbsp;formats&nbsp;parsing&nbsp;rules.</tt></dl>
+<dl><dt><strong>Format</strong> = &lt;class 'PegParser.StandardRules.Format'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;standard&nbsp;data&nbsp;formats&nbsp;parsing&nbsp;rules.</tt></dl>
 
 <dl><dt><strong>Http</strong> = &lt;class 'PegParser.StandardRules.Http'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;complete&nbsp;parser&nbsp;for&nbsp;http.</tt></dl>
 
@@ -614,7 +692,9 @@ Data and other attributes defined here:<br>
 
 <dl><dt><strong>Network</strong> = &lt;class 'PegParser.StandardRules.Network'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;methods&nbsp;to&nbsp;parse&nbsp;Network&nbsp;formats&nbsp;and&nbsp;data.</tt></dl>
 
-<dl><dt><strong>Types</strong> = &lt;class 'PegParser.StandardRules.Types'&gt;<dd><tt>This&nbsp;sub-class&nbsp;implements&nbsp;standard&nbsp;types&nbsp;parsing&nbsp;rules.</tt></dl>
+<dl><dt><strong>Path</strong> = &lt;class 'PegParser.StandardRules.Path'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;Windows&nbsp;and&nbsp;NT&nbsp;path.</tt></dl>
+
+<dl><dt><strong>Types</strong> = &lt;class 'PegParser.StandardRules.Types'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;standard&nbsp;types&nbsp;parsing&nbsp;rules.</tt></dl>
 
 <dl><dt><strong>Url</strong> = &lt;class 'PegParser.StandardRules.Url'&gt;<dd><tt>This&nbsp;class&nbsp;implements&nbsp;methods&nbsp;to&nbsp;parse&nbsp;an&nbsp;URL.</tt></dl>
 
@@ -733,150 +813,258 @@ Data descriptors defined here:<br>
 <font color="#000000" face="helvetica, arial"><strong>StandardRules_Format</strong> = <a name="StandardRules_Format">class Format</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>This&nbsp;sub-class&nbsp;implements&nbsp;standard&nbsp;data&nbsp;formats&nbsp;parsing&nbsp;rules.<br>&nbsp;</tt></td></tr>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;standard&nbsp;data&nbsp;formats&nbsp;parsing&nbsp;rules.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="Format-base32"><strong>base32</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Iterable[Union[bool, Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;base32&nbsp;format.<br>
+<dl><dt><a name="Format-base32"><strong>base32</strong></a>(data: bytes, position: int = 0, lower: bool = False, insensitive: bool = False) -&gt; Tuple[int, Iterable[Union[bool, Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;base32&nbsp;format.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"AB======")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"AB======")<br>
 (8,&nbsp;[[],&nbsp;[b'A',&nbsp;b'B',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"ABC2====")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"ABC2====")<br>
 (8,&nbsp;[[],&nbsp;[b'A',&nbsp;b'B',&nbsp;b'C',&nbsp;b'2',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23===")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23===")<br>
 (8,&nbsp;[[],&nbsp;[b'A',&nbsp;b'B',&nbsp;b'C',&nbsp;b'2',&nbsp;b'3',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23ZT=")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23ZT=")<br>
 (8,&nbsp;[[],&nbsp;[b'A',&nbsp;b'B',&nbsp;b'C',&nbsp;b'2',&nbsp;b'3',&nbsp;b'Z',&nbsp;b'T',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23ZT7")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23ZT7")<br>
 (8,&nbsp;[[[b'A',&nbsp;b'B',&nbsp;b'C',&nbsp;b'2',&nbsp;b'3',&nbsp;b'Z',&nbsp;b'T',&nbsp;b'7']],&nbsp;True])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"AB")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"AB")<br>
 (0,&nbsp;[[],&nbsp;True])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"A1======")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"A1======")<br>
 (0,&nbsp;[[],&nbsp;True])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"A&nbsp;======")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"A&nbsp;======")<br>
 (0,&nbsp;[[],&nbsp;True])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23ZT7KF======")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32">base32</a>(b"ABC23ZT7KF======")<br>
 (16,&nbsp;[[[b'A',&nbsp;b'B',&nbsp;b'C',&nbsp;b'2',&nbsp;b'3',&nbsp;b'Z',&nbsp;b'T',&nbsp;b'7']],&nbsp;[b'K',&nbsp;b'F',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Format-base64"><strong>base64</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Iterable[Union[bool, Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;base64&nbsp;format.<br>
+<dl><dt><a name="Format-base32_insensitive"><strong>base32_insensitive</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Iterable[Union[bool, Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;insensitive&nbsp;base32&nbsp;format.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b'Y5==')<br>
-(4,&nbsp;[[],&nbsp;[b'Y',&nbsp;b'5',&nbsp;b'=',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b'Y5+=')<br>
-(4,&nbsp;[[],&nbsp;[b'Y',&nbsp;b'5',&nbsp;b'+',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b"Y5+/")<br>
-(4,&nbsp;[[[b'Y',&nbsp;b'5',&nbsp;b'+',&nbsp;b'/']],&nbsp;True])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b"09AZaz+/")<br>
-(8,&nbsp;[[[b'0',&nbsp;b'9',&nbsp;b'A',&nbsp;b'Z'],&nbsp;[b'a',&nbsp;b'z',&nbsp;b'+',&nbsp;b'/']],&nbsp;True])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b"++==")<br>
-(4,&nbsp;[[],&nbsp;[b'+',&nbsp;b'+',&nbsp;b'=',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b"///=")<br>
-(4,&nbsp;[[],&nbsp;[b'/',&nbsp;b'/',&nbsp;b'/',&nbsp;b'=']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b"a=")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"aB======")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'B',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"aBc2====")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'B',&nbsp;b'c',&nbsp;b'2',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"aBc23===")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'B',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"aBc23zt=")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'B',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'z',&nbsp;b't',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"aBc23zt7")<br>
+(8,&nbsp;[[[b'a',&nbsp;b'B',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'z',&nbsp;b't',&nbsp;b'7']],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"ab")<br>
 (0,&nbsp;[[],&nbsp;True])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base64">base64</a>(b"a&nbsp;==")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"a1======")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"a&nbsp;======")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_insensitive">base32_insensitive</a>(b"aBc23zt7kf======")<br>
+(16,&nbsp;[[[b'a',&nbsp;b'B',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'z',&nbsp;b't',&nbsp;b'7']],&nbsp;[b'k',&nbsp;b'f',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Format-base32_lower"><strong>base32_lower</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Iterable[Union[bool, Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;lower&nbsp;base32&nbsp;format.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"ab======")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'b',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"abc2====")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;b'2',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"abc23===")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"abc23zt=")<br>
+(8,&nbsp;[[],&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'z',&nbsp;b't',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"abc23zt7")<br>
+(8,&nbsp;[[[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'z',&nbsp;b't',&nbsp;b'7']],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"ab")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"a1======")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"a&nbsp;======")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base32_lower">base32_lower</a>(b"abc23zt7kf======")<br>
+(16,&nbsp;[[[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;b'2',&nbsp;b'3',&nbsp;b'z',&nbsp;b't',&nbsp;b'7']],&nbsp;[b'k',&nbsp;b'f',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Format-base64"><strong>base64</strong></a>(data: bytes, position: int = 0, urlsafe: bool = False) -&gt; Tuple[int, Iterable[Union[bool, Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;base64&nbsp;format.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b'Y5==')<br>
+(4,&nbsp;[[],&nbsp;[b'Y',&nbsp;b'5',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b'Y5+=')<br>
+(4,&nbsp;[[],&nbsp;[b'Y',&nbsp;b'5',&nbsp;b'+',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b"Y5+/")<br>
+(4,&nbsp;[[[b'Y',&nbsp;b'5',&nbsp;b'+',&nbsp;b'/']],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b"09AZaz+/")<br>
+(8,&nbsp;[[[b'0',&nbsp;b'9',&nbsp;b'A',&nbsp;b'Z'],&nbsp;[b'a',&nbsp;b'z',&nbsp;b'+',&nbsp;b'/']],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b"++==")<br>
+(4,&nbsp;[[],&nbsp;[b'+',&nbsp;b'+',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b"///=")<br>
+(4,&nbsp;[[],&nbsp;[b'/',&nbsp;b'/',&nbsp;b'/',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b"a=")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64">base64</a>(b"a&nbsp;==")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Format-base64_urlsafe"><strong>base64_urlsafe</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Iterable[Union[bool, Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;base64&nbsp;urlsafe&nbsp;format.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b'Y5==')<br>
+(4,&nbsp;[[],&nbsp;[b'Y',&nbsp;b'5',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b'Y5-=')<br>
+(4,&nbsp;[[],&nbsp;[b'Y',&nbsp;b'5',&nbsp;b'-',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b"Y5-_")<br>
+(4,&nbsp;[[[b'Y',&nbsp;b'5',&nbsp;b'-',&nbsp;b'_']],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b"09AZaz-_")<br>
+(8,&nbsp;[[[b'0',&nbsp;b'9',&nbsp;b'A',&nbsp;b'Z'],&nbsp;[b'a',&nbsp;b'z',&nbsp;b'-',&nbsp;b'_']],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b"--==")<br>
+(4,&nbsp;[[],&nbsp;[b'-',&nbsp;b'-',&nbsp;b'=',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b"___=")<br>
+(4,&nbsp;[[],&nbsp;[b'_',&nbsp;b'_',&nbsp;b'_',&nbsp;b'=']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b"a=")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b"a+==")<br>
+(0,&nbsp;[[],&nbsp;True])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base64_urlsafe">base64_urlsafe</a>(b"a/==")<br>
 (0,&nbsp;[[],&nbsp;True])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Format-base85"><strong>base85</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[Iterable[bytes]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;base85&nbsp;format.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base85">base85</a>(b'VPRomVE')<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base85">base85</a>(b'VPRomVE')<br>
 (5,&nbsp;[[b'V',&nbsp;b'P',&nbsp;b'R',&nbsp;b'o',&nbsp;b'm']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base85">base85</a>(b'VPRomVPO')<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base85">base85</a>(b'VPRomVPO')<br>
 (5,&nbsp;[[b'V',&nbsp;b'P',&nbsp;b'R',&nbsp;b'o',&nbsp;b'm']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base85">base85</a>(b"VPRomVPRn")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base85">base85</a>(b"VPRomVPRn")<br>
 (5,&nbsp;[[b'V',&nbsp;b'P',&nbsp;b'R',&nbsp;b'o',&nbsp;b'm']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base85">base85</a>(b"VPRomVPRom")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base85">base85</a>(b"VPRomVPRom")<br>
 (10,&nbsp;[[b'V',&nbsp;b'P',&nbsp;b'R',&nbsp;b'o',&nbsp;b'm'],&nbsp;[b'V',&nbsp;b'P',&nbsp;b'R',&nbsp;b'o',&nbsp;b'm']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base85">base85</a>(b"VPRomVPRom``+|}{;&lt;=&gt;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base85">base85</a>(b"VPRomVPRom``+|}{;&lt;=&gt;")<br>
 (20,&nbsp;[[b'V',&nbsp;b'P',&nbsp;b'R',&nbsp;b'o',&nbsp;b'm'],&nbsp;[b'V',&nbsp;b'P',&nbsp;b'R',&nbsp;b'o',&nbsp;b'm'],&nbsp;[b'`',&nbsp;b'`',&nbsp;b'+',&nbsp;b'|',&nbsp;b'}'],&nbsp;[b'{',&nbsp;b';',&nbsp;b'&lt;',&nbsp;b'=',&nbsp;b'&gt;']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-base85">base85</a>(b"VPRo&nbsp;mVPRom``+|}{;&lt;=&gt;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-base85">base85</a>(b"VPRo&nbsp;mVPRom``+|}{;&lt;=&gt;")<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Format-blanks"><strong>blanks</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;multiples&nbsp;blank&nbsp;characters.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"\n&nbsp;\n\r\n&nbsp;&nbsp;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-blanks">blanks</a>(b"\n&nbsp;\n\r\n&nbsp;&nbsp;")<br>
 (7,&nbsp;[b'\n',&nbsp;b'&nbsp;',&nbsp;b'\n',&nbsp;b'\r',&nbsp;b'\n',&nbsp;b'&nbsp;',&nbsp;b'&nbsp;'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"\r\t+")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-blanks">blanks</a>(b"\r\t+")<br>
 (2,&nbsp;[b'\r',&nbsp;b'\t'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"&nbsp;;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-blanks">blanks</a>(b"&nbsp;;")<br>
 (1,&nbsp;[b'&nbsp;'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-blanks">blanks</a>(b"a&nbsp;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-blanks">blanks</a>(b"a&nbsp;")<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Format-hex"><strong>hex</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;a&nbsp;word.<br>
+<dl><dt><a name="Format-hex"><strong>hex</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;hexadecimal&nbsp;characters.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-hex">hex</a>(b"abcdef")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hex">hex</a>(b"abcdef")<br>
 (6,&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;b'd',&nbsp;b'e',&nbsp;b'f'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-hex">hex</a>(b"abc0123")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hex">hex</a>(b"abc0123")<br>
 (7,&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;b'0',&nbsp;b'1',&nbsp;b'2',&nbsp;b'3'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-hex">hex</a>(b"0123abc")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hex">hex</a>(b"0123abc")<br>
 (7,&nbsp;[b'0',&nbsp;b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'a',&nbsp;b'b',&nbsp;b'c'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-hex">hex</a>(b"+123")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hex">hex</a>(b"+123")<br>
 (0,&nbsp;None)<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-hex">hex</a>(b"0B2;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hex">hex</a>(b"0B2;")<br>
 (3,&nbsp;[b'0',&nbsp;b'B',&nbsp;b'2'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-hex">hex</a>(b"a&nbsp;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hex">hex</a>(b"a&nbsp;")<br>
 (1,&nbsp;[b'a'])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Format-hexadecimal"><strong>hexadecimal</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[Iterable[bytes]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;multiples&nbsp;pairs&nbsp;of&nbsp;hexadecimal&nbsp;characters.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hexadecimal">hexadecimal</a>(b"abcdef")<br>
+(6,&nbsp;[[b'a',&nbsp;b'b'],&nbsp;[b'c',&nbsp;b'd'],&nbsp;[b'e',&nbsp;b'f']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hexadecimal">hexadecimal</a>(b"abc0123")<br>
+(6,&nbsp;[[b'a',&nbsp;b'b'],&nbsp;[b'c',&nbsp;b'0'],&nbsp;[b'1',&nbsp;b'2']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hexadecimal">hexadecimal</a>(b"0123abc")<br>
+(6,&nbsp;[[b'0',&nbsp;b'1'],&nbsp;[b'2',&nbsp;b'3'],&nbsp;[b'a',&nbsp;b'b']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hexadecimal">hexadecimal</a>(b"+123")<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hexadecimal">hexadecimal</a>(b"0B2;")<br>
+(2,&nbsp;[[b'0',&nbsp;b'B']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-hexadecimal">hexadecimal</a>(b"a&nbsp;")<br>
+(0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Format-integer"><strong>integer</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[Union[bool, bytes, Iterable[bytes]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;signed&nbsp;integer.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-integer">integer</a>(b"+1")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-integer">integer</a>(b"+1")<br>
 (2,&nbsp;[b'+',&nbsp;[b'1']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-integer">integer</a>(b"-123")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-integer">integer</a>(b"-123")<br>
 (4,&nbsp;[b'-',&nbsp;[b'1',&nbsp;b'2',&nbsp;b'3']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-integer">integer</a>(b"123")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-integer">integer</a>(b"123")<br>
 (3,&nbsp;[True,&nbsp;[b'1',&nbsp;b'2',&nbsp;b'3']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-integer">integer</a>(b"1a3")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-integer">integer</a>(b"1a3")<br>
 (1,&nbsp;[True,&nbsp;[b'1']])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-integer">integer</a>(b"+a")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-integer">integer</a>(b"+a")<br>
 (0,&nbsp;None)<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-integer">integer</a>(b"-abc")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-integer">integer</a>(b"-abc")<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Format-octal"><strong>octal</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;a&nbsp;word.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-octal">octal</a>(b"01234567")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-octal">octal</a>(b"01234567")<br>
 (8,&nbsp;[b'0',&nbsp;b'1',&nbsp;b'2',&nbsp;b'3',&nbsp;b'4',&nbsp;b'5',&nbsp;b'6',&nbsp;b'7'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-octal">octal</a>(b"789")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-octal">octal</a>(b"789")<br>
 (1,&nbsp;[b'7'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-octal">octal</a>(b"abc123")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-octal">octal</a>(b"abc123")<br>
 (0,&nbsp;None)<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-octal">octal</a>(b"+123")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-octal">octal</a>(b"+123")<br>
 (0,&nbsp;None)<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-octal">octal</a>(b"0;B2;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-octal">octal</a>(b"0;B2;")<br>
 (1,&nbsp;[b'0'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-octal">octal</a>(b"a&nbsp;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-octal">octal</a>(b"a&nbsp;")<br>
 (0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Format-optional_blanks"><strong>optional_blanks</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;optional&nbsp;multiples&nbsp;blank&nbsp;characters.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"\n&nbsp;\n\r\n&nbsp;&nbsp;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"\n&nbsp;\n\r\n&nbsp;&nbsp;")<br>
 (7,&nbsp;[b'\n',&nbsp;b'&nbsp;',&nbsp;b'\n',&nbsp;b'\r',&nbsp;b'\n',&nbsp;b'&nbsp;',&nbsp;b'&nbsp;'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"\r\t+")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"\r\t+")<br>
 (2,&nbsp;[b'\r',&nbsp;b'\t'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"&nbsp;;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"&nbsp;;")<br>
 (1,&nbsp;[b'&nbsp;'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"a&nbsp;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-optional_blanks">optional_blanks</a>(b"a&nbsp;")<br>
 (0,&nbsp;[])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Format-string_null_terminated_length"><strong>string_null_terminated_length</strong></a>(minimum_length: int = 3) -&gt; Callable</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;null&nbsp;terminated&nbsp;string<br>
+(like&nbsp;in&nbsp;C&nbsp;char*&nbsp;=&nbsp;"...")&nbsp;with&nbsp;`length`&nbsp;characters.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-string_null_terminated_length">string_null_terminated_length</a>()(b"abcdef\0")<br>
+(7,&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;[b'd',&nbsp;b'e',&nbsp;b'f'],&nbsp;b'\x00'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-string_null_terminated_length">string_null_terminated_length</a>(3)(b"abc\0")<br>
+(4,&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c',&nbsp;[],&nbsp;b'\x00'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-string_null_terminated_length">string_null_terminated_length</a>(5)(b"abc\0")<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-string_null_terminated_length">string_null_terminated_length</a>(5)(b"a\1bcdef\0")<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Format-unicode_null_terminated_length"><strong>unicode_null_terminated_length</strong></a>(minimum_length: int = 3) -&gt; Callable</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;null&nbsp;terminated&nbsp;string<br>
+(like&nbsp;in&nbsp;C&nbsp;char*&nbsp;=&nbsp;"...")&nbsp;with&nbsp;`length`&nbsp;characters.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-unicode_null_terminated_length">unicode_null_terminated_length</a>()(b"a\0b\0c\0d\0e\0f\0\0\0")<br>
+(14,&nbsp;[[b'a',&nbsp;b'\x00'],&nbsp;[b'b',&nbsp;b'\x00'],&nbsp;[b'c',&nbsp;b'\x00'],&nbsp;[[b'd',&nbsp;b'\x00'],&nbsp;[b'e',&nbsp;b'\x00'],&nbsp;[b'f',&nbsp;b'\x00']],&nbsp;b'\x00',&nbsp;b'\x00'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-unicode_null_terminated_length">unicode_null_terminated_length</a>(3)(b"a\0b\0c\0\0\0")<br>
+(8,&nbsp;[[b'a',&nbsp;b'\x00'],&nbsp;[b'b',&nbsp;b'\x00'],&nbsp;[b'c',&nbsp;b'\x00'],&nbsp;[],&nbsp;b'\x00',&nbsp;b'\x00'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-unicode_null_terminated_length">unicode_null_terminated_length</a>(5)(b"a\0b\0c\0\0\0")<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-unicode_null_terminated_length">unicode_null_terminated_length</a>(5)(b"a\1b\0c\0d\0e\0f\0\0\0")<br>
+(0,&nbsp;None)<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
 <dl><dt><a name="Format-word"><strong>word</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;a&nbsp;word.<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-word">word</a>(b"abc")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-word">word</a>(b"abc")<br>
 (3,&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-word">word</a>(b"abc;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-word">word</a>(b"abc;")<br>
 (3,&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c'])<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-word">word</a>(b"+123")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-word">word</a>(b"+123")<br>
 (0,&nbsp;None)<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-word">word</a>(b"1abc")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-word">word</a>(b"1abc")<br>
 (0,&nbsp;None)<br>
-&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Format.<a href="#StandardRules_Format-word">word</a>(b"a&nbsp;")<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.<a href="#Format">Format</a>.<a href="#StandardRules_Format-word">word</a>(b"a&nbsp;")<br>
 (1,&nbsp;[b'a'])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
@@ -1182,8 +1370,8 @@ integer,&nbsp;boolean,&nbsp;null).<br>
 (5,&nbsp;[b'F',&nbsp;b'A',&nbsp;b'L',&nbsp;b'S',&nbsp;b'E'])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Json-permissive_full"><strong>permissive_full</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;all&nbsp;JSON&nbsp;permissive&nbsp;type&nbsp;(dict,&nbsp;<a href="builtins.html#list">list</a>,&nbsp;string,&nbsp;float,<br>
-integer,&nbsp;boolean,&nbsp;null).<br>
+<dl><dt><a name="Json-permissive_full"><strong>permissive_full</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;all&nbsp;JSON&nbsp;permissive&nbsp;type<br>
+(dict,&nbsp;<a href="builtins.html#list">list</a>,&nbsp;string,&nbsp;float,&nbsp;integer,&nbsp;boolean,&nbsp;null).<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_full">permissive_full</a>(b'{}')<br>
 (2,&nbsp;[[b'{'],&nbsp;[],&nbsp;[],&nbsp;[b'}']])<br>
@@ -1244,7 +1432,8 @@ integer,&nbsp;boolean,&nbsp;null).<br>
 (9,&nbsp;[b'u',&nbsp;b'n',&nbsp;b'd',&nbsp;b'e',&nbsp;b'F',&nbsp;b'i',&nbsp;b'n',&nbsp;b'e',&nbsp;b'd'])<br>
 &gt;&gt;&gt;</tt></dd></dl>
 
-<dl><dt><a name="Json-permissive_simple_value"><strong>permissive_simple_value</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;`simple`&nbsp;value&nbsp;(null,&nbsp;boolean,&nbsp;integer,&nbsp;float,&nbsp;string).<br>
+<dl><dt><a name="Json-permissive_simple_value"><strong>permissive_simple_value</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[List[Union[bytes, List[Union[bytes, List[bytes]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;for&nbsp;permissive&nbsp;`simple`&nbsp;value<br>
+(null,&nbsp;boolean,&nbsp;integer,&nbsp;float,&nbsp;string).<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Json.<a href="#StandardRules_Json-permissive_simple_value">permissive_simple_value</a>(b'nUll')<br>
 (4,&nbsp;[b'n',&nbsp;b'U',&nbsp;b'l',&nbsp;b'l'])<br>
@@ -1527,10 +1716,170 @@ Data descriptors defined here:<br>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>StandardRules_Path</strong> = <a name="StandardRules_Path">class Path</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;Windows&nbsp;and&nbsp;NT&nbsp;path.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Path-base_filename"><strong>base_filename</strong></a>(data: bytes, position: int = 0, in_extension: bool = False) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;base&nbsp;filename.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-base_filename">base_filename</a>(b'test')<br>
+(4,&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-base_filename">base_filename</a>(b't&nbsp;test*test')<br>
+(6,&nbsp;[b't',&nbsp;b'&nbsp;',&nbsp;b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-base_filename">base_filename</a>(b'$MFT')<br>
+(4,&nbsp;[b'$',&nbsp;b'M',&nbsp;b'F',&nbsp;b'T'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-base_filename">base_filename</a>(b'\\test')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-drive_path"><strong>drive_path</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[Union[bytes, Iterable[Iterable[Iterable[Union[bytes, Iterable[Union[bytes, Iterable[bytes]]]]]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;Windows&nbsp;path&nbsp;starting&nbsp;by&nbsp;drive&nbsp;letter.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-drive_path">drive_path</a>(b'D:\\test')<br>
+(7,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-drive_path">drive_path</a>(b'D:\\test\\')<br>
+(8,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-drive_path">drive_path</a>(b'D:\\test\\1\\2\\test.txt')<br>
+(20,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-extensions"><strong>extensions</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[Iterable[Union[bytes, Iterable[bytes]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;extensions.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-extensions">extensions</a>(b'.exe')<br>
+(4,&nbsp;[[b'.',&nbsp;[b'e',&nbsp;b'x',&nbsp;b'e']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-extensions">extensions</a>(b'.dll')<br>
+(4,&nbsp;[[b'.',&nbsp;[b'd',&nbsp;b'l',&nbsp;b'l']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-extensions">extensions</a>(b'.py')<br>
+(3,&nbsp;[[b'.',&nbsp;[b'p',&nbsp;b'y']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-extensions">extensions</a>(b'.c.txt.zip.tar.gz')<br>
+(17,&nbsp;[[b'.',&nbsp;[b'c']],&nbsp;[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']],&nbsp;[b'.',&nbsp;[b'z',&nbsp;b'i',&nbsp;b'p']],&nbsp;[b'.',&nbsp;[b't',&nbsp;b'a',&nbsp;b'r']],&nbsp;[b'.',&nbsp;[b'g',&nbsp;b'z']]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-filename"><strong>filename</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[Iterable[Iterable[Union[bytes, Iterable[bytes]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;filename.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename">filename</a>(b'test')<br>
+(4,&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename">filename</a>(b'test*test.test')<br>
+(4,&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename">filename</a>(b'$MFT.txt.tar.gz')<br>
+(15,&nbsp;[[b'$',&nbsp;b'M',&nbsp;b'F',&nbsp;b'T'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']],&nbsp;[b'.',&nbsp;[b't',&nbsp;b'a',&nbsp;b'r']],&nbsp;[b'.',&nbsp;[b'g',&nbsp;b'z']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename">filename</a>(b'\\test.py')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-filename_extension"><strong>filename_extension</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[Iterable[Iterable[Union[bytes, Iterable[bytes]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;filename&nbsp;with&nbsp;extension.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename_extension">filename_extension</a>(b'test.exe')<br>
+(8,&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b'e',&nbsp;b'x',&nbsp;b'e']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename_extension">filename_extension</a>(b'test*test.test')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename_extension">filename_extension</a>(b'$MFT.txt.tar.gz')<br>
+(15,&nbsp;[[b'$',&nbsp;b'M',&nbsp;b'F',&nbsp;b'T'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']],&nbsp;[b'.',&nbsp;[b't',&nbsp;b'a',&nbsp;b'r']],&nbsp;[b'.',&nbsp;[b'g',&nbsp;b'z']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-filename_extension">filename_extension</a>(b'\\test.py')<br>
+(0,&nbsp;None)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-linux_path"><strong>linux_path</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;Linux&nbsp;path.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-linux_path">linux_path</a>(b'./test')<br>
+(6,&nbsp;[b'.',&nbsp;[[[b'/'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-linux_path">linux_path</a>(b'/root/test')<br>
+(10,&nbsp;[[[b'/'],&nbsp;[b'r',&nbsp;b'o',&nbsp;b'o',&nbsp;b't']],&nbsp;[[b'/'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-linux_path">linux_path</a>(b'/root/test.txt')<br>
+(14,&nbsp;[[[b'/'],&nbsp;[b'r',&nbsp;b'o',&nbsp;b'o',&nbsp;b't']],&nbsp;[[b'/'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-linux_path">linux_path</a>(b'/1/2/3/.././../4/test.tar.gz')<br>
+(28,&nbsp;[[[b'/'],&nbsp;[b'1']],&nbsp;[[b'/'],&nbsp;[b'2']],&nbsp;[[b'/'],&nbsp;[b'3']],&nbsp;[[b'/'],&nbsp;[b'.',&nbsp;b'.']],&nbsp;[[b'/'],&nbsp;[b'.']],&nbsp;[[b'/'],&nbsp;[b'.',&nbsp;b'.']],&nbsp;[[b'/'],&nbsp;[b'4']],&nbsp;[[b'/'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'a',&nbsp;b'r']],&nbsp;[b'.',&nbsp;[b'g',&nbsp;b'z']]]]]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-nt_path"><strong>nt_path</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;NT&nbsp;path.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-nt_path">nt_path</a>(b'\\\\?\\test')<br>
+(8,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'?',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-nt_path">nt_path</a>(b'\\\\.\\test\\')<br>
+(9,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'.',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-nt_path">nt_path</a>(b'\\\\.\\test\\1\\2\\test.txt')<br>
+(21,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-path"><strong>path</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;system&nbsp;path.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'./test')<br>
+(6,&nbsp;[b'.',&nbsp;[[[b'/'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'/root/test')<br>
+(10,&nbsp;[[[b'/'],&nbsp;[b'r',&nbsp;b'o',&nbsp;b'o',&nbsp;b't']],&nbsp;[[b'/'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'/root/test.txt')<br>
+(14,&nbsp;[[[b'/'],&nbsp;[b'r',&nbsp;b'o',&nbsp;b'o',&nbsp;b't']],&nbsp;[[b'/'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'/1/2/3/.././../4/test.tar.gz')<br>
+(28,&nbsp;[[[b'/'],&nbsp;[b'1']],&nbsp;[[b'/'],&nbsp;[b'2']],&nbsp;[[b'/'],&nbsp;[b'3']],&nbsp;[[b'/'],&nbsp;[b'.',&nbsp;b'.']],&nbsp;[[b'/'],&nbsp;[b'.']],&nbsp;[[b'/'],&nbsp;[b'.',&nbsp;b'.']],&nbsp;[[b'/'],&nbsp;[b'4']],&nbsp;[[b'/'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'a',&nbsp;b'r']],&nbsp;[b'.',&nbsp;[b'g',&nbsp;b'z']]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'.\\test')<br>
+(6,&nbsp;[b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'.\\test\\')<br>
+(7,&nbsp;[b'.',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'.\\test\\1\\2\\test.txt')<br>
+(19,&nbsp;[b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'\\\\?\\test')<br>
+(8,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'?',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'\\\\.\\test\\')<br>
+(9,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'.',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'\\\\.\\test\\1\\2\\test.txt')<br>
+(21,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'D:\\test')<br>
+(7,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'D:\\test\\')<br>
+(8,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-path">path</a>(b'D:\\test\\1\\2\\test.txt')<br>
+(20,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-relative_path"><strong>relative_path</strong></a>(data: bytes, position: int = 0, unix: bool = False) -&gt; Tuple[int, Optional[Iterable[Union[bytes, Iterable[Iterable[Iterable[Union[bytes, Iterable[Union[bytes, Iterable[Union[bytes, Iterable[bytes]]]]]]]]]]]]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;relative&nbsp;path.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-relative_path">relative_path</a>(b'.\\test')<br>
+(6,&nbsp;[b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-relative_path">relative_path</a>(b'.\\test\\')<br>
+(7,&nbsp;[b'.',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-relative_path">relative_path</a>(b'.\\test\\1\\2\\test.txt')<br>
+(19,&nbsp;[b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Path-windows_path"><strong>windows_path</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable]]</dt><dd><tt>This&nbsp;function&nbsp;matchs&nbsp;Windows&nbsp;path.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'.\\test')<br>
+(6,&nbsp;[b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'.\\test\\')<br>
+(7,&nbsp;[b'.',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'.\\test\\1\\2\\test.txt')<br>
+(19,&nbsp;[b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'\\\\?\\test')<br>
+(8,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'?',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'\\\\.\\test\\')<br>
+(9,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'.',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'\\\\.\\test\\1\\2\\test.txt')<br>
+(21,&nbsp;[b'\\',&nbsp;b'\\',&nbsp;b'.',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'D:\\test')<br>
+(7,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]]])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'D:\\test\\')<br>
+(8,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']]],&nbsp;b'\\']])<br>
+&gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Path.<a href="#StandardRules_Path-windows_path">windows_path</a>(b'D:\\test\\1\\2\\test.txt')<br>
+(20,&nbsp;[b'D',&nbsp;b':',&nbsp;[[[b'\\'],&nbsp;[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't']],&nbsp;[[b'\\'],&nbsp;[b'1']],&nbsp;[[b'\\'],&nbsp;[b'2']],&nbsp;[[b'\\'],&nbsp;[[b't',&nbsp;b'e',&nbsp;b's',&nbsp;b't'],&nbsp;[[b'.',&nbsp;[b't',&nbsp;b'x',&nbsp;b't']]]]]]])<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#000000" face="helvetica, arial"><strong>StandardRules_Types</strong> = <a name="StandardRules_Types">class Types</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>This&nbsp;sub-class&nbsp;implements&nbsp;standard&nbsp;types&nbsp;parsing&nbsp;rules.<br>&nbsp;</tt></td></tr>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;standard&nbsp;types&nbsp;parsing&nbsp;rules.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="Types-bool"><strong>bool</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Optional[Iterable[bytes]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;multiples&nbsp;digits.<br>
@@ -1657,7 +2006,8 @@ Data descriptors defined here:<br>
 <td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;methods&nbsp;to&nbsp;parse&nbsp;an&nbsp;URL.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="Url-form_data"><strong>form_data</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Iterable[Iterable[Union[bytes, Iterable[Union[bytes, Iterable[bytes]]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;the&nbsp;form&nbsp;data&nbsp;format&nbsp;used&nbsp;in&nbsp;POST&nbsp;body&nbsp;and&nbsp;GET&nbsp;query.<br>
+<dl><dt><a name="Url-form_data"><strong>form_data</strong></a>(data: bytes, position: int = 0) -&gt; Tuple[int, Iterable[Iterable[Union[bytes, Iterable[Union[bytes, Iterable[bytes]]]]]]]</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;the&nbsp;form&nbsp;data&nbsp;format&nbsp;used&nbsp;in&nbsp;POST<br>
+body&nbsp;and&nbsp;GET&nbsp;query.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#StandardRules">StandardRules</a>.Url.<a href="#StandardRules_Url-form_data">form_data</a>(b"abc=def&amp;def=abc")<br>
 (15,&nbsp;[[[b'a',&nbsp;b'b',&nbsp;b'c'],&nbsp;b'=',&nbsp;[b'd',&nbsp;b'e',&nbsp;b'f']],&nbsp;[[b'&amp;',&nbsp;[[b'd',&nbsp;b'e',&nbsp;b'f'],&nbsp;b'=',&nbsp;[b'a',&nbsp;b'b',&nbsp;b'c']]]]])<br>
@@ -1853,6 +2203,7 @@ different&nbsp;error&nbsp;handling&nbsp;scheme.&nbsp;&nbsp;Default&nbsp;is&nbsp;
 errors&nbsp;raise&nbsp;a&nbsp;ValueError.&nbsp;&nbsp;Other&nbsp;possible&nbsp;values&nbsp;are&nbsp;'ignore',&nbsp;'replace'<br>
 and&nbsp;'backslashreplace'&nbsp;as&nbsp;well&nbsp;as&nbsp;any&nbsp;other&nbsp;name&nbsp;registered&nbsp;with<br>
 codecs.register_error&nbsp;that&nbsp;can&nbsp;handle&nbsp;ValueErrors.</tt></dd></dl>
+ <dl><dt><a name="-filename_false_positive"><strong>filename_false_positive</strong></a>(filename: bytes) -&gt; bool</dt></dl>
  <dl><dt><a name="-get_http_content"><strong>get_http_content</strong></a>(data: Iterable[Union[bytes, Iterable]]) -&gt; Tuple[Dict[str, List[bytearray]], List[Tuple[str, str]], int, Optional[str], Optional[str]]</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;parsed&nbsp;HTTP&nbsp;response&nbsp;or&nbsp;request&nbsp;and&nbsp;use&nbsp;the&nbsp;parsing<br>
 to&nbsp;transform&nbsp;into&nbsp;useful&nbsp;python&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
  <dl><dt><a name="-get_json"><strong>get_json</strong></a>(data: bytes, permissive: bool = False) -&gt; Union[List, Dict, bool, int, float, NoneType]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;JSON&nbsp;content&nbsp;as&nbsp;python&nbsp;<a href="builtins.html#object">object</a>.<br>
@@ -1881,6 +2232,21 @@ defaultdict(&lt;class&nbsp;'<a href="builtins.html#list">list</a>'&gt;,&nbsp;{'c
 &gt;&gt;&gt;&nbsp;<a href="#-get_ordered_matchs">get_ordered_matchs</a>(<a href="#StandardRules">StandardRules</a>.Csv.multi(b'"1","","other"\n"2"\n"3","test"\n\r\n"1","","other"\r\n"2"\r\n"3","test"')[1])<br>
 [('multi_csv',&nbsp;bytearray(b'"1","","other"\n"2"\n"3","test"\n\r\n"1","","other"\r\n"2"\r\n"3","test"')),&nbsp;('csv',&nbsp;bytearray(b'"1","","other"\n"2"\n"3","test"')),&nbsp;('csv_line',&nbsp;bytearray(b'"1","","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"1"')),&nbsp;('csv_value',&nbsp;bytearray(b'1')),&nbsp;('csv_values',&nbsp;bytearray(b',"","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'""')),&nbsp;('csv_value',&nbsp;bytearray(b'')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"other"')),&nbsp;('csv_value',&nbsp;bytearray(b'other')),&nbsp;('csv_line',&nbsp;bytearray(b'"2"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"2"')),&nbsp;('csv_value',&nbsp;bytearray(b'2')),&nbsp;('csv_values',&nbsp;bytearray(b'')),&nbsp;('csv_line',&nbsp;bytearray(b'"3","test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"3"')),&nbsp;('csv_value',&nbsp;bytearray(b'3')),&nbsp;('csv_values',&nbsp;bytearray(b',"test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"test"')),&nbsp;('csv_value',&nbsp;bytearray(b'test')),&nbsp;('csv',&nbsp;bytearray(b'"1","","other"\r\n"2"\r\n"3","test"')),&nbsp;('csv_line',&nbsp;bytearray(b'"1","","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"1"')),&nbsp;('csv_value',&nbsp;bytearray(b'1')),&nbsp;('csv_values',&nbsp;bytearray(b',"","other"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'""')),&nbsp;('csv_value',&nbsp;bytearray(b'')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"other"')),&nbsp;('csv_value',&nbsp;bytearray(b'other')),&nbsp;('csv_line',&nbsp;bytearray(b'"2"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"2"')),&nbsp;('csv_value',&nbsp;bytearray(b'2')),&nbsp;('csv_values',&nbsp;bytearray(b'')),&nbsp;('csv_line',&nbsp;bytearray(b'"3","test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"3"')),&nbsp;('csv_value',&nbsp;bytearray(b'3')),&nbsp;('csv_values',&nbsp;bytearray(b',"test"')),&nbsp;('csv_quoted_value',&nbsp;bytearray(b'"test"')),&nbsp;('csv_value',&nbsp;bytearray(b'test'))]<br>
 &gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-host_port_false_positive"><strong>host_port_false_positive</strong></a>(host_port: bytes) -&gt; bool</dt></dl>
+ <dl><dt><a name="-host_port_true_positive"><strong>host_port_true_positive</strong></a>(host_port: bytes) -&gt; bool</dt></dl>
+ <dl><dt><a name="-linux_path_false_positive"><strong>linux_path_false_positive</strong></a>(linux_path: bytes) -&gt; bool</dt></dl>
+ <dl><dt><a name="-linux_path_true_positive"><strong>linux_path_true_positive</strong></a>(linux_path: bytes) -&gt; bool</dt></dl>
+ <dl><dt><a name="-match"><strong>match</strong></a>(rule: Callable, data: bytes, minimum_length: int = 0) -&gt; Optional[bytes]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;full&nbsp;match&nbsp;for&nbsp;a&nbsp;rule&nbsp;on&nbsp;data.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-match">match</a>(<a href="#StandardRules">StandardRules</a>.Path.path,&nbsp;b'D:\\test\\1\\2\\test.txt\0',&nbsp;7)<br>
+b'D:\\test\\1\\2\\test.txt'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-match">match</a>(<a href="#StandardRules">StandardRules</a>.Path.path,&nbsp;b'\\\\?\\test\\1\\2\\test.txt**',&nbsp;7)<br>
+b'\\\\?\\test\\1\\2\\test.txt'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-match">match</a>(<a href="#StandardRules">StandardRules</a>.Path.path,&nbsp;b'/1/2/3/.././../4/test.tar.gz\7',&nbsp;7)<br>
+b'/1/2/3/.././../4/test.tar.gz'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-match">match</a>(<a href="#StandardRules">StandardRules</a>.Path.path,&nbsp;b'./test.txt\0\1',&nbsp;7)<br>
+b'./test.txt'<br>
+&gt;&gt;&gt;</tt></dd></dl>
  <dl><dt><a name="-match_getter"><strong>match_getter</strong></a>(data: Iterable[Union[bytes, bool, Iterable]], process: Callable[[str], bytearray]) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;gets&nbsp;all&nbsp;matchs&nbsp;and&nbsp;call&nbsp;`process`<br>
 with&nbsp;`_match_name`&nbsp;and&nbsp;`data`&nbsp;as&nbsp;parameters.</tt></dd></dl>
  <dl><dt><a name="-mjson_file_parse"><strong>mjson_file_parse</strong></a>(file: _io._BufferedIOBase, permissive: bool = False) -&gt; Iterable[Union[List, Dict, bool, int, float, NoneType]]</dt><dd><tt>This&nbsp;generator&nbsp;parses&nbsp;mJSON&nbsp;file&nbsp;and&nbsp;yield&nbsp;JSON&nbsp;for&nbsp;each&nbsp;line.<br>
@@ -1903,6 +2269,9 @@ parses&nbsp;it&nbsp;and&nbsp;generates&nbsp;the&nbsp;<a href="#HttpResponse">Htt
 &gt;&gt;&gt;&nbsp;<a href="#-parse_http_response">parse_http_response</a>(b'HTTP/1.1&nbsp;200&nbsp;OK\r\nContent-Type:&nbsp;application/json\r\nContent-Length:&nbsp;12\r\n\r\nabcdefabcdef')<br>
 <a href="#HttpResponse">HttpResponse</a>(magic=b'HTTP',&nbsp;version=1.1,&nbsp;code=200,&nbsp;reason='OK',&nbsp;headers=[('Content-Type',&nbsp;'application/json'),&nbsp;('Content-Length',&nbsp;'12')],&nbsp;body=b'abcdefabcdef',&nbsp;content_length=12,&nbsp;content_type='application/json')<br>
 &gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-unhexlify"><strong>unhexlify</strong></a>(hexstr, /)</dt><dd><tt>Binary&nbsp;data&nbsp;of&nbsp;hexadecimal&nbsp;representation.<br>
+&nbsp;<br>
+hexstr&nbsp;must&nbsp;contain&nbsp;an&nbsp;even&nbsp;number&nbsp;of&nbsp;hex&nbsp;digits&nbsp;(upper&nbsp;or&nbsp;lower&nbsp;case).</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -1918,12 +2287,13 @@ parses&nbsp;it&nbsp;and&nbsp;generates&nbsp;the&nbsp;<a href="#HttpResponse">Htt
 <strong>Union</strong> = typing.Union<br>
 <strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__copyright__</strong> = '<font color="#c040c0">\n</font>PegParser  Copyright (C) 2025  Maurice Lambert<font color="#c040c0">\n</font>...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
-<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements a PEG (Parsing Expressi...64,<font color="#c040c0">\n</font>base85, CSV, JSON (strict and permissive)...<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This package implements a PEG (Parsing Expressi...SON (strict and permissive), system file path...<font color="#c040c0">\n</font>'<br>
 <strong>__license__</strong> = 'GPL-3.0 License'<br>
 <strong>__maintainer__</strong> = 'Maurice Lambert'<br>
 <strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
 <strong>__url__</strong> = 'https://github.com/mauricelambert/PegParser'<br>
 <strong>copyright</strong> = '<font color="#c040c0">\n</font>PegParser  Copyright (C) 2025  Maurice Lambert<font color="#c040c0">\n</font>...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>formats</strong> = {'base32': Format(name='base32', match=functools.partial(&lt;f...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DDFC0&gt;), 'base32_insensitive': Format(name='base32_insensitive', match=functool...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DE320&gt;), 'base32_lower': Format(name='base32_lower', match=functools.part...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DE170&gt;), 'base64': Format(name='base64', match=functools.partial(&lt;f...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DDD80&gt;), 'base64_urlsafe': Format(name='base64_urlsafe', match=functools.pa...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DDEA0&gt;), 'base85': Format(name='base85', match=functools.partial(&lt;f...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DDC60&gt;), 'csv': Format(name='csv', match=functools.partial(&lt;func...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DDB40&gt;), 'filename': Format(name='filename', match=functools.partial(...n filename_false_positive at 0x0000020BC37DC670&gt;), 'fqdn': Format(name='fqdn', match=functools.partial(&lt;fun...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DD990&gt;), 'hex': Format(name='hex', match=functools.partial(&lt;func...sitive=&lt;function &lt;lambda&gt; at 0x0000020BC37DE440&gt;), ...}<br>
 <strong>license</strong> = 'GPL-3.0 License'</td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#7799ee">

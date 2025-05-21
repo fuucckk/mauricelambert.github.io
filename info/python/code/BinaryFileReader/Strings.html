@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Strings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Strings</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="strings.py">strings.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;exports&nbsp;strings&nbsp;from&nbsp;binary&nbsp;file.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;<a href="#Strings">Strings</a>.py<br>
+&nbsp;<br>
+2&nbsp;items&nbsp;had&nbsp;no&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Strings">Strings</a>.<a href="#Strings">Strings</a>.__init__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Strings">Strings</a>.main<br>
+4&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#Strings">Strings</a><br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#Strings">Strings</a>.<a href="#Strings">Strings</a><br>
+&nbsp;&nbsp;22&nbsp;tests&nbsp;in&nbsp;<a href="#Strings">Strings</a>.<a href="#Strings">Strings</a>.analyse_character<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;tests&nbsp;in&nbsp;<a href="#Strings">Strings</a>.<a href="#Strings">Strings</a>.reader<br>
+37&nbsp;tests&nbsp;in&nbsp;6&nbsp;items.<br>
+37&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"))<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.reader():&nbsp;print(line)<br>
+abcde<br>
+lmnopqrst<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"),&nbsp;null_terminated=False)<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.reader():&nbsp;print(line)<br>
+abcde<br>
+ghijk<br>
+lmnopqrst<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Strings.html#Strings">Strings</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Strings">class <strong>Strings</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Strings">Strings</a>(file:&nbsp;_io._BufferedIOBase,&nbsp;minimum_length:&nbsp;int&nbsp;=&nbsp;5,&nbsp;null_terminated:&nbsp;bool&nbsp;=&nbsp;True)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;exports&nbsp;strings&nbsp;from&nbsp;binary&nbsp;file.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"))<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.<a href="#Strings-reader">reader</a>():&nbsp;print(line)<br>
+abcde<br>
+lmnopqrst<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"),&nbsp;null_terminated=False)<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.<a href="#Strings-reader">reader</a>():&nbsp;print(line)<br>
+abcde<br>
+ghijk<br>
+lmnopqrst<br>
+&gt;&gt;&gt;<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Strings-__init__"><strong>__init__</strong></a>(self, file: _io._BufferedIOBase, minimum_length: int = 5, null_terminated: bool = True)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Strings-analyse_character"><strong>analyse_character</strong></a>(self, char: bytes) -&gt; Tuple[bool, bool]</dt><dd><tt>This&nbsp;function&nbsp;analyses&nbsp;a&nbsp;byte&nbsp;and&nbsp;returns&nbsp;boolean&nbsp;to&nbsp;know&nbsp;when&nbsp;a&nbsp;string&nbsp;is&nbsp;terminated.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(None)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\0')<br>
+(True,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_unicode_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\1')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.current_string<br>
+''<br>
+&gt;&gt;&gt;&nbsp;strings.current_unicode_string<br>
+''<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(None,&nbsp;null_terminated=False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\0')<br>
+(True,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_unicode_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\1')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#Strings-analyse_character">analyse_character</a>(b'\1')<br>
+(True,&nbsp;True)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Strings-reader"><strong>reader</strong></a>(self) -&gt; Iterator[str]</dt><dd><tt>This&nbsp;function&nbsp;reads&nbsp;character&nbsp;after&nbsp;character&nbsp;and&nbsp;yield&nbsp;strings.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"))<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.<a href="#Strings-reader">reader</a>():&nbsp;print(line)<br>
+abcde<br>
+lmnopqrst<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"),&nbsp;null_terminated=False)<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.<a href="#Strings-reader">reader</a>():&nbsp;print(line)<br>
+abcde<br>
+ghijk<br>
+lmnopqrst<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Strings']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>BinaryFileReader  Copyright (C) 2021, 2025  Mau...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This file exports strings from binary file.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/BinaryFileReader'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

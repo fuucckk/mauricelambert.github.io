@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module HexaReader</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>HexaReader</strong></big></big> (version 1.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="hexareader.py">hexareader.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;implements&nbsp;a&nbsp;hexadecimal&nbsp;reader.<br>
+&nbsp;<br>
+~#&nbsp;python3&nbsp;-m&nbsp;doctest&nbsp;-v&nbsp;HexaReader.py<br>
+&nbsp;<br>
+2&nbsp;items&nbsp;had&nbsp;no&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HexaReader.HexaReader.__init__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HexaReader.main<br>
+4&nbsp;items&nbsp;passed&nbsp;all&nbsp;tests:<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;HexaReader<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;HexaReader.HexaReader<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;tests&nbsp;in&nbsp;HexaReader.HexaReader.get_line<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;tests&nbsp;in&nbsp;HexaReader.HexaReader.reader<br>
+11&nbsp;tests&nbsp;in&nbsp;6&nbsp;items.<br>
+11&nbsp;passed&nbsp;and&nbsp;0&nbsp;failed.<br>
+Test&nbsp;passed.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;hexareader&nbsp;=&nbsp;HexaReader(BytesIO(bytes(range(256))))<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;hexareader.reader():&nbsp;print(line)<br>
+00&nbsp;01&nbsp;02&nbsp;03&nbsp;04&nbsp;05&nbsp;06&nbsp;07&nbsp;08&nbsp;09&nbsp;0a&nbsp;0b&nbsp;0c&nbsp;0d&nbsp;0e&nbsp;0f&nbsp;&nbsp;&nbsp;................<br>
+10&nbsp;11&nbsp;12&nbsp;13&nbsp;14&nbsp;15&nbsp;16&nbsp;17&nbsp;18&nbsp;19&nbsp;1a&nbsp;1b&nbsp;1c&nbsp;1d&nbsp;1e&nbsp;1f&nbsp;&nbsp;&nbsp;................<br>
+20&nbsp;21&nbsp;22&nbsp;23&nbsp;24&nbsp;25&nbsp;26&nbsp;27&nbsp;28&nbsp;29&nbsp;2a&nbsp;2b&nbsp;2c&nbsp;2d&nbsp;2e&nbsp;2f&nbsp;&nbsp;&nbsp;&nbsp;!"#$%&amp;'()*+,-./<br>
+30&nbsp;31&nbsp;32&nbsp;33&nbsp;34&nbsp;35&nbsp;36&nbsp;37&nbsp;38&nbsp;39&nbsp;3a&nbsp;3b&nbsp;3c&nbsp;3d&nbsp;3e&nbsp;3f&nbsp;&nbsp;&nbsp;0123456789:;&lt;=&gt;?<br>
+40&nbsp;41&nbsp;42&nbsp;43&nbsp;44&nbsp;45&nbsp;46&nbsp;47&nbsp;48&nbsp;49&nbsp;4a&nbsp;4b&nbsp;4c&nbsp;4d&nbsp;4e&nbsp;4f&nbsp;&nbsp;&nbsp;@ABCDEFGHIJKLMNO<br>
+50&nbsp;51&nbsp;52&nbsp;53&nbsp;54&nbsp;55&nbsp;56&nbsp;57&nbsp;58&nbsp;59&nbsp;5a&nbsp;5b&nbsp;5c&nbsp;5d&nbsp;5e&nbsp;5f&nbsp;&nbsp;&nbsp;PQRSTUVWXYZ[\]^_<br>
+60&nbsp;61&nbsp;62&nbsp;63&nbsp;64&nbsp;65&nbsp;66&nbsp;67&nbsp;68&nbsp;69&nbsp;6a&nbsp;6b&nbsp;6c&nbsp;6d&nbsp;6e&nbsp;6f&nbsp;&nbsp;&nbsp;`abcdefghijklmno<br>
+70&nbsp;71&nbsp;72&nbsp;73&nbsp;74&nbsp;75&nbsp;76&nbsp;77&nbsp;78&nbsp;79&nbsp;7a&nbsp;7b&nbsp;7c&nbsp;7d&nbsp;7e&nbsp;7f&nbsp;&nbsp;&nbsp;pqrstuvwxyz{|}~.<br>
+80&nbsp;81&nbsp;82&nbsp;83&nbsp;84&nbsp;85&nbsp;86&nbsp;87&nbsp;88&nbsp;89&nbsp;8a&nbsp;8b&nbsp;8c&nbsp;8d&nbsp;8e&nbsp;8f&nbsp;&nbsp;&nbsp;................<br>
+90&nbsp;91&nbsp;92&nbsp;93&nbsp;94&nbsp;95&nbsp;96&nbsp;97&nbsp;98&nbsp;99&nbsp;9a&nbsp;9b&nbsp;9c&nbsp;9d&nbsp;9e&nbsp;9f&nbsp;&nbsp;&nbsp;................<br>
+a0&nbsp;a1&nbsp;a2&nbsp;a3&nbsp;a4&nbsp;a5&nbsp;a6&nbsp;a7&nbsp;a8&nbsp;a9&nbsp;aa&nbsp;ab&nbsp;ac&nbsp;ad&nbsp;ae&nbsp;af&nbsp;&nbsp;&nbsp;................<br>
+b0&nbsp;b1&nbsp;b2&nbsp;b3&nbsp;b4&nbsp;b5&nbsp;b6&nbsp;b7&nbsp;b8&nbsp;b9&nbsp;ba&nbsp;bb&nbsp;bc&nbsp;bd&nbsp;be&nbsp;bf&nbsp;&nbsp;&nbsp;................<br>
+c0&nbsp;c1&nbsp;c2&nbsp;c3&nbsp;c4&nbsp;c5&nbsp;c6&nbsp;c7&nbsp;c8&nbsp;c9&nbsp;ca&nbsp;cb&nbsp;cc&nbsp;cd&nbsp;ce&nbsp;cf&nbsp;&nbsp;&nbsp;................<br>
+d0&nbsp;d1&nbsp;d2&nbsp;d3&nbsp;d4&nbsp;d5&nbsp;d6&nbsp;d7&nbsp;d8&nbsp;d9&nbsp;da&nbsp;db&nbsp;dc&nbsp;dd&nbsp;de&nbsp;df&nbsp;&nbsp;&nbsp;................<br>
+e0&nbsp;e1&nbsp;e2&nbsp;e3&nbsp;e4&nbsp;e5&nbsp;e6&nbsp;e7&nbsp;e8&nbsp;e9&nbsp;ea&nbsp;eb&nbsp;ec&nbsp;ed&nbsp;ee&nbsp;ef&nbsp;&nbsp;&nbsp;................<br>
+f0&nbsp;f1&nbsp;f2&nbsp;f3&nbsp;f4&nbsp;f5&nbsp;f6&nbsp;f7&nbsp;f8&nbsp;f9&nbsp;fa&nbsp;fb&nbsp;fc&nbsp;fd&nbsp;fe&nbsp;ff&nbsp;&nbsp;&nbsp;................<br>
+&gt;&gt;&gt;</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Strings']<br>
+<strong>__annotations__</strong> = {'colors': typing.Dict[str, str]}<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>BinaryFileReader  Copyright (C) 2021, 2025  Mau...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This module implements a hexadecimal reader.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/BinaryFileReader'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

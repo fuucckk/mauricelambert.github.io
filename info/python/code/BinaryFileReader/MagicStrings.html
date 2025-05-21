@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module MagicStrings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>MagicStrings</strong></big></big> (version 3.0.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="magicstrings.py">magicstrings.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;process&nbsp;exported&nbsp;strings&nbsp;recursively&nbsp;from&nbsp;binary&nbsp;file.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="Strings.html#Strings">Strings.Strings</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="MagicStrings.html#MagicStrings">MagicStrings</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="MagicStrings.html#Result">Result</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MagicStrings">class <strong>MagicStrings</strong></a>(<a href="Strings.html#Strings">Strings.Strings</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#MagicStrings">MagicStrings</a>(*args,&nbsp;process_level:&nbsp;int&nbsp;=&nbsp;0,&nbsp;keys:&nbsp;List[Tuple[bytes,&nbsp;Optional[str]]]&nbsp;=&nbsp;[],&nbsp;**kwargs)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;process&nbsp;exported&nbsp;strings&nbsp;recursively&nbsp;from&nbsp;binary&nbsp;file.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="MagicStrings.html#MagicStrings">MagicStrings</a></dd>
+<dd><a href="Strings.html#Strings">Strings.Strings</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="MagicStrings-__init__"><strong>__init__</strong></a>(self, *args, process_level: int = 0, keys: List[Tuple[bytes, Optional[str]]] = [], **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-bruteforces"><strong>bruteforces</strong></a>(self, data: bytes, is_string: bool = False) -&gt; Iterator[bytes]</dt><dd><tt>This&nbsp;method&nbsp;bruteforces&nbsp;one&nbsp;character&nbsp;keys<br>
+for&nbsp;small&nbsp;crypto&nbsp;functions.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-decode_string"><strong>decode_string</strong></a>(self, string_encoded: bytes, steps: List[MagicStrings.Step], last_step_decrypt: bool, this_formats: Dict[str, PegParser.Format], first: bool = False) -&gt; Iterator[MagicStrings.Result]</dt><dd><tt>The&nbsp;method&nbsp;checks&nbsp;the&nbsp;string&nbsp;for&nbsp;all&nbsp;formats.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-decrypt_string"><strong>decrypt_string</strong></a>(self, result: MagicStrings.Result) -&gt; Iterator[bytes]</dt><dd><tt>This&nbsp;method&nbsp;bruteforces&nbsp;a&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-magic"><strong>magic</strong></a>(self) -&gt; Iterator[MagicStrings.Result]</dt><dd><tt>This&nbsp;method&nbsp;process&nbsp;the&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-new"><strong>new</strong></a>(self, data: bytes, steps: List[MagicStrings.Step], last_step_decrypt: bool) -&gt; Iterator[MagicStrings.Result]</dt><dd><tt>This&nbsp;method&nbsp;makes&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#MagicStrings">MagicStrings</a><br>
+for&nbsp;a&nbsp;in&nbsp;depth&nbsp;string&nbsp;search.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-process_crypto"><strong>process_crypto</strong></a>(self, data: bytes, last_step_decrypt: bool) -&gt; Iterator[bytes]</dt><dd><tt>This&nbsp;method&nbsp;process&nbsp;data&nbsp;with&nbsp;crypto&nbsp;functions.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-process_data"><strong>process_data</strong></a>(self, data: bytes, steps: List[MagicStrings.Step], last_step_decrypt: bool) -&gt; Iterator[MagicStrings.Result]</dt><dd><tt>This&nbsp;method&nbsp;sends&nbsp;each&nbsp;data&nbsp;to&nbsp;recursive&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-process_string"><strong>process_string</strong></a>(self, result: MagicStrings.Result) -&gt; Iterator[MagicStrings.Result]</dt><dd><tt>The&nbsp;recursive&nbsp;method&nbsp;to&nbsp;process&nbsp;each&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-process_strings"><strong>process_strings</strong></a>(self) -&gt; Iterator[MagicStrings.Result]</dt><dd><tt>This&nbsp;method&nbsp;sends&nbsp;each&nbsp;string&nbsp;to&nbsp;recursive&nbsp;function.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="MagicStrings-yield_if_next"><strong>yield_if_next</strong></a>(generator: Generator, result: MagicStrings.Result) -&gt; Iterator[MagicStrings.Result]</dt><dd><tt>This&nbsp;function&nbsp;yields&nbsp;results&nbsp;and&nbsp;yields&nbsp;from&nbsp;generator<br>
+if&nbsp;there&nbsp;is&nbsp;a&nbsp;yield&nbsp;in&nbsp;the&nbsp;generator.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'lasts': typing.Dict[str, bytes]}</dl>
+
+<dl><dt><strong>lasts</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="Strings.html#Strings">Strings.Strings</a>:<br>
+<dl><dt><a name="MagicStrings-analyse_character"><strong>analyse_character</strong></a>(self, char: bytes) -&gt; Tuple[bool, bool]</dt><dd><tt>This&nbsp;method&nbsp;analyses&nbsp;a&nbsp;byte&nbsp;and&nbsp;returns&nbsp;boolean&nbsp;to&nbsp;know&nbsp;when&nbsp;a<br>
+string&nbsp;is&nbsp;terminated.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="Strings.html#Strings">Strings</a>(None)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\0')<br>
+(True,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_unicode_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\1')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.current_string<br>
+''<br>
+&gt;&gt;&gt;&nbsp;strings.current_unicode_string<br>
+''<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="Strings.html#Strings">Strings</a>(None,&nbsp;null_terminated=False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\0')<br>
+(True,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.current_unicode_string<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\1')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'a')<br>
+(False,&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\0')<br>
+(False,&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;strings.<a href="#MagicStrings-analyse_character">analyse_character</a>(b'\1')<br>
+(True,&nbsp;True)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="MagicStrings-reader"><strong>reader</strong></a>(self) -&gt; Iterator[str]</dt><dd><tt>This&nbsp;method&nbsp;reads&nbsp;character&nbsp;after&nbsp;character&nbsp;and&nbsp;yield&nbsp;strings.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;io&nbsp;import&nbsp;BytesIO<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="Strings.html#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"))<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.<a href="#MagicStrings-reader">reader</a>():&nbsp;print(line)<br>
+abcde<br>
+lmnopqrst<br>
+&gt;&gt;&gt;&nbsp;strings&nbsp;=&nbsp;<a href="Strings.html#Strings">Strings</a>(BytesIO(b"\x00\x01abcde\x00ghijk\x01lmnopqrst\x00"),&nbsp;null_terminated=False)<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;line&nbsp;in&nbsp;strings.<a href="#MagicStrings-reader">reader</a>():&nbsp;print(line)<br>
+abcde<br>
+ghijk<br>
+lmnopqrst<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="Strings.html#Strings">Strings.Strings</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Result">class <strong>Result</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Result">Result</a>(string:&nbsp;bytes,&nbsp;format:&nbsp;PegParser.Format,&nbsp;process_level:&nbsp;int,&nbsp;steps:&nbsp;List[<a href="#MagicStrings">MagicStrings</a>.Step]&nbsp;=&nbsp;&amp;lt;factory&amp;gt;,&nbsp;last_step_decrypt:&nbsp;bool&nbsp;=&nbsp;False)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+This&nbsp;dataclass&nbsp;contains&nbsp;the&nbsp;result&nbsp;for&nbsp;each<br>
+exported&nbsp;and&nbsp;processed&nbsp;strings&nbsp;and&nbsp;matchs.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Result-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="Result-__init__"><strong>__init__</strong></a>(self, string: bytes, format: PegParser.Format, process_level: int, steps: List[MagicStrings.Step] = &lt;factory&gt;, last_step_decrypt: bool = False) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Result-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Result-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'format': &lt;class 'PegParser.Format'&gt;, 'last_step_decrypt': &lt;class 'bool'&gt;, 'process_level': &lt;class 'int'&gt;, 'steps': typing.List[MagicStrings.Step], 'string': &lt;class 'bytes'&gt;}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'format': Field(name='format',type=&lt;class 'PegParser.Forma...appingproxy({}),kw_only=False,_field_type=_FIELD), 'last_step_decrypt': Field(name='last_step_decrypt',type=&lt;class 'bool...appingproxy({}),kw_only=False,_field_type=_FIELD), 'process_level': Field(name='process_level',type=&lt;class 'int'&gt;,de...appingproxy({}),kw_only=False,_field_type=_FIELD), 'steps': Field(name='steps',type=typing.List[MagicStrings...appingproxy({}),kw_only=False,_field_type=_FIELD), 'string': Field(name='string',type=&lt;class 'bytes'&gt;,default...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('string', 'format', 'process_level', 'steps', 'last_step_decrypt')</dl>
+
+<dl><dt><strong>last_step_decrypt</strong> = False</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;runs&nbsp;the&nbsp;module&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['MagicStrings', 'Result', 'main']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>BinaryFileReader  Copyright (C) 2021, 2025  Mau...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>This file exports strings from binary file.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/BinaryFileReader'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
