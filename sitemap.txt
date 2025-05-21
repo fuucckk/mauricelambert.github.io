@@ -217,4 +217,5 @@ https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.h
 https://mauricelambert.github.io/info/python/security/BinaryFileReader/BinaryFileReader.pyz
 https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.pyz
 https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.pyz
-
+https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStrings.pyz
+https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStrings.html
