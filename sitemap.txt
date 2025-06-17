@@ -221,3 +221,8 @@ https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStri
 https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStrings.html
 https://mauricelambert.github.io/info/python/code/LinuxMemoryStatistics.html
 https://mauricelambert.github.io/info/python/code/LinuxMemoryStatistics.pyz
+https://mauricelambert.github.io/info/python/security/PyAsyncDNS/client.html
+https://mauricelambert.github.io/info/python/security/PyAsyncDNS/server.html
+https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator.html
+https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator_server.html
+https://mauricelambert.github.io/info/python/security/PyAsyncDNS/PyAsyncDNS.pyz
