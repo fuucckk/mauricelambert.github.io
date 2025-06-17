@@ -421,7 +421,7 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2025-06-17</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
@@ -989,5 +989,25 @@
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/LinuxMemoryStatistics.pyz</loc>
     <lastmod>2025-06-03</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/PyAsyncDNS/client.html</loc>
+    <lastmod>2025-06-17</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/PyAsyncDNS/server.html</loc>
+    <lastmod>2025-06-17</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator.html</loc>
+    <lastmod>2025-06-17</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator_server.html</loc>
+    <lastmod>2025-06-17</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/PyAsyncDNS/PyAsyncDNS.pyz</loc>
+    <lastmod>2025-06-17</lastmod>
   </url>
 </urlset>
