@@ -70,7 +70,12 @@
  - [BinaryFileReader.HexaReader Documentation](https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.html)
  - [BinaryFileReader.Strings Documentation](https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.html)
  - [BinaryFileReader.MagicStrings Documentation](https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStrings.html)
+ - [PyAsyncDNS client Documentation](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/client.html)
+ - [PyAsyncDNS server Documentation](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/server.html)
+ - [PyAsyncDNS exfiltrator Documentation](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator.html)
+ - [PyAsyncDNS exfiltrator server Documentation](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator_server.html)
 
+ - [PyAsyncDNS executable](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/PyAsyncDNS.pyz)
  - [BinaryFileReader Python Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/BinaryFileReader.pyz)
  - [Strings Python Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.pyz)
  - [HexaReader Python Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.pyz)
