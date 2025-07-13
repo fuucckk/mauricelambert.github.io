@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of HackingPresentationGenerator.
+
+  HackingPresentationGenerator is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  HackingPresentationGenerator is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with HackingPresentationGenerator.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="In-depth Purple Team exercises testing SIEM/EDR evasion, SOC playbooks, and analyst effectiveness in real-world incident response scenarios." />
+  <meta name="keywords" content="Purple Team, SIEM bypass, EDR evasion, SOC procedures, incident response testing, SOC quality, Detection engineering" />
+  <meta name="author" content="Maurice Lambert" />
+  <title>Purple Team: Key Requirements for Effective Protection</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <main>
+    <section id="slide-1" class="title-slide">
+      <div id="terminal-overlay">
+        <pre id="terminal-output"></pre>
+      </div>
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h1>Purple Team: Key Requirements for Effective Protection</h1>
+      </article>
+    </section>
+    <section class="table-content" id="slide-2">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#slide-3">What is PurpleTeam ?</a>
+            <ul>
+              <li><a href="#slide-4">Breaking the Myths: What Purple Teaming Isn't</a></li><li><a href="#slide-5">Understanding Cyber Security Teams</a></li><li><a href="#slide-6">Roles and Responsibilities of Security Teams</a></li>
+            </ul>
+          </li><li><a href="#slide-7">Why PurpleTeam ?</a>
+            <ul>
+              <li><a href="#slide-8">SOC: Apparent Coverage, Unknown Limits</a></li><li><a href="#slide-9">Widespread SOC Deployment versus Growing Attack Impact</a></li><li><a href="#slide-10">Governance: A Partial View of SOC Effectiveness</a></li>
+            </ul>
+          </li><li><a href="#slide-11">Core Requirements for a Successful Purple Team</a>
+            <ul>
+              <li><a href="#slide-12">Purple Team and SOC: Clear Separation Is Key to Success</a></li><li><a href="#slide-13">Key Steps for Success</a></li>
+            </ul>
+          </li><li><a href="#slide-14">Purple Team Mission: EDR Testing and Validation</a>
+            <ul>
+              <li><a href="#slide-15">Restricted Before Execution: How SOC Governance Blocked Purple Team Work</a></li><li><a href="#slide-16">SOC at Its Best: Crisis Meeting, September 2024</a></li><li><a href="#slide-17">20 Days of pure madness, powered by caffeine and despair</a></li><li><a href="#slide-18">EDR B - 2nd Place... but Disqualified</a></li><li><a href="#slide-19">EDR H - 1st Place with Strong Technical Capabilities</a></li><li><a href="#slide-20">EDR V - Disqualified, EDR S - Last Place</a></li><li><a href="#slide-21">When the POC is Clear... but Ignored</a></li><li><a href="#slide-22">Well Covered, Poorly Protected</a></li><li><a href="#slide-23">A Project That Made a Difference</a></li>
+            </ul>
+          </li><li><a href="#slide-24">Boosting Defense Efficiency: Real-World Outcomes</a>
+            <ul>
+              <li><a href="#slide-25">Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</a></li><li><a href="#slide-26">Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</a></li><li><a href="#slide-27">Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</a></li><li><a href="#slide-28">Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</a></li><li><a href="#slide-29">Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</a></li><li><a href="#slide-30">Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section id="slide-3" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>What is PurpleTeam ?</h2>
+      </article>
+    </section><section id="slide-4" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Breaking the Myths: What Purple Teaming Isn't</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>It's not about putting a Red Team and a Blue Team in the same room and calling it "Purple".</li><li>Not a pentest, not a red  team versus blue team.</li><li>It's not a goal-driven collaboration between blue team and red team.</li>
+          </ul><p>It's a dedicated team with a permanent role, focused on verifying and validating the effectiveness and quality of the SOC.</p>
+        </div>
+        <img src="./purple_is_not.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-5" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Understanding Cyber Security Teams</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>DevSecOps is about identifying and fixing security issues as early as the implementation phase, with the goal of reducing vulnerabilities in software development.</li><li>A pentest is the search for an exploitation path to compromise a specific system.</li><li>A red team is a stealthy attempt to compromise a strategic asset, aiming to test all layers of security for a specific objective.</li><li>SOC teams: detect, investigate, and respond to security incidents.</li>
+          </ul><p>Purple Teaming is the process used to test the SOC's tools, procedures, and analysts in order to identify weaknesses, potential bypasses, and improvement opportunities across a wide range of high-risk scenarios.
+It involves both unit and functional testing of every detection and remediation component.
+It is a search for bypasses rooted in the implementation and design of each tool, procedure, or the way they are interpreted and executed.</p>
+        </div>
+        <img src="./cyber_security_teams.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-6" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Roles and Responsibilities of Security Teams</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>DevSecOps: Identifies common implementation vulnerabilities and supply chain risks early in the development phases.</li><li>Pentest: Identifies remaining vulnerabilities by simulating an attacker's role on production versions, including misconfigurations and poor administrative practices.</li><li>Red Team: Gains access to strategic assets undetected in production environments, simulating real attacks using stealth techniques.</li><li>SOC: Monitors, detects, and responds to threats. It is responsible for handling incidents when compromises occur.</li><li>Purple Team: Simulates all types of attack scenarios, using a wide range of tools and techniques, from stealthy to noisy. For each scenario, it ensures that every tool, procedure, and analyst can detect, block, and resolve the incident.</li>
+          </ul><p>A possible comparison would be:
+DevSecOps covers the entire codebase and common scenarios during development, whereas pentesters aim to find a single way that could compromise the system.
+The Purple Team, like DevSecOps, covers the full detection, blocking, and remediation perimeter for common techniques, while the Red Team focuses on special techniques to evade detection in a targeted test.</p>
+        </div>
+        <img src="./cyber_security_teams.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-7" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Why PurpleTeam ?</h2>
+      </article>
+    </section><section id="slide-8" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC: Apparent Coverage, Unknown Limits</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>The SOC may claim to have a large number of detection rules and broad coverage of MITRE ATT&CK techniques and tactics. However, most of these rules fail when faced with real-world attacks.</p><ul>
+            <li>Every rule and blocking mechanism has limitations. These must be minimized.</li><li>Often, rules only pass minimal tests conducted by teams with limited time and limited knowledge of actual attack techniques.</li><li>Some tools are not tested at all, and SOC teams are unaware of their own blind spots.</li><li>Without continuous challenge, detection, blocking, and response capabilities remain theoretical.</li>
+          </ul><p>The limits of the SOC are unknown. Defenses are untested. As a result, attackers can compromise systems using simple, well-known techniques without being detected.</p>
+        </div>
+        <img src="./castle.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-9" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Widespread SOC Deployment versus Growing Attack Impact</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><table style="font-family: monospace; border-collapse: collapse; width: 100%;">
+  <thead style="border-bottom: 2px solid #ccc;">
+    <tr style="background-color: #f0f0f033;">
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: left;">Year</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">Complaints</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">Estimated Losses</th>
+      <th style="padding: 6px; text-align: right;">% Companies with SOC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: transparent;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2017</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">301,580</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$1.42 billion</td>
+      <td style="padding: 6px; text-align: right;">35%</td>
+    </tr>
+    <tr style="background-color: #ffffff0d;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2018</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">351,937</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$2.71 billion</td>
+      <td style="padding: 6px; text-align: right;">40%</td>
+    </tr>
+    <tr style="background-color: transparent;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2019</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">467,361</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$3.50 billion</td>
+      <td style="padding: 6px; text-align: right;">40%</td>
+    </tr>
+    <tr style="background-color: #ffffff0d;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2020</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">791,790</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$4.20 billion</td>
+      <td style="padding: 6px; text-align: right;">50%</td>
+    </tr>
+    <tr style="background-color: transparent;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2021</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">847,376</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$6.90 billion</td>
+      <td style="padding: 6px; text-align: right;">58%</td>
+    </tr>
+    <tr style="background-color: #ffffff0d;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2022</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">800,944</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$10.30 billion</td>
+      <td style="padding: 6px; text-align: right;">60%</td>
+    </tr>
+    <tr style="background-color: transparent;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2023</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">880,418</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$12.50 billion</td>
+      <td style="padding: 6px; text-align: right;">63%</td>
+    </tr>
+    <tr style="background-color: #ffffff0d;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">2024</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">859,532</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">$16.60 billion</td>
+      <td style="padding: 6px; text-align: right;">65%</td>
+    </tr>
+  </tbody>
+</table></p>
+        </div>
+        <img src="./SOC_vs_cyberattacks.png" alt="Illustration" />
+      </article>
+      <aside>References: Complaints and estimated losses <a href="https://www.ic3.gov/">FBI ic3 AnnualReport</a>, multiples sources for % companies with SOC.</aside>
+    </section><section id="slide-10" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Governance: A Partial View of SOC Effectiveness</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Governance teams often lack the right indicators to assess the actual effectiveness of the SOC.</li><li>They frequently rely on theoretical KPIs, such as MITRE ATT&CK coverage percentage in the SIEM</li><li>In other cases, they ask specific scenario-based questions, such as: "<em>Can you detect data exfiltration on this device ?</em>". The answer is often "<em>yes</em>", because a detection rule exists.</li>
+          </ul><p>However, in reality:</p><ul>
+            <li>A single rule was written and tested once by its developer.</li><li>There is no continuous validation, no independent verification.</li><li>The risk is considered covered, when it may not be in the face of a real-world attack.</li>
+          </ul>
+        </div>
+        <img src="./blind.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-11" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Core Requirements for a Successful Purple Team</h2>
+      </article>
+    </section><section id="slide-12" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Purple Team and SOC: Clear Separation Is Key to Success</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>The Purple Team should never be part of the SOC.</li><li>SOC and Purple Team must have separate management structures.
+Otherwise, SOC priorities tend to suppress Purple Team activities, because: <ul><li>The Purple Team does not boost SOC KPIs.</li><li>It often slows SOC processes by enforcing quality, realism, and effectiveness.</li><li>SOC managers may feel challenged or exposed, leading to a tendency to push the Purple Team aside.</li></ul></li><li>Additionally, some SOC teams struggle to accept mistakes made during rule development.
+The Purple Team exists to help them improve, but constructive feedback is not always well received.</li>
+          </ul>
+        </div>
+        <img src="./tshirts_hanging.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-13" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Key Steps for Success</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>The SOC develops and implements detection rules independently.</li><li>Once in place, the Purple Team runs a first wave of validation tests.</li><li>Then, the Purple Team analyzes the rule's design and implementation to identify possible bypasses.</li><li>Bypass techniques are tested, giving a realistic view of detection coverage and resilience.</li>
+          </ol><p>Integrating the Purple Team too early can bias the SOC's work or dilute the challenge.
+Two independent viewpoints always provide greater value than one built together.</p>
+        </div>
+        <img src="./lockpicking_vs_key.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-14" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Purple Team Mission: EDR Testing and Validation</h2>
+      </article>
+    </section><section id="slide-15" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Restricted Before Execution: How SOC Governance Blocked Purple Team Work</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Juin 2023:
+Serious concerns about the EDR's effectiveness are raised, supported by initial tests and proof of concept efforts conducted on personal time.</li><li>September 2023: 
+The POC is formally approved for execution.</li><li>June 2024: 6 months are projected to complete the POC.</li><li>June 2024: Internal assessment:
+With automation, the work could realistically be completed in 3 months.</li><li>September 2024: SOC management announces that the POC, still not started, must be completed within one month.</li><li>Final constraint: Only 20 working days are allocated to carry out the entire POC.</li>
+          </ol>
+        </div>
+        <img src="./soc_manager_break_purple_time.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-16" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC at Its Best: Crisis Meeting, September 2024</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>My initial project preparation, designed for a complete and meaningful assessment.</p><ul>
+            <li>10 categories</li><li>45 subcategories</li><li>84 mapped techniques</li><li>~100 possible tests to evaluate EDR capabilities</li>
+          </ul><p>Final POC Scope (SOC Management-Defined):</p><ul>
+            <li>Only 7 tests selected</li><li>No EDR bypass testing allowed</li><li>4 tests focused on EPP / Antivirus detection (using tools I developed on personal time, tools still open-source and incomplete)</li><li>1 test involving LOLBins (Living Off the Land Binaries)</li><li>All tests to be executed individually across multiple EDR products</li><li>Analysis and full report expected within the remaining 20 working days</li><li>0 Linux tests (even though ~30% of our systems run on Linux)</li>
+          </ul>
+        </div>
+        <img src="./manager_break_employee_work.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-17" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>20 Days of pure madness, powered by caffeine and despair</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Built 11 tests, including 2 partial LOLBins, 4 AV/EPP and 5 bonus test to boost EDR scores</li><li>My tests include lateral movement, discovery, and initial access (using techniques such as RCE exploitation and phishing)</li><li>Developed Ansible playbooks to: <ul><li>Launch each test</li><li>Automatically check EDR blocking at 3 stages:
+Upload, Pre-execution, Execution</li><li>Identify exact stage of detection/blocking</li></ul></li><li>Defined a custom scoring system</li><li>Ran the full test suite across all EDRs</li><li>Interpreted results manually</li><li>Delivered a beautiful Excel summary of detection behavior</li>
+          </ul><p>And what I didn't manage: didn't automate report generation... Because most EDRs didn't block much, I had to rework the scoring logic, manually dig up non-blocking alerts, and rebuild everything so it made sense.</p><p>After 20 days (240 working hours), EDRs didn't block much, but my nervous system sure did.</p>
+        </div>
+        <img src="./no_threat_detection.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-18" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>EDR B - 2nd Place... but Disqualified</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Total Score: 38.5 / 77 (2nd place)</li><li>Bonus Tests: 85% of bonus points</li><li>AV / EPP Tests: 50% of available points</li><li>Initial Access: 45%</li><li>Lateral movement: 0%</li><li>Discovery: 0%</li><li>LOLBins: 0%</li>
+          </ul><p>Critical problem:</p><ol>
+            <li>No telemetry outside of detection events</li><li>No visibility into process trees, command lines, or context: does not meet EDR requirements</li><li>Classified as an AV/EPP product, not a true EDR</li><li>Rejected from further consideration</li>
+          </ol>
+        </div>
+        <img src="./clown_edr.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-19" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>EDR H - 1st Place with Strong Technical Capabilities</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>With AV/EPP I: 31 / 77</li><li>With AV/EPP D: 54 / 77 (1st Place)</li>
+          </ol><ul>
+            <li>AV / EPP tests: 95%</li><li>Bonus tests: 90%</li><li>LOLBins: 80%</li><li>Initial Access: 45%</li><li>Lateral movement: 40%</li><li>Discovery: 0%</li>
+          </ul><ol>
+            <li>Fast and powerful interface</li><li>Binary analysis support tools</li><li>Rule transparency: YARA and Sigma rules accessible and editable</li><li>Agent supervision: Integrated ELK stack for full visibility</li>
+          </ol>
+        </div>
+        <img src="./winner.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-20" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>EDR V - Disqualified, EDR S - Last Place</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><table style="font-family: monospace; border-collapse: collapse; width: 100%;">
+  <thead style="border-bottom: 2px solid #ccc;">
+    <tr style="background-color: #f0f0f033;">
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: left;">EDR</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">Score</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">AV/EPP</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">LOLBins</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">Bonus</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">Lateralization</th>
+      <th style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">Discovery</th>
+      <th style="padding: 6px; text-align: right;">Initial Access</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: transparent;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">EDR V</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">25 / 77</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">65%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">0%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">0%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">35%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">0%</td>
+      <td style="padding: 6px; text-align: right;">45%</td>
+    </tr>
+    <tr style="background-color: #ffffff0d;">
+      <td style="padding: 6px; border-right: 1px solid #ccc;">EDR S</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">13 / 77</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">40%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">0%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">0%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">0%</td>
+      <td style="padding: 6px; border-right: 1px solid #ccc; text-align: right;">0%</td>
+      <td style="padding: 6px; text-align: right;">0%</td>
+    </tr>
+  </tbody>
+</table></p><ol>
+            <li>EDR V: Capable of killing entire process trees, up to svchost.exe</li><li>EDR V: Recursive termination affects legitimate services (like web servers)</li><li>EDR V: Too aggressive to be safely deployed</li><li>EDR V: Disqualified</li>
+          </ol><ul>
+            <li>EDR S: Telemetry only: no detection, no blocking</li><li>EDR S: 0% scored on all active test categories</li>
+          </ul><p>One EDR kills too much, the other doesn't lift a finger.
+Balance still missing.</p>
+        </div>
+        <img src="./blue_screen_its_fine.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-21" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>When the POC is Clear... but Ignored</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>After an intensive POC, EDR H was selected to replace EDR S, bringing a real boost to detection capabilities and telemetry quality.<br>
+But then... the SOC <strong>deployed it with EPP I</strong>.</p><ul>
+            <li>Improved visibility</li><li>Countless false positives</li><li>Worse: false negatives</li><li>The exact combination warned against in the POC</li>
+          </ul><p>The right EDR... married to the wrong antivirus.
+Like pairing a gourmet dish with expired ketchup.</p>
+        </div>
+        <img src="./ketchup_cataclysm.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-22" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Well Covered, Poorly Protected</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>A new Purple Team mission was launched to test EDR-specific bypasses.
+SIGMA rules were organized in 4 detection types, all defeated via basic contextual tricks:</p><ol>
+            <li>LOLBins: Copy the binary elsewhere with a new name -> changes context, bypasses detection</li><li>Scripting: Use aliases to bypass rule matching</li><li>File Access: move, modify, move back -> changes context, bypasses detection: avoids direct access monitoring</li><li>Network Access: Re-implement protocols like DNS, HTTP without using Win32 API -> no detection, no logs</li>
+          </ol><p>EPP relies on signature, EDR relies on context. So if you change the context without touching the binary, you bypass detection, and the signature doesn't trigger.</p><p>EDR rules are powerful in theory, but often context-dependent and easily circumvented.</p><p>I reported this issue and suggested a fix: detect based on module names inside the binary. Prevents bypass by filename alone, forces attacker to change the binary itself, invalidating the signature and triggering EPP. The CTI team thanked me for the idea, to be implemented... when they have time.</p>
+        </div>
+        <img src="./empty_cake.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-23" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>A Project That Made a Difference</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>A technically exciting project: Only a small portion was completed, but it led to a clear improvement in EDR detection quality.</li><li>Tangible progress, but still not enough: Some disappointment with the actual implementation of remediation, despite actionable solutions.</li><li>High pressure, but self-imposed: Driven by a personal commitment to deliver high-quality work. No external pressure from the organization.</li><li>Managerial recognition: I received clear appreciation from my management.</li><li>Autonomy: both granted and required: Full freedom to lead the work, but also full responsibility, with little support.</li><li>Heavy personal investment: Many extra hours (unpaid, since not officially requested), with a real impact on my personal life.</li>
+          </ul>
+        </div>
+        <img src="./pressure_performance.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-24" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Boosting Defense Efficiency: Real-World Outcomes</h2>
+      </article>
+    </section><section id="slide-25" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Typical SOC Approach: Trigger an alert when a single source IP connects to a high number of destination ports on the same IP within a short time window.</p><p>Prompt in ChatGPT: Generate a SIEM detection rule for port scan activity, and provide its human-readable translation only. Do not include any other technical details.<br>
+Response: Human-readable translation:
+Alert when a single source IP attempts to connect to a high number of different destination ports on the same host within a short time period, indicating potential port scanning activity.</p><p>Prompt ChatGPT: Should I implement a port scan detection rule in my SIEM ? Please answer with 'Yes' or 'No' only.<br>
+Response: Yes.</p><p>Prompt ChatGPT: Should I implement a port scan detection rule in my SIEM, even if I have a firewall? Please answer with 'Yes' or 'No' only.<br>
+Response: Yes.</p><p>Port Scanning Definition: Port scanning is a technique used to identify open ports, it involves systematically sending network requests to determine which ones are open, closed, or filtered.</p>
+        </div>
+        <img src="./fork_soup.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-26" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Your SIEM will detect the following false positives:</p><ul>
+            <li>DCE-RPC usage, including dynamic port connections</li><li>Active Directory communications (there are typically more than 15 ports open: LDAP, Kerberos, etc.)</li><li>NAT-ed IP addresses</li><li>Monitoring and supervision tools</li><li>Scheduled tasks at specific times (antivirus scans, backups, updates, etc.)</li><li>Automation and deployment tools (Ansible, SCCM, etc.)</li><li>FTP traffic with dynamic port connections</li>
+          </ul><p>To reduce false positives, the SOC analyst will typically:</p><ul>
+            <li>Raise the detection threshold (only trigger alerts after connections to 50 or even 100 different ports).</li><li>Whitelist NAT gateway IPs.</li><li>Whitelist monitoring system IPs.</li><li>Whitelist Active Directory server IPs.</li><li>And the day you unleash the full power of DCE-RPC... they might just exclude all Windows machines from the rule entirely.</li>
+          </ul>
+        </div>
+        <img src="./colander_comedy.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-27" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Next Step: TCP Sweep Detection Rule: After that, your SOC analyst will likely create an TCP sweep detection rule, to catch a single machine connecting to the same port on many different hosts. But... here come the usual exceptions again:</p><ul>
+            <li>NATed IPs</li><li>Monitoring systems</li><li>Automation and management tools like Ansible, SCCM, etc.</li>
+          </ul><p>And of course, where there are false positives, the SOC analyst will raise the detection threshold... to over 100, even though your subnet only has 50 machines.</p><p>Your port scan and TCP sweep detections will keep your SOC busy chasing a ton of false positives, while attackers probably won't even be detected because they won't follow your overly permissive exceptions and excessively raised thresholds.<br>
+Fun fact: In the last SOC I tested, a full 65535 port scan with Nmap and no delay wasn't even caught by the detection rule anymore.</p>
+        </div>
+        <img src="./luxury_broken_cars.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-28" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>A port scan is the process of testing whether specific ports are open by attempting network connections to them.</li><li>Nowhere is it defined that a port scan must involve only one target machine and TCP sweep must use only one specific port</li>
+          </ul><p>An intelligent attacker could evade basic detection by scanning different ports on different machines in a sequence:</p><ol>
+            <li>X.X.X.1:135, X.X.X.2:22, X.X.X.3:445</li><li>[delay]</li><li>X.X.X.1:445, X.X.X.2:135, X.X.X.3:22</li><li>[delay]</li><li>X.X.X.1:22, X.X.X.2:445, X.X.X.3:135</li>
+          </ol><p>Over time, this approach would scan all desired ports on all machines.<br>
+This method can bypass traditional port scan / TCP sweep rules, especially those with threshold-based detection commonly used by SOC analysts.</p>
+        </div>
+        <img src="./security_sleeping.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-29" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>After successfully bypassing a detection rule, the Purple Team aims to reduce the number of false positives to optimize SOC operations. This includes lowering alert thresholds, reducing rule exclusions, and minimizing the number of detection rules, all of which help decrease the maintenance overhead for SOC analysts.<br>
+Analyze behavior differences between a port scan and legitimate multiple connections:</p><ul>
+            <li>Port scans probe both open and closed ports, while legitimate traffic typically connects only to open ports.</li><li>Detecting connections to closed ports helps eliminate false positives from:  <ul><li>dynamic ports (FTP, DCE-RPC, etc.),</li><li>systems with many open ports (Active Directory),</li><li>automation and management tools</li></ul></li>
+          </ul><p>Remaining Considerations:</p><ol>
+            <li>Monitoring systems: Ensure alerts when multiple services fail simultaneously.</li><li>NATed IPs and misconfigured traffic: Such cases may still be flagged, and should be, as they can reveal real issues in the infrastructure.</li>
+          </ol>
+        </div>
+        <img src="./crowd_hacker.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-30" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>In a port scan, the difference is simple: after sending a SYN packet, you receive a RST if the port is closed.<br>
+Detecting closed ports simply means identifying a deny, a timeout or a server-reset status with 0 bytes sent in the packet.</p><p>But Even If It's Simple...<br>
+You should still check your SIEM. If you don't have a Purple Team, chances are you rely on a port scan rule and a TCP sweep rule with high thresholds and they likely don't implement this logic.</p><p>It is also entirely possible that your firewall configuration does not detect or block port scans... I've seen it before, sometimes it was just a matter of checking a box in the firewall, but then the SOC would fill the SIEM instead, since the SIEM does not offer any blocking capabilities unlike the firewall.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section>
+  </main>
+  <footer>
+    <p><a href="https://www.gnu.org/licenses/">&copy; Maurice Lambert</a></p>
+  </footer>
+</body>
+</html>
