@@ -127,7 +127,7 @@ section.content-slide article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   width: 100%;
   max-width: 1200px;

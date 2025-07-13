@@ -127,9 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!fitsInSlide()) {
-      textElements.forEach((el, idx) => {
-        el.style.fontSize = `${originalSizes[idx]}px`;
-      });
+      if (article.tagName.toLowerCase() !== 'nav') {
+        textElements.forEach((el, idx) => {
+          el.style.fontSize = `${originalSizes[idx]}px`;
+        });
+      }
       article.style.overflowY = 'auto';
       article.style.webkitOverflowScrolling = 'touch';
     }
