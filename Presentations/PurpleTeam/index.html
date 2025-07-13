@@ -68,6 +68,18 @@
             <ul>
               <li><a href="#slide-25">Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</a></li><li><a href="#slide-26">Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</a></li><li><a href="#slide-27">Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point</a></li><li><a href="#slide-28">Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</a></li><li><a href="#slide-29">Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</a></li><li><a href="#slide-30">Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point</a></li>
             </ul>
+          </li><li><a href="#slide-31">Purple Team: The Missing Color in the Defensive Spectrum</a>
+            <ul>
+              <li><a href="#slide-32">Purple Team: A Misunderstood Function in Cybersecurity</a></li><li><a href="#slide-33">Why Purple Teams Remain Rare in France</a></li><li><a href="#slide-34">What a Real Purple Team Brings to the Table</a></li>
+            </ul>
+          </li><li><a href="#slide-35">Purple Teaming: Lost Forever or the Next Big Thing ?</a>
+            <ul>
+              <li><a href="#slide-36">Toward a Real Technical Standard: Integrating Purple Teaming into Cybersecurity Frameworks</a></li><li><a href="#slide-37">Making the Certification Work: Methodology & Requirements</a></li><li><a href="#slide-38">SOC Scoring Model: Beyond Detection, Toward Smart Response</a></li><li><a href="#slide-39">Post-Test Review: Feedback, Validation & Documentation Control</a></li>
+            </ul>
+          </li><li><a href="#slide-40">Conclusion</a>
+            <ul>
+              <li><a href="#slide-41">Conclusion: Purple Team, the Missing Link in Real Security Assurance</a></li>
+            </ul>
           </li>
         </ul>
       </nav>
@@ -553,10 +565,174 @@ Analyze behavior differences between a port scan and legitimate multiple connect
       <article>
         <div class="text">
           <p>In a port scan, the difference is simple: after sending a SYN packet, you receive a RST if the port is closed.<br>
-Detecting closed ports simply means identifying a deny, a timeout or a server-reset status with 0 bytes sent in the packet.</p><p>But Even If It's Simple...<br>
+Detecting closed ports connections simply means identifying a deny, a timeout or a server-reset status with 0 bytes sent in the packet.</p><p>But Even If It's Simple...<br>
 You should still check your SIEM. If you don't have a Purple Team, chances are you rely on a port scan rule and a TCP sweep rule with high thresholds and they likely don't implement this logic.</p><p>It is also entirely possible that your firewall configuration does not detect or block port scans... I've seen it before, sometimes it was just a matter of checking a box in the firewall, but then the SOC would fill the SIEM instead, since the SIEM does not offer any blocking capabilities unlike the firewall.</p>
         </div>
-        <img src="" alt="Illustration" />
+        <img src="./DIY_cart.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-31" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Purple Team: The Missing Color in the Defensive Spectrum</h2>
+      </article>
+    </section><section id="slide-32" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Purple Team: A Misunderstood Function in Cybersecurity</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>The Reality Today:</p><ul>
+            <li>The term "Purple Team" is still new in many cybersecurity ecosystems.</li><li>Often confused with ad-hoc collaboration between Red Teams and the SOC</li><li>For many, "Purple Teaming" = one-off Red versus Blue exercises.</li>
+          </ul><p>A Governance Blind Spot:</p><ul>
+            <li>Executives and governance layers often have no clear understanding of what a true Purple Team is.</li><li>From their point of view: If the SOC writes rules or deploys tools, then it works.</li>
+          </ul><p>Dangerous Assumptions:</p><ul>
+            <li>SOCs are trusted blindly, their rules are assumed to be correct by design.</li><li>Quality is replaced by quantity: We expect 20 detection rules per analyst per month.</li><li>There's no independent validation or continuous feedback loop.</li><li>Result: False sense of security, inefficient detections, and blind spots in threat coverage.</li>
+          </ul>
+        </div>
+        <img src="./ClutteredRoom.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-33" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Why Purple Teams Remain Rare in France</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Cybersecurity is Often Compliance-Driven</li><li>Security as a Means to Justify, Not to Defend</li><li>A Culture of Liability Over Security</li>
+          </ol><ul>
+            <li>Many organizations invest in cybersecurity only to meet client or legal requirements.</li><li>The goal is often to check boxes, not to test or improve real detection and response capabilities.</li><li>Cybersecurity posture is built to show something exists, not necessarily that it works.</li><li>Example mindset: "We have a SOC, an EDR, logs, and a SIEM, if something goes wrong, we've done our part."</li><li>Focus is on protecting the organization legally, not operationally.</li><li>Even if data leaks or systems are compromised, the key is to prove: "We had the tools. We followed the rules."</li>
+          </ul><p>As long as cybersecurity serves legal, commercial, and liability concerns before real security, there will be little room for true Purple Teaming.</p>
+        </div>
+        <img src="./balance_security_compliance.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-34" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>What a Real Purple Team Brings to the Table</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Every detection rule is verified through attack simulations (TTP-level, mapped to MITRE ATT&CK).</li><li>Ensures rules actually detect what they're meant to.</li><li>Validates that each alert triggers the correct procedures and SOC responses, without prior warning.</li><li>Checks the real-world applicability of runbooks and incident playbooks.</li><li>Tests each security solution (EDR, NDR, SIEM, etc.) before deployment.</li><li>Measures whether the tool: matches the operational need, has blind spots or coverage gaps, produces actionable outputs</li><li>Maps which attack techniques and scenarios are covered versus exposed.</li><li>Provides a clear coverage map for decision-makers and governance.</li>
+          </ul><p>The Purple Team is the bridge between control and confidence.
+It brings trust through evidence-based validation.</p>
+        </div>
+        <img src="./aquaman.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-35" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Purple Teaming: Lost Forever or the Next Big Thing ?</h2>
+      </article>
+    </section><section id="slide-36" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Toward a Real Technical Standard: Integrating Purple Teaming into Cybersecurity Frameworks</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>1. A New Vision for Certification, imagine a standard like ISO 27001, but:</p><ul>
+            <li>Technically focused, not just procedural.</li><li>Executed by external experts simulating real-world attack scenarios.</li><li>Based on hands-on testing of your environment, not just documentation reviews.</li>
+          </ul><p>2. Result-Based Trust for Clients and Insurers:</p><ul>
+            <li>Attack simulation tests should be requestable by both clients and cybersecurity insurers.</li><li>These tests would target the actual production perimeter, with no prior SOC awareness, to ensure realistic conditions.</li><li>The results would offer a transparent and objective measure of the SOC's true detection and response capabilities.</li><li>Clients and insurers could then base their trust, contracts, or premiums on the demonstrated effectiveness.</li>
+          </ul><p>3. Purple Testing for Critical Infrastructure, for Operators of Vital Importance (OIVs):</p><ul>
+            <li>Laws could mandate minimum attack simulation scores.</li><li>Evaluation would shift from "tools in place" to proven detection & response capability.</li>
+          </ul><p>4. Accountability Based on Results, in case of breach or data leak, organizations would:</p><ul>
+            <li>Be tested post-incident by a certified body.</li><li>Be held accountable based on: means provided internally, size of the protected perimeter, results of the attack simulation tests.</li><li>The question is no longer "What did you deploy ?" but rather: "What did you detect, how fast did you respond and did you stop the threat ?"</li>
+          </ul><p>It's time to move from compliance-based trust to evidence-based security.</p>
+        </div>
+        <img src="./sleeping_soc.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-37" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Making the Certification Work: Methodology & Requirements</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Only certified Purple Teams would be authorized to run the tests.</li><li>To be certified, a team must: <ul><li>Use an approved testing framework or platform (no use of open-source or shared code)</li><li>Be able to simulate a wide range of TTPs (MITRE ATT&CK and beyond)</li><li>Combine TTPs into realistic attack scenarios</li></ul></li>
+          </ul><ul>
+            <li>The platform must include a large pool of attack scenarios.</li><li>Each test must have: a unique ID, a stealth score (to define its likelihood of detection)</li><li>For each test session: a random selection (~25%) of scenarios is made, tests are chosen randomly, but weighted by priority, stealth level, and relevance</li><li>Tests are executed from most stealthy to most noisy</li>
+          </ul><ul>
+            <li>Some tests require specific preconditions: domain user credentials, file prepositioning</li><li>These preconditions are provided by the client's system administrators, in coordination with the Purple Team.</li><li>This ensures fair and functional test execution without compromising realism.</li>
+          </ul><p>A scalable, reproducible, and fair approach to adversarial testing,
+where results are meaningful, traceable, and standardized.</p>
+        </div>
+        <img src="./certified_purple_guy.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-38" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC Scoring Model: Beyond Detection, Toward Smart Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Detailed Test Feedback to the Security Manager, for each test, the SOC manager receives a standardized report, including:</p><ul>
+            <li>Timestamp of the simulated attack</li><li>Key technical elements (tools, TTPs, targets)</li><li>Attribution scope: internal versus external source (helps determine if internal communication is possible)</li>
+          </ul><p>Blocking: Quality Over Reaction<br>
+Blocking actions are expected but must be strategic:</p><ul>
+            <li>Smart block: stopping the attacker while preserving evidence and IR capability</li><li>Bad block: killing a process while the domain account is still active and lateralizing = penalty</li><li>Overreacting too early = degraded visibility and poor containment</li><li>Backdoor left untouched after blocking the attacker = severe penalty</li><li>SOC must demonstrate thoroughness, not just reactivity.</li><li>Service shut down unnecessarily during the response = severe penalty</li><li>The SOC must show surgical response, not panic-driven actions.</li>
+          </ul><p>Scoring Detection Based on <strong>Pyramid of Pain</strong>: detection rules and remediation actions are scored according to the impact level.</p><p>Reward intelligence, penalize superficiality. Not just "Did you see it ?" but "Did you respond effectively and completely ?"</p>
+        </div>
+        <img src="./working_soc.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-39" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Post-Test Review: Feedback, Validation & Documentation Control</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Debrief Session with the Certified Testing Team: at the end of the exercise, a formal meeting must be held between the certifying Purple Team and the SOC management and operational teams.</p><ul>
+            <li>Provide detailed feedback on failed or missed detections</li><li>Share recommendations for improvement</li><li>Analyze false positives, timing, and response relevance</li>
+          </ul><p>Validation of Awarded Points: each SOC action that earns points must be documented in a written procedure and prepared before the test.<br>
+If a procedure is missing or incomplete:</p><ul>
+            <li>A penalty is applied</li><li>Reason: without documentation, there is no guarantee that the behavior would occur in a real attack</li>
+          </ul><p>A good SOC doesn't just react well, it's able to repeat, justify, and scale its responses through clear procedures.<br>
+Security without process is luck. Security with process is trust.</p>
+        </div>
+        <img src="./certification_feedback.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-40" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Conclusion</h2>
+      </article>
+    </section><section id="slide-41" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Conclusion: Purple Team, the Missing Link in Real Security Assurance</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>The Purple Team plays a vital role in strengthening your defenses.</li><li>They test your tools, procedures, and analysts, from the first sign of an incident to its full resolution.</li><li>They ensure that the entire incident response chain is effective, reliable, and tested.</li>
+          </ul><ul>
+            <li>Aligning Strategy with Reality</li><li>Purple Teams bridge the gap between: SMSI (ISMS) priorities and the real capabilities of the SOC</li><li>They create a common understanding of what must be protected and what can actually be detected and stopped.</li>
+          </ul><ul>
+            <li>Despite their importance, Purple Teams are still rare.</li><li>Most organizations only evolve when compliance requires it.</li>
+          </ul><ul>
+            <li>We need certifications based on real-world, practical defense exercises.</li><li>National regulations should require critical entities (like OIVs) to: submit to external adversarial testing and achieve and maintain minimum operational scores</li>
+          </ul><p>Security cannot be claimed, it must be demonstrated. Purple Teams are the only way to prove it.</p>
+        </div>
+        <img src="./purple_help_soc.jpg" alt="Illustration" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
     </section>
