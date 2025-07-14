@@ -224,6 +224,17 @@
                         "September 2024: SOC management announces that the POC, still not started, must be completed within one month.",
                         "Final constraint: Only 20 working days are allocated to carry out the entire POC."
                     ]
+                },
+                {
+                    "type": "ol",
+                    "content": [
+                        "June 2023:\nSerious concerns about the EDR's effectiveness are raised, supported by initial tests and proof of concept efforts conducted on personal time.",
+                        "September 2023: \nThe POC is formally approved for execution.",
+                        "June 2024: 6 months are projected to complete the POC.",
+                        "June 2024: Internal assessment:\nWith automation, the work could realistically be completed in 3 months.",
+                        "September 2024: SOC management announces that the POC, still not started, must be completed within one month.",
+                        "Final constraint: Only 20 working days are allocated to carry out the entire POC."
+                    ]
                 }
             ]
         },
