@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Offensive & defensive cybersecurity resources by Maurice Lambert. Tools, exploits, talks, DevSecOps, Purple Team, SOC, forensic, and automation." />
+    <meta name="keywords" content="cybersecurity, Maurice Lambert, Purple Team, DevSecOps, SOC, security tools, exploits, forensic, metasploit, CVE, Linux tools, Perl security, Ruby exploits, antivirus bypass, web app analysis, operational security" />
+    <meta property="og:title" content="Maurice Lambert - Cybersecurity tools and research" />
+    <meta property="og:description" content="Explore tools, exploits, and insights on Purple Teaming, DevSecOps, and operational cybersecurity." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mauricelambert.github.io/" />
+    <meta property="og:image" content="https://mauricelambert.github.io/MauriceLambert.png" />
+    <link rel="icon" type="image/png" href="https://mauricelambert.github.io/MauriceLambert.png" />
+    <link rel="apple-touch-icon" href="https://mauricelambert.github.io/MauriceLambert.png" />
     <title>Maurice Lambert - repository links</title>
     <style>
         body {
@@ -17,6 +26,9 @@
         }
         h2 {
             display: none;
+        }
+        .section:first-of-type h2 {
+            display: block;
         }
         .section {
             margin-bottom: 20px;
@@ -63,7 +75,7 @@
         <div class="section">
             <h2>Talks, Research and Lessons</h2>
             <button class="toggle-btn" onclick="toggleSection('talks_&_lessons')">Talks & Lessons</button>
-            <div id="talks_&_lessons" class="content">
+            <div id="talks_&_lessons" class="content" style="display:block;">
                 <ul>
                     <li><a href="https://github.com/mauricelambert/Talk1.BankSecurity">Talk 1 - Bank security</a></li>
                     <li><a href="https://mauricelambert.github.io/info/AntivirusBypass.pdf">Talk 2 - Bypass antivirus</a></li>
