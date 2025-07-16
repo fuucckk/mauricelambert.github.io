@@ -1,5 +1,5 @@
 {
-    "title": "Purple Team: Key Requirements for Effective Protection",
+    "title": "The Missing Piece That Completes the Cyber Defense Puzzle",
     "keywords": [
         "Purple Team",
         "SIEM bypass",
@@ -7,13 +7,33 @@
         "SOC procedures",
         "incident response testing",
         "SOC quality",
-        "Detection engineering"
+        "Detection engineering",
+        "Certification"
     ],
-    "description": "In-depth Purple Team exercises testing SIEM/EDR evasion, SOC playbooks, and analyst effectiveness in real-world incident response scenarios.",
+    "description": "Discover how even mature SOCs fail under pressure. Real cases, real bypasses, and why Purple Teaming is the missing link in real security assurance.",
     "author": "Maurice Lambert",
     "default icon": "https://mauricelambert.github.io/MauriceLambert.png",
     "default aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
     "slides": [
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Security teams and definitions",
+            "image": "./security_team.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "DevSecOps: Integrated approach embedding security into every phase of software development and deployment.",
+                        "SOC: Specialized team focused on <strong>detecting</strong>, and <strong>managing security incidents</strong>.",
+                        "Security Team (security administrators): Versatile team, often in smaller organizations, responsible for all security activities: monitoring, operational management (patch management, access management, configurations), remediation, awareness, and compliance.",
+                        "Pentest: Time-limited engagement to identify vulnerabilities through controlled attack techniques.",
+                        "Red Team: Offensive team aiming to <strong>stealthily take control of critical assets</strong> to assess real security posture and defense capabilities."
+                    ]
+                }
+            ]
+        },
         {
             "type": "title",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
