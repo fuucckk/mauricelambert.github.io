@@ -45,6 +45,11 @@ body {
   -ms-overflow-style: none;
 }
 
+body *::selection {
+  background-color: var(--text-color-dark);
+  color: var(--bg-color-dark);
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -52,6 +57,11 @@ body::-webkit-scrollbar {
 body.light {
   background-color: var(--bg-color-light);
   color: var(--text-color-light);
+}
+
+body.light *::selection {
+  background-color: var(--text-color-light);
+  color: var(--bg-color-light);
 }
 
 main {

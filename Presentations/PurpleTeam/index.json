@@ -16,21 +16,79 @@
     "default aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
     "slides": [
         {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "Context"
+        },
+        {
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Security teams and definitions",
+            "title": "Key Steps in Cybersecurity",
+            "image": "./security_pyramid.jpg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Security Policies: Establish and apply security policies (patching, network segmentation, hardening, etc.)",
+                        "Secure development and deployment: Embedding security into every stage of development, deployment, and the software supply chain to prevent most vulnerabilities.",
+                        "Track suspicious behavior: Monitor activity, detect suspicious behavior, and respond to compromises.",
+                        "Hunt exploitation paths: Identify and remediate any remaining exploitable vulnerabilities.",
+                        "Attempt a cyber attack: Conduct a cyber attack to test end-to-end security (including technical and human vulnerabilities, protections, hardening and defense)."
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Understanding Today's Security Team Roles",
             "image": "./security_team.jpg",
             "texts": [
                 {
-                    "type": "ul",
+                    "type": "ol",
                     "content": [
+                        "Security Team (security administrators): Versatile team, often in smaller organizations, responsible for all security activities: monitoring, operational management (patch management, access management, configurations), remediation, awareness, and compliance.",
                         "DevSecOps: Integrated approach embedding security into every phase of software development and deployment.",
                         "SOC: Specialized team focused on <strong>detecting</strong>, and <strong>managing security incidents</strong>.",
-                        "Security Team (security administrators): Versatile team, often in smaller organizations, responsible for all security activities: monitoring, operational management (patch management, access management, configurations), remediation, awareness, and compliance.",
                         "Pentest: Time-limited engagement to identify vulnerabilities through controlled attack techniques.",
                         "Red Team: Offensive team aiming to <strong>stealthily take control of critical assets</strong> to assess real security posture and defense capabilities."
                     ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Did we forget an important step ?",
+            "image": "./missing_step.jpg",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "We verified development and deployment, tested them alongside our security policies, and applied them in realistic scenarios, that's four thorough checks covering vulnerabilities and compromise paths. But who tests the SOC's effectiveness, not just on a single compromise, but across all scenarios ?"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: Complaints and estimated losses <a href=\"https://www.ic3.gov/\">FBI ic3 AnnualReport</a>, multiples sources for % companies with SOC.",
+            "title": "Widespread SOC Deployment versus Growing Attack Impact",
+            "image": "./SOC_vs_cyberattacks.png",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The core responsibility of the SOC is not to prevent attacks, but to detect and contain them before they have an impact."
+                },
+                {
+                    "type": "p",
+                    "content": "<table style=\"font-family: monospace; border-collapse: collapse; width: 100%;\">\n  <thead style=\"border-bottom: 2px solid #ccc;\">\n    <tr style=\"background-color: #f0f0f033;\">\n      <th style=\"padding: 6px; border-right: 1px solid #ccc; text-align: left;\">Year</th>\n      <th style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">Complaints</th>\n      <th style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">Estimated Losses</th>\n      <th style=\"padding: 6px; text-align: right;\">% Companies with SOC</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2017</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">301,580</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$1.42 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">35%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2018</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">351,937</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$2.71 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">40%</td>\n    </tr>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2019</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">467,361</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$3.50 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">40%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2020</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">791,790</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$4.20 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">50%</td>\n    </tr>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2021</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">847,376</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$6.90 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">58%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2022</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">800,944</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$10.30 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">60%</td>\n    </tr>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2023</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">880,418</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$12.50 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">63%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2024</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">859,532</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$16.60 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">65%</td>\n    </tr>\n  </tbody>\n</table>"
+                },
+                {
+                    "type": "p",
+                    "content": "FBI stats make it pretty clear: SOCs could use some extra attention."
                 }
             ]
         },
@@ -133,19 +191,6 @@
                 {
                     "type": "p",
                     "content": "The limits of the SOC are unknown. Defenses are untested. As a result, attackers can compromise systems using simple, well-known techniques without being detected."
-                }
-            ]
-        },
-        {
-            "type": "content",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "aside": "References: Complaints and estimated losses <a href=\"https://www.ic3.gov/\">FBI ic3 AnnualReport</a>, multiples sources for % companies with SOC.",
-            "title": "Widespread SOC Deployment versus Growing Attack Impact",
-            "image": "./SOC_vs_cyberattacks.png",
-            "texts": [
-                {
-                    "type": "p",
-                    "content": "<table style=\"font-family: monospace; border-collapse: collapse; width: 100%;\">\n  <thead style=\"border-bottom: 2px solid #ccc;\">\n    <tr style=\"background-color: #f0f0f033;\">\n      <th style=\"padding: 6px; border-right: 1px solid #ccc; text-align: left;\">Year</th>\n      <th style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">Complaints</th>\n      <th style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">Estimated Losses</th>\n      <th style=\"padding: 6px; text-align: right;\">% Companies with SOC</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2017</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">301,580</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$1.42 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">35%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2018</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">351,937</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$2.71 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">40%</td>\n    </tr>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2019</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">467,361</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$3.50 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">40%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2020</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">791,790</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$4.20 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">50%</td>\n    </tr>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2021</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">847,376</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$6.90 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">58%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2022</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">800,944</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$10.30 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">60%</td>\n    </tr>\n    <tr style=\"background-color: transparent;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2023</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">880,418</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$12.50 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">63%</td>\n    </tr>\n    <tr style=\"background-color: #ffffff0d;\">\n      <td style=\"padding: 6px; border-right: 1px solid #ccc;\">2024</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">859,532</td>\n      <td style=\"padding: 6px; border-right: 1px solid #ccc; text-align: right;\">$16.60 billion</td>\n      <td style=\"padding: 6px; text-align: right;\">65%</td>\n    </tr>\n  </tbody>\n</table>"
                 }
             ]
         },
