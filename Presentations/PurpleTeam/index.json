@@ -551,6 +551,30 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Warning: context behind the case studies",
+            "image": "./SOC_win.jpg",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The following examples highlight real Purple Team missions where tangible impact was achieved. These cases clearly showcase specific gaps in SOC coverage, but they are not representative of all Purple Team activities.<br>These tests do not imply that SOCs are ineffective or failing, quite the opposite. SOCs are critical to security operations. However, many cases show that even strong SOCs may miss threats due to structural constraints:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Workload versus time: A large volume of tasks under constant pressure",
+                        "Misaligned expectations: SOC analysts are often treated as threat experts, though their role focuses on detection and response, not threat modeling or simulation"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Despite these challenges, SOCs consistently perform impressive work.<br>But if you expect the SOC to detect a broader range of realistic attack scenarios and be truly effective, a dedicated Purple Team becomes essential, because that's their actual role and expertise."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point",
             "image": "./fork_soup.jpg",
             "texts": [
@@ -727,6 +751,110 @@
                 {
                     "type": "p",
                     "content": "It is also entirely possible that your firewall configuration does not detect or block port scans... I've seen it before, sometimes it was just a matter of checking a box in the firewall, but then the SOC would fill the SIEM instead, since the SIEM does not offer any blocking capabilities unlike the firewall."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 2 - Assessing SOC Capabilities to Protect GitLab Based on CIAT",
+            "image": "./work_in_progress.jpg",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Verify whether the SOC can detect and block attacks targeting:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Confidentiality: Prevent source code theft that could lead to industrial or security breaches.",
+                        "Integrity: Detect any attempt to alter code that could compromise all application instances and their data.",
+                        "Availability: Prevent disruption of GitLab to ensure code access and application deployment continuity.",
+                        "Traceability: Ensure all access and code changes are logged, monitored, and attributable."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Status Overview: Due to SOC priorities, no other log formats were integrated into the SIEM besides audit_json.log, which was selected for its easy integration via JSON. Basic detection rules have been implemented to address brute force attempts, mass project deletions, and similar activities."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 2 - Traceability in question: can the SOC identify who accessed the code ?",
+            "image": "./fail_to_pull.jpg",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Scenario: Several internal GitLab projects are found for sale on illegal platforms. The SOC must determine who downloaded the repositories at a specific point in time.<br>Initial Test:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "The SOC only integrated audit_json.log into the SIEM.",
+                        "The Purple Team simulates the compromise of a GitLab token and downloads all projects accessible through it."
+                    ]
+                },
+                {
+                    "type": "ol",
+                    "content": [
+                        "The SOC uses authentication logs to identify all users who were connected during the suspected timeframe.",
+                        "Cross-references their access rights to the affected projects to determine potential responsibility."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "However, since token usage is not captured in audit_json.log, the actual malicious user is not in the SOC's list, making traceability incomplete."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 2 - False sense of coverage: when detection rules fail to protect confidentiality",
+            "image": "./butterfly_catch_monster.jpg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "After some persistence, the SOC agreed to allocate time to integrate new logs and set up detection rules for more relevant activity.",
+                        "Scenario: An employee attempts to exfiltrate GitLab projects.",
+                        "The Purple Team initiates a test by using a Python script to download all accessible project archives.",
+                        "Result: No detection.",
+                        "Upon review, the SOC's detection rule was limited to git clone via HTTPS (URL query with <code>service=git-upload-pack</code>).",
+                        "They overlooked SSH cloning and archive downloads.",
+                        "Outcome: Projects were successfully exfiltrated, no alert was triggered on the SOC side."
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 2 - Code integrity: so close... yet still blind",
+            "image": "./unlock_from_outside.jpg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "After fixing the previous gaps, the SOC patched both vulnerabilities affecting code-related rules.",
+                        "Scenario: An attacker aims to inject backdoors into source code to exfiltrate data from all application instances.",
+                        "The Purple Team edits a file in each GitLab project via the web interface.",
+                        "Result: No detection triggered.",
+                        "The SOC explains: \"Too many false positives due to ongoing development, we rely on weak signals.\"",
+                        "Check weak signals: no weak signals for this test.",
+                        "The rule review show a real detection on:<ul><li><code>git push</code> action through HTTPS and SSH (git-receive-pack using POST request or SSH).</li><li>upload action (POST request on upload).</li></ul>",
+                        "But no detection on file edits via web UI, which use HTTP PUT requests...",
+                        "Another full bypass.",
+                        "The Purple Team requests a strong detection rule for code edits during night hours",
+                        "The SOC replies: \"We already have a rule for authentication at night.\"",
+                        "The Purple Team answers: \"True, but pushes via tokens don’t trigger authentication logs.\""
+                    ]
                 }
             ]
         },
