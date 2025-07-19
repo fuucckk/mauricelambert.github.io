@@ -853,7 +853,7 @@
                         "Another full bypass.",
                         "The Purple Team requests a strong detection rule for code edits during night hours",
                         "The SOC replies: \"We already have a rule for authentication at night.\"",
-                        "The Purple Team answers: \"True, but pushes via tokens don’t trigger authentication logs.\""
+                        "The Purple Team answers: \"True, but pushes via tokens don\u00e2\u20ac\u2122t trigger authentication logs.\""
                     ]
                 }
             ]
