@@ -2,20 +2,20 @@
 <!--
   Copyright (C) 2025 MauriceLambert
 
-  This file is part of PySlideGenerator.
+  This file is part of PySlidesGenerator.
 
-  PySlideGenerator is free software: you can redistribute it and/or modify
+  PySlidesGenerator is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  PySlideGenerator is distributed in the hope that it will be useful,
+  PySlidesGenerator is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with PySlideGenerator.  If not, see <https://www.gnu.org/licenses/>.
+  along with PySlidesGenerator.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <html lang="en">
 <head>
@@ -688,7 +688,7 @@ You should still check your SIEM. If you don't have a Purple Team, chances are y
       <article>
         <div class="text">
           <ol>
-            <li>After fixing the previous gaps, the SOC patched both vulnerabilities affecting code-related rules.</li><li>Scenario: An attacker aims to inject backdoors into source code to exfiltrate data from all application instances.</li><li>The Purple Team edits a file in each GitLab project via the web interface.</li><li>Result: No detection triggered.</li><li>The SOC explains: "Too many false positives due to ongoing development, we rely on weak signals."</li><li>Check weak signals: no weak signals for this test.</li><li>The rule review show a real detection on:<ul><li><code>git push</code> action through HTTPS and SSH (git-receive-pack using POST request or SSH).</li><li>upload action (POST request on upload).</li></ul></li><li>But no detection on file edits via web UI, which use HTTP PUT requests...</li><li>Another full bypass.</li><li>The Purple Team requests a strong detection rule for code edits during night hours</li><li>The SOC replies: "We already have a rule for authentication at night."</li><li>The Purple Team answers: "True, but pushes via tokens don’t trigger authentication logs."</li>
+            <li>After fixing the previous gaps, the SOC patched both vulnerabilities affecting code-related rules.</li><li>Scenario: An attacker aims to inject backdoors into source code to exfiltrate data from all application instances.</li><li>The Purple Team edits a file in each GitLab project via the web interface.</li><li>Result: No detection triggered.</li><li>The SOC explains: "Too many false positives due to ongoing development, we rely on weak signals."</li><li>Check weak signals: no weak signals for this test.</li><li>The rule review show a real detection on:<ul><li><code>git push</code> action through HTTPS and SSH (git-receive-pack using POST request or SSH).</li><li>upload action (POST request on upload).</li></ul></li><li>But no detection on file edits via web UI, which use HTTP PUT requests...</li><li>Another full bypass.</li><li>The Purple Team requests a strong detection rule for code edits during night hours</li><li>The SOC replies: "We already have a rule for authentication at night."</li><li>The Purple Team answers: "True, but pushes via tokens don't trigger authentication logs."</li>
           </ol>
         </div>
         <img src="./unlock_from_outside.jpg" alt="Illustration" />
