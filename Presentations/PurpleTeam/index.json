@@ -111,7 +111,9 @@
                         "Not a pentest, not a red  team versus blue team.",
                         "It's not a goal-driven collaboration between blue team and red team."
                     ]
-                },
+                }
+            ],
+            "old_texts": [
                 {
                     "type": "p",
                     "content": "It's a dedicated team with a permanent role, focused on verifying and validating the effectiveness and quality of the SOC."
@@ -124,7 +126,7 @@
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Understanding Cyber Security Teams",
             "image": "./cyber_security_teams.png",
-            "texts": [
+            "old_texts": [
                 {
                     "type": "ul",
                     "content": [
@@ -133,7 +135,9 @@
                         "A red team is a stealthy attempt to compromise a strategic asset, aiming to test all layers of security for a specific objective.",
                         "SOC teams: detect, investigate, and respond to security incidents."
                     ]
-                },
+                }
+            ],
+            "texts": [
                 {
                     "type": "p",
                     "content": "Purple Teaming is the process used to test the SOC's tools, procedures, and analysts in order to identify weaknesses, potential bypasses, and improvement opportunities across a wide range of high-risk scenarios.\nIt involves both unit and functional testing of every detection and remediation component.\nIt is a search for bypasses rooted in the implementation and design of each tool, procedure, or the way they are interpreted and executed."
@@ -146,7 +150,7 @@
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Roles and Responsibilities of Security Teams",
             "image": "./cyber_security_teams.png",
-            "texts": [
+            "old_texts": [
                 {
                     "type": "ul",
                     "content": [
@@ -156,6 +160,12 @@
                         "SOC: Monitors, detects, and responds to threats. It is responsible for handling incidents when compromises occur.",
                         "Purple Team: Simulates all types of attack scenarios, using a wide range of tools and techniques, from stealthy to noisy. For each scenario, it ensures that every tool, procedure, and analyst can detect, block, and resolve the incident."
                     ]
+                }
+            ],
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Purple Team: Simulates all types of attack scenarios, using a wide range of tools and techniques, from stealthy to noisy. For each scenario, it ensures that every tool, procedure, and analyst can detect, block, and resolve the incident."
                 },
                 {
                     "type": "p",
@@ -224,6 +234,32 @@
             ]
         },
         {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "What a Real Purple Team Brings to the Table",
+            "image": "./aquaman.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Every detection rule is verified through attack simulations (TTP-level, mapped to MITRE ATT&CK).",
+                        "Ensures rules actually detect what they're meant to.",
+                        "Validates that each alert triggers the correct procedures and SOC responses, without prior warning.",
+                        "Checks the real-world applicability of runbooks and incident playbooks.",
+                        "Tests each security solution (EDR, NDR, SIEM, etc.) before deployment.",
+                        "Measures whether the tool: matches the operational need, has blind spots or coverage gaps, produces actionable outputs",
+                        "Maps which attack techniques and scenarios are covered versus exposed.",
+                        "Provides a clear coverage map for decision-makers and governance."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "The Purple Team is the bridge between control and confidence.\nIt brings trust through evidence-based validation."
+                }
+            ]
+        },
+        {
             "type": "title",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "title": "Core Requirements for a Successful Purple Team"
@@ -239,7 +275,7 @@
                     "type": "ul",
                     "content": [
                         "The Purple Team should never be part of the SOC.",
-                        "SOC and Purple Team must have separate management structures.\nOtherwise, SOC priorities tend to suppress Purple Team activities, because: <ul><li>The Purple Team does not boost SOC KPIs.</li><li>It often slows SOC processes by enforcing quality, realism, and effectiveness.</li><li>SOC managers may feel challenged or exposed, leading to a tendency to push the Purple Team aside.</li></ul>",
+                        "SOC and Purple Team must have separate management structures.\nOtherwise, SOC priorities tend to suppress Purple Team activities, because: <ol><li>The Purple Team does not boost SOC KPIs.</li><li>It often slows SOC processes by enforcing quality, realism, and effectiveness.</li><li>SOC managers may feel challenged or exposed, leading to a tendency to push the Purple Team aside.</li></ol>",
                         "Additionally, some SOC teams struggle to accept mistakes made during rule development.\nThe Purple Team exists to help them improve, but constructive feedback is not always well received."
                     ]
                 }
@@ -282,7 +318,7 @@
                 {
                     "type": "ol",
                     "content": [
-                        "June 2023:\nSerious concerns about the EDR's effectiveness are raised, supported by initial tests and proof of concept efforts conducted on personal time.",
+                        "June 2023: I raised serious concerns about the EDR's effectiveness, based on initial tests and proof-of-concept work carried out proactively during my personal time.",
                         "September 2023: \nThe POC is formally approved for execution.",
                         "June 2024: 6 months are projected to complete the POC.",
                         "June 2024: Internal assessment:\nWith automation, the work could realistically be completed in 3 months.",
@@ -296,8 +332,8 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "SOC at Its Best: Crisis Meeting, September 2024",
-            "image": "./manager_break_employee_work.jpg",
+            "title": "Crisis meeting, september 2024: me, at my best",
+            "image": "./bad_night_good_work.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -311,7 +347,16 @@
                         "84 mapped techniques",
                         "~100 possible tests to evaluate EDR capabilities"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Crisis meeting, september 2024: SOC at its best",
+            "image": "./manager_break_employee_work.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "Final POC Scope (SOC Management-Defined):"
@@ -335,7 +380,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "20 Days of pure madness, powered by caffeine and despair",
-            "image": "./no_threat_detection.jpg",
+            "image": "./coffee_intravenous_drip.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -348,14 +393,23 @@
                         "Interpreted results manually",
                         "Delivered a beautiful Excel summary of detection behavior"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "What didn't break EDRs... broke me",
+            "image": "./no_threat_detection.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "And what I didn't manage: didn't automate report generation... Because most EDRs didn't block much, I had to rework the scoring logic, manually dig up non-blocking alerts, and rebuild everything so it made sense."
                 },
                 {
                     "type": "p",
-                    "content": "After 20 days (240 working hours), EDRs didn't block much, but my nervous system sure did."
+                    "content": "After 20 days (~240 working hours), EDRs didn't block much, but my nervous system sure did."
                 }
             ]
         },
@@ -507,7 +561,16 @@
                         "File Access: move, modify, move back -> changes context, bypasses detection: avoids direct access monitoring",
                         "Network Access: Re-implement protocols like DNS, HTTP without using Win32 API -> no detection, no logs"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Barely Enforced, Easily Evaded",
+            "image": "./castle_alone.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "EPP relies on signature, EDR relies on context. So if you change the context without touching the binary, you bypass detection, and the signature doesn't trigger."
@@ -575,28 +638,20 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point",
-            "image": "./fork_soup.jpg",
+            "title": "Case Study 1 - Port Scan Detection: Definitions",
+            "image": "./script_kiddie.jpg",
             "texts": [
                 {
                     "type": "p",
-                    "content": "Typical SOC Approach: Trigger an alert when a single source IP connects to a high number of destination ports on the same IP within a short time window."
+                    "content": "<strong>Port scanning</strong> is a technique used to identify open ports, it involves systematically sending network requests to determine which ones are open, closed, or filtered."
                 },
                 {
                     "type": "p",
-                    "content": "Prompt in ChatGPT: Generate a SIEM detection rule for port scan activity, and provide its human-readable translation only. Do not include any other technical details.<br>\nResponse: Human-readable translation:\nAlert when a single source IP attempts to connect to a high number of different destination ports on the same host within a short time period, indicating potential port scanning activity."
+                    "content": "A <strong>TCP sweep</strong> is a scan that targets a small set of specific ports across multiple IP addresses to identify active hosts offering certain services."
                 },
                 {
                     "type": "p",
-                    "content": "Prompt ChatGPT: Should I implement a port scan detection rule in my SIEM ? Please answer with 'Yes' or 'No' only.<br>\nResponse: Yes."
-                },
-                {
-                    "type": "p",
-                    "content": "Prompt ChatGPT: Should I implement a port scan detection rule in my SIEM, even if I have a firewall? Please answer with 'Yes' or 'No' only.<br>\nResponse: Yes."
-                },
-                {
-                    "type": "p",
-                    "content": "Port Scanning Definition: Port scanning is a technique used to identify open ports, it involves systematically sending network requests to determine which ones are open, closed, or filtered."
+                    "content": "It may seem like a script kiddie trick or pentest technique, but I found a TCP sweep on port 445 in Conti's source code and later seen during a Cerber intrusion, a malware based on Conti."
                 }
             ]
         },
@@ -605,7 +660,42 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point",
-            "image": "./colander_comedy.png",
+            "image": "./fork_soup.jpg",
+            "old_texts": [
+                {
+                    "type": "p",
+                    "content": "Prompt ChatGPT: Should I implement a port scan detection rule in my SIEM ? Please answer with 'Yes' or 'No' only.<br>\nResponse: Yes."
+                },
+                {
+                    "type": "p",
+                    "content": "Prompt ChatGPT: Should I implement a port scan detection rule in my SIEM, even if I have a firewall ? Please answer with 'Yes' or 'No' only.<br>\nResponse: Yes."
+                }
+            ],
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Elastic: <em>if a host has established within 30 seconds timerange, more than 50 connection each using a different port against another host, we will call this a portscan.</em>"
+                },
+                {
+                    "type": "p",
+                    "content": "Prompt in ChatGPT: Generate a SIEM detection rule for port scan activity, and provide its human-readable translation only. Do not include any other technical details.<br>\nResponse: <em>Human-readable translation:\nAlert when a single source IP attempts to connect to a high number of different destination ports on the same host within a short time period, indicating potential port scanning activity</em>."
+                },
+                {
+                    "type": "p",
+                    "content": "Method documented online, endorsed by ChatGPT, and consequently implemented by SOC teams."
+                },
+                {
+                    "type": "p",
+                    "content": "Conclusion, the typical SOC Approach is: <strong>trigger an alert when a single source IP connects to a high number of destination ports on the same IP within a short time window</strong>."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point",
+            "image": "./false_positives.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -622,7 +712,16 @@
                         "Automation and deployment tools (Ansible, SCCM, etc.)",
                         "FTP traffic with dynamic port connections"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point",
+            "image": "./colander_comedy.png",
+            "texts": [
                 {
                     "type": "p",
                     "content": "To reduce false positives, the SOC analyst will typically:"
@@ -657,7 +756,16 @@
                         "Monitoring systems",
                         "Automation and management tools like Ansible, SCCM, etc."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 1 - Port Scan Detection: How Rules Are Written... and Miss the Point",
+            "image": "./luxury_broken_cars2.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "And of course, where there are false positives, the SOC analyst will raise the detection threshold... to over 100, even though your subnet only has 50 machines."
@@ -673,7 +781,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point",
-            "image": "./security_sleeping.jpg",
+            "image": "./archer_redefined_missing_target.png",
             "texts": [
                 {
                     "type": "ul",
@@ -681,7 +789,16 @@
                         "A port scan is the process of testing whether specific ports are open by attempting network connections to them.",
                         "Nowhere is it defined that a port scan must involve only one target machine and TCP sweep must use only one specific port"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point",
+            "image": "./security_sleeping.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "An intelligent attacker could evade basic detection by scanning different ports on different machines in a sequence:"
@@ -707,7 +824,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point",
-            "image": "./crowd_hacker.jpg",
+            "image": "./not_a_hacker.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -719,7 +836,16 @@
                         "Port scans probe both open and closed ports, while legitimate traffic typically connects only to open ports.",
                         "Detecting connections to closed ports helps eliminate false positives from:  <ul><li>dynamic ports (FTP, DCE-RPC, etc.),</li><li>systems with many open ports (Active Directory),</li><li>automation and management tools</li></ul>"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Case Study 1 - Port Scan Detection: How the Purple Team Rescued the Point",
+            "image": "./error_art.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "Remaining Considerations:"
@@ -850,10 +976,7 @@
                         "Check weak signals: no weak signals for this test.",
                         "The rule review show a real detection on:<ul><li><code>git push</code> action through HTTPS and SSH (git-receive-pack using POST request or SSH).</li><li>upload action (POST request on upload).</li></ul>",
                         "But no detection on file edits via web UI, which use HTTP PUT requests...",
-                        "Another full bypass.",
-                        "The Purple Team requests a strong detection rule for code edits during night hours",
-                        "The SOC replies: \"We already have a rule for authentication at night.\"",
-                        "The Purple Team answers: \"True, but pushes via tokens don't trigger authentication logs.\""
+                        "Another full bypass: The Purple Team requests a strong detection rule for code modification during night hours"
                     ]
                 }
             ]
@@ -867,7 +990,7 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Purple Team: A Misunderstood Function in Cybersecurity",
+            "title": "Purple team: a misunderstood function in cybersecurity",
             "image": "./ClutteredRoom.jpg",
             "texts": [
                 {
@@ -892,7 +1015,16 @@
                         "Executives and governance layers often have no clear understanding of what a true Purple Team is.",
                         "From their point of view: If the SOC writes rules or deploys tools, then it works."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Blind spots born from dangerous assumptions",
+            "image": "./good_because.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "Dangerous Assumptions:"
@@ -912,7 +1044,7 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Why Purple Teams Remain Rare in France",
+            "title": "Why purple teams remain rare in France",
             "image": "./balance_security_compliance.jpg",
             "texts": [
                 {
@@ -941,32 +1073,6 @@
             ]
         },
         {
-            "type": "content",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "What a Real Purple Team Brings to the Table",
-            "image": "./aquaman.jpg",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "Every detection rule is verified through attack simulations (TTP-level, mapped to MITRE ATT&CK).",
-                        "Ensures rules actually detect what they're meant to.",
-                        "Validates that each alert triggers the correct procedures and SOC responses, without prior warning.",
-                        "Checks the real-world applicability of runbooks and incident playbooks.",
-                        "Tests each security solution (EDR, NDR, SIEM, etc.) before deployment.",
-                        "Measures whether the tool: matches the operational need, has blind spots or coverage gaps, produces actionable outputs",
-                        "Maps which attack techniques and scenarios are covered versus exposed.",
-                        "Provides a clear coverage map for decision-makers and governance."
-                    ]
-                },
-                {
-                    "type": "p",
-                    "content": "The Purple Team is the bridge between control and confidence.\nIt brings trust through evidence-based validation."
-                }
-            ]
-        },
-        {
             "type": "title",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "title": "Purple Teaming: Lost Forever or the Next Big Thing ?"
@@ -975,7 +1081,7 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Toward a Real Technical Standard: Integrating Purple Teaming into Cybersecurity Frameworks",
+            "title": "Toward a real technical standard: integrating purple teaming into cybersecurity frameworks",
             "image": "./sleeping_soc.jpg",
             "texts": [
                 {
@@ -989,7 +1095,16 @@
                         "Executed by external experts simulating real-world attack scenarios.",
                         "Based on hands-on testing of your environment, not just documentation reviews."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Toward a real technical standard: integrating purple teaming into cybersecurity frameworks",
+            "image": "./purple_inspect_bleu_shield.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "2. Result-Based Trust for Clients and Insurers:"
@@ -1002,7 +1117,16 @@
                         "The results would offer a transparent and objective measure of the SOC's true detection and response capabilities.",
                         "Clients and insurers could then base their trust, contracts, or premiums on the demonstrated effectiveness."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Toward a real technical standard: integrating purple teaming into cybersecurity frameworks",
+            "image": "./giant_jenga.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "3. Purple Testing for Critical Infrastructure, for Operators of Vital Importance (OIVs):"
@@ -1013,7 +1137,16 @@
                         "Laws could mandate minimum attack simulation scores.",
                         "Evaluation would shift from \"tools in place\" to proven detection & response capability."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Toward a real technical standard: integrating purple teaming into cybersecurity frameworks",
+            "image": "./defense_accountability.jpg",
+            "texts": [
                 {
                     "type": "p",
                     "content": "4. Accountability Based on Results, in case of breach or data leak, organizations would:"
@@ -1036,7 +1169,7 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Making the Certification Work: Methodology & Requirements",
+            "title": "Making the certification work: requirements",
             "image": "./certified_purple_guy.jpg",
             "texts": [
                 {
@@ -1050,7 +1183,21 @@
                     "type": "ul",
                     "content": [
                         "The platform must include a large pool of attack scenarios.",
-                        "Each test must have: a unique ID, a stealth score (to define its likelihood of detection)",
+                        "Each test must have: a unique ID, a stealth score (to define its likelihood of detection)"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Making the certification work: methodology",
+            "image": "./block_rs_not_ssh.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
                         "For each test session: a random selection (~25%) of scenarios is made, tests are chosen randomly, but weighted by priority, stealth level, and relevance",
                         "Tests are executed from most stealthy to most noisy"
                     ]
@@ -1073,7 +1220,7 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "SOC Scoring Model: Beyond Detection, Toward Smart Response",
+            "title": "SOC scoring model: beyond detection...",
             "image": "./working_soc.png",
             "texts": [
                 {
@@ -1087,7 +1234,16 @@
                         "Key technical elements (tools, TTPs, targets)",
                         "Attribution scope: internal versus external source (helps determine if internal communication is possible)"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "SOC scoring model: ...toward smart response",
+            "image": "./bouncer_miss_second_hacker.png",
+            "texts": [
                 {
                     "type": "p",
                     "content": "Blocking: Quality Over Reaction<br>\nBlocking actions are expected but must be strategic:"
@@ -1103,10 +1259,19 @@
                         "Service shut down unnecessarily during the response = severe penalty",
                         "The SOC must show surgical response, not panic-driven actions."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "SOC scoring model",
+            "image": "./water_leak.jpg",
+            "texts": [
                 {
                     "type": "p",
-                    "content": "Scoring Detection Based on <strong>Pyramid of Pain</strong>: detection rules and remediation actions are scored according to the impact level."
+                    "content": "Scoring Detection Based on the <strong>Pyramid of Pain</strong> and test stealth level:<br>Detection rules and remediation actions are scored according to both their impact on the adversary (<strong>Pyramid of Pain</strong>) and the stealthiness of the test, ensuring that more evasive and impactful techniques are properly prioritized."
                 },
                 {
                     "type": "p",
@@ -1118,7 +1283,7 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Post-Test Review: Feedback, Validation & Documentation Control",
+            "title": "Post-test review: feedback",
             "image": "./certification_feedback.png",
             "texts": [
                 {
@@ -1130,12 +1295,22 @@
                     "content": [
                         "Provide detailed feedback on failed or missed detections",
                         "Share recommendations for improvement",
-                        "Analyze false positives, timing, and response relevance"
+                        "Analyze false positives, timing, and response relevance",
+                        "SOC detection rule quality"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Post-test review: validation & documentation control",
+            "image": "./cake_hot_oven.png",
+            "texts": [
                 {
                     "type": "p",
-                    "content": "Validation of Awarded Points: each SOC action that earns points must be documented in a written procedure and prepared before the test.<br>\nIf a procedure is missing or incomplete:"
+                    "content": "Validation of awarded points: each SOC action that earns points must be documented in a written procedure and prepared before the test.<br>\nIf a procedure is missing or incomplete:"
                 },
                 {
                     "type": "ul",
@@ -1159,7 +1334,7 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Conclusion: Purple Team, the Missing Link in Real Security Assurance",
+            "title": "Conclusion: purple team...",
             "image": "./purple_help_soc.jpg",
             "texts": [
                 {
@@ -1177,11 +1352,20 @@
                         "Purple Teams bridge the gap between: SMSI (ISMS) priorities and the real capabilities of the SOC",
                         "They create a common understanding of what must be protected and what can actually be detected and stopped."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Conclusion: ...the missing link in real security assurance",
+            "image": "./purple_certified_castle.png",
+            "texts": [
                 {
                     "type": "ul",
                     "content": [
-                        "Despite their importance, Purple Teams are still rare.",
+                        "Despite their importance, purple teams are still rare.",
                         "Most organizations only evolve when compliance requires it."
                     ]
                 },
@@ -1194,7 +1378,7 @@
                 },
                 {
                     "type": "p",
-                    "content": "Security cannot be claimed, it must be demonstrated. Purple Teams are the only way to prove it."
+                    "content": "Security cannot be claimed, it must be demonstrated. Purple Teams are the only way to prove the SOC effectiveness."
                 }
             ]
         }
