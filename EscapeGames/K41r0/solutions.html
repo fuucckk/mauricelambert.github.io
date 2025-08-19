@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of the `K41r0` escape game.
+
+  K41r0 is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  K41r0 is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with K41r0.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Soluces espace game K41r0</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #00ff00;
+      font-family: monospace;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .terminal {
+      position: relative;
+      padding: 20px;
+      width: 80%;
+      max-width: 900px;
+      height: 80%;
+      max-height: 600px;
+      box-sizing: border-box;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow: auto;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ff00;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #00ff00;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    em {
+      font-style: italic;
+      color: #aaffaa;
+    }
+
+    strong {
+      font-weight: bold;
+      color: #39FF14;
+    }
+
+    code {
+      background-color: #222;
+      color: #39FF14;
+      font-family: monospace;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #222;
+      color: #39FF14;
+      padding: 10px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: monospace;
+      overflow: auto;
+    }
+
+    ul, ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    a {
+      color: #39FF14;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lightning {
+      position: fixed;
+      width: 150px;
+      height: auto;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+      transition: opacity 0.2s ease;
+      filter: drop-shadow(0 0 10px #39FF14) drop-shadow(0 0 20px #39FF14) drop-shadow(0 0 30px #39FF14);
+    }
+
+    #button-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    #button-container button {
+      padding: 10px;
+      background-color: #00ff00;
+      border: none;
+      color: #000;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #button-container button:hover {
+      background-color: #00cc00;
+    }
+
+    .shake {
+      animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(2px, 2px) rotate(0.5deg); }
+      20% { transform: translate(-2px, -3px) rotate(-0.5deg); }
+      40% { transform: translate(-4px, 0) rotate(0.8deg); }
+      60% { transform: translate(4px, 3px) rotate(-0.8deg); }
+      80% { transform: translate(2px, -2px) rotate(0.3deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    #lightning {
+      filter: drop-shadow(0 0 5px #39FF14) drop-shadow(0 0 10px #39FF14) drop-shadow(0 0 20px #39FF14);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="terminal">
+    <div id="button-container">
+      <button id="language-toggle">Français</button>
+      <button id="lightning-toggle">Deactivate sparks animation</button>
+    </div>
+
+    <div class="content">
+      <div id="content-en">
+        <h1>K41r0 Escape Game</h1>
+        <p>The <code>K41r0</code> escape game is a hacking-themed escape game. It was designed to educate people about cyber risks in their private lives in a <em>passive</em> way, meaning participants aren't actively looking to learn. They play, but by playing, they will learn without even realizing it.</p>
+
+        <p>Players will understand the techniques attackers use to target them. With this knowledge, they will be able to protect their privacy and that of their loved ones. They will also learn to recognize common attacks and their impact in personal or professional environments. Perhaps, they will start asking more questions in the future.</p>
+
+        <p>A large puzzle, in multiple stages, is already well-developed and ready to use. However, the beginning is missing, allowing you to customize it if you'd like. Otherwise, I will explain how I created the start so you can replicate it. This also allows you to adjust the length of the escape game to your preference.</p>
+
+        <p>This escape game is challenging. To make it medium or easy in difficulty, the game master will need to provide hints to the players. You will find these hints below.</p>
+
+        <h2>Steps</h2>
+        <ol>
+          <li>Go to the following page: <a href="https://mauricelambert.github.io/EscapeGames/K41r0/">https://mauricelambert.github.io/EscapeGames/K41r0/</a>, where you will find the scenario and instructions for the players. From there, players can click on the <code>start</code> button and begin the escape game, on this page: <a href="https://mauricelambert.github.io/EscapeGames/K41r0/login.html">https://mauricelambert.github.io/EscapeGames/K41r0/login.html</a>.</li>
+          <li>On this page, a password is requested. With the previous instructions, players should understand that this password will be given to them through a first off-computer puzzle. You can create your own way to access the password. Otherwise, here's how I designed the first puzzle.</li>
+          <li><strong>[Not implemented]</strong> A box locked with a padlock is placed on the table, but without the key. The instructions say to search for something unusual in the surroundings. In my case, the players were outside, near a garden. In that garden, I had planted a pink plastic pineapple that opens. When the players open the pineapple, they discover that the keys are inside, along with a cork stopper... They cannot remove the pineapple from the ground, so they can't tip it over. It's too complicated to pull it out with sticks... They will need to find a clever solution to get the keys: filling the pineapple with water will cause the keys to float, allowing them to retrieve them. Of course, you might not have a pineapple or a garden, but that's not a problem. You can use objects like a water bottle or a baby bottle, which have shapes that work well for this kind of puzzle. The instructions mention an item that is out of place, not necessarily a garden or a pineapple, so it's easy to adapt the puzzle in your own way.</li>
+          <li><strong>[Not implemented]</strong> Once in possession of the keys, the players can open the box, which contains a small plastic case, inside which there is a small electronic module called <em>Digispark</em> (<a href="https://www.amazon.com/WSDMAVIS-Digispark-Kickstarter-ATTINY85-Development/dp/B08JHP9YTH/ref=sr_1_7?dib=eyJ2IjoiMSJ9.Rqvj5HAWbI9jHcTEKOISuJc3gqybW80MloByVfIIyHhF6pNiU9peg7l4wy3eZc9ORNRUw28R3NxXlEG0mKh6MgmJRvMpFz7oXclzWNx23qoYLjiYxnt9Ego7utnWch29439nIaEzsFTxyk4t8dweSPDwqbtoXJcAKKpWcso1w-GzrMoquXh_reKPI8Fg5z1yudH6Z0hCM1wROpYIFTcG0eItRFIDvJjfIPiuYq-f6og.jFlstWt_GPj0VrZoD6Td7YryhxeFwraolqcYo-WFS0w&dib_tag=se&keywords=digispark&qid=1754933954&sr=8-7">the Digispark module on Amazon</a>, which can be purchased for around $3 each online). I programmed the module so that it can automatically type the password on the computer when plugged in, as explained here: <a href="https://github.com/mauricelambert/Talk1.BankSecurity#user-content-how-to-build-you-own-sneaky-rubber-ducky">https://github.com/mauricelambert/Talk1.BankSecurity#user-content-how-to-build-you-own-sneaky-rubber-ducky</a>. Once the password is typed, the players can press the Enter key and proceed to the next part of the puzzle. This will also be the moment to start the countdown or to plug in the end-of-game electronic module (which does the countdown).</li>
+          <li>The players reach a page where a clue is written, related to a decoding process, followed by an empty space. They can display additional elements by clicking on the 4 green buttons at the top of the page. On the second page, they will see a second clue of a <em>philosophical</em> nature, related to emptiness and invisibility. They will need to return to the first page to discover the invisible text in the <em>void</em> (by selecting the text with the mouse or pressing Ctrl+A).</li>
+          <li>The text doesn't mean anything, but as a reminder, the first clue is a decoding process. The process is quite simple: they need to take every other character, these first characters will form the beginning of the text, and the other characters will form the end. They can apply it manually with paper and a pen or using a notepad application, but be careful, they need to count spaces and line breaks (as the game master, make sure to give them this information, it's important)! If one of the players knows about computers, they can save their team some time with a line of code (for example, in Python it is possible to display the text with this line: <code>b = &quot;&quot;&quot;&lt;paste text here&gt;&quot;&quot;&quot;; print(b[::2] + b[1::2])</code>). The text thus obtained is the following:
+            <pre>As agreed
+I've connected the data
+To the new account and hooked up the paper
+Shredder to this account.
+The protection remains the same.
+Since you unlocked it,
+You've loaded paper, and
+The countdown has started.
+Because it is very fragile,
+It cannot be moved or unplugged.
+If an error occurs, you must follow the instructions
+To disarm it,
+Bend down under the machine
+You will need light and
+When reaching for the safety handle, beware of moisture
+The heat of a summer day,
+We wouldn't want you to get hurt. Next, enter your user ID
+Along with the 4-digit secret code
+And the page you no longer wish to destroy
+That you'll need to identify
+Must be removed and then placed
+Within my data.</pre>
+          </li>
+
+          <li>Once the first part of the decoding is completed: "Divided into two halves along one path, to reveal a false meaning's mask.", they get a text with meaning, but without any importance. They now need to decode the meaning with the clue: "Then slice one half along another way, to uncover truth where shadows play." They need to take every other line starting from the second one. The word "matrix" is used to guide the players to columns (represented by the characters) and then to rows. So, they will have already processed one meaning: that of the columns by taking the characters, and this step processes the second meaning, that of the rows. The text thus obtained is the following:
+            <pre>I've connected the data
+Shredder to this account.
+Since you unlocked it,
+The countdown has started.
+It cannot be moved or unplugged.
+To disarm it,
+You will need light and
+The heat of a summer day,
+Along with the 4-digit secret code
+That you'll need to identify
+Within my data.</pre>
+          </li>
+          <li>The previous action gives the instructions for the last riddle, which allows disarming the data destructor to preserve it. The last riddle contains 3 steps: the first consists of finding the secret disarm code, the second allows finding the necessary temperature for disarming, and the third to find the light level needed for disarming. In the original escape game, I had built an electronic module. When the players set the potentiometer (4-digit secret code) to the correct value, raised the temperature above the required temperature, and set the light level above the required level without making the module shake (a piezometric sensor verified that the vibrations were low enough not to trigger destruction), the escape was solved. To best illustrate this electronic module, I created a web interface that allows modifying the temperature, the light level, and the potentiometer value, and detecting changes that are too large, simulating vibrations that make the players restart.</li>
+          <li>Now that we know what the players need to do, let's see how to solve the riddles. The data in the <strong>Informations</strong> section needs to be analyzed, and the players should keep in mind the statement: <q>and then replicate a part of my investigation to uncover gang members still hidden in the shadows.</q> They must therefore identify the gang members from the information they have. By observing closely, they see that the phone numbers are consecutive... or almost, as there are gaps. One can deduce that the gang bought a batch of prepaid phones... and that the numbers follow a sequence. This is the key to solving the riddles, as the missing phone numbers belong to the still unknown gang members.</li>
+          <li>All the riddles work the same way, the phone numbers are the key. The players must identify the missing digits in the correct order to obtain the 4-digit code, which forms the secret code for disarming and allows setting the potentiometer to the correct value. The phone numbers are: <code>+44 7300 899999</code> for <code>-1</code>, <code>+44 7300 900008</code> for <code>8</code>, <code>+44 7300 900002</code> for <code>2</code>, <code>+44 7300 900004</code> for <code>4</code>, <code>+44 7300 900003</code> for <code>3</code>, <code>+44 7300 900010</code> for <code>10</code>, <code>+44 7300 900001</code> for <code>1</code>, <code>+44 7300 900007</code> for <code>7</code>. The missing numbers are therefore in this order: <code>0956</code> (after <code>+44 7300 899999</code>, there is the number <code>+44 7300 900000</code>, which does not appear and allows finding the number <code>0</code>; after <code>+44 7300 900008</code>, there is the number <code>+44 7300 900009</code>, which does not appear and allows finding the number <code>9</code>; <code>+44 7300 900002</code> represents <code>2</code>, but <code>+44 7300 900003</code> represents <code>3</code>, which is present; <code>+44 7300 900004</code> represents <code>4</code>, but <code>5</code> and <code>6</code> are missing, and these are the last two digits of the secret code). Therefore, the potentiometer must be set to <code>0956</code> (thus <code>956</code>).</li>
+          <li>Now the players need to find the temperature. By observing closely, there are 2 descriptions with the flame emojis, which symbolize heat. The first is on the number <code>+44 7300 900003</code> which represents <code>3</code> with 2 emojis, the second is <code>+44 7300 900007</code> which represents <code>7</code> with a single flame emoji. 2 emojis represent the tens place, and 1 emoji represents the ones place, giving us <code>37</code>. Therefore, the temperature needs to be set to 37 degrees.</li>
+          <li>Finally, the players will need to read the descriptions until they find a suspicious one, that of <code>+44 7300 900002</code> because it contains the word <code>light</code> three times. Upon closer inspection of the other descriptions for the word <code>light</code>, we see that <code>+44 7300 900008</code> contains 2 occurrences, <code>+44 7300 900003</code> contains 1 occurrence of the word <code>light</code>, and all the others contain 0. This is the key for the light level: <code>283</code> (<code>+44 7300 900002</code> represents <code>2</code> with 3 occurrences, which indicates the hundreds place; <code>+44 7300 900008</code> represents <code>8</code> with 2 occurrences for the tens place, and finally <code>+44 7300 900003</code> with 1 occurrence for the ones place).</li>
+          <li>All that's left is to heat the temperature sensor, increase the brightness detected by the light sensor, and set the potentiometer to the correct value, all without making the module shake! If you haven't built the module, you can use the <strong>Hardware</strong> page provided in the escape game. Congratulations, you have successfully found and saved the data!</li>
+        </ol>
+
+        <h2>Clues</h2>
+
+        <h3>Advanced Level</h3>
+        <ul>
+          <li>Explain that spaces and line breaks need to be considered, and mention that if someone knows computer science, they can perform the decoding with a computer to save time.</li>
+        </ul>
+
+        <h3>Medium Level</h3>
+        <ul>
+          <li><em>The clues from the advanced level</em></li>
+          <li><code>A matrix is an array containing columns and rows.</code></li>
+          <li><code>The phone numbers are the key to the steps of the final puzzle.</code></li>
+        </ul>
+
+        <h3>Easy Level</h3>
+        <ul>
+          <li><em>The clues from the advanced and medium levels</em></li>
+          <li><code>Each character in a line of text can be seen as a column in a matrix.</code></li>
+          <li><code>A sequence with missing numbers from -1 to 10 inclusive can indicate a code with the missing digits.</code></li>
+        </ul>
+
+        <h3>Beginner Level</h3>
+        <ul>
+          <li><em>The clues from the advanced, medium, and easy levels</em></li>
+          <li><code>One direction in a matrix can be seen as columns, the second direction would be rows.</code></li>
+          <li><code>Key symbols and repetitions of key words can indicate digits and their occurrences, the position to form a numeric value.</code></li>
+        </ul>
+
+        <h2>Cyber Techniques</h2>
+
+        <ol>
+          <li>The USB key that writes by itself. Showing this technique is important because it allows you to take control of a computer in less than 4 seconds, highlighting the importance of always locking your session even if you step away for a moment to grab a coffee or retrieve something nearby.</li>
+          <li>Various OSINT techniques that allow you to find a person from their photos (including profile pictures), pseudonyms, name, phone number, or email address. The message is simple: limit your photos, use different pseudonyms on platforms, limit the exposure of your name online (and if possible, never with a photo of you), use different email addresses (one per pseudonym), use multiple phone numbers (one per pseudonym).</li>
+          <li>It is possible to trap someone by making them click on a link. Never click on a link, whether by message or email.</li>
+          <li>Fake websites can be created where you are asked to enter login credentials. If someone enters these credentials, the attacker can reuse them to take control of the real account. Always verify the legitimacy of a website before entering passwords!</li>
+          <li>It is possible to get someone to download and execute files to take control of their computer or phone. <strong>Never download files and never click on them !</strong></li>
+        </ol>
+
+      </div>
+
+      <div id="content-fr" style="display: none;">
+        <h1>K41r0 Escape Game</h1>
+        <p>L'escape game <code>K41r0</code> est un jeu d'escape game sur le thème du hacking. Il a été conçu dans le but de former les gens aux risques cyber dans leur vie privée de manière <em>passive</em>, c'est-à-dire que les participants ne cherchent pas à se former activement. Ils jouent, mais en jouant, ils se formeront sans le savoir.</p>
+
+        <p>Les joueurs comprendront les techniques que les attaquants utilisent pour les cibler. Grâce à ces informations, ils pourront protéger leur vie privée ainsi que celle de leurs proches. Ils apprendront à reconnaître certaines attaques courantes et à en mesurer les impacts dans les milieux personnels ou professionnels. Peut-être se poseront-ils davantage de questions à l'avenir.</p>
+
+        <p>Une grande énigme, en plusieurs étapes, est déjà bien développée et prête à l'emploi. Il manque cependant le début, ce qui vous permet de le personnaliser si vous le souhaitez. Sinon, je vous expliquerai comment j'ai conçu l'introduction afin que vous puissiez la reproduire. Cela permet aussi d'ajuster la durée de l'escape game, en fonction de vos préférences.</p>
+
+        <p>Ce jeu est complexe. Pour le rendre de niveau moyen ou facile, le maître du jeu devra fournir des indices aux joueurs. Vous trouverez ces indices ci-dessous.</p>
+
+        <h2>Étapes</h2>
+        <ol>
+          <li>Rendez-vous sur la page suivante : <a href="https://mauricelambert.github.io/EscapeGames/K41r0/">https://mauricelambert.github.io/EscapeGames/K41r0/</a>, où vous trouverez le scénario et les instructions pour les joueurs. À partir de là, les joueurs pourront cliquer sur le bouton <code>start</code> et commencer l'escape game, sur cette page : <a href="https://mauricelambert.github.io/EscapeGames/K41r0/login.html">https://mauricelambert.github.io/EscapeGames/K41r0/login.html</a>.</li>
+          <li>Sur cette page, un mot de passe est demandé. Avec les instructions précédentes, les joueurs devraient comprendre que ce mot de passe leur sera donné à partir d'une première énigme hors ordinateur. Vous pouvez inventer votre propre méthode pour accéder au mot de passe. Sinon, voici comment j'ai conçu cette première énigme.</li>
+          <li><strong>[Non implémenté]</strong> Une boîte fermée par un cadenas est posée sur la table, mais sans la clé. Les instructions disent de rechercher un élément anormal dans l'entourage. Dans mon cas, les joueurs étaient à l'extérieur, près d'un potager. Dans ce potager, j'avais planté un ananas en plastique rose qui s'ouvre. Lorsque les joueurs ouvrent l'ananas, ils découvrent que les clés sont à l'intérieur, accompagnées d'un bouchon en liège... Ils ne peuvent pas retirer l'ananas du sol, donc ils ne peuvent pas le renverser. Il est trop compliqué de le sortir avec des bâtons... Ils devront donc trouver une solution astucieuse pour récupérer les clés : remplir l'ananas d'eau, ce qui fera flotter les clés, et ils pourront ainsi les sortir. Bien sûr, vous n'aurez peut-être pas d'ananas ni de potager, mais ce n'est pas un problème. Vous pouvez utiliser des objets comme une gourde ou un biberon, dont la forme est idéale pour ce genre d'énigme. Les instructions mentionnent un élément qui n'est pas à sa place, pas nécessairement un potager ou un ananas, donc il est facile de reproduire cette énigme à votre façon.</li>
+          <li><strong>[Non implémenté]</strong> Une fois en possession des clés, les joueurs peuvent ouvrir la boîte, qui contient un petit boîtier en plastique, lequel contient lui-même un petit module électronique appelé <em>Digispark</em> (<a href="https://www.amazon.com/WSDMAVIS-Digispark-Kickstarter-ATTINY85-Development/dp/B08JHP9YTH/ref=sr_1_7?dib=eyJ2IjoiMSJ9.Rqvj5HAWbI9jHcTEKOISuJc3gqybW80MloByVfIIyHhF6pNiU9peg7l4wy3eZc9ORNRUw28R3NxXlEG0mKh6MgmJRvMpFz7oXclzWNx23qoYLjiYxnt9Ego7utnWch29439nIaEzsFTxyk4t8dweSPDwqbtoXJcAKKpWcso1w-GzrMoquXh_reKPI8Fg5z1yudH6Z0hCM1wROpYIFTcG0eItRFIDvJjfIPiuYq-f6og.jFlstWt_GPj0VrZoD6Td7YryhxeFwraolqcYo-WFS0w&dib_tag=se&keywords=digispark&qid=1754933954&sr=8-7">le module Digispark sur Amazon</a>, que vous pouvez acheter pour environ 3 $ l'unité sur Internet). J'ai programmé ce module pour qu'il puisse écrire tout seul le mot de passe sur l'ordinateur dès son branchement, comme expliqué dans ce lien : <a href="https://github.com/mauricelambert/Talk1.BankSecurity#user-content-how-to-build-you-own-sneaky-rubber-ducky">https://github.com/mauricelambert/Talk1.BankSecurity#user-content-how-to-build-you-own-sneaky-rubber-ducky</a>. Une fois le mot de passe écrit, les joueurs peuvent appuyer sur le bouton Entrée et accéder à la suite de l'énigme. Ce sera également le moment de lancer le compte à rebours ou de brancher le module électronique de fin de partie (qui fait le compte à rebours).</li>
+          <li>Les joueurs arrivent sur une page où un indice est écrit, concernant un processus de décodage, suivi d'un espace vide. Ils peuvent afficher d'autres éléments en cliquant sur les 4 boutons verts en haut de la page. Sur la seconde page, ils verront un second indice de nature <em>philosophique</em>, portant sur le vide et l'invisibilité. Ils devront revenir sur la première page pour découvrir le texte invisible dans le <em>vide</em> (en sélectionnant le texte avec la souris ou en appuyant sur Ctrl+A).</li>
+          <li>Le texte ne veut rien dire, mais pour rappel, le premier indice est un processus de décodage. Le processus est relativement simple : ils doivent prendre un caractère sur deux, ces premiers caractères forment le début du texte et les autres caractères forment la fin. Ils pourront l'appliquer manuellement avec un papier et un crayon ou une application de bloc-notes, mais attention, il faut compter les espaces et les sauts de ligne (en tant que maître de jeu, donnez-leur cette information, c'est important) ! Si un des joueurs connaît l'informatique, il peut aussi faire gagner du temps à son équipe avec une ligne de code (par exemple, en Python il est possible d'afficher le texte avec cette ligne : <code>b = &quot;&quot;&quot;&lt;coller le texte ici&gt;&quot;&quot;&quot;; print(b[::2] + b[1::2])</code>). Le texte ainsi obtenu est le suivant :
+            <pre>As agreed
+I've connected the data
+To the new account and hooked up the paper
+Shredder to this account.
+The protection remains the same.
+Since you unlocked it,
+You've loaded paper, and
+The countdown has started.
+Because it is very fragile,
+It cannot be moved or unplugged.
+If an error occurs, you must follow the instructions
+To disarm it,
+Bend down under the machine
+You will need light and
+When reaching for the safety handle, beware of moisture
+The heat of a summer day,
+We wouldn't want you to get hurt. Next, enter your user ID
+Along with the 4-digit secret code
+And the page you no longer wish to destroy
+That you'll need to identify
+Must be removed and then placed
+Within my data.</pre>
+          </li>
+          
+          <li>Une fois la première partie du décodage effectuée : "Divided into two halves along one path, to reveal a false meaning's mask.", ils obtiennent un texte avec un sens, mais sans aucune importance. Ils doivent maintenant décoder le sens avec l'indice : "Then slice one half along another way, to uncover truth where shadows play." Il suffit de prendre une ligne sur deux en partant de la 2ème. Le mot "matrix" est utilisé pour faire passer les joueurs aux colonnes (représentées par les caractères) puis aux lignes. Donc, ils auront déjà traité un sens : celui des colonnes en faisant les caractères, et cette étape traite le second sens, celui des lignes. Le texte ainsi obtenu est le suivant :
+            <pre>I've connected the data
+Shredder to this account.
+Since you unlocked it,
+The countdown has started.
+It cannot be moved or unplugged.
+To disarm it,
+You will need light and
+The heat of a summer day,
+Along with the 4-digit secret code
+That you'll need to identify
+Within my data.</pre>
+          </li>
+          <li>L'action précédente permet d'avoir les instructions pour la dernière énigme, celle qui permet de désamorcer le destructeur de données pour les préserver. La dernière énigme contient 3 étapes : la première consiste à trouver le code secret de désarmorcage, la seconde permet de trouver la température nécessaire au désarmorcage, la troisième de trouver le niveau de luminosité au désarmorcage. Dans l'escape game original, j'avais construit un module électronique. Lorsque les joueurs positionnaient le potentiomètre (code secret à 4 chiffres) sur la bonne valeur, élevaient la chaleur au-dessus de la température demandée et le niveau de lumière au-dessus du niveau demandé sans faire trembler ce module (un capteur piézométrique permettait de vérifier que les tremblements étaient suffisamment faibles pour ne pas déclencher la destruction), l'escape se solvait. Pour illustrer au mieux ce module électronique, j'ai créé une interface web permettant de modifier la température, le niveau de luminosité et la valeur du potentiomètre ainsi que de détecter des modifications trop importantes pour simuler des vibrations qui font recommencer les joueurs.</li>
+          <li>Maintenant que nous savons ce que les joueurs doivent effectuer, nous allons voir comment résoudre les énigmes. Il faut analyser les données dans la partie <strong>Informations</strong>, les joueurs doivent garder à l'esprit l'énoncé qui indique : <q>and then replicate a part of my investigation to uncover gang members still hidden in the shadows.</q>, il faut donc identifier à partir des informations que l'on a des personnes du gang. En observant bien, on voit que les numéros de téléphone se suivent... ou presque, car il y a des trous. On peut donc comprendre que le gang a acheté un lot de téléphones prépayés... et que les numéros se suivent. C'est la clé pour résoudre les énigmes, car les numéros de téléphones manquants appartiennent aux membres du gang encore inconnus.</li>
+          <li>Toutes les énigmes fonctionnent de la même manière, les numéros de téléphone sont la clé. Les joueurs doivent identifier les chiffres manquants dans le bon ordre pour obtenir le code à 4 chiffres, qui forme le code secret permettant le désarmorcage, et permettant de donner la bonne valeur au potentiomètre. Les numéros de téléphone sont : <code>+44 7300 899999</code> pour <code>-1</code>, <code>+44 7300 900008</code> pour <code>8</code>, <code>+44 7300 900002</code> pour <code>2</code>, <code>+44 7300 900004</code> pour <code>4</code>, <code>+44 7300 900003</code> pour <code>3</code>, <code>+44 7300 900010</code> pour <code>10</code>, <code>+44 7300 900001</code> pour <code>1</code>, <code>+44 7300 900007</code> pour <code>7</code>. Ils manquent donc les numéros suivants dans cet ordre : <code>0956</code> (après <code>+44 7300 899999</code>, il y a le numéro <code>+44 7300 900000</code>, qui n'apparaît pas et qui permet donc de trouver le numéro <code>0</code> ; après <code>+44 7300 900008</code>, il y a le numéro <code>+44 7300 900009</code>, qui n'apparaît pas et qui permet donc de trouver le numéro <code>9</code> ; le <code>+44 7300 900002</code> représente le <code>2</code>, mais le <code>+44 7300 900003</code> représentant le <code>3</code> est bien présent, le <code>+44 7300 900004</code> représente le <code>4</code>, mais le <code>5</code> et le <code>6</code> n'y sont pas, ce sont donc les deux derniers chiffres du code secret). Il faut donc utiliser le potentiomètre pour mettre la valeur <code>0956</code> (donc <code>956</code>).</li>
+          <li>Maintenant les joueurs doivent trouver la température, en observant bien, il y a 2 descriptions avec les emojis flamme, symbole de chaleur. La première sur le numéro <code>+44 7300 900003</code> qui représente le <code>3</code> avec 2 emojis, la seconde est <code>+44 7300 900007</code> qui représente le <code>7</code> avec un seul emoji flamme. 2 emojis pour dire le chiffre des dizaines et 1 emoji pour le chiffre des unités, cela donne <code>37</code>. Il faut donc monter la température à 37 degrés.</li>
+          <li>Pour finir, les joueurs vont devoir lire les descriptions jusqu'à trouver une description suspecte, celle du <code>+44 7300 900002</code> car elle contient 3 fois le mot <code>light</code>. En regardant mieux les autres descriptions à la recherche du mot <code>light</code>, on voit que la <code>+44 7300 900008</code> contient 2 occurrences, la <code>+44 7300 900003</code> contient 1 occurrence du mot <code>light</code> et toutes les autres 0... C'est la clé pour le niveau de lumière : <code>283</code> (<code>+44 7300 900002</code> représente <code>2</code> avec 3 occurrences, cela indique le chiffre des centaines ; <code>+44 7300 900008</code> représente le <code>8</code> avec 2 occurrences pour le chiffre des dizaines et enfin <code>+44 7300 900003</code> avec 1 occurrence pour le chiffre des unités).</li>
+          <li>Il n'y a plus qu'à faire chauffer le capteur de température, augmenter la luminosité détectée par le capteur de lumière et mettre le potentiomètre sur la bonne valeur, le tout sans faire bouger le module ! Si vous n'avez pas construit le module, vous pouvez utiliser la page web <strong>Hardware</strong> fournie dans l'escape game. Félicitations, vous avez réussi à trouver et sauver les données !</li>
+        </ol>
+
+        <h2>Indices</h2>
+
+        <h3>Niveau compliqué</h3>
+        <ul>
+          <li>Expliquez qu'il faut bien prendre en compte les espaces et les sauts de ligne, et indiquez que si l'une des personnes connaît l'informatique, elle peut effectuer le décodage par l'ordinateur pour gagner du temps.</li>
+        </ul>
+
+        <h3>Niveau moyen</h3>
+        <ul>
+          <li><em>Les indices du niveau compliqué</em></li>
+          <li><code>Une matrice est un tableau contenant des colonnes et des lignes.</code></li>
+          <li><code>Les numéros de téléphone sont la clé des étapes de la dernière énigme.</code></li>
+        </ul>
+
+        <h3>Niveau facile</h3>
+        <ul>
+          <li><em>Les indices du niveau compliqué et moyen</em></li>
+          <li><code>Chaque caractère d'une ligne de texte peut être vu comme une colonne dans une matrice.</code></li>
+          <li><code>Une suite à trous de -1 à 10 inclus peut indiquer un code avec les chiffres manquants.</code></li>
+        </ul>
+
+        <h3>Niveau débutant</h3>
+        <ul>
+          <li><em>Les indices du niveau compliqué, moyen et facile</em></li>
+          <li><code>Un sens dans une matrice peut être vu comme les colonnes, le second sens serait donc des lignes.</code></li>
+          <li><code>Des symboles clés et des répétitions de mots clés peuvent indiquer des chiffres et leurs occurrences, la position pour former une valeur numérique.</code></li>
+        </ul>
+
+        <h2>Techniques cyber</h2>
+
+        <ol>
+          <li>La clé USB qui écrit tout seul. Montrer cette technique est important à mon sens car elle permet de prendre le contrôle d'un ordinateur en moins de 4 secondes, cela montre bien aux gens que même pour aller se faire un café ou récupérer un objet à côté, il faut toujours verrouiller sa session.</li>
+          <li>Différentes techniques d'OSINT, qui permettent de retrouver une personne à partir de ses photos (y compris celles de profil), de ses pseudonymes, du nom, du numéro de téléphone ou de l'adresse mail. Le message est donc simple : limitez les photos de vous, utilisez des pseudonymes différents sur les plateformes, limitez l'exposition de votre nom sur internet (et si possible jamais en lien avec une photo de vous), utilisez différentes adresses mail (une par pseudo), utilisez plusieurs numéros de téléphone (un par pseudo).</li>
+          <li>Il est possible de piéger une personne en la faisant cliquer sur un lien. Ne cliquez jamais sur un lien, que ce soit par message ou par mail.</li>
+          <li>Il est possible de créer de faux sites où il est demandé d'entrer des identifiants. Si une personne entre ces identifiants, l'attaquant pourra les réutiliser pour prendre le contrôle du vrai compte. Vérifiez toujours la légitimité du site avant d'entrer des mots de passe !</li>
+          <li>Il est possible de faire télécharger et exécuter des fichiers à une personne pour prendre le contrôle de son ordinateur ou de son téléphone. <strong>Ne téléchargez jamais de fichiers et ne cliquez jamais dessus !</strong></li>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+
+  <svg id="lightning" class="lightning" width="150" height="400" viewBox="0 0 150 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#39FF14"/>
+        <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#39FF14"/>
+        <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#39FF14"/>
+      </filter>
+      <linearGradient id="glowGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop id="stop1" offset="0%" stop-color="#aaffaa" stop-opacity="1" />
+        <stop offset="15%" stop-color="#39FF14" stop-opacity="0.8" />
+        <stop offset="100%" stop-color="#00FF00" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    <polygon 
+      points="80,0 100,0 60,140 110,140 40,260 90,260 20,400 40,240 0,240 50,120 10,120" 
+      fill="url(#glowGradient)" 
+      stroke="#00FF00" 
+      stroke-width="3" 
+      filter="url(#glow)"
+    />
+  </svg>
+
+  <script>
+    let activate = true;
+    const lightningToggleButton = document.getElementById("lightning-toggle");
+    lightningToggleButton.addEventListener("click", () => {
+      if (activate) {
+        activate = false;
+        lightningToggleButton.textContent = "Activate sparks animation";
+      } else {
+        setTimeout(flashLightning, 100);
+        activate = true;
+        lightningToggleButton.textContent = "Deactivate sparks animation";
+      }
+    });
+  </script>
+
+  <script>
+    const languageToggleButton = document.getElementById("language-toggle");
+    const contentEn = document.getElementById("content-en");
+    const contentFr = document.getElementById("content-fr");
+
+    languageToggleButton.addEventListener("click", () => {
+      if (contentEn.style.display === "none") {
+        contentEn.style.display = "block";
+        contentFr.style.display = "none";
+        languageToggleButton.textContent = "Français";
+      } else {
+        contentEn.style.display = "none";
+        contentFr.style.display = "block";
+        languageToggleButton.textContent = "English";
+      }
+    });
+
+    contentFr.style.display = "none";
+  </script>
+
+  <script>
+    function animateGlow() {
+      const stop1 = document.getElementById('stop1');
+      let progress = 0;
+      const duration = 500;
+      const stepTime = 15;
+
+      function step() {
+        progress += stepTime;
+        const pct = Math.min(progress / duration, 1);
+        stop1.setAttribute('offset', `${pct * 100}%`);
+        if (pct < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      stop1.setAttribute('offset', '0%');
+      requestAnimationFrame(step);
+    }
+
+    function flashLightning() {
+      const lightning = document.getElementById("lightning");
+
+      const side = Math.random() < 0.5 ? 'left' : 'right';
+      const top = Math.random() * (window.innerHeight - 400);
+      const margin = Math.random() * Math.floor(window.innerWidth / 10);
+
+      lightning.style.top = `${top}px`;
+      lightning.style.left = '';
+      lightning.style.right = '';
+
+      if (side === 'left') {
+        lightning.style.left = `${margin}px`;
+      } else {
+        lightning.style.right = `${margin}px`;
+      }
+
+      lightning.style.opacity = '1';
+      document.body.classList.add('shake');
+
+      animateGlow();
+
+      setTimeout(() => {
+        lightning.style.opacity = '0';
+        document.body.classList.remove('shake');
+      }, 500);
+
+      const next = Math.random() * 2000 + 2000;
+
+      if (activate) {
+        setTimeout(flashLightning, next);
+      }
+    }
+
+    setTimeout(flashLightning, 100);
+  </script>
+
+</body>
+</html>

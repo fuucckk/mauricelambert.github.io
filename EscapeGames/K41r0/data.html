@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of the `K41r0` escape game.
+
+  K41r0 is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  K41r0 is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with K41r0.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terminal Data Interface</title>
+<style>
+  @keyframes scanline {
+    0% { background-position: 0 -100%; }
+    100% { background-position: 0 100%; }
+  }
+  @keyframes glitch {
+    0% {
+      text-shadow:
+        2px 0 red,
+        -2px 0 cyan;
+    }
+    20% {
+      text-shadow:
+        2px 2px red,
+        -2px -2px cyan;
+    }
+    40% {
+      text-shadow:
+        -2px 2px red,
+        2px -2px cyan;
+    }
+    60% {
+      text-shadow:
+        2px -2px red,
+        -2px 2px cyan;
+    }
+    80% {
+      text-shadow:
+        2px 0 red,
+        -2px 0 cyan;
+    }
+    100% {
+      text-shadow:
+        0 0 transparent;
+    }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  body {
+    background: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    color: #00ff00;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    position: relative;
+    animation: glitch 2.5s infinite;
+  }
+  nav {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  nav button {
+    background: transparent;
+    border: 1.5px solid #00ff00;
+    color: #00ff00;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
+    user-select: none;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  nav button:hover {
+    background: #00ff00;
+    color: #000;
+  }
+  nav button.active {
+    background: #00ff00;
+    color: #000;
+    animation: blink 1.2s infinite;
+    box-shadow: 0 0 20px #00ff00, inset 0 0 10px #00ff00;
+  }
+
+  .content {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 255, 0, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to right,
+        rgba(0, 255, 0, 0.1) 1px,
+        transparent 1px
+      );
+    background-size: 100% 3px, 3px 100%;
+    animation: scanline 4s linear infinite;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 150px;
+    box-shadow: 0 0 15px #00ff00 inset;
+    position: relative;
+  }
+
+  .invisible-text {
+    color: rgba(0, 0, 0, 0);
+    user-select: text;
+  }
+
+  .contacts-container {
+    display: flex;
+    gap: 20px;
+  }
+  .contacts-list {
+    flex: 1;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contacts-list button {
+    background: transparent;
+    border: 1.5px solid #00ff00;
+    color: #00ff00;
+    padding: 8px 12px;
+    text-align: left;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    user-select: none;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  .contacts-list button:hover, .contacts-list button.active {
+    background: #00ff00;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 15px #00ff00 inset;
+  }
+  .contact-details {
+    flex: 2;
+    background: #002200;
+    padding: 15px;
+    border-radius: 6px;
+    color: #00ff00;
+    box-shadow: 0 0 10px #00ff00 inset;
+  }
+  .contact-details h3 {
+    margin-top: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .contact-details p {
+    margin: 5px 0;
+  }
+  .contact-details a {
+    color: #00ff00;
+    text-decoration: underline;
+  }
+  ::selection {
+    background: #00ff00;
+    color: #000000;
+  }
+  hr {
+    border: none;
+    border-top: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Terminal Data Interface</h1>
+
+<nav>
+  <button id="tab-instructions" class="active" onclick="showTab('instructions')">Instructions</button>
+  <button id="tab-philosophy" onclick="showTab('philosophy')">Philosophy</button>
+  <button id="tab-contacts" onclick="showTab('contacts')">Informations</button>
+  <button id="tab-hardware" onclick="window.location.href = './hardware.html';">Hardware</button>
+</nav>
+
+<div class="content">
+  <div id="instructions" class="tab-content">
+    <p><em>
+        Divided into two halves along one path,<br>
+        To reveal a false meaning's mask.<br>
+        Then slice one half along another way,<br>
+        To uncover truth where shadows play.<br>
+        You need only wander through the matrix's frame,<br>
+        To glimpse the form beyond the frame.
+    </em></p>
+    <pre class="invisible-text">A&nbsp;sd&nbsp;oawgnr&nbsp;euendd
+eIr'&nbsp;vteh&nbsp;ec&nbsp;omnancehcitneed
+&nbsp;Ytohue&nbsp;&nbsp;wdialtla&nbsp;
+nTeoe&nbsp;dt&nbsp;hlei&nbsp;gnhetw&nbsp;&nbsp;aancdc
+oWuhnetn&nbsp;&nbsp;arneda&nbsp;chhoionkge&nbsp;df&nbsp;ourp&nbsp;&nbsp;tthhee&nbsp;&nbsp;spaafpeetry
+&nbsp;Shharneddldee,r&nbsp;&nbsp;bteow&nbsp;atrhei&nbsp;so&nbsp;fa&nbsp;cmcooiusnttu.r
+eT
+hTeh&nbsp;ep&nbsp;rhoetaetc&nbsp;toifo&nbsp;na&nbsp;&nbsp;rseummamienrs&nbsp;&nbsp;dtahye,&nbsp;
+sWaem&nbsp;ew.o
+uSlidnnc'et&nbsp;&nbsp;ywoaun&nbsp;tu&nbsp;nyloouc&nbsp;kteod&nbsp;&nbsp;giett,&nbsp;
+hYuorut'.v&nbsp;eN&nbsp;elxota,d&nbsp;eedn&nbsp;tpearp&nbsp;eyro,u&nbsp;ra&nbsp;nuds
+eTrh&nbsp;eI&nbsp;Dc
+oAulnotndgo&nbsp;wwni&nbsp;thha&nbsp;st&nbsp;hset&nbsp;a4r-tdeidg.i
+tB&nbsp;esceacurseet&nbsp;&nbsp;icto&nbsp;dies
+&nbsp;Avnedr&nbsp;yt&nbsp;hfer&nbsp;apgaiglee&nbsp;,y
+oIut&nbsp;&nbsp;ncoa&nbsp;nlnoontg&nbsp;ebre&nbsp;&nbsp;wmiosvhe&nbsp;dt&nbsp;oo&nbsp;rd&nbsp;eusntprlouyg
+gTehda.t
+&nbsp;Iyfo&nbsp;ua'nl&nbsp;le&nbsp;rnreoerd&nbsp;&nbsp;otcoc&nbsp;uirdse,n&nbsp;tyiofuy&nbsp;
+mMuusstt&nbsp;&nbsp;fboel&nbsp;lroewm&nbsp;otvheed&nbsp;&nbsp;iannsdt&nbsp;rtuhcetni&nbsp;opnlsa
+cTeod&nbsp;
+dWiistahrimn&nbsp;&nbsp;imty,&nbsp;
+dBaetnad.</pre>
+  </div>
+
+  <div id="philosophy" class="tab-content" style="display:none;">
+    <p>
+      Can emptiness truly exist, or is it merely something unseen ?<br>
+      What we call "nothing" — is it absence... or just obscured presence ?<br>
+      If something cannot be seen, does it mean it isn't there ?<hr>
+
+      Perhaps the invisible is not absent.<br>
+      Perhaps the void is not empty.
+    </p>
+  </div>
+
+  <div id="contacts" class="tab-content" style="display:none;">
+    <div class="contacts-container">
+      <div class="contacts-list" id="contacts-list">
+        <!-- Buttons for contacts inserted by JS -->
+      </div>
+      <div class="contact-details" id="contact-details">
+        <p>Select a person to see their details.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showTab(tabName) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabName).style.display = 'block';
+    document.getElementById('tab-' + tabName).classList.add('active');
+  }
+
+  const contacts = [
+    {
+      name: "Diego 'Torch' Ramirez",
+      profession: "Demolitions Expert",
+      personalAddress: "55 Calle Fuego, Mexico City",
+      workAddress: "Old Refinery #12, Zona Roja",
+      email: "torch@burnunit.dark",
+      phone: "+44 7300 899999",
+      description: "Torch was the first one I tracked down. He's the demolition expert — the guy they call when something needs to disappear in a flash of fire and twisted metal. Known to both law enforcement and intelligence agencies, Torch has done multiple stints behind bars. But his downfall wasn't the explosions — it was his ego. From just his first and last name, I traced his email, phone number, and even his home and work addresses. All of it hidden in plain sight, scattered across photos he carelessly posted on social media — Twitter, Facebook, and more. A street sign here, a badge reflection there. He left a trail, and I followed it."
+    },
+    {
+      name: "Selene 'Shade' Moreau",
+      profession: "Fence / Black Market Dealer",
+      personalAddress: "13 Rue de l'Ombre, Marseille",
+      workAddress: "The Vault, Hidden Floor 4",
+      email: "shade@blackhand.dark",
+      phone: "+44 7300 900008",
+      description: "Shade was the second one I uncovered. Far more discreet than Torch — no flashy explosions, no police records — just shadows and silence. His real name wasn't on any intelligence lists, but his alias was. On the dark web, \"Shade\" was a name whispered with caution. He made one mistake: he reused the same pseudonym on Telegram. A single profile picture brought him into the light. From that image, I traced his identity — and once I had his name, everything else followed. His address, phone number, email... all illuminated under the faint light of digital breadcrumbs."
+    },
+    {
+      name: "Lena 'Zero' Hartmann",
+      profession: "Lookout / Spotter",
+      personalAddress: "91 Coded Lane, Berlin",
+      workAddress: "Rooftop 14, Block East",
+      email: "zero@thewatch.dark",
+      phone: "+44 7300 900002",
+      description: "Zero is the best lookout they have — the kind who can spot an undercover cop from across the street, just by reading the rhythm of their walk. He's nearly impossible to approach, but not impossible to identify. Wherever the gang moves, Zero is nearby, watching from the edge of the action like a shadow just beyond the light. By following major police-monitored operations, I mapped a pattern — and Strava did the rest. His routes matched locations too perfectly to be coincidence. To confirm the match, I dug into an old Interpol file: a blurry photo, grainy and faded — but just enough light to work with. From that, I traced him back to his social media — and everything lit up. Name. Phone number. Data hidden in plain sight, now exposed under the cold light of scrutiny."
+    },
+    {
+      name: "Jade 'Venom' Tran",
+      profession: "Poisoner / Interrogator",
+      personalAddress: "12 Lotus Street, Hanoi",
+      workAddress: "Backroom Lab, District 5",
+      email: "venom@toxlab.dark",
+      phone: "+44 7300 900004",
+      description: "Venom is a true paranoid — elusive, cautious, and almost impossible to trace. He lives in the shadows, but he talks. A lot. His alias was everywhere, always guarded — never connected to his real name. To get to him, I had to break cover. I initiated contact, crafted an entire persona, and leaned deep into social engineering. Eventually, I fed him a piece of disinformation — bait disguised as intel — and lured him to my personal site. What he didn't know is that the site carried a hidden tracker. One click, and I had his IP. From there, the city… then the neighborhood. A wealthy district — spacious homes, very few residents. And in that narrow perimeter, only one person matched the digital fingerprint. That's how I confirmed him. No doubt, no second guess."
+    },
+    {
+      name: "Markus 'Bricks' Kowalski",
+      profession: "Enforcer",
+      personalAddress: "404 Iron Ave, Warsaw",
+      workAddress: "Warehouse B, Dock 17",
+      email: "bricks@theshield.dark",
+      phone: "+44 7300 900003",
+      description: "Bricks 🔥🔥 is the one everyone knows — cops, feds, databases. Photos, DNA, fingerprints, full identity… it's all there. He's in and out of prison constantly for violent offenses, but his lawyer always pulls him back out — fast. Tracking him down was easy. Street fight videos of him date back to his teenage years — raw, loud, brutal. I've studied his movement, his aggression, his form. I know his fighting style. He's built like a tank, fearless, and always ready to throw the first punch. Bricks doesn't hide in the shadows — he lives in the open, under the harsh light of notoriety."
+    },
+    {
+      name: "Kira 'Whisper' Saito",
+      profession: "Sniper / Hitwoman",
+      personalAddress: "7 Sakura Hill, Kyoto",
+      workAddress: "Lookout Point Alpha, Sector 3",
+      email: "whisper@ghosteye.dark",
+      phone: "+44 7300 900010",
+      description: "Whisper was by far the most complex to uncover. He didn't exist anywhere — no photos, no accounts, no leaks. But I had one thing: an email address. Anonymous, cold, and used only to receive contract orders. I traced how he operated. Every contract came in the form of an attachment — that's how he received missions. So I forged one. A fake job, disguised perfectly. He took the bait. The moment he opened the attachment, the payload deployed — I had a backdoor into his phone. From there, I quietly moved through his linked accounts, collecting everything. That's how I got access to his private and professional life. And that's how I obtained the full list of assassinations he carried out. He thought his identity was untouchable. But one wrong click was all it took."
+    },
+    {
+      name: "Viktor 'Ghost' Morozov",
+      profession: "Infiltrator",
+      personalAddress: "23 Black Alley, New Moscow",
+      workAddress: "Abandoned Metro Station, Line 7",
+      email: "ghost@thecrew.dark",
+      phone: "+44 7300 900001",
+      description: "Ghost was more subtle than most, but far from invincible. He couldn't resist a challenge. He bragged about being able to breach any building — always masked, always ready to prove himself. That bravado left behind digital fingerprints. Photos he posted after each infiltration included GPS metadata and, crucially, the exact model of his phone — an Apple iPhone. Apple iOS devices are notorious for broadcasting identifiable Bluetooth signals — a weakness Android users don't often share. So I set the bait. I published a fake story on the intrusion forums he reads, claiming that a certain building was completely impenetrable. As expected, he couldn't resist. But I wasn't just watching — I was waiting. I had positioned myself inside the building ahead of time, in full stealth. When Ghost entered, masked as always, his iPhone broadcasted a Bluetooth fingerprint — and this time, he was isolated. That signal gave me a lock. I followed him from a distance. His device led me straight to his home. From there, I captured a photo of his face. Then came the rest: his real identity, his social accounts, his network, his friends. Every piece of Ghost's life — exposed."
+    },
+    {
+      name: "Axel 'Slick' DeLuca",
+      profession: "Getaway Driver",
+      personalAddress: "99 Drift Road, Naples",
+      workAddress: "Garage 06, Sub-Basement",
+      email: "slick@burntire.dark",
+      phone: "+44 7300 900007",
+      description: "🔥 Slick's weak spot was obvious: cars. Luxury cars don't go unnoticed — especially when they move in sync with gang operations. Once I had the make, the color, and enough data on their movements, I tracked the license plate. That plate turned up at multiple driving events — public races, street meetups, high-speed runs. And there he was. Slick, right behind the wheel, face fully visible. That was the beginning of the end. With his face, everything else followed — facial recognition, social links, vehicle registrations, accounts, real name. He made a show of his life behind the wheel. And I just followed the smoke trail."
+    }
+  ]; // 0956, 283, 37
+
+  const contactsList = document.getElementById('contacts-list');
+  const contactDetails = document.getElementById('contact-details');
+
+  contacts.forEach(contact => {
+    const btn = document.createElement('button');
+    btn.textContent = contact.name;
+    btn.onclick = () => {
+      contactsList.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      contactDetails.innerHTML = `
+        <h3>${contact.name}</h3>
+        <p><strong>Profession:</strong> ${contact.profession}</p>
+        <p><strong>Personal Address:</strong> ${contact.personalAddress}</p>
+        <p><strong>Work Address:</strong> ${contact.workAddress}</p>
+        <p><strong>Email:</strong> <a href="mailto:${contact.email}">${contact.email}</a></p>
+        <p><strong>Phone:</strong> ${contact.phone}</p><hr>
+        <p><strong>Description:</strong> ${contact.description}</p>
+      `;
+    };
+    contactsList.appendChild(btn);
+  });
+</script>
+
+</body>
+</html>

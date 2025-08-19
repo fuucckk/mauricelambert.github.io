@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of the `K41r0` escape game.
+
+  K41r0 is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  K41r0 is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with K41r0.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Secure Terminal Access</title>
+<style>
+  body {
+    background: black;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  h1 {
+    text-shadow: 0 0 10px #00ff00;
+  }
+  #terminal {
+    background: #000000dd;
+    padding: 20px;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+    width: 320px;
+    text-align: center;
+  }
+  input[type="password"] {
+    background: black;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  button {
+    margin-top: 15px;
+    background: black;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 1.1em;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #003300;
+  }
+  #message {
+    margin-top: 15px;
+    height: 1.2em;
+  }
+
+  #accessDeniedPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 4em;
+    font-weight: bold;
+    padding: 40px 80px;
+    border: 4px solid #ff0000;
+    box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.7);
+    text-align: center;
+    border-radius: 15px;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    z-index: 9999;
+  }
+  #accessDeniedPopup.show {
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+  #access-granted {
+    color: #00ff00;
+    font-family: "Courier New", monospace;
+    font-size: 2em;
+    text-align: center;
+    animation: blink 0.8s infinite alternate;
+    margin: 20px 0;
+  }
+
+  @keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
+  }
+</style>
+</head>
+<body>
+
+<div id="terminal">
+  <h1>Terminal Access</h1>
+  <label for="password">Password:</label><br />
+  <input type="password" id="password" autocomplete="off" /><br />
+  <button onclick="checkPassword()">Enter</button>
+  <div id="message"></div>
+</div>
+
+<div id="accessDeniedPopup">ACCESS DENIED</div>
+
+<div id="access-granted" style="display: none;">
+  <h2>ACCESS GRANTED</h2>
+</div>
+
+<script>
+const expectedHash = "e7e4d958b18c23f50750c18002e7bec7d5b2c0a5ca10a573a6bbfc175d7e659a"; // 0xK41r0
+
+function onCorrectPassword() {
+  document.getElementById('terminal').style.display = 'none';
+
+  const granted = document.getElementById('access-granted');
+  granted.style.display = 'block';
+
+  setTimeout(() => {
+    window.location.href = "./data.html";
+  }, 2000);
+}
+
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return hashHex;
+}
+
+async function checkPassword() {
+  const input = document.getElementById('password').value;
+  const message = document.getElementById('message');
+  const popup = document.getElementById('accessDeniedPopup');
+  message.style.color = '#00ff00';
+  popup.classList.remove('show');
+
+  if (!input) {
+    message.textContent = "Please enter a password.";
+    return;
+  }
+
+  const hash = await sha256(input);
+  if (hash === expectedHash) {
+    message.style.color = '#00ff00';
+    message.textContent = "Access granted. Welcome.";
+    setTimeout(() => {
+      onCorrectPassword();
+    }, 200);
+  } else {
+    message.textContent = "";
+    popup.classList.add('show');
+    setTimeout(() => {
+      popup.classList.remove('show');
+    }, 2000);
+  }
+}
+</script>
+
+</body>
+</html>
