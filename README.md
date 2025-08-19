@@ -10,6 +10,11 @@
  - [WebScripts explained](https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.pdf)
  - [HTTP - Web Server Identifier](https://mauricelambert.github.io/info/python/security/Web-MaxUriIdentifier.pdf)
 
+## Escape game
+
+ - [K41r0 - introduction](https://mauricelambert.github.io/EscapeGames/K41r0/)
+ - [K41r0 - solutions, hint - Game Master only !](https://mauricelambert.github.io/EscapeGames/K41r0/solutions.html)
+
 ## Web App
 
  - [Government Data Analysis](https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/)
