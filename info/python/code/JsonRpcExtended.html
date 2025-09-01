@@ -1,0 +1,1712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module JsonRpcExtended</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>JsonRpcExtended</strong></big></big> (version 0.0.1)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="jsonrpcextended.py">jsonrpcextended.py</a></font></td></tr></table>
+    <p><tt>A&nbsp;remote&nbsp;procedure&nbsp;call&nbsp;(RPC)&nbsp;framework&nbsp;based&nbsp;on&nbsp;JSON-RPC,&nbsp;extended&nbsp;to<br>
+support&nbsp;alternative&nbsp;data&nbsp;formats&nbsp;and&nbsp;structures&nbsp;such&nbsp;as&nbsp;CSV,&nbsp;XML,<br>
+binary&nbsp;and&nbsp;python&nbsp;calls.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#CsvRpcServer">CsvRpcServer</a>(<a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>, <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>)
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#PyCsvRpcServer">PyCsvRpcServer</a>(<a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>, <a href="JsonRpcExtended.html#PyJsonRpcServer">PyJsonRpcServer</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#AsyncServer">AsyncServer</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#Error">Error</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#BinaryJsonRpc">BinaryJsonRpc</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#CsvRpcServer">CsvRpcServer</a>(<a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>, <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>)
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#PyJsonRpcServer">PyJsonRpcServer</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#PyCsvRpcServer">PyCsvRpcServer</a>(<a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>, <a href="JsonRpcExtended.html#PyJsonRpcServer">PyJsonRpcServer</a>)
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#PyRequest">PyRequest</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#Request">Request</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#RequestHeaders">RequestHeaders</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#Response">Response</a>
+</font></dt><dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#ResponseHeaders">ResponseHeaders</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="enum.html#IntEnum">enum.IntEnum</a>(<a href="builtins.html#int">builtins.int</a>, <a href="enum.html#Enum">enum.Enum</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="JsonRpcExtended.html#FORMATS">FORMATS</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AsyncServer">class <strong>AsyncServer</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#AsyncServer">AsyncServer</a>(host:&nbsp;str,&nbsp;port:&nbsp;int)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;a&nbsp;basic&nbsp;asynchronous&nbsp;TCP&nbsp;server.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="AsyncServer-__init__"><strong>__init__</strong></a>(self, host: str, port: int)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt>async <a name="AsyncServer-handle_client"><strong>handle_client</strong></a>(reader: asyncio.streams.StreamReader, writer: asyncio.streams.StreamWriter) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;gets&nbsp;data&nbsp;and&nbsp;parses&nbsp;it&nbsp;from&nbsp;socket.</tt></dd></dl>
+
+<dl><dt>async <a name="AsyncServer-start"><strong>start</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;start&nbsp;the&nbsp;asynchronous&nbsp;TCP&nbsp;server.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BinaryJsonFormat">class <strong>BinaryJsonFormat</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#BinaryJsonFormat">BinaryJsonFormat</a>(encoding:&nbsp;str,&nbsp;get_content:&nbsp;Callable&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;the&nbsp;binary&nbsp;JSON&nbsp;format&nbsp;parsing.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="BinaryJsonFormat-__init__"><strong>__init__</strong></a>(self, encoding: str, get_content: Callable = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-dict_block"><strong>dict_block</strong></a>(self, size_length: int) -&gt; Dict[str, ~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-dict_dump"><strong>dict_dump</strong></a>(self, value: Dict[str, ~Json], data: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;dumps&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;into&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-dumps_data"><strong>dumps_data</strong></a>(self, data: ~Json, data_dump: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;encodes&nbsp;Json&nbsp;like&nbsp;data&nbsp;in&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-duration"><strong>duration</strong></a>(self) -&gt; datetime.timedelta</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;timedelta&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-duration_dump"><strong>duration_dump</strong></a>(self, value: datetime.timedelta) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;timedelta&nbsp;(duration)&nbsp;to&nbsp;data&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-float_dump"><strong>float_dump</strong></a>(self, data: float) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;the&nbsp;float&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-int_block"><strong>int_block</strong></a>(self, size: int, signed: bool = True) -&gt; int</dt><dd><tt>This&nbsp;method&nbsp;transfrom&nbsp;the&nbsp;next&nbsp;block&nbsp;value&nbsp;into&nbsp;an&nbsp;integer.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-int_to_block"><strong>int_to_block</strong></a>(self, value: int, identifier: bool = True) -&gt; Tuple[bytes, int]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;for&nbsp;a&nbsp;integer&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-list_block"><strong>list_block</strong></a>(self, size_length: int) -&gt; List[~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-list_dump"><strong>list_dump</strong></a>(self, value: List[~Json], data: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;dumps&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;into&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-read"><strong>read</strong></a>(self, number: int) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;reads&nbsp;`number`&nbsp;of&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-read_dict"><strong>read_dict</strong></a>(self, size: int) -&gt; Dict[str, ~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-read_float4"><strong>read_float4</strong></a>(self) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;next&nbsp;4&nbsp;bytes&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-read_float8"><strong>read_float8</strong></a>(self) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;next&nbsp;8&nbsp;bytes&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-read_list"><strong>read_list</strong></a>(self, size: int) -&gt; List[~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-read_next_element"><strong>read_next_element</strong></a>(self) -&gt; ~Json</dt><dd><tt>This&nbsp;function&nbsp;reads&nbsp;the&nbsp;next&nbsp;Json&nbsp;like&nbsp;element&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-read_str"><strong>read_str</strong></a>(self, size: int) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;strings&nbsp;value&nbsp;from&nbsp;the&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-string_block"><strong>string_block</strong></a>(self, size_length: int) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;transfrom&nbsp;the&nbsp;next&nbsp;block&nbsp;value&nbsp;into&nbsp;an&nbsp;integer.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-string_to_block"><strong>string_to_block</strong></a>(self, value: str) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;for&nbsp;a&nbsp;string&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-unix_datetime_to_dump"><strong>unix_datetime_to_dump</strong></a>(self, value: datetime.datetime) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;datetime&nbsp;to&nbsp;unix&nbsp;data&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-unix_timestamp"><strong>unix_timestamp</strong></a>(self) -&gt; datetime.datetime</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;datetime&nbsp;for&nbsp;a&nbsp;unix&nbsp;timestamp&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-windows_datetime_to_dump"><strong>windows_datetime_to_dump</strong></a>(self, value: datetime.datetime) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;datetime&nbsp;to&nbsp;windows&nbsp;data&nbsp;bytes.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonFormat">BinaryJsonFormat</a>.<a href="#BinaryJsonFormat-windows_datetime_to_dump">windows_datetime_to_dump</a>(None,&nbsp;datetime(2025,&nbsp;6,&nbsp;22))<br>
+b'\x1e\x01\xdb\xe2\xf7\xd5&gt;p\x00'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-windows_timestamp"><strong>windows_timestamp</strong></a>(self) -&gt; datetime.datetime</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;datetime&nbsp;for&nbsp;a&nbsp;windows&nbsp;timestamp&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonFormat-write_block_size"><strong>write_block_size</strong></a>(self, element: ~Json, base: int, bytemap: Dict[int, bytes]) -&gt; Tuple[bytes, bool]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;size&nbsp;and&nbsp;a&nbsp;boolean<br>
+to&nbsp;represent&nbsp;the&nbsp;usage&nbsp;of&nbsp;base.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BinaryJsonRpc">class <strong>BinaryJsonRpc</strong></a>(<a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;the&nbsp;binary&nbsp;JSON&nbsp;RPC&nbsp;protocols.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="JsonRpcExtended.html#BinaryJsonRpc">BinaryJsonRpc</a></dd>
+<dd><a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="BinaryJsonRpc-handle_request_data"><strong>handle_request_data</strong></a>(binary: bytes, reader: Callable = None) -&gt; Optional[str]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;binary&nbsp;JSON&nbsp;from&nbsp;data&nbsp;to&nbsp;perform&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpc">BinaryJsonRpc</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpc">BinaryJsonRpc</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpc">BinaryJsonRpc</a>.<a href="#BinaryJsonRpc-handle_request_data">handle_request_data</a>(b'\x80Cdir\x00')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpc">BinaryJsonRpc</a>.<a href="#BinaryJsonRpc-handle_request_data">handle_request_data</a>(b'\x90\x03\x01Lbuiltins.int\x81A1')<br>
+bytearray(b'\x00\x03\x01\x03\x01')<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<hr>
+Class methods inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><a name="BinaryJsonRpc-call"><strong>call</strong></a>(method: Callable, json: Dict[str, Any]) -&gt; Any<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;the&nbsp;python&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpc-check_request"><strong>check_request</strong></a>(json: Dict[str, Any], id: Union[str, int, NoneType]) -&gt; Optional[Dict[str, Union[str, int, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;received&nbsp;requests.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(dir,&nbsp;'test')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-check_request">check_request</a>({},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0'},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'test',&nbsp;'params':&nbsp;None},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32602,&nbsp;'message':&nbsp;'Invalid&nbsp;params'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'builtins.dir'},&nbsp;1)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpc-execute_call"><strong>execute_call</strong></a>(json: Dict[str, Any]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;a&nbsp;JSON&nbsp;RPC&nbsp;call.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(lambda&nbsp;**y:&nbsp;int('1',&nbsp;**y),&nbsp;'int1')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_call">execute_call</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_call">execute_call</a>({'id':&nbsp;1})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_call">execute_call</a>({})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['1']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['a']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32603,&nbsp;'message':&nbsp;'Internal&nbsp;error'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpc-execute_calls"><strong>execute_calls</strong></a>(json: Union[Dict[str, ~Json], List[Dict[str, ~Json]]]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;JSON&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_calls">execute_calls</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_calls">execute_calls</a>(None)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_calls">execute_calls</a>(<a href="#Request">Request</a>('2.0',&nbsp;'dir').asdict())<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#BinaryJsonRpc-execute_calls">execute_calls</a>([<a href="#Request">Request</a>('2.0',&nbsp;'builtins.int',&nbsp;1,&nbsp;[1]).asdict()])<br>
+[{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpc-register_function"><strong>register_function</strong></a>(function: Callable, name: str = None) -&gt; None<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;function&nbsp;in&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><strong>functions</strong> = {}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BinaryJsonRpcRequestFormat">class <strong>BinaryJsonRpcRequestFormat</strong></a>(<a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(method:&nbsp;Union[int,&nbsp;str],&nbsp;args:&nbsp;Optional[List[~Json]],&nbsp;kwargs:&nbsp;Optional[Dict[str,&nbsp;~Json]],&nbsp;interface_version:&nbsp;int&nbsp;=&nbsp;None,&nbsp;encoding:&nbsp;str&nbsp;=&nbsp;'latin1',&nbsp;id_:&nbsp;int&nbsp;=&nbsp;None,&nbsp;auth:&nbsp;~Json&nbsp;=&nbsp;None,&nbsp;get_content:&nbsp;Callable&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;the&nbsp;binary&nbsp;JSON&nbsp;RPC&nbsp;request&nbsp;format&nbsp;for&nbsp;a&nbsp;call.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="JsonRpcExtended.html#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a></dd>
+<dd><a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="BinaryJsonRpcRequestFormat-__init__"><strong>__init__</strong></a>(self, method: Union[int, str], args: Optional[List[~Json]], kwargs: Optional[Dict[str, ~Json]], interface_version: int = None, encoding: str = 'latin1', id_: int = None, auth: ~Json = None, get_content: Callable = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-asdict"><strong>asdict</strong></a>(self) -&gt; Dict[str, ~Json]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;from&nbsp;this&nbsp;instance.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>('test',&nbsp;[1,&nbsp;2,&nbsp;3],&nbsp;{'a':&nbsp;'a'},&nbsp;id_=1).<a href="#BinaryJsonRpcRequestFormat-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'test',&nbsp;'id':&nbsp;1,&nbsp;'args':&nbsp;[1,&nbsp;2,&nbsp;3],&nbsp;'kwargs':&nbsp;{'a':&nbsp;'a'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-load_params"><strong>load_params</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;arguments&nbsp;data&nbsp;(bytes)&nbsp;to&nbsp;JSON.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-loads_pyparams"><strong>loads_pyparams</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;arguments&nbsp;and&nbsp;keywords&nbsp;arguments&nbsp;data&nbsp;(bytes)<br>
+to&nbsp;a&nbsp;list&nbsp;and&nbsp;a&nbsp;dict.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-to_bytes"><strong>to_bytes</strong></a>(self) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;bytes&nbsp;for&nbsp;this&nbsp;instance.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>('abc',&nbsp;[1,&nbsp;2,&nbsp;3],&nbsp;None,&nbsp;5).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\xc0\x03\x05Cabc\x83\x03\x01\x03\x02\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>('abc',&nbsp;None,&nbsp;{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80Cabc#Aa\x03\x01Ab\x03\x02Ac\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(255,&nbsp;[1,&nbsp;2,&nbsp;3],&nbsp;{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\xa0\x03\xff\x83\x03\x01\x03\x02\x03\x03#Aa\x03\x01Ab\x03\x02Ac\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(255,&nbsp;[3.14,&nbsp;3.1425657895545824,&nbsp;[1],&nbsp;{1:&nbsp;2}],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x03\xff\x84\x0c\x1f\x85\xebQ\xb8\x1e\t@\x0c\xa3R]\x88\xf9#\t@\x81\x03\x01!\x03\x01\x03\x02')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(255,&nbsp;None,&nbsp;{1:&nbsp;[1,&nbsp;[0],&nbsp;{2:&nbsp;3,&nbsp;True:&nbsp;"abc"},&nbsp;None,&nbsp;False]}).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x03\xff!\x03\x01\x85\x03\x01\x81\x03\x00"\x03\x02\x03\x03\x01Cabc\x00\x02')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(2&nbsp;**&nbsp;0,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x03\x01\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(2&nbsp;**&nbsp;8,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x04\x01\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(-1,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x05\x00\x00\x00\x01\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(2&nbsp;**&nbsp;24,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x06\x01\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(2&nbsp;**&nbsp;32,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x07\x01\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(2&nbsp;**&nbsp;40,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x08\x01\x00\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(2&nbsp;**&nbsp;56&nbsp;*&nbsp;-1,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\t\x01\x00\x00\x00\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(2&nbsp;**&nbsp;56,&nbsp;[],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\n\x01\x00\x00\x00\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(0,&nbsp;[datetime(2025,&nbsp;6,&nbsp;22)],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x03\x00\x81\x1dhW+`')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>(0,&nbsp;[timedelta(days=5,&nbsp;hours=1,&nbsp;minutes=30,&nbsp;microseconds=500)],&nbsp;None).<a href="#BinaryJsonRpcRequestFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x03\x00\x81\x1f\x00\x00\x00e\xd7\x12W\xf4')<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="BinaryJsonRpcRequestFormat-from_bytes"><strong>from_bytes</strong></a>(data: bytes, get_content: Callable = None) -&gt; ~BinaryJsonRpcRequestFormat<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;builds&nbsp;an&nbsp;instance&nbsp;for&nbsp;this&nbsp;class&nbsp;from&nbsp;data.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\xc0\x03\x05\r\x03abc\x19\x03\x03\x01\x03\x02\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=True,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.interface_version<br>
+5<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'abc'<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\r\x03abc\x15\x03\r\x01a\x03\x01\r\x01b\x03\x02\r\x01c\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'abc'<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\xa0\x03\xff\x19\x03\x03\x01\x03\x02\x03\x03\x15\x03\r\x01a\x03\x01\r\x01b\x03\x02\r\x01c\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=True,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+255<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\xff\x19\x04\x0c\x1f\x85\xebQ\xb8\x1e\t@\x0c\xa3R]\x88\xf9#\t@\x19\x01\x03\x01\x15\x01\x03\x01\x03\x02')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+255<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[3.14,&nbsp;3.1425657895545824,&nbsp;[1],&nbsp;{1:&nbsp;2}]<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[3.14,&nbsp;3.1425657895545824,&nbsp;[1],&nbsp;{1:&nbsp;2}]<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\xff\x15\x01\x03\x01\x19\x05\x03\x01\x19\x01\x03\x00\x15\x02\x03\x02\x03\x03\x01\r\x03abc\x00\x02')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+255<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{1:&nbsp;[1,&nbsp;[0],&nbsp;{2:&nbsp;3,&nbsp;True:&nbsp;'abc'},&nbsp;None,&nbsp;False]}<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+{1:&nbsp;[1,&nbsp;[0],&nbsp;{2:&nbsp;3,&nbsp;True:&nbsp;'abc'},&nbsp;None,&nbsp;False]}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\xc0\x03\x05Cabc\x83\x03\x01\x03\x02\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=True,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.interface_version<br>
+5<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'abc'<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80Cabc#Aa\x03\x01Ab\x03\x02Ac\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'abc'<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\xa0\x03\xff\x83\x03\x01\x03\x02\x03\x03#Aa\x03\x01Ab\x03\x02Ac\x03\x03')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=True,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+255<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+{'a':&nbsp;1,&nbsp;'b':&nbsp;2,&nbsp;'c':&nbsp;3}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\xff\x84\x0c\x1f\x85\xebQ\xb8\x1e\t@\x0c\xa3R]\x88\xf9#\t@\x81\x03\x01!\x03\x01\x03\x02')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+255<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[3.14,&nbsp;3.1425657895545824,&nbsp;[1],&nbsp;{1:&nbsp;2}]<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[3.14,&nbsp;3.1425657895545824,&nbsp;[1],&nbsp;{1:&nbsp;2}]<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\xff!\x03\x01\x85\x03\x01\x81\x03\x00"\x03\x02\x03\x03\x01Cabc\x00\x02')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+255<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{1:&nbsp;[1,&nbsp;[0],&nbsp;{2:&nbsp;3,&nbsp;True:&nbsp;'abc'},&nbsp;None,&nbsp;False]}<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+{1:&nbsp;[1,&nbsp;[0],&nbsp;{2:&nbsp;3,&nbsp;True:&nbsp;'abc'},&nbsp;None,&nbsp;False]}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\x00\x81\x1dhW+`')<br>
+&gt;&gt;&gt;&nbsp;rpc.headers<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+0<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[datetime.datetime(2025,&nbsp;6,&nbsp;22,&nbsp;0,&nbsp;0)]<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[datetime.datetime(2025,&nbsp;6,&nbsp;22,&nbsp;0,&nbsp;0)]<br>
+&gt;&gt;&gt;&nbsp;rpc.kwargs<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\x00\x81\x1f\x00\x00\x00e\xd7\x12W\xf4')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[datetime.timedelta(days=5,&nbsp;seconds=5400,&nbsp;microseconds=500)]<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\x00\x81\x1e\x01\xdb\xe2\xf7\xd5&gt;p\x00')<br>
+&gt;&gt;&gt;&nbsp;rpc.args<br>
+[datetime.datetime(2025,&nbsp;6,&nbsp;22,&nbsp;0,&nbsp;0)]<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\x01\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+1<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x04\x01\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+256<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x05\x00\x00\x00\x01\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+-1<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x06\x01\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+16777216<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x07\x01\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+4294967296<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x08\x01\x00\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+1099511627776<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\t\x01\x00\x00\x00\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+-72057594037927936<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\n\x01\x00\x00\x00\x00\x00\x00\x00\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+72057594037927936<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\r\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x0e\0\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x0f\0\0\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x10\0\0\0\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x11\0\0\0\0\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x12\0\0\0\0\0\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x13\0\0\0\0\0\0\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x14\0\0\0\0\0\0\0\x01a\x80')<br>
+&gt;&gt;&gt;&nbsp;rpc.method<br>
+'a'<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x15\1\0\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{None:&nbsp;None}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x16\0\1\0\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{None:&nbsp;None}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x17\0\0\1\0\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{None:&nbsp;None}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x18\0\0\0\1\0\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+{None:&nbsp;None}<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x19\1\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[None]<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x1a\0\1\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[None]<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x1b\0\0\1\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[None]<br>
+&gt;&gt;&gt;&nbsp;rpc&nbsp;=&nbsp;<a href="#BinaryJsonRpcRequestFormat">BinaryJsonRpcRequestFormat</a>.<a href="#BinaryJsonRpcRequestFormat-from_bytes">from_bytes</a>(b'\x80\x03\0\x1c\0\0\0\1\0')<br>
+&gt;&gt;&gt;&nbsp;rpc.params<br>
+[None]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a>:<br>
+<dl><dt><a name="BinaryJsonRpcRequestFormat-dict_block"><strong>dict_block</strong></a>(self, size_length: int) -&gt; Dict[str, ~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-dict_dump"><strong>dict_dump</strong></a>(self, value: Dict[str, ~Json], data: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;dumps&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;into&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-dumps_data"><strong>dumps_data</strong></a>(self, data: ~Json, data_dump: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;encodes&nbsp;Json&nbsp;like&nbsp;data&nbsp;in&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-duration"><strong>duration</strong></a>(self) -&gt; datetime.timedelta</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;timedelta&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-duration_dump"><strong>duration_dump</strong></a>(self, value: datetime.timedelta) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;timedelta&nbsp;(duration)&nbsp;to&nbsp;data&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-float_dump"><strong>float_dump</strong></a>(self, data: float) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;the&nbsp;float&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-int_block"><strong>int_block</strong></a>(self, size: int, signed: bool = True) -&gt; int</dt><dd><tt>This&nbsp;method&nbsp;transfrom&nbsp;the&nbsp;next&nbsp;block&nbsp;value&nbsp;into&nbsp;an&nbsp;integer.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-int_to_block"><strong>int_to_block</strong></a>(self, value: int, identifier: bool = True) -&gt; Tuple[bytes, int]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;for&nbsp;a&nbsp;integer&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-list_block"><strong>list_block</strong></a>(self, size_length: int) -&gt; List[~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-list_dump"><strong>list_dump</strong></a>(self, value: List[~Json], data: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;dumps&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;into&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-read"><strong>read</strong></a>(self, number: int) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;reads&nbsp;`number`&nbsp;of&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-read_dict"><strong>read_dict</strong></a>(self, size: int) -&gt; Dict[str, ~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-read_float4"><strong>read_float4</strong></a>(self) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;next&nbsp;4&nbsp;bytes&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-read_float8"><strong>read_float8</strong></a>(self) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;next&nbsp;8&nbsp;bytes&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-read_list"><strong>read_list</strong></a>(self, size: int) -&gt; List[~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-read_next_element"><strong>read_next_element</strong></a>(self) -&gt; ~Json</dt><dd><tt>This&nbsp;function&nbsp;reads&nbsp;the&nbsp;next&nbsp;Json&nbsp;like&nbsp;element&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-read_str"><strong>read_str</strong></a>(self, size: int) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;strings&nbsp;value&nbsp;from&nbsp;the&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-string_block"><strong>string_block</strong></a>(self, size_length: int) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;transfrom&nbsp;the&nbsp;next&nbsp;block&nbsp;value&nbsp;into&nbsp;an&nbsp;integer.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-string_to_block"><strong>string_to_block</strong></a>(self, value: str) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;for&nbsp;a&nbsp;string&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-unix_datetime_to_dump"><strong>unix_datetime_to_dump</strong></a>(self, value: datetime.datetime) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;datetime&nbsp;to&nbsp;unix&nbsp;data&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-unix_timestamp"><strong>unix_timestamp</strong></a>(self) -&gt; datetime.datetime</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;datetime&nbsp;for&nbsp;a&nbsp;unix&nbsp;timestamp&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-windows_datetime_to_dump"><strong>windows_datetime_to_dump</strong></a>(self, value: datetime.datetime) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;datetime&nbsp;to&nbsp;windows&nbsp;data&nbsp;bytes.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonFormat">BinaryJsonFormat</a>.<a href="#BinaryJsonRpcRequestFormat-windows_datetime_to_dump">windows_datetime_to_dump</a>(None,&nbsp;datetime(2025,&nbsp;6,&nbsp;22))<br>
+b'\x1e\x01\xdb\xe2\xf7\xd5&gt;p\x00'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-windows_timestamp"><strong>windows_timestamp</strong></a>(self) -&gt; datetime.datetime</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;datetime&nbsp;for&nbsp;a&nbsp;windows&nbsp;timestamp&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcRequestFormat-write_block_size"><strong>write_block_size</strong></a>(self, element: ~Json, base: int, bytemap: Dict[int, bytes]) -&gt; Tuple[bytes, bool]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;size&nbsp;and&nbsp;a&nbsp;boolean<br>
+to&nbsp;represent&nbsp;the&nbsp;usage&nbsp;of&nbsp;base.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BinaryJsonRpcResponseFormat">class <strong>BinaryJsonRpcResponseFormat</strong></a>(<a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a>(id_:&nbsp;int,&nbsp;error:&nbsp;bool,&nbsp;content:&nbsp;~Json,&nbsp;encoding:&nbsp;str&nbsp;=&nbsp;'latin1',&nbsp;get_content:&nbsp;Callable&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;the&nbsp;binary&nbsp;JSON&nbsp;RPC&nbsp;response&nbsp;format&nbsp;for&nbsp;a&nbsp;call.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="JsonRpcExtended.html#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a></dd>
+<dd><a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="BinaryJsonRpcResponseFormat-__init__"><strong>__init__</strong></a>(self, id_: int, error: bool, content: ~Json, encoding: str = 'latin1', get_content: Callable = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-to_bytes"><strong>to_bytes</strong></a>(self) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;bytes&nbsp;for&nbsp;this&nbsp;instance.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a>(5,&nbsp;True,&nbsp;{"code":&nbsp;32600,&nbsp;"message":&nbsp;"Invalid&nbsp;<a href="#Request">Request</a>"}).<a href="#BinaryJsonRpcResponseFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x80\x03\x05"Dcode\x04\x7fXGmessageOInvalid&nbsp;<a href="#Request">Request</a>')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a>(2,&nbsp;False,&nbsp;5).<a href="#BinaryJsonRpcResponseFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x00\x03\x02\x03\x05')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a>(1,&nbsp;False,&nbsp;{"code":&nbsp;200,&nbsp;"stdout":&nbsp;"output",&nbsp;"stderr":&nbsp;"error"}).<a href="#BinaryJsonRpcResponseFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x00\x03\x01#Dcode\x03\xc8FstdoutFoutputFstderrEerror')<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a>(1,&nbsp;False,&nbsp;[{"code":&nbsp;200,&nbsp;"stdout":&nbsp;"output",&nbsp;"stderr":&nbsp;"error"},&nbsp;{"code":&nbsp;200,&nbsp;"stdout":&nbsp;"output",&nbsp;"stderr":&nbsp;"error"}]).<a href="#BinaryJsonRpcResponseFormat-to_bytes">to_bytes</a>()<br>
+bytearray(b'\x00\x03\x01\x82#Dcode\x03\xc8FstdoutFoutputFstderrEerror#Dcode\x03\xc8FstdoutFoutputFstderrEerror')<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="BinaryJsonRpcResponseFormat-from_bytes"><strong>from_bytes</strong></a>(data: bytes, get_content: Callable = None) -&gt; ~BinaryJsonRpcResponseFormat<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;builds&nbsp;an&nbsp;instance&nbsp;for&nbsp;this&nbsp;class&nbsp;from&nbsp;data.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;r&nbsp;=&nbsp;<a href="#BinaryJsonRpcResponseFormat">BinaryJsonRpcResponseFormat</a>.<a href="#BinaryJsonRpcResponseFormat-from_bytes">from_bytes</a>(b'\x80\x03\x05"Dcode\x04\x7fXGmessageOInvalid&nbsp;<a href="#Request">Request</a>')<br>
+&gt;&gt;&gt;&nbsp;r.call_id<br>
+5<br>
+&gt;&gt;&gt;&nbsp;r.headers<br>
+<a href="#ResponseHeaders">ResponseHeaders</a>(error=True)<br>
+&gt;&gt;&gt;&nbsp;r.status<br>
+True<br>
+&gt;&gt;&gt;&nbsp;r.content<br>
+{'code':&nbsp;32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a>:<br>
+<dl><dt><a name="BinaryJsonRpcResponseFormat-dict_block"><strong>dict_block</strong></a>(self, size_length: int) -&gt; Dict[str, ~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-dict_dump"><strong>dict_dump</strong></a>(self, value: Dict[str, ~Json], data: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;dumps&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;into&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-dumps_data"><strong>dumps_data</strong></a>(self, data: ~Json, data_dump: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;encodes&nbsp;Json&nbsp;like&nbsp;data&nbsp;in&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-duration"><strong>duration</strong></a>(self) -&gt; datetime.timedelta</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;timedelta&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-duration_dump"><strong>duration_dump</strong></a>(self, value: datetime.timedelta) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;timedelta&nbsp;(duration)&nbsp;to&nbsp;data&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-float_dump"><strong>float_dump</strong></a>(self, data: float) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;the&nbsp;float&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-int_block"><strong>int_block</strong></a>(self, size: int, signed: bool = True) -&gt; int</dt><dd><tt>This&nbsp;method&nbsp;transfrom&nbsp;the&nbsp;next&nbsp;block&nbsp;value&nbsp;into&nbsp;an&nbsp;integer.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-int_to_block"><strong>int_to_block</strong></a>(self, value: int, identifier: bool = True) -&gt; Tuple[bytes, int]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;for&nbsp;a&nbsp;integer&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-list_block"><strong>list_block</strong></a>(self, size_length: int) -&gt; List[~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-list_dump"><strong>list_dump</strong></a>(self, value: List[~Json], data: bytearray) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;dumps&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;into&nbsp;binary&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-read"><strong>read</strong></a>(self, number: int) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;reads&nbsp;`number`&nbsp;of&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-read_dict"><strong>read_dict</strong></a>(self, size: int) -&gt; Dict[str, ~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;dict&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-read_float4"><strong>read_float4</strong></a>(self) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;next&nbsp;4&nbsp;bytes&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-read_float8"><strong>read_float8</strong></a>(self) -&gt; float</dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;next&nbsp;8&nbsp;bytes&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-read_list"><strong>read_list</strong></a>(self, size: int) -&gt; List[~Json]</dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;a&nbsp;Json&nbsp;like&nbsp;list&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-read_next_element"><strong>read_next_element</strong></a>(self) -&gt; ~Json</dt><dd><tt>This&nbsp;function&nbsp;reads&nbsp;the&nbsp;next&nbsp;Json&nbsp;like&nbsp;element&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-read_str"><strong>read_str</strong></a>(self, size: int) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;strings&nbsp;value&nbsp;from&nbsp;the&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-string_block"><strong>string_block</strong></a>(self, size_length: int) -&gt; str</dt><dd><tt>This&nbsp;method&nbsp;transfrom&nbsp;the&nbsp;next&nbsp;block&nbsp;value&nbsp;into&nbsp;an&nbsp;integer.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-string_to_block"><strong>string_to_block</strong></a>(self, value: str) -&gt; bytes</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;for&nbsp;a&nbsp;string&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-unix_datetime_to_dump"><strong>unix_datetime_to_dump</strong></a>(self, value: datetime.datetime) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;datetime&nbsp;to&nbsp;unix&nbsp;data&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-unix_timestamp"><strong>unix_timestamp</strong></a>(self) -&gt; datetime.datetime</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;datetime&nbsp;for&nbsp;a&nbsp;unix&nbsp;timestamp&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-windows_datetime_to_dump"><strong>windows_datetime_to_dump</strong></a>(self, value: datetime.datetime) -&gt; bytes</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;datetime&nbsp;to&nbsp;windows&nbsp;data&nbsp;bytes.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#BinaryJsonFormat">BinaryJsonFormat</a>.<a href="#BinaryJsonRpcResponseFormat-windows_datetime_to_dump">windows_datetime_to_dump</a>(None,&nbsp;datetime(2025,&nbsp;6,&nbsp;22))<br>
+b'\x1e\x01\xdb\xe2\xf7\xd5&gt;p\x00'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-windows_timestamp"><strong>windows_timestamp</strong></a>(self) -&gt; datetime.datetime</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;datetime&nbsp;for&nbsp;a&nbsp;windows&nbsp;timestamp&nbsp;from&nbsp;binary&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="BinaryJsonRpcResponseFormat-write_block_size"><strong>write_block_size</strong></a>(self, element: ~Json, base: int, bytemap: Dict[int, bytes]) -&gt; Tuple[bytes, bool]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;block&nbsp;size&nbsp;and&nbsp;a&nbsp;boolean<br>
+to&nbsp;represent&nbsp;the&nbsp;usage&nbsp;of&nbsp;base.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="JsonRpcExtended.html#BinaryJsonFormat">BinaryJsonFormat</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CsvRpcServer">class <strong>CsvRpcServer</strong></a>(<a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>, <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;CSV&nbsp;RPC.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#CsvRpcServer">CsvRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#CsvRpcServer">CsvRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#CsvRpcServer">CsvRpcServer</a>.<a href="#CsvRpcServer-handle_request_data">handle_request_data</a>(b'"jsonrpc","method"\n"2.0","dir"\n')<br>
+&gt;&gt;&gt;&nbsp;<a href="#CsvRpcServer">CsvRpcServer</a>.<a href="#CsvRpcServer-handle_request_data">handle_request_data</a>(b'"jsonrpc","method","int?id","#0"\n"2.0","builtins.int","1","1"\n')<br>
+'"str?jsonrpc","int?id","int?result"\r\n"2.0","1","1"\r\n'<br>
+&gt;&gt;&gt;&nbsp;<a href="#CsvRpcServer">CsvRpcServer</a>.<a href="#CsvRpcServer-handle_request_data">handle_request_data</a>(b'"jsonrpc')<br>
+'"str?jsonrpc","NoneType?id","int?error.code","str?error.message"\r\n"2.0","None","-32600","Invalid&nbsp;<a href="#Request">Request</a>"\r\n'<br>
+&gt;&gt;&gt;<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="JsonRpcExtended.html#CsvRpcServer">CsvRpcServer</a></dd>
+<dd><a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a></dd>
+<dd><a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<dl><dt><strong>pyrpc</strong> = False</dl>
+
+<hr>
+Class methods inherited from <a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>:<br>
+<dl><dt><a name="CsvRpcServer-handle_request_data"><strong>handle_request_data</strong></a>(csv: bytes) -&gt; Optional[str]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;CSV&nbsp;from&nbsp;data&nbsp;to&nbsp;perform&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Class methods inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><a name="CsvRpcServer-call"><strong>call</strong></a>(method: Callable, json: Dict[str, Any]) -&gt; Any<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;the&nbsp;python&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="CsvRpcServer-check_request"><strong>check_request</strong></a>(json: Dict[str, Any], id: Union[str, int, NoneType]) -&gt; Optional[Dict[str, Union[str, int, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;received&nbsp;requests.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(dir,&nbsp;'test')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-check_request">check_request</a>({},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0'},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'test',&nbsp;'params':&nbsp;None},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32602,&nbsp;'message':&nbsp;'Invalid&nbsp;params'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'builtins.dir'},&nbsp;1)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="CsvRpcServer-execute_call"><strong>execute_call</strong></a>(json: Dict[str, Any]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;a&nbsp;JSON&nbsp;RPC&nbsp;call.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(lambda&nbsp;**y:&nbsp;int('1',&nbsp;**y),&nbsp;'int1')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_call">execute_call</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_call">execute_call</a>({'id':&nbsp;1})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_call">execute_call</a>({})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['1']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['a']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32603,&nbsp;'message':&nbsp;'Internal&nbsp;error'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="CsvRpcServer-execute_calls"><strong>execute_calls</strong></a>(json: Union[Dict[str, ~Json], List[Dict[str, ~Json]]]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;JSON&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_calls">execute_calls</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_calls">execute_calls</a>(None)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_calls">execute_calls</a>(<a href="#Request">Request</a>('2.0',&nbsp;'dir').asdict())<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#CsvRpcServer-execute_calls">execute_calls</a>([<a href="#Request">Request</a>('2.0',&nbsp;'builtins.int',&nbsp;1,&nbsp;[1]).asdict()])<br>
+[{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="CsvRpcServer-register_function"><strong>register_function</strong></a>(function: Callable, name: str = None) -&gt; None<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;function&nbsp;in&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><strong>functions</strong> = {}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Error">class <strong>Error</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Error">Error</a>(code:&nbsp;int,&nbsp;message:&nbsp;str,&nbsp;data:&nbsp;str&nbsp;=&nbsp;None)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+<a href="#Error">Error</a>(code:&nbsp;int,&nbsp;message:&nbsp;str,&nbsp;data:&nbsp;str&nbsp;=&nbsp;None)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Error-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="Error-__init__"><strong>__init__</strong></a>(self, code: int, message: str, data: str = None) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Error-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Error-asdict"><strong>asdict</strong></a>(self) -&gt; Dict[str, Union[int, str]]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;this&nbsp;class&nbsp;as&nbsp;a&nbsp;dict&nbsp;for&nbsp;JsonRpc&nbsp;response.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Error">Error</a>(0,&nbsp;"test",&nbsp;None).<a href="#Error-asdict">asdict</a>()<br>
+{'code':&nbsp;0,&nbsp;'message':&nbsp;'test'}<br>
+&gt;&gt;&gt;&nbsp;<a href="#Error">Error</a>(0,&nbsp;"test",&nbsp;"test2").<a href="#Error-asdict">asdict</a>()<br>
+{'code':&nbsp;0,&nbsp;'message':&nbsp;'test',&nbsp;'data':&nbsp;'test2'}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Error-checks"><strong>checks</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;data&nbsp;type.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Error">Error</a>(0,&nbsp;"test",&nbsp;"test").<a href="#Error-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Error">Error</a>(0,&nbsp;"test",&nbsp;None).<a href="#Error-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Error">Error</a>("test",&nbsp;"test",&nbsp;"test").<a href="#Error-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;code&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Error">Error</a>(0,&nbsp;0,&nbsp;"test").<a href="#Error-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;message&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Error">Error</a>(0,&nbsp;"",&nbsp;0).<a href="#Error-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;data&nbsp;type<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'code': &lt;class 'int'&gt;, 'data': &lt;class 'str'&gt;, 'message': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'code': Field(name='code',type=&lt;class 'int'&gt;,default=&lt;da...appingproxy({}),kw_only=False,_field_type=_FIELD), 'data': Field(name='data',type=&lt;class 'str'&gt;,default=Non...appingproxy({}),kw_only=False,_field_type=_FIELD), 'message': Field(name='message',type=&lt;class 'str'&gt;,default=...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('code', 'message', 'data')</dl>
+
+<dl><dt><strong>data</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FORMATS">class <strong>FORMATS</strong></a>(<a href="enum.html#IntEnum">enum.IntEnum</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#FORMATS">FORMATS</a>(value,&nbsp;names=None,&nbsp;*,&nbsp;module=None,&nbsp;qualname=None,&nbsp;type=None,&nbsp;start=1)<br>
+&nbsp;<br>
+An&nbsp;enumeration.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="JsonRpcExtended.html#FORMATS">FORMATS</a></dd>
+<dd><a href="enum.html#IntEnum">enum.IntEnum</a></dd>
+<dd><a href="builtins.html#int">builtins.int</a></dd>
+<dd><a href="enum.html#Enum">enum.Enum</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>BINARY</strong> = &lt;FORMATS.BINARY: 3&gt;</dl>
+
+<dl><dt><strong>CSV</strong> = &lt;FORMATS.CSV: 1&gt;</dl>
+
+<dl><dt><strong>JSON</strong> = &lt;FORMATS.JSON: 0&gt;</dl>
+
+<dl><dt><strong>XML</strong> = &lt;FORMATS.XML: 2&gt;</dl>
+
+<hr>
+Data descriptors inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>The&nbsp;name&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</tt></dd>
+</dl>
+<dl><dt><strong>value</strong></dt>
+<dd><tt>The&nbsp;value&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</tt></dd>
+</dl>
+<hr>
+Readonly properties inherited from <a href="enum.html#EnumMeta">enum.EnumMeta</a>:<br>
+<dl><dt><strong>__members__</strong></dt>
+<dd><tt>Returns&nbsp;a&nbsp;mapping&nbsp;of&nbsp;member&nbsp;name-&gt;value.<br>
+&nbsp;<br>
+This&nbsp;mapping&nbsp;lists&nbsp;all&nbsp;enum&nbsp;members,&nbsp;including&nbsp;aliases.&nbsp;Note&nbsp;that&nbsp;this<br>
+is&nbsp;a&nbsp;read-only&nbsp;view&nbsp;of&nbsp;the&nbsp;internal&nbsp;mapping.</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="JsonRpcServer">class <strong>JsonRpcServer</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;JSON&nbsp;RPC&nbsp;RFC.<br>
+&nbsp;<br>
+Multiples&nbsp;methods&nbsp;come&nbsp;from:&nbsp;<a href="https://github.com/mauricelambert/WebScripts/blob/main/WebScripts/modules/JsonRpc.py">https://github.com/mauricelambert/WebScripts/blob/main/WebScripts/modules/JsonRpc.py</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Class methods defined here:<br>
+<dl><dt><a name="JsonRpcServer-call"><strong>call</strong></a>(method: Callable, json: Dict[str, Any]) -&gt; Any<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;the&nbsp;python&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="JsonRpcServer-check_request"><strong>check_request</strong></a>(json: Dict[str, Any], id: Union[str, int, NoneType]) -&gt; Optional[Dict[str, Union[str, int, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;received&nbsp;requests.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(dir,&nbsp;'test')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-check_request">check_request</a>({},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0'},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'test',&nbsp;'params':&nbsp;None},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32602,&nbsp;'message':&nbsp;'Invalid&nbsp;params'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'builtins.dir'},&nbsp;1)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="JsonRpcServer-execute_call"><strong>execute_call</strong></a>(json: Dict[str, Any]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;a&nbsp;JSON&nbsp;RPC&nbsp;call.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(lambda&nbsp;**y:&nbsp;int('1',&nbsp;**y),&nbsp;'int1')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_call">execute_call</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_call">execute_call</a>({'id':&nbsp;1})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_call">execute_call</a>({})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['1']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['a']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32603,&nbsp;'message':&nbsp;'Internal&nbsp;error'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="JsonRpcServer-execute_calls"><strong>execute_calls</strong></a>(json: Union[Dict[str, ~Json], List[Dict[str, ~Json]]]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;JSON&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_calls">execute_calls</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_calls">execute_calls</a>(None)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_calls">execute_calls</a>(<a href="#Request">Request</a>('2.0',&nbsp;'dir').asdict())<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-execute_calls">execute_calls</a>([<a href="#Request">Request</a>('2.0',&nbsp;'builtins.int',&nbsp;1,&nbsp;[1]).asdict()])<br>
+[{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="JsonRpcServer-handle_request_data"><strong>handle_request_data</strong></a>(json: bytes, permissive: bool = False) -&gt; Optional[str]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;JSON&nbsp;from&nbsp;data&nbsp;to&nbsp;perform&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-handle_request_data">handle_request_data</a>(b'{"jsonrpc":&nbsp;"2.0",&nbsp;"method":&nbsp;"dir"}')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-handle_request_data">handle_request_data</a>(b'{"jsonrpc"&nbsp;"2.0"&nbsp;"method"&nbsp;"builtins.int",&nbsp;"id":&nbsp;1&nbsp;"params"&nbsp;["1"],,,}',&nbsp;permissive=True)<br>
+'{"jsonrpc":&nbsp;"2.0",&nbsp;"id":&nbsp;1,&nbsp;"result":&nbsp;1}'<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#JsonRpcServer-handle_request_data">handle_request_data</a>(b'{"jsonrpc"&nbsp;')<br>
+'{"jsonrpc":&nbsp;"2.0",&nbsp;"id":&nbsp;null,&nbsp;"error":&nbsp;{"code":&nbsp;-32600,&nbsp;"message":&nbsp;"Invalid&nbsp;<a href="#Request">Request</a>"}}'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="JsonRpcServer-register_function"><strong>register_function</strong></a>(function: Callable, name: str = None) -&gt; None<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;function&nbsp;in&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'functions': typing.Dict[str, typing.Callable]}</dl>
+
+<dl><dt><strong>functions</strong> = {}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PyCsvRpcServer">class <strong>PyCsvRpcServer</strong></a>(<a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>, <a href="JsonRpcExtended.html#PyJsonRpcServer">PyJsonRpcServer</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;modified&nbsp;CSV&nbsp;RPC.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyCsvRpcServer">PyCsvRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyCsvRpcServer">PyCsvRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyCsvRpcServer">PyCsvRpcServer</a>.<a href="#PyCsvRpcServer-handle_request_data">handle_request_data</a>(b'"jsonrpc","method"\n"py2.0","dir"\n')<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyCsvRpcServer">PyCsvRpcServer</a>.<a href="#PyCsvRpcServer-handle_request_data">handle_request_data</a>(b'"jsonrpc","method","int?id","#0"\n"py2.0","builtins.int","1","1"\n')<br>
+'"str?jsonrpc","int?id","int?result"\r\n"2.0","1","1"\r\n'<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyCsvRpcServer">PyCsvRpcServer</a>.<a href="#PyCsvRpcServer-handle_request_data">handle_request_data</a>(b'"jsonrpc')<br>
+'"str?jsonrpc","NoneType?id","int?error.code","str?error.message"\r\n"2.0","None","-32600","Invalid&nbsp;<a href="#Request">Request</a>"\r\n'<br>
+&gt;&gt;&gt;<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="JsonRpcExtended.html#PyCsvRpcServer">PyCsvRpcServer</a></dd>
+<dd><a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a></dd>
+<dd><a href="JsonRpcExtended.html#PyJsonRpcServer">PyJsonRpcServer</a></dd>
+<dd><a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<dl><dt><strong>pyrpc</strong> = True</dl>
+
+<hr>
+Class methods inherited from <a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>:<br>
+<dl><dt><a name="PyCsvRpcServer-handle_request_data"><strong>handle_request_data</strong></a>(csv: bytes) -&gt; Optional[str]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;parses&nbsp;CSV&nbsp;from&nbsp;data&nbsp;to&nbsp;perform&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="JsonRpcExtended.html#_CsvRpcServerInterface">_CsvRpcServerInterface</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Class methods inherited from <a href="JsonRpcExtended.html#PyJsonRpcServer">PyJsonRpcServer</a>:<br>
+<dl><dt><a name="PyCsvRpcServer-call"><strong>call</strong></a>(method: Callable, json: Dict[str, Any]) -&gt; Any<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;the&nbsp;python&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="PyCsvRpcServer-check_request"><strong>check_request</strong></a>(json: Dict[str, Any], id: Union[str, int, NoneType]) -&gt; Optional[Dict[str, Union[str, int, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;received&nbsp;requests.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(dir,&nbsp;'test')<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyCsvRpcServer-check_request">check_request</a>({},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyCsvRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0'},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyCsvRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'test',&nbsp;'args':&nbsp;{}},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32602,&nbsp;'message':&nbsp;'Invalid&nbsp;params'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyCsvRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'test',&nbsp;'kwargs':&nbsp;[]},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32602,&nbsp;'message':&nbsp;'Invalid&nbsp;params'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyCsvRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'builtins.dir'},&nbsp;1)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><a name="PyCsvRpcServer-execute_call"><strong>execute_call</strong></a>(json: Dict[str, Any]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;a&nbsp;JSON&nbsp;RPC&nbsp;call.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(lambda&nbsp;**y:&nbsp;int('1',&nbsp;**y),&nbsp;'int1')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_call">execute_call</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_call">execute_call</a>({'id':&nbsp;1})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_call">execute_call</a>({})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['1']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['a']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32603,&nbsp;'message':&nbsp;'Internal&nbsp;error'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="PyCsvRpcServer-execute_calls"><strong>execute_calls</strong></a>(json: Union[Dict[str, ~Json], List[Dict[str, ~Json]]]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;JSON&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_calls">execute_calls</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_calls">execute_calls</a>(None)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_calls">execute_calls</a>(<a href="#Request">Request</a>('2.0',&nbsp;'dir').asdict())<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyCsvRpcServer-execute_calls">execute_calls</a>([<a href="#Request">Request</a>('2.0',&nbsp;'builtins.int',&nbsp;1,&nbsp;[1]).asdict()])<br>
+[{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="PyCsvRpcServer-register_function"><strong>register_function</strong></a>(function: Callable, name: str = None) -&gt; None<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;function&nbsp;in&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><strong>functions</strong> = {}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PyJsonRpcServer">class <strong>PyJsonRpcServer</strong></a>(<a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;implements&nbsp;a&nbsp;modified&nbsp;JSON&nbsp;RPC&nbsp;for&nbsp;python.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="JsonRpcExtended.html#PyJsonRpcServer">PyJsonRpcServer</a></dd>
+<dd><a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="PyJsonRpcServer-call"><strong>call</strong></a>(method: Callable, json: Dict[str, Any]) -&gt; Any<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;calls&nbsp;the&nbsp;python&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="PyJsonRpcServer-check_request"><strong>check_request</strong></a>(json: Dict[str, Any], id: Union[str, int, NoneType]) -&gt; Optional[Dict[str, Union[str, int, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;received&nbsp;requests.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(dir,&nbsp;'test')<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyJsonRpcServer-check_request">check_request</a>({},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyJsonRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0'},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyJsonRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'test',&nbsp;'args':&nbsp;{}},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32602,&nbsp;'message':&nbsp;'Invalid&nbsp;params'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyJsonRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'test',&nbsp;'kwargs':&nbsp;[]},&nbsp;1)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32602,&nbsp;'message':&nbsp;'Invalid&nbsp;params'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyJsonRpcServer">PyJsonRpcServer</a>.<a href="#PyJsonRpcServer-check_request">check_request</a>({'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'builtins.dir'},&nbsp;1)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<hr>
+Class methods inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><a name="PyJsonRpcServer-execute_call"><strong>execute_call</strong></a>(json: Dict[str, Any]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;a&nbsp;JSON&nbsp;RPC&nbsp;call.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(lambda&nbsp;**y:&nbsp;int('1',&nbsp;**y),&nbsp;'int1')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_call">execute_call</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_call">execute_call</a>({'id':&nbsp;1})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_call">execute_call</a>({})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['1']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'int1',&nbsp;'params':&nbsp;{'base':&nbsp;16}})<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_call">execute_call</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'method':&nbsp;'builtins.int',&nbsp;'params':&nbsp;['a']})<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32603,&nbsp;'message':&nbsp;'Internal&nbsp;error'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="PyJsonRpcServer-execute_calls"><strong>execute_calls</strong></a>(json: Union[Dict[str, ~Json], List[Dict[str, ~Json]]]) -&gt; Optional[Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;performs&nbsp;JSON&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_calls">execute_calls</a>([])<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_calls">execute_calls</a>(None)<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;None,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_calls">execute_calls</a>(<a href="#Request">Request</a>('2.0',&nbsp;'dir').asdict())<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-execute_calls">execute_calls</a>([<a href="#Request">Request</a>('2.0',&nbsp;'builtins.int',&nbsp;1,&nbsp;[1]).asdict()])<br>
+[{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;1}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="PyJsonRpcServer-handle_request_data"><strong>handle_request_data</strong></a>(json: bytes, permissive: bool = False) -&gt; Optional[str]<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;parses&nbsp;JSON&nbsp;from&nbsp;data&nbsp;to&nbsp;perform&nbsp;RPC&nbsp;calls.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(dir)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-register_function">register_function</a>(int)<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-handle_request_data">handle_request_data</a>(b'{"jsonrpc":&nbsp;"2.0",&nbsp;"method":&nbsp;"dir"}')<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-handle_request_data">handle_request_data</a>(b'{"jsonrpc"&nbsp;"2.0"&nbsp;"method"&nbsp;"builtins.int",&nbsp;"id":&nbsp;1&nbsp;"params"&nbsp;["1"],,,}',&nbsp;permissive=True)<br>
+'{"jsonrpc":&nbsp;"2.0",&nbsp;"id":&nbsp;1,&nbsp;"result":&nbsp;1}'<br>
+&gt;&gt;&gt;&nbsp;<a href="#JsonRpcServer">JsonRpcServer</a>.<a href="#PyJsonRpcServer-handle_request_data">handle_request_data</a>(b'{"jsonrpc"&nbsp;')<br>
+'{"jsonrpc":&nbsp;"2.0",&nbsp;"id":&nbsp;null,&nbsp;"error":&nbsp;{"code":&nbsp;-32600,&nbsp;"message":&nbsp;"Invalid&nbsp;<a href="#Request">Request</a>"}}'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="PyJsonRpcServer-register_function"><strong>register_function</strong></a>(function: Callable, name: str = None) -&gt; None<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;new&nbsp;function&nbsp;in&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="JsonRpcExtended.html#JsonRpcServer">JsonRpcServer</a>:<br>
+<dl><dt><strong>functions</strong> = {}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PyRequest">class <strong>PyRequest</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#PyRequest">PyRequest</a>(jsonrpc:&nbsp;str,&nbsp;method:&nbsp;str,&nbsp;id:&nbsp;Union[str,&nbsp;int,&nbsp;NoneType]&nbsp;=&nbsp;None,&nbsp;args:&nbsp;List[~Json]&nbsp;=&nbsp;None,&nbsp;kwargs:&nbsp;Dict[str,&nbsp;~Json]&nbsp;=&nbsp;None)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+This&nbsp;dataclass&nbsp;implements&nbsp;the&nbsp;modified&nbsp;JSON&nbsp;RPC&nbsp;request&nbsp;for&nbsp;python.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="PyRequest-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="PyRequest-__init__"><strong>__init__</strong></a>(self, jsonrpc: str, method: str, id: Union[str, int, NoneType] = None, args: List[~Json] = None, kwargs: Dict[str, ~Json] = None) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="PyRequest-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="PyRequest-asdict"><strong>asdict</strong></a>(self) -&gt; Dict[str, Union[int, str]]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;this&nbsp;class&nbsp;as&nbsp;a&nbsp;dict&nbsp;for&nbsp;JsonRpc&nbsp;request.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("",&nbsp;"",&nbsp;None,&nbsp;None).<a href="#PyRequest-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'',&nbsp;'method':&nbsp;''}<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("py2.0",&nbsp;"test",&nbsp;1,&nbsp;[1,&nbsp;2,&nbsp;3],&nbsp;{'a':&nbsp;'a'}).<a href="#PyRequest-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'py2.0',&nbsp;'method':&nbsp;'test',&nbsp;'id':&nbsp;1,&nbsp;'args':&nbsp;[1,&nbsp;2,&nbsp;3],&nbsp;'kwargs':&nbsp;{'a':&nbsp;'a'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="PyRequest-checks"><strong>checks</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;data&nbsp;type.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("2.0",&nbsp;"test",&nbsp;1,&nbsp;[],&nbsp;{}).<a href="#PyRequest-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>(0,&nbsp;"test",&nbsp;"test",&nbsp;[]).<a href="#PyRequest-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;jsonrpc&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("",&nbsp;0,&nbsp;"test",&nbsp;[]).<a href="#PyRequest-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;method&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("",&nbsp;"",&nbsp;[],&nbsp;[]).<a href="#PyRequest-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;id&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("",&nbsp;"",&nbsp;"",&nbsp;0,&nbsp;{}).<a href="#PyRequest-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;args&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("",&nbsp;"",&nbsp;"",&nbsp;[],&nbsp;0).<a href="#PyRequest-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;kwargs&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("",&nbsp;"",&nbsp;"test",&nbsp;[],&nbsp;{}).<a href="#PyRequest-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#PyRequest">PyRequest</a>("",&nbsp;"",&nbsp;None,&nbsp;None,&nbsp;None).<a href="#PyRequest-checks">checks</a>()<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'args': typing.List[~Json], 'id': typing.Union[str, int, NoneType], 'jsonrpc': &lt;class 'str'&gt;, 'kwargs': typing.Dict[str, ~Json], 'method': &lt;class 'str'&gt;}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'args': Field(name='args',type=typing.List[~Json],defaul...appingproxy({}),kw_only=False,_field_type=_FIELD), 'id': Field(name='id',type=typing.Union[str, int, None...appingproxy({}),kw_only=False,_field_type=_FIELD), 'jsonrpc': Field(name='jsonrpc',type=&lt;class 'str'&gt;,default=...appingproxy({}),kw_only=False,_field_type=_FIELD), 'kwargs': Field(name='kwargs',type=typing.Dict[str, ~Json]...appingproxy({}),kw_only=False,_field_type=_FIELD), 'method': Field(name='method',type=&lt;class 'str'&gt;,default=&lt;...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('jsonrpc', 'method', 'id', 'args', 'kwargs')</dl>
+
+<dl><dt><strong>args</strong> = None</dl>
+
+<dl><dt><strong>id</strong> = None</dl>
+
+<dl><dt><strong>kwargs</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Request">class <strong>Request</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Request">Request</a>(jsonrpc:&nbsp;str,&nbsp;method:&nbsp;str,&nbsp;id:&nbsp;Union[str,&nbsp;int,&nbsp;NoneType]&nbsp;=&nbsp;None,&nbsp;params:&nbsp;Union[List[~Json],&nbsp;Dict[str,&nbsp;~Json]]&nbsp;=&nbsp;None)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+This&nbsp;dataclass&nbsp;implements&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;request.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Request-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="Request-__init__"><strong>__init__</strong></a>(self, jsonrpc: str, method: str, id: Union[str, int, NoneType] = None, params: Union[List[~Json], Dict[str, ~Json]] = None) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Request-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Request-asdict"><strong>asdict</strong></a>(self) -&gt; Dict[str, Union[int, str]]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;this&nbsp;class&nbsp;as&nbsp;a&nbsp;dict&nbsp;for&nbsp;JsonRpc&nbsp;request.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;"",&nbsp;None,&nbsp;None).<a href="#Request-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'',&nbsp;'method':&nbsp;''}<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("2.0",&nbsp;"test",&nbsp;1,&nbsp;[1,&nbsp;2,&nbsp;3]).<a href="#Request-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'method':&nbsp;'test',&nbsp;'id':&nbsp;1,&nbsp;'params':&nbsp;[1,&nbsp;2,&nbsp;3]}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Request-checks"><strong>checks</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;data&nbsp;type.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("2.0",&nbsp;"test",&nbsp;"test",&nbsp;[]).<a href="#Request-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>(0,&nbsp;"test",&nbsp;"test",&nbsp;[]).<a href="#Request-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;jsonrpc&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;0,&nbsp;"test",&nbsp;[]).<a href="#Request-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;method&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;"",&nbsp;[],&nbsp;[]).<a href="#Request-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;id&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;"",&nbsp;"",&nbsp;0).<a href="#Request-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;params&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;"",&nbsp;"",&nbsp;None).<a href="#Request-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;"",&nbsp;"",&nbsp;{}).<a href="#Request-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;"",&nbsp;0,&nbsp;{}).<a href="#Request-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Request">Request</a>("",&nbsp;"",&nbsp;None,&nbsp;{}).<a href="#Request-checks">checks</a>()<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'id': typing.Union[str, int, NoneType], 'jsonrpc': &lt;class 'str'&gt;, 'method': &lt;class 'str'&gt;, 'params': typing.Union[typing.List[~Json], typing.Dict[str, ~Json]]}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'id': Field(name='id',type=typing.Union[str, int, None...appingproxy({}),kw_only=False,_field_type=_FIELD), 'jsonrpc': Field(name='jsonrpc',type=&lt;class 'str'&gt;,default=...appingproxy({}),kw_only=False,_field_type=_FIELD), 'method': Field(name='method',type=&lt;class 'str'&gt;,default=&lt;...appingproxy({}),kw_only=False,_field_type=_FIELD), 'params': Field(name='params',type=typing.Union[typing.Lis...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('jsonrpc', 'method', 'id', 'params')</dl>
+
+<dl><dt><strong>id</strong> = None</dl>
+
+<dl><dt><strong>params</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RequestHeaders">class <strong>RequestHeaders</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#RequestHeaders">RequestHeaders</a>(binary:&nbsp;bool,&nbsp;has_version:&nbsp;bool,&nbsp;py_json_rpc:&nbsp;bool,&nbsp;has_id:&nbsp;bool,&nbsp;has_auth:&nbsp;bool)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary:&nbsp;bool,&nbsp;has_version:&nbsp;bool,&nbsp;py_json_rpc:&nbsp;bool,&nbsp;has_id:&nbsp;bool,&nbsp;has_auth:&nbsp;bool)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RequestHeaders-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="RequestHeaders-__init__"><strong>__init__</strong></a>(self, binary: bool, has_version: bool, py_json_rpc: bool, has_id: bool, has_auth: bool) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="RequestHeaders-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="RequestHeaders-to_byte"><strong>to_byte</strong></a>(self) -&gt; int</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;byte&nbsp;for&nbsp;the&nbsp;headers.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#RequestHeaders">RequestHeaders</a>(True,&nbsp;True,&nbsp;True,&nbsp;True,&nbsp;True).<a href="#RequestHeaders-to_byte">to_byte</a>()<br>
+248<br>
+&gt;&gt;&gt;&nbsp;bin(<a href="#RequestHeaders">RequestHeaders</a>(True,&nbsp;False,&nbsp;False,&nbsp;False,&nbsp;False).<a href="#RequestHeaders-to_byte">to_byte</a>())<br>
+'0b10000000'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="RequestHeaders-from_bytes"><strong>from_bytes</strong></a>(data: bytes) -&gt; ~RequestHeaders<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;builds&nbsp;an&nbsp;instance&nbsp;for&nbsp;this&nbsp;class&nbsp;from&nbsp;data.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#RequestHeaders">RequestHeaders</a>.<a href="#RequestHeaders-from_bytes">from_bytes</a>(bytes([248]))<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=True,&nbsp;py_json_rpc=True,&nbsp;has_id=True,&nbsp;has_auth=True)<br>
+&gt;&gt;&gt;&nbsp;<a href="#RequestHeaders">RequestHeaders</a>.<a href="#RequestHeaders-from_bytes">from_bytes</a>(bytes([0b10000000]))<br>
+<a href="#RequestHeaders">RequestHeaders</a>(binary=True,&nbsp;has_version=False,&nbsp;py_json_rpc=False,&nbsp;has_id=False,&nbsp;has_auth=False)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'binary': &lt;class 'bool'&gt;, 'has_auth': &lt;class 'bool'&gt;, 'has_id': &lt;class 'bool'&gt;, 'has_version': &lt;class 'bool'&gt;, 'py_json_rpc': &lt;class 'bool'&gt;}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'binary': Field(name='binary',type=&lt;class 'bool'&gt;,default=...appingproxy({}),kw_only=False,_field_type=_FIELD), 'has_auth': Field(name='has_auth',type=&lt;class 'bool'&gt;,defaul...appingproxy({}),kw_only=False,_field_type=_FIELD), 'has_id': Field(name='has_id',type=&lt;class 'bool'&gt;,default=...appingproxy({}),kw_only=False,_field_type=_FIELD), 'has_version': Field(name='has_version',type=&lt;class 'bool'&gt;,def...appingproxy({}),kw_only=False,_field_type=_FIELD), 'py_json_rpc': Field(name='py_json_rpc',type=&lt;class 'bool'&gt;,def...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('binary', 'has_version', 'py_json_rpc', 'has_id', 'has_auth')</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Response">class <strong>Response</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Response">Response</a>(jsonrpc:&nbsp;str,&nbsp;id:&nbsp;Union[str,&nbsp;int,&nbsp;NoneType],&nbsp;result:&nbsp;~Json&nbsp;=&nbsp;None,&nbsp;error:&nbsp;JsonRpcExtended.<a href="#Error">Error</a>&nbsp;=&nbsp;None)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+This&nbsp;dataclass&nbsp;implements&nbsp;the&nbsp;JSON&nbsp;RPC&nbsp;request.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Response-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="Response-__init__"><strong>__init__</strong></a>(self, jsonrpc: str, id: Union[str, int, NoneType], result: ~Json = None, error: JsonRpcExtended.Error = None) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Response-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Response-asdict"><strong>asdict</strong></a>(self, id: Union[str, int] = None) -&gt; Dict[str, Union[int, str, ~Json, JsonRpcExtended.Error]]</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;this&nbsp;class&nbsp;as&nbsp;a&nbsp;dict&nbsp;for&nbsp;JsonRpc&nbsp;response.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("",&nbsp;"",&nbsp;None,&nbsp;None).<a href="#Response-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'',&nbsp;'id':&nbsp;''}<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("2.0",&nbsp;"test",&nbsp;[1,&nbsp;2,&nbsp;3]).<a href="#Response-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;'test',&nbsp;'result':&nbsp;[1,&nbsp;2,&nbsp;3]}<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("2.0",&nbsp;"test",&nbsp;None,&nbsp;<a href="#Error">Error</a>(0,&nbsp;'test')).<a href="#Response-asdict">asdict</a>()<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;'test',&nbsp;'error':&nbsp;{'code':&nbsp;0,&nbsp;'message':&nbsp;'test'}}<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<dl><dt><a name="Response-checks"><strong>checks</strong></a>(self) -&gt; None</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;data&nbsp;type.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("2.0",&nbsp;None,&nbsp;None,&nbsp;None).<a href="#Response-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("2.0",&nbsp;1,&nbsp;{},&nbsp;<a href="#Error">Error</a>(0,&nbsp;"")).<a href="#Response-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+ValueError:&nbsp;<a href="#Error">Error</a>&nbsp;and&nbsp;result&nbsp;should&nbsp;not&nbsp;be&nbsp;set&nbsp;in&nbsp;the&nbsp;same&nbsp;response.<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("2.0",&nbsp;1,&nbsp;None,&nbsp;<a href="#Error">Error</a>(0,&nbsp;"")).<a href="#Response-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("2.0",&nbsp;1,&nbsp;{},&nbsp;None).<a href="#Response-checks">checks</a>()<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>(0,&nbsp;1,&nbsp;{},&nbsp;None).<a href="#Response-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;jsonrpc&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("",&nbsp;[],&nbsp;{},&nbsp;None).<a href="#Response-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;id&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("",&nbsp;"",&nbsp;<a href="#Error">Error</a>(0,&nbsp;""),&nbsp;None).<a href="#Response-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;result&nbsp;type<br>
+&gt;&gt;&gt;&nbsp;<a href="#Response">Response</a>("",&nbsp;"",&nbsp;{},&nbsp;{}).<a href="#Response-checks">checks</a>()<br>
+Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+TypeError:&nbsp;Invalid&nbsp;error&nbsp;type<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'error': &lt;class 'JsonRpcExtended.Error'&gt;, 'id': typing.Union[str, int, NoneType], 'jsonrpc': &lt;class 'str'&gt;, 'result': ~Json}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'error': Field(name='error',type=&lt;class 'JsonRpcExtended....appingproxy({}),kw_only=False,_field_type=_FIELD), 'id': Field(name='id',type=typing.Union[str, int, None...appingproxy({}),kw_only=False,_field_type=_FIELD), 'jsonrpc': Field(name='jsonrpc',type=&lt;class 'str'&gt;,default=...appingproxy({}),kw_only=False,_field_type=_FIELD), 'result': Field(name='result',type=~Json,default=None,defa...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('jsonrpc', 'id', 'result', 'error')</dl>
+
+<dl><dt><strong>error</strong> = None</dl>
+
+<dl><dt><strong>result</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ResponseHeaders">class <strong>ResponseHeaders</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ResponseHeaders">ResponseHeaders</a>(error:&nbsp;bool)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+<a href="#ResponseHeaders">ResponseHeaders</a>(error:&nbsp;bool)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ResponseHeaders-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="ResponseHeaders-__init__"><strong>__init__</strong></a>(self, error: bool) -&gt; None</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ResponseHeaders-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="ResponseHeaders-to_byte"><strong>to_byte</strong></a>(self) -&gt; int</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;byte&nbsp;for&nbsp;the&nbsp;headers.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(<a href="#ResponseHeaders">ResponseHeaders</a>(True).<a href="#ResponseHeaders-to_byte">to_byte</a>())<br>
+'0b10000000'<br>
+&gt;&gt;&gt;&nbsp;<a href="#ResponseHeaders">ResponseHeaders</a>(False).<a href="#ResponseHeaders-to_byte">to_byte</a>()<br>
+0<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="ResponseHeaders-from_bytes"><strong>from_bytes</strong></a>(data: bytes) -&gt; ~ResponseHeaders<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;builds&nbsp;an&nbsp;instance&nbsp;for&nbsp;this&nbsp;class&nbsp;from&nbsp;data.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#ResponseHeaders">ResponseHeaders</a>.<a href="#ResponseHeaders-from_bytes">from_bytes</a>(bytes([0b10000000]))<br>
+<a href="#ResponseHeaders">ResponseHeaders</a>(error=True)<br>
+&gt;&gt;&gt;&nbsp;<a href="#ResponseHeaders">ResponseHeaders</a>.<a href="#ResponseHeaders-from_bytes">from_bytes</a>(bytes([0b00000000]))<br>
+<a href="#ResponseHeaders">ResponseHeaders</a>(error=False)<br>
+&gt;&gt;&gt;</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {'error': &lt;class 'bool'&gt;}</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'error': Field(name='error',type=&lt;class 'bool'&gt;,default=&lt;...appingproxy({}),kw_only=False,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('error',)</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-csv_add_list_value"><strong>csv_add_list_value</strong></a>(container: list, key: str, value: str, index: int) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;value&nbsp;into&nbsp;the&nbsp;list&nbsp;container.</tt></dd></dl>
+ <dl><dt><a name="-csv_add_value"><strong>csv_add_value</strong></a>(container: Union[dict, list], key: str, value: str) -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;adds&nbsp;a&nbsp;value&nbsp;into&nbsp;the&nbsp;container.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;[]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#0',&nbsp;0)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#2',&nbsp;2)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;None,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#1',&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#3abc',&nbsp;0)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;1,&nbsp;2,&nbsp;{'abc':&nbsp;0}]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#3def',&nbsp;2)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;1,&nbsp;2,&nbsp;{'abc':&nbsp;0,&nbsp;'def':&nbsp;2}]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#4abc1.def1',&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;1,&nbsp;2,&nbsp;{'abc':&nbsp;0,&nbsp;'def':&nbsp;2},&nbsp;{'abc1':&nbsp;{'def1':&nbsp;1}}]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#4abc2.def2.ghi2',&nbsp;2)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;1,&nbsp;2,&nbsp;{'abc':&nbsp;0,&nbsp;'def':&nbsp;2},&nbsp;{'abc1':&nbsp;{'def1':&nbsp;1},&nbsp;'abc2':&nbsp;{'def2':&nbsp;{'ghi2':&nbsp;2}}}]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#4abc2.jkl2',&nbsp;2)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;1,&nbsp;2,&nbsp;{'abc':&nbsp;0,&nbsp;'def':&nbsp;2},&nbsp;{'abc1':&nbsp;{'def1':&nbsp;1},&nbsp;'abc2':&nbsp;{'def2':&nbsp;{'ghi2':&nbsp;2},&nbsp;'jkl2':&nbsp;2}}]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(a,&nbsp;'#4abc3.def3.#3#3ghi3',&nbsp;3)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+[0,&nbsp;1,&nbsp;2,&nbsp;{'abc':&nbsp;0,&nbsp;'def':&nbsp;2},&nbsp;{'abc1':&nbsp;{'def1':&nbsp;1},&nbsp;'abc2':&nbsp;{'def2':&nbsp;{'ghi2':&nbsp;2},&nbsp;'jkl2':&nbsp;2},&nbsp;'abc3':&nbsp;{'def3':&nbsp;[None,&nbsp;None,&nbsp;None,&nbsp;[None,&nbsp;None,&nbsp;None,&nbsp;{'ghi3':&nbsp;3}]]}}]<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-csv_dump_from_json"><strong>csv_dump_from_json</strong></a>(json: ~Json) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;CSV&nbsp;content&nbsp;from&nbsp;a&nbsp;loaded&nbsp;JSON.</tt></dd></dl>
+ <dl><dt><a name="-csv_dump_response"><strong>csv_dump_response</strong></a>(response: Union[Dict[str, ~Json], List[~Json]], new: Dict[str, str], key: str = '') -&gt; None</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;a&nbsp;response&nbsp;to&nbsp;CSV.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;{}<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_dump_response">csv_dump_response</a>({'jsonrpc':&nbsp;'2.0'},&nbsp;a)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+{'str?jsonrpc':&nbsp;'2.0'}<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_dump_response">csv_dump_response</a>({'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;None},&nbsp;a)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+{'str?jsonrpc':&nbsp;'2.0',&nbsp;'int?id':&nbsp;'1',&nbsp;'NoneType?result':&nbsp;'None'}<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;{}<br>
+&gt;&gt;&gt;&nbsp;response&nbsp;=&nbsp;{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{"code":&nbsp;-32600,&nbsp;"message":&nbsp;"Invalid&nbsp;<a href="#Request">Request</a>"}}<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_dump_response">csv_dump_response</a>(response,&nbsp;a)<br>
+&gt;&gt;&gt;&nbsp;a<br>
+{'str?jsonrpc':&nbsp;'2.0',&nbsp;'int?id':&nbsp;'1',&nbsp;'int?error.code':&nbsp;'-32600',&nbsp;'str?error.message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;=&nbsp;{}<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;key,&nbsp;value&nbsp;in&nbsp;a.items():<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key,&nbsp;value&nbsp;=&nbsp;<a href="#-get_typed_value">get_typed_value</a>(key,&nbsp;value)<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#-csv_add_value">csv_add_value</a>(test,&nbsp;key,&nbsp;value)<br>
+&gt;&gt;&gt;&nbsp;test<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'error':&nbsp;{'code':&nbsp;-32600,&nbsp;'message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}}<br>
+&gt;&gt;&gt;&nbsp;test&nbsp;==&nbsp;response<br>
+True<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-csv_dump_responses"><strong>csv_dump_responses</strong></a>(responses: Union[List[Dict[str, ~Json]], Dict[str, ~Json]]) -&gt; str</dt><dd><tt>This&nbsp;function&nbsp;dumps&nbsp;the&nbsp;response(s)&nbsp;to&nbsp;CSV.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_dump_responses">csv_dump_responses</a>({'jsonrpc':&nbsp;'2.0'})<br>
+'"jsonrpc"\r\n"2.0"\r\n'<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;None}<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;{}<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_dump_response">csv_dump_response</a>(a,&nbsp;c)<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-csv_dump_responses">csv_dump_responses</a>(c)<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;{}<br>
+&gt;&gt;&gt;&nbsp;b<br>
+'"str?jsonrpc","int?id","NoneType?result"\r\n"2.0","1","None"\r\n'<br>
+&gt;&gt;&gt;&nbsp;_,&nbsp;c&nbsp;=&nbsp;<a href="#-load_csv_as_json">load_csv_as_json</a>(b.encode())<br>
+&gt;&gt;&gt;&nbsp;c<br>
+{'jsonrpc':&nbsp;'2.0',&nbsp;'id':&nbsp;1,&nbsp;'result':&nbsp;None}<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;==&nbsp;c<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_dump_responses">csv_dump_responses</a>({'str?jsonrpc':&nbsp;'2.0',&nbsp;'int?id':&nbsp;'1',&nbsp;'int?error.code':&nbsp;'-32600',&nbsp;'str?error.message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'})<br>
+'"str?jsonrpc","int?id","int?error.code","str?error.message"\r\n"2.0","1","-32600","Invalid&nbsp;<a href="#Request">Request</a>"\r\n'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-csv_dump_responses">csv_dump_responses</a>([{'str?jsonrpc':&nbsp;'2.0',&nbsp;'int?id':&nbsp;'1',&nbsp;'NoneType?result':&nbsp;'None'},&nbsp;{'str?jsonrpc':&nbsp;'2.0',&nbsp;'int?id':&nbsp;'1',&nbsp;'int?error.code':&nbsp;'-32600',&nbsp;'str?error.message':&nbsp;'Invalid&nbsp;<a href="#Request">Request</a>'}])<br>
+'"str?jsonrpc","int?id","NoneType?result"\r\n"2.0","1","None"\r\n\n"str?jsonrpc","int?id","int?error.code","str?error.message"\r\n"2.0","1","-32600","Invalid&nbsp;<a href="#Request">Request</a>"\r\n'<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-csv_get_index"><strong>csv_get_index</strong></a>(key: str) -&gt; Tuple[str, int]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;index&nbsp;and&nbsp;the&nbsp;new&nbsp;key.</tt></dd></dl>
+ <dl><dt><a name="-get_calls_from_csv"><strong>get_calls_from_csv</strong></a>(csv: bytes, pyrpc: bool = False) -&gt; List[Dict[str, Union[str, int, List[~Json], Dict[str, ~Json]]]]</dt><dd><tt>This&nbsp;functions&nbsp;parses&nbsp;and&nbsp;formats&nbsp;CSV&nbsp;data&nbsp;bytes&nbsp;to&nbsp;RPC&nbsp;calls.</tt></dd></dl>
+ <dl><dt><a name="-get_lengths"><strong>get_lengths</strong></a>(data: ~Json) -&gt; Iterator[int]</dt><dd><tt>This&nbsp;generator&nbsp;yields&nbsp;all&nbsp;length&nbsp;in&nbsp;Json&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-get_rpc_format"><strong>get_rpc_format</strong></a>(first_byte: bytes) -&gt; enum.IntEnum</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;format&nbsp;from&nbsp;the&nbsp;first&nbsp;character.</tt></dd></dl>
+ <dl><dt><a name="-get_sub_container"><strong>get_sub_container</strong></a>(key: str) -&gt; Union[dict, list]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;a&nbsp;new&nbsp;sub&nbsp;containers&nbsp;based&nbsp;on&nbsp;the&nbsp;key.</tt></dd></dl>
+ <dl><dt><a name="-get_typed_value"><strong>get_typed_value</strong></a>(key: str, value: str) -&gt; Tuple[str, Union[NoneType, bool, int, float, str]]</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;real&nbsp;key&nbsp;and&nbsp;the&nbsp;typed&nbsp;value&nbsp;to&nbsp;add&nbsp;from&nbsp;CSV.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("int?test",&nbsp;"3")<br>
+('test',&nbsp;3)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("float?test",&nbsp;"3.14")<br>
+('test',&nbsp;3.14)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("str?test",&nbsp;"test")<br>
+('test',&nbsp;'test')<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("bool?test",&nbsp;"FalSe")<br>
+('test',&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("bool?test",&nbsp;"0")<br>
+('test',&nbsp;False)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("bool?test",&nbsp;"any&nbsp;other")<br>
+('test',&nbsp;True)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("NoneType?test",&nbsp;"any&nbsp;value")<br>
+('test',&nbsp;None)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-get_typed_value">get_typed_value</a>("test",&nbsp;"test")<br>
+('test',&nbsp;'test')<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-int_byte_length"><strong>int_byte_length</strong></a>(n: int) -&gt; int</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;int&nbsp;length.</tt></dd></dl>
+ <dl><dt><a name="-is_float4"><strong>is_float4</strong></a>(value: float) -&gt; bool</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;True&nbsp;when&nbsp;float&nbsp;can<br>
+be&nbsp;encoded&nbsp;on&nbsp;4&nbsp;bytes.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-is_float4">is_float4</a>(3.1425657895545824)<br>
+False<br>
+&gt;&gt;&gt;</tt></dd></dl>
+ <dl><dt><a name="-isinf"><strong>isinf</strong></a>(x, /)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;x&nbsp;is&nbsp;a&nbsp;positive&nbsp;or&nbsp;negative&nbsp;infinity,&nbsp;and&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+ <dl><dt><a name="-isnan"><strong>isnan</strong></a>(x, /)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;x&nbsp;is&nbsp;a&nbsp;NaN&nbsp;(not&nbsp;a&nbsp;number),&nbsp;and&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+ <dl><dt><a name="-load_csv_as_json"><strong>load_csv_as_json</strong></a>(csv: bytes) -&gt; Tuple[List[~Json], Dict[str, ~Json]]</dt><dd><tt>This&nbsp;function&nbsp;loads&nbsp;a&nbsp;CSV&nbsp;file&nbsp;as&nbsp;JSON&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-load_csv_object_as_json"><strong>load_csv_object_as_json</strong></a>(parser: Iterable[Tuple[str]], columns: Tuple[str]) -&gt; Tuple[List[~Json], Dict[str, ~Json]]</dt><dd><tt>This&nbsp;function&nbsp;loads&nbsp;a&nbsp;CSV&nbsp;like&nbsp;data&nbsp;as&nbsp;JSON.</tt></dd></dl>
+ <dl><dt><a name="-pack"><strong>pack</strong></a>(...)</dt><dd><tt><a href="#-pack">pack</a>(format,&nbsp;v1,&nbsp;v2,&nbsp;...)&nbsp;-&gt;&nbsp;bytes<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;containing&nbsp;the&nbsp;values&nbsp;v1,&nbsp;v2,&nbsp;...&nbsp;packed&nbsp;according<br>
+to&nbsp;the&nbsp;format&nbsp;string.&nbsp;&nbsp;See&nbsp;help(struct)&nbsp;for&nbsp;more&nbsp;on&nbsp;format&nbsp;strings.</tt></dd></dl>
+ <dl><dt><a name="-unpack"><strong>unpack</strong></a>(format, buffer, /)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;containing&nbsp;values&nbsp;unpacked&nbsp;according&nbsp;to&nbsp;the&nbsp;format&nbsp;string.<br>
+&nbsp;<br>
+The&nbsp;buffer's&nbsp;size&nbsp;in&nbsp;bytes&nbsp;must&nbsp;be&nbsp;calcsize(format).<br>
+&nbsp;<br>
+See&nbsp;help(struct)&nbsp;for&nbsp;more&nbsp;on&nbsp;format&nbsp;strings.</tt></dd></dl>
+ <dl><dt><a name="-writer"><strong>writer</strong></a>(...)</dt><dd><tt>csv_writer&nbsp;=&nbsp;csv.<a href="#-writer">writer</a>(fileobj&nbsp;[,&nbsp;dialect='excel']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[optional&nbsp;keyword&nbsp;args])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;row&nbsp;in&nbsp;sequence:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_writer.writerow(row)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[or]<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;csv_writer&nbsp;=&nbsp;csv.<a href="#-writer">writer</a>(fileobj&nbsp;[,&nbsp;dialect='excel']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[optional&nbsp;keyword&nbsp;args])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;csv_writer.writerows(rows)<br>
+&nbsp;<br>
+The&nbsp;"fileobj"&nbsp;argument&nbsp;can&nbsp;be&nbsp;any&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;supports&nbsp;the&nbsp;file&nbsp;API.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Any</strong> = typing.Any<br>
+<strong>Callable</strong> = typing.Callable<br>
+<strong>Dict</strong> = typing.Dict<br>
+<strong>Iterable</strong> = typing.Iterable<br>
+<strong>Iterator</strong> = typing.Iterator<br>
+<strong>Json</strong> = ~Json<br>
+<strong>List</strong> = typing.List<br>
+<strong>QUOTE_ALL</strong> = 1<br>
+<strong>Tuple</strong> = typing.Tuple<br>
+<strong>Union</strong> = typing.Union<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<font color="#c040c0">\n</font>JsonRpcExtended  Copyright (C) 2025  Maurice La...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>__description__</strong> = '<font color="#c040c0">\n</font>A remote procedure call (RPC) framework based o...tures such as CSV, XML,<font color="#c040c0">\n</font>binary and python calls.<font color="#c040c0">\n</font>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/JsonRpcExtended'<br>
+<strong>copyright</strong> = '<font color="#c040c0">\n</font>JsonRpcExtended  Copyright (C) 2025  Maurice La...ome to redistribute it<font color="#c040c0">\n</font>under certain conditions.<font color="#c040c0">\n</font>'<br>
+<strong>epoch_difference</strong> = 11644473600.0<br>
+<strong>errors</strong> = {-32700: Response(jsonrpc='2.0', id=None, result=None, er...r(code=-32700, message='Parse error', data=None)), -32603: Response(jsonrpc='2.0', id=None, result=None, er...ode=-32603, message='Internal error', data=None)), -32602: Response(jsonrpc='2.0', id=None, result=None, er...ode=-32602, message='Invalid params', data=None)), -32601: Response(jsonrpc='2.0', id=None, result=None, er...e=-32601, message='Method not found', data=None)), -32600: Response(jsonrpc='2.0', id=None, result=None, er...de=-32600, message='Invalid Request', data=None)), -32098: Response(jsonrpc='2.0', id=None, result=None, er...(code=-32603, message='Server error', data=None)), -32097: Response(jsonrpc='2.0', id=None, result=None, er...(code=-32603, message='Server error', data=None)), -32096: Response(jsonrpc='2.0', id=None, result=None, er...(code=-32603, message='Server error', data=None)), -32095: Response(jsonrpc='2.0', id=None, result=None, er...(code=-32603, message='Server error', data=None)), -32094: Response(jsonrpc='2.0', id=None, result=None, er...(code=-32603, message='Server error', data=None)), ...}<br>
+<strong>license</strong> = 'GPL-3.0 License'<br>
+<strong>loading_classes</strong> = {0: &lt;class 'JsonRpcExtended.PyJsonRpcServer'&gt;, 1: &lt;class 'JsonRpcExtended.PyCsvRpcServer'&gt;, 2: NotImplemented, 3: &lt;class 'JsonRpcExtended.BinaryJsonRpc'&gt;}<br>
+<strong>response_internal_error</strong> = Response(jsonrpc='2.0', id=None, result=None, er...ode=-32603, message='Internal error', data=None))<br>
+<strong>response_invalid_params</strong> = Response(jsonrpc='2.0', id=None, result=None, er...ode=-32602, message='Invalid params', data=None))<br>
+<strong>response_invalid_request</strong> = Response(jsonrpc='2.0', id=None, result=None, er...de=-32600, message='Invalid Request', data=None))<br>
+<strong>response_method_not_found</strong> = Response(jsonrpc='2.0', id=None, result=None, er...e=-32601, message='Method not found', data=None))<br>
+<strong>response_parse_error</strong> = Response(jsonrpc='2.0', id=None, result=None, er...r(code=-32700, message='Parse error', data=None))<br>
+<strong>unix_epoch</strong> = datetime.datetime(1970, 1, 1, 0, 0)<br>
+<strong>windows_epoch</strong> = datetime.datetime(1601, 1, 1, 0, 0)</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
