@@ -210,7 +210,8 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/RC4Encryption.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
+    <lastmod>2025-02-16</lastmod>PyAsyncScheduler.png
+
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/RC6Encryption.html</loc>
@@ -218,7 +219,8 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/RC6Encryption.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
+    <lastmod>2025-02-16</lastmod>PyAsyncScheduler.png
+
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/ReverseShell.html</loc>
@@ -389,7 +391,8 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz</loc>
+    <loc>https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz</loc>PyAsyncScheduler.png
+
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -421,7 +424,7 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/</loc>
-    <lastmod>2025-06-17</lastmod>
+    <lastmod>2025-09-04</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
@@ -458,7 +461,8 @@
     <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/brython/index.html</loc>
     <lastmod>2025-05-04</lastmod>
   </url>
-  <url>
+  <url>PyAsyncScheduler.png
+
     <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/brython/README.txt</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
@@ -627,7 +631,8 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/Import.html</loc>
+    <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKitPyAsyncScheduler.png
+/Import.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -662,7 +667,8 @@
     <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/RecursionDebug.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
-  <url>
+  <url>PyAsyncScheduler.png
+
     <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/Report.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
@@ -683,7 +689,8 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/TestTimeout.html</loc>
+    <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKitPyAsyncScheduler.png
+/TestTimeout.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -722,7 +729,8 @@
     <loc>https://mauricelambert.github.io/info/python/code/Tracert.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
-  <url>
+  <url>PyAsyncScheduler.png
+
     <loc>https://mauricelambert.github.io/info/python/code/Tracert.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
@@ -757,7 +765,8 @@
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/WebScripts/Configurations.html</loc>
     <lastmod>2025-02-12</lastmod>
-  </url>
+  </url>PyAsyncScheduler.png
+
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/WebScripts/csp.html</loc>
     <lastmod>2025-02-12</lastmod>
@@ -1017,5 +1026,29 @@
   <url>
     <loc>https://mauricelambert.github.io/EscapeGames/K41r0/solutions.html</loc>
     <lastmod>2025-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.html</loc>
+    <lastmod>2025-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.pyz</loc>
+    <lastmod>2025-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/code/PyAsyncScheduler.html</loc>
+    <lastmod>2025-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/code/MiniVault.html</loc>
+    <lastmod>2025-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/code/JsonRpcExtended.html</loc>
+    <lastmod>2025-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/info/python/code/UrlTasker.html</loc>
+    <lastmod>2025-09-04</lastmod>
   </url>
 </urlset>
