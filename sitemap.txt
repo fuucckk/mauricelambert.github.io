@@ -228,3 +228,9 @@ https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator_ser
 https://mauricelambert.github.io/info/python/security/PyAsyncDNS/PyAsyncDNS.pyz
 https://mauricelambert.github.io/EscapeGames/K41r0/
 https://mauricelambert.github.io/EscapeGames/K41r0/solutions.html
+https://mauricelambert.github.io/info/python/code/PyAsyncScheduler.html
+https://mauricelambert.github.io/info/python/code/MiniVault.html
+https://mauricelambert.github.io/info/python/code/JsonRpcExtended.html
+https://mauricelambert.github.io/info/python/code/UrlTasker.html
+https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.html
+https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.pyz
