@@ -79,6 +79,7 @@
  - [PyAsyncDNS server Documentation](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/server.html)
  - [PyAsyncDNS exfiltrator Documentation](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator.html)
  - [PyAsyncDNS exfiltrator server Documentation](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/exfiltrator_server.html)
+ - [SupplyChainAnalysis Documentation](https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.html)
 
  - [PyAsyncDNS executable](https://mauricelambert.github.io/info/python/security/PyAsyncDNS/PyAsyncDNS.pyz)
  - [BinaryFileReader Python Executable](https://mauricelambert.github.io/info/python/security/BinaryFileReader/BinaryFileReader.pyz)
@@ -132,6 +133,7 @@
  - [NtfsAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.pyz)
  - [MftAnalyzer Executable](https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.pyz)
  - [Win32Hooking Executable](https://mauricelambert.github.io/info/python/security/Win32Hooking.pyz)
+ - [SupplyChainAnalysis Executable](https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.pyz)
 
 #### Network
 
@@ -160,6 +162,7 @@
  - [RC4Encryption Documentation](https://mauricelambert.github.io/info/python/security/RC4Encryption.html)
  - [CustomCrypto Documentation](https://mauricelambert.github.io/info/python/security/CustomCrypto.html)
  - [ViginereBreaker Documentation](https://mauricelambert.github.io/info/python/security/ViginereBreaker.html)
+ - [MiniVault Documentation](https://mauricelambert.github.io/info/python/code/MiniVault.html)
 
  - [RC6Encryption Executable](https://mauricelambert.github.io/info/python/security/RC6Encryption.pyz)
  - [RC4Encryption Executable](https://mauricelambert.github.io/info/python/security/RC4Encryption.pyz)
@@ -215,6 +218,8 @@
  - [HttpClientMultipart Documentation](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.html)
  - [LatinUtilities Documentation](https://mauricelambert.github.io/info/python/code/LatinUtilities.html)
  - [BinaryFileReader Documentation](https://mauricelambert.github.io/info/python/code/BinaryFileReader.html)
+ - [UrlTasker Documentation](https://mauricelambert.github.io/info/python/code/UrlTasker.html)
+ - [PyAsyncScheduler Documentation](https://mauricelambert.github.io/info/python/code/PyAsyncScheduler.html)
 
  - [LatinUtilities Executable](https://mauricelambert.github.io/info/python/code/LatinUtilities.pyz)
  - [HttpClientMultipart Executable](https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz)
@@ -225,6 +230,7 @@
  - [LocalResolver Documentation](https://mauricelambert.github.io/info/python/code/LocalResolver.html)
  - [Tracert Documentation](https://mauricelambert.github.io/info/python/code/Tracert.html)
  - [SimpleWhois Documentation](https://mauricelambert.github.io/info/python/code/SimpleWhois.html)
+ - [JsonRpcExtended Documentation](https://mauricelambert.github.io/info/python/code/JsonRpcExtended.html)
 
  - [LocalResolver Executable](https://mauricelambert.github.io/info/python/code/LocalResolver.pyz)
  - [Tracert Executable](https://mauricelambert.github.io/info/python/code/Tracert.pyz)
