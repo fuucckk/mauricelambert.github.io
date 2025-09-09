@@ -234,3 +234,4 @@ https://mauricelambert.github.io/info/python/code/JsonRpcExtended.html
 https://mauricelambert.github.io/info/python/code/UrlTasker.html
 https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.html
 https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.pyz
+https://mauricelambert.github.io/app/CalculMentale/
