@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of CalculMentaleWebApp.
+
+  CalculMentaleWebApp is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  CalculMentaleWebApp is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with CalculMentaleWebApp.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aide & Documentation</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fcf9f1;
+      color: #3e3226;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f3eac2;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-bottom: 2px solid #ccc;
+    }
+
+    main {
+      padding: 1rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #4a3b2a;
+      border-bottom: 1px solid #d3c9ab;
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+    }
+
+    .accordion {
+      margin-top: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .accordion-item {
+      border-top: 1px solid #ddd;
+    }
+
+    .accordion-item:first-child {
+      border-top: none;
+    }
+
+    .accordion-title {
+      background-color: #f9f4dc;
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .accordion-title:hover {
+      background-color: #f3eac2;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 1rem;
+      background-color: #fffef9;
+      border-top: 1px solid #eee;
+      line-height: 1.5;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 2rem 1rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>📘 Aide & Documentation</header>
+
+  <main>
+    <p>
+      Bienvenue sur la page d’aide destinée aux institutrices utilisant
+      l'application. Cette application a été conçue pour permettre aux élèves du
+      CP au CM2 de s'entraîner au calcul mental, tout en vous offrant un suivi
+      simple et efficace de leurs progrès.
+    </p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-title">🛠️ Configuration des exercices</div>
+        <div class="accordion-content">
+          <p>Depuis la page de configuration, vous pouvez :</p>
+          <ul>
+            <li>Choisir le prénom de l’élève</li>
+            <li>Définir les plages de nombres (ex : additions de 1 à 10)</li>
+            <li>
+                Sélectionner les types d’opérations : addition, soustraction, multiplication, division
+            </li>
+            <li>
+                Déterminer le <strong>nombre de questions</strong> (optionnel) :
+                si vous indiquez <code>0</code>, la série ne s’arrêtera pas automatiquement, elle pourra continuer indéfiniment.
+            </li>
+            <li>
+                Définir une <strong>durée maximale</strong> (optionnelle) :
+                si la durée est définie à <code>0</code>, il n’y a pas de limite de temps.
+            </li>
+            <li>
+                Vous pouvez choisir de ne définir <strong>qu’un nombre de calculs</strong> ou <strong>qu’un temps</strong>, combiner les deux, ou même aucun des deux.
+            </li>
+            <li>
+                Choisir d’<strong>afficher ou non le chronomètre</strong> pour l’élève (il reste actif en arrière-plan même s’il est masqué).
+            </li>
+          </ul>
+          <p>Une fois la configuration terminée, cliquez sur "Lancer l'exercice".</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-title">🧮 Faire un exercice</div>
+        <div class="accordion-content">
+          <p>L’élève voit une série de calculs et doit répondre le plus rapidement
+            possible.</p>
+          <ul>
+            <li>Le chronomètre (si activé) l’encourage à répondre rapidement</li>
+            <li>À la fin, les résultats sont enregistrés automatiquement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-title">📊 Consulter les scores</div>
+        <div class="accordion-content">
+          <p>La page des scores permet de visualiser :</p>
+          <ul>
+            <li>Le taux de réussite de chaque élève</li>
+            <li>Le temps moyen de réponse</li>
+            <li>Les statistiques détaillées par opération et par plage de nombre</li>
+            <li>Les erreurs spécifiques à certaines plages (ex : "multiplication
+              avec le 4")</li>
+          </ul>
+          <p>Vous pouvez :</p>
+          <ul>
+            <li>Cliquer sur un élève pour voir ses erreurs détaillées</li>
+            <li>Filtrer les erreurs (ex : voir uniquement les erreurs &gt; 50%)</li>
+            <li>Comparer les progrès en important d’anciens fichiers de scores (voir
+              section suivante)</li>
+          </ul>
+          <p>
+            Vous pouvez également importer un ou plusieurs anciens fichiers pour les <strong>afficher sans modifier les données actuelles</strong>.
+            Cela vous permet de comparer les progrès d’une période à une autre sans perdre les données des scéances et exercices en cours.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-title">📈 Suivre les progrès dans le temps</div>
+          <div class="accordion-content">
+          <p>Pour suivre l'évolution des élèves sur plusieurs périodes (par exemple, chaque mois ou chaque chapitre), vous pouvez utiliser les fonctions d'exportation et d'importation intelligentes :</p>
+          <ol>
+            <li>
+              <strong>Exporter régulièrement</strong> les scores depuis la page "Gérer les données".
+              Le fichier exporté contient tous les résultats enregistrés jusqu’à ce moment-là.
+            </li>
+            <li>
+              Conservez ces fichiers dans un dossier organisé (ex. : "Groupe CM2 - octobre.json").
+            </li>
+            <li>
+              Pour <strong>analyser ou comparer un ancien fichier</strong> sans modifier les résultats actuels, utilisez la fonction <strong>Importer uniquement pour visualisation</strong>.
+              Cela affichera les statistiques détaillées comme d'habitude (taux de réussite, erreurs, temps moyen...), sans écraser ni ajouter de données.
+            </li>
+            <li>
+              Vous pouvez <strong>importer plusieurs fichiers d’anciens résultats en même temps</strong> pour comparer plusieurs périodes à la fois.
+            </li>
+          </ol>
+          <p>Cette méthode vous permet de :</p>
+          <ul>
+            <li>Conserver les résultats par période</li>
+            <li>Comparer les progrès entre deux dates</li>
+            <li>Afficher tous les scores combinés sans perturber les données des scéances ou chapitres en cours</li>
+          </ul>
+          <p><em>Astuce :</em> Si vous voulez repartir à zéro après une analyse, rechargez la page ou revenez sur un autre écran. Les anciens fichiers ne seront plus visibles sauf si vous les réimportez.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-title">🗂️ Gérer les données</div>
+        <div class="accordion-content">
+          <p>Depuis la page de gestion des données, vous pouvez :</p>
+          <ul>
+            <li>Exporter tous les scores (format JSON avec la date du jour)</li>
+            <li>Importer des scores précédents (les données fusionnent sans doublons)</li>
+            <li>Supprimer toutes les données (⚠️ une confirmation est demandée)</li>
+            <li>
+                <p>Vous pouvez cocher une case pour :</p>
+                <ul>
+                    <li>
+                        <strong>Supprimer les données après export</strong> :
+                        cela est utile à la fin d’une séance ou d’un chapitre.
+                        Cela permet de repartir sur une nouvelle séance sans que les résultats précédents n’influencent les statistiques à venir.
+                    </li>
+                    <li>
+                        <strong>Supprimer les données avant import</strong> :
+                        cela permet d’analyser uniquement les anciens résultats importés,
+                        sans qu’ils soient mélangés aux données actuelles.
+                    </li>
+                </ul>
+                <p>
+                    <strong>⚠️ Attention :</strong> pensez à <strong>exporter les données avant de les supprimer</strong>,
+                    sinon vous risquez de perdre définitivement les résultats de la séance en cours.
+                </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-title">📘 Conseils d'utilisation</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Utilisez des exercices courts mais réguliers (5 à 10 calculs)</li>
+            <li>Commencez avec des additions et soustractions simples</li>
+            <li>Surveillez les erreurs récurrentes dans les plages de nombres</li>
+            <li>Montrez aux élèves leurs progrès pour les encourager</li>
+            <li>
+                <strong>Pensez à exporter les scores régulièrement</strong> (chaque semaine ou chaque mois) pour suivre l’évolution.
+                Utilisez ensuite l'affichage des fichiers exportés pour comparer les progrès sans modifier les résultats récents.
+            </li>
+            <li>
+                Utilisez la touche F11 pour mettre en plein écran avant de laisser l'ordinateur aux élèves,
+                cela évite qu'ils puissent changer de page ou utiliser d'autres applications facilement.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-title">❓ Questions fréquentes (FAQ)</div>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Je ne vois pas les scores :</strong> Vérifiez que l’élève a bien terminé un exercice.</li>
+            <li><strong>Comment récupérer les données ?</strong> Utilisez le bouton "Exporter les données".</li>
+            <li><strong>Puis-je transférer les scores sur un autre ordinateur ?</strong> Oui, exportez les données puis importez-les sur un autre appareil.</li>
+            <li><strong>Comment afficher uniquement les erreurs ?</strong> Utilisez les filtres disponibles dans les statistiques détaillées.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>📞 Besoin d’aide supplémentaire ?</h2>
+    <p>
+      N’hésitez pas à demander à un collègue ou à contacter la personne responsable
+      de la mise en place de l’application.
+    </p>
+  </main>
+
+  <footer>© 2025 - Application pédagogique de calcul mental | Version 1.0</footer>
+
+  <script>
+    // Accordéons interactifs
+    document.querySelectorAll('.accordion-title').forEach(title => {
+      title.addEventListener('click', () => {
+        const content = title.nextElementSibling;
+        const isOpen = content.style.display === "block";
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.display = "none");
+        content.style.display = isOpen ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>

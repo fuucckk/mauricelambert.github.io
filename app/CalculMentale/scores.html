@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of CalculMentaleWebApp.
+
+  CalculMentaleWebApp is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  CalculMentaleWebApp is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with CalculMentaleWebApp.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Scores des élèves</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --main-color: #3e8e41;
+      --accent-color: #f4c542;
+      --bg-color: #fdfcf7;
+      --text-color: #333;
+      --card-bg: #fff;
+      --border-radius: 8px;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: var(--main-color);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .user-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex: 1 1 300px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .stats {
+      margin: 0.5rem 0;
+    }
+
+    .details {
+      margin-top: 2rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 0.5rem;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .fail {
+      color: red;
+    }
+
+    .back-btn {
+      background: var(--main-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .filter-group {
+      margin-top: 1rem;
+    }
+
+    .filters label {
+      margin-right: 10px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .op-icon {
+      display: inline-block;
+      width: 24px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .user-cards {
+        flex-direction: column;
+      }
+    }
+
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    .stats-table th, .stats-table td {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .stats-table th {
+      background-color: #f3eac2;
+      color: #4a3b2a;
+    }
+
+    .green {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .yellow {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    .orange {
+      background-color: #ffe1b3;
+      color: #8a5700;
+    }
+
+    .red {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .icon-cell {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .stats-table th, .stats-table td {
+        font-size: 0.85rem;
+        padding: 0.4rem;
+      }
+    }
+ 
+    .import-section {
+      background: #f0f4ff;
+      padding: 1rem;
+      border: 1px solid #ccd;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    #importSection h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    #importSection input[type="file"] {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>Scores des élèves</header>
+  <div class="container">
+    <section id="importSection" class="import-section">
+      <h2>📂 Importer des scores depuis un ou plusieurs fichiers</h2>
+      <input type="file" id="fileInput" accept=".json" multiple />
+      <button id="loadFilesBtn">Afficher les scores importés</button>
+    </section>
+    <hr />
+    <div style="margin-bottom: 1rem;">
+      <label for="sortSelect"><strong>🔽 Trier les élèves :</strong></label>
+      <select id="sortSelect">
+        <option value="score-desc">✔️ Meilleur % réussite → Pire</option>
+        <option value="score-asc">❌ Pire % réussite → Meilleur</option>
+        <option value="time-asc">🕐 Temps moyen (rapide → lent)</option>
+        <option value="time-desc">🕐 Temps moyen (lent → rapide)</option>
+        <option value="total-desc">📊 Total d’opérations (plus → moins)</option>
+        <option value="total-asc">📊 Total d’opérations (moins → plus)</option>
+      </select>
+    </div>
+    <div id="userList" class="user-cards"></div>
+    <div id="details" class="details" style="display: none;"></div>
+  </div>
+
+  <script>
+    const userList = document.getElementById('userList');
+    const details = document.getElementById('details');
+
+    function getAllScores() {
+      const scores = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith("score_")) {
+          const pseudo = key.replace("score_", "");
+          try {
+            scores[pseudo] = JSON.parse(localStorage.getItem(key));
+          } catch (e) {
+            console.error("Erreur de parsing JSON pour", key);
+          }
+        }
+      }
+      return scores;
+    }
+
+    function moyenne(array) {
+      if (!array.length) return 0;
+      const total = array.reduce((a, b) => a + parseFloat(b), 0);
+      return (total / array.length).toFixed(2);
+    }
+
+    function getRange(n) {
+      if (n <= 5) return "0–5";
+      if (n <= 10) return "6–10";
+      if (n <= 20) return "11–20";
+      return "21+";
+    }
+
+    function getOperationIcon(op) {
+      const icons = {
+        "+": "➕",
+        "-": "➖",
+        "*": "✖️",
+        "/": "➗"
+      };
+      return icons[op] || op;
+    }
+
+    function createUserCard(user) {
+      const { pseudo, data, medal } = user;
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const times = data.operations.map(op => parseFloat(op.time));
+      const opCounts = { "+": 0, "-": 0, "*": 0, "/": 0 };
+      data.operations.forEach(op => opCounts[op.op]++);
+
+      card.innerHTML = `
+        <h3>${user.medal ? user.medal + " " : ""}${pseudo}</h3>
+        <div class="stats">✅ Réussies : ${data.correct}</div>
+        <div class="stats">❌ Échouées : ${data.incorrect}</div>
+        <div class="stats">🧠 Temps moyen : ${moyenne(times)} s</div>
+        <div class="stats">
+          ${Object.entries(opCounts).map(([op, count]) => `<span class="op-icon">${getOperationIcon(op)}</span> ${count}`).join(" | ")}
+        </div>
+      `;
+
+      card.addEventListener('click', () => showDetails(pseudo, data));
+      userList.appendChild(card);
+    }
+
+    function showDetails(pseudo, data) {
+      userList.style.display = "none";
+      details.style.display = "block";
+      details.innerHTML = "";
+
+      const backBtn = document.createElement("button");
+      backBtn.className = "back-btn";
+      backBtn.textContent = "← Retour";
+      backBtn.onclick = () => {
+        details.style.display = "none";
+        userList.style.display = "flex";
+      };
+      details.appendChild(backBtn);
+
+      const title = document.createElement("h2");
+      title.textContent = `Détails pour ${pseudo}`;
+      details.appendChild(title);
+
+      const statsSection = document.createElement("div");
+      const total = data.operations.length;
+
+      // Par opération seule
+      const opStats = {};
+      const opErrors = {};
+      data.operations.forEach(op => {
+        if (!opStats[op.op]) opStats[op.op] = 0;
+        if (!opErrors[op.op]) opErrors[op.op] = 0;
+        opStats[op.op]++;
+        if (op.answer !== op.result) opErrors[op.op]++;
+      });
+
+      // Par plage seule
+      const rangeStats = {};
+      const rangeErrors = {};
+      data.operations.forEach(op => {
+        [op.a, op.b].forEach(num => {
+          const r = getRange(num);
+          rangeStats[r] = (rangeStats[r] || 0) + 1;
+          if (op.answer !== op.result) {
+            rangeErrors[r] = (rangeErrors[r] || 0) + 1;
+          }
+        });
+      });
+
+      // Combiné op+range
+      const comboStats = {};
+      data.operations.forEach(op => {
+        const rangeA = getRange(op.a);
+        const rangeB = getRange(op.b);
+
+        const opLabels = {
+          "+": "Addition",
+          "-": "Soustraction",
+          "*": "Multiplication",
+          "/": "Division"
+        };
+
+        const opName = opLabels[op.op] || op.op;
+        const icon = getOperationIcon(op.op);
+
+        const keyA = `${icon} ${opName} — le premier nombre entre ${rangeA}`;
+        const keyB = `${icon} ${opName} — le deuxième nombre entre ${rangeB}`;
+
+        [keyA, keyB].forEach(k => {
+          if (!comboStats[k]) comboStats[k] = { total: 0, errors: 0 };
+          comboStats[k].total++;
+          if (op.answer !== op.result) comboStats[k].errors++;
+        });
+      });
+
+      // const percent = (part, total) => total === 0 ? "0%" : ((part / total * 100).toFixed(1) + "%");
+
+      function getColorClass(pourcent) {
+          if (pourcent <= 25) return "green";
+          if (pourcent <= 50) return "yellow";
+          if (pourcent <= 75) return "orange";
+          return "red";
+      }
+
+      function percent(err, total, forceNumber = false) {
+          if (total === 0) return 0;
+          const val = (err / total) * 100;
+          return forceNumber ? val : val.toFixed(1) + "%";
+      }
+
+      // Remplacer ce bloc dans ta fonction d'affichage des détails
+      statsSection.innerHTML = `
+          <h3>📊 Statistiques globales</h3>
+
+          <h4>Par opération</h4>
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>Opération</th>
+                <th>Total</th>
+                <th>Erreurs</th>
+                <th>% Erreur</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${Object.entries(opStats).map(([op, count]) => {
+                const err = opErrors[op] || 0;
+                const pct = percent(err, count, true);
+                return `
+                  <tr class="${getColorClass(pct)}">
+                    <td class="icon-cell">${getOperationIcon(op)}</td>
+                    <td>${count}</td>
+                    <td>${err}</td>
+                    <td>${pct.toFixed(1)}%</td>
+                  </tr>
+                `;
+              }).join("")}
+            </tbody>
+          </table>
+
+          <h4>Par plage de nombre</h4>
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>Plage</th>
+                <th>Total</th>
+                <th>Erreurs</th>
+                <th>% Erreur</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${Object.entries(rangeStats).map(([range, count]) => {
+                const err = rangeErrors[range] || 0;
+                const pct = percent(err, count, true);
+                return `
+                  <tr class="${getColorClass(pct)}">
+                    <td>${range}</td>
+                    <td>${count}</td>
+                    <td>${err}</td>
+                    <td>${pct.toFixed(1)}%</td>
+                  </tr>
+                `;
+              }).join("")}
+            </tbody>
+          </table>
+
+          <h4>Par opération + plage</h4>
+          <div style="margin-bottom: 1rem;">
+            <label for="comboFilter">Afficher les difficultés à partir de :</label>
+            <select id="comboFilter">
+              <option value="0">Tous</option>
+              <option value="25">Erreurs >= 25%</option>
+              <option value="50">Erreurs >= 50%</option>
+              <option value="75">Erreurs >= 75%</option>
+            </select>
+          </div>
+
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>Catégorie</th>
+                <th>Total</th>
+                <th>Erreurs</th>
+                <th>% Erreur</th>
+              </tr>
+            </thead>
+            <tbody id="comboStatsBody"></tbody>
+          </table>
+      `;
+
+      details.appendChild(statsSection);
+      
+      document.getElementById("comboFilter").addEventListener("change", renderComboStats);
+
+      function renderComboStats() {
+        const threshold = parseInt(document.getElementById("comboFilter").value, 10);
+
+        const rows = Object.entries(comboStats)
+          .map(([key, val]) => {
+            const pct = percent(val.errors, val.total, true);
+            return {
+              key,
+              total: val.total,
+              errors: val.errors,
+              pct
+            };
+          })
+          .filter(row => row.pct >= threshold)
+          .sort((a, b) => b.pct - a.pct) // Tri décroissant
+          .map(row => `
+            <tr class="${getColorClass(row.pct)}">
+              <td>${row.key}</td>
+              <td>${row.total}</td>
+              <td>${row.errors}</td>
+              <td>${row.pct.toFixed(1)}%</td>
+            </tr>
+          `)
+          .join("");
+
+        document.getElementById("comboStatsBody").innerHTML = rows || `
+          <tr>
+            <td colspan="4">✅ Aucune difficulté détectée pour ce seuil.</td>
+          </tr>
+        `;
+      }
+
+      // ⚠️ Appelle la fonction une première fois pour afficher initialement :
+      renderComboStats();
+
+      // Filtres
+      const filters = document.createElement("div");
+      filters.className = "filters";
+
+      filters.innerHTML = `
+        <h3>🎛️ Filtres</h3>
+        <label><input type="checkbox" id="filter-errors"> Erreurs uniquement</label>
+        ${["+", "-", "*", "/"].map(op =>
+          `<label><input type="checkbox" class="filter-op" value="${op}">${getOperationIcon(op)}</label>`
+        ).join("")}
+        ${["0–5", "6–10", "11–20", "21+"].map(r =>
+          `<label><input type="checkbox" class="filter-range" value="${r}">${r}</label>`
+        ).join("")}
+      `;
+      details.appendChild(filters);
+
+      const table = document.createElement("table");
+      table.id = "opTable";
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>Opération</th>
+            <th>Réponse</th>
+            <th>Attendu</th>
+            <th>Temps (s)</th>
+            <th>Résultat</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.operations.map(op => {
+            const isCorrect = op.result === op.answer;
+            const ranges = [getRange(op.a), getRange(op.b)];
+            return `
+              <tr class="row-op ${isCorrect ? 'success' : 'fail'}"
+                  data-op="${op.op}"
+                  data-range="${ranges.join(',')}"
+                  data-correct="${isCorrect}">
+                <td>${op.representation}</td>
+                <td>${op.answer}</td>
+                <td>${op.result}</td>
+                <td>${op.time}</td>
+                <td>${isCorrect ? "✅" : "❌"}</td>
+              </tr>
+            `;
+          }).join("")}
+        </tbody>
+      `;
+      details.appendChild(table);
+
+      // Filtres dynamiques
+      filters.querySelectorAll("input").forEach(input => {
+        input.addEventListener("change", () => applyFilters());
+      });
+
+      function applyFilters() {
+        const showErrorsOnly = document.getElementById("filter-errors").checked;
+        const ops = [...document.querySelectorAll(".filter-op:checked")].map(i => i.value);
+        const ranges = [...document.querySelectorAll(".filter-range:checked")].map(i => i.value);
+        const rows = document.querySelectorAll(".row-op");
+
+        rows.forEach(row => {
+          const isCorrect = row.dataset.correct === "true";
+          const op = row.dataset.op;
+          const rowRanges = row.dataset.range.split(",");
+
+          let show = true;
+          if (showErrorsOnly && isCorrect) show = false;
+          if (ops.length && !ops.includes(op)) show = false;
+          if (ranges.length && !ranges.some(r => rowRanges.includes(r))) show = false;
+
+          row.classList.toggle("hidden", !show);
+        });
+      }
+    }
+
+    // Fonction pour calculer les stats d’un élève
+    function getStats(pseudo, data) {
+      const times = data.operations.map(op => parseFloat(op.time));
+      const averageTime = moyenne(times);
+      const percentCorrect = (data.correct / data.total) * 100;
+      return {
+        pseudo,
+        data,
+        averageTime: parseFloat(averageTime),
+        percentCorrect: parseFloat(percentCorrect.toFixed(1)),
+        total: data.total
+      };
+    }
+
+    // Affiche les cartes triées
+    function displaySortedCards(criteria = "score-desc") {
+      userList.innerHTML = "";
+
+      let users = Object.entries(allScores).map(([pseudo, data]) =>
+        getStats(pseudo, data)
+      );
+
+      switch (criteria) {
+        case "score-asc":
+          users.sort((a, b) => a.percentCorrect - b.percentCorrect);
+          break;
+        case "score-desc":
+          users.sort((a, b) => b.percentCorrect - a.percentCorrect);
+          break;
+        case "time-asc":
+          users.sort((a, b) => a.averageTime - b.averageTime);
+          break;
+        case "time-desc":
+          users.sort((a, b) => b.averageTime - a.averageTime);
+          break;
+        case "total-asc":
+          users.sort((a, b) => a.total - b.total);
+          break;
+        case "total-desc":
+          users.sort((a, b) => b.total - a.total);
+          break;
+      }
+      
+      const medals = ["🥇", "🥈", "🥉"];
+      users.forEach((user, i) => {
+        user.medal = i < 3 ? medals[i] : "";
+      });
+
+      users.forEach(user => createUserCard(user));
+    }
+
+    // Initialisation
+    let allScores = getAllScores();
+    displaySortedCards(); // tri par défaut
+
+    // Tri dynamique
+    document.getElementById("sortSelect").addEventListener("change", (e) => {
+      displaySortedCards(e.target.value);
+    });
+    
+    document.getElementById('loadFilesBtn').addEventListener('click', () => {
+      allScores = {};
+      const fileInput = document.getElementById('fileInput');
+      const files = fileInput.files;
+
+      if (!files.length) {
+        alert("Veuillez sélectionner au moins un fichier JSON.");
+        return;
+      }
+
+      let loaded = 0;
+
+      Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const importedData = JSON.parse(e.target.result);
+
+            if (typeof importedData !== 'object' || Array.isArray(importedData)) {
+              throw new Error("Fichier JSON invalide.");
+            }
+
+            Object.entries(importedData).forEach(([key, newValue]) => {
+              if (!key.startsWith("score_")) return;
+              const pseudo = key.replace("score_", "");
+
+              if (!allScores[pseudo]) {
+                allScores[pseudo] = newValue;
+                return;
+              }
+
+              const existingValue = allScores[pseudo];
+
+              const existingOps = existingValue.operations || [];
+              const newOps = newValue.operations || [];
+
+              const opsToAdd = newOps.filter(newOp => {
+                return !existingOps.some(op =>
+                  op.representation === newOp.representation &&
+                  op.answer === newOp.answer &&
+                  op.result === newOp.result &&
+                  op.time === newOp.time
+                );
+              });
+
+              existingValue.operations = existingOps.concat(opsToAdd);
+
+              const addedCorrect = opsToAdd.filter(op => op.answer === op.result).length;
+              const addedIncorrect = opsToAdd.length - addedCorrect;
+
+              existingValue.correct = (existingValue.correct || 0) + addedCorrect;
+              existingValue.incorrect = (existingValue.incorrect || 0) + addedIncorrect;
+              existingValue.total = (existingValue.total || 0) + opsToAdd.length;
+
+              allScores[pseudo] = existingValue;
+            });
+
+          } catch (err) {
+            alert(`Erreur lors de la lecture du fichier ${file.name} : ${err.message}`);
+          }
+
+          loaded++;
+          if (loaded === files.length) {
+            // Tous les fichiers sont traités → on affiche
+            displaySortedCards(document.getElementById("sortSelect").value);
+          }
+        };
+        reader.readAsText(file);
+      });
+    });
+  </script>
+</body>
+</html>

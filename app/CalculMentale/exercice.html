@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of CalculMentaleWebApp.
+
+  CalculMentaleWebApp is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  CalculMentaleWebApp is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with CalculMentaleWebApp.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="fr">
+<head>
+  <!-- ?pseudo=alice&addMin=1&addMax=10&subMin=5&subMax=15&mulMin=2&mulMax=5&divMin=2&divMax=10&ops=%2b-*/&count=5&time=30 -->
+  <meta charset="UTF-8">
+  <title>Calcul Mental</title>
+  <style>
+    /* Fond général */
+    body {
+      background: linear-gradient(to bottom, #ffe259, #ffa751);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+
+    /* Conteneur principal */
+    .container {
+      background: #ffffffcc;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* Titre */
+    h1 {
+      font-size: 3rem;
+      color: #ff4081;
+      margin-bottom: 20px;
+    }
+
+    /* Timer stylisé */
+    .timer {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4caf50;
+      margin-bottom: 20px;
+    }
+
+    /* Question */
+    .question {
+      font-size: 2.5rem;
+      color: #2196f3;
+      margin-bottom: 20px;
+    }
+
+    /* Champ réponse */
+    #answer {
+      font-size: 1.5rem;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid #ff9800;
+      width: 200px;
+      text-align: center;
+    }
+
+    /* Bouton */
+    button {
+      font-size: 1.5rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #66bb6a;
+    }
+
+    /* Résultat */
+    .result {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      min-height: 40px;
+    }
+
+    /* Score */
+    .score {
+      font-size: 1.8rem;
+      margin-top: 10px;
+    }
+
+    /* Animation de brillance */
+    .glow {
+      animation: glow 1s ease-in-out;
+      border-radius: 8px;
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 0px rgba(0, 255, 0, 0);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 30px 15px rgba(0, 255, 0, 0.8);
+        transform: scale(1.1);
+      }
+      100% {
+        box-shadow: 0 0 0px rgba(0, 255, 0, 0);
+        transform: scale(1);
+      }
+    }
+
+    /* Confettis canvas */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* GIF de victoire */
+    #win-image {
+      z-index: 2;
+      margin-top: 20px;
+    }
+    #win-image img {
+      width: 200px;
+    }
+    
+    #super-win-image {
+      z-index: 2;
+      margin-top: 20px;
+    }
+    #super-win-image img {
+      width: 200px;
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+    #popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.8); /* effet lumineux */
+      backdrop-filter: blur(4px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    #popup-container.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #popup-content {
+      text-align: center;
+      animation: popup-scale 0.4s ease-in-out;
+    }
+
+    @keyframes popup-scale {
+      0% {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    #popup-content img {
+      width: 200px;
+      max-width: 90vw;
+    }
+    
+    /* === Popup générale === */
+    #progression-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.9); /* voile blanc semi-transparent */
+      backdrop-filter: blur(4px);
+      display: none; /* caché au chargement */
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* tout au-dessus */
+    }
+
+    /* === Contenu de la popup === */
+    #popup-badges {
+      background: white;
+      border: 4px solid #ffd700;
+      border-radius: 20px;
+      padding: 30px;
+      width: calc(100vw - 60px);
+      max-width: 1100px;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+      text-align: center;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* === Colonnes de badges === */
+    .badge-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 colonnes fixes */
+      gap: 24px;
+      width: calc(100% - 10px);
+      margin: 20px 0;
+      overflow-y: auto;
+      padding-right: 10px; /* Pour éviter que le scroll masque le contenu */
+      max-height: 60vh;
+    }
+
+    /* Chaque colonne */
+    .badge-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fdf6e3;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+      min-height: 100%; /* s'étendent bien verticalement */
+    }
+
+    .badge-column h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    /* Slots des badges */
+    .badge-slot {
+      width: 50px;
+      height: 50px;
+      margin: 6px 0;
+      background: #999;
+      border-radius: 10px;
+      border: 2px dashed #666;
+    }
+
+    /* === Boutons popup === */
+    .popup-buttons button {
+      background: linear-gradient(145deg, #ffe066, #ffd700);
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .popup-buttons button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(255, 215, 0, 0.8);
+    }
+    
+    /* Bouton de badges - flashy et animé */
+    #show-badges-button {
+      background: linear-gradient(135deg, #ffd700, #ffcc00);
+      color: #4a2700;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 22px;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ffecb3;
+      position: relative;
+      transition: transform 0.2s ease-in-out;
+      animation: sparkle 4s infinite;
+    }
+
+    /* Brillance toutes les X secondes */
+    @keyframes sparkle {
+      0%, 30%, 100% {
+        box-shadow: 0 0 10px #ffecb3;
+      }
+      20% {
+        box-shadow: 0 0 40px 10px #ffff66;
+        transform: scale(1.05);
+      }
+    }
+
+    #show-badges-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ffeb3b;
+    }
+    
+    .badge-container {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      margin: 1px auto;
+      border-radius: 50%;
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit; /* Nécessaire pour que currentColor fonctionne */
+    }
+
+    .badge-icon {
+      width: 70%;
+      height: 70%;
+      position: relative;
+      /* background: white;
+      border-radius: 50%;
+      padding: 4px; */
+    }
+
+    .badge-icon svg {
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      display: block;
+      // filter: drop-shadow(0 0 2px rgba(0,0,0,0.4)); /* ombre noire légère */
+      // filter: drop-shadow(0 0 1px black) drop-shadow(0 0 3px black);
+    }
+    
+    .badge-icon.fill svg {
+      fill: currentColor;
+    }
+
+    .badge-icon.stroke svg {
+      stroke: currentColor;
+    }
+    
+    .badge-icon.fill svg path {
+        stroke: rgba(0, 0, 0, 0.4);
+        stroke-width: 0.5;
+    }
+
+    .badge-level {
+      position: absolute;
+      bottom: -5px;
+      background: white;
+      border-radius: 8px;
+      padding: 1px 4px;
+      font-weight: bold;
+      font-size: 0.6rem;
+      z-index: 3;
+      box-shadow: 0 0 2px rgba(0,0,0,0.3);
+      color: black;
+    }
+
+    /* === Couleurs des catégories === */
+    .additions { color: #2ecc71; } /* Vert émeraude */
+    .soustractions { color: #e74c3c; } /* Rouge rubis */
+    .multiplications { color: #8e44ad; } /* Violet précieux */
+    .divisions { color: #3498db; } /* Bleu saphir */
+    .plage_6_10 { color: #f39c12; } /* Jaune or intense */
+    .plage_plus_10 { color: #16a085; } /* Vert turquoise */
+    .rapidite { color: #f1c40f; } /* Jaune éclatant */
+    .series_sans_faute { color: #e67e22; } /* Orange bronze */
+
+    .badge-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120%;
+      height: 120%;
+      transform: translate(-10%, -10%);
+      border-radius: 50%;
+      z-index: 5;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.3), transparent 80%);
+      animation: megaGlow 1.4s infinite ease-in-out;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes megaGlow {
+      0%, 100% {
+        transform: translate(-10%, -10%) scale(1);
+        filter: blur(var(--glow-blur, 10px));
+        opacity: var(--glow-opacity, 0.3);
+      }
+      50% {
+        transform: translate(-10%, -10%) scale(1.25);
+        filter: blur(calc(var(--glow-blur, 10px) + 10px));
+        opacity: var(--glow-opacity, 0.3);
+      }
+    }
+
+    /* Intensité par niveau */
+    .level-1 .badge-glow { --glow-opacity: 0.2; --glow-blur: 4px; }
+    .level-2 .badge-glow { --glow-opacity: 0.3; --glow-blur: 6px; }
+    .level-3 .badge-glow { --glow-opacity: 0.4; --glow-blur: 8px; }
+    .level-4 .badge-glow { --glow-opacity: 0.5; --glow-blur: 10px; }
+    .level-5 .badge-glow { --glow-opacity: 0.6; --glow-blur: 12px; }
+    .level-6 .badge-glow { --glow-opacity: 0.7; --glow-blur: 14px; }
+    .level-7 .badge-glow { --glow-opacity: 0.8; --glow-blur: 16px; }
+    .level-8 .badge-glow { --glow-opacity: 1;   --glow-blur: 18px; }
+
+
+    @keyframes glowPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @keyframes glowPulseFast {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    
+    @keyframes pop-badge {
+      0% {
+        transform: scale(0.2);
+        opacity: 0;
+      }
+      60% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .badge-slot.new-badge {
+      z-index: 10;
+      position: relative;
+    }
+    
+    /* === Progression - Vue Niveaux === */
+
+    .niveau-container {
+      background: linear-gradient(145deg, #f9f9f9, #f0f0f0);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .niveau-header {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .niveau-label {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #3498db;
+    }
+
+    .niveau-points {
+      font-size: 1rem;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .progress-bar-wrapper {
+      margin: 15px 0;
+    }
+
+    .progress-bar-bg {
+      height: 24px;
+      background: #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #6dd5ed, #2193b0);
+      border-radius: 12px 0 0 12px;
+      transition: width 0.8s ease-in-out;
+      position: relative;
+    }
+
+    .progress-bar-fill::after {
+      content: '✨';
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: sparkle1 1.5s infinite;
+    }
+
+    .niveau-gap {
+      margin: 10px 0;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .classement-info {
+      font-size: 0.95rem;
+      margin-top: 15px;
+      background: #fdf6e3;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
+    }
+
+    /* 🎉 Animation de sparkle */
+    @keyframes sparkle1 {
+      0%, 100% { opacity: 0.6; transform: translateY(-50%) scale(1); }
+      50% { opacity: 1; transform: translateY(-50%) scale(1.3); }
+    }
+
+    /* ✨ Animation d'apparition */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    /* === BANNIÈRE DE CÉLÉBRATION === */
+    .niveau-banner {
+      position: fixed;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(45deg, #ff9ff3, #feca57, #48dbfb);
+      padding: 20px 40px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 20px;
+      color: white;
+      z-index: 99999;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      animation: popFadeBanner 3.5s ease-in-out forwards;
+    }
+
+    @keyframes popFadeBanner {
+      0% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+      10% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+      80% { opacity: 1; transform: translateX(-50%) scale(1); }
+      100% { opacity: 0; transform: translateX(-50%) scale(0.95); }
+    }
+
+    /* === ÉTINCELLES / MINI-FEU D'ARTIFICE === */
+    .niveau-firework {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle, #fff, transparent);
+      border-radius: 50%;
+      z-index: 10;
+      pointer-events: none;
+      animation: sparkle-explosion 2s ease-out forwards;
+      opacity: 0.9;
+      box-shadow:
+        0 0 10px #fff,
+        0 0 20px #f39c12,
+        0 0 30px #e74c3c;
+    }
+
+    @keyframes sparkle-explosion {
+      0% {
+        transform: scale(0.3) translateY(0);
+        opacity: 1;
+      }
+      60% {
+        transform: scale(2.5) translateY(-50px);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(2.5) translateY(-80px);
+        opacity: 0;
+      }
+    }
+    
+    .star-twinkle {
+      position: absolute;
+      font-size: 1.8rem;
+      animation: twinkle-spin 2s ease-out forwards;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    @keyframes twinkle-spin {
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+      }
+      30% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 1;
+      }
+      70% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.8) rotate(540deg);
+        opacity: 0;
+      }
+    }
+    
+    .emoji-rain {
+      position: absolute;
+      font-size: 2rem;
+      top: -40px;
+      animation: emojiFall 2.5s linear forwards;
+      pointer-events: none;
+      z-index: 15;
+    }
+
+    @keyframes emojiFall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    #popup-niveaux {
+      position: relative;
+      overflow: visible;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Exercice de calcul mental</h1>
+    <div id="timer" class="timer"></div>
+    <div id="question" class="question"></div>
+    <input type="number" id="answer" placeholder="Votre réponse" />
+    <button onclick="checkAnswer()">Valider</button>
+    <div id="result" class="result"></div>
+    <div id="score" class="score"></div>
+    
+    <button id="show-badges-button" class="hidden" onclick="openProgressionPopup()">
+        🌟 Voir mes badges !
+    </button>
+
+    <div id="popup-container">
+      <div id="popup-content">
+        <div id="confetti-canvas"></div>
+
+        <div id="win-image" class="hidden">
+          <img src="win.webp" alt="Victoire !" />
+        </div>
+        <div id="super-win-image" class="hidden">
+          <img src="super-win.webp" alt="Victoire !" />
+        </div>
+
+        <audio id="win-sound" src="win.wav"></audio>
+        <audio id="super-win-sound" src="super-win.wav"></audio>
+      </div>
+    </div>
+  </div>
+  
+    <!-- === Popup de progression === -->
+    <div id="progression-popup">
+      <div class="popup-content" id="popup-badges">
+        <h2>🎖️ Tes Badges</h2>
+        
+        <div class="badge-columns" id="badge-columns">
+          <!-- Colonne 1 -->
+          <div class="badge-column" id="badge-additions">
+            <h3>Additions</h3>
+            <div class="badge-slot"></div> <!-- 10 -->
+            <div class="badge-slot"></div> <!-- 25 -->
+            <div class="badge-slot"></div> <!-- 50 -->
+            <div class="badge-slot"></div> <!-- 100 -->
+            <div class="badge-slot"></div> <!-- 250 -->
+            <div class="badge-slot"></div> <!-- 500 -->
+            <div class="badge-slot"></div> <!-- 750 -->
+            <div class="badge-slot"></div> <!-- 1000 -->
+          </div>
+
+          <!-- Colonne 2 -->
+          <div class="badge-column" id="badge-soustractions">
+            <h3>Soustractions</h3>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+          </div>
+        
+        <!-- Colonne 3 -->
+          <div class="badge-column" id="badge-multiplications">
+            <h3>Multiplications</h3>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+          </div>
+        
+        <!-- Colonne 4 -->
+          <div class="badge-column" id="badge-divisions">
+            <h3>Divisions</h3>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+          </div>
+        
+        <!-- Colonne 5 -->
+          <div class="badge-column" id="badge-6-10">
+            <h3>6 à 10</h3>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+          </div>
+        
+        <!-- Colonne 6 -->
+          <div class="badge-column" id="badge-10-more">
+            <h3>Plus grand que 10</h3>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+          </div>
+        
+        <!-- Colonne 7 -->
+          <div class="badge-column" id="badge-speed">
+            <h3>Rapidité</h3>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+          </div>
+        
+        <!-- Colonne 8 -->
+          <div class="badge-column" id="badge-series">
+            <h3>Suite d'opérations réussites sans faute</h3>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+            <div class="badge-slot"></div>
+          </div>
+        </div>
+
+        <div class="popup-buttons">
+          <button onclick="switchToProgressionView()">📈 Voir ma progression</button>
+          <button onclick="closeProgressionPopup()">❌ Fermer</button>
+        </div>
+      </div>
+      
+      <div class="popup-content" id="popup-niveaux" style="display: none;">
+          <h2>📈 Ta progression</h2>
+
+          <div class="niveau-container">
+            <div class="niveau-header">
+              <div class="niveau-label">🥈 Niveau <span id="niveau-actuel">3</span> : <span id="niveau-nom">Calculateur</span></div>
+              <div class="niveau-points">🧠 Points : <span id="points-actuels">180</span> / <span id="points-objectif">250</span></div>
+            </div>
+
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="niveau-barre"></div>
+              </div>
+            </div>
+
+            <div class="niveau-gap">
+              🎯 Encore <span id="points-restants">70</span> pts pour le niveau suivant : <span id="prochain-niveau">Champion</span> 🏆
+            </div>
+
+            <div class="classement-info">
+              <div>🥇 <strong>Devant toi</strong> : Alice 🐱 (+30 pts)</div>
+              <div>🥉 <strong>Derrière toi</strong> : Leo 🐢 (−20 pts)</div>
+            </div>
+          </div>
+
+          <div class="popup-buttons">
+            <button onclick="switchToBadgeView()">🎖️ Voir mes badges</button>
+            <button onclick="closeProgressionPopup()">❌ Fermer</button>
+          </div>
+      </div>
+    </div>
+
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const pseudo = params.get("pseudo") || "inconnu";
+    const ops = (params.get("ops") || "+-*/").split("");
+
+    const countLimit = +params.get("count") || Infinity;
+    const timeLimit = +params.get("time") || Infinity;
+    const showTimer = +params.get("showTimer") || 0;
+
+    const ranges = {
+        '+': { min: +params.get("addMin") || 1, max: +params.get("addMax") || 10 },
+        '-': { min: +params.get("subMin") || 1, max: +params.get("subMax") || 10 },
+        '*': { min: +params.get("mulMin") || 1, max: +params.get("mulMax") || 10 },
+        '/': { min: +params.get("divMin") || 1, max: +params.get("divMax") || 10 }
+    };
+
+    let currentQuestion = {};
+    let stats = JSON.parse(localStorage.getItem("score_" + pseudo)) || {
+        correct: 0,
+        incorrect: 0,
+        total: 0,
+        operations: []
+    };
+
+    let questionsDone = 0;
+    let questionStartTime;
+    let globalStartTime = Date.now();
+    let globalTimer;
+    let goodResultCounter = 0;
+    
+    document.getElementById("answer").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    });
+
+    function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generateQuestion() {
+        if (questionsDone >= countLimit) {
+            endSession("✅ Nombre d'opérations atteint.");
+            return;
+        }
+
+        if ((Date.now() - globalStartTime) / 1000 >= timeLimit) {
+            endSession("⏰ Temps écoulé.");
+            return;
+        }
+
+        const op = ops[Math.floor(Math.random() * ops.length)];
+        const { min, max } = ranges[op];
+
+        let a, b;
+        if (op === '+') {
+            a = randomInt(min, max);
+            b = randomInt(min, max);
+        } else if (op === '-') {
+            a = randomInt(min, max);
+            b = randomInt(min, a);
+        } else if (op === '*') {
+            a = randomInt(min, max);
+            b = randomInt(min, max);
+        } else if (op === '/') {
+            b = randomInt(min, max);
+            const result = randomInt(min, max);
+            a = result * b;
+        }
+
+        const representation = `${a} ${op} ${b}`;
+        currentQuestion = { a, b, op, representation: representation, time: null, answer: null, result: eval(representation) };
+        document.getElementById("question").innerText = `Combien fait ${representation} ?`;
+        document.getElementById("answer").value = "";
+        document.getElementById("answer").focus();
+        questionStartTime = Date.now();
+        updateScore();
+    }
+
+    function checkAnswer() {
+        const userAnswer = parseFloat(document.getElementById("answer").value);
+        const timeTaken = (Date.now() - questionStartTime) / 1000;
+
+        stats.total++;
+        questionsDone++;
+        
+        currentQuestion.time = timeTaken.toFixed(2);
+        currentQuestion.answer = userAnswer;
+        stats.operations.push(currentQuestion);
+        currentQuestion.answer = userAnswer;
+
+        if (Math.abs(userAnswer - currentQuestion.result) < 0.0001) {
+            stats.correct++;
+            document.getElementById("result").innerText = `✅ Bonne réponse ! (${timeTaken.toFixed(2)}s)`;
+            document.getElementById("result").classList.add("glow");
+            setTimeout(() => {
+              document.getElementById("result").classList.remove("glow");
+            }, 2000);
+            goodResultCounter += 1;
+        } else {
+            stats.incorrect++;
+            document.getElementById("result").innerText = `❌ Mauvaise réponse. La bonne réponse était ${currentQuestion.result} (${timeTaken.toFixed(2)}s)`;
+        }
+
+        localStorage.setItem("score_" + pseudo, JSON.stringify(stats));
+
+        if (questionsDone >= countLimit || (Date.now() - globalStartTime) / 1000 >= timeLimit) {
+            endSession("🛑 Fin de session.");
+        } else {
+            generateQuestion();
+        }
+    }
+
+    function updateScore() {
+        document.getElementById("score").innerText = `Pseudo: ${pseudo} | Score: ${stats.correct}/${stats.total} | Erreurs: ${stats.incorrect}`;
+    }
+
+    function endSession(message) {
+        clearInterval(globalTimer);
+        document.getElementById("question").innerText = message;
+        document.getElementById("answer").disabled = true;
+        document.querySelector("button").disabled = true;
+
+        const moyenne = stats.operations.length ? (stats.operations.reduce((a, b) => a + parseFloat(b.time), 0) / stats.operations.length).toFixed(2) : "0";
+
+        document.getElementById("result").innerText += `\n⏱️ Temps moyen par opération : ${moyenne} s`;
+        updateScore();
+        
+        if ((countLimit < Infinity && goodResultCounter === countLimit) || (countLimit === Infinity && goodResultCounter === questionsDone)) {
+            best_animation();
+        } else if ((countLimit < Infinity && goodResultCounter >= countLimit / 2) || (countLimit === Infinity && goodResultCounter >= questionsDone / 2)) {
+            good_animation();
+        }
+        document.getElementById("show-badges-button").classList.remove("hidden");
+    }
+
+    function updateGlobalTimer() {
+        const elapsed = ((Date.now() - globalStartTime) / 1000);
+        const remaining = Math.max(0, timeLimit - elapsed);
+        
+        if (showTimer) {
+            document.getElementById("timer").innerText = `Temps restant : ${remaining.toFixed(1)}s`;
+        }
+
+        if (remaining <= 0) {
+            endSession("⏰ Temps écoulé.");
+        }
+    }
+    
+    function launchConfetti() {
+      const confettiCount = 150;
+      const defaults = {
+        origin: { y: 0.7 },
+        spread: 360,
+        ticks: 60,
+        zIndex: 1000
+      };
+
+      for (let i = 0; i < confettiCount; i++) {
+        createConfettiParticle(defaults);
+      }
+    }
+
+    function createConfettiParticle(options) {
+      const colors = ['#ff0', '#f0f', '#0ff', '#0f0', '#f00', '#00f'];
+      const confetti = document.createElement('div');
+      confetti.style.position = 'fixed';
+      confetti.style.width = '10px';
+      confetti.style.height = '10px';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.top = Math.random() * window.innerHeight + 'px';
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.opacity = 1;
+      confetti.style.zIndex = options.zIndex;
+
+      const angle = Math.random() * 2 * Math.PI;
+      const velocity = Math.random() * 10 + 5;
+
+      const dx = Math.cos(angle) * velocity;
+      const dy = Math.sin(angle) * velocity;
+
+      document.getElementById("confetti-canvas").appendChild(confetti);
+
+      let ticks = 0;
+      const maxTicks = options.ticks;
+      const interval = setInterval(() => {
+        ticks++;
+        const currentTop = parseFloat(confetti.style.top);
+        const currentLeft = parseFloat(confetti.style.left);
+        confetti.style.top = currentTop + dy + 'px';
+        confetti.style.left = currentLeft + dx + 'px';
+        confetti.style.opacity -= 1 / maxTicks;
+
+        if (ticks >= maxTicks) {
+          clearInterval(interval);
+          confetti.remove();
+        }
+      }, 16); // environ 60fps
+    }
+    
+    function launchStars() {
+      const starCount = 80;
+      const colors = ['#fff176', '#ffd700', '#fff', '#f8ff94'];
+
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.textContent = '✨';
+        star.style.position = 'fixed';
+        star.style.fontSize = `${Math.random() * 24 + 12}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = '100%';
+        star.style.color = colors[Math.floor(Math.random() * colors.length)];
+        star.style.opacity = 1;
+        star.style.zIndex = 2000;
+        star.style.pointerEvents = 'none';
+        star.style.transition = 'transform 6s ease-out, opacity 6s ease-out';
+
+        document.getElementById("confetti-canvas").appendChild(star);
+
+        requestAnimationFrame(() => {
+          const angle = Math.random() * 360 - 180;
+          const distance = Math.random() * 300 + 200;
+          star.style.transform = `translateY(-${distance}px) rotate(${angle}deg) scale(1.5)`;
+          star.style.opacity = 0;
+        });
+
+        setTimeout(() => {
+          star.remove();
+        }, 6000);
+      }
+    }
+
+    function best_animation () {
+        document.getElementById("super-win-sound").play();
+        launchStars();
+
+        const popup = document.getElementById('popup-container');
+        const gif = document.getElementById("super-win-image");
+
+        gif.classList.remove("hidden");
+        popup.classList.add('active');
+
+        setTimeout(() => {
+          gif.classList.add("hidden");
+          popup.classList.remove('active');
+        }, 6000);
+    }
+
+    function good_animation () {
+        launchConfetti();
+        document.getElementById("win-sound").play();
+
+        const popup = document.getElementById('popup-container');
+        const gif = document.getElementById("win-image");
+
+        gif.classList.remove("hidden");
+        popup.classList.add('active');
+
+        setTimeout(() => {
+          gif.classList.add("hidden");
+          popup.classList.remove('active');
+        }, 3000);
+    }
+    
+    function openProgressionPopup() {
+      document.getElementById("progression-popup").style.display = "flex";
+      renderAllBadges(pseudo);
+    }
+    
+    function renderBadges(badgeLevels, newBadges = {}) { // renderBadges({"additions": 8})
+      const badgeCategories = {
+        "additions": "badge-additions",
+        "soustractions": "badge-soustractions",
+        "multiplications": "badge-multiplications",
+        "divisions": "badge-divisions",
+        "plage_6_10": "badge-6-10",
+        "plage_plus_10": "badge-10-more",
+        "rapidite": "badge-speed",
+        "series_sans_faute": "badge-series"
+      };
+
+      for (const category in badgeCategories) {
+        const containerId = badgeCategories[category];
+        const container = document.getElementById(containerId);
+        if (!container) continue;
+
+        const level = badgeLevels[category] || 0;
+        const newBadgeLevel = newBadges[category] || 0;
+
+        const slots = container.querySelectorAll(".badge-slot");
+        for (let i = 0; i < slots.length; i++) {
+          const badgeSlot = slots[i];
+          const isUnlocked = i < level;
+          const isNew = i + 1 === newBadgeLevel;
+
+          const badge = createBadgeSVG(category, i + 1, isUnlocked);
+          badgeSlot.style.backgroundColor = darken(categoryColors[category], 0.6);
+          badgeSlot.innerHTML = "";
+          badgeSlot.appendChild(badge);
+
+          if (isNew) {
+            observeNewBadgeAnimation(badgeSlot);
+          }
+        }
+      }
+    }
+    
+    function renderAllBadges(username) {
+      const operations = JSON.parse(localStorage.getItem(`score_${username}`))?.operations || [];
+      const badgeLevels = getAllBadgeLevels(operations);
+      const oldBadges = loadBadges(pseudo);
+      const newBadges = detectNewBadges(oldBadges, badgeLevels);
+
+      renderBadges(badgeLevels, newBadges);
+      // saveBadges(pseudo, badgeLevels);
+    }
+    
+    function freezeScroll(ms = 800) {
+      document.getElementById("badge-columns").style.overflow = 'hidden';
+      setTimeout(() => {
+        document.getElementById("badge-columns").style.overflow = '';
+      }, ms);
+    }
+    
+    function launchFireworksAtElement(element) {
+      document.getElementById("super-win-sound").play();
+      freezeScroll(3000);
+      const rect = element.getBoundingClientRect();
+      const canvas = document.createElement('canvas');
+      canvas.style.position = 'fixed';
+      canvas.style.left = '0';
+      canvas.style.top = '0';
+      canvas.style.pointerEvents = 'none';
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      document.getElementById("popup-badges").appendChild(canvas);
+
+      const ctx = canvas.getContext('2d');
+      const particles = [];
+
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const colors = ['#ff4b4b', '#ffd700', '#00e676', '#448aff', '#ff4081'];
+
+      for (let i = 0; i < 40; i++) {
+        const angle = Math.random() * 2 * Math.PI;
+        const speed = Math.random() * 3 + 2;
+        particles.push({
+          x: centerX,
+          y: centerY,
+          dx: Math.cos(angle) * speed,
+          dy: Math.sin(angle) * speed,
+          radius: Math.random() * 3 + 2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          life: 60
+        });
+      }
+
+      let frame = 0;
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.x += p.dx;
+          p.y += p.dy;
+          p.dy += 0.05; // gravité
+          p.life--;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+        });
+
+        frame++;
+        if (frame < 60) {
+          requestAnimationFrame(animate);
+        } else {
+          document.getElementById("popup-badges").removeChild(canvas);
+        }
+      }
+
+      animate();
+    }
+    
+    function animateNewBadge(badgeSlot) {
+      badgeSlot.classList.add("new-badge");
+
+      // Animation d'apparition
+      badgeSlot.style.animation = "pop-badge 0.6s ease-out";
+
+      // Feu d’artifice
+      setTimeout(() => {
+        launchFireworksAtElement(badgeSlot);
+      }, 300); // un petit délai après l’apparition
+
+      // Nettoyage
+      setTimeout(() => {
+        badgeSlot.classList.remove("new-badge");
+        badgeSlot.style.animation = "";
+      }, 1000);
+    }
+    
+    function observeNewBadgeAnimation(badgeSlot) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Badge devient visible
+            animateNewBadge(entry.target);
+            obs.unobserve(entry.target); // Ne l'observe plus ensuite
+          }
+        });
+      }, {
+        threshold: 0.5 // au moins 50% visible
+      });
+
+      observer.observe(badgeSlot);
+    }
+    
+    const svgBadges = {
+        "additions": {
+            type: "fill",
+            svg: `
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 5.04V4l4-4h8l4 4v1.04L8 16 0 5.04zM2 5l6 8.5L4 5H2zm12 0h-2l-4 8.5L14 5zM6 5l2 6 2-6H6zM4 2L2 4h2l2-2H4zm8 0h-2l2 2h2l-2-2zM7 2L6 4h4L9 2H7z" fill-rule="evenodd"/>
+                </svg>
+            `
+        },
+        "soustractions": {
+            type: "stroke",
+            svg: `
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L14 7V17L12 21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 3L10 7V17L12 21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 21L17 17V7L12 3L7 7V17L12 21Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 7H17" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 17H17" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            `
+        },
+        "multiplications": {
+            type: "stroke",
+            svg: `
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L15 12L12 21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 3L9 12L12 21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 21L19 12L12 3L5 12L12 21Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 12H19" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            `
+        },
+        "divisions": {
+            type: "stroke",
+            svg: `
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L3 14L12 21L21 14L12 3Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 3L17 15L12 21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 3L7 15L12 21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 14L7 15H17L21 14" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            `
+        },
+        "plage_6_10": {
+            type: "fill",
+            svg: `
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.013 512.013" xml:space="preserve">
+                <g>
+                    <g>
+                        <g>
+                            <path d="M376.308,507.071c0.495-0.414,0.982-0.845,1.45-1.313l106.667-106.667c0.468-0.468,0.899-0.955,1.314-1.45
+                                c0.062-0.075,0.125-0.15,0.186-0.226c3.219-3.955,4.746-8.675,4.746-13.352c0-0.019,0.003-0.038,0.003-0.057v-256
+                                c0-0.019-0.003-0.038-0.003-0.057c0-4.677-1.527-9.396-4.746-13.352c-0.061-0.076-0.124-0.151-0.186-0.226
+                                c-0.414-0.495-0.845-0.982-1.314-1.45L377.758,6.255c-0.468-0.468-0.955-0.899-1.45-1.313c-0.076-0.063-0.151-0.125-0.227-0.187
+                                c-3.955-3.219-8.673-4.745-13.35-4.745c-0.02,0-0.039-0.003-0.059-0.003H149.34c-0.02,0-0.039,0.003-0.059,0.003
+                                c-4.676,0-9.395,1.527-13.35,4.745c-0.076,0.062-0.151,0.124-0.227,0.187c-0.495,0.414-0.982,0.845-1.45,1.313L27.588,112.922
+                                c-0.468,0.468-0.899,0.955-1.313,1.45c-0.063,0.076-0.125,0.151-0.187,0.227c-3.219,3.955-4.745,8.673-4.745,13.35
+                                c0,0.02-0.003,0.039-0.003,0.059v256c0,0.02,0.003,0.039,0.003,0.059c0,4.676,1.527,9.395,4.745,13.35
+                                c0.062,0.076,0.124,0.151,0.187,0.227c0.414,0.495,0.845,0.982,1.313,1.45l106.667,106.667c0.468,0.468,0.955,0.899,1.45,1.313
+                                c0.076,0.063,0.151,0.125,0.227,0.187c3.955,3.219,8.674,4.746,13.351,4.745c0.019,0,0.038,0.003,0.057,0.003h213.333
+                                c0.019,0,0.038-0.003,0.057-0.003c4.677,0,9.396-1.526,13.351-4.745C376.158,507.197,376.233,507.134,376.308,507.071z
+                                 M111.091,89.758l30.456-30.456l25.427,63.567l-22.773,22.773l-63.567-25.427L111.091,89.758z M200.852,362.682l-30.178-30.178
+                                V179.518l30.17-30.17H311.17l30.17,30.17v152.985l-30.179,30.178H200.852z M384.006,185.117l64-25.6v192.98l-64-25.6V185.117z
+                                 M305.56,106.682h-99.106L180.85,42.673h150.313L305.56,106.682z M128.006,185.117v141.78l-64,25.6v-192.98L128.006,185.117z
+                                 M206.446,405.348h99.12l25.597,63.991H180.85L206.446,405.348z M370.465,452.711l-25.424-63.561l22.776-22.776l63.561,25.424
+                                l-30.456,30.456L370.465,452.711z M431.378,120.215l-63.567,25.427l-22.773-22.773l25.427-63.567L431.378,120.215z
+                                 M80.635,391.798l63.561-25.424l22.776,22.776l-25.424,63.561L80.635,391.798z"/>
+                            <path d="M484.425,57.758l21.333-21.333c8.331-8.331,8.331-21.839,0-30.17c-8.331-8.331-21.839-8.331-30.17,0l-21.333,21.333
+                                c-8.331,8.331-8.331,21.839,0,30.17C462.586,66.089,476.094,66.089,484.425,57.758z"/>
+                            <path d="M484.425,454.255c-8.331-8.331-21.839-8.331-30.17,0s-8.331,21.839,0,30.17l21.333,21.333
+                                c8.331,8.331,21.839,8.331,30.17,0c8.331-8.331,8.331-21.839,0-30.17L484.425,454.255z"/>
+                            <path d="M27.588,454.255L6.255,475.588c-8.331,8.331-8.331,21.839,0,30.17c8.331,8.331,21.839,8.331,30.17,0l21.333-21.333
+                                c8.331-8.331,8.331-21.839,0-30.17C49.427,445.924,35.919,445.924,27.588,454.255z"/>
+                            <path d="M27.588,57.758c8.331,8.331,21.839,8.331,30.17,0c8.331-8.331,8.331-21.839,0-30.17L36.425,6.255
+                                c-8.331-8.331-21.839-8.331-30.17,0c-8.331,8.331-8.331,21.839,0,30.17L27.588,57.758z"/>
+                        </g>
+                    </g>
+                </g>
+                </svg>
+            `
+        },
+        "plage_plus_10": {
+            type: "fill",
+            svg: `
+                <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.103 12.052l13.398 16.629-5.373-16.629h-8.025zM11.584 12.052l4.745 16.663 4.083-16.663h-8.828zM17.051 28.681l12.898-16.629h-7.963l-4.935 16.629zM29.979 10.964l-3.867-6.612-3.869 6.612h7.736zM24.896 3.973h-7.736l3.867 6.839 3.869-6.839zM19.838 10.964l-3.867-6.612-3.868 6.612h7.735zM14.839 3.973h-7.735l3.868 6.839 3.867-6.839zM5.889 4.352l-3.867 6.612h7.735l-3.868-6.612z"></path>
+                </svg>
+            `
+        },
+        "rapidite": {
+            type: "fill",
+            svg: `
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M31.89,14.55l-4-8A1,1,0,0,0,27,6H5a1,1,0,0,0-.89.55l-4,8,0,0a.32.32,0,0,1,0,.09,2.38,2.38,0,0,0,0,.26S0,15,0,15a.43.43,0,0,0,0,.05,1.27,1.27,0,0,0,.06.28s0,.05,0,.08a.8.8,0,0,0,.18.27l15,16a1,1,0,0,0,1.46,0l15-16A1,1,0,0,0,31.89,14.55ZM16,8.89,19.2,14H12.8Zm-5.08,4.34L7,8h7.2ZM17.8,8H25l-3.92,5.23Zm1.84,8L16,27.65,12.36,16ZM13.75,27.14,3.31,16h7Zm8-11.14h7L18.25,27.14Zm7.65-2H23l3.83-5.11ZM5.17,8.89,9,14H2.62Z"/>
+                    <path d="M16,4a1,1,0,0,0,1-1V1a1,1,0,0,0-2,0V3A1,1,0,0,0,16,4Z"/>
+                    <path d="M10.29,3.71a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-1-1A1,1,0,0,0,9.29,2.71Z"/>
+                    <path d="M21,4a1,1,0,0,0,.71-.29l1-1a1,1,0,1,0-1.42-1.42l-1,1a1,1,0,0,0,0,1.42A1,1,0,0,0,21,4Z"/>
+                </g>
+                </svg>
+            `
+        },
+        "series_sans_faute": {
+            type: "fill",
+            svg: `
+                <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 512 512"  xml:space="preserve">
+                <g>
+                    <path class="st0" d="M262.203,224.297H257.5h-99.469L78.672,333.438L260.719,512l7.5-7.359L442.75,333.438l-79.344-109.141H262.203
+                        z M345.813,245.75l-14.656,65.109l-51.859-65.109H345.813z M259.984,251.953l56.422,70.797H204.766L259.984,251.953z
+                         M240.75,245.75l-50.563,64.844v0.016l-14.563-64.859H240.75z M159.188,259.156L159.188,259.156l14.297,63.594h-60.547
+                        L159.188,259.156z M179.25,341.75l50.063,109.422L117.75,341.75H179.25z M260.719,474.172L200.125,341.75h121.172L260.719,474.172z
+                         M292.109,451.172l50.063-109.422h61.484L292.109,451.172z M347.938,322.75l14.313-63.594l0,0l46.234,63.594H347.938z"/>
+                    <path class="st0" d="M501.219,181.906c-25.906,0-34.859-6.5-39.906-11.531c-5.016-5.047-11.531-14-11.531-39.906
+                        c0-0.984-0.094-3.781-3.188-3.781c-3.078,0-3.188,2.797-3.188,3.781c0,25.906-6.516,34.859-11.547,39.906
+                        c-5.047,5.031-14.016,11.531-39.891,11.531c-1,0-3.781,0.109-3.781,3.203c0,3.078,2.781,3.188,3.781,3.188
+                        c25.875,0,34.844,6.516,39.891,11.547c5.031,5.031,11.547,14,11.547,39.906c0,1,0.109,3.766,3.188,3.766
+                        c3.094,0,3.188-2.766,3.188-3.766c0-25.906,6.516-34.875,11.531-39.906c5.047-5.047,14-11.547,39.906-11.547
+                        c1,0,3.781-0.094,3.781-3.203C505,182.031,502.219,181.906,501.219,181.906z"/>
+                    <path class="st0" d="M115.891,84.656c35.609,0,47.922,8.969,54.844,15.875c6.922,6.922,15.859,19.25,15.859,54.859
+                        c0,1.359,0.188,5.172,4.406,5.172c4.25,0,4.375-3.813,4.375-5.172c0-35.609,8.953-47.938,15.875-54.859
+                        c6.906-6.922,19.219-15.875,54.844-15.875c1.359,0,5.188-0.125,5.188-4.375c0-4.219-3.828-4.406-5.188-4.406
+                        c-35.625,0-47.938-8.938-54.844-15.844c-6.922-6.938-15.875-19.234-15.875-54.844C195.375,3.828,195.25,0,191,0
+                        c-4.219,0-4.406,3.828-4.406,5.188c0,35.609-8.938,47.906-15.859,54.844c-6.922,6.906-19.234,15.844-54.844,15.844
+                        c-1.359,0-5.188,0.172-5.188,4.406C110.703,84.5,114.531,84.656,115.891,84.656z"/>
+                    <path class="st0" d="M114.453,196c0-2.828-2.563-2.938-3.469-2.938c-23.828,0-32.078-5.984-36.703-10.609
+                        c-4.625-4.641-10.625-12.875-10.625-36.703c0-0.906-0.094-3.469-2.938-3.469c-2.813,0-2.938,2.563-2.938,3.469
+                        c0,23.828-5.984,32.063-10.609,36.703c-4.641,4.625-12.891,10.609-36.703,10.609C9.547,193.063,7,193.172,7,196
+                        s2.547,2.938,3.469,2.938c23.813,0,32.063,6,36.703,10.625c4.625,4.625,10.609,12.875,10.609,36.719
+                        c0,0.906,0.125,3.453,2.938,3.453c2.844,0,2.938-2.547,2.938-3.453c0-23.844,6-32.094,10.625-36.719
+                        c4.625-4.641,12.875-10.625,36.703-10.625C111.891,198.938,114.453,198.844,114.453,196z"/>
+                </g>
+                </svg>
+            `
+        }
+    }
+    
+    function createBadgeSVG(category, level, unlocked) {
+      const container = document.createElement("div");
+      container.className = `badge-container level-${level}`;
+
+      const glow = document.createElement("div");
+      glow.className = "badge-glow";
+
+      let svgData = svgBadges[category];
+      const iconWrapper = document.createElement("div");
+      iconWrapper.className = `badge-icon ${svgData.type}`;
+      iconWrapper.innerHTML = svgData.svg;
+
+      const badgeLevel = document.createElement("div");
+      badgeLevel.className = "badge-level";
+      badgeLevel.textContent = level;
+      
+      if (unlocked) {
+        container.className += ` ${category}`;
+        container.appendChild(badgeLevel);
+      }
+
+      container.appendChild(glow);
+      container.appendChild(iconWrapper);
+
+      return container;
+    }
+
+    function closeProgressionPopup() {
+      document.getElementById("progression-popup").style.display = "none";
+    }
+    
+    function switchToBadgeView() {
+      document.getElementById("popup-niveaux").style.display = "none";
+      document.getElementById("popup-badges").style.display = "block";
+    }
+
+    function switchToProgressionView() {
+      document.getElementById("popup-badges").style.display = "none";
+      document.getElementById("popup-niveaux").style.display = "block";
+
+      const lastPoints = parseInt(localStorage.getItem(`lastPoints_${pseudo}`) || "0", 10);
+      let points = calculateTotalPoints(pseudo);
+      
+      if (lastPoints > points) {
+        points += lastPoints;
+      }
+      
+      localStorage.setItem(`lastPoints_${pseudo}`, points.toString());
+      
+      const previousLevel = getLevelFromPoints(lastPoints);
+      const levelInfo = getLevelFromPoints(points);
+      const hasLevelUp = levelInfo.level > previousLevel.level;
+      const classement = getClassementDetails(pseudo);
+
+      updateNiveauxUI({
+        niveau: levelInfo.level,
+        nom: levelInfo.name,
+        points: points,
+        objectif: levelInfo.nextThreshold,
+        prochainNom: getLevelName(levelInfo.level + 1),
+        devant: classement.devant
+          ? {
+              nom: classement.devant.pseudo,
+              emoji: getEmojiFor(classement.devant.pseudo), // à définir ou simplifier
+              ecart: classement.devant.ecart
+            }
+          : { nom: "maitresse", emoji: "👩‍🏫", ecart: 500 },
+        derriere: classement.derriere
+          ? {
+              nom: classement.derriere.pseudo,
+              emoji: getEmojiFor(classement.derriere.pseudo), // à définir ou simplifier
+              ecart: classement.derriere.ecart
+            }
+          : { nom: "Escargot", emoji: "🐌", ecart: 0 },
+        hasLevelUp: hasLevelUp
+      });
+    }
+    
+    function getEmojiFor(pseudo) {
+      const emojis = ["🐱", "🐶", "🐢", "🐸", "🦊", "🐧", "🐵", "🐯", "🐼", "🐰"];
+      let hash = 0;
+      for (let i = 0; i < pseudo.length; i++) {
+        hash += pseudo.charCodeAt(i);
+      }
+      return emojis[hash % emojis.length];
+    }
+    
+    function updateNiveauxUI({ niveau, points, objectif, nom, prochainNom, devant, derriere, hasLevelUp }) {
+      document.getElementById("niveau-actuel").textContent = niveau;
+      document.getElementById("niveau-nom").textContent = nom;
+      document.getElementById("points-actuels").textContent = points;
+      document.getElementById("points-objectif").textContent = objectif;
+      document.getElementById("points-restants").textContent = objectif - points;
+      document.getElementById("prochain-niveau").textContent = prochainNom;
+
+      document.querySelector(".classement-info").innerHTML = `
+        <div>🥇 <strong>Devant toi</strong> : ${devant.nom} ${devant.emoji} (+${devant.ecart} pts)</div>
+        <div>🥉 <strong>Derrière toi</strong> : ${derriere.nom} ${derriere.emoji} (−${derriere.ecart} pts)</div>
+      `;
+
+      // Barre de progression animée
+      const pourcentage = Math.min(100, (points / objectif) * 100);
+      document.getElementById("niveau-barre").style.width = `${pourcentage}%`;
+
+      // 🎉 Si on atteint le niveau
+      if (hasLevelUp) {
+        setTimeout(() => {
+          launchNiveauCelebration();
+        }, 500);
+      }
+    }
+    
+    function launchStarTwinkleAnimation() {
+      const stars = ["⭐", "🌟", "✨", "💫"];
+      for (let i = 0; i < 12; i++) {
+        const star = document.createElement("div");
+        star.className = "star-twinkle";
+        star.textContent = stars[Math.floor(Math.random() * stars.length)];
+        star.style.left = `${Math.random() * 90 + 5}%`;
+        star.style.top = `${Math.random() * 60 + 20}%`;
+        star.style.animationDelay = `${Math.random() * 0.3}s`;
+        document.getElementById("popup-niveaux").appendChild(star);
+
+        setTimeout(() => star.remove(), 2000);
+      }
+    }
+    
+    function launchEmojiRain() {
+      const emojis = ["🎉", "🏅", "🧠", "👏", "🌟", "🥳"];
+      for (let i = 0; i < 20; i++) {
+        const emoji = document.createElement("div");
+        emoji.className = "emoji-rain";
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = `${Math.random() * 100}%`;
+        emoji.style.animationDelay = `${Math.random() * 0.5}s`;
+        document.getElementById("popup-niveaux").appendChild(emoji);
+
+        setTimeout(() => emoji.remove(), 3000);
+      }
+    }
+    
+    function launchNiveauCelebration() {
+      document.getElementById("super-win-sound").play();
+      // Feux d'artifice simples
+      const colors = ["#f1c40f", "#e67e22", "#9b59b6", "#1abc9c", "#3498db", "#e74c3c"];
+
+      for (let i = 0; i < 15; i++) {
+        const spark = document.createElement("div");
+        spark.className = "niveau-firework";
+        spark.style.left = `${Math.random() * 90 + 5}%`;
+        spark.style.top = `${Math.random() * 60 + 10}%`;
+        spark.style.animationDelay = `${Math.random() * 0.3}s`;
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        spark.style.background = `radial-gradient(circle, ${color}, transparent)`;
+        spark.style.boxShadow = `0 0 10px ${color}, 0 0 20px ${color}`;
+
+        document.getElementById("popup-niveaux").appendChild(spark);
+        setTimeout(() => spark.remove(), 1500);
+    }
+
+      // Bannière centrale
+      const banner = document.createElement("div");
+      banner.className = "niveau-banner";
+      banner.innerHTML = "🎉 <strong>Niveau Supérieur !</strong> 🎉<br>Bravo ! Tu as progressé ! 🏅";
+      document.getElementById("popup-niveaux").appendChild(banner);
+
+      setTimeout(() => {banner.remove(); launchStarTwinkleAnimation(); launchEmojiRain();}, 3500);
+    }
+    
+    function calculateTotalPoints(pseudo) {
+      const data = JSON.parse(localStorage.getItem("score_" + pseudo));
+      if (!data || !data.operations) return 0;
+
+      const operations = data.operations;
+
+      const basePoints = {
+        "+": 1,
+        "-": 2,
+        "*": 3,
+        "/": 4
+      };
+
+      let totalPoints = 0;
+
+      for (const opData of operations) {
+        if (opData.answer !== opData.result) continue;
+
+        let { a, b, op } = opData;
+        let points = basePoints[op] || 0;
+
+        if (a > 6 || b > 6) points += 1;
+        if (a > 10 || b > 10) points += 2;
+        if (a > 6 && b > 6) points *= 2;
+
+        totalPoints += points;
+      }
+
+      return totalPoints;
+    }
+
+    function getClassementDetails(pseudo) {
+      const allScores = [];
+
+      // Récupérer tous les scores_* dans localStorage
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (!key.startsWith("score_")) continue;
+
+        const username = key.replace("score_", "");
+        const points = calculateTotalPoints(username);
+
+        allScores.push({ username, points });
+      }
+
+      // Tri décroissant des scores
+      allScores.sort((a, b) => b.points - a.points);
+
+      // Trouver la place de l'utilisateur
+      const position = allScores.findIndex(item => item.username === pseudo);
+
+      const user = allScores[position];
+      const ahead = allScores[position - 1] || null;
+      const behind = allScores[position + 1] || null;
+
+      return {
+        classement: position + 1, // place dans le classement (1er = index 0)
+        total: allScores.length,
+        pseudo: user.username,
+        points: user.points,
+        devant: ahead ? {
+          pseudo: ahead.username,
+          points: ahead.points,
+          ecart: ahead.points - user.points
+        } : null,
+        derriere: behind ? {
+          pseudo: behind.username,
+          points: behind.points,
+          ecart: user.points - behind.points
+        } : null
+      };
+    }
+    
+    function getLevelFromPoints(points) {
+      const thresholds = [0, 500, 2000, 6000, 12000, 20000, 32000, 50000];
+      
+      for (let i = thresholds.length - 1; i >= 0; i--) {
+        if (points >= thresholds[i]) {
+          return {
+            level: i + 1,
+            name: getLevelName(i + 1),
+            currentThreshold: thresholds[i],
+            nextThreshold: thresholds[i + 1] || null
+          };
+        }
+      }
+
+      return {
+        level: 1,
+        name: getLevelName(1),
+        currentThreshold: 0,
+        nextThreshold: thresholds[1]
+      };
+    }
+
+    function getLevelName(level) {
+      const names = [
+        "Débutant",
+        "Explorateur",
+        "Apprenti Matheux",
+        "Calculateur",
+        "Génie des Nombres",
+        "Champion",
+        "Maître des Maths",
+        "Légende Numérique"
+      ];
+      return names[level - 1] || "Légende";
+    }
+
+    function analyzeScore(operations) {  // analyzeScore(JSON.parse(localStorage.getItem("score_<pseudo>"))["operations"])
+      const result = {
+        additions: 0,
+        soustractions: 0,
+        multiplications: 0,
+        divisions: 0,
+        plage_6_10: 0,
+        plage_plus_10: 0, // renommé pour correspondre à la catégorie
+        rapidite: 0,
+        series_sans_faute: 0,
+      };
+
+      let currentStreak = 0;
+      let maxStreak = 0;
+
+      for (const op of operations) {
+        const isCorrect = op.answer === op.result;
+        const time = parseFloat(op.time);
+
+        if (isCorrect) {
+          switch (op.op) {
+            case "+":
+              result.additions++;
+              break;
+            case "-":
+              result.soustractions++;
+              break;
+            case "*":
+              result.multiplications++;
+              break;
+            case "/":
+              result.divisions++;
+              break;
+          }
+
+          // Catégorie 6 à 10 : les deux opérandes entre 6 et 10 inclus
+          if (
+            op.a >= 6 &&
+            op.a <= 10 &&
+            op.b >= 6 &&
+            op.b <= 10
+          ) {
+            result.plage_6_10++;
+          }
+
+          // Catégorie Plus grand que 10 : au moins un opérande > 10
+          if (op.a > 10 || op.b > 10) {
+            result.plage_plus_10++;
+          }
+
+          // Rapidité moins de 3.5 secondes
+          if (time < 3.5) {
+            result.rapidite++;
+          }
+
+          // Série sans faute
+          currentStreak++;
+          maxStreak = Math.max(maxStreak, currentStreak);
+        } else {
+          currentStreak = 0;
+        }
+      }
+
+      result.series_sans_faute = maxStreak;
+
+      return result;
+    }
+    
+    const BADGE_LEVELS = [10, 25, 50, 100, 250, 500, 750, 1000];
+
+    function getBadgeLevel(successCount) {
+      let level = 0;
+      for (const threshold of BADGE_LEVELS) {
+        if (successCount >= threshold) level++;
+        else break;
+      }
+      return level;
+    }
+
+    function getAllBadgeLevels(operations) { // getAllBadgeLevels(JSON.parse(localStorage.getItem("score_<pseudo>"))["operations"])
+      const analysis = analyzeScore(operations);
+      const badgeLevels = {};
+
+      for (const cat in analysis) {
+        badgeLevels[cat] = getBadgeLevel(analysis[cat]);
+      }
+
+      return badgeLevels;
+    }
+    
+    function detectNewBadges(oldLevels, newLevels) {
+      const newBadges = {};
+      for (const cat in newLevels) {
+        if ((newLevels[cat] || 0) > (oldLevels[cat] || 0)) {
+          newBadges[cat] = newLevels[cat];
+        }
+      }
+      return newBadges;
+    }
+    
+    function saveBadges(username, badgeLevels) {
+      localStorage.setItem(`badges_${username}`, JSON.stringify(badgeLevels));
+    }
+
+    function loadBadges(username) {
+      return JSON.parse(localStorage.getItem(`badges_${username}`)) || {};
+    }
+    
+    const categoryColors = {
+      additions: "#2ecc71",
+      soustractions: "#e74c3c",
+      multiplications: "#8e44ad",
+      divisions: "#3498db",
+      plage_6_10: "#f39c12",
+      plage_plus_10: "#16a085",
+      rapidite: "#f1c40f",
+      series_sans_faute: "#e67e22",
+    };
+
+    function darken(hex, factor = 0.7) {
+      const num = parseInt(hex.slice(1), 16);
+      const r = Math.floor(((num >> 16) & 255) * factor);
+      const g = Math.floor(((num >> 8) & 255) * factor);
+      const b = Math.floor((num & 255) * factor);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    if (timeLimit < Infinity) {
+        globalTimer = setInterval(updateGlobalTimer, 200);
+    }
+
+    generateQuestion();
+  </script>
+</body>
+</html>

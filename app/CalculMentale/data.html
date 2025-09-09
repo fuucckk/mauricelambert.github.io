@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of CalculMentaleWebApp.
+
+  CalculMentaleWebApp is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  CalculMentaleWebApp is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with CalculMentaleWebApp.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestion des données - Application scolaire</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: #faf3e0;
+      color: #333;
+      margin: 0;
+      padding: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #5a4d41;
+      margin-bottom: 1rem;
+    }
+    button, input[type="file"] {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      padding: 0.6rem 1rem;
+      border: 2px solid #8b5e3c;
+      border-radius: 8px;
+      background-color: #f6e3b4;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #f0c14b;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #6d5a3a;
+      user-select: none;
+    }
+    .checkbox-label {
+      font-weight: normal;
+      margin-left: 0.4rem;
+      user-select: none;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      vertical-align: middle;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-top: 0.5rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      border: 1px solid #8b5e3c;
+      border-radius: 5px;
+      padding: 0.5rem;
+      resize: vertical;
+      background-color: #fff9e6;
+    }
+    .section {
+      background-color: #fff8dc;
+      border: 2px solid #d4c291;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 3px 3px 6px rgba(139,94,60,0.2);
+    }
+    .warning {
+      color: #a94442;
+      background-color: #f2dede;
+      border: 1px solid #ebccd1;
+      padding: 0.6rem 1rem;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+      font-weight: bold;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestion des données</h1>
+
+  <div class="section" id="exportSection">
+    <h2>Exporter les données</h2>
+    <label><input type="checkbox" id="exportDeleteCheckbox" /> Supprimer les données après export</label>
+    <button id="btnExport">Exporter en JSON</button>
+    <textarea id="exportOutput" readonly placeholder="Le JSON exporté apparaîtra ici..."></textarea>
+  </div>
+
+  <div class="section" id="importSection">
+    <h2>Importer des données</h2>
+    <label for="importFile">Choisir un fichier JSON :</label>
+    <input type="file" id="importFile" accept=".json" />
+    <label><input type="checkbox" id="importDeleteCheckbox" /> Supprimer les données existantes avant import</label>
+    <button id="btnImport">Importer</button>
+    <textarea id="importStatus" readonly placeholder="Statut de l’import..."></textarea>
+  </div>
+
+  <div class="section" id="deleteSection">
+    <h2>Supprimer toutes les données</h2>
+    <label class="warning">⚠️ Cette action est irréversible et supprimera toutes les données stockées !</label>
+    <button id="btnDelete">Supprimer toutes les données</button>
+  </div>
+
+  <script>
+    // Utilitaires
+    function download(filename, text) {
+      const element = document.createElement('a');
+      element.setAttribute('href', 'data:text/json;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+
+    // Exporter
+    document.getElementById("btnExport").addEventListener("click", () => {
+      const keys = Object.keys(localStorage).filter(k => k.startsWith("score_"));
+      if (keys.length === 0) {
+        alert("Aucune donnée de score trouvée à exporter.");
+        return;
+      }
+
+      let exportData = {};
+      keys.forEach(key => {
+        try {
+          exportData[key] = JSON.parse(localStorage.getItem(key));
+        } catch {
+          // skip invalid JSON
+        }
+      });
+
+      const jsonStr = JSON.stringify(exportData, null, 2);
+      const dateStr = new Date().toISOString().slice(0,10);
+      const filename = `scores_export_${dateStr}.json`;
+
+      document.getElementById("exportOutput").value = jsonStr;
+
+      download(filename, jsonStr);
+
+      if (document.getElementById("exportDeleteCheckbox").checked) {
+        if (confirm("Êtes-vous sûre de vouloir supprimer toutes les données après export ? Cette action est irréversible.")) {
+          keys.forEach(k => localStorage.removeItem(k));
+          alert("Données supprimées après export.");
+          document.getElementById("exportOutput").value = "";
+        }
+      }
+    });
+
+    // Importer
+    document.getElementById("btnImport").addEventListener("click", () => {
+    const fileInput = document.getElementById("importFile");
+    const statusArea = document.getElementById("importStatus");
+    statusArea.value = "";
+
+    if (!fileInput.files.length) {
+      alert("Veuillez choisir un fichier JSON à importer.");
+      return;
+    }
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = e => {
+      console.log(-2);
+      try {
+        console.log(-1);
+        const importedData = JSON.parse(e.target.result);
+
+        if (document.getElementById("importDeleteCheckbox").checked) {
+          if (!confirm("Êtes-vous sûre de vouloir supprimer toutes les données existantes AVANT import ? Cette action est irréversible.")) {
+            statusArea.value = "Import annulé par l'utilisateur.";
+            return;
+          }
+          // Supprime toutes les clés score_
+          Object.keys(localStorage)
+            .filter(k => k.startsWith("score_"))
+            .forEach(k => localStorage.removeItem(k));
+        }
+
+        console.log(0);
+        // Ajout / fusion des données importées avec les données existantes
+        let importedCount = 0;
+        Object.entries(importedData).forEach(([key, newValue]) => {
+          console.log(1);
+          let existingRaw = localStorage.getItem(key);
+          if (existingRaw) {
+            try {
+              let existingValue = JSON.parse(existingRaw);
+
+              const existingOps = existingValue.operations || [];
+              const newOps = newValue.operations || [];
+
+              // Trouver les opérations non présentes dans existingOps
+              const opsToAdd = newOps.filter(newOp => {
+                return !existingOps.some(
+                  op =>
+                    op.representation === newOp.representation &&
+                    op.answer === newOp.answer &&
+                    op.result === newOp.result &&
+                    op.time === newOp.time
+                );
+              });
+
+              // Mettre à jour uniquement avec les nouvelles opérations
+              existingValue.operations = existingOps.concat(opsToAdd);
+
+              // Mettre à jour les stats seulement avec les opérations ajoutées (évite doublons)
+              const addedCorrect = opsToAdd.filter(op => op.answer === op.result).length;
+              const addedIncorrect = opsToAdd.length - addedCorrect;
+
+              existingValue.correct = (existingValue.correct || 0) + addedCorrect;
+              existingValue.incorrect = (existingValue.incorrect || 0) + addedIncorrect;
+              existingValue.total = (existingValue.total || 0) + opsToAdd.length;
+
+              localStorage.setItem(key, JSON.stringify(existingValue));
+              console.log(4);
+            } catch {
+              // En cas d'erreur parse, on remplace juste
+              localStorage.setItem(key, JSON.stringify(newValue));
+              console.log(3);
+            }
+          } else {
+            // Pas d'existant, on ajoute directement
+            localStorage.setItem(key, JSON.stringify(newValue));
+            console.log(2);
+          }
+          importedCount++;
+        });
+
+        statusArea.value = `Import réussi : ${importedCount} entrées importées et fusionnées.`;
+        fileInput.value = ""; // reset file input
+      } catch (err) {
+        statusArea.value = "Erreur lors de la lecture du fichier JSON : " + err.message;
+      }
+    };
+
+    reader.onerror = () => {
+      statusArea.value = "Erreur lors de la lecture du fichier.";
+    };
+
+    reader.readAsText(file);
+  });
+
+    // Suppression
+    document.getElementById("btnDelete").addEventListener("click", () => {
+      if (confirm("⚠️ Attention, vous êtes sur le point de supprimer TOUTES les données de scores. Cette action est irréversible.\n\nVoulez-vous vraiment continuer ?")) {
+        Object.keys(localStorage)
+          .filter(k => k.startsWith("score_"))
+          .forEach(k => localStorage.removeItem(k));
+        alert("Toutes les données ont été supprimées.");
+      }
+    });
+  </script>
+</body>
+</html>

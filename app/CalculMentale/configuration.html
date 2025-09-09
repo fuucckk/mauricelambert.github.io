@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of CalculMentaleWebApp.
+
+  CalculMentaleWebApp is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  CalculMentaleWebApp is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with CalculMentaleWebApp.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configuration de l'exercice</title>
+  <style>
+    :root {
+      --main-color: #3e8e41;
+      --accent-color: #f4c542;
+      --bg-color: #fdfcf7;
+      --text-color: #333;
+      --card-bg: #fff;
+      --border-radius: 8px;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: var(--main-color);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: var(--main-color);
+    }
+
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+    }
+
+    .op-checkboxes label {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+    .range-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .range-group {
+      flex: 1 1 150px;
+    }
+
+    button {
+      background-color: var(--main-color);
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: #367a3b;
+    }
+
+    .url-output {
+      margin-top: 1rem;
+      background: #f0f0f0;
+      padding: 1rem;
+      word-wrap: break-word;
+      border-radius: var(--border-radius);
+      font-family: monospace;
+    }
+
+    @media (max-width: 600px) {
+      .range-container {
+        flex-direction: column;
+      }
+    }
+    
+    .eleves-list {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .eleves-list button {
+      background-color: #f3eac2;
+      border: 1px solid #c2b28d;
+      border-radius: 14px;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #3e3226;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+      max-width: fit-content;
+    }
+
+    .eleves-list button:hover {
+      background-color: #e9dca8;
+    }
+
+    .eleves-list .remove {
+      background: none;
+      border: none;
+      color: #a22;
+      font-size: 1rem;
+      margin-left: 6px;
+      cursor: pointer;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>Configurer l'exercice pour vos élèves</header>
+  <div class="container">
+    <form id="configForm">
+      <label for="pseudo">Nom ou identifiant de l'élève :</label>
+      <input type="text" id="pseudo" name="pseudo" placeholder="ex : alice" required>
+      <div id="elevesList" class="eleves-list"></div>
+
+      <h2>Plages des nombres</h2>
+      <div class="range-container">
+        <div class="range-group">
+          <label>Additions (min-max)</label>
+          <input type="number" name="addMin" min="0" placeholder="Min ex: 1">
+          <input type="number" name="addMax" min="0" placeholder="Max ex: 10">
+        </div>
+        <div class="range-group">
+          <label>Soustractions (min-max)</label>
+          <input type="number" name="subMin" min="0" placeholder="Min ex: 5">
+          <input type="number" name="subMax" min="0" placeholder="Max ex: 15">
+        </div>
+        <div class="range-group">
+          <label>Multiplications (min-max)</label>
+          <input type="number" name="mulMin" min="0" placeholder="Min ex: 2">
+          <input type="number" name="mulMax" min="0" placeholder="Max ex: 5">
+        </div>
+        <div class="range-group">
+          <label>Divisions (min-max)</label>
+          <input type="number" name="divMin" min="0" placeholder="Min ex: 2">
+          <input type="number" name="divMax" min="0" placeholder="Max ex: 10">
+        </div>
+      </div>
+
+      <h2>Opérations autorisées</h2>
+      <div class="op-checkboxes">
+        <label><input type="checkbox" name="ops" value="+" checked> Addition (+)</label>
+        <label><input type="checkbox" name="ops" value="-" checked> Soustraction (-)</label>
+        <label><input type="checkbox" name="ops" value="*" checked> Multiplication (×)</label>
+        <label><input type="checkbox" name="ops" value="/" checked> Division (÷)</label>
+      </div>
+
+      <h2>Paramètres généraux</h2>
+      <label for="count">Nombre de questions : <span id="countValue">5</span></label>
+      <input type="range" id="count" name="count" min="0" max="50" value="5">
+
+      <label for="time">Temps en secondes : <span id="timeValue">30</span></label>
+      <input type="range" id="time" name="time" min="0" max="300" step="10" value="30">
+      
+      <label><input type="checkbox" name="showTimer" value="1" checked> Afficher le temps pendant l'exercice</label>
+
+      <button type="submit">Lancer l'exercice</button>
+    </form>
+
+    <!-- <div class="url-output" id="urlOutput"></div> -->
+  </div>
+
+  <script>
+    const form = document.getElementById('configForm');
+    // const urlOutput = document.getElementById('urlOutput');
+    const countRange = document.getElementById('count');
+    const timeRange = document.getElementById('time');
+    const countValue = document.getElementById('countValue');
+    const timeValue = document.getElementById('timeValue');
+
+    countRange.addEventListener('input', () => countValue.textContent = countRange.value);
+    timeRange.addEventListener('input', () => timeValue.textContent = timeRange.value);
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        let params = new URLSearchParams();
+
+        for (let [key, value] of formData.entries()) {
+            if (key === 'ops') continue; // skip ops here
+            if (key === 'showTimer') continue; // handle it separately
+            if (value !== '') {
+                params.append(key, value);
+            }
+        }
+
+        // Handle operations (ops)
+        const ops = formData.getAll('ops');
+        if (ops.length > 0) {
+            params.append('ops', ops.join(''));
+        }
+
+        // Handle showTimer checkbox
+        if (formData.get('showTimer') === '1') {
+            params.append('showTimer', '1');
+        }
+
+        // Redirection automatique vers exercice.html
+        const queryString = params.toString();
+        const targetUrl = `exercice.html?${queryString}`;
+
+        window.location.href = targetUrl;
+    });
+    
+    const pseudoInput = document.getElementById("pseudo");
+    const elevesListContainer = document.getElementById("elevesList");
+
+    function getEleves() {
+        return JSON.parse(localStorage.getItem("eleves_list") || "[]");
+    }
+
+    function saveEleves(list) {
+        localStorage.setItem("eleves_list", JSON.stringify(list));
+    }
+
+    function addEleve(name) {
+        let list = getEleves();
+        if (!list.includes(name)) {
+          list.push(name);
+          saveEleves(list);
+        }
+        renderEleves();
+    }
+
+    function removeEleve(name) {
+        let list = getEleves().filter(n => n !== name);
+        saveEleves(list);
+        renderEleves();
+    }
+
+    function renderEleves() {
+        const eleves = getEleves();
+        elevesListContainer.innerHTML = "";
+        eleves.forEach(name => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.innerHTML = `${name} <span class="remove" title="Supprimer ce prénom">🗑️</span>`;
+          btn.onclick = (e) => {
+            if (e.target.classList.contains("remove")) {
+              if (confirm(`Supprimer "${name}" de la liste des élèves ?`)) {
+                removeEleve(name);
+              }
+            } else {
+              pseudoInput.value = name;
+            }
+          };
+          elevesListContainer.appendChild(btn);
+        });
+    }
+
+    // Lorsqu’on lance un exercice, enregistrer le prénom
+    document.querySelector("form").addEventListener("submit", (e) => {
+        const name = pseudoInput.value.trim();
+        if (name) addEleve(name);
+    });
+
+    // Afficher les prénoms existants au chargement
+    renderEleves();
+  </script>
+</body>
+</html>
