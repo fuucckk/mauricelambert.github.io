@@ -18,6 +18,7 @@
 ## Web App
 
  - [Government Data Analysis](https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/)
+ - [Calcul Mentale Web App Trainaing](https://mauricelambert.github.io/app/CalculMentale/)
 
 ## Python
 
