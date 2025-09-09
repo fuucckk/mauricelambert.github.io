@@ -18,7 +18,7 @@
 ## Web App
 
  - [Government Data Analysis](https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/)
- - [Calcul Mentale Web App Trainaing](https://mauricelambert.github.io/app/CalculMentale/)
+ - [Calcul Mentale Web App Training](https://mauricelambert.github.io/app/CalculMentale/)
 
 ## Python
 
@@ -39,7 +39,7 @@
  - [ClipboardLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/ClipboardLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/clipboardSpy.conf)
  - [SpyWare.DomainsLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/DomainsLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/domainsSpy.conf)
  - [SpyWare.FilesLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/filesSpy.conf)
- - [SpyWare.KeyLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/keySpy.conf)
+ - [SpyWare.KeyLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/keySpy.conf)Calcul Mentale Web App Trainaing
  - [SpyWare.ScreenLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/ScreenLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/screenSpy.conf)
  - [SpyWare.WebcamLogger Documentation](https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.html), [Configuration](https://mauricelambert.github.io/info/python/security/SpyWare/webcamSpy.conf)
  - [ChromePasswordsStealer Documentation](https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.html)
