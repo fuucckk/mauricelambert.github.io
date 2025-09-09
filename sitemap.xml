@@ -424,7 +424,7 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/</loc>
-    <lastmod>2025-09-04</lastmod>
+    <lastmod>2025-09-09</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
@@ -1050,5 +1050,9 @@
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/UrlTasker.html</loc>
     <lastmod>2025-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricelambert.github.io/app/CalculMentale/</loc>
+    <lastmod>2025-09-09</lastmod>
   </url>
 </urlset>
