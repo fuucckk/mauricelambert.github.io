@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of PySlidesGenerator.
+
+  PySlidesGenerator is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  PySlidesGenerator is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with PySlidesGenerator.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Learn how to get started with CTFs through beginner-friendly hacking methodologies, useful tools, and practical cybersecurity learning resources." />
+  <meta name="keywords" content="CTF for beginners, Capture The Flag tutorial, cybersecurity for beginners, learn CTF, CTF methodology, CTF resources, beginner hacking challenges" />
+  <meta name="author" content="Maurice Lambert" />
+  <title>Your First Flag: An Introduction to Capture The Flag</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <main>
+    <section id="slide-1" class="title-slide">
+      <div id="terminal-overlay">
+        <pre id="terminal-output"></pre>
+      </div>
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h1>Your First Flag: An Introduction to Capture The Flag</h1>
+      </article>
+    </section>
+    <section class="table-content" id="slide-2">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#slide-3">CTF Overview</a>
+            <ul>
+              <li><a href="#slide-4">CTF: Capture The Flag Explained</a></li><li><a href="#slide-5">Why Participate in a CTF</a></li><li><a href="#slide-6">Educational Objectives of CTFs in Cybersecurity</a></li>
+            </ul>
+          </li><li><a href="#slide-7">Common CTF Formats</a>
+            <ul>
+              <li><a href="#slide-8">Jeopardy Format</a></li><li><a href="#slide-9">Attack-Defend Format</a></li><li><a href="#slide-10">King of the Hill Format</a></li>
+            </ul>
+          </li><li><a href="#slide-11">Solving Your First CTF Challenge</a>
+            <ul>
+              <li><a href="#slide-12">Methodology</a></li>
+            </ul>
+          </li><li><a href="#slide-13">CTF Categories, Methods and Tools</a>
+            <ul>
+              <li><a href="#slide-14">Web Challenge</a></li><li><a href="#slide-15">Cryptography Challenge</a></li><li><a href="#slide-16">Networking</a></li><li><a href="#slide-17">Forensics</a></li><li><a href="#slide-18">Reverse Engineering</a></li><li><a href="#slide-19">Binary Exploitation (Pwn)</a></li><li><a href="#slide-20">Open Source Intelligence (OSINT)</a></li><li><a href="#slide-21">Steganography</a></li><li><a href="#slide-22">Miscellaneous</a></li><li><a href="#slide-23">Active Directory (AD)</a></li><li><a href="#slide-24">Hardware / Radio</a></li>
+            </ul>
+          </li><li><a href="#slide-25">Resources for CTF</a>
+            <ul>
+              <li><a href="#slide-26">Resources for CTF</a></li>
+            </ul>
+          </li><li><a href="#slide-27">How CTFs Are Organized</a>
+            <ul>
+              <li><a href="#slide-28">How CTFs Are Organized</a></li>
+            </ul>
+          </li><li><a href="#slide-29">CTF Training Platforms</a>
+            <ul>
+              <li><a href="#slide-30">CTF Training Platforms</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section id="slide-3" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>CTF Overview</h2>
+      </article>
+    </section><section id="slide-4" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>CTF: Capture The Flag Explained</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>CTF stands for Capture The Flag.<br>
+It is a competition where participants solve cybersecurity-related challenges to capture "flags."<br><br>
+
+These are gamified challenges on different cybersecurity topics.<br><br>
+
+Flags are like passwords when you find one, you can validate the challenge and move on to any challenge you want.<br><br>
+
+Each time you validate a challenge, you earn points.<br><br>
+
+A common format for a flag is:<br>
+<code>flag{this_is_a_sample_flag}</code></p>
+        </div>
+        <img src="ctf.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-5" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Why Participate in a CTF</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>CTFs offer a training environment usually fun to practice cybersecurity including offensive techniques while staying completely legal.<br><br>
+
+Challenges are generally created by people with strong skills sometimes experts which allows for advanced challenges on specific topics.<br><br>
+
+CTFs can prove your skills.<br><br>
+
+CTFs help you build your network.<br><br>
+
+Above all CTFs are meant to be fun.</p>
+        </div>
+        <img src="collaboration.webp" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-6" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Educational Objectives of CTFs in Cybersecurity</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>The goal of CTFs is to help you discover and practice certain technical aspects of cybersecurity.<br><br>
+
+Learn new concepts.<br><br>
+
+Discover better techniques or alternatives.<br><br>
+
+Work on your methodologies (although not always).<br><br>
+
+Challenge yourself and push your limits.<br><br>
+
+Improve your analytical skills and attention to detail.<br><br>
+
+Increase your problem-solving abilities.<br><br></p>
+        </div>
+        <img src="learning.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-7" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Common CTF Formats</h2>
+      </article>
+    </section><section id="slide-8" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Jeopardy Format</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>The Jeopardy format is one of the most common in CTFs. It consists of a series of independent challenges grouped by category. Each solved challenge gives you points.<br><br>
+
+Participants choose a challenge to solve from the available categories.<br><br>
+
+Often played in teams but also possible solo.<br><br>
+
+The more complex the challenge the more points it gives.<br><br>
+
+Most challenges are independent from each other so you can choose the order in which you solve them and the categories you want to focus on.</p>
+        </div>
+        <img src="scoreboard.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-9" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Attack-Defend Format</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>The Attack-Defend format combines both offensive (attack) and defensive (protect) aspects.<br><br>
+
+Each team has its own server (or infrastructure) to defend while attacking other teams’ servers to capture flags and earn points.<br><br>
+
+Offensive and defensive: teams must secure their own systems while looking for vulnerabilities in other participants’ systems.<br><br>
+
+Some vulnerabilities can be partially mitigated but should not be completely blocked. You can kick attackers out when detected.<br><br>
+
+There is a sense of urgency and time management. Team organization is required. The strategy is more realistic. There is also a build phase.</p>
+        </div>
+        <img src="attack-defend.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-10" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>King of the Hill Format</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>In a King of the Hill the main objective is to take control of a central service or resource and maintain that control as long as possible.<br><br>
+
+Once a team manages to take control of a service (for example a vulnerable server) it must defend it against attempts from other teams to take it back.<br><br>
+
+Each team must attack to gain control while also setting up defenses to avoid being kicked out.<br><br>
+
+There is a notion of quick hacking to defend your position as fast as possible and real-time team synchronization.</p>
+        </div>
+        <img src="koth.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-11" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Solving Your First CTF Challenge</h2>
+      </article>
+    </section><section id="slide-12" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Methodology</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Identify the category, read the title and read the description.</li><li>There are often hints and in some challenges you can figure out the idea behind it (vulnerability type, technology, etc.) even before starting.</li><li>When you don’t know something: find and read the documentation (you usually don’t need to read everything).</li><li>Search for resources, blogs or writeups that talk about the topic.</li><li>Identify the problem and how to exploit it.</li><li>If you don’t know how to do it, search either for writeups or for documentation of a tool that can help with the exploitation (sometimes there are examples).</li><li>It is rare to have to find a zeroday. Most of the time it’s custom code, or known CVEs with exploitation documentation (not always with a ready-to-use exploit tool), or an issue that was reported but not fixed (not considered a vulnerability by the maintainers).</li>
+          </ol>
+        </div>
+        <img src="methodology.webp" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-13" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>CTF Categories, Methods and Tools</h2>
+      </article>
+    </section><section id="slide-14" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Web Challenge</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Web application vulnerabilities (SQL Injection, XSS...)</li><li>Identify if it is Web Client or Web Server challenge.</li><li>Visit the website using a browser and identify client-server interactions and dynamic elements.</li><li>If it is Web Server, identify the technologies used, including architecture, web server, language, framework, modules, etc.</li><li>Check if it is custom development or just a product with little or no customization.</li><li>If you have the source code, you can use SAST/DAST tools to find the vulnerability (don’t rely too much on them in CTFs).</li><li>If it is a known technology, check if there is a HackTricks page or blogs about exploitation.</li><li>Find and exploit the vulnerability.</li>
+          </ol><ul>
+            <li><strong>Resources</strong>: HackTricks, OWASP (Top 10 and more), blogs/writeups</li><li><strong>Required tools</strong>: Web browser (Firefox), CyberChef</li><li><strong>Highly recommended tools</strong>: BurpSuite (can be replaced by Python, more control, less user-friendly and no Java), jwt.io</li><li><strong>Optional tools</strong>: Wireshark, Python with Selenium, Postman, Nuclei, skipfish, OWASP ZAP, Nikto</li>
+          </ul>
+        </div>
+        <img src="xss.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-15" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Cryptography Challenge</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Challenges related to cryptography and decryption</li><li>Identify the algorithm used</li><li>Check the implementation if it is a known algorithm and custom code</li><li>Check the values of the constants (prime numbers or not, etc...)</li><li>Check the security recommendations (key size, etc...)</li>
+          </ol><ul>
+            <li><strong>Tools</strong>: Python, John the Ripper, Hashcat</li>
+          </ul>
+        </div>
+        <img src="cryptography.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-16" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Networking</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Network analysis, Man-in-the-Middle (MITM) attacks</li><li>Often considered a subcategory of Forensics, for example a pcap file containing exfiltrated data and the flag inside.</li><li>Identify source/destination IPs (most of the time challenges are layer 3 and above in the OSI model)</li><li>Identify the most used SourceIP/DestinationIP/DestinationPort combinations</li><li>Identify the protocols and technologies used</li><li>Identify encrypted protocols that are not accessible</li><li>Filter the exchanges that seem interesting</li><li>If you don’t know the protocol, look for writeups of challenges using the same protocol, known security issues, common misuses, or the RFC (if it exists)</li><li>Reverse the content of interesting packets (Wireshark does a lot of the work), extract the data, identify the format of the extracted content</li>
+          </ol><ul>
+            <li><strong>Required tools</strong>: Wireshark, tshark, nmap, scapy, iptables (netfilter)</li><li><strong>Optional tools</strong>: tcpdump, aircrack-ng, NetworkMiner</li>
+          </ul>
+        </div>
+        <img src="wireshark.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-17" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Forensics</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Digital trace analysis and information recovery</li><li>Identify the type of challenge: disk analysis, memory dump analysis, network analysis (pcap, pcapng), live system analysis (to avoid if possible), malware reverse</li><li>Identify the technology, the issue, the alert, the moment the issue was detected</li><li>Disk and live system: identify if it is a server or a workstation, check logs, MFT or equivalent (possible time pivot), look for persistence methods, download folders, installed applications, modules/extensions/plugins, browser history/downloads/cookies, emails, services, bash/python history</li><li>Memory dump: list processes (especially process tree with user, full executable path, and command lines), kernel modules, network connections</li>
+          </ol><ul>
+            <li><strong>Required tools</strong>: volatility (2 and 3), autopsy, Eric Zimmerman tools, Didier Stevens Suite</li><li><strong>Recommended tools</strong>: Powershell, Python, bash</li><li><strong>Optional tools</strong>: log analysis tools (search, filters, visualization)</li>
+          </ul>
+        </div>
+        <img src="forensic.jpeg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-18" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Reverse Engineering</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Program decoding, binary analysis</li><li>Identify the file type (usually executable but could be other formats like a Java binary or a .pyc)</li><li>Identify the file structure (platform, architecture, high entropy, section sizes and names, imports and exports (rarer), etc...)</li><li>Identify the programming language and compilation details (stripped or not)</li><li>Check if the reverse can be simplified (unstrip for Go and Rust)</li><li>Look at the function graph and identify possible obfuscation</li><li>Spot known patterns or instruction repetitions</li><li>Choose the tool depending on the format and the type of reverse to apply: static or dynamic reverse</li>
+          </ol><ul>
+            <li><strong>Required tools</strong>: Ghidra or IDA or BinaryNinja, gdb (with modules like GEF or Pwndbg), WinDBG, strings, JADX, dnSpy</li><li><strong>Optional tools</strong>: PeBear</li>
+          </ul>
+        </div>
+        <img src="reverse.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-19" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Binary Exploitation (Pwn)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>System vulnerability exploitation</li><li>Identify the technology</li><li>Identify security and compilation options</li><li>Identify dangerous functions used</li><li>Identify functions that can help with exploitation</li><li>Identify memory allocations/frees</li><li>Find the vulnerability</li><li>Calculate how to exploit it or find interesting offsets through testing if needed</li><li>Write the exploit and exploit the vulnerability remotely (usually you will need to perform a privesc using the remote exploit to retrieve the flag)</li>
+          </ol><ul>
+            <li><strong>Required tools</strong>: gdb (with modules like GEF or Pwndbg), pwntools</li>
+          </ul>
+        </div>
+        <img src="pwn.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-20" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Open Source Intelligence (OSINT)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Public information gathering on the Internet</li><li>Clearly identify the target and carefully list all the data you have before starting the search (it is easy to waste time on out-of-scope elements)</li>
+          </ol><ul>
+            <li><strong>Required tools</strong>: Google Dorks, Google lens, Wayback machine, start.me</li><li><strong>Optional tools</strong>: Maltego, theHarvester, GHunt, Epieos, Sherlock, holehe, maigret, Overpass turbo</li>
+          </ul>
+        </div>
+        <img src="osint.jpeg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-21" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Steganography</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Hidden information discovery in files (images, audio)</li><li>Identify the file type</li><li>Check the file format specifications</li><li>Look at CTF challenges using this format</li><li>Guess 😂</li>
+          </ol><ul>
+            <li><strong>Tools</strong>: file, xxd, strings, binwalk, exiftool, CyberChef, Steghide (?), Zsteg (?), Stegsolve (?), Stegseek (?), GIMP, Audacity, Aperi'Solve</li>
+          </ul>
+        </div>
+        <img src="steganography.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-22" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Miscellaneous</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Various and creative challenges (often puzzles, logic questions)</li><li>Different challenges that do not fit into common categories</li><li>There can often be algorithm challenges</li><li>Sometimes there are video games where you have to solve "unsolvable" things (you need to hack them)</li>
+          </ol><ul>
+            <li><strong>Tools</strong>: Python, can really vary depending on the context</li>
+          </ul>
+        </div>
+        <img src="misc.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-23" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Active Directory (AD)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Exploring Active Directory vulnerabilities</li><li>Enumerate without user</li><li>If enumeration fails: find a user (OSINT, ...), exploiting a service vulnerability, vulnerable Microsoft protocol</li><li>Enumerate with user</li><li>Identify privileged accounts</li><li>Identify potentially vulnerable accounts (misconfigurations allowing bruteforce or credential reuse)</li><li>Identify commonly exploited services</li><li>Identify and audit risky configurations</li><li>Identify possible paths to domain admin</li>
+          </ol><ul>
+            <li><strong>Required tools</strong>: BloodHound (SharpHound / python-bloodhound / RustHound), Impacket, Certipy, Evil-WinRM</li><li><strong>Recommended tools</strong>: CrackMapExec (netexec), BloodyAD, Certify, Responder, Rubeus, RDP Client</li><li><strong>Optional tools</strong>: Mimikatz / Pypykatz, PowerView, Kerbrute, PingCastle</li><li><strong>Lateral movement tools</strong>: proxychains / revsocks / ligolo / Chisel, SSH Tunneling, Socat</li>
+          </ul>
+        </div>
+        <img src="AD.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-24" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Hardware / Radio</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Security of hardware devices and radio communications</li><li>Properly identify the hardware: components, pins/pinout, etc.</li><li>Search for datasheets / technical documentation of relevant components</li><li>Once interesting pins are identified, connect them using the identified debug protocol</li><li>Dump the firmware using the protocol (JTAG, SWD, UART, SPI, I2C, TPM, ...)</li><li>Unpack and reverse the firmware</li><li>Find the vulnerability</li><li>Exploit the vulnerability</li>
+          </ol><ul>
+            <li><strong>Tools</strong>: binwalk, Bus Pirate (?), OpenOCD (?), URJTAG (?), Ghidra, avrdude</li>
+          </ul>
+        </div>
+        <img src="hardware.jpeg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-25" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Resources for CTF</h2>
+      </article>
+    </section><section id="slide-26" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Resources for CTF</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>HackTricks</li><li>TheHackerRecipes</li><li>CTF Writeups</li><li>Blogs</li><li>RFC</li><li>github / sources code</li>
+          </ul>
+        </div>
+        <img src="resources.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-27" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>How CTFs Are Organized</h2>
+      </article>
+    </section><section id="slide-28" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>How CTFs Are Organized</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Where to find CTFs: CTFtime.org, Discord servers, cybersecurity communities, and social media channels regularly announce upcoming events.</li><li>Participating without a team: You can play solo, or join a temporary team with other solo players especially common in onsite CTFs and in CTF-focused Discord servers.</li><li>Format, duration, and access: Most CTFs are online and last between 24 and 72 hours. Challenges are usually accessible via a dedicated platform during the event.</li><li>Rules: Always read and follow the official rules. Common rules include: no flag sharing, no attacking the CTF infrastructure, no brute-forcing, no fuzzing on the CTF platform, respect other teams</li>
+          </ol>
+        </div>
+        <img src="ctftime.png" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-29" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>CTF Training Platforms</h2>
+      </article>
+    </section><section id="slide-30" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>CTF Training Platforms</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Root-Me</li><li>HackTheBox</li><li>TryHackMe</li><li>Hackropole</li><li>pwn4love</li><li>portswigger</li><li>xssy.uk</li><li>ciphershastra</li><li>ethereumhacker</li><li>dojo.pwn.college</li><li>letsdefend</li><li>blueteamlabs.online</li><li>crackmes.one</li><li>ozint.eu</li><li>ctf.challenge-osint.fr</li><li>cryptohack</li><li>cryptozombies.io</li><li>nodeguardians.io</li><li>gandalf.lakera.ai</li><li>sourcing.games</li>
+          </ul>
+        </div>
+        <img src="root-me.jpg" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section>
+    <section class="timeline-slide content-slide" id="timeline-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>My path, my passion: cybersecurity</h3>
+      </header>
+      <article>
+        <div id="timeline-container"></div>
+        <div id="timeline-progress"></div>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p><a href="https://www.gnu.org/licenses/">&copy; Maurice Lambert</a></p>
+  </footer>
+</body>
+</html>

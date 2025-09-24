@@ -1,0 +1,527 @@
+{
+    "title": "Your First Flag: An Introduction to Capture The Flag",
+    "keywords": [
+        "CTF for beginners",
+        "Capture The Flag tutorial",
+        "cybersecurity for beginners",
+        "learn CTF",
+        "CTF methodology",
+        "CTF resources",
+        "beginner hacking challenges"
+    ],
+    "description": "Learn how to get started with CTFs through beginner-friendly hacking methodologies, useful tools, and practical cybersecurity learning resources.",
+    "author": "Maurice Lambert",
+    "default icon": "https://mauricelambert.github.io/MauriceLambert.png",
+    "default aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+    "slides": [
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "CTF Overview"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "CTF: Capture The Flag Explained",
+            "image": "ctf.png",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "CTF stands for Capture The Flag.<br>\nIt is a competition where participants solve cybersecurity-related challenges to capture \"flags.\"<br><br>\n\nThese are gamified challenges on different cybersecurity topics.<br><br>\n\nFlags are like passwords when you find one, you can validate the challenge and move on to any challenge you want.<br><br>\n\nEach time you validate a challenge, you earn points.<br><br>\n\nA common format for a flag is:<br>\n<code>flag{this_is_a_sample_flag}</code>"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Why Participate in a CTF",
+            "image": "collaboration.webp",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "CTFs offer a training environment usually fun to practice cybersecurity including offensive techniques while staying completely legal.<br><br>\n\nChallenges are generally created by people with strong skills sometimes experts which allows for advanced challenges on specific topics.<br><br>\n\nCTFs can prove your skills.<br><br>\n\nCTFs help you build your network.<br><br>\n\nAbove all CTFs are meant to be fun."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Educational Objectives of CTFs in Cybersecurity",
+            "image": "learning.jpg",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The goal of CTFs is to help you discover and practice certain technical aspects of cybersecurity.<br><br>\n\nLearn new concepts.<br><br>\n\nDiscover better techniques or alternatives.<br><br>\n\nWork on your methodologies (although not always).<br><br>\n\nChallenge yourself and push your limits.<br><br>\n\nImprove your analytical skills and attention to detail.<br><br>\n\nIncrease your problem-solving abilities.<br><br>"
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "Common CTF Formats"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Jeopardy Format",
+            "image": "scoreboard.png",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The Jeopardy format is one of the most common in CTFs. It consists of a series of independent challenges grouped by category. Each solved challenge gives you points.<br><br>\n\nParticipants choose a challenge to solve from the available categories.<br><br>\n\nOften played in teams but also possible solo.<br><br>\n\nThe more complex the challenge the more points it gives.<br><br>\n\nMost challenges are independent from each other so you can choose the order in which you solve them and the categories you want to focus on."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Attack-Defend Format",
+            "image": "attack-defend.png",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The Attack-Defend format combines both offensive (attack) and defensive (protect) aspects.<br><br>\n\nEach team has its own server (or infrastructure) to defend while attacking other teams\u2019 servers to capture flags and earn points.<br><br>\n\nOffensive and defensive: teams must secure their own systems while looking for vulnerabilities in other participants\u2019 systems.<br><br>\n\nSome vulnerabilities can be partially mitigated but should not be completely blocked. You can kick attackers out when detected.<br><br>\n\nThere is a sense of urgency and time management. Team organization is required. The strategy is more realistic. There is also a build phase."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "King of the Hill Format",
+            "image": "koth.png",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "In a King of the Hill the main objective is to take control of a central service or resource and maintain that control as long as possible.<br><br>\n\nOnce a team manages to take control of a service (for example a vulnerable server) it must defend it against attempts from other teams to take it back.<br><br>\n\nEach team must attack to gain control while also setting up defenses to avoid being kicked out.<br><br>\n\nThere is a notion of quick hacking to defend your position as fast as possible and real-time team synchronization."
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "Solving Your First CTF Challenge"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Methodology",
+            "image": "methodology.webp",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Identify the category, read the title and read the description.",
+                        "There are often hints and in some challenges you can figure out the idea behind it (vulnerability type, technology, etc.) even before starting.",
+                        "When you don\u2019t know something: find and read the documentation (you usually don\u2019t need to read everything).",
+                        "Search for resources, blogs or writeups that talk about the topic.",
+                        "Identify the problem and how to exploit it.",
+                        "If you don\u2019t know how to do it, search either for writeups or for documentation of a tool that can help with the exploitation (sometimes there are examples).",
+                        "It is rare to have to find a zeroday. Most of the time it\u2019s custom code, or known CVEs with exploitation documentation (not always with a ready-to-use exploit tool), or an issue that was reported but not fixed (not considered a vulnerability by the maintainers)."
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "CTF Categories, Methods and Tools"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Web Challenge",
+            "image": "xss.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Web application vulnerabilities (SQL Injection, XSS...)",
+                        "Identify if it is Web Client or Web Server challenge.",
+                        "Visit the website using a browser and identify client-server interactions and dynamic elements.",
+                        "If it is Web Server, identify the technologies used, including architecture, web server, language, framework, modules, etc.",
+                        "Check if it is custom development or just a product with little or no customization.",
+                        "If you have the source code, you can use SAST/DAST tools to find the vulnerability (don\u2019t rely too much on them in CTFs).",
+                        "If it is a known technology, check if there is a HackTricks page or blogs about exploitation.",
+                        "Find and exploit the vulnerability."
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Resources</strong>: HackTricks, OWASP (Top 10 and more), blogs/writeups",
+                        "<strong>Required tools</strong>: Web browser (Firefox), CyberChef",
+                        "<strong>Highly recommended tools</strong>: BurpSuite (can be replaced by Python, more control, less user-friendly and no Java), jwt.io",
+                        "<strong>Optional tools</strong>: Wireshark, Python with Selenium, Postman, Nuclei, skipfish, OWASP ZAP, Nikto"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Cryptography Challenge",
+            "image": "cryptography.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Challenges related to cryptography and decryption",
+                        "Identify the algorithm used",
+                        "Check the implementation if it is a known algorithm and custom code",
+                        "Check the values of the constants (prime numbers or not, etc...)",
+                        "Check the security recommendations (key size, etc...)"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Tools</strong>: Python, John the Ripper, Hashcat"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Networking",
+            "image": "wireshark.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Network analysis, Man-in-the-Middle (MITM) attacks",
+                        "Often considered a subcategory of Forensics, for example a pcap file containing exfiltrated data and the flag inside.",
+                        "Identify source/destination IPs (most of the time challenges are layer 3 and above in the OSI model)",
+                        "Identify the most used SourceIP/DestinationIP/DestinationPort combinations",
+                        "Identify the protocols and technologies used",
+                        "Identify encrypted protocols that are not accessible",
+                        "Filter the exchanges that seem interesting",
+                        "If you don\u2019t know the protocol, look for writeups of challenges using the same protocol, known security issues, common misuses, or the RFC (if it exists)",
+                        "Reverse the content of interesting packets (Wireshark does a lot of the work), extract the data, identify the format of the extracted content"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Required tools</strong>: Wireshark, tshark, nmap, scapy, iptables (netfilter)",
+                        "<strong>Optional tools</strong>: tcpdump, aircrack-ng, NetworkMiner"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Forensics",
+            "image": "forensic.jpeg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Digital trace analysis and information recovery",
+                        "Identify the type of challenge: disk analysis, memory dump analysis, network analysis (pcap, pcapng), live system analysis (to avoid if possible), malware reverse",
+                        "Identify the technology, the issue, the alert, the moment the issue was detected",
+                        "Disk and live system: identify if it is a server or a workstation, check logs, MFT or equivalent (possible time pivot), look for persistence methods, download folders, installed applications, modules/extensions/plugins, browser history/downloads/cookies, emails, services, bash/python history",
+                        "Memory dump: list processes (especially process tree with user, full executable path, and command lines), kernel modules, network connections"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Required tools</strong>: volatility (2 and 3), autopsy, Eric Zimmerman tools, Didier Stevens Suite",
+                        "<strong>Recommended tools</strong>: Powershell, Python, bash",
+                        "<strong>Optional tools</strong>: log analysis tools (search, filters, visualization)"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Reverse Engineering",
+            "image": "reverse.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Program decoding, binary analysis",
+                        "Identify the file type (usually executable but could be other formats like a Java binary or a .pyc)",
+                        "Identify the file structure (platform, architecture, high entropy, section sizes and names, imports and exports (rarer), etc...)",
+                        "Identify the programming language and compilation details (stripped or not)",
+                        "Check if the reverse can be simplified (unstrip for Go and Rust)",
+                        "Look at the function graph and identify possible obfuscation",
+                        "Spot known patterns or instruction repetitions",
+                        "Choose the tool depending on the format and the type of reverse to apply: static or dynamic reverse"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Required tools</strong>: Ghidra or IDA or BinaryNinja, gdb (with modules like GEF or Pwndbg), WinDBG, strings, JADX, dnSpy",
+                        "<strong>Optional tools</strong>: PeBear"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Binary Exploitation (Pwn)",
+            "image": "pwn.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "System vulnerability exploitation",
+                        "Identify the technology",
+                        "Identify security and compilation options",
+                        "Identify dangerous functions used",
+                        "Identify functions that can help with exploitation",
+                        "Identify memory allocations/frees",
+                        "Find the vulnerability",
+                        "Calculate how to exploit it or find interesting offsets through testing if needed",
+                        "Write the exploit and exploit the vulnerability remotely (usually you will need to perform a privesc using the remote exploit to retrieve the flag)"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Required tools</strong>: gdb (with modules like GEF or Pwndbg), pwntools"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Open Source Intelligence (OSINT)",
+            "image": "osint.jpeg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Public information gathering on the Internet",
+                        "Clearly identify the target and carefully list all the data you have before starting the search (it is easy to waste time on out-of-scope elements)"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Required tools</strong>: Google Dorks, Google lens, Wayback machine, start.me",
+                        "<strong>Optional tools</strong>: Maltego, theHarvester, GHunt, Epieos, Sherlock, holehe, maigret, Overpass turbo"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Steganography",
+            "image": "steganography.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Hidden information discovery in files (images, audio)",
+                        "Identify the file type",
+                        "Check the file format specifications",
+                        "Look at CTF challenges using this format",
+                        "Guess \ud83d\ude02"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Tools</strong>: file, xxd, strings, binwalk, exiftool, CyberChef, Steghide (?), Zsteg (?), Stegsolve (?), Stegseek (?), GIMP, Audacity, Aperi'Solve"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Miscellaneous",
+            "image": "misc.jpg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Various and creative challenges (often puzzles, logic questions)",
+                        "Different challenges that do not fit into common categories",
+                        "There can often be algorithm challenges",
+                        "Sometimes there are video games where you have to solve \"unsolvable\" things (you need to hack them)"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Tools</strong>: Python, can really vary depending on the context"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Active Directory (AD)",
+            "image": "AD.jpg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Exploring Active Directory vulnerabilities",
+                        "Enumerate without user",
+                        "If enumeration fails: find a user (OSINT, ...), exploiting a service vulnerability, vulnerable Microsoft protocol",
+                        "Enumerate with user",
+                        "Identify privileged accounts",
+                        "Identify potentially vulnerable accounts (misconfigurations allowing bruteforce or credential reuse)",
+                        "Identify commonly exploited services",
+                        "Identify and audit risky configurations",
+                        "Identify possible paths to domain admin"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Required tools</strong>: BloodHound (SharpHound / python-bloodhound / RustHound), Impacket, Certipy, Evil-WinRM",
+                        "<strong>Recommended tools</strong>: CrackMapExec (netexec), BloodyAD, Certify, Responder, Rubeus, RDP Client",
+                        "<strong>Optional tools</strong>: Mimikatz / Pypykatz, PowerView, Kerbrute, PingCastle",
+                        "<strong>Lateral movement tools</strong>: proxychains / revsocks / ligolo / Chisel, SSH Tunneling, Socat"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Hardware / Radio",
+            "image": "hardware.jpeg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Security of hardware devices and radio communications",
+                        "Properly identify the hardware: components, pins/pinout, etc.",
+                        "Search for datasheets / technical documentation of relevant components",
+                        "Once interesting pins are identified, connect them using the identified debug protocol",
+                        "Dump the firmware using the protocol (JTAG, SWD, UART, SPI, I2C, TPM, ...)",
+                        "Unpack and reverse the firmware",
+                        "Find the vulnerability",
+                        "Exploit the vulnerability"
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Tools</strong>: binwalk, Bus Pirate (?), OpenOCD (?), URJTAG (?), Ghidra, avrdude"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "Resources for CTF"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Resources for CTF",
+            "image": "resources.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "HackTricks",
+                        "TheHackerRecipes",
+                        "CTF Writeups",
+                        "Blogs",
+                        "RFC",
+                        "github / sources code"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "How CTFs Are Organized"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "How CTFs Are Organized",
+            "image": "ctftime.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Where to find CTFs: CTFtime.org, Discord servers, cybersecurity communities, and social media channels regularly announce upcoming events.",
+                        "Participating without a team: You can play solo, or join a temporary team with other solo players especially common in onsite CTFs and in CTF-focused Discord servers.",
+                        "Format, duration, and access: Most CTFs are online and last between 24 and 72 hours. Challenges are usually accessible via a dedicated platform during the event.",
+                        "Rules: Always read and follow the official rules. Common rules include: no flag sharing, no attacking the CTF infrastructure, no brute-forcing, no fuzzing on the CTF platform, respect other teams"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "CTF Training Platforms"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "CTF Training Platforms",
+            "image": "root-me.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Root-Me",
+                        "HackTheBox",
+                        "TryHackMe",
+                        "Hackropole",
+                        "pwn4love",
+                        "portswigger",
+                        "xssy.uk",
+                        "ciphershastra",
+                        "ethereumhacker",
+                        "dojo.pwn.college",
+                        "letsdefend",
+                        "blueteamlabs.online",
+                        "crackmes.one",
+                        "ozint.eu",
+                        "ctf.challenge-osint.fr",
+                        "cryptohack",
+                        "cryptozombies.io",
+                        "nodeguardians.io",
+                        "gandalf.lakera.ai",
+                        "sourcing.games"
+                    ]
+                }
+            ]
+        }
+    ]
+}
