@@ -159,7 +159,7 @@
                         "<strong>Resources</strong>: HackTricks, OWASP (Top 10 and more), blogs/writeups",
                         "<strong>Required tools</strong>: Web browser (Firefox), CyberChef",
                         "<strong>Highly recommended tools</strong>: BurpSuite (can be replaced by Python, more control, less user-friendly and no Java), jwt.io",
-                        "<strong>Optional tools</strong>: Wireshark, Python with Selenium, Postman, Nuclei, skipfish, OWASP ZAP, Nikto"
+                        "<strong>Optional tools</strong>: Wireshark, Python with Selenium, Postman, SQLmap, Commix, Nuclei, skipfish, OWASP ZAP, Nikto"
                     ]
                 }
             ]
@@ -184,7 +184,7 @@
                 {
                     "type": "ul",
                     "content": [
-                        "<strong>Tools</strong>: Python, John the Ripper, Hashcat"
+                        "<strong>Tools</strong>: Python and Pycryptodome, John the Ripper, Hashcat, CrackStation, FactorDB, OpenSSL, Cyberchef"
                     ]
                 }
             ]
@@ -347,7 +347,7 @@
                 {
                     "type": "ul",
                     "content": [
-                        "<strong>Tools</strong>: file, xxd, strings, binwalk, exiftool, CyberChef, Steghide (?), Zsteg (?), Stegsolve (?), Stegseek (?), GIMP, Audacity, Aperi'Solve"
+                        "<strong>Tools</strong>: file, xxd, strings, binwalk, exiftool, CyberChef, Steghide, Zsteg, Stegsolve, Stegseek, GIMP, Audacity, Aperi'Solve"
                     ]
                 }
             ]
@@ -403,7 +403,7 @@
                         "<strong>Required tools</strong>: BloodHound (SharpHound / python-bloodhound / RustHound), Impacket, Certipy, Evil-WinRM",
                         "<strong>Recommended tools</strong>: CrackMapExec (netexec), BloodyAD, Certify, Responder, Rubeus, RDP Client",
                         "<strong>Optional tools</strong>: Mimikatz / Pypykatz, PowerView, Kerbrute, PingCastle",
-                        "<strong>Lateral movement tools</strong>: proxychains / revsocks / ligolo / Chisel, SSH Tunneling, Socat"
+                        "<strong>Lateral movement tools</strong>: proxychains and revsocks / ligolo / Chisel, SSH Tunneling, Socat"
                     ]
                 }
             ]
@@ -422,7 +422,7 @@
                         "Properly identify the hardware: components, pins/pinout, etc.",
                         "Search for datasheets / technical documentation of relevant components",
                         "Once interesting pins are identified, connect them using the identified debug protocol",
-                        "Dump the firmware using the protocol (JTAG, SWD, UART, SPI, I2C, TPM, ...)",
+                        "Dump the firmware using the protocol (JTAG, SWD, UART, SPI, I2C, ...)",
                         "Unpack and reverse the firmware",
                         "Find the vulnerability",
                         "Exploit the vulnerability"
@@ -431,7 +431,7 @@
                 {
                     "type": "ul",
                     "content": [
-                        "<strong>Tools</strong>: binwalk, Bus Pirate (?), OpenOCD (?), URJTAG (?), Ghidra, avrdude"
+                        "<strong>Tools</strong>: binwalk, Bus Pirate, OpenOCD, URJTAG, Ghidra, Radar2, avrdude"
                     ]
                 }
             ]
@@ -504,6 +504,7 @@
                         "TryHackMe",
                         "Hackropole",
                         "pwn4love",
+                        "picoctf.org",
                         "portswigger",
                         "xssy.uk",
                         "ciphershastra",

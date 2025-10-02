@@ -256,7 +256,7 @@ There is a notion of quick hacking to defend your position as fast as possible a
           <ol>
             <li>Web application vulnerabilities (SQL Injection, XSS...)</li><li>Identify if it is Web Client or Web Server challenge.</li><li>Visit the website using a browser and identify client-server interactions and dynamic elements.</li><li>If it is Web Server, identify the technologies used, including architecture, web server, language, framework, modules, etc.</li><li>Check if it is custom development or just a product with little or no customization.</li><li>If you have the source code, you can use SAST/DAST tools to find the vulnerability (don’t rely too much on them in CTFs).</li><li>If it is a known technology, check if there is a HackTricks page or blogs about exploitation.</li><li>Find and exploit the vulnerability.</li>
           </ol><ul>
-            <li><strong>Resources</strong>: HackTricks, OWASP (Top 10 and more), blogs/writeups</li><li><strong>Required tools</strong>: Web browser (Firefox), CyberChef</li><li><strong>Highly recommended tools</strong>: BurpSuite (can be replaced by Python, more control, less user-friendly and no Java), jwt.io</li><li><strong>Optional tools</strong>: Wireshark, Python with Selenium, Postman, Nuclei, skipfish, OWASP ZAP, Nikto</li>
+            <li><strong>Resources</strong>: HackTricks, OWASP (Top 10 and more), blogs/writeups</li><li><strong>Required tools</strong>: Web browser (Firefox), CyberChef</li><li><strong>Highly recommended tools</strong>: BurpSuite (can be replaced by Python, more control, less user-friendly and no Java), jwt.io</li><li><strong>Optional tools</strong>: Wireshark, Python with Selenium, Postman, SQLmap, Commix, Nuclei, skipfish, OWASP ZAP, Nikto</li>
           </ul>
         </div>
         <img src="xss.png" alt="Illustration" />
@@ -272,7 +272,7 @@ There is a notion of quick hacking to defend your position as fast as possible a
           <ol>
             <li>Challenges related to cryptography and decryption</li><li>Identify the algorithm used</li><li>Check the implementation if it is a known algorithm and custom code</li><li>Check the values of the constants (prime numbers or not, etc...)</li><li>Check the security recommendations (key size, etc...)</li>
           </ol><ul>
-            <li><strong>Tools</strong>: Python, John the Ripper, Hashcat</li>
+            <li><strong>Tools</strong>: Python and Pycryptodome, John the Ripper, Hashcat, CrackStation, FactorDB, OpenSSL, Cyberchef</li>
           </ul>
         </div>
         <img src="cryptography.png" alt="Illustration" />
@@ -368,7 +368,7 @@ There is a notion of quick hacking to defend your position as fast as possible a
           <ol>
             <li>Hidden information discovery in files (images, audio)</li><li>Identify the file type</li><li>Check the file format specifications</li><li>Look at CTF challenges using this format</li><li>Guess 😂</li>
           </ol><ul>
-            <li><strong>Tools</strong>: file, xxd, strings, binwalk, exiftool, CyberChef, Steghide (?), Zsteg (?), Stegsolve (?), Stegseek (?), GIMP, Audacity, Aperi'Solve</li>
+            <li><strong>Tools</strong>: file, xxd, strings, binwalk, exiftool, CyberChef, Steghide, Zsteg, Stegsolve, Stegseek, GIMP, Audacity, Aperi'Solve</li>
           </ul>
         </div>
         <img src="steganography.png" alt="Illustration" />
@@ -400,7 +400,7 @@ There is a notion of quick hacking to defend your position as fast as possible a
           <ol>
             <li>Exploring Active Directory vulnerabilities</li><li>Enumerate without user</li><li>If enumeration fails: find a user (OSINT, ...), exploiting a service vulnerability, vulnerable Microsoft protocol</li><li>Enumerate with user</li><li>Identify privileged accounts</li><li>Identify potentially vulnerable accounts (misconfigurations allowing bruteforce or credential reuse)</li><li>Identify commonly exploited services</li><li>Identify and audit risky configurations</li><li>Identify possible paths to domain admin</li>
           </ol><ul>
-            <li><strong>Required tools</strong>: BloodHound (SharpHound / python-bloodhound / RustHound), Impacket, Certipy, Evil-WinRM</li><li><strong>Recommended tools</strong>: CrackMapExec (netexec), BloodyAD, Certify, Responder, Rubeus, RDP Client</li><li><strong>Optional tools</strong>: Mimikatz / Pypykatz, PowerView, Kerbrute, PingCastle</li><li><strong>Lateral movement tools</strong>: proxychains / revsocks / ligolo / Chisel, SSH Tunneling, Socat</li>
+            <li><strong>Required tools</strong>: BloodHound (SharpHound / python-bloodhound / RustHound), Impacket, Certipy, Evil-WinRM</li><li><strong>Recommended tools</strong>: CrackMapExec (netexec), BloodyAD, Certify, Responder, Rubeus, RDP Client</li><li><strong>Optional tools</strong>: Mimikatz / Pypykatz, PowerView, Kerbrute, PingCastle</li><li><strong>Lateral movement tools</strong>: proxychains and revsocks / ligolo / Chisel, SSH Tunneling, Socat</li>
           </ul>
         </div>
         <img src="AD.jpg" alt="Illustration" />
@@ -414,9 +414,9 @@ There is a notion of quick hacking to defend your position as fast as possible a
       <article>
         <div class="text">
           <ol>
-            <li>Security of hardware devices and radio communications</li><li>Properly identify the hardware: components, pins/pinout, etc.</li><li>Search for datasheets / technical documentation of relevant components</li><li>Once interesting pins are identified, connect them using the identified debug protocol</li><li>Dump the firmware using the protocol (JTAG, SWD, UART, SPI, I2C, TPM, ...)</li><li>Unpack and reverse the firmware</li><li>Find the vulnerability</li><li>Exploit the vulnerability</li>
+            <li>Security of hardware devices and radio communications</li><li>Properly identify the hardware: components, pins/pinout, etc.</li><li>Search for datasheets / technical documentation of relevant components</li><li>Once interesting pins are identified, connect them using the identified debug protocol</li><li>Dump the firmware using the protocol (JTAG, SWD, UART, SPI, I2C, ...)</li><li>Unpack and reverse the firmware</li><li>Find the vulnerability</li><li>Exploit the vulnerability</li>
           </ol><ul>
-            <li><strong>Tools</strong>: binwalk, Bus Pirate (?), OpenOCD (?), URJTAG (?), Ghidra, avrdude</li>
+            <li><strong>Tools</strong>: binwalk, Bus Pirate, OpenOCD, URJTAG, Ghidra, Radar2, avrdude</li>
           </ul>
         </div>
         <img src="hardware.jpeg" alt="Illustration" />
@@ -479,7 +479,7 @@ There is a notion of quick hacking to defend your position as fast as possible a
       <article>
         <div class="text">
           <ul>
-            <li>Root-Me</li><li>HackTheBox</li><li>TryHackMe</li><li>Hackropole</li><li>pwn4love</li><li>portswigger</li><li>xssy.uk</li><li>ciphershastra</li><li>ethereumhacker</li><li>dojo.pwn.college</li><li>letsdefend</li><li>blueteamlabs.online</li><li>crackmes.one</li><li>ozint.eu</li><li>ctf.challenge-osint.fr</li><li>cryptohack</li><li>cryptozombies.io</li><li>nodeguardians.io</li><li>gandalf.lakera.ai</li><li>sourcing.games</li>
+            <li>Root-Me</li><li>HackTheBox</li><li>TryHackMe</li><li>Hackropole</li><li>pwn4love</li><li>picoctf.org</li><li>portswigger</li><li>xssy.uk</li><li>ciphershastra</li><li>ethereumhacker</li><li>dojo.pwn.college</li><li>letsdefend</li><li>blueteamlabs.online</li><li>crackmes.one</li><li>ozint.eu</li><li>ctf.challenge-osint.fr</li><li>cryptohack</li><li>cryptozombies.io</li><li>nodeguardians.io</li><li>gandalf.lakera.ai</li><li>sourcing.games</li>
           </ul>
         </div>
         <img src="root-me.jpg" alt="Illustration" />
