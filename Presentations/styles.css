@@ -287,9 +287,6 @@ h1, h2, h3 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
-  color: #00ff00;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 0.8rem;
   padding: 2rem;
   box-sizing: border-box;
@@ -300,8 +297,6 @@ h1, h2, h3 {
 }
 
 #timeline-container {
-  font-family: "Courier New", monospace;
-  color: #00ff00;
   white-space: pre-wrap;
   overflow: hidden;
   font-size: 1.2rem;
@@ -340,4 +335,5 @@ h1, h2, h3 {
 .theme-toggle[style*="display: none"] {
   opacity: 0;
   pointer-events: none;
+
 }
