@@ -867,6 +867,18 @@ const themes = {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     transitionSpeed: '0.5s',
   },
+  purple: {
+    dark: {
+      bgColor: '#2c003e',
+      textColor: '#d100d1',
+    },
+    light: {
+      bgColor: '#e8c1e8',
+      textColor: '#660066',
+    },
+    fontFamily: "Roboto, Arial, sans-serif",
+    transitionSpeed: '0.5s',
+  },
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -924,4 +936,5 @@ function updateTheme(newParams) {
 
   changeProperties(newSearchParams);
 }
+
 
