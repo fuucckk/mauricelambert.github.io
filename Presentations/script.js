@@ -700,4 +700,193 @@ document.addEventListener("DOMContentLoaded", () => {
       displayEvent();
     }
   });
+
 });
+
+// index.html?theme=hacker&mode=dark
+// index.html?theme=hacker&mode=light&bgcolordark=%23000000&textcolordark=%23ff0000&fontfamily=Arial
+// index.html?theme=retro&mode=dark&bgcolorlight=%23ffffff&textcolorlight=%230000ff
+// updateTheme({"theme": "hacker", "mode": "dark"})
+// updateTheme({"theme": "hacker", "mode": "light", "bgcolordark": "#000000", "textcolordark": "#ff0000", "fontfamily": "Arial"})
+// updateTheme({"theme": "retro", "mode": "dark", "bgcolorlight": "#000000", "textcolorlight": "#ff0000"})
+
+const themes = {
+  hacker: {
+    dark: {
+      bgColor: '#0d0d0d',
+      textColor: '#00ff00',
+    },
+    light: {
+      bgColor: '#ffffff',
+      textColor: '#003300',
+    },
+    fontFamily: "'Courier New', Courier, monospace",
+    transitionSpeed: '0.5s',
+  },
+  retro: {
+    dark: {
+      bgColor: '#1a1a1a',
+      textColor: '#ff00ff',
+    },
+    light: {
+      bgColor: '#f0f0f0',
+      textColor: '#660066',
+    },
+    fontFamily: "'Lucida Console', Monaco, monospace",
+    transitionSpeed: '0.5s',
+  },
+  htb: {
+    dark: {
+      bgColor: '#141d2b',
+      textColor: '#9fef00',
+    },
+    light: {
+      bgColor: '#ffffff',
+      textColor: '#404040',
+    },
+    fontFamily: "'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    transitionSpeed: '0.5s',
+  },
+  ctf: {
+    dark: {
+      bgColor: '#1e1e1e',
+      textColor: '#ffcc00',
+    },
+    light: {
+      bgColor: '#f2f2f2',
+      textColor: '#1f1f1f',
+    },
+    fontFamily: "'Roboto Mono', monospace",
+    transitionSpeed: '0.5s',
+  },
+  cybersecurity: {
+    dark: {
+      bgColor: '#0a0a0a',
+      textColor: '#00c0f0',
+    },
+    light: {
+      bgColor: '#ffffff',
+      textColor: '#0077aa',
+    },
+    fontFamily: "'Inconsolata', monospace",
+    transitionSpeed: '0.5s',
+  },
+  gaming: {
+    dark: {
+      bgColor: '#222222',
+      textColor: '#ff5500',
+    },
+    light: {
+      bgColor: '#eeeeee',
+      textColor: '#ff3333',
+    },
+    fontFamily: "'Press Start 2P', cursive",
+    transitionSpeed: '0.6s',
+  },
+  darkweb: {
+    dark: {
+      bgColor: '#121212',
+      textColor: '#c0c0c0',
+    },
+    light: {
+      bgColor: '#333333',
+      textColor: '#aaaaaa',
+    },
+    fontFamily: "'Monaco', monospace",
+    transitionSpeed: '0.5s',
+  },
+  neon: {
+    dark: {
+      bgColor: '#1a1a1a',
+      textColor: '#00ffcc',
+    },
+    light: {
+      bgColor: '#ffffff',
+      textColor: '#ff0099',
+    },
+    fontFamily: "'Courier New', monospace",
+    transitionSpeed: '0.5s',
+  },
+  matrix: {
+    dark: {
+      bgColor: '#000000',
+      textColor: '#00ff00',
+    },
+    light: {
+      bgColor: '#f0f0f0',
+      textColor: '#333333',
+    },
+    fontFamily: "'Matrix', monospace",
+    transitionSpeed: '0.5s',
+  },
+  governanceCyber: {
+    dark: {
+      bgColor: '#1c1c1c',
+      textColor: '#00b0b9',
+    },
+    light: {
+      bgColor: '#f9f9f9',
+      textColor: '#2a2a2a',
+    },
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    transitionSpeed: '0.5s',
+  },
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  changeProperties(params);
+});
+
+function changeProperties (params) {
+  function setCSSVariable(name, value) {
+    document.documentElement.style.setProperty(name, value);
+  }
+
+  const themeName = params.get('theme') || 'hacker';
+  const theme = themes[themeName];
+
+  const mode = params.get('mode') || 'dark';
+
+  if (theme) {
+    const bgColor = theme[mode].bgColor;
+    const textColor = theme[mode].textColor;
+    const fontFamily = params.get('fontfamily') || theme.fontFamily;
+    const transitionSpeed = theme.transitionSpeed;
+
+    setCSSVariable('--bg-color-dark', bgColor);
+    setCSSVariable('--text-color-dark', textColor);
+    setCSSVariable('--bg-color-light', bgColor);
+    setCSSVariable('--text-color-light', textColor);
+    setCSSVariable('--font-family', fontFamily);
+    setCSSVariable('--transition-speed', transitionSpeed);
+  }
+
+  const customBgColorDark = params.get('bgcolordark');
+  const customTextColorDark = params.get('textcolordark');
+  const customBgColorLight = params.get('bgcolorlight');
+  const customTextColorLight = params.get('textcolorlight');
+
+  if (customBgColorDark) {
+    setCSSVariable('--bg-color-dark', customBgColorDark);
+  }
+  if (customTextColorDark) {
+    setCSSVariable('--text-color-dark', customTextColorDark);
+  }
+  if (customBgColorLight) {
+    setCSSVariable('--bg-color-light', customBgColorLight);
+  }
+  if (customTextColorLight) {
+    setCSSVariable('--text-color-light', customTextColorLight);
+  }
+}
+
+function updateTheme(newParams) {
+  const newSearchParams = new URLSearchParams();
+
+  for (const [key, value] of Object.entries(newParams)) {
+    newSearchParams.set(key, value);
+  }
+
+  changeProperties(newSearchParams);
+}
