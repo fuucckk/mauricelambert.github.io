@@ -831,6 +831,42 @@ const themes = {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     transitionSpeed: '0.5s',
   },
+  gnome: {
+    dark: {
+      bgColor: '#2e3436',
+      textColor: '#8ae135',
+    },
+    light: {
+      bgColor: '#fcfcfc',
+      textColor: '#56bcad',
+    },
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    transitionSpeed: '0.5s',
+  },
+  yaru: {
+    dark: {
+      bgColor: '#262626',
+      textColor: '#fbc16a',
+    },
+    light: {
+      bgColor: '#fcfcfc',
+      textColor: '#0e8420',
+    },
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    transitionSpeed: '0.5s',
+  },
+  solarise: {
+    dark: {
+      bgColor: '#002b36',
+      textColor: '#b58900',
+    },
+    light: {
+      bgColor: '#fdf6e3',
+      textColor: '#b58900',
+    },
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    transitionSpeed: '0.5s',
+  },
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -849,15 +885,13 @@ function changeProperties (params) {
   const mode = params.get('mode') || 'dark';
 
   if (theme) {
-    const bgColor = theme[mode].bgColor;
-    const textColor = theme[mode].textColor;
     const fontFamily = params.get('fontfamily') || theme.fontFamily;
     const transitionSpeed = theme.transitionSpeed;
 
-    setCSSVariable('--bg-color-dark', bgColor);
-    setCSSVariable('--text-color-dark', textColor);
-    setCSSVariable('--bg-color-light', bgColor);
-    setCSSVariable('--text-color-light', textColor);
+    setCSSVariable('--bg-color-dark', theme["dark"].bgColor);
+    setCSSVariable('--text-color-dark', theme["dark"].textColor);
+    setCSSVariable('--bg-color-light', theme["light"].bgColor);
+    setCSSVariable('--text-color-light', theme["light"].textColor);
     setCSSVariable('--font-family', fontFamily);
     setCSSVariable('--transition-speed', transitionSpeed);
   }
@@ -890,3 +924,4 @@ function updateTheme(newParams) {
 
   changeProperties(newSearchParams);
 }
+
