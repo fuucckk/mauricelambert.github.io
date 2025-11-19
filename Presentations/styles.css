@@ -287,7 +287,7 @@ h1, h2, h3 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--text-color-dark);
+  background-color: var(--bg-color-dark);
   font-size: 0.8rem;
   padding: 2rem;
   box-sizing: border-box;
@@ -344,4 +344,5 @@ h1, h2, h3 {
   pointer-events: none;
 
 }
+
 
