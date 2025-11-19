@@ -651,15 +651,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentIndex = 0;
 
+  function measureCharWidth(element) {
+    const span = document.createElement("span");
+    span.textContent = "W";
+    span.style.visibility = "hidden";
+    element.appendChild(span);
+
+    const width = span.getBoundingClientRect().width;
+    element.removeChild(span);
+    return width;
+  }
+
   const drawProgressBar = (current, total) => {
     const percent = Math.round((current / total) * 100);
 
     const progressElement = document.getElementById("timeline-progress");
     const availableWidth = progressElement.getBoundingClientRect().width;
 
-    const fontSize = parseFloat(getComputedStyle(progressElement).fontSize);
-    const charWidth = fontSize * 0.55;
-    const barLength = Math.floor((availableWidth - 10 * charWidth) / charWidth);
+    // const fontSize = parseFloat(getComputedStyle(progressElement).fontSize);
+    const charWidth = measureCharWidth(progressElement); // fontSize * 0.55;
+    const barLength = Math.floor(availableWidth / charWidth) - 8; // Math.floor((availableWidth - 10 * charWidth) / charWidth);
 
     const filledLength = Math.round((percent / 100) * barLength);
     const bar = `[${"#".repeat(filledLength)}${".".repeat(barLength - filledLength)}] ${percent}%`;
@@ -938,6 +949,7 @@ function updateTheme(newParams) {
 
   changeProperties(newSearchParams);
 }
+
 
 
 
