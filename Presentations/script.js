@@ -19,6 +19,14 @@
 
 let slide_index = 0;
 
+const applyTheme = (theme) => {
+    document.body.classList.remove("dark", "light");
+    document.body.classList.add(theme);
+    document.getElementById("terminal-overlay").classList.remove("dark", "light");
+    document.getElementById("terminal-overlay").classList.add(theme);
+    localStorage.setItem("theme", theme);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section");
 
@@ -67,12 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggleRect.left !== 0) {
       toggleBtnLeftPos = toggleRect.left;
     }
-  };
-
-  const applyTheme = (theme) => {
-    document.body.classList.remove("dark", "light");
-    document.body.classList.add(theme);
-    localStorage.setItem("theme", theme);
   };
 
   const savedTheme = localStorage.getItem("theme");
@@ -936,5 +938,6 @@ function updateTheme(newParams) {
 
   changeProperties(newSearchParams);
 }
+
 
 
