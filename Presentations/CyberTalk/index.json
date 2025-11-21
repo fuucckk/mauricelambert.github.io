@@ -26,7 +26,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "My Cybersecurity Journey: Practical Experience and Community Engagement",
-            "image": "ModernWarrior.png",
+            "image": "ModernWarrior.jpg",
             "texts": [
                 {
                     "type": "ol",
@@ -79,7 +79,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "The Perfect Target: Small Startup, Big Funding, Single Point of Failure",
-            "image": "StartupPitchStealMoney.png",
+            "image": "StartupPitchStealMoney.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -100,7 +100,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "<a href=\"http://sylphora-dynamics.test:8080/welcome.html\">Sylphora Dynamics website</a>",
             "title": "OSINT: The Public Data That Fuels Cyberattacks",
-            "image": "OSINT.PNG",
+            "image": "OSINT.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -128,7 +128,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "From Public Data to Password Cracking: The First Step of the Attack",
-            "image": "",
+            "image": "bruteforce.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -149,7 +149,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "A New Path: From Failed Credentials to a Technical Weakness",
-            "image": "",
+            "image": "SQLinjection.webp",
             "texts": [
                 {
                     "type": "ol",
@@ -169,7 +169,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Mass Credential Extraction: Full User Database Compromised",
-            "image": "",
+            "image": "exfiltration.jpeg",
             "texts": [
                 {
                     "type": "p",
@@ -186,7 +186,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Targeted Password Bruteforce: User-Specific Wordlists Built from Public Data",
-            "image": "",
+            "image": "password-dictionary.png",
             "texts": [
                 {
                     "type": "p",
@@ -211,7 +211,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Leveraging Breach Data: Identifying Passwords Reused Across the Internet",
-            "image": "",
+            "image": "password-reuse.png",
             "texts": [
                 {
                     "type": "p",
@@ -228,7 +228,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Highly Convincing Phishing: Impersonation, Punycode Domains & Realistic Email Cloning",
-            "image": "",
+            "image": "phishing.png",
             "texts": [
                 {
                     "type": "p",
@@ -249,7 +249,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Final Stage of the Attack: Credential Theft Through Malicious File Execution",
-            "image": "",
+            "image": "malicious-attachment.png",
             "texts": [
                 {
                     "type": "ul",
@@ -330,7 +330,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Practical Cybersecurity Tips for Organizations",
-            "image": "StrongWeakPassword.png",
+            "image": "StrongWeakPassword.jpg",
             "texts": [
                 {
                     "type": "ol",
