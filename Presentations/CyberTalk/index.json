@@ -1,0 +1,369 @@
+{
+    "title": "Understanding Cybersecurity Myths: Experiencing a Cyberattack with Financial Impact",
+    "keywords": [
+        "Cyberattack simulation",
+        "Cybersecurity risks",
+        "Business cyberattack",
+        "Cybersecurity impact",
+        "Debunk cybersecurity myths",
+        "Business protection from cyber threats",
+        "Corporate cybersecurity vulnerabilities",
+        "Risk of cyberattacks",
+        "Cybersecurity awareness"
+    ],
+    "description": "Explore a simulated cyberattack on a business to understand real cyber risks and debunk common cybersecurity myths. See the impacts and vulnerabilities organizations face.",
+    "author": "Maurice Lambert",
+    "default icon": "https://mauricelambert.github.io/MauriceLambert.png",
+    "default aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+    "slides": [
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "From Cybersecurity Experience to Debunking Common Myths"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "My Cybersecurity Journey: Practical Experience and Community Engagement",
+            "image": "ModernWarrior.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Developer",
+                        "Capture The Flag (CTF) player and challenges maker, focused on web exploitation and forensics.",
+                        "5+ Years in Cybersecurity: <ol><li>Security administrator</li><li>SOC analyst</li><li>DevSecOps</li><li>Incident response lead tech</li><li>PurpleTeam</li></ol>",
+                        "Open Source Cybersecurity Contributions: developed open source security tools, contributed to: Metasploit, Python, and Linux.",
+                        "Cybersecurity Speaker: regular speaker at cybersecurity associations,  cybersecurity interventions for students and facilitated defensive security RNCP certifications."
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Cybersecurity Risks and Myths versus Real-World attacks",
+            "image": "CertifiedSecurityDarkHacker.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Financial Costs: Cyberattacks cost billions every year.",
+                        "Reputation Damage: A single breach can ruin a brand's trust.",
+                        "Privacy Threats: Data leaks expose personal information, compromising privacy."
+                    ]
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "High Costs: Cybersecurity solutions are expensive and often ineffective.",
+                        "Insufficient Protection: Many defenses fail against threats.",
+                        "False Sense of Security: Even with major investments, businesses remain vulnerable."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "To demonstrate these challenges, we will explore a simulated cyberattack that exposes these vulnerabilities and debunks common cybersecurity myths."
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "When Security Practices Fail: Cracked Authentication Can Drain a Company's Funds"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "The Perfect Target: Small Startup, Big Funding, Single Point of Failure",
+            "image": "StartupPitchStealMoney.png",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Sylphora Dynamics is a small IoT & logistics startup based in Marseille.\nEarlier this year, the company successfully raised &#x20AC;5 million in funding to accelerate its growth."
+                },
+                {
+                    "type": "p",
+                    "content": "With fewer than 10 employees and no dedicated finance team, all banking and financial operations are managed directly by the CEO, Henri Brosquet, through his professional email account."
+                },
+                {
+                    "type": "p",
+                    "content": "A group of attackers identifies this as a potential weakness.\nTheir objective: gain access to the CEO's email account in order to initiate discreet transfers from the company's investment funds."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "<a href=\"http://sylphora-dynamics.test:8080/welcome.html\">Sylphora Dynamics website</a>",
+            "title": "OSINT: The Public Data That Fuels Cyberattacks",
+            "image": "OSINT.PNG",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "OSINT (Open Source Intelligence) refers to the collection of publicly available information used to profile a company or individual."
+                },
+                {
+                    "type": "p",
+                    "content": "For attackers, public data is the first weapon, it helps them understand structures, targets, and weaknesses."
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Social networks like LinkedIn are a goldmine of intelligence: job titles, tools, partners, and even email patterns.",
+                        "Press releases, websites, and GitHub commits often reveal technical and organizational insights."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "In a real attack, everything begins with what's already publicly available.<br><strong>Attackers don't guess, they research.</strong>"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "From Public Data to Password Cracking: The First Step of the Attack",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "After collecting public information, we identified two professional email addresses and a login portal accessible online."
+                },
+                {
+                    "type": "p",
+                    "content": "The first realistic attack scenario: a brute-force attempt on these accounts.\nRather than random guessing, attackers often use password dictionaries based on the most common passwords used in a specific country or language."
+                },
+                {
+                    "type": "p",
+                    "content": "<em>Attackers don't need sophistication, just our bad habits.</em>"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "A New Path: From Failed Credentials to a Technical Weakness",
+            "image": "",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "After the brute-force phase, some valid employee credentials are found, but not the CEO's.",
+                        "Using the newly found credentials, attackers try to log in, but reach a two-factor authentication wall.",
+                        "Looking for another entry point, they experiment with how the login form reacts to unexpected input.",
+                        "One of these tests triggers a server error, displaying technical details.",
+                        "Searching this error message online points to a database query issue, a classic sign of a SQL injection vulnerability.",
+                        "They gained access without needing a password and were able to directly exfiltrate all data."
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Mass Credential Extraction: Full User Database Compromised",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "After gaining access through the SQL injection, the attackers automate the process.\nUsing a simple script, they exfiltrate all user accounts, every hashed password, and all TOTP 2FA secrets stored in the database."
+                },
+                {
+                    "type": "p",
+                    "content": "This gives them everything they need to rebuild the company's entire authentication system on their own machine, completely bypassing any security controls."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Targeted Password Bruteforce: User-Specific Wordlists Built from Public Data",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "After extracting the password hashes, attackers create personalized wordlists using public info: names, birth years, city, and data from the website."
+                },
+                {
+                    "type": "p",
+                    "content": "Each user's list contains <strong>36 million</strong> potential passwords."
+                },
+                {
+                    "type": "p",
+                    "content": "On an old Linux i3 machine, generating and testing the entire <strong>36-million-entry wordlist took only 101 seconds per user</strong>, even with a simple, non-optimized Python script."
+                },
+                {
+                    "type": "p",
+                    "content": "However, parallel processing (multi-core CPUs) can reduce cracking time proportionally to the number of cores, modern GPUs can accelerate it by 10x to 100x, and ASICs by up to 100,000x."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Leveraging Breach Data: Identifying Passwords Reused Across the Internet",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "With employee names and corporate email formats, attackers can check publicly known data-breach collections to see whether any team members have had passwords exposed in past incidents."
+                },
+                {
+                    "type": "p",
+                    "content": "If an employee reused the same or similar password across services, attackers may recover valid credentials <strong>without needing to guess or crack anything</strong>."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Highly Convincing Phishing: Impersonation, Punycode Domains & Realistic Email Cloning",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "With the CEO's email address, and even multiple compromised employee accounts, attackers could send highly convincing phishing emails (though this is not the method used in our demonstration)."
+                },
+                {
+                    "type": "p",
+                    "content": "In our scenario, they register a <strong>Punycode domain mimicking the real banking provider and clone a legitimate bank email</strong> to make the message fully credible."
+                },
+                {
+                    "type": "p",
+                    "content": "The goal is to lure the CEO to a fake login page to capture his username, password, and 2FA code, or to deliver a crafted email exploiting a vulnerability in his mail application, or a malicious attachment capable of compromising his workstation."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Final Stage of the Attack: Credential Theft Through Malicious File Execution",
+            "image": "",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Phishing leads to ZIP file download:<ul><li>The ZIP contains a fake PDF disguised as a <code>.lnk</code> shortcut.</li></ul>",
+                        "User clicks the deceptive <code>.lnk</code> file: <ul><li>A hidden command runs in the background while the PDF opens normally.</li></ul>",
+                        "Malware extracts KeePass credentials: <ul><li>Modifies the KeePass configuration file.</li><li>Deploy a malware to send the credentials back to the attacker's Command and Control (C2) server.</li></ul>"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "Practical Cybersecurity Tips: Defend Against Attacks on Personal and Business Accounts"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Essential Personal Cybersecurity Best Practices",
+            "image": "PublicConfidentialData.jpg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Always lock your workstation with a strong password",
+                        "Use a password manager and generate random, unique passwords",
+                        "Avoid public networks and do not handle confidential data in public places",
+                        "Keep all systems and applications regularly updated",
+                        "Use multiple email accounts (personal, professional, sensitive services)",
+                        "Never input confidential data into AI tools",
+                        "Limit installed apps and browser extensions",
+                        "Stay cautious with unexpected emails",
+                        "Do not follow the actions requested in suspicious emails"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Practical Cybersecurity Tips for Everyday Protection",
+            "image": "CookieMountain.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Automatically clear cookies and site data when closing your browser\nto reduce tracking and protect your privacy",
+                        "Use private browsing mode for everyday online activity\nto limit data retention and exposure",
+                        "Verify sensitive or unusual requests through a separate channel\n(phone, chat, in-person) and never use the contact details from the suspicious email"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Key Professional Cybersecurity Recommendations",
+            "image": "AiBadThings.jpg",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Deploy EDR / EPP / Antivirus solutions to strengthen endpoint protection",
+                        "Avoid using AI to generate code unless strong code-review expertise is available",
+                        "Enforce two-factor authentication (2FA), especially for employees with lower cybersecurity awareness",
+                        "Build a DevSecOps team as early as possible to integrate security into development workflows",
+                        "Enable full disk encryption on all company devices to protect data in case of loss or theft"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Practical Cybersecurity Tips for Organizations",
+            "image": "StrongWeakPassword.png",
+            "texts": [
+                {
+                    "type": "ol",
+                    "content": [
+                        "Use Single Sign-On (SSO) to reduce the number of passwords employees must manage",
+                        "Limit mandatory password changes, but enforce strong password policies",
+                        "Create an email rule that moves all messages from your internal domain to a dedicated folder, making spoofed look-alike domain emails easier to detect"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "title": "Conclusion: Breaking Common Cybersecurity Myths"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/CyberTalk\">CyberTalk Repository</a>.",
+            "title": "Debunking Cybersecurity Myths: The Hard Truths",
+            "image": "BreakingMyths.jpg",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>2FA is often bypassed</strong>, phishing, compromised user devices, or server attacks can render 2FA ineffective",
+                        "<strong>EDR / AV / SIEM cannot stop most attacks</strong>, attackers rely on legitimate administrative actions that evade detection and blocking",
+                        "<strong>Password vaults are only as secure as the device</strong>, if the user's device is compromised, all stored credentials are at risk",
+                        "<strong>An email from the correct address doesn't prove identity</strong>, sender addresses can be spoofed or impersonated"
+                    ]
+                }
+            ]
+        }
+    ]
+}
