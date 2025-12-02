@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of PySlidesGenerator.
+
+  PySlidesGenerator is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  PySlidesGenerator is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with PySlidesGenerator.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Learn how to master next-level detection quality in cybersecurity with advanced SOC analysis, threat validation methods, and real-world detection engineering techniques. Ideal for students aiming for elite SOC Level 3 skills." />
+  <meta name="keywords" content="cybersecurity detection quality, advanced SOC training, SOC Level 3 analysis, threat validation techniques, detection engineering, cyber threat analysis, security operations center training, advanced cyber defense skills" />
+  <meta name="author" content="Maurice Lambert" />
+  <title>Enhancing Cybersecurity Detection Quality: Advanced SOC Techniques and Best Practices</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <main>
+    <section id="slide-1" class="title-slide">
+      <div id="terminal-overlay">
+        <pre id="terminal-output"></pre>
+      </div>
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h1>Enhancing Cybersecurity Detection Quality: Advanced SOC Techniques and Best Practices</h1>
+      </article>
+    </section>
+    <section class="table-content" id="slide-2">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#slide-3">The Rapid Evolution of Cybersecurity: Key Events, Challenges, and Lessons for Today</a>
+            <ul>
+              <li><a href="#slide-4">Major Milestones in Cybersecurity | 2010 - 2017</a></li><li><a href="#slide-5">Cybersecurity Costs vs. Benefits | Investment Dilemma</a></li><li><a href="#slide-6">Legal & Regulatory Pressure | When Compliance Creates New Risks</a></li><li><a href="#slide-7">Consequences of Rapid Cyber Development | Partial & Imperfect Security</a></li><li><a href="#slide-8">The Path to Quality Cybersecurity | Learning From the Last 10 Years</a></li>
+            </ul>
+          </li><li><a href="#slide-9">Inside Real Incidents: How Companies Create Their Own Vulnerabilities</a>
+            <ul>
+              <li><a href="#slide-10">Compliance-Driven Design That Broke Security</a></li><li><a href="#slide-11">EDR Implementation Misaligned with Actual Needs</a></li>
+            </ul>
+          </li><li><a href="#slide-12">Core Principles and Structure of a Security Operations Center</a>
+            <ul>
+              <li><a href="#slide-13">What Is a Security Operations Center (SOC)? | Cybersecurity Monitoring & Defense Overview</a></li><li><a href="#slide-14">SOC Organizational Models | Centralized, Distributed & Outsourced SOC</a></li><li><a href="#slide-15">SOC Roles and Responsibilities | Key Cybersecurity Functions</a></li><li><a href="#slide-16">SOC Processes & Workflows | Monitoring, Detection & Response</a></li><li><a href="#slide-17">Logging & Telemetry Fundamentals | Essential SOC Data Sources</a></li><li><a href="#slide-18">Detection Engineering Essentials | SOC Threat Detection & Analytics</a></li><li><a href="#slide-19">SOC Tooling & Architecture Overview | Key Security Technologies</a></li><li><a href="#slide-20">Threat Intelligence in the SOC | Using TI for Proactive Defense</a></li><li><a href="#slide-21">Incident Response Foundations | SOC Incident Management</a></li><li><a href="#slide-22">SOC Challenges & Best Practices | Improving Security Operations</a></li>
+            </ul>
+          </li><li><a href="#slide-23">Core Security Tools: Capabilities, Limits & SOC Impact</a>
+            <ul>
+              <li><a href="#slide-24">Firewalls in Cybersecurity: Benefits, Limits, and Common Misconceptions</a></li><li><a href="#slide-25">Firewalls in Cybersecurity: Benefits, Limits, and Common Misconceptions</a></li><li><a href="#slide-26">Antivirus & Endpoint Protection (EPP): Benefits, Limits, and Common Misconceptions</a></li><li><a href="#slide-27">IDS & IPS in Cybersecurity: Detection, Prevention, Limits and SOC Essentials</a></li><li><a href="#slide-28">IDS & IPS in Cybersecurity: Detection, Prevention, Limits and SOC Essentials</a></li><li><a href="#slide-29">Endpoint Detection & Response (EDR): Advanced Threat Detection, Response & SOC Integration</a></li><li><a href="#slide-30">Endpoint Detection & Response (EDR): Advanced Threat Detection, Response & SOC Integration</a></li><li><a href="#slide-31">Network Detection & Response (NDR): Monitoring, Threat Detection & SOC Insights</a></li><li><a href="#slide-32">Network Detection & Response (NDR): Monitoring, Threat Detection & SOC Insights</a></li><li><a href="#slide-33">Security Information & Event Management (SIEM): Centralized Monitoring, Correlation & Threat Detection</a></li><li><a href="#slide-34">Security Information & Event Management (SIEM): Centralized Monitoring, Correlation & Threat Detection</a></li><li><a href="#slide-35">Threat Intelligence Platform (TIP): Collect, Analyze & Operationalize Threat Data</a></li><li><a href="#slide-36">Threat Intelligence Platform (TIP): Collect, Analyze & Operationalize Threat Data</a></li><li><a href="#slide-37">WAF (Web Application Firewall): Protecting Web Applications from Attacks</a></li><li><a href="#slide-38">WAF (Web Application Firewall): Protecting Web Applications from Attacks</a></li><li><a href="#slide-39">Data Loss Prevention (DLP): Protecting Sensitive Data on Endpoint & Network</a></li><li><a href="#slide-40">Data Loss Prevention (DLP): Protecting Sensitive Data on Endpoint & Network</a></li><li><a href="#slide-41">Extended Detection & Response (XDR): One Tool to Rule Them All ?</a></li><li><a href="#slide-42">UEBA (User & Entity Behavior Analytics): Detecting Anomalies Through Behavior</a></li><li><a href="#slide-43">Additional Detection Tools: Specialized Sensors Across Hosts, Network & Cloud</a></li><li><a href="#slide-44">SOAR Platforms for SOC Operations: Orchestration & Automated Response</a></li><li><a href="#slide-45">SOAR Platforms for SOC Operations: Orchestration & Automated Response</a></li><li><a href="#slide-46">Cybersecurity Vulnerability Scanning: Tools for Exposure and Risk Identification</a></li><li><a href="#slide-47">Cybersecurity Vulnerability Scanning: Tools for Exposure and Risk Identification</a></li>
+            </ul>
+          </li><li><a href="#slide-48">Detection Tool Internals: Exploring Mechanisms and Techniques</a>
+            <ul>
+              <li><a href="#slide-49">Hashing and Fuzzy Hashes: Core File-Based Detection</a></li><li><a href="#slide-50">Heuristic Analysis: Detecting Suspicious File Patterns</a></li><li><a href="#slide-51">Signature Languages: Regex & Yara for Malware Detection</a></li><li><a href="#slide-52">File Monitoring: fanotify, inotify, and Minifilter Drivers</a></li><li><a href="#slide-53">Linux System Interfaces: ProcFS, SysFS, Netlink, and eBPF for Kernel-Level Monitoring</a></li><li><a href="#slide-54">Windows Event Monitoring: ETW, ETW-TI, and WMI for SOC Visibility</a></li><li><a href="#slide-55">AMSI: Antimalware Scan Interface for Runtime Malware Detection</a></li><li><a href="#slide-56">Logging Techniques for Detection: /var/log, ETW, Sysmon, and auditd</a></li><li><a href="#slide-57">Sigma & Rule Languages for Detection</a></li><li><a href="#slide-58">Kernel Modules & Syscall Tracing (Linux) & ELAM (Windows)</a></li><li><a href="#slide-59">Advanced Threat Intelligence Formats (MISP / STIX) for SOC Automation</a></li><li><a href="#slide-60">Advanced Email Authentication Mechanisms (SPF / DKIM / DMARC)</a></li>
+            </ul>
+          </li><li><a href="#slide-61">SOC Detection Engineering Methodology: Building High-Quality Detection Rules</a>
+            <ul>
+              <li><a href="#slide-62">Understanding the Attack Scenario</a></li><li><a href="#slide-63">Selecting the Right Detection Tool</a></li><li><a href="#slide-64">Writing the Initial Detection Rule</a></li><li><a href="#slide-65">Identifying Potential False Positives</a></li><li><a href="#slide-66">Distinguishing True Positives from False Positives</a></li><li><a href="#slide-67">Identifying Bypass Techniques</a></li><li><a href="#slide-68">Identifying Missing Scenarios</a></li><li><a href="#slide-69">Rewriting the Optimized Rule</a></li><li><a href="#slide-70">Testing and Validating the Detection Rule</a></li><li><a href="#slide-71">Documentation Requirements for High-Quality Detection Rules</a></li><li><a href="#slide-72">Summary of the Detection Engineering Methodology</a></li>
+            </ul>
+          </li><li><a href="#slide-73">Practical Example: How a Poorly Designed Detection Rule Fails</a>
+            <ul>
+              <li><a href="#slide-74">From Attack Scenario to a Faulty Draft Rule (Typical SOC Mistake)</a></li><li><a href="#slide-75">Why This Detection Rule Completely Fails (FP, Bypass, Missing Scenarios)</a></li>
+            </ul>
+          </li><li><a href="#slide-76">Evaluation Criteria for Detection Rule Assignments</a>
+            <ul>
+              <li><a href="#slide-77">Core Evaluation</a></li><li><a href="#slide-78">Advanced Evaluation</a></li><li><a href="#slide-79">Optional / Bonus Points</a></li>
+            </ul>
+          </li><li><a href="#slide-80">Exam Logistics and Evaluation Process</a>
+            <ul>
+              <li><a href="#slide-81">Exam Workflow Overview</a></li><li><a href="#slide-82">Evaluation & Oral Defense</a></li>
+            </ul>
+          </li><li><a href="#slide-83">Hands-On SOC Detection Engineering Exercises: High-Quality Rule Design & Adversary Simulation</a>
+            <ul>
+              <li><a href="#slide-84">Windows Startup Payload Execution - Attack Scenario</a></li><li><a href="#slide-85">Tools, Telemetry, and Initial Draft Rule</a></li><li><a href="#slide-86">False Positives, Bypass Paths & Missing Cases</a></li><li><a href="#slide-87">Optimized Rule Implementation</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section id="slide-3" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>The Rapid Evolution of Cybersecurity: Key Events, Challenges, and Lessons for Today</h2>
+      </article>
+    </section><section id="slide-4" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Major Milestones in Cybersecurity | 2010 - 2017</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Cybersecurity grew rapidly and often reactively. Key events during 2010-2017 shaped both perception and practice.</p><ul>
+            <li>Stuxnet (2010): Cyber was mostly invisible to the public, used by governments as a precise, sophisticated tool; feared but understood by very few.</li><li>Snowden Leaks (2013): Cyber capabilities exist in governments, with global reach; impact is potentially huge, but execution remains in expert hands.</li><li>WannaCry Ransomware (2017): Cyber attacks hit enterprises worldwide; threat is now professional, financially motivated, and no longer limited to state actors.</li>
+          </ul><p>This period marks the shift from experimental cyberattacks to real-world business impact, showing why cybersecurity became urgent for organizations worldwide.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-5" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Cybersecurity Costs vs. Benefits | Investment Dilemma</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Cybersecurity is a significant investment for organizations, often without direct financial return.</p><ul>
+            <li><strong>High Costs</strong>: Tools, platforms, SOC teams, training, insurance</li><li>Limited Direct ROI: Security spends rarely generate revenue</li><li>Marketing & Reputation: Cybersecurity often becomes a <strong>selling point</strong> ("we are secure")</li><li>Strategic Challenge: Balancing risk reduction with budget constraints</li>
+          </ul><p>Understanding costs and benefits helps organizations make informed security decisions and avoid superficial implementations.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-6" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Legal & Regulatory Pressure | When Compliance Creates New Risks</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Regulations push companies to "do cybersecurity", but the way compliance is applied today often creates new risks, unnecessary complexity, and even technical weaknesses.</p><ul>
+            <li>Misaligned Requirements: Generic controls imposed by compliance may not fit the company's real architecture, sometimes forcing <strong>weak or risky implementations</strong>.</li><li>New Vulnerabilities Introduced: To meet legal expectations, organizations sometimes deploy solutions <strong>without or even against the advice of technical teams</strong>, increasing the attack surface.</li><li>Complexity Explosion: More tools, more processes, more audits &#x2192; infrastructures become <strong>heavier and harder to secure</strong>, especially for SOC teams.</li><li>Security Degradation: Compliance obligations can <strong>reduce real defensive quality</strong>, diverting experts from technical priorities to administrative tasks.</li><li>Cost Without Protection: Spending rises, but actual protection doesn't and may even deteriorate.</li>
+          </ul><p>Compliance helps companies acknowledge cybersecurity, but the <strong>current compliance-driven approach can increase risks</strong>. Defenders must manage these consequences every day.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-7" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Consequences of Rapid Cyber Development | Partial & Imperfect Security</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Because cybersecurity grew too fast and under pressure, many organizations ended up with <strong>incomplete, inconsistent, or poorly integrated</strong> security measures.</p><ul>
+            <li>Partial Implementations: Tools deployed without full configuration or not used to their full potential.</li><li>Strategic Gaps: Security choices made quickly, without long-term vision or alignment with real threats.</li><li>Fragmented Architectures: Layers of solutions added over time &#x2192; inconsistent coverage and blind spots.</li><li>Operational Overload: SOC teams must defend environments that are complex, noisy, and full of gaps.</li><li>Quality Issues: Many controls exist "on paper" but provide little real protection in practice.</li>
+          </ul><p>The fast, unstructured development of cybersecurity created fragile foundations today's defenders must navigate these weaknesses while building something stronger for the future.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-8" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>The Path to Quality Cybersecurity | Learning From the Last 10 Years</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Cybersecurity has grown fast, sometimes too fast. But we are now entering a phase where quality, prioritization, and technical mastery become essential.</p><ul>
+            <li>Only ~8 years of real investment: Modern cybersecurity budgets started around 2017 &#x2192; systems are still young, fragmented, and evolving.</li><li>Shift in Mindset: Organizations begin to move from "adding more tools" to identifying what truly matters and improving it properly.</li><li>Effective Defense With Lower Operational Cost: The goal is not to remove tools, but to implement defenses correctly, which naturally reduces complexity, effort, and therefore costs.</li><li>Better Foundations: Architecture, detection, and processes are finally stabilizing and becoming more reliable and sustainable.</li><li>Your Opportunity: You will work in cybersecurity for the next 30-40 years. You'll help build the next generation of defenses, based on quality instead of urgency.</li><li>Course Objective: Go beyond today's SOC practices and give you the technical understanding and defensive mindset required for tomorrow's cyber challenges.</li>
+          </ul><p>The strength of tomorrow's cybersecurity will come from <strong>skilled people</strong> who know how to build and operate defenses <strong>effectively</strong>.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-9" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Inside Real Incidents: How Companies Create Their Own Vulnerabilities</h2>
+      </article>
+    </section><section id="slide-10" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Compliance-Driven Design That Broke Security</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Large enterprise preparing for ISO 27001 certification.</li><li>Decision: deploy a "security layer" to control server access management.</li><li>Technical reality: solution relied on virtual segmentation only (VLAN isolation for a few machine groups).</li>
+          </ol><ul>
+            <li>The new component could not support encryption in the environment's architecture.</li><li>As a result, all authentication flows, including domain and domain admin passwords, were transmitted in cleartext on the network.</li><li>For more than 3 years, this system ran in production without being integrated into security monitoring.</li>
+          </ul><ul>
+            <li>Created a massive blind spot: server access invisible to SOC tools.</li><li>Introduced a perfect vector for stealthy persistence if an attacker entered the network.</li><li>Increased operational burden: more patching, more maintenance, more procedures, more attack surface.</li><li>All of this added for compliance, yet it reduced real security.</li>
+          </ul><p>Even once governance was aware of the vulnerability, no one was tasked with fixing it. The main concern of the ISMS: updating TLS certificates from 1.2 to 1.3 for compliance, not mitigating the actual security risk.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-11" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>EDR Implementation Misaligned with Actual Needs</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Year 2020: EDR solutions become standard and widely promoted in the industry.</li><li>The CISO decides to deploy one based solely on sales numbers and price, without consulting the technical teams.</li>
+          </ol><ul>
+            <li>By 2023, it became clear that the chosen EDR was not effective for the organization's environment.</li><li>The solution did not meet actual security needs, missing coverage compared to other available options.</li><li>The organization had poor visibility into the SI, and the EDR gave a false sense of security, with detections often misleading or incorrect.</li>
+          </ul><ul>
+            <li>2024: after a POC with a better EDR, the organization switches, recovering more than 6 months of work and training that could have been avoided.</li><li>Demonstrates the cost of decision-making without technical input: time, effort, and potential gaps in security during the interim.</li>
+          </ul><p>Decisions must include technical assessment and alignment with real security needs to avoid wasted effort, false confidence, and increased risk. Choosing tools based on market hype or price alone can be costly.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-12" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Core Principles and Structure of a Security Operations Center</h2>
+      </article>
+    </section><section id="slide-13" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>What Is a Security Operations Center (SOC)? | Cybersecurity Monitoring & Defense Overview</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>A Security Operations Center (SOC) is the centralized team responsible for monitoring, detecting, and responding to cybersecurity threats across an organization.<br><strong>Mission:</strong></p><ul>
+            <li>Ensure continuous protection of IT assets</li><li>Identify malicious activity early</li><li>Coordinate incident response and improve security posture</li>
+          </ul><p><strong>Key Points:</strong></p><ul>
+            <li>Acts as the nerve center for cyber defense</li><li>Evolves from basic monitoring to intelligence-driven operations</li><li>Integrates people, processes, and technology to manage risk effectively</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-14" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC Organizational Models | Centralized, Distributed & Outsourced SOC</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>A SOC can be organized in several ways depending on the organization's size, resources, and security strategy.<br><strong>Common SOC Models:</strong></p><ul>
+            <li>Centralized SOC: Single location monitoring all systems; strong control and coordination</li><li>Distributed SOC: Multiple locations, often across regions; better local coverage</li><li>Virtual SOC: Remote teams leveraging cloud tools; flexible and cost-efficient</li><li>Outsourced SOC (MSSP/MDR): Managed by third-party providers; complements internal capabilities</li>
+          </ul><p><strong>Key Considerations:</strong></p><ul>
+            <li>Trade-offs between cost, coverage, and control</li><li>Organizational fit depends on risk tolerance and regulatory requirements</li><li>Hybrid models often combine internal and external resources for optimal performance</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-15" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC Roles and Responsibilities | Key Cybersecurity Functions</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>A SOC relies on specialized roles to detect, analyze, and respond to threats efficiently.</p><ul>
+            <li>Tier 1 Analyst: Monitors alerts, triages incidents</li><li>Tier 2 Analyst: Investigates and escalates complex incidents</li><li>Tier 3 Analyst / Threat Hunter: Performs deep analysis, proactive threat hunting</li><li>Incident Responder / DFIR Specialist: Leads containment, eradication, recovery</li><li>SOC Manager & Engineers: Coordinate operations, maintain tools and processes</li>
+          </ul><p>Clear role definition ensures fast, accurate response and reduces <strong>alert fatigue</strong>.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-16" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC Processes & Workflows | Monitoring, Detection & Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>SOC processes structure how security events are handled from detection to resolution.<br><strong>Core Workflow Steps:</strong></p><ul>
+            <li>Monitoring & Alerting: Continuous surveillance of networks, endpoints, and cloud</li><li>Triage & Investigation: Validate and analyze alerts</li><li>Containment & Eradication: Stop threats and remove them from the environment</li><li>Recovery & Lessons Learned: Restore systems and improve defenses</li>
+          </ul><p>Well-defined processes and playbooks ensure fast, consistent, and effective incident handling.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-17" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Logging & Telemetry Fundamentals | Essential SOC Data Sources</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Effective SOC operations depend on high-quality logs and telemetry from all parts of the IT environment.<br><strong>Key Log Sources:</strong></p><ul>
+            <li>Network: Firewalls, IDS/IPS, routers</li><li>Endpoints: EDR/XDR agents, OS logs</li><li>Cloud & Applications: Cloud workloads, SaaS apps, APIs</li><li>Identity & Access: Authentication systems, IAM platforms</li>
+          </ul><p><strong>Best Practices:</strong></p><ul>
+            <li>Ensure log quality, consistency, and retention</li><li>Normalize and enrich logs for better detection</li><li>Prioritize logs that support incident response and compliance</li>
+          </ul><p>Visibility is the foundation of SOC effectiveness. You can't secure what you can't see.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-18" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Detection Engineering Essentials | SOC Threat Detection & Analytics</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Detection engineering is the art of turning logs and telemetry into actionable alerts for the SOC.</p><ul>
+            <li>Rule-based detection: SIEM correlation rules for known threats</li><li>Anomaly detection & analytics: Identify unusual behavior patterns</li><li>MITRE ATT&CK alignment: Map detections to attacker techniques</li><li>False positives management: Tune alerts to reduce noise</li>
+          </ul><p>Effective detection requires balance between automation and human insight to spot threats before they cause damage.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-19" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC Tooling & Architecture Overview | Key Security Technologies</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>A SOC relies on integrated tools and platforms to detect, investigate, and respond to threats efficiently.</p><ol>
+            <li>EDR/XDR (Endpoint Detection & Response / Extended Detection & Response): Endpoint and cross-layer visibility</li><li>Network Security Tools: IDS/IPS, NDR, firewalls for real-time network monitoring</li><li>Threat Intelligence Platforms (TIP): Enrich alerts with actionable threat data</li><li>SOAR (Security Orchestration, Automation, and Response): Automates repetitive tasks and workflows</li>
+          </ol><p>Integrated tooling ensures faster detection, coordinated response, and continuous improvement of security operations.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-20" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Threat Intelligence in the SOC | Using TI for Proactive Defense</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Threat intelligence (TI) helps the SOC anticipate attacks and enrich alerts with context.</p><ul>
+            <li>Tactical TI: Indicators of compromise (IOCs) for immediate response</li><li>Operational TI: Understanding attacker methods and campaigns</li><li>Strategic TI: Trends, risks, and long-term threat planning</li><li>Integration: Feed TI into SIEM, SOAR, and detection rules</li>
+          </ul><p>Actionable threat intelligence turns raw data into informed decisions, improving detection and response efficiency.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-21" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Incident Response Foundations | SOC Incident Management</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Incident response ensures organized, fast, and effective handling of security events.</p><ul>
+            <li>Identification & Classification: Detect and categorize incidents by severity</li><li>Containment & Eradication: Stop the threat and remove its impact</li><li>Recovery: Restore systems and data safely</li><li>Lessons Learned: Update playbooks, rules, and processes</li>
+          </ul><p>A structured incident response reduces damage, accelerates recovery, and strengthens future SOC defenses.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-22" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC Challenges & Best Practices | Improving Security Operations</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>SOC teams face common challenges that impact efficiency and effectiveness.<br><strong>Key Challenges:</strong></p><ul>
+            <li>Alert fatigue: High volume of false positives</li><li>Coverage gaps: Missing visibility across systems or cloud services</li><li>Resource constraints: Limited skilled personnel and time</li>
+          </ul><p><strong>Best Practices:</strong></p><ul>
+            <li>Automation & Orchestration: Reduce manual work and response time</li><li>Continuous Improvement: Use metrics, purple teaming, and lessons learned</li><li>Prioritization & Intelligence: Focus on high-risk threats and actionable alerts</li>
+          </ul><p>A well-optimized SOC balances technology, processes, and people to stay ahead of evolving cyber threats.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-23" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Core Security Tools: Capabilities, Limits & SOC Impact</h2>
+      </article>
+    </section><section id="slide-24" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Firewalls in Cybersecurity: Benefits, Limits, and Common Misconceptions</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Centralized control of network traffic (inbound and outbound).</li><li>Can filter based on IP, port, protocol, and application rules.</li><li>Helps protect against unauthorized external access.</li><li>Useful for network segmentation to reduce attack surface.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Cannot detect malicious activity already inside allowed traffic.</li><li>Misconfigurations can create false positives or block legitimate traffic.</li><li>Managing complex rules can be challenging in dynamic or cloud environments.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-25" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Firewalls in Cybersecurity: Benefits, Limits, and Common Misconceptions</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Limits</strong></p><ul>
+            <li>Only sees traffic that passes through it; cannot see endpoint behavior or encrypted payloads.</li><li>Cannot prevent attacks coming from inside the network.</li><li>Security depends on rule quality and timely updates.</li>
+          </ul><p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Believing that a firewall can stop all attacks, including internal or insider threats.</li><li>Instead of relying on a firewall to detect or block malware uploads.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-26" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Antivirus & Endpoint Protection (EPP): Benefits, Limits, and Common Misconceptions</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Protects endpoints from known malware and viruses.</li><li>Uses heuristic and behavioral analysis to detect unknown threats.</li><li>Centralized management for updates and policy enforcement.</li><li>Can block malicious files before they execute and provide endpoint visibility.</li><li>Relatively low false positives, reducing unnecessary alerts.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Limited effectiveness against advanced persistent threats (APT) or targeted attacks.</li><li>Can impact endpoint performance if misconfigured.</li><li>Requires constant updates and tuning to maintain high detection rates.</li><li>Limited granularity in configuration, restricting fine-tuned control.</li>
+          </ul><p><strong>Limits</strong></p><ul>
+            <li>Cannot guarantee detection of sophisticated attacks or in-memory exploits.</li><li>Cannot prevent lateral movement across the network on its own.</li><li>Effectiveness depends on correct configuration and policy enforcement.</li><li>Struggles to detect malicious activity when attackers use legitimate admin tools or system binaries (LOLBins).</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Basic malware protection for workstations and servers.</li>
+          </ul><p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Believing it can stop all attacks, including sophisticated, targeted, or fileless malware.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-27" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>IDS & IPS in Cybersecurity: Detection, Prevention, Limits and SOC Essentials</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Detects suspicious or malicious network patterns (signatures, anomalies).</li><li>Provides visibility on attacks such as scans, exploits, protocol abuses.</li><li>IPS can actively block known malicious traffic.</li><li>Helps detect attacks bypassing basic firewall filtering.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Signature-based detection misses unknown or obfuscated attacks.</li><li>Encrypted traffic drastically reduces visibility.</li><li>Limited efficiency against advanced or lateral-movement techniques.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-28" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>IDS & IPS in Cybersecurity: Detection, Prevention, Limits and SOC Essentials</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Limits</strong></p><ul>
+            <li>Cannot see internal traffic or workstation-to-workstation communications.</li>
+          </ul><p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Considering IDS a source of complete visibility, including internal traffic.</li><li>Treating IPS as a "set and forget" universal protection.</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Detecting exploit attempts, scans, brute-force attacks, protocol anomalies.</li><li>Monitoring exposed zones (DMZ, internet-facing applications).</li><li>Adding deep-inspection capabilities on top of firewall rules.</li><li>Tracking repeated malicious connections or external probing.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-29" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Endpoint Detection & Response (EDR): Advanced Threat Detection, Response & SOC Integration</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Continuous endpoint monitoring: processes, files, registry, network connections.</li><li>Detects suspicious behavior, including fileless malware, LOLBins, and lateral movement.</li><li>Provides detailed forensic data for incident investigation and root-cause analysis.</li><li>Supports automated or semi-automated containment (quarantine, kill process, isolate device).</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Requires agent deployment on endpoints; coverage gaps if agents are missing or disabled.</li><li>Resource-intensive: may impact performance</li><li>Advanced attackers can bypass EDR</li><li>Dependent on proper tuning: too loose &#x2192; missed threats, too strict &#x2192; false positives.</li><li>High alert volume</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-30" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Endpoint Detection & Response (EDR): Advanced Threat Detection, Response & SOC Integration</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Limits</strong></p><ul>
+            <li>Limited visibility on network attacks</li><li>Detects suspicious activity after it occurs, so potential impact may have already happened.</li>
+          </ul><p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Detecting unknown malware, ransomware, and lateral movement within the network.</li><li>Investigating alerts and providing detailed forensic evidence for incidents.</li><li>Containing compromised endpoints quickly to prevent further spread.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-31" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Network Detection & Response (NDR): Monitoring, Threat Detection & SOC Insights</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Provides network-wide visibility, including east-west traffic and encrypted flows.</li><li>Detects anomalies, lateral movement, command-and-control activity, and unusual protocol behavior.</li><li>Complements EDR by detecting threats that don't execute on endpoints.</li><li>Supports investigation with detailed network telemetry.</li>
+          </ul><p><strong>Limits</strong></p><ul>
+            <li>Limited detection of attacks inside endpoints before network activity occurs.</li><li>Encrypted traffic may reduce full visibility without TLS inspection.</li><li>May not provide actionable response beyond alerting or network quarantine.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-32" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Network Detection & Response (NDR): Monitoring, Threat Detection & SOC Insights</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Weaknesses</strong></p><ul>
+            <li>Blind spots exist if NDR sensors are not deployed on all critical network segments.</li><li>Provides post-factum detection: alerts often after malicious network activity is underway.</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Detecting lateral movement, suspicious beaconing, and command-and-control traffic.</li><li>Monitoring network segments where endpoint coverage is limited or missing.</li><li>Providing additional context for SOC analysts during threat hunts.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-33" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Security Information & Event Management (SIEM): Centralized Monitoring, Correlation & Threat Detection</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Centralizes and normalizes logs from all IT and security systems.</li><li>Supports dashboards, alerting, and reporting for SOC analysts.</li><li>Enables historical analysis and forensic investigation of security incidents.</li><li>Supports event correlation rules to identify patterns across multiple sources.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Typically not real-time; alerting depends on log collection interval and processing.</li><li>High alert volume can overwhelm SOC analysts if correlation rules are poorly tuned.</li><li>Cannot block or prevent attacks; purely detective.</li><li>Complex deployment and maintenance, especially in dynamic, complex or large environments.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-34" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Security Information & Event Management (SIEM): Centralized Monitoring, Correlation & Threat Detection</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Limits</strong></p><ul>
+            <li>Alerts are only as good as the logs collected; missing logs &#x2192; blind spots.</li><li>Limited by latency: attacks can progress before detection due to log collection intervals.</li><li>SOC must implement correlation rules manually; achieving meaningful detection often takes years of tuning and refinement.</li><li>Must manage alert fatigue and group related alerts when the SIEM produces high volumes or low-quality signals.</li>
+          </ul><p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Thinking SIEM replaces endpoint or network monitoring; it only correlates the data already collected.</li><li>Expecting SIEM to block attacks, even when integrated with SOAR.</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Centralized logging and reporting for SOC visibility.</li><li>Identifying patterns and trends across multiple sources over time.</li><li>Investigating security incidents and reconstructing timelines.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-35" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Threat Intelligence Platform (TIP): Collect, Analyze & Operationalize Threat Data</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Centralizes threat intelligence from multiple sources: feeds, open source, commercial, internal indicators.</li><li>Normalizes and enriches threat data for SOC consumption.</li><li>Provides context for alerts: IOCs (IPs, domains, URLs, file hashes, TTPs).</li><li>Facilitates sharing intelligence across teams and trusted partners.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Only as good as the quality and relevance of threat feeds.</li><li>Risk of irrelevant or outdated indicators being acted on if not managed carefully.</li><li>Unknown IOCs or threats that change indicators will not be detected.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-36" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Threat Intelligence Platform (TIP): Collect, Analyze & Operationalize Threat Data</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Intended Use</strong></p><ul>
+            <li>IOCs based detections</li><li>Providing contextual information for alerts.</li><li>Conducting threat hunting based on known attacker TTPs.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-37" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>WAF (Web Application Firewall): Protecting Web Applications from Attacks</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Filters and blocks HTTP/HTTPS attacks.</li><li>Protects exposed web applications from common exploitation attempts.</li><li>Useful for virtual patching when the application cannot be fixed immediately.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Ineffective against logic flaws.</li><li>Can be bypassed with obfuscation or non-standard payloads.</li><li>Not useful for detecting attacks on internal services</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-38" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>WAF (Web Application Firewall): Protecting Web Applications from Attacks</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Deploying it as a replacement for secure development or code reviews.</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Protecting web applications from common attack vectors (OWASP)</li><li>Providing additional telemetry for SOC investigations.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-39" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Data Loss Prevention (DLP): Protecting Sensitive Data on Endpoint & Network</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Monitors and controls sensitive data movement on endpoints, network, and cloud.</li><li>Detects and block unauthorized data transfers: emails, USB devices, file uploads, cloud storage.</li><li>Provides audit logs for investigations and reporting.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>May generate false positives if policies are too broad.</li><li>Limited effectiveness against encrypted traffic or obfuscated data.</li><li>Can be bypassed by sophisticated users.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-40" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Data Loss Prevention (DLP): Protecting Sensitive Data on Endpoint & Network</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Limits</strong></p><ul>
+            <li>Only detects actions defined in policies; unknown data types or formats may pass undetected.</li><li>Endpoint DLP relies on agents; if agents are disabled or circumvented, protection is lost.</li><li>Network DLP requires proper placement to monitor traffic; blind spots can exist.</li>
+          </ul><p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Assuming DLP replaces user awareness and good practices; it's a technical control, not a human behavior fix.</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Preventing accidental or malicious exfiltration of sensitive data.</li><li>Supporting SOC investigations into data exfiltration events.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-41" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Extended Detection & Response (XDR): One Tool to Rule Them All ?</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>XDR aims to unify EDR, NDR, DLP, SIEM, TIP, and more under a single platform.</li><li>Designed to simplify SOC operations and provide centralized visibility.</li><li>Reality: most XDR solutions today attempt to do everything but do each component partially.</li><li>Can lead to superficial detection, alert fatigue, and gaps in coverage if relied on as a standalone solution.</li><li>Effective use requires still relying on specialized tools and skilled analysts.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-42" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>UEBA (User & Entity Behavior Analytics): Detecting Anomalies Through Behavior</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>UEBA analyzes user and entity behavior patterns to detect unusual activity.</li><li>Useful for spotting insider threats, compromised accounts, and lateral movement.</li><li>Reality check: UEBA can produce false positives, needs time to learn "normal" behavior, and is not effective on its own.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-43" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Additional Detection Tools: Specialized Sensors Across Hosts, Network & Cloud</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>HIDS (Host Intrusion Detection System): monitors host-level events: file integrity, logs, configuration changes.</li><li>NIDS (Network Intrusion Detection System): inspects network packets to detect known signatures or suspicious patterns.</li><li>NTA (Network Traffic Analysis): focuses on behavioral and statistical analysis of network flows.</li><li>Wireless IDS (WIDS): monitors Wi-Fi activity for rogue access points, suspicious clients, and RF-based attacks.</li><li>Email Security Gateways: filters phishing, malware, spoofed domains, malicious attachments.</li><li>Secure Web Gateway (SWG) / Proxy Monitoring: inspects outbound web traffic: URL filtering, file inspection, SSL/TLS inspection.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-44" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOAR Platforms for SOC Operations: Orchestration & Automated Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Designed to automate SOC workflows, enrich alerts, and execute response playbooks.</li><li>Helps SOC teams reduce manual workload, accelerate triage, and standardize responses.</li><li>Extremely useful for repetitive tasks: enrichment, blocking IPs, disabling accounts, notifications.</li><li>Reduces MTTR (Mean Time To Respond) when properly implemented.</li><li>Automates routine SOC tasks &#x2192; frees analyst time for real investigations.</li>
+          </ul><p><strong>Weaknesses</strong></p><ul>
+            <li>Requires high-quality detection upstream &#x2192; no good input, no good output.</li><li>Complex to integrate across heterogeneous environments.</li><li>Requires constant maintenance of playbooks, connectors, API keys, and workflows, the SOC must manually integrate every input and output tool.</li><li>Risk of over-automation &#x2192; blocking legitimate users or systems if rules are too aggressive.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-45" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOAR Platforms for SOC Operations: Orchestration & Automated Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Deploying SOAR as a "magic fix" for alert fatigue instead of fixing root causes.</li><li>Thinking SOAR will improve detection quality.</li><li>Believing SOAR can correlate alerts or improve detection logic, it does not analyze or correlate signals; it only automates actions based on existing alerts.</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Alert enrichment (WHOIS, TI lookup, sandboxing).</li><li>Automated containment (isolate host, revoke tokens, disable user).</li><li>Workflow automation (ticket creation, notifications, triage templates).</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-46" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Cybersecurity Vulnerability Scanning: Tools for Exposure and Risk Identification</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Strengths</strong></p><ul>
+            <li>Scan systems, applications, configurations, and software dependenciesfor known vulnerabilities.</li><li>Provide risk scoring (CVSS, EPSS), remediation guidance, and asset visibility.</li><li>Essential for continuous hardening, hygiene, and reducing attack surface.</li><li>Primarily used by internal SOC / internal security teams.</li><li>Scanners identify potential weaknesses, not ongoing exploitation.</li><li>Helps prioritize patching based on severity and business impact.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-47" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Cybersecurity Vulnerability Scanning: Tools for Exposure and Risk Identification</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Limits</strong></p><ul>
+            <li>Limited against zero-days, logic flaws, or application-specific bugs.</li>
+          </ul><p><strong>Intended Use</strong></p><ul>
+            <li>Maintaining a vulnerability management program.</li><li>Tracking remediation progress across teams.</li>
+          </ul><p><strong>Incorrect Assumption</strong></p><ul>
+            <li>Assuming scanning alone improves security, without patching, scans mean nothing.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-48" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Detection Tool Internals: Exploring Mechanisms and Techniques</h2>
+      </article>
+    </section><section id="slide-49" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Hashing and Fuzzy Hashes: Core File-Based Detection</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Cryptographic Hashes: MD5, SHA-1, SHA-256 for identifying known files</li><li>Format-Specific Hashes: imphash (import hash) for PE files to detect variants: bypass by adding Win32 API functions usages</li><li>Fuzzy Hashes: SSDEEP, TLSH to identify similar or slightly modified files: bypass by adding data or padding (length based)</li><li>Use Case: Quickly verify file integrity and detect known malware</li>
+          </ul><p>Hashing is a foundational detection mechanism, but alone it cannot catch modern malware variants, complementary heuristics and behavioral monitoring are required.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-50" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Heuristic Analysis: Detecting Suspicious File Patterns</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>File Metadata Analysis: Inspect PE (Windows) and ELF (Linux) executables, timestamps, imports/exports, embedded macros: potential bypass with headers modifications</li><li>Text/File Parsing: Analyze PDFs (JavaScript), Office files (VBA), scripts for suspicious patterns: potential bypass with encoding</li><li>Entropy Analysis: Detect compressed or encrypted content that may hide malware: bypass with encoding</li><li>Use Case: Identify previously unknown malware or modified files that evade signature-based detection</li><li>Limitations: May generate false positives; cannot always pinpoint precise threat origin</li>
+          </ul><p>Heuristic analysis strengthens detection by examining file structure, content, and entropy, allowing the discovery of hidden or modified malware beyond simple hash checks.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-51" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Signature Languages: Regex & Yara for Malware Detection</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Regex: Pattern matching and text parsing for suspicious strings, macros, or script content</li><li>Yara: Advanced pattern matching tool; can scan files, memory, and processes for complex malware indicators</li><li>Power of Yara: Supports modular rules, conditional logic, and metadata; widely used in EDR and threat hunting</li><li>Limitation: Purely signature-based</li>
+          </ul><p>Yara extends simple regex with powerful, flexible rules that allow detection of sophisticated malware, including in-memory threats, but still relies on pre-defined signatures.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-52" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>File Monitoring: fanotify, inotify, and Minifilter Drivers</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>inotify (Linux): <ul><li>Monitors filesystem events on specific files or directories</li><li>Non-blocking, low overhead, no root required</li><li>Based on VFS, ideal for general file monitoring</li></ul></li><li>fanotify (Linux): <ul><li>Can block or allow access to files, requires root privileges</li><li>Higher overhead, monitors entire mounts</li><li>Suitable for security enforcement where blocking is needed</li></ul></li><li>Minifilter Drivers (Windows): <ul><li>Kernel-level monitoring of file operations</li><li>Requires signed kernel module</li><li>Tracks disk actions like create, read, write, delete</li></ul></li>
+          </ul><p>File monitoring provides granular visibility into filesystem-level operations, differentiating between non-blocking observers (inotify/ETW) and blocking enforcement (fanotify/Minifilter).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-53" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Linux System Interfaces: ProcFS, SysFS, Netlink, and eBPF for Kernel-Level Monitoring</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>ProcFS: Provides access to process information and system statistics from user space</li><li>SysFS: Exposes kernel objects and hardware info for monitoring and configuration</li><li>Netlink: Kernel-to-user communication for networking events and monitoring</li><li>eBPF: Executes custom programs safely in the kernel for event tracing, monitoring, and security enforcement</li>
+          </ul><p>Linux system interfaces enable deep visibility into processes, hardware, and kernel events, forming the foundation for advanced detection tools without modifying the kernel.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-54" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Windows Event Monitoring: ETW, ETW-TI, and WMI for SOC Visibility</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>ETW (Event Tracing for Windows): Kernel and application-level event logging for detailed system activity</li><li>ETW-TI: Threat Intelligence integration with ETW events for enriched detection</li><li>WMI (Windows Management Instrumentation): <ul><li>Queries system and application data; relies on ETW underneath</li><li>Very simple to attach callbacks</li><li>Deeply integrated with Windows, .NET, and PowerShell</li></ul></li><li>Key Usage: Collects detailed telemetry for monitoring processes, user actions, and system changes</li>
+          </ul><p>Windows event monitoring provides SOC teams with granular visibility into system and application behavior, forming the backbone of detection and correlation in EDR and SIEM solutions.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-55" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>AMSI: Antimalware Scan Interface for Runtime Malware Detection</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>What is AMSI: Windows API that allows applications and scripts to request malware scanning from the system's antivirus engine</li><li>Language Agnostic: Any language can call AMSI (PowerShell, VBScript, .NET, etc.), its userland API (bypass by memory patching)</li><li>How to use: <ol><li>The runtime tokenizes, parses, builds AST, and resolves aliases</li><li>After preprocessing, the language requests a scan from AMSI</li><li>Scans can occur on execution, on new block definitions, or on-demand</li></ol></li><li>Integration: Provides runtime protection without modifying the underlying antivirus engine</li>
+          </ul><p>AMSI enables runtime malware scanning by allowing languages to submit preprocessed code for detection, bridging scripts and antivirus engines for enhanced SOC visibility.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-56" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Logging Techniques for Detection: /var/log, ETW, Sysmon, and auditd</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Linux Logging (/var/log): <ul><li>Most logs are line-by-line text files, read incrementally by process</li><li>Binary logs exist (journalctl, wtmp/utmp/btmp) and are harder to parse</li><li>Tools like auditd provide structured, configurable logging for security monitoring</li></ul></li><li>Windows Logging (ETW): <ul><li>Event Tracing for Windows enables real-time event registration, more reliable than parsing .evtx files</li><li>Allows detection of system, application, and security events</li><li>Sysmon enhances ETW with detailed process, network, and file activity logs, easier to parse and configure than raw ETW</li></ul></li><li>Sysmon (Windows): Extended system monitoring, logs process creation, network connections, and file changes</li>
+          </ul><p>These logging mechanisms provide the raw event streams that detection tools consume; understanding their format, access method, and incremental update behavior is essential to implement detection at the system level.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-57" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Sigma & Rule Languages for Detection</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Core Idea: Standardized, human-readable detection rules across platforms</li><li>Purpose: Translate detection logic into a universal format usable on multiple SIEMs and log sources</li><li>Mechanism: <ul><li>Convert log events into structured patterns</li><li>Translate platform-specific log fields into a normalized schema</li><li>Rules can be shared and reused across environments</li></ul></li><li>Limitations: <ul><li>Requires mapping log fields to a standardized schema</li><li>Effectiveness limited by the quality and richness of log data available</li></ul></li>
+          </ul><p>Sigma enables structured detection across diverse log sources, but mapping and log completeness are critical for accurate detection.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-58" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Kernel Modules & Syscall Tracing (Linux) & ELAM (Windows)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Core Idea: Deep visibility by intercepting system activity directly in the kernel</li><li>Linux Kernel Modules for Detection: <ul><li>Implement syscall hooking or syscall table redirection to monitor process, file, and network actions</li><li>Very difficult for malware to kill or bypass when properly protected</li></ul></li><li>Windows ELAM (Early Launch Anti-Malware): <ul><li>Kernel-level anti-malware driver loaded before all other drivers</li><li>Ensures malicious kernel modules are blocked before initialization</li><li>ELAM drivers must be signed by Microsoft</li></ul></li><li>Windows Drivers: <ul><li>Kernel callbacks (process, image, thread)</li><li>Registry callbacks</li><li>Minifilters</li><li>Object Callbacks (HANDLE)</li><li>ETW</li><li>WFP Callouts (Windows Filtering Platform, network)</li></ul></li>
+          </ul><ul>
+            <li>Kernel faults &#x2192; system crashes</li><li>Requires correct signing (Windows)</li>
+          </ul><p>Kernel-level monitoring (Linux modules, Windows ELAM) provides the strongest and earliest detection capability, resistant to userland bypass techniques, but comes with high complexity and strict signing requirements.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-59" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Advanced Threat Intelligence Formats (MISP / STIX) for SOC Automation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Role: Structured representation of IOCs, TTPs, relationships, campaigns, and infrastructures; seamless integration into TIP/SIEM/EDR/SOAR/CTI workflows.</li><li>MISP: Object-based model (Events/Attributes), optimized for high-volume IOC ingestion, normalization, scoring, and operational distribution.</li><li>STIX 2.x: JSON cyber-object model, optimized for graph-based context, linking indicators, behaviors, and threat activity, preferred by hunters for relational visibility.</li><li>Limits: Highly perishable IOCs (hash/IP/domain churn), limited coverage of unknown/emerging threats, and significant maintenance effort (cleaning, deduplication, validation).</li>
+          </ul><p>MISP optimizes IOC ingestion, while STIX provides a relationship-driven graph model ideal for hunting and contextual analysis.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-60" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Advanced Email Authentication Mechanisms (SPF / DKIM / DMARC)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>SPF: DNS-based validation of authorized sending IPs; prevents basic envelope spoofing but fragile with forwarding.</li><li>DKIM: Cryptographic signing of headers/body; ensures integrity and domain-level authenticity, unaffected by relays.</li><li>DMARC: Alignment check (SPF/DKIM &#x2194; From header) + policy enforcement (none/quarantine/reject) + feedback loops.</li><li>Limits: No protection against internal phishing, compromised accounts, or malicious content (attachments/links) bypassing authentication controls.</li>
+          </ul><p>SPF and DKIM provide authentication signals, while DMARC enforces policy and alignment, but none mitigate internal phishing or payload-based attacks.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-61" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>SOC Detection Engineering Methodology: Building High-Quality Detection Rules</h2>
+      </article>
+    </section><section id="slide-62" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Understanding the Attack Scenario</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>Detection priorities come from Governance (risk, policy, compliance).</li><li>Detection topics come from CTI (what attackers use).</li><li>Both define <strong>what must be covered</strong>, not <strong>how the attack actually occurs</strong>.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>CTI knows <em>what attackers use</em> (TTP, tools), but not <em>how attackers actually implement the attack</em>.</li><li>Governance imposes requirements without technical context.</li><li>SOC often writes rules without a complete scenario &#x2192; weak, noisy, or blind detections.</li>
+          </ul><p><strong>Methodology:</strong> Read available documentation, Answer core questions: <em>Where does this scenario occur in the attack flow ? Why would the attacker perform this action ? At which stage of the attack does it appear ?</em> Use this understanding to build a clear mental model before writing any detection rule.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-63" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Selecting the Right Detection Tool</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong><br>Each detection approach has different constraints:</p><ul>
+            <li>Some do not work for certain scenarios</li><li>Some are too limited</li><li>Others lack efficiency or responsiveness</li><li>Some take significantly longer to implement</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>Many SOC teams choose a method by habit or urgency rather than by suitability.</li><li>This leads to using approaches that don't match the scenario's needs, causing delays, noise, or blind spots.</li>
+          </ul><p><strong>Methodology:</strong> Choose the detection method that makes the most sense for the scenario: the one that offers the right visibility, the best long-term efficiency, and the lowest operational cost.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-64" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Writing the Initial Detection Rule</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>The first version of a rule is not meant to be perfect, it's meant to translate the scenario into an initial detection hypothesis.</li><li>This draft reveals what is missing, unclear, or unrealistic before deeper refinement.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>Many SOC teams write rules without a clear scenario, leading to noisy, incomplete, or irrelevant detections.</li><li>Others copy existing rules without understanding their assumptions, creating misaligned or fragile detections.</li>
+          </ul><p><strong>Methodology:</strong> Start with a simple, scenario-based rule to capture the core behavior you aim to detect. As a first step, you can rely on public rules or AI-generated rules to identify key elements and outline the scenario before writing the final detection rule.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-65" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Identifying Potential False Positives</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>A detection rule is useless if it triggers constantly on legitimate activity.</li><li>Identifying potential false positives early prevents writing rules that will overwhelm analysts and never reach production.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>Lack of business context leads SOC teams to misinterpret normal behaviors as malicious.</li><li>Time pressure often prevents analysts from deeply understanding how a TTP works at a low level, and from imagining potential false positives before creating or testing the rule.</li>
+          </ul><p><strong>Methodology:</strong> Understand the draft rule thoroughly to identify all known, legitimate system behaviors that could match it. Avoid "tuning" or adjusting a rule that is still conceptually flawed, the draft stage is meant to challenge assumptions, not to prematurely optimize.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-66" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Distinguishing True Positives from False Positives</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>To design an accurate detection rule, you must clearly understand what makes the malicious behavior different from legitimate activity.</li><li>Without this step, the final rule remains either too broad.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>SOC teams often observe matches without fully understanding the execution logic behind them.</li><li>Analysts may assume "it matches = it's good detection"</li>
+          </ul><p><strong>Methodology:</strong> Break down the malicious scenario into its fundamental behaviors and conditions. Break down the legitimate behaviors that also trigger the draft rule. Compare both sides to extract clear discriminators.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-67" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Identifying Bypass Techniques</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>A detection rule must account for the ways an attacker could modify their behavior to avoid being detected.</li><li>Some detection concepts have structural limitations, and documenting them is essential for Incident Response and Governance to properly assess risk and prioritize future improvements.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>SOC teams often evaluate rules only against the "expected" attack, not against variants or stealthier executions.</li><li>Many assumptions are made about how an attacker "should" behave, leading to blind spots.</li>
+          </ul><p><strong>Methodology:</strong> Break the draft rule into all its individual parameters and conditions. For each parameter and condition, determine whether an attacker could alter it while still performing a malicious action.</p><ul>
+            
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-68" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Identifying Missing Scenarios</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>A solid detection must cover all realistic ways an attacker could achieve the targeted behavior</li><li>Missing scenarios create blind spots that attackers can exploit without triggering any alert.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>Analysts often rely only on previously seen attacks or existing rules, leading to a fixed and narrow view of the scenario.</li><li>Lack of creativity and limited technical exploration prevent identification of alternative paths.</li><li>Without actively searching for missing variants, many angles remain undetected.</li>
+          </ul><p><strong>Methodology</strong>: Start from the target behavior, identify all possible ways to reach that same behavior. Break down the underlying technology, protocol, or method to understand every valid interaction or workflow it allows.</p><ul>
+            
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-69" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Rewriting the Optimized Rule</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>After understanding false positives, true positives, bypasses, and missing scenarios, the initial draft rule must be redesigned from scratch.</li><li>The goal is to build a clean, reliable, and conceptually sound detection, not a tuned version of the flawed draft.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>Many SOC teams adjust the original rule instead of rebuilding a proper detection logic, keeping its weaknesses.</li><li>Without integrating all previous findings, the final rule remains incomplete, fragile, or limited.</li><li>Pressure to "deploy fast" often results in rules that only partially cover the scenario.</li>
+          </ul><p><strong>Methodology</strong></p><ul>
+            <li>Start a new detection design, based on the discriminators identified earlier (true vs. false positives).</li><li>Integrate all insights from the bypass analysis: ensure the rule covers attacker behaviors that cannot be easily altered.</li><li>Incorporate missing scenarios or create a rule for all valid paths leading to the malicious outcome.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-70" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Testing and Validating the Detection Rule</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Why this step exists</strong></p><ul>
+            <li>A rule is only reliable if it consistently works over time.</li><li>Testing ensures correctness, stability, and maintainability, even when the SI or the rule evolves.</li>
+          </ul><p><strong>SOC challenges</strong></p><ul>
+            <li>Many SOC teams deploy rules without proper testing, leading to silent failures.</li><li>Manual testing is incomplete, non-repeatable, and quickly abandoned.</li><li>Changes in the infrastructure often break rules without anyone noticing.</li>
+          </ul><p><strong>Methodology:</strong> Create unit tests for every part of the logic: test each condition individually (each AND, each OR, and all combinations) with intentionally crafted logs. Create functional tests to validate the full scenario: replay or simulate the malicious behavior in the real SI, verify end-to-end detection, from log ingestion to alert generation, run these functional tests every 3 months to ensure the rule still works.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-71" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Documentation Requirements for High-Quality Detection Rules</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>4. Identifying Potential False Positives:</strong> Document all legitimate behaviors that may trigger the draft rule, it's required for rule redesign, IR awareness, and operational risk assessment.<br>
+<strong>5. Distinguishing True vs. False Positives:</strong> Document the discriminators, it's required to understand the final rule logic.<br>
+<strong>6. Identifying Bypass Techniques:</strong> Document all bypass possibilities and conceptual limitations it's critical for Governance and IR to understand residual risks and plan future improvements.<br>
+<strong>7. Identifying Missing Scenarios:</strong> Document all alternative paths leading to the same malicious outcome to ensures the final rule covers all relevant variants and avoids blind spots.<br>
+<strong>9. Testing the Rule</strong> Document unit tests, functional tests, and validation results to ensures repeatability, long-term reliability, and operational trust in the rule.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-72" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Summary of the Detection Engineering Methodology</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Understand the Attack Scenario: Build a clear picture of the attacker's goal, context, and behavior.</li><li>Select the Appropriate Detection Method: Choose the approach that offers the right visibility and long-term efficiency.</li><li>Write the Initial Draft Rule: Create a hypothesis-based rule to explore the scenario.</li><li>Identify Potential False Positives: Map all legitimate behaviors that may incorrectly trigger detection.</li><li>Distinguish True vs. False Positives: Extract the discriminators that differentiate malicious from legitimate activity.</li><li>Identify Bypass Techniques: Analyze how attackers could alter their behavior to avoid detection.</li><li>Identify Missing Scenarios: Explore all possible paths leading to the same malicious outcome.</li><li>Rewrite the Optimized Rule: Rebuild a clean, accurate rule using all insights gathered.</li><li>Test and Validate the Rule: Use automated unit and functional tests to ensure reliability over time.</li>
+          </ol>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-73" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Practical Example: How a Poorly Designed Detection Rule Fails</h2>
+      </article>
+    </section><section id="slide-74" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>From Attack Scenario to a Faulty Draft Rule (Typical SOC Mistake)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>SOC teams are asked to detect "PowerShell executing malware on the network."<br><strong>Typical SOC workflow (too fast, too shallow):</strong></p><ul>
+            <li>Immediate choice: use the SIEM.</li><li>Immediate action: write a rule.</li><li>No deep analysis of the scenario or PowerShell behavior.</li>
+          </ul><p><code><pre>powershell.exe AND (
+   (Invoke-WebRequest AND Start-Process)
+   OR
+   -EncodedCommand
+)</pre></code></p><p>Many SOCs produce weak rules because they rush into writing them without understanding the scenario or its technical diversity.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-75" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Why This Detection Rule Completely Fails (FP, Bypass, Missing Scenarios)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>False Positives (Operational Noise):</strong> Hypervisors using PowerShell with <code>-EncodedCommand</code> to query WMI.
+<strong>Bypass Techniques (Attacker Variations Within the Same Behavior)</strong></p><ul>
+            <li>Using PowerShell aliases like <code>iwr</code>.</li><li>Using LoLBins inside PowerShell (<code>bitsadmin</code>, <code>certutil</code>)</li><li>Re-implementing HTTP through a socket in PowerShell.</li>
+          </ul><p><strong>Missing Scenarios (Different Attack Paths Completely Ignored)</strong></p><ul>
+            <li>Malware format without file written: Shellcode (execution in memory), PowerShell (IEX), C# (Add-Type)</li><li>Using another protocol such as an SMB mount.</li><li>Injecting the payload through PowerShell STDIN, leaving no command-line trace.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-76" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Evaluation Criteria for Detection Rule Assignments</h2>
+      </article>
+    </section><section id="slide-77" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Core Evaluation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Tool Choice:</strong></p><ul>
+            <li>Justify why the selected detection tool or approach was used.</li><li>Consider efficiency, visibility, long-term maintainability.</li>
+          </ul><p><strong>Draft Rule Creation:</strong></p><ul>
+            <li>Correctly implement a basic detection rule.</li><li>Show understanding of the scenario.</li>
+          </ul><p><strong>Identification of False Positives:</strong></p><ul>
+            <li>Detect legitimate activities that trigger the rule.</li><li>Explain reasoning and provide examples.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-78" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Advanced Evaluation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Differentiating True Positives vs. False Positives (if applicable):</strong> Demonstrate ability to distinguish between legitimate matches and malicious matches.</p><p><strong>Identification of Potential Bypasses or Alternative Scenarios (if applicable):</strong> Document how attackers could evade the rule.</p><p><strong>Quality of Final Rule:</strong></p><ul>
+            <li>Rule minimizes or eliminates false positives and false negatives.</li><li>Consider coverage of all identified scenarios and correct design logic.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-79" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Optional / Bonus Points</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Implementation of Automated Tests:</strong></p><ul>
+            <li>Unit tests for each condition (AND, OR, keywords).</li><li>Functional tests simulating the attack scenario.</li>
+          </ul><p><strong>Extra Bonus</strong></p><ul>
+            <li>How to block this type of attack in a SOC context.</li><li>How to perform an incident response for the detected attack.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-80" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Exam Logistics and Evaluation Process</h2>
+      </article>
+    </section><section id="slide-81" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Exam Workflow Overview</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Before the Exam</strong></p><ul>
+            <li>Students know the required setup in advance.</li><li>Each group must prepare one VM (Linux or Windows depending on the scenario assigned).</li>
+          </ul><p><strong>Day 1 - Scenario Delivery & Rule Engineering</strong></p><ol>
+            <li>Morning: each group receives its attack scenario.</li><li>All day: <ul><li>Deploy and configure their detection tool.</li><li>Write the initial detection rule.</li><li>Identify false positives and false negatives.</li><li>Produce the final corrected rule.</li></ul></li><li>Evening: submit the report (one per group) with final rule and bullet-point reasoning for each methodological step</li>
+          </ol>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-82" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Evaluation & Oral Defense</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Day 2 - Instructor Testing (Group Score Base)</strong></p><ul>
+            <li>Instructor runs tests on each group's infrastructure: common false positives and crafted false negatives</li><li>These tests establish the baseline score for the group.</li><li>This evaluates the quality and robustness of the final rule.</li>
+          </ul><p><strong>Day 3 - Oral Examination (Individual Evaluation)</strong></p><ul>
+            <li>Each student is examined individually, even though rule creation was done in groups.</li><li>Objectives of the oral evaluation: <ul><li>Verify understanding of every step of the 9-stage methodology.</li><li>Assess ability to justify decisions: why this tool ? why this logic ? why this improvement ?</li><li>Confirm that each member contributed and understood the final rule.</li></ul></li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-83" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Hands-On SOC Detection Engineering Exercises: High-Quality Rule Design & Adversary Simulation</h2>
+      </article>
+    </section><section id="slide-84" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Windows Startup Payload Execution - Attack Scenario</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Attacker Goal: Establish a persistent foothold by ensuring malicious code automatically executes after system reboot or user logon.</li><li>Context: Startup locations in Windows are frequently abused because they allow silent, recurring execution without requiring elevated privileges.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-85" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Tools, Telemetry, and Initial Draft Rule</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Required Visibility & Telemetry Sources: Endpoint instrumentation capable of tracking file creation, registry modifications, and process execution in startup-related paths, Tools providing historical context (timeline, baselining, user activity correlation)</li><li>Recommended Analysis Tools: EDR offering granular process and registry auditing</li><li>Rule: <code><pre>detection:
+    files_in_startup:
+        EventID: 4663   # File creation
+        ObjectPath|contains:
+            - "\Startup\"
+    registry_autorun:
+        EventID: 4657   # Registry value creation/modification
+        ObjectName|contains:
+            - "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+    condition: files_in_startup OR registry_autorun</pre></code></li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-86" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>False Positives, Bypass Paths & Missing Cases</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>False positive: configuration on update (registry key: RunOnce), any file in a startup directory.<br>
+Bypass: Startup folder modification (registry key: "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders", "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders")<br>
+Missing scenario:</p><ul>
+            <li>Task scheduler</li><li>Services (new service, modification or Hijacking)</li><li>DLL Hijacking on startup program (and COM Hijacking)</li><li>PE injection on startup program</li><li>AppInit registry key (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows[AppInit_DLLs])</li><li>WMI using persistent Filter/Consumer</li><li>Kernel driver</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-87" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Optimized Rule Implementation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>For this exercise, the optimized rule focuses exclusively on three scenarios: modifications to registry Run keys, file activity in Startup folders, and WMI permanent event subscriptions: <code><pre>detection:
+    files_in_startup:
+        EventID: 4663   # File creation
+        ObjectPath|contains:
+            - "C:\Users\*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+            - "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+    registry_autorun:
+        EventID: 4657   # Registry value creation/modification
+        ObjectName|contains:
+            - "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+            - "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders"
+	wmi_persistence_boot:
+		EventID:
+			- 5861   # WMI Event Filter Created/Modified
+			- 5860   # WMI Event Consumer Created/Modified
+			- 5862   # WMI Binding Created/Modified
+		Operation|contains:
+			- "create"
+			- "modify"
+		ClassName|contains:
+			- "__EventFilter"
+			- "CommandLineEventConsumer"
+			- "ActiveScriptEventConsumer"
+			- "FilterToConsumerBinding"
+		# Optional: focusing on boot/logon-related triggers
+		Query|contains:
+			- "Win32_ComputerShutdownEvent"
+			- "Win32_ComputerStartupEvent"
+			- "Win32_LogonSession"
+    condition: files_in_startup OR registry_autorun OR wmi_persistence_boot</pre></code></p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section>
+    <section class="timeline-slide content-slide" id="timeline-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>My path, my passion: cybersecurity</h3>
+      </header>
+      <article>
+        <div id="timeline-container"></div>
+        <div id="timeline-progress"></div>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p><a href="https://www.gnu.org/licenses/">&copy; Maurice Lambert</a></p>
+  </footer>
+</body>
+  </html>
