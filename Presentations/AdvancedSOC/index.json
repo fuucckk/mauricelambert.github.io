@@ -1,5 +1,3 @@
-
-
 {
     "title": "Enhancing Cybersecurity Detection Quality: Advanced SOC Techniques and Best Practices",
     "keywords": [
@@ -1581,6 +1579,40 @@
                 }
             ]
         },
+		{
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Honeypots: Core Principles & Best Practices",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Definition & Scope</strong>: A honeypot is not only a fake vulnerable system, it can be a:"
+                },
+				{
+                    "type": "ul",
+                    "content": [
+                        "<strong>user account</strong>: (local, domain, email, social networks like LinkedIn)",
+                        "<strong>file</strong>: (filesystem, SMB share, SharePoint item, web-accessible PDF)",
+                        "<strong>script</strong>: containing credentials or other artifacts",
+                        "<strong>service/port</strong>",
+						"<strong>URL path</strong> or embedded link"
+                    ]
+                },
+				{
+                    "type": "p",
+                    "content": "<strong>Purpose</strong>: Attract, detect, and analyze malicious behavior in locations where <strong>no legitimate activity</strong> should ever occur. Provide <strong>high-confidence SOC signals</strong> with minimal noise.<br><strong>Key Success Factors</strong>: The most effective honeypots are often <strong>custom-built</strong>, mimicking <strong>realistic vulnerabilities or artifacts</strong> from the existing environment (internal naming conventions, plausible accounts, believable file paths, etc.).<br><strong>Operational Considerations</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "A well-designed honeypot should generate <strong>zero false positives</strong>-any interaction is suspicious.",
+                        "<strong>Do not disclose</strong> honeypots internally; exposure invalidates their detection value."
+                    ]
+                }
+            ]
+        },
         {
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
@@ -1683,6 +1715,7 @@
                     "content": [
                         "Some do not work for certain scenarios",
                         "Some are too limited",
+						"Some are less secure (e.g., bypass, termination, configuration changes, identity spoofing, network requirements, etc.).",
                         "Others lack efficiency or responsiveness",
                         "Some take significantly longer to implement"
                     ]
@@ -1695,7 +1728,7 @@
                     "type": "ul",
                     "content": [
                         "Many SOC teams choose a method by habit or urgency rather than by suitability.",
-                        "This leads to using approaches that don't match the scenario's needs, causing delays, noise, or blind spots."
+                        "This leads to choosing approaches that are misaligned with the scenario, resulting in reduced visibility, lower trustworthiness from a security standpoint, degraded efficiency, and unnecessary losses in time and budget during implementation."
                     ]
                 },
                 {
@@ -2246,6 +2279,48 @@
                 }
             ]
         },
+		{
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Exam Workflow: Organization & Best Practices",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Overall Timing (7h Total)</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>30 min</strong>: Form groups and plan the workflow.",
+                        "<strong>3 h</strong>: Two students build the infrastructure; two pairs each write a baseline detection rule, identify false positives, bypasses, missing scenarios, and rewrite an improved version (everything documented for the report)."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Cross-Validation Phase (3 h)</strong>"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Infra team deploys all rules and executes scenarios, bypass attempts, and false positives.",
+                        "The two other groups review each other's rules, identify gaps, weaknesses, and improvement points (fully documented)."
+                    ]
+                },
+				{
+                    "type": "p",
+                    "content": "<strong>Final Consolidation</strong>"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Merge findings into a single optimized rule combining strengths and reducing limitations.",
+                        "Submit the final report and take a <strong>system snapshot</strong> to preserve a stable state for the exam."
+                    ]
+                }
+            ]
+        },
         {
             "type": "title",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
@@ -2261,8 +2336,8 @@
                 {
                     "type": "ul",
                     "content": [
-                        "Attacker Goal: Establish a persistent foothold by ensuring malicious code automatically executes after system reboot or user logon.",
-                        "Context: Startup locations in Windows are frequently abused because they allow silent, recurring execution without requiring elevated privileges."
+                        "<strong>Attacker Goal</strong>: Establish a persistent foothold by ensuring malicious code automatically executes after system reboot or user logon.",
+                        "<strong>Context</strong>: Startup locations in Windows are frequently abused because they allow silent, recurring execution without requiring elevated privileges."
                     ]
                 }
             ]
@@ -2277,8 +2352,8 @@
                 {
                     "type": "ul",
                     "content": [
-                        "Required Visibility & Telemetry Sources: Endpoint instrumentation capable of tracking file creation, registry modifications, and process execution in startup-related paths, Tools providing historical context (timeline, baselining, user activity correlation)",
-                        "Recommended Analysis Tools: EDR offering granular process and registry auditing",
+                        "<strong>Required Visibility & Telemetry Sources</strong>: Endpoint instrumentation capable of tracking file creation, registry modifications, and process execution in startup-related paths, Tools providing historical context (timeline, baselining, user activity correlation)",
+                        "<strong>Recommended Tools</strong>: EDR offering granular process and registry auditing",
                         "Rule: <code><pre>detection:\n    files_in_startup:\n        EventID: 4663   # File creation\n        ObjectPath|contains:\n            - \"\\Startup\\\"\n    registry_autorun:\n        EventID: 4657   # Registry value creation/modification\n        ObjectName|contains:\n            - \"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\"\n    condition: files_in_startup OR registry_autorun</pre></code>"
                     ]
                 }
@@ -2293,7 +2368,7 @@
             "texts": [
                 {
                     "type": "p",
-                    "content": "False positive: configuration on update (registry key: RunOnce), any file in a startup directory.<br>\nBypass: Startup folder modification (registry key: \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders\", \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders\")<br>\nMissing scenario:"
+                    "content": "<strong>False positive</strong>: configuration on update (registry key: RunOnce), any file in a startup directory.<br>\n<strong>Bypass</strong>: Startup folder modification (registry key: \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders\", \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders\")<br>\n<strong>Missing scenario</strong>:"
                 },
                 {
                     "type": "ul",
@@ -2321,6 +2396,227 @@
                     "content": "For this exercise, the optimized rule focuses exclusively on three scenarios: modifications to registry Run keys, file activity in Startup folders, and WMI permanent event subscriptions: <code><pre>detection:\n    files_in_startup:\n        EventID: 4663   # File creation\n        ObjectPath|contains:\n            - \"C:\\Users\\*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\"\n            - \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\"\n    registry_autorun:\n        EventID: 4657   # Registry value creation/modification\n        ObjectName|contains:\n            - \"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\"\n            - \"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders\"\n\twmi_persistence_boot:\n\t\tEventID:\n\t\t\t- 5861   # WMI Event Filter Created/Modified\n\t\t\t- 5860   # WMI Event Consumer Created/Modified\n\t\t\t- 5862   # WMI Binding Created/Modified\n\t\tOperation|contains:\n\t\t\t- \"create\"\n\t\t\t- \"modify\"\n\t\tClassName|contains:\n\t\t\t- \"__EventFilter\"\n\t\t\t- \"CommandLineEventConsumer\"\n\t\t\t- \"ActiveScriptEventConsumer\"\n\t\t\t- \"FilterToConsumerBinding\"\n\t\t# Optional: focusing on boot/logon-related triggers\n\t\tQuery|contains:\n\t\t\t- \"Win32_ComputerShutdownEvent\"\n\t\t\t- \"Win32_ComputerStartupEvent\"\n\t\t\t- \"Win32_LogonSession\"\n    condition: files_in_startup OR registry_autorun OR wmi_persistence_boot</pre></code>"
                 }
             ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Credential Theft Techniques - Attack Scenario",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Attacker Goal</strong>: Obtain valid user or administrator credentials to expand access, escalate privileges, or move laterally within the environment.<br><strong>Context</strong>: Credential theft is a common phase in modern intrusions, as attackers rely heavily on harvesting authentication material instead of brute-forcing passwords. Tools and techniques target memory, authentication tokens, password stores, or API-based credential interfaces."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Tools, Telemetry, and Initial Draft Rule",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Required Visibility & Telemetry Sources</strong>: Endpoint telemetry capable of capturing object access attempts (process, files, ...).<br><strong>Recommended Tools</strong>: EDR platforms with granular monitoring of handle requests, and security-related API calls.<br><strong>Rule:</strong><code><pre>detection:\n    # Suspicious access to LSASS or similar processes\n    lsass_access:\n        EventID: 4663\n        ObjectName|contains:\n            - \"lsass.exe\"\n            - \"lsa\"\n        AccessMask|contains:\n            - \"0x10\"   # PROCESS_VM_READ-like permission\n            - \"0x20\"\n\n    # Unusual process requesting high-privilege memory access\n    sensitive_handle_request:\n        EventID: 4656\n        ObjectName|contains:\n            - \"lsass.exe\"\n            - \"sam\"\n            - \"security\"\n        AccessMask|contains:\n            - \"0x10\"\n            - \"0x20\"\n\n    # Suspicious duplication of tokens or privilege escalation behavior\n    token_duplication:\n        EventID: 4673\n        PrivilegeList|contains:\n            - \"SeDebugPrivilege\"\n            - \"SeTcbPrivilege\"\n\n    condition: lsass_access OR sensitive_handle_request OR token_duplication</pre></code>"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "False Positives, Evasion Techniques, and Coverage Gaps",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>False positive</strong>: all access on object with \"lsa\" in the name<br>\n<strong>Bypass</strong>: other access mask with 0x10 bit set (0x30, 0xF0, ...)<br>\n<strong>Missing scenario</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Keylogger",
+                        "Credentials stealer: system credentials, credentials protected by DPAPI, browser credentials, admin tools credentials, dev tools credentials, ...",
+                        "Password manager exploits: unencrypted dump, get database file and steal secret key (PE Injection, replace executable file, DLL Hijacking), ...",
+                        "Browser plugin (Pure JS or JS + executable)",
+                        "Network sniffer // Proxy"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "IAT Hooking on Windows - Attack Scenario",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Attacker Goal</strong>: Alter the behavior of trusted processes by intercepting function calls and redirecting them to malicious code, enabling stealthy execution, data manipulation, or credential interception.<br>\n<strong>Context</strong>: IAT (Import Address Table) hooking is a technique where attackers modify the addresses of imported APIs inside a process's memory. Because many security-sensitive applications rely on predictable API calls, manipulating the IAT enables adversaries to hijack execution flow without creating new processes or injecting easily detectable payloads."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Tools, Telemetry, and Initial Draft Rule",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Required Visibility & Telemetry Sources</strong>: Endpoint visibility capable of monitoring process memory modifications, including write operations targeting module address ranges and DLL load events.<br><strong>Recommended Tools</strong>: EDR platforms offering deep memory monitoring: module integrity checks, in-memory patch detection, API resolution monitoring.<br><strong>Rule:</strong><code><pre>detection:\n    suspicious_memory_write:\n        EventID: 4656\n        AccessMask|contains: \"WRITE\"\n        ObjectName|contains:\n            - \".dll\"\n            - \"import\"\n            - \"iat\"\n\n    unexpected_module_load:\n        EventID: 7      # Module load (Sysmon)\n        ImageLoaded|contains:\n            - \".dll\"\n        Signed: false\n\n    module_integrity_change:\n        EventID: 11     # File or module tampering\n        TargetFilename|contains:\n            - \".dll\"\n            - \".exe\"\n\n    condition: suspicious_memory_write OR unexpected_module_load OR module_integrity_change</pre></code>"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "False Positives, Evasion Techniques, and Coverage Gaps",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>False positive</strong>: debugger, application shimming, access handle on objects whose name contains \"iat\", all non-signed module imported, installers<br>\n<strong>Bypass</strong>: API hooking on images with any extension other than .dll when the \"iat\" or \"import\" words is not working.<br>\n<strong>Missing scenario</strong>:"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Refined Detection Logic and Validation Strategy",
+            "image": "",
+            "texts": [
+			    {
+					"type": "p",
+					"content": "<code><pre>detection:\n  iat_write_detected: IAT_Write_Detected() == true\n\n  shim_not_loaded: Module_Is_Loaded(\"shim.dll\") == false\n  not_first_second: Time_Since_Process_Start() > 1s\n  shim_loaded_via_ll: Module_Loaded_Via_LoadLibrary(\"shim.dll\") == true\n\n  shim_in_imports: Module_In_Imports(\"shim.dll\") == true\n  critical_functions_unused: NOT Module_Functions_Used(\"shim.dll\", [\"CriticalFunc1\", \"CriticalFunc2\"]) \n\n  condition: |\n    iat_write_detected AND (\n        shim_not_loaded OR\n        not_first_second OR\n        shim_loaded_via_ll OR\n        shim_in_imports OR\n        critical_functions_unused\n    )\n\naction:\n  - trigger_alert(\"Suspicious IAT write detected or shim.dll suspicious usage\")</pre></code>"
+				}
+			]
+        },
+		{
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "DCSync Attack - Scenario Overview",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Attacker Goal</strong>: Extract password hashes, Kerberos secrets, and domain replication data by impersonating a legitimate Domain Controller, enabling full domain compromise or long-term credential abuse.<br>\n<strong>Context</strong>: A DCSync attack abuses the Directory Replication Service Remote Protocol (DRSR). Instead of dumping credentials locally, the attacker requests them directly from Active Directory as if it were performing legitimate replication. This technique is stealthy because it does not require code execution on a Domain Controller."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Tools, Telemetry, and Initial Draft Rule",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Required Visibility & Telemetry Sources</strong>: Active Directory security logs capturing replication-related operations, network monitoring and system telemetry. <br><strong>Recommended Tools</strong>: A SIEM platform capable of correlating multiple data sources simultaneously<br><strong>Rule:</strong><code><pre>detection:\n    replication_from_non_dc:\n        EventID: 4662\n        ObjectType|contains: \"DS-Replication\"\n        SubjectUserName|not_contains: \"$\"   # non-DC accounts usually lack $ suffix\n        AccessMask|contains:\n            - \"0x100\"   # Replicating Directory Changes\n            - \"0x200\"   # Replicating Directory Changes All\n\n    unexpected_source_host:\n        EventID: 1644\n        SourceIPAddress|not_in:\n            - known_domain_controllers\n\n    privileged_account_usage:\n        EventID: 4673\n        PrivilegeList|contains:\n            - \"SeEnableDelegationPrivilege\"\n\n    condition: replication_from_non_dc OR unexpected_source_host OR privileged_account_usage</pre></code>"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "False Positives, Evasion Techniques, and Coverage Gaps",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>False positive</strong>: all legit services using SeEnableDelegationPrivilege<br>\n<strong>Bypass</strong>: perform DCSync from an AD with the host account.<br>\n<strong>Missing scenario</strong>:"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Refined Detection Logic and Validation Strategy",
+            "image": "",
+            "texts": [
+			    {
+					"type": "ol",
+					"content": [
+					    "Filter on event ID for AD synchronization or detect synchronization from network monitoring",
+						"Identify IP source and source port",
+						"Resolve the source host from the source IP",
+						"On the source host find the process from the source port",
+						"If it's not the legit process &#x2192; trigger alert",
+						"Bonus: check local user, session and parent process start time."
+					]
+				}
+			]
+        },
+		{
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Payload Execution via EXCEL.EXE - Attack Scenario",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Attacker Goal</strong>: Execute malicious code by abusing Microsoft Excel as a trusted application to bypass security controls, gain initial access, or run embedded payloads without raising immediate suspicion.<br>\n<strong>Context</strong>: Excel are high‑value targets for attackers because they are widely allowed in enterprise environments and often trusted by users."
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Tools, Telemetry, and Initial Draft Rule",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Required Visibility & Telemetry Sources</strong>: Endpoint telemetry capturing process behaviors.<br><strong>Recommended Tools</strong>: EDR capable of correlating process behaviours anomalies.<br><strong>Rule:</strong><code><pre>detection:\n    excel_spawning_process:\n        EventID: 1      # Process creation (Sysmon)\n        ParentImage|endswith: \"\\EXCEL.EXE\"\n\n    suspicious_child_process:\n        Image|contains:\n            - \"cmd.exe\"\n            - \"powershell.exe\"\n            - \"wscript.exe\"\n            - \"cscript.exe\"\n            - \".exe\"\n\n    unexpected_excel_location:\n        ParentImage|equals:\n            \"C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE\"\n\n    condition: excel_spawning_process AND suspicious_child_process</pre></code>"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "False Positives, Evasion Techniques, and Coverage Gaps",
+            "image": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>False positive</strong>: Excel can be multi-process, plugins, or features mapped to legitimate services (Power Query, Power Pivot), and sandboxed document openings (Protected View).<br>\n<strong>Bypass</strong>: scr files.<br>\n<strong>Missing scenario</strong>:"
+                },
+				{
+					"type": "ul",
+					"content": [
+						"full malware in VBA (or load and execute instructions in memory)",
+						"XLL",
+						"Replace excel executable",
+						"PE injection"
+					]
+				}
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "title": "Refined Detection Logic and Validation Strategy",
+            "image": "",
+            "texts": [
+			    {
+					"type": "p",
+					"content": "<code><pre>detection:\n\n  # ------------------------------------------------------------\n  # 1. Excel doit etre le processus observe (full path)\n  # ------------------------------------------------------------\n  excel_proc:\n    Image:\n      - 'C:\\Program Files\\Microsoft Office\root\\Office16\\EXCEL.EXE'\n      - 'C:\\Program Files (x86)\\Microsoft Office\root\\Office16\\EXCEL.EXE'\n      - 'C:\\Program Files\\Microsoft Office\\Office16\\EXCEL.EXE'\n      - 'C:\\Program Files (x86)\\Microsoft Office\\Office16\\EXCEL.EXE'\n\n  # ------------------------------------------------------------\n  # 2. Interdiction chargement d'un fichier XLL dans la ligne de commande\n  # ------------------------------------------------------------\n  xll_in_cmd:\n    CommandLine|contains: '.xll'\n  no_xll:\n    condition: not xll_in_cmd\n\n  # ------------------------------------------------------------\n  # 3. Interdiction ouverture XLSM provenant d'Internet (MOTW)\n  # MOTW vient d'un alternate data stream \"Zone.Identifier\"\n  # ------------------------------------------------------------\n  motw_xlsm:\n    CommandLine|contains:\n      - '.xlsm'\n      - 'Zone.Identifier'\n  no_motw:\n    condition: not motw_xlsm\n\n  # ------------------------------------------------------------\n  # 4. Detection changement de permissions memoire via kernel events\n  # Sysmon EventID 10 = ProcessAccess\n  #   &#x2192; Flags comme \"MEMORY_PROTECTION\" indiquent VirtualProtect/NTProtectVM\n  #\n  # OU ETW provider:\n  #   Microsoft-Windows-Kernel-Memory / Event ID 5 (Page protection changed)\n  # ------------------------------------------------------------\n  mem_protection_change:\n    EventID:\n      - 10\n      - 5\n    SourceImage:\n      - 'C:\\Program Files\\Microsoft Office\root\\Office16\\EXCEL.EXE'\n      - 'C:\\Program Files (x86)\\Microsoft Office\root\\Office16\\EXCEL.EXE'\n    # Flag Sysmon indiquant changement de protection memoire\n    AccessMask|contains:\n      - 'VM_WRITE'\n      - 'VM_EXECUTE'\n      - 'READ_WRITE_EXECUTE'\n      - 'EXECUTE_READWRITE'\n\n  no_mem_change:\n    condition: not mem_protection_change\n\n  # ------------------------------------------------------------\n  # 5. Aucun processus non-Microsoft ne doit modifier EXCEL.EXE\n  # Utilise Sysmon EventID 11 (FileCreate) / Event 15 (FileStreamWrite)\n  # ------------------------------------------------------------\n  excel_write:\n    EventID:\n      - 11\n      - 15\n    TargetFilename:\n      - 'C:\\Program Files\\Microsoft Office\root\\Office16\\EXCEL.EXE'\n      - 'C:\\Program Files (x86)\\Microsoft Office\root\\Office16\\EXCEL.EXE'\n    Signed: \"false\"          # processus non signe\n  unauthorized_mod:\n    condition: excel_write\n\n  # ------------------------------------------------------------\n  # 6. Condition finale\n  # ------------------------------------------------------------\n  condition: excel_proc and no_xll and no_motw and no_mem_change and unauthorized_mod</pre></code>"
+				}
+			]
         }
     ]
 }
