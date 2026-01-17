@@ -25,7 +25,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Major Milestones in Cybersecurity | 2010 - 2017",
-            "image": "",
+            "image": "cyber_milestones.png",
             "texts": [
                 {
                     "type": "p",
@@ -50,7 +50,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Cybersecurity Costs vs. Benefits | Investment Dilemma",
-            "image": "",
+            "image": "budget_burned.png",
             "texts": [
                 {
                     "type": "p",
@@ -76,7 +76,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Legal & Regulatory Pressure | When Compliance Creates New Risks",
-            "image": "",
+            "image": "https://mauricelambert.github.io/Presentations/PurpleTeam/balance_security_compliance.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -103,7 +103,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Consequences of Rapid Cyber Development | Partial & Imperfect Security",
-            "image": "",
+            "image": "weak_foundations.jpeg",
             "texts": [
                 {
                     "type": "p",
@@ -130,7 +130,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "The Path to Quality Cybersecurity | Learning From the Last 10 Years",
-            "image": "",
+            "image": "strong_cyber.png",
             "texts": [
                 {
                     "type": "p",
@@ -163,7 +163,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Compliance-Driven Design That Broke Security",
-            "image": "",
+            "image": "welcome_attackers.jpeg",
             "texts": [
                 {
                     "type": "ol",
@@ -201,7 +201,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "EDR Implementation Misaligned with Actual Needs",
-            "image": "",
+            "image": "lost_cyber_budget.jpg",
             "texts": [
                 {
                     "type": "ol",
@@ -241,7 +241,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "What Is a Security Operations Center (SOC)? | Cybersecurity Monitoring & Defense Overview",
-            "image": "",
+            "image": "soc.webp",
             "texts": [
                 {
                     "type": "p",
@@ -274,7 +274,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "SOC Organizational Models | Centralized, Distributed & Outsourced SOC",
-            "image": "",
+            "image": "internal_managed.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -308,7 +308,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "SOC Roles and Responsibilities | Key Cybersecurity Functions",
-            "image": "",
+            "image": "soc_roles.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -320,7 +320,7 @@
                         "Tier 1 Analyst: Monitors alerts, triages incidents",
                         "Tier 2 Analyst: Investigates and escalates complex incidents",
                         "Tier 3 Analyst / Threat Hunter: Performs deep analysis, proactive threat hunting",
-                        "Incident Responder / DFIR Specialist: Leads containment, eradication, recovery",
+                        "Incident Responder / DFIR Specialist: Leads incident, containment, eradication, recovery",
                         "SOC Manager & Engineers: Coordinate operations, maintain tools and processes"
                     ]
                 },
@@ -335,7 +335,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "SOC Processes & Workflows | Monitoring, Detection & Response",
-            "image": "",
+            "image": "SOC_steps.svg",
             "texts": [
                 {
                     "type": "p",
@@ -361,7 +361,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Logging & Telemetry Fundamentals | Essential SOC Data Sources",
-            "image": "",
+            "image": "telemetry.svg",
             "texts": [
                 {
                     "type": "p",
@@ -399,33 +399,34 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Detection Engineering Essentials | SOC Threat Detection & Analytics",
-            "image": "",
+            "image": "alert_fatigue.png",
             "texts": [
                 {
                     "type": "p",
                     "content": "Detection engineering is the art of turning logs and telemetry into actionable alerts for the SOC."
                 },
                 {
-                    "type": "ul",
+                    "type": "ol",
                     "content": [
-                        "Rule-based detection: SIEM correlation rules for known threats",
+                        "Choose the right tool: test all predefined alert tools (EDR, NDR, UEBA, ...)",
                         "Anomaly detection & analytics: Identify unusual behavior patterns",
+                        "Rule-based detection: SIEM correlation rules for known threats",
                         "MITRE ATT&CK alignment: Map detections to attacker techniques",
-                        "False positives management: Tune alerts to reduce noise"
+                        "False positives management: rewrite the rule with a good detection strategy (do not adjust alerts to reduce noise -> risks of true negatives, exclusion management)"
                     ]
                 },
                 {
                     "type": "p",
-                    "content": "Effective detection requires balance between automation and human insight to spot threats before they cause damage."
+                    "content": "Effective detection requires good quality rules; they must have good design, with repeatable tests, including in the tools you buy."
                 }
             ]
         },
         {
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://www.itrust.fr/definition-dun-soc\">itrust - SOC definition</a>.",
             "title": "SOC Tooling & Architecture Overview | Key Security Technologies",
-            "image": "",
+            "image": "SOC_tool_architecture.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -451,7 +452,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Threat Intelligence in the SOC | Using TI for Proactive Defense",
-            "image": "",
+            "image": "Pyramid-of-Pain.png",
             "texts": [
                 {
                     "type": "p",
@@ -477,15 +478,16 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Incident Response Foundations | SOC Incident Management",
-            "image": "",
+            "image": "incident_process.webp",
             "texts": [
                 {
                     "type": "p",
                     "content": "Incident response ensures organized, fast, and effective handling of security events."
                 },
                 {
-                    "type": "ul",
+                    "type": "ol",
                     "content": [
+                        "Preparation: the most important step -> training, playbooks, process",
                         "Identification & Classification: Detect and categorize incidents by severity",
                         "Containment & Eradication: Stop the threat and remove its impact",
                         "Recovery: Restore systems and data safely",
@@ -503,18 +505,18 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "SOC Challenges & Best Practices | Improving Security Operations",
-            "image": "",
+            "image": "quality_vs_quantity.png",
             "texts": [
                 {
                     "type": "p",
                     "content": "SOC teams face common challenges that impact efficiency and effectiveness.<br><strong>Key Challenges:</strong>"
                 },
                 {
-                    "type": "ul",
+                    "type": "ol",
                     "content": [
+                        "Resource constraints: Limited skilled personnel and time to build an effective defense",
                         "Alert fatigue: High volume of false positives",
-                        "Coverage gaps: Missing visibility across systems or cloud services",
-                        "Resource constraints: Limited skilled personnel and time"
+                        "Coverage gaps: Missing visibility across systems or cloud services"
                     ]
                 },
                 {
@@ -522,8 +524,9 @@
                     "content": "<strong>Best Practices:</strong>"
                 },
                 {
-                    "type": "ul",
+                    "type": "ol",
                     "content": [
+                        "Take time to build a real and effective defense",
                         "Automation & Orchestration: Reduce manual work and response time",
                         "Continuous Improvement: Use metrics, purple teaming, and lessons learned",
                         "Prioritization & Intelligence: Focus on high-risk threats and actionable alerts"
@@ -545,7 +548,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Firewalls in Cybersecurity: Benefits, Limits, and Common Misconceptions",
-            "image": "",
+            "image": "stupid_firewall.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -579,7 +582,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Firewalls in Cybersecurity: Benefits, Limits, and Common Misconceptions",
-            "image": "",
+            "image": "firewall.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -611,7 +614,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Antivirus & Endpoint Protection (EPP): Benefits, Limits, and Common Misconceptions",
-            "image": "",
+            "image": "antivirus.png",
             "texts": [
                 {
                     "type": "p",
@@ -680,7 +683,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "IDS & IPS in Cybersecurity: Detection, Prevention, Limits and SOC Essentials",
-            "image": "",
+            "image": "IPS_IDS.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -714,7 +717,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "IDS & IPS in Cybersecurity: Detection, Prevention, Limits and SOC Essentials",
-            "image": "",
+            "image": "IPS_IDS.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -757,7 +760,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Endpoint Detection & Response (EDR): Advanced Threat Detection, Response & SOC Integration",
-            "image": "",
+            "image": "edr.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -793,7 +796,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Endpoint Detection & Response (EDR): Advanced Threat Detection, Response & SOC Integration",
-            "image": "",
+            "image": "edr.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -825,7 +828,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Network Detection & Response (NDR): Monitoring, Threat Detection & SOC Insights",
-            "image": "",
+            "image": "NDR.png",
             "texts": [
                 {
                     "type": "p",
@@ -859,7 +862,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Network Detection & Response (NDR): Monitoring, Threat Detection & SOC Insights",
-            "image": "",
+            "image": "NDR1.png",
             "texts": [
                 {
                     "type": "p",
@@ -891,7 +894,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Security Information & Event Management (SIEM): Centralized Monitoring, Correlation & Threat Detection",
-            "image": "",
+            "image": "SIEM1.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -926,7 +929,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Security Information & Event Management (SIEM): Centralized Monitoring, Correlation & Threat Detection",
-            "image": "",
+            "image": "SIEM2.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -971,7 +974,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Threat Intelligence Platform (TIP): Collect, Analyze & Operationalize Threat Data",
-            "image": "",
+            "image": "TIP.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1005,7 +1008,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Threat Intelligence Platform (TIP): Collect, Analyze & Operationalize Threat Data",
-            "image": "",
+            "image": "TIP.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1026,7 +1029,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "WAF (Web Application Firewall): Protecting Web Applications from Attacks",
-            "image": "",
+            "image": "waf.png",
             "texts": [
                 {
                     "type": "p",
@@ -1059,7 +1062,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "WAF (Web Application Firewall): Protecting Web Applications from Attacks",
-            "image": "",
+            "image": "waf1.png",
             "texts": [
                 {
                     "type": "p",
@@ -1089,7 +1092,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Data Loss Prevention (DLP): Protecting Sensitive Data on Endpoint & Network",
-            "image": "",
+            "image": "data-loss-prevention-types.webp",
             "texts": [
                 {
                     "type": "p",
@@ -1122,7 +1125,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Data Loss Prevention (DLP): Protecting Sensitive Data on Endpoint & Network",
-            "image": "",
+            "image": "dlp.jpeg",
             "texts": [
                 {
                     "type": "p",
@@ -1164,7 +1167,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Extended Detection & Response (XDR): One Tool to Rule Them All ?",
-            "image": "",
+            "image": "XDR.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -1183,7 +1186,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "UEBA (User & Entity Behavior Analytics): Detecting Anomalies Through Behavior",
-            "image": "",
+            "image": "UEBA.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -1200,7 +1203,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Additional Detection Tools: Specialized Sensors Across Hosts, Network & Cloud",
-            "image": "",
+            "image": "detection_tools.png",
             "texts": [
                 {
                     "type": "ul",
@@ -1220,7 +1223,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "SOAR Platforms for SOC Operations: Orchestration & Automated Response",
-            "image": "",
+            "image": "SOAR.png",
             "texts": [
                 {
                     "type": "p",
@@ -1256,7 +1259,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "SOAR Platforms for SOC Operations: Orchestration & Automated Response",
-            "image": "",
+            "image": "robot_breaks.jpeg",
             "texts": [
                 {
                     "type": "p",
@@ -1289,7 +1292,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Cybersecurity Vulnerability Scanning: Tools for Exposure and Risk Identification",
-            "image": "",
+            "image": "vulnerability_scanning.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1313,7 +1316,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Cybersecurity Vulnerability Scanning: Tools for Exposure and Risk Identification",
-            "image": "",
+            "image": "vulnerability_scanning.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1358,7 +1361,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Hashing and Fuzzy Hashes: Core File-Based Detection",
-            "image": "",
+            "image": "hash.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -1371,7 +1374,7 @@
                 },
                 {
                     "type": "p",
-                    "content": "Hashing is a foundational detection mechanism, but alone it cannot catch modern malware variants, complementary heuristics and behavioral monitoring are required."
+                    "content": "Hashing is a foundational detection vulnerability_scanning.jpgmechanism, but alone it cannot catch modern malware variants, complementary heuristics and behavioral monitoring are required."
                 }
             ]
         },
@@ -1380,7 +1383,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Heuristic Analysis: Detecting Suspicious File Patterns",
-            "image": "",
+            "image": "heuristic.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -1403,7 +1406,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Signature Languages: Regex & Yara for Malware Detection",
-            "image": "",
+            "image": "regex.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -1425,7 +1428,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "File Monitoring: fanotify, inotify, and Minifilter Drivers",
-            "image": "",
+            "image": "file_monitoring.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -1667,7 +1670,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Understanding the Attack Scenario",
-            "image": "",
+            "image": "search_solution.jpg",
             "texts": [
                 {
                     "type": "p",
