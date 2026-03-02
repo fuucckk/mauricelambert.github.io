@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: Documentation - DiskAnalyzer.MbrRepair</title>
+</head><body>
+
+<style>
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    padding: 2rem;
+}
+
+/* Main container tables */
+table.section {
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+/* ===== COLOR PER SECTION CATEGORY ===== */
+.title-decor { background-color: #3a3d1e !important; }
+.functions-decor { background-color: #3a1e3d !important; }
+.data-decor { background-color: #1e3a3d !important; }
+.author-decor { background-color: #3d2e1e !important; }
+.index-decor { background-color: #1e3d2f !important; }
+
+/* Code blocks */
+pre {
+    background-color: #2d2d2d;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* Links */
+a { color: #4ec9b0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="DiskAnalyzer.html" class="white">DiskAnalyzer</a>.MbrRepair</strong> (version 0.1.0)</td>
+<td class="extra"><a href=".">index</a><br><a>mbrrepair.py</a></td></tr></table>
+    <p><span class="code">This&nbsp;package&nbsp;implements&nbsp;multiples&nbsp;libraries&nbsp;and&nbsp;tools&nbsp;to&nbsp;parse,&nbsp;analyze<br>
+and&nbsp;extract&nbsp;informations&nbsp;from&nbsp;disk&nbsp;on&nbsp;the&nbsp;live&nbsp;system.<br>
+&nbsp;<br>
+C:\&gt;&nbsp;certutil&nbsp;-urlcache&nbsp;<a href="https://github.com/RCH2514/Medium-attachments/raw/refs/heads/main/stick.img">https://github.com/RCH2514/Medium-attachments/raw/refs/heads/main/stick.img</a><br>
+C:\&gt;&nbsp;python&nbsp;MbrRepair.py&nbsp;stick.img<br>
+&nbsp;<br>
+DiskAnalyzer&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2025,&nbsp;2026&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+Warning:&nbsp;No&nbsp;main&nbsp;partition&nbsp;found,&nbsp;partitions&nbsp;found:&nbsp;EMPTY&nbsp;EMPTY&nbsp;EMPTY&nbsp;EMPTY<br>
+[?]&nbsp;&lt;enter&gt;&nbsp;to&nbsp;search&nbsp;partitions,&nbsp;Ctrl+C&nbsp;to&nbsp;stop...<br>
+[!]&nbsp;Found&nbsp;a&nbsp;new&nbsp;FAT32&nbsp;partition&nbsp;at&nbsp;6&nbsp;with&nbsp;49152&nbsp;sectors&nbsp;(end:&nbsp;25168896&nbsp;B)<br>
+End&nbsp;Of&nbsp;File<br>
+Last&nbsp;sector&nbsp;49158<br>
+[?]&nbsp;&lt;enter&gt;&nbsp;to&nbsp;write&nbsp;a&nbsp;new&nbsp;unbootable&nbsp;MBR,&nbsp;Ctrl+C&nbsp;to&nbsp;stop...<br>
+&nbsp;<br>
+C:\&gt;&nbsp;python&nbsp;MbrRepair.py&nbsp;stick.img<br>
+&nbsp;<br>
+DiskAnalyzer&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2025,&nbsp;2026&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+Warning:&nbsp;No&nbsp;main&nbsp;partition&nbsp;found,&nbsp;partitions&nbsp;found:&nbsp;FAT32&nbsp;EMPTY&nbsp;EMPTY&nbsp;EMPTY<br>
+[?]&nbsp;&lt;enter&gt;&nbsp;to&nbsp;search&nbsp;partitions,&nbsp;Ctrl+C&nbsp;to&nbsp;stop...<br>
+C:\&gt;</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-carve_boot_sectors"><strong>carve_boot_sectors</strong></a>(file: BufferedReader) -&gt; Iterable[Tuple[int, Tuple[bytes, str]]]</dt><dd><span class="code">This&nbsp;function&nbsp;implements&nbsp;the&nbsp;disk&nbsp;carving&nbsp;to<br>
+found&nbsp;the&nbsp;first&nbsp;sector&nbsp;for&nbsp;the&nbsp;partition.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>__all__</strong> = ['carve_boot_sectors']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<span class="repr">\n</span>DiskAnalyzer  Copyright (C) 2025, 2026  Maurice...ome to redistribute it<span class="repr">\n</span>under certain conditions.<span class="repr">\n</span>'<br>
+<strong>__description__</strong> = '<span class="repr">\n</span>This package implements multiples libraries and...tract informations from disk on the live system.<span class="repr">\n</span>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/DiskAnalyzer'</td></tr></table><p>
+<table class="section">
+<tr class="decor author-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Author</strong></td></tr>
+    
+<tr><td class="decor author-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>

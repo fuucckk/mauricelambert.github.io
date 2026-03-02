@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: Documentation - DiskAnalyzer.Fat32Analyzer</title>
+</head><body>
+
+<style>
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    padding: 2rem;
+}
+
+/* Main container tables */
+table.section {
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+/* ===== COLOR PER SECTION CATEGORY ===== */
+.title-decor { background-color: #3a3d1e !important; }
+.functions-decor { background-color: #3a1e3d !important; }
+.data-decor { background-color: #1e3a3d !important; }
+.author-decor { background-color: #3d2e1e !important; }
+.index-decor { background-color: #1e3d2f !important; }
+
+/* Code blocks */
+pre {
+    background-color: #2d2d2d;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* Links */
+a { color: #4ec9b0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="DiskAnalyzer.html" class="white">DiskAnalyzer</a>.Fat32Analyzer</strong> (version 0.0.1)</td>
+<td class="extra"><a href=".">index</a><br><a>fat32analyzer.py</a></td></tr></table>
+    <p><span class="code">This&nbsp;package&nbsp;implements&nbsp;multiples&nbsp;libraries&nbsp;and&nbsp;tools&nbsp;to&nbsp;parse,&nbsp;analyze<br>
+and&nbsp;extract&nbsp;informations&nbsp;from&nbsp;disk&nbsp;on&nbsp;the&nbsp;live&nbsp;system.<br>
+&nbsp;<br>
+~#&nbsp;dd&nbsp;if=/dev/zero&nbsp;of=disk.img&nbsp;bs=1M&nbsp;count=200<br>
+200+0&nbsp;records&nbsp;in<br>
+200+0&nbsp;records&nbsp;out<br>
+209715200&nbsp;bytes&nbsp;(210&nbsp;MB,&nbsp;200&nbsp;MiB)&nbsp;copied,&nbsp;0.11415&nbsp;s,&nbsp;1.8&nbsp;GB/s<br>
+&nbsp;<br>
+~#&nbsp;fdisk&nbsp;disk.img<br>
+&nbsp;<br>
+Welcome&nbsp;to&nbsp;fdisk&nbsp;(util-linux&nbsp;2.41.3).<br>
+Changes&nbsp;will&nbsp;remain&nbsp;in&nbsp;memory&nbsp;only,&nbsp;until&nbsp;you&nbsp;decide&nbsp;to&nbsp;write&nbsp;them.<br>
+Be&nbsp;careful&nbsp;before&nbsp;using&nbsp;the&nbsp;write&nbsp;command.<br>
+&nbsp;<br>
+Device&nbsp;does&nbsp;not&nbsp;contain&nbsp;a&nbsp;recognized&nbsp;partition&nbsp;table.<br>
+Created&nbsp;a&nbsp;new&nbsp;DOS&nbsp;(MBR)&nbsp;disklabel&nbsp;with&nbsp;disk&nbsp;identifier&nbsp;0x88d08f9b.<br>
+&nbsp;<br>
+Command&nbsp;(m&nbsp;for&nbsp;help):&nbsp;n<br>
+Partition&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;p&nbsp;&nbsp;&nbsp;primary&nbsp;(0&nbsp;primary,&nbsp;0&nbsp;extended,&nbsp;4&nbsp;free)<br>
+&nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;extended&nbsp;(container&nbsp;for&nbsp;logical&nbsp;partitions)<br>
+Select&nbsp;(default&nbsp;p):&nbsp;p<br>
+Partition&nbsp;number&nbsp;(1-4,&nbsp;default&nbsp;1):&nbsp;1<br>
+First&nbsp;sector&nbsp;(2048-409599,&nbsp;default&nbsp;2048):<br>
+Last&nbsp;sector,&nbsp;+/-sectors&nbsp;or&nbsp;+/-size{K,M,G,T,P}&nbsp;(2048-409599,&nbsp;default&nbsp;409599):<br>
+&nbsp;<br>
+Created&nbsp;a&nbsp;new&nbsp;partition&nbsp;1&nbsp;of&nbsp;type&nbsp;'Linux'&nbsp;and&nbsp;of&nbsp;size&nbsp;199&nbsp;MiB.<br>
+&nbsp;<br>
+Command&nbsp;(m&nbsp;for&nbsp;help):&nbsp;t<br>
+Selected&nbsp;partition&nbsp;1<br>
+Hex&nbsp;code&nbsp;or&nbsp;alias&nbsp;(type&nbsp;L&nbsp;to&nbsp;list&nbsp;all):&nbsp;b<br>
+Changed&nbsp;type&nbsp;of&nbsp;partition&nbsp;'Linux'&nbsp;to&nbsp;'W95&nbsp;FAT32'.<br>
+&nbsp;<br>
+Command&nbsp;(m&nbsp;for&nbsp;help):&nbsp;p<br>
+Disk&nbsp;fat32.img:&nbsp;200&nbsp;MiB,&nbsp;209715200&nbsp;bytes,&nbsp;409600&nbsp;sectors<br>
+Units:&nbsp;sectors&nbsp;of&nbsp;1&nbsp;*&nbsp;512&nbsp;=&nbsp;512&nbsp;bytes<br>
+Sector&nbsp;size&nbsp;(logical/physical):&nbsp;512&nbsp;bytes&nbsp;/&nbsp;512&nbsp;bytes<br>
+I/O&nbsp;size&nbsp;(minimum/optimal):&nbsp;512&nbsp;bytes&nbsp;/&nbsp;512&nbsp;bytes<br>
+Disklabel&nbsp;type:&nbsp;dos<br>
+Disk&nbsp;identifier:&nbsp;0x88d08f9b<br>
+&nbsp;<br>
+Device&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boot&nbsp;Start&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sectors&nbsp;&nbsp;Size&nbsp;Id&nbsp;Type<br>
+fat32.img1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2048&nbsp;409599&nbsp;&nbsp;407552&nbsp;&nbsp;199M&nbsp;&nbsp;b&nbsp;W95&nbsp;FAT32<br>
+&nbsp;<br>
+Command&nbsp;(m&nbsp;for&nbsp;help):&nbsp;w<br>
+The&nbsp;partition&nbsp;table&nbsp;has&nbsp;been&nbsp;altered.<br>
+&nbsp;<br>
+~#&nbsp;sudo&nbsp;losetup&nbsp;-Pf&nbsp;disk.img<br>
+~#&nbsp;losetup&nbsp;-a<br>
+/dev/loop0:&nbsp;[]:&nbsp;(/home/kali/fat32.img)<br>
+~#&nbsp;sudo&nbsp;mkfs.fat&nbsp;-F&nbsp;32&nbsp;/dev/loop0p1<br>
+mkfs.fat&nbsp;4.2&nbsp;(2021-01-31)<br>
+~#&nbsp;sudo&nbsp;mkdir&nbsp;-p&nbsp;/mnt/fat32<br>
+~#&nbsp;sudo&nbsp;mount&nbsp;/dev/loop0p1&nbsp;/mnt/fat32<br>
+~#&nbsp;echo&nbsp;"Hello&nbsp;FAT32"&nbsp;&gt;&nbsp;/mnt/fat32/test.txt<br>
+~#&nbsp;mkdir&nbsp;/mnt/fat32/dir1<br>
+~#&nbsp;echo&nbsp;"Nested&nbsp;file"&nbsp;&gt;&nbsp;/mnt/fat32/dir1/nested.txt<br>
+~#&nbsp;touch&nbsp;"/mnt/fat32/ThisIsALongFileNameToTestLFN.txt"<br>
+~#&nbsp;python3&nbsp;-c&nbsp;'open("/mnt/fat32/big.txt",&nbsp;"w").write("a"*8000)'<br>
+~#&nbsp;dd&nbsp;if=/dev/urandom&nbsp;of=/mnt/fat32/big.bin&nbsp;bs=1M&nbsp;count=20<br>
+~#&nbsp;sudo&nbsp;umount&nbsp;/mnt/fat32<br>
+~#&nbsp;sudo&nbsp;losetup&nbsp;-d&nbsp;/dev/loop0<br>
+&nbsp;<br>
+<a href="https://github.com/procount/fat32images/raw/refs/heads/master/noobs1gb.img.zip">https://github.com/procount/fat32images/raw/refs/heads/master/noobs1gb.img.zip</a><br>
+&nbsp;<br>
+C:\&gt;&nbsp;certutil&nbsp;-urlcache&nbsp;<a href="https://github.com/RCH2514/Medium-attachments/raw/refs/heads/main/stick.img">https://github.com/RCH2514/Medium-attachments/raw/refs/heads/main/stick.img</a><br>
+C:\&gt;&nbsp;python&nbsp;-m&nbsp;DiskAnalyzer.MbrRepair&nbsp;stick.img<br>
+&nbsp;<br>
+DiskAnalyzer&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2025,&nbsp;2026&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+Warning:&nbsp;No&nbsp;main&nbsp;partition&nbsp;found,&nbsp;partitions&nbsp;found:&nbsp;EMPTY&nbsp;EMPTY&nbsp;EMPTY&nbsp;EMPTY<br>
+[?]&nbsp;&lt;enter&gt;&nbsp;to&nbsp;search&nbsp;partitions,&nbsp;Ctrl+C&nbsp;to&nbsp;stop...<br>
+[!]&nbsp;Found&nbsp;a&nbsp;new&nbsp;FAT32&nbsp;partition&nbsp;at&nbsp;6&nbsp;with&nbsp;49152&nbsp;sectors&nbsp;(end:&nbsp;25168896&nbsp;B)<br>
+End&nbsp;Of&nbsp;File<br>
+Last&nbsp;sector&nbsp;49158<br>
+[?]&nbsp;&lt;enter&gt;&nbsp;to&nbsp;write&nbsp;a&nbsp;new&nbsp;unbootable&nbsp;MBR,&nbsp;Ctrl+C&nbsp;to&nbsp;stop...<br>
+&nbsp;<br>
+C:\&gt;&nbsp;python&nbsp;-m&nbsp;DiskAnalyzer.MbrRepair&nbsp;stick.img<br>
+&nbsp;<br>
+DiskAnalyzer&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2025,&nbsp;2026&nbsp;&nbsp;Maurice&nbsp;Lambert<br>
+This&nbsp;program&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.<br>
+This&nbsp;is&nbsp;free&nbsp;software,&nbsp;and&nbsp;you&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it<br>
+under&nbsp;certain&nbsp;conditions.<br>
+&nbsp;<br>
+Warning:&nbsp;No&nbsp;main&nbsp;partition&nbsp;found,&nbsp;partitions&nbsp;found:&nbsp;FAT32&nbsp;EMPTY&nbsp;EMPTY&nbsp;EMPTY<br>
+[?]&nbsp;&lt;enter&gt;&nbsp;to&nbsp;search&nbsp;partitions,&nbsp;Ctrl+C&nbsp;to&nbsp;stop...<br>
+C:\&gt;&nbsp;python&nbsp;-m&nbsp;DiskAnalyzer.Fat32Analyzer&nbsp;-v&nbsp;stick.img<br>
+[+]&nbsp;MBR&nbsp;Detected<br>
+&nbsp;&nbsp;Bootloader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ebfeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ffffffffffff<br>
+&nbsp;&nbsp;Partition&nbsp;1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;0x00&nbsp;(INACTIVE)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;0x0B&nbsp;(FAT32)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;LBA&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Total&nbsp;Sectors:&nbsp;49152&nbsp;(24.00&nbsp;MB)<br>
+&nbsp;&nbsp;Boot&nbsp;Signature<br>
+&nbsp;&nbsp;&nbsp;&nbsp;55aa<br>
+&nbsp;<br>
+[+]&nbsp;FAT32&nbsp;Boot&nbsp;Sector&nbsp;Detected<br>
+&nbsp;&nbsp;Jump&nbsp;Boot:&nbsp;eb5890<br>
+&nbsp;&nbsp;OEM&nbsp;Name:&nbsp;mkfs.fat<br>
+&nbsp;&nbsp;Bytes&nbsp;Per&nbsp;Sector:&nbsp;512<br>
+&nbsp;&nbsp;Sectors&nbsp;Per&nbsp;Cluster:&nbsp;1<br>
+&nbsp;&nbsp;Reserved&nbsp;Sector&nbsp;Count:&nbsp;32<br>
+&nbsp;&nbsp;Number&nbsp;of&nbsp;FATs:&nbsp;2<br>
+&nbsp;&nbsp;Root&nbsp;Entry&nbsp;Count:&nbsp;0<br>
+&nbsp;&nbsp;Total&nbsp;Sectors&nbsp;16:&nbsp;49152<br>
+&nbsp;&nbsp;Media:&nbsp;248<br>
+&nbsp;&nbsp;FAT&nbsp;Size&nbsp;16:&nbsp;0<br>
+&nbsp;&nbsp;Sector&nbsp;per&nbsp;track:&nbsp;32<br>
+&nbsp;&nbsp;Number&nbsp;of&nbsp;heads:&nbsp;4<br>
+&nbsp;&nbsp;Hidden&nbsp;Sectors:&nbsp;0<br>
+&nbsp;&nbsp;Total&nbsp;Sectors&nbsp;32:&nbsp;0<br>
+&nbsp;&nbsp;FAT&nbsp;Size&nbsp;32:&nbsp;378<br>
+&nbsp;&nbsp;Extended&nbsp;Flags:&nbsp;0<br>
+&nbsp;&nbsp;File&nbsp;System&nbsp;version:&nbsp;0<br>
+&nbsp;&nbsp;Root&nbsp;Cluster:&nbsp;2<br>
+&nbsp;&nbsp;FSInfo&nbsp;Sector:&nbsp;1<br>
+&nbsp;&nbsp;Backup&nbsp;Boot&nbsp;Sector:&nbsp;6<br>
+&nbsp;&nbsp;Reserved:&nbsp;000000000000000000000000<br>
+&nbsp;&nbsp;Drive&nbsp;Number:&nbsp;0x80<br>
+&nbsp;&nbsp;Reserved:&nbsp;0<br>
+&nbsp;&nbsp;Boot&nbsp;Signature:&nbsp;0x29<br>
+&nbsp;&nbsp;Volume&nbsp;ID:&nbsp;0x8caae860<br>
+&nbsp;&nbsp;Volume&nbsp;Label:&nbsp;NO&nbsp;NAME<br>
+&nbsp;&nbsp;File&nbsp;System&nbsp;Type:&nbsp;FAT32<br>
+&nbsp;&nbsp;Boot&nbsp;code:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0e1fbe777cac22c0740b56b40ebb0700cd105eebf032e4cd16cd19ebfe54686973206973206e6f74<br>
+&nbsp;&nbsp;&nbsp;&nbsp;206120626f6f7461626c65206469736b2e2020506c6561736520696e73657274206120626f6f7461<br>
+&nbsp;&nbsp;&nbsp;&nbsp;626c6520666c6f70707920616e640d0a707265737320616e79206b657920746f2074727920616761<br>
+&nbsp;&nbsp;&nbsp;&nbsp;696e202e2e2e200d0a00000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0000000000000000000000000000000000000000<br>
+BootSectorSignature:&nbsp;aa55<br>
+&nbsp;<br>
+[+]&nbsp;FSInfo&nbsp;Sector<br>
+&nbsp;&nbsp;Lead&nbsp;Signature:&nbsp;0x41615252<br>
+&nbsp;&nbsp;Reserved:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;00000000000000000000000000000000000000000000000000000000000000000000000000000000<br>
+&nbsp;&nbsp;Struct&nbsp;Signature:&nbsp;0x61417272<br>
+&nbsp;&nbsp;Free&nbsp;Count:&nbsp;48363<br>
+&nbsp;&nbsp;Next&nbsp;Free&nbsp;Cluster:&nbsp;2<br>
+&nbsp;&nbsp;Reserved:&nbsp;000000000000000000000000<br>
+&nbsp;&nbsp;Trail&nbsp;Signature:&nbsp;0xaa550000<br>
+[&gt;]&nbsp;Partition&nbsp;size&nbsp;in&nbsp;sector:&nbsp;49152<br>
+&nbsp;<br>
+[+]&nbsp;Directory&nbsp;Entry&nbsp;Found<br>
+&nbsp;&nbsp;Long&nbsp;name:&nbsp;notes.txt<br>
+&nbsp;&nbsp;Name:&nbsp;NOTES.TXT<br>
+&nbsp;&nbsp;Attributes:&nbsp;ARCHIVE<br>
+&nbsp;&nbsp;NT&nbsp;Reserved:&nbsp;0<br>
+&nbsp;&nbsp;Creation&nbsp;Time:&nbsp;22:27:22.082<br>
+&nbsp;&nbsp;Creation&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;Last&nbsp;Access&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;Write&nbsp;Time:&nbsp;22:27:22<br>
+&nbsp;&nbsp;Write&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;First&nbsp;Cluster:&nbsp;3<br>
+&nbsp;&nbsp;File&nbsp;Size:&nbsp;76&nbsp;bytes<br>
+&nbsp;&nbsp;File&nbsp;content:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4e6f7465733a0a2d207072616374696365206d79207a6172726f772073687566666c650a2d206c65<br>
+&nbsp;&nbsp;&nbsp;&nbsp;61726e20736f6d652066616c736520637574730a2d20706c617920736f6d65207374730a<br>
+&nbsp;<br>
+[+]&nbsp;Directory&nbsp;Entry&nbsp;Found<br>
+&nbsp;&nbsp;Long&nbsp;name:&nbsp;random_thoughts.txt<br>
+&nbsp;&nbsp;Name:&nbsp;RANDOM~1.TXT<br>
+&nbsp;&nbsp;Attributes:&nbsp;ARCHIVE<br>
+&nbsp;&nbsp;NT&nbsp;Reserved:&nbsp;0<br>
+&nbsp;&nbsp;Creation&nbsp;Time:&nbsp;22:27:22.082<br>
+&nbsp;&nbsp;Creation&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;Last&nbsp;Access&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;Write&nbsp;Time:&nbsp;22:27:22<br>
+&nbsp;&nbsp;Write&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;First&nbsp;Cluster:&nbsp;4<br>
+&nbsp;&nbsp;File&nbsp;Size:&nbsp;56&nbsp;bytes<br>
+&nbsp;&nbsp;File&nbsp;content:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6920776f6e6465722077686572652069207075742074686520666c61672e2064696420692070616c<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6d20697420736f6d6577686572653f0a<br>
+&nbsp;<br>
+[+]&nbsp;Directory&nbsp;Entry&nbsp;Found<br>
+&nbsp;&nbsp;Long&nbsp;name:&nbsp;secret_magic_collection.gz<br>
+&nbsp;&nbsp;Deleted&nbsp;file<br>
+&nbsp;&nbsp;Partial&nbsp;name:&nbsp;ECRET~1.GZ<br>
+&nbsp;&nbsp;Attributes:&nbsp;ARCHIVE<br>
+&nbsp;&nbsp;NT&nbsp;Reserved:&nbsp;0<br>
+&nbsp;&nbsp;Creation&nbsp;Time:&nbsp;22:27:22.083<br>
+&nbsp;&nbsp;Creation&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;Last&nbsp;Access&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;Write&nbsp;Time:&nbsp;22:27:22<br>
+&nbsp;&nbsp;Write&nbsp;Date:&nbsp;2025-07-17<br>
+&nbsp;&nbsp;First&nbsp;Cluster:&nbsp;5<br>
+&nbsp;&nbsp;File&nbsp;Size:&nbsp;60&nbsp;bytes<br>
+&nbsp;&nbsp;File&nbsp;content:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1f8b0808ca7879680003666c61672e747874002b4e2eca2c28710e71ab368ccf3128338ecf353133<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4c8e372f324cce36ade502000ba1b6db1f000000<br>
+C:\&gt;<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;print(bytes.fromhex("4e6f7465733a0a2d207072616374696365206d79207a6172726f772073687566666c650a2d206c6561726e20736f6d652066616c736520637574730a2d20706c617920736f6d65207374730a").decode())<br>
+Notes:<br>
+-&nbsp;practice&nbsp;my&nbsp;zarrow&nbsp;shuffle<br>
+-&nbsp;learn&nbsp;some&nbsp;false&nbsp;cuts<br>
+-&nbsp;play&nbsp;some&nbsp;sts<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;print(bytes.fromhex("6920776f6e6465722077686572652069207075742074686520666c61672e2064696420692070616c6d20697420736f6d6577686572653f0a").decode())<br>
+i&nbsp;wonder&nbsp;where&nbsp;i&nbsp;put&nbsp;the&nbsp;flag.&nbsp;did&nbsp;i&nbsp;palm&nbsp;it&nbsp;somewhere?<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;gzip&nbsp;import&nbsp;decompress<br>
+&gt;&gt;&gt;&nbsp;print(decompress(bytes.fromhex("1f8b0808ca7879680003666c61672e747874002b4e2eca2c28710e71ab368ccf3128338ecf3531334c8e372f324cce36ade502000ba1b6db1f000000")).decode())<br>
+scriptCTF{1_l0v3_m461c_7r1ck5}<br>
+&nbsp;<br>
+&gt;&gt;&gt;</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-fat32_enumeration"><strong>fat32_enumeration</strong></a>(
+    bootsector: FAT32BootSector,
+    file: BufferedReader,
+    partition_offset: int
+) -&gt; Iterable[FAT32DirEntry]</dt><dd><span class="code">This&nbsp;generator&nbsp;yields&nbsp;all&nbsp;FAT32&nbsp;Directory&nbsp;entries.</span></dd></dl>
+ <dl><dt><a name="-fat32_parse"><strong>fat32_parse</strong></a>(partition: Partition, file: BufferedReader) -&gt; Tuple[BufferedReader, FAT32BootSector, int, FAT32FSInfo]</dt><dd><span class="code">Parse&nbsp;the&nbsp;disk,&nbsp;find&nbsp;the&nbsp;FAT32&nbsp;partition,<br>
+read&nbsp;the&nbsp;Boot&nbsp;Sector&nbsp;and&nbsp;FSInfo.</span></dd></dl>
+ <dl><dt><a name="-get_partition"><strong>get_partition</strong></a>(filename: str) -&gt; Union[Partition, BufferedReader]</dt><dd><span class="code">This&nbsp;function&nbsp;gets&nbsp;FAT&nbsp;partition&nbsp;using&nbsp;DiskAnalyzer&nbsp;module&nbsp;functions.</span></dd></dl>
+ <dl><dt><a name="-print_directory_entry"><strong>print_directory_entry</strong></a>(
+    entry: FAT32DirEntry,
+    bootsector: FAT32BootSector,
+    file: BufferedReader,
+    partition_offset: int
+) -&gt; None</dt><dd><span class="code">Prints&nbsp;information&nbsp;about&nbsp;a&nbsp;FAT32&nbsp;directory&nbsp;entry&nbsp;with&nbsp;readable&nbsp;fields.</span></dd></dl>
+ <dl><dt><a name="-print_fat32_bootsector"><strong>print_fat32_bootsector</strong></a>(bs: FAT32BootSector, fsinfo: FAT32FSInfo) -&gt; None</dt><dd><span class="code">This&nbsp;function&nbsp;prints&nbsp;informations&nbsp;about&nbsp;FAT32&nbsp;partition.</span></dd></dl>
+ <dl><dt><a name="-save_directory_entry_to_csv"><strong>save_directory_entry_to_csv</strong></a>(
+    entry: FAT32DirEntry,
+    bootsector: FAT32BootSector,
+    fat32_file: BufferedReader,
+    csv_file: DictWriter,
+    partition_offset: int
+) -&gt; None</dt><dd><span class="code">Save&nbsp;FAT32&nbsp;directory&nbsp;entry&nbsp;information&nbsp;into&nbsp;a&nbsp;CSV&nbsp;file.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>__all__</strong> = ['get_partition', 'fat32_parse', 'print_fat32_bootsector', 'fat32_enumeration', 'print_directory_entry', 'save_directory_entry_to_csv']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<span class="repr">\n</span>DiskAnalyzer  Copyright (C) 2026  Maurice Lambe...ome to redistribute it<span class="repr">\n</span>under certain conditions.<span class="repr">\n</span>'<br>
+<strong>__description__</strong> = '<span class="repr">\n</span>This package implements multiples libraries and...tract informations from disk on the live system.<span class="repr">\n</span>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/DiskAnalyzer'</td></tr></table><p>
+<table class="section">
+<tr class="decor author-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Author</strong></td></tr>
+    
+<tr><td class="decor author-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
