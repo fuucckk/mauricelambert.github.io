@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiskAnalyzer - Ransomware Research POC</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+        }
+        a {
+            color: #0ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #0f0;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        code {
+            background-color: rgba(0, 255, 0, 0.1);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        em {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>DiskAnalyzer - Ransomware Research POC</h2>
+
+    <p>
+        I recently conducted a research project on designing a discreet 
+ransomware capable of generating fewer or different filesystem events to
+ bypass certain detections.
+    </p>
+
+    <p>My research focused on bypassing the following events:</p>
+    <ul>
+        <li>Mass renaming with specific extensions</li>
+        <li>Opening files followed by writing with high entropy</li>
+        <li>Opening files followed by writing with slight size increase 
+(padding for block encryption, adding IV, or encoding to reduce entropy)</li>
+        <li>Opening "canary" files followed by writing (accessing these files triggers detection and blocking)</li>
+        <li>Writing ransom files or deleting <em>shadow copies</em></li>
+    </ul>
+
+    <p>The idea: act directly on the NTFS partition to avoid most detected behaviors. The process:</p>
+    <ul>
+        <li>Parse the MBR/GPT to identify the partition</li>
+        <li>Parse the VBR and then the MFT</li>
+        <li>Identify files to encrypt and apply encryption directly on the offsets extracted from the MFT</li>
+    </ul>
+
+    <p>
+        With this method, I only open <code>\\.\PhysicalDrive0</code> and add <code>\\.\C</code> if I want to bypass possible BitLocker encryption.
+    </p>
+
+    <p>
+        This technique allows me to read files protected by the Windows 
+system or monitored by endpoint protections without triggering alerts or
+ blocking 
+        (for example, SAM and SYSTEM to decrypt local user NT hashes 
+with Mimikatz).
+    </p>
+
+    <p>
+        Limitations: to write to the system partition, Windows requires obtaining a <code>FSCTL_LOCK_VOLUME</code>. On the main system partition, this lock is not granted, protecting the system from direct writes.
+    </p>
+
+    <p>
+        The project extracts and parses the MFT. It could also be used 
+in forensics for "hot" acquisition quickly, without any prerequisites 
+other than Python and the standard library.
+    </p>
+
+    <p>
+        You can find the POC code I developed here: 
+        <a href="https://github.com/mauricelambert/DiskAnalyzer/" target="_blank">
+            https://github.com/mauricelambert/DiskAnalyzer/
+        </a>
+    </p>
+
+</body></html>

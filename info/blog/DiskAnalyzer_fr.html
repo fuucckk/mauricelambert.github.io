@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiskAnalyzer - Ransomware Research POC</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+        }
+        a {
+            color: #0ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #0f0;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        code {
+            background-color: rgba(0, 255, 0, 0.1);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        em {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>DiskAnalyzer - Ransomware Research POC</h2>
+
+    <p>
+        J'ai récemment mené un projet de recherche sur la conception 
+d'un ransomware discret capable de générer moins ou différents 
+événements du système de fichiers pour contourner certaines détections.
+    </p>
+
+    <p>Ma recherche portait sur le contournement des événements suivants :</p>
+    <ul>
+        <li>Renommage massif avec extension spécifique</li>
+        <li>Ouverture de fichiers puis écriture avec haute entropie</li>
+        <li>Ouverture de fichiers puis écriture avec légère augmentation
+ de taille (padding pour chiffrement par bloc, ajout d’IV ou encodage 
+pour réduire l’entropie)</li>
+        <li>Ouverture de fichiers "canary" puis écriture (l'accès à ces fichiers déclenche détection et blocage)</li>
+        <li>Écriture de fichiers de rançon ou suppression de <em>shadow copies</em></li>
+    </ul>
+
+    <p>L'idée : agir directement sur la partition NTFS pour éviter la plupart des comportements détectés. Le processus :</p>
+    <ul>
+        <li>Parser le MBR/GPT pour identifier la partition</li>
+        <li>Parser le VBR puis la MFT</li>
+        <li>Identifier les fichiers à chiffrer et appliquer le chiffrement directement sur les offsets extraits de la MFT</li>
+    </ul>
+
+    <p>
+        Avec cette méthode, je n'ouvre que <code>\\.\PhysicalDrive0</code> et j'ajoute <code>\\.\C</code> si je souhaite contourner l'éventuel chiffrement BitLocker.
+    </p>
+
+    <p>
+        Cette technique me permet de lire les fichiers protégés par le 
+système Windows ou surveillés par les protections endpoint sans 
+déclencher d'alerte ni blocage 
+        (par exemple SAM et SYSTEM pour déchiffrer les hash NT des 
+utilisateurs locaux avec Mimikatz).
+    </p>
+
+    <p>
+        Limites : pour écrire sur la partition système, Windows nécessite d’obtenir un <code>FSCTL_LOCK_VOLUME</code>. Sur la partition principale du système, ce verrou n'est pas accordé, ce qui protège le système contre l’écriture directe.
+    </p>
+
+    <p>
+        Le projet extrait et parse la MFT. Il pourrait également être 
+utilisé en forensic pour l'acquisition "à chaud" de manière rapide, sans
+ prérequis autre que Python et la librairie standard.
+    </p>
+
+    <p>
+        Vous pouvez trouver le code du POC que j'ai effectué ici : 
+        <a href="https://github.com/mauricelambert/DiskAnalyzer/" target="_blank">
+            https://github.com/mauricelambert/DiskAnalyzer/
+        </a>
+    </p>
+
+</body></html>
