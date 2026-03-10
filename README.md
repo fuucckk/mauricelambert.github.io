@@ -9,6 +9,7 @@
  - [BTS lesson 3 - Career](https://mauricelambert.github.io/info/InterventionCyberBTS2.pdf)
  - [WebScripts explained](https://mauricelambert.github.io/info/python/code/WebScripts/WebScripts.pdf)
  - [HTTP - Web Server Identifier](https://mauricelambert.github.io/info/python/security/Web-MaxUriIdentifier.pdf)
+ - [Ransomware Research POC - English](https://mauricelambert.github.io/info/blog/DiskAnalyzer_en.html), [Ransomware Research POC - French](https://mauricelambert.github.io/info/blog/DiskAnalyzer_fr.html)
 
 ## Escape game
 
