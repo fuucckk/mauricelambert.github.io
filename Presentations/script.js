@@ -892,6 +892,18 @@ const themes = {
     fontFamily: "Roboto, Arial, sans-serif",
     transitionSpeed: '0.5s',
   },
+  RoyalAmethyst: {
+    dark: {
+      bgColor: '#1a0f2e',
+      textColor: '#ff8c00',
+    },
+    light: {
+      bgColor: '#ede7ff',
+      textColor: '#2a0e55',
+    },
+    fontFamily: "Roboto, Arial, sans-serif",
+    transitionSpeed: '0.5s',
+  },
 };
 
 document.addEventListener('DOMContentLoaded', () => {
