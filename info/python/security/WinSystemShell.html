@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: Documentation - WinSystemShell</title>
+</head><body>
+
+<style>
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    padding: 2rem;
+}
+
+/* Main container tables */
+table.section {
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+/* ===== COLOR PER SECTION CATEGORY ===== */
+.title-decor { background-color: #3a3d1e !important; }
+.functions-decor { background-color: #3a1e3d !important; }
+.data-decor { background-color: #1e3a3d !important; }
+.author-decor { background-color: #3d2e1e !important; }
+.index-decor { background-color: #1e3d2f !important; }
+
+/* Code blocks */
+pre {
+    background-color: #2d2d2d;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* Links */
+a { color: #4ec9b0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">WinSystemShell</strong> (version 0.0.1)</td>
+<td class="extra"><a href=".">index</a><br><a>winsystemshell.py</a></td></tr></table>
+    <p><span class="code">A&nbsp;local&nbsp;privilege&nbsp;escalation&nbsp;utility&nbsp;that&nbsp;allows&nbsp;elevating&nbsp;from&nbsp;an<br>
+administrator&nbsp;context&nbsp;to&nbsp;the&nbsp;SYSTEM&nbsp;account&nbsp;on&nbsp;Windows&nbsp;to&nbsp;perform<br>
+high-privilege&nbsp;operations.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="_ctypes.html#Structure">_ctypes.Structure</a>(_ctypes._CData)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="WinSystemShell.html#INPUT_RECORD">INPUT_RECORD</a>
+</dt><dt class="heading-text"><a href="WinSystemShell.html#KEY_EVENT_RECORD">KEY_EVENT_RECORD</a>
+</dt><dt class="heading-text"><a href="WinSystemShell.html#OVERLAPPED">OVERLAPPED</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="WinSystemShell.html#PipeClient">PipeClient</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="INPUT_RECORD">class <strong>INPUT_RECORD</strong></a>(<a href="_ctypes.html#Structure">_ctypes.Structure</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Represents&nbsp;a&nbsp;console&nbsp;input&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="WinSystemShell.html#INPUT_RECORD">INPUT_RECORD</a></dd>
+<dd><a href="_ctypes.html#Structure">_ctypes.Structure</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>Event</strong></dt>
+</dl>
+<dl><dt><strong>EventType</strong></dt>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="INPUT_RECORD-__buffer__"><strong>__buffer__</strong></a>(self, flags, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;buffer&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;exposes&nbsp;the&nbsp;underlying&nbsp;memory&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#object">object</a>.</span></dd></dl>
+
+<dl><dt><a name="INPUT_RECORD-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Static methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="INPUT_RECORD-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> class method of <a href="_ctypes.html#Structure">_ctypes.Structure</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="INPUT_RECORD-__ctypes_from_outparam__"><strong>__ctypes_from_outparam__</strong></a>(self, /)</dt><dd><span class="code">default&nbsp;__ctypes_from_outparam__&nbsp;method&nbsp;returns&nbsp;self.</span></dd></dl>
+
+<dl><dt><a name="INPUT_RECORD-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="INPUT_RECORD-__reduce__"><strong>__reduce__</strong></a>(self, /)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="INPUT_RECORD-__setstate__"><strong>__setstate__</strong></a>(self, dict, data, /)</dt></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="KEY_EVENT_RECORD">class <strong>KEY_EVENT_RECORD</strong></a>(<a href="_ctypes.html#Structure">_ctypes.Structure</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Represents&nbsp;a&nbsp;key&nbsp;event&nbsp;in&nbsp;the&nbsp;Windows&nbsp;console&nbsp;input.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="WinSystemShell.html#KEY_EVENT_RECORD">KEY_EVENT_RECORD</a></dd>
+<dd><a href="_ctypes.html#Structure">_ctypes.Structure</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<dl><dt><strong>bKeyDown</strong></dt>
+</dl>
+<dl><dt><strong>dwControlKeyState</strong></dt>
+</dl>
+<dl><dt><strong>uChar</strong></dt>
+</dl>
+<dl><dt><strong>wRepeatCount</strong></dt>
+</dl>
+<dl><dt><strong>wVirtualKeyCode</strong></dt>
+</dl>
+<dl><dt><strong>wVirtualScanCode</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="KEY_EVENT_RECORD-__buffer__"><strong>__buffer__</strong></a>(self, flags, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;buffer&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;exposes&nbsp;the&nbsp;underlying&nbsp;memory&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#object">object</a>.</span></dd></dl>
+
+<dl><dt><a name="KEY_EVENT_RECORD-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Static methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="KEY_EVENT_RECORD-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> class method of <a href="_ctypes.html#Structure">_ctypes.Structure</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="KEY_EVENT_RECORD-__ctypes_from_outparam__"><strong>__ctypes_from_outparam__</strong></a>(self, /)</dt><dd><span class="code">default&nbsp;__ctypes_from_outparam__&nbsp;method&nbsp;returns&nbsp;self.</span></dd></dl>
+
+<dl><dt><a name="KEY_EVENT_RECORD-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="KEY_EVENT_RECORD-__reduce__"><strong>__reduce__</strong></a>(self, /)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="KEY_EVENT_RECORD-__setstate__"><strong>__setstate__</strong></a>(self, dict, data, /)</dt></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="OVERLAPPED">class <strong>OVERLAPPED</strong></a>(<a href="_ctypes.html#Structure">_ctypes.Structure</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Represents&nbsp;the&nbsp;Windows&nbsp;<a href="#OVERLAPPED">OVERLAPPED</a>&nbsp;structure&nbsp;for&nbsp;asynchronous&nbsp;I/O.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="WinSystemShell.html#OVERLAPPED">OVERLAPPED</a></dd>
+<dd><a href="_ctypes.html#Structure">_ctypes.Structure</a></dd>
+<dd>_ctypes._CData</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>Internal</strong></dt>
+</dl>
+<dl><dt><strong>InternalHigh</strong></dt>
+</dl>
+<dl><dt><strong>Offset</strong></dt>
+</dl>
+<dl><dt><strong>OffsetHigh</strong></dt>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<dl><dt><strong>hEvent</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="OVERLAPPED-__buffer__"><strong>__buffer__</strong></a>(self, flags, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;buffer&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;exposes&nbsp;the&nbsp;underlying&nbsp;memory&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#object">object</a>.</span></dd></dl>
+
+<dl><dt><a name="OVERLAPPED-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Static methods inherited from <a href="_ctypes.html#Structure">_ctypes.Structure</a>:<br>
+<dl><dt><a name="OVERLAPPED-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> class method of <a href="_ctypes.html#Structure">_ctypes.Structure</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Methods inherited from _ctypes._CData:<br>
+<dl><dt><a name="OVERLAPPED-__ctypes_from_outparam__"><strong>__ctypes_from_outparam__</strong></a>(self, /)</dt><dd><span class="code">default&nbsp;__ctypes_from_outparam__&nbsp;method&nbsp;returns&nbsp;self.</span></dd></dl>
+
+<dl><dt><a name="OVERLAPPED-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="OVERLAPPED-__reduce__"><strong>__reduce__</strong></a>(self, /)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="OVERLAPPED-__setstate__"><strong>__setstate__</strong></a>(self, dict, data, /)</dt></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="PipeClient">class <strong>PipeClient</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#PipeClient">PipeClient</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;executable:&nbsp;str&nbsp;=&nbsp;'C:\\Windows\\System32\\cmd.exe',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;server_path:&nbsp;str&nbsp;=&nbsp;'SystemShellServer.py',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;schtasks:&nbsp;str&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pipein:&nbsp;str&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pipeout:&nbsp;str&nbsp;=&nbsp;None<br>
+)<br>
+&nbsp;<br>
+Client&nbsp;for&nbsp;communicating&nbsp;with&nbsp;a&nbsp;server&nbsp;via&nbsp;named&nbsp;pipes.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="PipeClient-__init__"><strong>__init__</strong></a>(
+    self,
+    executable: str = 'C:\\Windows\\System32\\cmd.exe',
+    server_path: str = 'SystemShellServer.py',
+    schtasks: str = None,
+    pipein: str = None,
+    pipeout: str = None
+)</dt><dd><span class="code">Initialize&nbsp;pipes&nbsp;and&nbsp;console&nbsp;handles,&nbsp;and&nbsp;start&nbsp;the&nbsp;server&nbsp;process.</span></dd></dl>
+
+<dl><dt><a name="PipeClient-run"><strong>run</strong></a>(self) -&gt; int</dt><dd><span class="code">Run&nbsp;the&nbsp;main&nbsp;loop&nbsp;reading&nbsp;from&nbsp;the&nbsp;pipe&nbsp;and&nbsp;console.</span></dd></dl>
+
+<dl><dt><a name="PipeClient-start_pipe_read"><strong>start_pipe_read</strong></a>(self) -&gt; Tuple[OVERLAPPED, bytes]</dt><dd><span class="code">Start&nbsp;an&nbsp;asynchronous&nbsp;read&nbsp;from&nbsp;the&nbsp;output&nbsp;pipe.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>ERROR_BROKEN_PIPE</strong> = 109</dl>
+
+<dl><dt><strong>ERROR_IO_PENDING</strong> = 997</dl>
+
+<dl><dt><strong>FILE_FLAG_OVERLAPPED</strong> = 1073741824</dl>
+
+<dl><dt><strong>GENERIC_READ</strong> = 2147483648</dl>
+
+<dl><dt><strong>GENERIC_WRITE</strong> = 1073741824</dl>
+
+<dl><dt><strong>KEY_EVENT</strong> = 1</dl>
+
+<dl><dt><strong>OPEN_EXISTING</strong> = 3</dl>
+
+<dl><dt><strong>STD_INPUT_HANDLE</strong> = -10</dl>
+
+<dl><dt><strong>STD_OUTPUT_HANDLE</strong> = -11</dl>
+
+<dl><dt><strong>WAIT_OBJECT_0</strong> = 0</dl>
+
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-__annotate__"><strong>__annotate__</strong></a>(format, /)</dt></dl>
+ <dl><dt><a name="-byref"><strong>byref</strong></a>(obj, offset=0, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;pointer&nbsp;lookalike&nbsp;to&nbsp;a&nbsp;C&nbsp;instance,&nbsp;only&nbsp;usable&nbsp;as&nbsp;function&nbsp;argument.</span></dd></dl>
+ <dl><dt><a name="-existing_file"><strong>existing_file</strong></a>(path: str) -&gt; str</dt><dd><span class="code">Validate&nbsp;that&nbsp;the&nbsp;given&nbsp;path&nbsp;points&nbsp;to&nbsp;an&nbsp;existing&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path:&nbsp;Path&nbsp;to&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;file&nbsp;path.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ArgumentTypeError:&nbsp;If&nbsp;the&nbsp;file&nbsp;does&nbsp;not&nbsp;exist.</span></dd></dl>
+ <dl><dt><a name="-exit"><strong>exit</strong></a>(status=None, /)</dt><dd><span class="code">Exit&nbsp;the&nbsp;interpreter&nbsp;by&nbsp;raising&nbsp;SystemExit(status).<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;status&nbsp;is&nbsp;omitted&nbsp;or&nbsp;None,&nbsp;it&nbsp;defaults&nbsp;to&nbsp;zero&nbsp;(i.e.,&nbsp;success).<br>
+If&nbsp;the&nbsp;status&nbsp;is&nbsp;an&nbsp;integer,&nbsp;it&nbsp;will&nbsp;be&nbsp;used&nbsp;as&nbsp;the&nbsp;system&nbsp;exit&nbsp;status.<br>
+If&nbsp;it&nbsp;is&nbsp;another&nbsp;kind&nbsp;of&nbsp;<a href="builtins.html#object">object</a>,&nbsp;it&nbsp;will&nbsp;be&nbsp;printed&nbsp;and&nbsp;the&nbsp;system<br>
+exit&nbsp;status&nbsp;will&nbsp;be&nbsp;one&nbsp;(i.e.,&nbsp;failure).</span></dd></dl>
+ <dl><dt><a name="-isfile"><strong>isfile</strong></a> = _path_isfile(path)</dt><dd><span class="code">Test&nbsp;whether&nbsp;a&nbsp;path&nbsp;is&nbsp;a&nbsp;regular&nbsp;file</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>() -&gt; int</dt><dd><span class="code">The&nbsp;main&nbsp;function&nbsp;to&nbsp;start&nbsp;the&nbsp;script&nbsp;from&nbsp;the&nbsp;command&nbsp;line.</span></dd></dl>
+ <dl><dt><a name="-parse_args"><strong>parse_args</strong></a>() -&gt; Namespace</dt><dd><span class="code">Parse&nbsp;and&nbsp;validate&nbsp;command-line&nbsp;arguments.<br>
+&nbsp;<br>
+python&nbsp;WinSystemShell.py&nbsp;--executable&nbsp;C:\Windows\System32\cmd.exe&nbsp;--schtasks&nbsp;"SystemRunOnce.exe"&nbsp;--server-path&nbsp;C:\temp\server.py&nbsp;--pipein&nbsp;shellpipein&nbsp;--pipeout&nbsp;shellpipeout<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Namespace&nbsp;containing&nbsp;parsed&nbsp;arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;executable:&nbsp;Path&nbsp;to&nbsp;an&nbsp;existing&nbsp;executable&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schtasks:&nbsp;Path&nbsp;to&nbsp;SystemRunOnce.exe,&nbsp;if&nbsp;not&nbsp;defined&nbsp;the&nbsp;default&nbsp;schtasks&nbsp;was&nbsp;used.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server_path:&nbsp;Windows&nbsp;path&nbsp;to&nbsp;the&nbsp;server&nbsp;executable.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pipein:&nbsp;Name&nbsp;of&nbsp;the&nbsp;input&nbsp;named&nbsp;pipe.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pipeout:&nbsp;Name&nbsp;of&nbsp;the&nbsp;output&nbsp;named&nbsp;pipe.</span></dd></dl>
+ <dl><dt><a name="-sleep"><strong>sleep</strong></a>(object, /)</dt><dd><span class="code"><a href="#-sleep">sleep</a>(seconds)<br>
+&nbsp;<br>
+Delay&nbsp;execution&nbsp;for&nbsp;a&nbsp;given&nbsp;number&nbsp;of&nbsp;seconds.&nbsp;&nbsp;The&nbsp;argument&nbsp;may&nbsp;be<br>
+a&nbsp;floating-point&nbsp;number&nbsp;for&nbsp;subsecond&nbsp;precision.</span></dd></dl>
+ <dl><dt><a name="-valid_pipe_name"><strong>valid_pipe_name</strong></a>(name: str) -&gt; str</dt><dd><span class="code">Validate&nbsp;a&nbsp;Windows&nbsp;named&nbsp;pipe&nbsp;name.<br>
+&nbsp;<br>
+Only&nbsp;allows&nbsp;alphanumeric&nbsp;characters,&nbsp;dots,&nbsp;underscores,<br>
+and&nbsp;hyphens.&nbsp;The&nbsp;full&nbsp;pipe&nbsp;path&nbsp;(\\.\pipe\)&nbsp;is&nbsp;not&nbsp;required.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;Pipe&nbsp;name.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;pipe&nbsp;name.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ArgumentTypeError:&nbsp;If&nbsp;the&nbsp;pipe&nbsp;name&nbsp;contains&nbsp;invalid&nbsp;characters.</span></dd></dl>
+ <dl><dt><a name="-valid_windows_path"><strong>valid_windows_path</strong></a>(path: str) -&gt; str</dt><dd><span class="code">Validate&nbsp;that&nbsp;the&nbsp;provided&nbsp;string&nbsp;looks&nbsp;like&nbsp;a&nbsp;valid&nbsp;Windows&nbsp;file&nbsp;path.<br>
+&nbsp;<br>
+This&nbsp;performs&nbsp;a&nbsp;basic&nbsp;validation&nbsp;by&nbsp;checking&nbsp;that&nbsp;the&nbsp;path&nbsp;starts<br>
+with&nbsp;a&nbsp;drive&nbsp;letter&nbsp;followed&nbsp;by&nbsp;a&nbsp;backslash&nbsp;(e.g.,&nbsp;C:\).<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path:&nbsp;Windows&nbsp;file&nbsp;path.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;validated&nbsp;path.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ArgumentTypeError:&nbsp;If&nbsp;the&nbsp;path&nbsp;does&nbsp;not&nbsp;match&nbsp;the&nbsp;expected&nbsp;format.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>CMD</strong> = r'C:\Windows\System32\cmd.exe'<br>
+<strong>PIPEDIR</strong> = r'\\.\pipe\'<br>
+<strong>SERVER_PATH</strong> = 'SystemShellServer.py'<br>
+<strong>Tuple</strong> = typing.Tuple<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__conditional_annotations__</strong> = {0, 1, 2}<br>
+<strong>__copyright__</strong> = '<span class="repr">\n</span>WinSystemShell  Copyright (C) 2026  Maurice Lam...ome to redistribute it<span class="repr">\n</span>under certain conditions.<span class="repr">\n</span>'<br>
+<strong>__description__</strong> = '<span class="repr">\n</span>A local privilege escalation utility that allow...on Windows to perform<span class="repr">\n</span>high-privilege operations.<span class="repr">\n</span>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/WinSystemShell'<br>
+<strong>ascii_letters</strong> = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'<br>
+<strong>copyright</strong> = '<span class="repr">\n</span>WinSystemShell  Copyright (C) 2026  Maurice Lam...ome to redistribute it<span class="repr">\n</span>under certain conditions.<span class="repr">\n</span>'<br>
+<strong>digits</strong> = '0123456789'<br>
+<strong>executable</strong> = r'C:\Program Files\Python\python.exe'<br>
+<strong>license</strong> = 'GPL-3.0 License'<br>
+<strong>stdout</strong> = &lt;_io.TextIOWrapper name='&lt;stdout&gt;' mode='w' encoding='utf-8'&gt;</td></tr></table><p>
+<table class="section">
+<tr class="decor author-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Author</strong></td></tr>
+    
+<tr><td class="decor author-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
