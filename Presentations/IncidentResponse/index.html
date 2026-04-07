@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2025 MauriceLambert
+
+  This file is part of PySlidesGenerator.
+
+  PySlidesGenerator is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  PySlidesGenerator is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with PySlidesGenerator.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Advanced incident response training for SOC and CSIRT analysts focused on efficient investigation, accurate scoping, and effective containment to enable safe remediation of cyber incidents." />
+  <meta name="keywords" content="incident response, SOC analyst, CSIRT, containment strategies, incident handling, root cause analysis, threat analysis" />
+  <meta name="author" content="Maurice Lambert" />
+  <title>Incident Response for Analysts: Efficient Investigation and Rapid Containment</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <main>
+    <section id="slide-1" class="title-slide">
+      <div id="terminal-overlay">
+        <pre id="terminal-output"></pre>
+      </div>
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h1>Incident Response for Analysts: Efficient Investigation and Rapid Containment</h1>
+      </article>
+    </section>
+    <section class="table-content" id="slide-2">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#slide-3">Incident Response Simulation: Role-Based Cybersecurity Exercise</a>
+            <ul>
+              <li><a href="#slide-4">Scene 01: Initial Alert Handling</a></li><li><a href="#slide-5">Scene 02: SOC Analyst Reports Alerts and Actions to Cybersecurity Expert</a></li><li><a href="#slide-6">Scene 03: Cybersecurity Expert Reviews Alert and Server</a></li><li><a href="#slide-7">Scene 04: Intern Overhears Cybersecurity Expert Reporting to SOC Manager</a></li><li><a href="#slide-8">Scene 05: Intern Reports Intrusion and SOC Manager Declines Investigation</a></li><li><a href="#slide-9">Scene 06: Intern Reports Findings Despite Closed Investigation</a></li><li><a href="#slide-10">Scene 07: Cybersecurity Expert Uploads Malware to Public Platform</a></li><li><a href="#slide-11">Scene 08: Cybersecurity Expert Reports Malware Connection Observed on VirusTotal</a></li><li><a href="#slide-12">Scene 09: Intern Announces Problem</a></li><li><a href="#slide-13">Scene 10: SOC Manager Orders Halt to Investigation.</a></li><li><a href="#slide-14">Scene 11: Governance Orders Deletion of Files Identified in Attack</a></li><li><a href="#slide-15">Scene 12: Attacker Returns to the Server</a></li><li><a href="#slide-16">Scene 13: Intern Investigates After Attacker Returns</a></li><li><a href="#slide-17">Scene 14: Intern Removes Attacker's Access</a></li>
+            </ul>
+          </li><li><a href="#slide-18">Incident Response Review: What Worked, What Didn't, and Lessons Learned</a>
+            <ul>
+              <li><a href="#slide-19">Incident Response Best Practices: Avoiding Early Technical Mistakes and Premature Remediation</a></li><li><a href="#slide-20">Effective Incident Response: Preventing Communication Failures in SOC Teams</a></li><li><a href="#slide-21">SOC Governance and Responsibility: Key Lessons for Proper Incident Handling</a></li><li><a href="#slide-22">Critical Incident Response Decisions: Evaluating Actions and Risks</a></li><li><a href="#slide-23">Live Investigations: Risks and Considerations</a></li>
+            </ul>
+          </li><li><a href="#slide-24">Hands-On Surprise Incident Lab: Realistic Unprepared Response Exercise</a>
+            <ul>
+              <li><a href="#slide-25"></a></li>
+            </ul>
+          </li><li><a href="#slide-26">Incident Response Fundamentals: Key Terminology and Core Concepts</a>
+            <ul>
+              <li><a href="#slide-27">Understanding Key Concepts: Problem versus Incident versus Crisis</a></li><li><a href="#slide-28">Procedures in Incident Response: How to Perform Specific Actions</a></li><li><a href="#slide-29">Playbooks in Incident Response: What to Do and When</a></li><li><a href="#slide-30">Business Continuity and Resumption Plans: BCP versus BRP</a></li><li><a href="#slide-31">RTO and RPO: Critical Metrics in Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-32">Incident Response Explained for SOC Analysts: Key Principles and Objectives</a>
+            <ul>
+              <li><a href="#slide-33">When Is It Incident Response ?</a></li><li><a href="#slide-34">Purpose and Goals of Cybersecurity Incident Response by Stakeholder</a></li><li><a href="#slide-35">Technical Objectives for Security Teams During Incident Response</a></li><li><a href="#slide-36">Cybersecurity Incident Response: Preventing Attacker Returns</a></li>
+            </ul>
+          </li><li><a href="#slide-37">Incident Response Process: Step-by-Step Actions for Effective Cybersecurity Management</a>
+            <ul>
+              <li><a href="#slide-38">Strategic Communication in Incident Response</a></li><li><a href="#slide-39">Internal and External Communication Strategy in Incident Response</a></li><li><a href="#slide-40">Evidence Collection and Analysis in Incident Response</a></li><li><a href="#slide-41">Interpreting Threat Behavior and Attack Progress</a></li><li><a href="#slide-42">Making Strategic Decisions in Incident Response</a></li><li><a href="#slide-43">Executing and Validating Remediation in Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-44">Principles and Methods for Effective Incident Response</a>
+            <ul>
+              <li><a href="#slide-45">Incident Response Communication Plan</a></li><li><a href="#slide-46">Playbooks and Procedures: Building Preparedness Before an Incident</a></li><li><a href="#slide-47">Timelines: Tracking Evidence and Actions for Effective Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-48">Informations Sources and Tools for Effective Incident Response</a>
+            <ul>
+              <li><a href="#slide-49">Logs and Telemetry: Capturing Technical Events in Real-Time</a></li><li><a href="#slide-50">Filesystem: Persistent Evidence for Incident Response</a></li><li><a href="#slide-51">Memory Dump: Capturing Active System State</a></li><li><a href="#slide-52">CMDB & Network Diagram: Essential Context for Incident Response</a></li><li><a href="#slide-53">Communication Tools for Effective Incident Response</a></li><li><a href="#slide-54">Physical Notes and Offline Work in Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-55">Before and After Incident Response: Preparation and Lessons Learned</a>
+            <ul>
+              <li><a href="#slide-56">Preparation: Building a Strong and Secure Foundation</a></li><li><a href="#slide-57">Post-Incident Review (RETEX): Technical and Managerial Analysis</a></li><li><a href="#slide-58">Continuous Improvement of Security Posture</a></li>
+            </ul>
+          </li><li><a href="#slide-59">Incident Response Techniques and Investigation Tips</a>
+            <ul>
+              <li><a href="#slide-60">Finding the Source of the Incident</a></li><li><a href="#slide-61">Time-Based Pivoting in Incident Response</a></li><li><a href="#slide-62">User-Based Pivoting in Incident Response</a></li><li><a href="#slide-63">Process-Based Pivoting in Incident Response</a></li><li><a href="#slide-64">Network-Based Pivoting in Incident Response</a></li><li><a href="#slide-65">High-Frequency Events in Incident Response</a></li><li><a href="#slide-66">Unique Event in Incident Response</a></li><li><a href="#slide-67">Balancing Search Scope in Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-68">Different Collection and Investigation Methods in Incident Response</a>
+            <ul>
+              <li><a href="#slide-69">Dead Investigations (Forensic Analysis on Offline Systems)</a></li><li><a href="#slide-70">Live Data Collection from Active Systems in Incident Response</a></li><li><a href="#slide-71">Live Interactive Investigation on Active Systems in Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-72">Common Challenges and Risks in Incident Response</a>
+            <ul>
+              <li><a href="#slide-73">Evidence Storage Challenges in Incident Response</a></li><li><a href="#slide-74">Responsibilities versus Risk in Incident Response Operations</a></li><li><a href="#slide-75">Impact of Lack of Procedures and Preparation in Incident Response</a></li><li><a href="#slide-76">Managing Team Stress During Incident Response</a></li><li><a href="#slide-77">Legal Obligations and Evidence Handling in Incident Response</a></li><li><a href="#slide-78">Technical Complexity and Risk Management in Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-79">Useful Resources for Incident Response and Threat Detection</a>
+            <ul>
+              <li><a href="#slide-80">Using Sigma Rules in Incident Response Investigations</a></li><li><a href="#slide-81">Using YARA Rules for File and Memory Analysis in Incident Response</a></li><li><a href="#slide-82">Using Cyber Threat Intelligence (CTI) in Incident Response</a></li>
+            </ul>
+          </li><li><a href="#slide-83">Advanced Techniques and Practical Tips for Incident Response</a>
+            <ul>
+              <li><a href="#slide-84">Quick Malware Analysis and Reverse Engineering in Incident Response</a></li><li><a href="#slide-85">Using Canary Tokens and Honeypots in Incident Response</a></li><li><a href="#slide-86">Scanners and Custom Scripts for Efficient Incident Response</a></li><li><a href="#slide-87">Using Text Utilities and Regex for Rapid Data Extraction</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section id="slide-3" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Incident Response Simulation: Role-Based Cybersecurity Exercise</h2>
+      </article>
+    </section><section id="slide-4" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 01: Initial Alert Handling</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> SOC Analyst.<br><br>
+<em>EDR alert:</em> xmrig cryptominer detected at /var/log/docker/XXXXXXX/xmrig <em>(cryptominer xmrig détecté dans /var/log/docker/XXXXXXX/xmrig)</em>.<br><br>
+<em>SOC Analyst:</em> I check if the file still exists: yes, it is present, I delete it (<em>Je vérifie si le fichier existe encore : oui, il est présent, je le supprime</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-5" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 02: SOC Analyst Reports Alerts and Actions to Cybersecurity Expert</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Cybersecurity Expert, SOC Analyst.<br><br>
+<em>SOC Analyst:</em> I saw an EDR alert; the file had not been deleted, so I deleted it <em>(J'ai vu une alerte EDR, le fichier n'était pas supprimé, je l'ai supprimé</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-6" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 03: Cybersecurity Expert Reviews Alert and Server</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Cybersecurity Expert.<br><br>
+<em>Cybersecurity Expert:</em> I review the alert and examine the server, but I am unable to trace the source without the files <em>(Je regarde l'alerte, j'examine le serveur, mais je n'arrive pas à remonter à la source sans les fichiers</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-7" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 04: Intern Overhears Cybersecurity Expert Reporting to SOC Manager</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> SOC Manager, Cybersecurity Expert.<br><br>
+<em>Cybersecurity Expert (private conversation between the SOC Manager and the cybersecurity expert):</em> We have an intrusion, but we cannot trace the attacker <em>(Nous avons une intrusion, mais nous ne pouvons pas remonter la trace de l'attaquant</em>).<br><br>
+<em>Intern (addresses the SOC Manager):</em> We had an intrusion? I will investigate and inform the SOC team and governance <em>(On a eu une intrusion ? Je vais investiguer et prévenir l'équipe SOC et la gouvernance</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-8" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 05: Intern Reports Intrusion and SOC Manager Declines Investigation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Intern, Security Team, SOC Manager.<br><br>
+<em>Intern:</em> We have an intrusion on a server with an alert dating back 2 days <em>(Nous avons une intrusion sur un serveur avec une alerte datant de 2 jours</em>).<br><br>
+<em>SOC Manager:</em> We will not continue the investigation; it is no longer our responsibility <em>(Nous n'allons pas continuer l'investigation, ce n'est plus notre problème</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-9" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 06: Intern Reports Findings Despite Closed Investigation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Cybersecurity Expert, Intern.<br><br>
+<em>Intern:</em> I found traces of the attacker and one of their malware samples (despite the investigation being closed, I continued) <em>(J'ai trouvé la trace de l'attaquant et un de ses malwares (malgré la fin des investigations, j'ai continué)</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-10" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 07: Cybersecurity Expert Uploads Malware to Public Platform</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Cybersecurity Expert.<br><br>
+<em>Cybersecurity Expert:</em> Uploading the malware to a public platform <em>(Envoi du malware sur une plateforme publique</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-11" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 08: Cybersecurity Expert Reports Malware Connection Observed on VirusTotal</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Cybersecurity Expert, Intern.<br><br>
+<em>Cybersecurity Expert:</em> Did you notice the malware is connecting X.X.X.X? I saw it on VirusTotal <em>(As-tu remarqué que le malware contact X.X.X.X ? Je l'ai vu sur VirusTotal</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-12" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 09: Intern Announces Problem</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Cybersecurity Expert, Governance, SOC Manager, Intern.<br><br>
+<em>Intern:</em> We have a problem <em>(Nous avons un problème</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-13" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 10: SOC Manager Orders Halt to Investigation.</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Intern, SOC Manager.<br><br>
+<em>SOC Manager:</em> What have you done ? We said no more investigation—you must stop all activity immediately <em>(Qu'est-ce que tu as fait ? On avait dit plus d'investigation, tu arrêtes immédiatement toute opération</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-14" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 11: Governance Orders Deletion of Files Identified in Attack</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Cybersecurity Expert, Manager, Governance.<br><br>
+<em>Cybersecurity Expert, Manager, Governance:</em> Deleting files recently identified as part of the attack <em>(Suppression des fichiers récemment identifiés dans l'attaque</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-15" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 12: Attacker Returns to the Server</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Attacker.<br><br>
+<em>Attacker:</em> Returns to the server <em>(Revient sur le serveur</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-16" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 13: Intern Investigates After Attacker Returns</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Security Team, Intern.<br><br>
+<em>Intern:</em> He is back ! I am investigating the incident <em>(Il est revenu ! J'investigue sur l'incident</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-17" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scene 14: Intern Removes Attacker's Access</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Roles:</strong> Intern.<br><br>
+<em>Intern:</em> Investigates and permanently removes the attacker's access <em>(Investigue et supprime définitivement les accès de l'attaquant</em>).</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-18" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Incident Response Review: What Worked, What Didn't, and Lessons Learned</h2>
+      </article>
+    </section><section id="slide-19" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Incident Response Best Practices: Avoiding Early Technical Mistakes and Premature Remediation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Never remediate before containment:</strong> Always ensure that any action on compromised files or systems is preceded by a decision to block the attack. Premature deletion can destroy evidence and obscure the attack path.</li><li><strong>Avoid exposing malware publicly:</strong> Uploading malware to public platforms can alert attackers and compromise the investigation. Always handle samples in a controlled, private environment.</li><li><strong>Validate automated analysis:</strong> Sandbox environments generate events related to their own operations. Not all observed connections or behaviors are caused by the malware itself. Analysts must differentiate legitimate sandbox activity from actual malicious behavior.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-20" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Effective Incident Response: Preventing Communication Failures in SOC Teams</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Immediate notification is critical:</strong> The security team (SOC, CSIRT, CERT, gouvernance) must be informed as soon as an intrusion is detected, ideally within the first minutes. Delays reduce the ability to contain the attack and increase overall risk.</li><li><strong>Timely information sharing:</strong> Waiting days to communicate incidents prevents coordinated response, slows investigation, and can lead to mistakes or misinterpretations.</li><li><strong>Clear communication channels:</strong> Predefined escalation paths and contact methods ensure everyone receives accurate and actionable information in real-time.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-21" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>SOC Governance and Responsibility: Key Lessons for Proper Incident Handling</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Never abandon an investigation due to a team error:</strong> Even if a SOC member makes a mistake, the team must continue to handle the incident. Leaving it unresolved creates accountability gaps and increases client risk.</li><li><strong>SOC does not decide investigation continuation:</strong> Decisions about whether to pursue or stop an investigation must come from governance. Legal and strategicimplications are managed at the governance level, not by operational teams.</li><li><strong>Respect governance directives:</strong> Following the strategy set by governance is essential. Deviating from instructions can compromise the investigation, increase risks, and lead to operational failures.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-22" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Critical Incident Response Decisions: Evaluating Actions and Risks</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>The intern reverse-engineered the identified file and confirmed it is a backdoor that spawns a shell after setting SUID permissions.</p><ul>
+            <li><strong>Consider attacker awareness:</strong> Actions like file deletion or malware handling can alert the attacker that the intrusion is being investigated. Anticipate potential countermeasures.</li><li>The decision to delete files is debatable: The attacker might lose access or might simply be alerted and return. In this context, where the attacker likely knows their file was identified, it may be justified to take the risk and delete the file, even though the incident response is not yet complete and not all backdoors or exploited vulnerabilities are known.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-23" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Live Investigations: Risks and Considerations</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Both the intern and the cybersecurity expert conducted investigations directly on the live systems. No dedicated tools or procedures were available for safe live analysis.</p><ul>
+            <li><strong>Risks of live analysis:</strong> Performing investigations on live systems can lead to loss of evidence, accidental changes, or detection by the attacker. Without proper preparation, this increases operational risk.</li><li><strong>Evaluating a difficult choice:</strong> In this scenario, the decision to investigate live was debatable. Taking time to select and learn proper tools could delay response, but live investigation carries inherent risks. There was no perfectly safe solution.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-24" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Hands-On Surprise Incident Lab: Realistic Unprepared Response Exercise</h2>
+      </article>
+    </section><section id="slide-25" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3></h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><script>
+(function () {
+  const TOTAL_SECONDS = 40 * 60;
+
+  // Calcul du temps réel écoulé selon la courbe d'accélération
+  // Segment 1 : 0–50% de progression = 26min40s (1600s)
+  // Segment 2 : 50–75%              = 8min20s  (500s)
+  // Segment 3 : 75–100%             = 5min     (300s)
+  // Total = 2400s = 40min ✓
+  const S1 = 1600, S2 = 500, S3 = 300;
+
+  function progressToElapsed(p) {
+    if (p <= 0.5) return (p / 0.5) * S1;
+    if (p <= 0.75) return S1 + ((p - 0.5) / 0.25) * S2;
+    return S1 + S2 + ((p - 0.75) / 0.25) * S3;
+  }
+
+  function elapsedToProgress(e) {
+    if (e <= S1) return (e / S1) * 0.5;
+    if (e <= S1 + S2) return 0.5 + ((e - S1) / S2) * 0.25;
+    return 0.75 + ((e - S1 - S2) / S3) * 0.25;
+  }
+
+  function injectStyles() {
+    const s = document.createElement('style');
+    s.textContent = `
+      #__tp-overlay {
+        position: fixed; inset: 0; z-index: 99999;
+        background: rgba(0,0,0,0.93);
+        display: flex; align-items: center; justify-content: center;
+        font-family: 'Courier New', monospace;
+        padding: 20px;
+      }
+      #__tp-overlay ::selection {
+          background-color: #c0392b;
+          color: #fff;
+      }
+      #__tp-overlay ::-moz-selection {
+          background-color: #c0392b;
+          color: #fff;
+      }
+      #__tp-panel {
+        width: 100%; max-width: 780px;
+        background: #111;
+        border: 2px solid #c0392b;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      #__tp-titlebar {
+        background: #c0392b;
+        padding: 10px 16px;
+        display: flex; align-items: center; gap: 8px;
+      }
+      #__tp-titlebar .d { width: 11px; height: 11px; border-radius: 50%; }
+      #__tp-titlebar span {
+        font-size: 12px; font-weight: 700; color: #fff;
+        letter-spacing: 2px; margin-left: 8px;
+      }
+      #__tp-body { padding: 24px 28px 28px; }
+      #__tp-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+      #__tp-shield {
+        width: 42px; height: 42px; background: #c0392b;
+        border-radius: 4px; display: flex; align-items: center;
+        justify-content: center; flex-shrink: 0;
+      }
+      #__tp-shield svg { width: 26px; height: 26px; fill: #fff; }
+      #__tp-htitle { font-size: 16px; color: #ff4444; letter-spacing: 1px; font-weight: 700; }
+      #__tp-hsub { font-size: 11px; color: #888; letter-spacing: 2px; margin-top: 2px; }
+      #__tp-instructions {
+        background: #1a1a1a; border-left: 3px solid #c0392b;
+        border-radius: 0 4px 4px 0; padding: 14px 16px; margin-bottom: 20px;
+      }
+      #__tp-instructions .ilbl {
+        font-size: 11px; color: #c0392b; letter-spacing: 2px;
+        margin-bottom: 8px; font-weight: 700;
+      }
+      #__tp-instructions p { font-size: 13px; color: #ccc; line-height: 1.7; }
+      #__tp-instructions strong { color: #ff6b6b; }
+      #__tp-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+      .tp-linkbox { background: #1a1a1a; border: 1px solid #333; border-radius: 4px; padding: 12px 14px; }
+      .tp-linkbox .lbl { font-size: 10px; color: #888; letter-spacing: 2px; margin-bottom: 6px; }
+      .tp-linkbox a { font-size: 12px; color: #5b9bd5; word-break: break-all; text-decoration: none; }
+      .tp-linkbox a:hover { color: #7fb3e8; text-decoration: underline; }
+      .tp-hiddenbtn {
+        font-size: 12px; color: #333; background: #222; border: none;
+        border-radius: 3px; padding: 4px 8px; cursor: pointer;
+        letter-spacing: 1px; font-family: inherit;
+      }
+      .tp-hiddenbtn:hover { background: #2a2a2a; color: #444; }
+      #__tp-barlbl {
+        font-size: 11px; color: #c0392b; letter-spacing: 2px; font-weight: 700;
+        margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;
+      }
+      #__tp-phase {
+        font-size: 10px; padding: 3px 10px; border-radius: 3px;
+        background: #1a1a1a; border: 1px solid #c0392b;
+        color: #c0392b; letter-spacing: 2px; font-weight: 700;
+      }
+      #__tp-barbg {
+        width: 100%; height: 32px; background: #1a1a1a;
+        border: 1px solid #444; border-radius: 3px;
+        overflow: hidden; position: relative;
+      }
+      #__tp-barfill {
+        height: 100%; width: 0%; background: #c0392b;
+        border-radius: 2px; position: relative; overflow: hidden;
+      }
+      #__tp-scan {
+        position: absolute; top: 0; right: 0; width: 4px; height: 100%;
+        background: #ffaaaa; opacity: 0.9;
+      }
+      #__tp-embers { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+      #__tp-particles { position: absolute; top: -60px; left: 0; width: 100%; height: 80px; pointer-events: none; overflow: visible; }
+      #__tp-status { font-size: 11px; color: #888; letter-spacing: 1px; margin-top: 8px; }
+      #__tp-alert {
+        margin-top: 16px; text-align: center; font-size: 12px;
+        color: #c0392b; letter-spacing: 2px; font-weight: 700;
+        min-height: 18px; display: flex; align-items: center; justify-content: center; gap: 8px;
+      }
+      #__tp-dot { width: 8px; height: 8px; border-radius: 50%; background: #c0392b; opacity: 0; flex-shrink: 0; }
+      @keyframes __tp-shake {
+        0%,100%{transform:translateX(0)}20%{transform:translateX(-5px)}
+        40%{transform:translateX(5px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}
+      }
+      @keyframes __tp-shakehard {
+        0%,100%{transform:translate(0,0)}15%{transform:translate(-7px,2px)}
+        30%{transform:translate(7px,-2px)}45%{transform:translate(-5px,3px)}
+        60%{transform:translate(5px,-1px)}75%{transform:translate(-3px,2px)}90%{transform:translate(3px,-1px)}
+      }
+      @keyframes __tp-ember {
+        0%{transform:translateY(0) translateX(0) scale(1);opacity:1}
+        100%{transform:translateY(-24px) translateX(var(--dx)) scale(0.3);opacity:0}
+      }
+      @keyframes __tp-particle {
+        0%{transform:translate(0,0) scale(1);opacity:1}
+        100%{transform:translate(var(--px),var(--py)) scale(0);opacity:0}
+      }
+      .__tp-shaking { animation: __tp-shake 0.4s ease; }
+      .__tp-shakinghard { animation: __tp-shakehard 0.5s ease; }
+    `;
+    document.head.appendChild(s);
+  }
+
+  function buildOverlay() {
+    const div = document.createElement('div');
+    div.id = '__tp-overlay';
+    div.innerHTML = `
+      <div id="__tp-panel">
+        <div id="__tp-titlebar">
+          <span class="d" style="background:#ff6b6b" id="buttonClose"></span>
+          <span class="d" style="background:#f39c12"></span>
+          <span class="d" style="background:#2ecc71"></span>
+          <span>SECURE EVALUATION SYSTEM v2.4 — RESTRICTED ACCESS</span>
+        </div>
+        <div id="__tp-body">
+          <div id="__tp-header">
+            <div id="__tp-shield">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            </div>
+            <div>
+              <div id="__tp-htitle">TP ORAL ASSESSMENT — ACTIVE SESSION</div>
+              <div id="__tp-hsub">CYBERSECURITY TRAINING ENVIRONMENT</div>
+            </div>
+          </div>
+          <div id="__tp-instructions">
+            <div class="ilbl">EVALUATION RULES — READ CAREFULLY</div>
+            <p>
+              <strong>Oral QCM graded at the end of the TP.</strong><br>
+              <strong>-1 point</strong> for a wrong answer or no answer &nbsp;|&nbsp;
+              <strong>+1 point</strong> for a correct answer.<br>
+              The grade applies to <strong>the entire group</strong>.
+              The instructor selects the students to be questioned for each question.
+            </p>
+          </div>
+          <div id="__tp-links">
+            <div class="tp-linkbox">
+              <div class="lbl">STUDENT ACCESS — TP DOWNLOAD</div>
+              <a href="https://votre-lien-eleve.example.com/tp.pdf" target="_blank">
+                https://votre-lien-eleve.example.com/tp.pdf
+              </a>
+            </div>
+            <div class="tp-linkbox">
+              <div class="lbl">INSTRUCTOR ACCESS</div>
+              <button class="tp-hiddenbtn" onclick="window.open('https://votre-lien-prof.example.com/correction','_blank')">
+                [RESTRICTED — PROF ONLY]
+              </button>
+            </div>
+          </div>
+          <div id="__tp-barlbl">
+            <span>SESSION PROGRESS</span>
+            <span id="__tp-phase">PHASE 1</span>
+          </div>
+          <div id="__tp-barbg">
+            <div id="__tp-barfill">
+              <div id="__tp-scan"></div>
+              <canvas id="__tp-embers" height="32"></canvas>
+            </div>
+            <canvas id="__tp-particles" height="80"></canvas>
+          </div>
+          <div id="__tp-status">Initializing session...</div>
+          <div id="__tp-alert">
+            <span id="__tp-dot"></span>
+            <span id="__tp-alerttxt">SESSION STARTED — COMPLETE YOUR TP</span>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(div);
+	
+	const buttonClose = document.getElementById('buttonClose');
+	buttonClose.onclick = () => {
+		const popup = document.getElementById('__tp-overlay');
+		document.body.removeChild(popup);
+	}
+  }
+
+  function startTimer() {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const resume = () => audioCtx.resume();
+    document.addEventListener('click', resume, { once: true });
+    document.addEventListener('keydown', resume, { once: true });
+
+    const barFill    = document.getElementById('__tp-barfill');
+    const phaseEl    = document.getElementById('__tp-phase');
+    const statusEl   = document.getElementById('__tp-status');
+    const alertTxt   = document.getElementById('__tp-alerttxt');
+    const dot        = document.getElementById('__tp-dot');
+    const panel      = document.getElementById('__tp-panel');
+    const overlay    = document.getElementById('__tp-overlay');
+    const barbg      = document.getElementById('__tp-barbg');
+    const embersC    = document.getElementById('__tp-embers');
+    const particlesC = document.getElementById('__tp-particles');
+    const embersCtx  = embersC.getContext('2d');
+    const partCtx    = particlesC.getContext('2d');
+
+    const alerts = [
+      "SESSION STARTED — COMPLETE YOUR TP",
+      "MONITORING ACTIVE — ALL ACTIONS LOGGED",
+      "WARNING: TIME IS RUNNING OUT",
+      "ORAL EVALUATION APPROACHING",
+      "STAY FOCUSED — INSTRUCTOR WATCHING",
+      "CRITICAL PHASE — ACCELERATE NOW",
+      "FINAL MOMENTS — BE READY",
+      "EVALUATION IMMINENT — LAST CHANCE"
+    ];
+    let alertIdx = 0;
+    let lastBip = 0;
+    const startTime = performance.now();
+
+    const embers = [];
+    const sparks = [];
+
+    function spawnEmber(barWidth) {
+      const x = Math.random() * barWidth;
+      embers.push({ x, y: 28, vx: (Math.random() - 0.5) * 1.5, vy: -(1 + Math.random() * 2), life: 1 });
+    }
+
+    function spawnExplosion(barWidth, p) {
+      const count = p > 90 ? 18 : p > 75 ? 12 : 6;
+      const x = barWidth - 6 + Math.random() * 6;
+      for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1.5 + Math.random() * 3.5;
+        sparks.push({
+          x, y: -10,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 2,
+          life: 1,
+          color: Math.random() > 0.5 ? '#ff4400' : (Math.random() > 0.5 ? '#ffaa00' : '#ff2222')
+        });
+      }
+    }
+
+    function drawEmbers(barWidth, p) {
+      embersC.width = barWidth;
+      embersCtx.clearRect(0, 0, barWidth, 32);
+      if (p < 0.5) return;
+      const rate = p < 0.75 ? 0.3 : 0.6;
+      if (Math.random() < rate) spawnEmber(barWidth);
+      for (let i = embers.length - 1; i >= 0; i--) {
+        const e = embers[i];
+        e.x += e.vx; e.y += e.vy; e.life -= 0.04;
+        if (e.life <= 0) { embers.splice(i, 1); continue; }
+        const r = p > 0.75 ? 3 : 2;
+        embersCtx.globalAlpha = e.life;
+        embersCtx.fillStyle = p > 0.85 ? '#ffcc00' : '#ff6600';
+        embersCtx.beginPath();
+        embersCtx.arc(e.x, e.y, r, 0, Math.PI * 2);
+        embersCtx.fill();
+      }
+      embersCtx.globalAlpha = 1;
+    }
+
+    function drawSparks(barWidth, p) {
+      const W = barbg.offsetWidth;
+      particlesC.width = W;
+      partCtx.clearRect(0, 0, W, 80);
+      if (p < 0.5) return;
+      const rate = p > 0.9 ? 0.7 : p > 0.75 ? 0.4 : 0.15;
+      if (Math.random() < rate) spawnExplosion(barWidth, p * 100);
+      for (let i = sparks.length - 1; i >= 0; i--) {
+        const s = sparks[i];
+        s.x += s.vx; s.y += s.vy; s.vy += 0.15; s.life -= 0.025;
+        if (s.life <= 0) { sparks.splice(i, 1); continue; }
+        partCtx.globalAlpha = s.life;
+        partCtx.fillStyle = s.color;
+        partCtx.beginPath();
+        partCtx.arc(s.x, s.y + 70, 2.5, 0, Math.PI * 2);
+        partCtx.fill();
+      }
+      partCtx.globalAlpha = 1;
+    }
+
+    function beep(freq, dur, vol, type = 'sawtooth') {
+      try {
+        const o = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        o.type = type;
+        o.connect(g); g.connect(audioCtx.destination);
+        o.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        o.frequency.exponentialRampToValueAtTime(freq * 0.8, audioCtx.currentTime + dur * 0.7);
+        g.gain.setValueAtTime(vol, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+        o.start(); o.stop(audioCtx.currentTime + dur + 0.05);
+      } catch (e) {}
+    }
+
+    function doBeep(p) {
+      const vol = 0.06 + (p / 100) * 0.28;
+      if (p < 25) {
+        beep(880, 0.6, vol, 'sine');
+        setTimeout(() => beep(1100, 0.4, vol * 0.7, 'sine'), 700);
+      } else if (p < 50) {
+        beep(1100, 0.5, vol, 'sine');
+        setTimeout(() => beep(1320, 0.5, vol * 0.8, 'sine'), 600);
+        setTimeout(() => beep(880, 0.4, vol * 0.6, 'sine'), 1200);
+      } else if (p < 75) {
+        beep(1320, 0.4, vol, 'sawtooth');
+        setTimeout(() => beep(1760, 0.4, vol, 'sawtooth'), 450);
+        setTimeout(() => beep(1320, 0.35, vol * 0.8, 'sawtooth'), 900);
+        setTimeout(() => beep(2200, 0.5, vol * 0.9, 'sine'), 1350);
+      } else if (p < 90) {
+        beep(1760, 0.35, vol, 'sawtooth');
+        setTimeout(() => beep(2200, 0.35, vol, 'sawtooth'), 350);
+        setTimeout(() => beep(1760, 0.3, vol * 0.9, 'sawtooth'), 700);
+        setTimeout(() => beep(2640, 0.4, vol, 'sine'), 1050);
+        setTimeout(() => beep(2200, 0.45, vol * 0.95, 'sawtooth'), 1400);
+      } else {
+        beep(2640, 0.3, vol, 'sawtooth');
+        setTimeout(() => beep(3300, 0.3, vol, 'sawtooth'), 250);
+        setTimeout(() => beep(2640, 0.25, vol, 'sawtooth'), 500);
+        setTimeout(() => beep(3960, 0.3, vol, 'sine'), 750);
+        setTimeout(() => beep(3300, 0.25, vol, 'sawtooth'), 1000);
+        setTimeout(() => beep(4400, 0.4, vol, 'sine'), 1250);
+        setTimeout(() => beep(3300, 0.35, vol * 0.9, 'sawtooth'), 1500);
+      }
+    }
+
+    function flashDot(p) {
+      dot.style.opacity = '1';
+      dot.style.background = p > 75 ? '#ff1111' : '#c0392b';
+      setTimeout(() => { dot.style.opacity = '0'; }, 250);
+    }
+
+    function shakePanel(p) {
+      const cls = p > 75 ? '__tp-shakinghard' : '__tp-shaking';
+      panel.classList.add(cls);
+      setTimeout(() => panel.classList.remove(cls), 500);
+    }
+
+    let animFrame;
+    function animate(p, barPx) {
+      drawEmbers(barPx, p);
+      drawSparks(barPx, p);
+      animFrame = requestAnimationFrame(() => animate(p, barPx));
+    }
+    let currentAnimP = 0;
+
+    function tick() {
+      const elapsed = (performance.now() - startTime) / 1000;
+      const p = Math.min(elapsedToProgress(elapsed), 1);
+      const pct = p * 100;
+
+      barFill.style.width = pct.toFixed(3) + '%';
+      const barPx = barFill.offsetWidth;
+
+      if (animFrame) cancelAnimationFrame(animFrame);
+      animate(p, barPx);
+
+      let barColor, borderColor, phaseStr, statusStr;
+      if (pct < 25) {
+        barColor = '#c0392b'; borderColor = '#c0392b';
+        phaseStr = 'PHASE 1'; statusStr = 'Nominal — complete your TP';
+      } else if (pct < 50) {
+        barColor = '#d63031'; borderColor = '#d63031';
+        phaseStr = 'PHASE 2'; statusStr = 'Monitoring intensified — stay focused';
+      } else if (pct < 75) {
+        barColor = '#ff3300'; borderColor = '#ff3300';
+        phaseStr = 'PHASE 3'; statusStr = 'WARNING — critical phase, hurry up';
+      } else {
+        barColor = '#ff1100'; borderColor = '#ff1100';
+        phaseStr = 'CRITICAL'; statusStr = 'FINAL PHASE — EVALUATION IMMINENT';
+      }
+
+      barFill.style.background = barColor;
+      phaseEl.textContent = phaseStr;
+      phaseEl.style.borderColor = borderColor;
+      phaseEl.style.color = borderColor;
+      statusEl.textContent = statusStr;
+      panel.style.borderColor = borderColor;
+
+      const bipInterval = pct < 25 ? 35 : pct < 50 ? 18 : pct < 75 ? 7 : pct < 90 ? 3 : 1.2;
+      if (elapsed - lastBip >= bipInterval) {
+        lastBip = elapsed;
+        doBeep(pct);
+        flashDot(pct);
+        if (pct > 50) shakePanel(pct);
+        alertIdx = (alertIdx + 1) % alerts.length;
+        alertTxt.textContent = alerts[alertIdx];
+        alertTxt.style.color = pct > 75 ? '#ff1111' : '#c0392b';
+      }
+
+      if (pct >= 80) {
+        const t = performance.now();
+        const freq = pct > 92 ? 90 : pct > 85 ? 160 : 280;
+        const blink = Math.sin(t / freq) > 0;
+        panel.style.borderColor = blink ? '#ff0000' : '#ff6666';
+        barbg.style.borderColor = blink ? '#ff0000' : '#ff5555';
+        overlay.style.background = blink ? 'rgba(0,0,0,0.97)' : 'rgba(25,0,0,0.98)';
+        alertTxt.style.color = blink ? '#ff0000' : '#ff7777';
+      }
+
+      if (p < 1) {
+        setTimeout(tick, 16);
+      } else {
+        barFill.style.width = '100%';
+        alertTxt.textContent = 'SESSION ENDED — PUT DOWN YOUR WORK';
+        alertTxt.style.color = '#ff0000';
+        statusEl.textContent = 'Oral evaluation starting now.';
+        beep(440, 0.6, 0.4, 'sawtooth');
+        setTimeout(() => beep(330, 0.8, 0.35, 'sawtooth'), 700);
+        setTimeout(() => beep(220, 1.2, 0.3, 'sine'), 1500);
+      }
+    }
+
+    setTimeout(tick, 500);
+  }
+
+  function waitForElement() {
+    const target = document.getElementById('slide-25');
+    if (!target) {
+      const mo = new MutationObserver(() => {
+        const el = document.getElementById('slide-25');
+        if (el) { mo.disconnect(); observeVisibility(el); }
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+    } else {
+      observeVisibility(target);
+    }
+  }
+
+  function observeVisibility(el) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          io.disconnect();
+          injectStyles();
+          buildOverlay();
+          startTimer();
+        }
+      });
+    }, { threshold: 0.1 });
+    io.observe(el);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', waitForElement);
+  } else {
+    waitForElement();
+  }
+})();
+</script></p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-26" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Incident Response Fundamentals: Key Terminology and Core Concepts</h2>
+      </article>
+    </section><section id="slide-27" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Understanding Key Concepts: Problem versus Incident versus Crisis</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>A <strong>problem</strong> is a situation perceived as unsatisfactory or a gap between the current state and the desired state. In ITIL v4, a problem is the cause, or potential cause, of one or more incidents.</li><li>An <strong>incident</strong> is a specific event that disrupts the normal operation of a system, organization, or activity. It requires investigation and response to restore normal conditions.</li><li>A <strong>crisis</strong> is a serious situation, sudden or evolving, that significantly threatens the stability, operations, or survival of an organization or system.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-28" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Procedures in Incident Response: How to Perform Specific Actions</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Procedures</strong> define how to perform a specific action. They provide precise, step-by-step instructions to execute a task correctly, regardless of the incident context.</li><li>Procedures ensure that analysts know how to act, even if they already know what needs to be done. They standardize technical execution across the team and reduce variability in how tasks are performed.</li><li>Procedures are independent from scenarios. They define the methods, tools, and steps required to complete a specific action (e.g., collecting logs, analyzing a process, acquiring memory).</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-29" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Playbooks in Incident Response: What to Do and When</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Playbooks</strong> define what actions to take and in which order during a specific type of incident. They provide a structured response strategy based on scenarios.</li><li>Playbooks guide analysts through the investigation and response process, ensuring that no critical steps are missed and that actions are performed in the correct sequence.</li><li>Playbooks rely on procedures to execute each step. The playbook defines the logic and flow, while procedures define how each action is performed.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-30" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Business Continuity and Resumption Plans: BCP versus BRP</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Business Continuity Plan (BCP/PCA: Plan de Continuité d'Activité)</strong>: The PCA defines how to maintain or quickly resume critical business activities during a disruption. Its objective is to ensure service continuity, even in degraded conditions.</li><li><strong>Business Resumption Plan (BRP/PRA: Plan de Reprise d'Activité)</strong>: The PRA defines how to restore systems, infrastructure, and data after a major incident. It focuses on returning to a normal operational state after disruption.</li><li>Key difference: PCA focuses on keeping the business running, while PRA focuses on rebuilding and restoring systems after failure. Both are essential and complementary in incident response.</li><li>Example: A cryptolocker encrypts internal servers: switches activity to pre-prepared cloud-based systems with clones of production applications and data, after the PCA, production servers are restored from backups, returning operations to normal safely.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-31" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>RTO and RPO: Critical Metrics in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Recovery Time Objective (RTO):</strong> Maximum acceptable time to restore a system or service after an incident. Determines how quickly services must be back online to limit operational impact.</li><li><strong>Recovery Point Objective (RPO):</strong> Maximum acceptable amount of data loss measured in time. Defines how frequently data should be backed up to avoid unacceptable information loss.</li><li><strong>Importance in incident response:</strong> RTO and RPO guide prioritization and response actions during incidents. They help define which systems to restore first and how to limit business impact.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-32" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Incident Response Explained for SOC Analysts: Key Principles and Objectives</h2>
+      </article>
+    </section><section id="slide-33" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>When Is It Incident Response ?</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Not Incident Response:</strong></p><ul>
+            <li>Preparing security tools, dashboards, or alerting rules</li><li>Receiving an alert from EDR, SIEM, NDR, firewall, UEBA, etc.</li><li>Performing routine backups or restoring data from backups</li>
+          </ul><p><strong>Incident Response:</strong></p><ul>
+            <li>A critical service or system is down or impacted.</li><li>A user workstation (e.g., HR) has unauthorized access to critical servers</li><li>Ransomware or malware has actively affected production or infrastructure</li>
+          </ul><p>Incident Response starts <strong>when there is a confirmed impact</strong> and requires analysis, containment, and action, not just monitoring, triage or preparation.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-34" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Purpose and Goals of Cybersecurity Incident Response by Stakeholder</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>For the <strong>CEO / Management</strong>: Minimize attack costs and reduce reputational and brand impact.</li><li>For <strong>Governance</strong>: Protect core security principles: Availability, Integrity, Confidentiality, and Traceability (DICT).</li><li>For <strong>Technical Security Teams with Responsibility</strong>: Reduce impacts on people and valuable assets (material goods, intellectual property, sensitive knowledge, and other assets belonging to individuals or the organization).</li><li>For <strong>Commercial Security Teams</strong>: Limit liability, maintain operational continuity, and create conditions to justify security services and interventions.</li>
+          </ul><p><strong>Be careful with service providers !</strong><br>
+When selecting a company for an incident response or as a recruiter in a security team, the quality of incident response may differ depending on their strategic choices.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-35" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Technical Objectives for Security Teams During Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li><strong>Prevent impact if attacker has not yet succeeded:</strong> stop the attacker before critical damage occurs.</li><li><strong>Prevent attacker recurrence:</strong> ensure the attacker cannot return after containment.</li><li><strong>Identify the attacker and their objectives:</strong> optional, but helps guide effective response decisions (audit and retrieve previous actions with documented techniques and tools used by these attackers).</li><li><strong>Determine compromise stage:</strong> understand exactly where the attacker is in their attack lifecycle.</li><li><strong>Map attack path:</strong> trace how the attacker entered, moved laterally, and executed actions to ensure complete remediation.</li><li><strong>Analyze undetected actions:</strong> review all prior steps that did not trigger alerts to fully understand attack progression.</li>
+          </ol>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-36" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Cybersecurity Incident Response: Preventing Attacker Returns</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Technical teams tend to <strong>rush remediation actions</strong> as soon as the first traces of an attacker are found, even though they often have more time to identify all the backdoors and vulnerabilities used. This usually <strong>leads to a return by the attacker</strong> in a more discreet and sophisticated manner than the initial attack, which can <strong>impact service</strong>.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-37" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Incident Response Process: Step-by-Step Actions for Effective Cybersecurity Management</h2>
+      </article>
+    </section><section id="slide-38" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Strategic Communication in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Communication is the backbone of incident response: it begins the incident, accompanies every step, and concludes it.<br>
+Maintain dedicated communication channels:</p><ul>
+            <li><strong>Strategic channel</strong>: Governance & Management</li><li><strong>Decision-making channel</strong>: Governance & Technical Teams</li><li><strong>Operational channel</strong>: Administrators & Security Teams</li><li><strong>Investigation channel</strong>: Security Teams</li>
+          </ul><p>Security teams are responsible for reporting evidence and interpretations quickly.<br>
+Interpretations can include confidence scores to help governance evaluate reliability.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-39" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Internal and External Communication Strategy in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Communication must be controlled, not blindly trusted:</strong> In incident response, trust must be limited until it is verified that no employee is compromised or acting maliciously.</li><li><strong>Internal communication risks:</strong><ul><li>Information may reach a malicious insider or a compromised account.</li><li>Even without malicious intent, an uninformed employee may unintentionally assist the attacker.</li><li>Poor communication can confuse teams, slow down response, or hide useful signals.</li><li>Properly informed employees can help by reporting unusual activity on their systems.</li></ul></li><li>External communication risks: Communicating too early may provide intelligence to the attacker, communicating too late can damage the organization’s reputation and trust.</li><li>Balance and timing are critical: Communication must be <strong>controlled, targeted, and aligned with the investigation and decision-making process</strong>.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-40" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Evidence Collection and Analysis in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ol>
+            <li>Analysis begins with choosing the method of <strong>evidence collection</strong>: live collection (active system) or dead collection.</li><li>The goal is to <strong>observe, search, and pivot</strong> to uncover the maximum number of relevant evidences.</li><li>Collected <strong>evidence</strong> must be safely <strong>stored</strong> in a secure location to PRevent loss or tampering.</li><li>Analysis is often performed individually by technical security staff to ensure thoroughness and accuracy.</li>
+          </ol>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-41" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Interpreting Threat Behavior and Attack Progress</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Interpretation involves <strong>hypothesizing why specific techniques or tools were used</strong>, the current stage of the attack, and the attacker's objective.</li><li>Assess who might be behind the attack and <strong>predict potential next or previous steps</strong>, techniques or tools the attacker may use.</li><li>Each interpreted piece of information can be <strong>assigned a confidence score</strong> to indicate reliability.</li><li>Interpretation can be mapped to frameworks such as <strong>MITRE ATT&CK or the Kill Chain</strong> to facilitate understanding and communication with governance, management, and clients.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-42" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Making Strategic Decisions in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>The Decision phase defines <strong>when, what, and how remediation</strong> will be executed.</li><li>Technical team members do not decide; <strong>governance makes decisions based on technical analysis</strong>, risk assessment, and impact evaluation.</li><li>Technical teams <strong>provide guidance</strong> based on: <ul><li>Importance of affected assets and capability to block the threat (avoid immediate blocking if control is weak).</li><li>Stage of the attack (if the attack is actively impacting systems, immediate blocking is prioritized).</li><li>Level of incident information (more information allows for deliberate decisions; less information may require rapid action with careful reassessment).</li></ul></li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-43" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Executing and Validating Remediation in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Remediation execution: Once the remediation decision is made, implementation is typically performed by system and network administrators.</li><li>Role of security teams: <ul><li>Support and guide administrators during remediation actions.</li><li>Ensure actions are aligned with the incident response strategy.</li><li>Take over remediation only if administrators are suspected to be compromised or malicious.</li></ul></li><li><strong>Validation of containment</strong>: Security teams must verify that the attacker is effectively blocked and that access has been removed.</li><li><strong>Post-remediation monitoring</strong>: Continuously monitor the information system to detect any attempt of re-entry or persistence mechanisms.</li>
+          </ul><p>The goal is to <strong>avoid impacting service continuity</strong>. System administrators are experts in the infrastructure, while the incident response team specializes in security and attack handling. Together, they can implement <strong>the most effective defense, ensuring maximum security with minimal impact on the system</strong>.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-44" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Principles and Methods for Effective Incident Response</h2>
+      </article>
+    </section><section id="slide-45" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Incident Response Communication Plan</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Defines <strong>how information is structured and shared</strong> during an incident.</li><li>Ensures coordination between <strong>governance, technical teams, and administrators</strong>.</li><li>Defines <strong>who is involved</strong> in the different communication channels (strategic, decision-making, operational, investigation).</li><li>Prevents information leaks, confusion, and delays during high-pressure situations.</li><li>Defines <strong>when and why</strong> communications are created (Outside business hours: when to contact the on-call manager and what to report).</li>
+          </ul><p>Three types of communication plans:</p><ul>
+            <li><strong>Crisis: involves the most people</strong> during a major event.</li><li>Post-impact: after the attack has caused damage (e.g., encrypted files).</li><li><strong>Pre-impact: quick and light plan</strong> before the attack causes damage, when an attacker is in the system.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-46" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Playbooks and Procedures: Building Preparedness Before an Incident</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Playbooks:</p><ul>
+            <li>Created before an incident <strong>based on high-risk scenarios</strong> identified by governance.</li><li>Allow the incident response process <strong>to run smoothly even without expert presence</strong> (night shifts, weekends, vacations).</li><li>Guide the technical team through <strong>collection, analysis, and pivoting</strong>, ensuring no step is missed.</li><li>Must be <strong>simple, easy to find, and confidential</strong>, exclusive to the security team.</li>
+          </ul><p>Procedures:</p><ul>
+            <li>Referenced <strong>within playbooks</strong> for each specific action.</li><li>Define <strong>how to perform tasks</strong>, including which tools to use and in what sequence.</li><li>Can be <strong>shared across teams</strong> (administration, governance, security...).</li>
+          </ul><p>Best Practice: Use <strong>consistent naming conventions</strong> for playbooks and procedures to ensure rapid access during incidents.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-47" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Timelines: Tracking Evidence and Actions for Effective Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Evidence Timeline:</p><ul>
+            <li>Record all evidence with at least: text description of the <strong>evidence</strong> and <strong>timestamp</strong> down to the second, using a predefined format (optional, but recommended: source of the evidence)</li><li>Primary technical goal in incident response: <strong>create a complete, precise timeline</strong>.</li>
+          </ul><p>Action Timeline:</p><ul>
+            <li><strong>Track all actions</strong> taken during the incident.</li><li><strong>Prevents duplicate efforts</strong>, ensures clarity between actions and decisions, and identifies human time spent.</li><li>Crucial for legal accountability and <strong>post-incident RETEX</strong> (lessons learned).</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-48" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Informations Sources and Tools for Effective Incident Response</h2>
+      </article>
+    </section><section id="slide-49" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Logs and Telemetry: Capturing Technical Events in Real-Time</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Logs (log repository, SIEM, FW, IDS/IPS, WAF, UEBA):</p><ul>
+            <li>Chronological records of <strong>events or activities</strong> generated by systems, applications, or devices.</li><li>Provide detailed context for incidents: <strong>who did what, when, and where</strong>.</li><li>Important for incident response, threat analysis, post-incident review, and legal accountability.</li>
+          </ul><p>Telemetry (EDR and NDR):</p><ul>
+            <li><strong>Collection, transmission</strong>, and analysis of technical or operational data in <strong>real-time</strong>.</li><li>Enables early detection, supports ongoing investigation, and helps correlate events across systems.</li>
+          </ul><p><strong>Operational monitoring can be useful</strong>, for example, to detect data exfiltration. Attackers often use large archives in temporary folders, and the resulting missing disk space can trigger an alert.<br>
+Logs come from live systems, so they can be <strong>blocked, deleted, or modified</strong> by attackers.<br>
+Telemetry is more protected than logs, and <strong>network tools provide trusted information</strong> as long as they are not compromised.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-50" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Filesystem: Persistent Evidence for Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Persistence Matters:</p><ul>
+            <li>Filesystems store <strong>all persistent elements</strong>, surviving reboots.</li><li>If an attacker avoids writing to disk, they stay stealthy, but loose their access on reboot.</li><li>Any file written to disk can be <strong>traced during investigation</strong>.</li>
+          </ul><p>Windows Filesystems:</p><ul>
+            <li>Most systems use <strong>NTFS</strong>; some may use ReFS. The main NTFS partition is a <strong>trusted source of information</strong>.</li><li>NTFS keeps a <strong>Master File Table (MFT)</strong> containing <strong>all file records</strong>.</li><li>Additional system files <strong>track disk activity</strong>, providing context for changes.</li>
+          </ul><p>Trustworthiness:</p><ul>
+            <li>Offline (powered-off) filesystems are generally reliable evidence.</li><li>NTFS provides <strong>non-modifiable timestamps</strong> in addition to user-modifiable timestamps, allowing accurate tracking of file creation and modifications.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-51" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Memory Dump: Capturing Active System State</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Reliability:</p><ul>
+            <li><strong>Hypervisor-level dumps are relatively reliable</strong>.</li><li><strong>Application-level dumps</strong> (EDR, crash dumps, IR tools) are <strong>less reliable</strong>.</li>
+          </ul><p>What It Contains:</p><ul>
+            <li>Captures <strong>all active elements</strong> in the system.</li><li>If the attacker is present during the dump, critical information about their <strong>actions and processes can be captured</strong>.</li>
+          </ul><p>Challenges:</p><ul>
+            <li>Large memory sizes make dumps time-consuming.</li><li>During dump generation, system data changes, increasing the risk of incomplete or <strong>corrupted captures</strong>.</li>
+          </ul><p>Hibernate files contains the full memory.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-52" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>CMDB & Network Diagram: Essential Context for Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>CMDB (Configuration Management Database):</p><ul>
+            <li>Must be <strong>complete and accurate</strong>.</li><li>Include at minimum: <strong>IP addresses, Machine roles, Installed applications</strong>.</li><li>When shadow IT exists, is <strong>highly valued by attackers, and extremely difficult to identify</strong> during an incident.</li>
+          </ul><p>Network Diagram:</p><ul>
+            <li>Map all IPs, including <strong>NATed addresses, firewalls, gateways</strong>.</li><li>Include <strong>VLANs, switches, MAC/IP mappings</strong>.</li><li>Document <strong>versions of all applications and network appliances</strong>.</li>
+          </ul><p>A vulnerability report with EPSS and CVSS scores across all machines speeds up incident response by highlighting paths for initial access, privilege escalation, and credential-less lateral movement.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-53" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Communication Tools for Effective Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li><strong>Instant Messaging</strong>: Ideal for real-time exchanges during incident response.</li><li><strong>Email</strong>: Suitable for regular information reporting (daily or weekly).</li><li><strong>Phone (calls/SMS)</strong>: Useful when workstations are compromised, for urgent client communication, and for on-call situations.</li><li><strong>Secure External Messaging</strong>: End-to-end encrypted systems are critical if workstations are compromised and employees are in multiple locations.</li><li><strong>In-Person Meetings</strong>: Provide highly secure communication when computers or phones may be compromised. Allows full verbal and non-verbal communication, captures subtleties, and can help reduce tensions that video calls might amplify.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-54" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Physical Notes and Offline Work in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <ul>
+            <li>Paper, Whiteboards, Pens: Critical when systems are compromised. Enables teams to work <strong>without access to computers</strong>.</li><li>Alternative Connectivity: Internet access may be blocked (Wi-Fi, switches, etc.). <strong>Personal networks</strong> (e.g., mobile 4G) can serve as a temporary alternative.</li><li>Physical and offline tools ensure continuity of operations and communication even when IT infrastructure is partially or fully unavailable.</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-55" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Before and After Incident Response: Preparation and Lessons Learned</h2>
+      </article>
+    </section><section id="slide-56" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Preparation: Building a Strong and Secure Foundation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Before an incident occurs, organizations must establish a strong preparation framework to minimize damage and accelerate recovery. Key elements include:</p><ul>
+            <li>Disaster Recovery & Business Continuity Plans (PRA/PCA)</li><li>Communication Plan</li><li>Regular Backups</li><li>Security Tools & Operational Monitoring</li><li>Network Diagram</li><li>Complete CMDB</li><li>Vulnerability Scanners</li><li>Centralized Logs & Policies</li><li>Forensic Collection Tools</li><li>Incident Response Playbooks & Procedures</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-57" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Post-Incident Review (RETEX): Technical and Managerial Analysis</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>After an incident, conducting a thorough review (RETEX) is essential to understand what happened and improve future response.</p><ul>
+            <li>Evaluate detection and response timelines</li><li>Review effectiveness of security tools</li><li>Assess decision-making processes during the incident</li><li>Evaluate communication efficiency</li><li>Review coordination between teams</li><li>Produce a detailed incident report</li><li>Record lessons learned and key findings</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-58" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Continuous Improvement of Security Posture</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Incident response does not end with resolution. Continuous improvement is critical to strengthen resilience and readiness for future incidents.</p><ul>
+            <li>Update Procedures & Playbooks: refine response steps based on lessons learned, add new scenarios and edge cases</li><li>Enhance Security Measures: patch vulnerabilities and harden systems, improve detection rules and monitoring capabilities</li><li>Improve Plans: update Business Continuity (PCA) and Disaster Recovery (PRA) plans, adjust communication strategies if needed</li><li>Tooling Optimization: upgrade or replace inefficient tools, improve forensic and logging capabilities</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-59" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Incident Response Techniques and Investigation Tips</h2>
+      </article>
+    </section><section id="slide-60" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Finding the Source of the Incident</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>In incident response, the first objective is to <strong>identify both the origin and the stage of the attack</strong>.<br>
+Start by tracing the activity back to the most relevant indicator (alert, encrypted files, monitoring event, ...).</p><ul>
+            <li>Identify the impacted machine and network location (workstation, DMZ, production, ...).</li><li>Identify the originating process</li><li>Trace the parent process chain</li><li>Identify the user account behind the activity</li><li>Understand how the action was initiated</li><li>Determine the network activity involved</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-61" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Time-Based Pivoting in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Time pivoting consists of using a timestamp to <strong>identify all events occurring at the same moment across the system</strong>, in order to quickly uncover related activity.</p><ul>
+            <li>Identify a specific timestamp with a malicious or suspicious activity</li><li>Look for <strong>all events occurring at the exact same time</strong></li><li>Identify <strong>what else was happening simultaneously (processes, connections, logins)</strong></li><li>Reveal hidden links between seemingly unrelated events</li><li>Identify why the malicious action was performed</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-62" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>User-Based Pivoting in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>User-based pivoting focuses on <strong>tracking all activity linked to a specific user account</strong> to uncover malicious behavior or compromised credentials.</p><ul>
+            <li>Start from a suspicious user account identified by an alert or unusual activity</li><li>Identify <strong>all sessions and logins</strong> associated with that user</li><li>Trace <strong>processes, files, and network connections</strong> initiated by the account</li><li>Correlate <strong>actions across multiple systems</strong> performed by the same user</li><li>Checks <strong>weak signals</strong> generated by the user</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-63" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Process-Based Pivoting in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Process-based pivoting allows investigators to <strong>focus on a single process</strong> to understand its actions and connections, or to expand the investigation using related processes.</p><ul>
+            <li>Examine all files, network connections, and system changes initiated by a specific process</li><li>Track child processes and execution lineage</li><li>Investigate all instances of a given process name across the environment</li><li>Detect unusual repetitions or rogue copies</li><li>Correlate processes that share similar parameters or unusual flags</li><li>Inspect command-line arguments to identify specific patterns and search suspicious patterns across the environment</li><li>Identify which processes accessed the target process (process injection, memory dump, etc.)</li><li>Identify all modules loaded by the processes linked to malicious activity</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-64" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Network-Based Pivoting in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Network-based pivoting focuses on using <strong>network indicators</strong> to trace malicious activity and uncover connections between systems.</p><ul>
+            <li>Identify all events from or to a specific IP (lateral movement, C2)</li><li>Correlate network traffic on specific ports (C2, lateral movement)</li><li>Identify unusual or non-standard communication channels (C2, lateral movement)</li><li>Track activity per endpoint or network device by tracking MAC address (compromised network device)</li><li>Investigate all connections or name resolution to suspicious domains (C2, phishing)</li><li>Combine NDR, firewall, DNS, proxy, and endpoint logs to map the full network activity</li>
+          </ul><p>Tips:
+With the source <strong>IP, port, and timestamps</strong>, you can identify the process on the source system.<br>
+On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a URL linked to a user-downloaded file.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-65" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>High-Frequency Events in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>High-frequency or repeated events over a short period are <strong>strong indicators of automated attacks</strong> or abnormal activity. These patterns are <strong>highly visible</strong> and useful for quickly detecting incidents.</p><ul>
+            <li>Multiple connection attempts to different destinations (IP and ports) in a short timeframe (port scan, lateral movement, file share encryption, ...)</li><li>Mass creation, modification, renaming, or deletion of files (cryptolocker)</li><li>Multiple file types or directories opened simultaneously (ransomware)</li><li>Numerous processes spawned in seconds</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-66" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Unique Event in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p><strong>Unique events are rare, one-off activities</strong> in a system and can be strong indicators of malicious actions. These events often stand out precisely because legitimate activity is usually repetitive or patterned.</p><ul>
+            <li>Rare or unusual command-line execution on a host</li><li>A single file created at an unusual timestamp (webshell deployed after last app update)</li><li>Files with rare names or extensions that don't normally appear in the environment</li><li>A one-time connection to an unusual IP or domain (downloading a first-stage backdoor or retrieving C2 configuration or phishing)</li><li>Single use of a high-privileged account for unusual activity from unusual host</li><li>Rare registry key modifications</li><li>Uncommon scheduled tasks or services</li><li>First-time API calls to sensitive endpoints</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-67" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Balancing Search Scope in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>In incident investigations, the <strong>scope of your search</strong> impacts speed, coverage, and relevance. Analysts must decide between <strong>wide searches for maximum matches</strong> or <strong>targeted searches for speed and context</strong>.</p><p>Wide Scope Searches:</p><ul>
+            <li>Search across all logs, file indexes, endpoints, or SIEM data</li><li>Use precise indicators (e.g., IOC hashes, exact filenames, IP addresses, specific patterns/regex)</li><li>Advantage: Maximize coverage, identify all possible matches</li><li>Disadvantage: Longer response time, requires more compute resources</li>
+          </ul><p>Narrow/Targeted Searches:</p><ul>
+            <li>Limit the dataset based on context (time window, VLAN, host group)</li><li>Analyst can use generic patterns (e.g., suspicious flags like <em>-EncodedCommand</em>)</li><li>Advantage: Faster results, actionable insights in near real-time</li><li>Disadvantage: May miss rare matches outside the scope</li>
+          </ul><p>Guidance:<br>
+<strong>Wide searches</strong> for retrospective investigations, full forensic audits, or to expand the scope, when losing the attacker trace or starting an incident to assess potential impact.<br>
+<strong>Narrow searches</strong>: for rapid detection, containment, early-stage triage, or to identify more generic activity or subtle attacker actions.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-68" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Different Collection and Investigation Methods in Incident Response</h2>
+      </article>
+    </section><section id="slide-69" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Dead Investigations (Forensic Analysis on Offline Systems)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Dead investigations involve analyzing systems that are powered off or imaged, minimizing risk of evidence alteration.</p><ul>
+            <li>Acquire disk <strong>images, snapshots or collect evidences</strong> from offline systems</li><li>Maintain <strong>chain of custody and integrity</strong> of evidence</li><li>Perform full forensic analysis <strong>without impacting the live environment</strong></li><li>Advantages: <strong>preserves evidence, fully discreet</strong></li><li>Limitations: cannot observe live activity or <strong>running processes</strong></li>
+          </ul><p>This is considered a <strong>best practice</strong> in incident response for obtaining <strong>trusted evidence</strong>. It is also possible to collect <strong>trusted evidence from a compromised system via the hypervisor</strong>, which is non-application level and therefore not alterable by an attacker on the system, note that it must be demonstrated that the attacker did <strong>not compromise the hypervisor</strong>.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-70" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Live Data Collection from Active Systems in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>When offline collection is not possible or strategic, investigators must <strong>collect evidence from live systems</strong>. This includes filesystems, specific files, logs, processes, network connections, and volatile data, all while following proper procedures to minimize impact and maintain evidence integrity.</p><ul>
+            <li>Collect all available data: files, logs, processes, network info, and volatile memory</li><li>Must be done discreetly to avoid alerting the attacker</li><li>Use approved tools and procedures to reduce the risk of system alteration</li><li>Advantages: Allows investigation when offline collection is not feasible</li><li>Limitations / Risks: <strong>alters system state and evidences</strong> (write operations, logging), requires careful documentation to maintain chain of custody, <strong>attacker may interfere with collection</strong>, potentially modifying evidence, <strong>attacker can detect the collection phase</strong>, compromising the element of surprise</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-71" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Live Interactive Investigation on Active Systems in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Live investigations involve <strong>interacting with a running system</strong> for deep analysis, but carry a high risk of altering evidence.</p><ul>
+            <li>Access system directly <strong>while it is running</strong></li><li>Can gather <strong>real-time insights</strong> into processes, network, and memory</li><li>Risks include <strong>evidence alteration or loss</strong></li><li>Particularly challenging when <strong>multiple investigators</strong> work on the same host</li><li>Advantages: <strong>immediate insight</strong>, can observe attacker activity, limit tools, procedures and preparation</li><li>Limitations: <strong>hard to remain discreet, may alert attacker</strong></li><li>Attacker may have equal or higher privileges than the analysts</li><li>Attacker can interfere with interactive collection, <strong>alter evidence</strong>, or compete for system control (“access battle”)</li>
+          </ul><p>This type of investigation should be avoided whenever possible; in theory, it should <strong>never occur</strong>, as the risks to evidence integrity and operational security are extremely high.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-72" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Common Challenges and Risks in Incident Response</h2>
+      </article>
+    </section><section id="slide-73" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Evidence Storage Challenges in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Proper evidence storage is critical to maintain <strong>integrity, chain of custody, and admissibility</strong> of digital evidence. Poor storage practices can compromise investigations and legal proceedings.</p><ul>
+            <li>Ensure <strong>secure, tamper-proof storage</strong> of disks, memory dumps, logs, and other artifacts</li><li>Maintain a <strong>documented chain of custody</strong> for each item</li><li>Consider <strong>redundancy and backup</strong> for critical evidence</li><li>Use access controls to <strong>prevent unauthorized modifications</strong></li><li>Regularly <strong>verify integrity with hashes or checksums</strong></li>
+          </ul><p>Proper evidence storage ensures trusted, legally defensible investigations.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-74" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Responsibilities versus Risk in Incident Response Operations</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>During incident response, <strong>discretion is critical</strong> to avoid alerting the attacker. However, organizational governance and security responsibilities can create conflicts between <strong>operational security and compliance obligations</strong>.</p><ul>
+            <li>Missing or malfunctioning tools (e.g., EDR) may trigger requests from governance to <strong>install, reconfigure, or redeploy</strong> them</li><li>Installing defensive tools during an ongoing incident <strong>can alert the attacker immediately</strong></li><li>Many defensive actions should ideally be prepared <strong>before an incident</strong> to avoid operational surprises</li><li>Governance may <strong>mandate risky actions</strong> due to contractual obligations or security responsibilities, even if these increase detection risk</li>
+          </ul><p>Decisions by governance can regularly undermine incident response, causing serious consequences: <strong>alerting the attacker, crashing systems, or destroying evidence</strong>. In France and Europe, <strong>legal obligations often take precedence over security</strong> for governance teams.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-75" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Impact of Lack of Procedures and Preparation in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Without playbooks, documented procedures, pre-defined plans, and proper tools, incident response teams must rely heavily on <strong>individual skills and availability</strong>, which can limit efficiency and increase risk.</p><ul>
+            <li>Communication is critical: <strong>prefer too much communication rather than too little</strong> (to much communication can slow response, cause misinterpretation, but too little prevent informed decision-making).</li><li><strong>Organization and coordination</strong>: teams must coordinate investigations and inter-team activities efficiently, clear roles and responsibilities improve response speed and reliability</li><li>Analyst autonomy: analysts must <strong>adapt to unknown technologies</strong> or systems during incidents</li><li>Technical and computer science skills: <strong>deep understanding of systems</strong> allows multiple methods to achieve investigative objectives. <strong>Knowledge of commands alone is insufficient</strong> without understanding system behavior, leading to missed insights</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-76" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Managing Team Stress During Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Incident response can impose <strong>high stress levels</strong> even on highly skilled personnel. Stress can impact performance, slow investigations, and reduce overall effectiveness.</p><ul>
+            <li>Even extremely competent individuals may <strong>struggle under pressure</strong></li><li><strong>Single-point experts</strong> on specific technologies can become bottlenecks</li><li>If their work is delayed or impossible, investigations on critical systems may stall</li>
+          </ul><p>Long-term stress:</p><ul>
+            <li>Intense mobilization over mornings, evenings, and breaks can accumulate fatigue</li><li>Short incidents (“sprints”) may be manageable, but long-term investigations (“marathons”) significantly impact productivity and decision-making</li><li><strong>Estimate if the incident is likely a sprint or marathon</strong> before fully mobilizing teams</li><li>Encourage communication to detect signs of fatigue or incapacity early</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-77" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Legal Obligations and Evidence Handling in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>During incident response, teams must balance legal obligations, evidence integrity, and operational security.</p><ul>
+            <li>Notify regulators and authorities: <ul><li>In France and Europe, inform the CNIL within 72 hours if personal data is impacted</li><li>File complaints if needed to claim insurance coverage</li></ul></li><li>Evidence quality and storage: <ul><li>Collect and store evidence without modification</li><li>Ensure it is admissible and legally defensible</li></ul></li><li>Governance versus technical best practices: governance teams often prioritize legal compliance over security best practices (France/Europe), security measures may be restricted or altered to comply with regulatory constraints</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-78" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Technical Complexity and Risk Management in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Incident response can involve <strong>highly complex technical actions</strong>, often in environments where teams have limited training or experience. Attempting overly complex operations under stress can <strong>lead to critical mistakes with severe consequences</strong>.</p><ul>
+            <li>Avoid performing complex technical actions <strong>without proper preparation or testing</strong></li><li>Live remediation of multiples backdoors on production systems -> Mistaken deletion of critical files or services during containment</li><li>Stress and lack of preparation amplify the <strong>likelihood of human error</strong></li><li>Focus <strong>on controlled, well-understood procedures</strong> that minimize risk</li>
+          </ul><p>Teams should prioritize <strong>simple, safe, validated actions</strong> and escalate to experts when tasks exceed the team's skill or operational certainty.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-79" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Useful Resources for Incident Response and Threat Detection</h2>
+      </article>
+    </section><section id="slide-80" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Using Sigma Rules in Incident Response Investigations</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Sigma rules are widely used for <strong>log-based detection</strong> and analysis. While open-source Sigma rules are often imperfect for detection, they are extremely valuable during incident response.</p><ul>
+            <li>Based on log analysis, making them ideal for investigations</li><li>Help identify <strong>TTPs (Techniques, Tactics, and Procedures)</strong> used by attackers</li><li>Provide <strong>key indicators to search, filter, and correlate</string> within logs</li><li>Limitations for detection: often poorly written or too dependent on specific tool implementations, they can be easily bypassed by attackers</li><li>Strength in incident response: offer <strong>investigation leads</strong> rather than detection reliability, sometimes allow identification of <strong>specific attacker tools</strong></li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-81" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Using YARA Rules for File and Memory Analysis in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>YARA is a <strong>powerful tool used to identify and classify files or memory content</strong> based on patterns. It is widely used in incident response to detect malware and suspicious artifacts.</p><ul>
+            <li>Define rules based on <strong>strings, binary patterns, or file characteristics</strong></li><li>Scan <strong>files, directories, or memory dumps for known indicators</strong></li><li>Useful to detect <strong>modified hacktools, malware variants and reused code patterns</strong></li><li>Can be applied on endpoints, forensic images, or collected data</li><li>Strengths: highly flexible and customizable detection logic, effective for identifying <strong>known tools, malware families or artifacts</strong>, can be used on large datasets during investigations</li><li>Limitations: can generate <strong>false positives or miss obfuscated malware</strong></li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-82" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Using Cyber Threat Intelligence (CTI) in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Cyber Threat Intelligence (CTI) provides <strong>critical context about attackers, tools, and techniques</strong>. Identifying a known threat actor or pattern can significantly <strong>accelerate and improve incident response</strong>.</p><ul>
+            <li>Identify known indicators: File hashes, IPs, and domains from platforms like VirusTotal or AbuseIP</li><li>Recognize attacker patterns: even partial matches can help identify tools, techniques, or threat groups</li><li>Correlate intelligence sources: MISP and STIX feeds may contain matching IOCs and threat data</li><li>Attribution considerations: full attribution is difficult, but identifying a known group or behavior is often achievable, some attackers (e.g., APTs) may imitate other groups, but the observed techniques remain relevant for response</li>
+          </ul><p>Point of attention: <strong>NEVER upload unknown files to public platforms</strong>, use external platforms in <strong>read-only mode</strong> during incidents, attackers may monitor these platforms to detect if their malware has been discovered</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-83" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+      </header>
+      <article>
+        <h2>Advanced Techniques and Practical Tips for Incident Response</h2>
+      </article>
+    </section><section id="slide-84" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Quick Malware Analysis and Reverse Engineering in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Malware reverse engineering can provide valuable insights into an attacker's <strong>capabilities, tools, and identity</strong>. While full reverse engineering is complex and time-consuming, <strong>quick analysis techniques</strong> can already deliver critical information.</p><p>Static analysis without full reverse:</p><ul>
+            <li>Identify <strong>imported/exported functions</strong></li><li>Detect presence of <strong>packers or obfuscation</strong></li><li>Extract <strong>compilation timestamp</strong></li><li>Identify <strong>programming language and framework</strong></li>
+          </ul><p>Metadata and developer artifacts: project name or developer path (full path on build machine), compiler, platform, or system indicators (e.g., rich headers, .comment section).</p><p>Language-specific insights:</p><ul>
+            <li>.NET malware can often be <strong>decompiled into readable code</strong></li><li>Go binaries may expose <strong>library names and structure</strong></li><li>Scripts and simple malware (PHP webshells, Python exploits) are often <strong>directly readable</strong></li>
+          </ul><p>Operational value: quickly understand what the malware does, identify <strong>tools or families used</strong> by the attacker, gain <strong>informations about attacker and IOCs</strong> to research.</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-85" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Using Canary Tokens and Honeypots in Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Canary tokens and honeypots can help detect <strong>attacker progression and intentions</strong> during an incident. They act as controlled traps to <strong>observe, alert, and sometimes influence attacker behavior</strong>.</p><ul>
+            <li>Detection of attacker activity: <strong>trigger alerts on file or system access</strong>, lateral movement, exfiltration, or encryption attempts</li><li>Understanding attacker intent: <strong>reveal what data or systems are targeted</strong> and provide insight into attacker objectives and priorities</li><li>Deception and influence: potentially mislead or redirect the attacker, control parts of the investigation by shaping attacker behavior</li><li>Advantages: quick and easy to deploy, can provide high-value signals during an incident</li><li>Limitations: <strong>not 100% reliable</strong>, requires good understanding of attacker position and behavior, not suitable for all incident response scenarios</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-86" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Scanners and Custom Scripts for Efficient Incident Response</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Scanners and small scripts <strong>play a critical role in identifying indicators of compromise (IOCs)</strong> during incident response. Choosing the right approach depends on <strong>urgency, visibility, and impact on systems</strong>.</p><p>IOC Scanners:</p><ul>
+            <li><strong>Fast, powerful scanners</strong>: provide quick results but are <strong>highly visible and resource-intensive</strong></li><li><strong>Discreet, slower scanners</strong>: less detectable by attackers, <strong>allow in-depth analysis</strong> with minimal production impact</li><li>Some YARA scanners can search inside archives, compressed files, and complex filesystems for thorough coverage</li>
+          </ul><p>Custom scripts:</p><ul>
+            <li>Small, targeted scripts can <strong>collect logs, extract IOCs, or trigger alerts</strong> without deploying visible agents</li><li>Can run via <strong>cron jobs or network triggers</strong>, enabling discreet monitoring and alerting</li><li>Example: add a temporary LOG rule to iptables and collect log file to detect attacker return</li>
+          </ul><p>Advantages: high flexibility and low visibility, can achieve similar effectiveness to full-scale agent deployments, allow rapid adaptation to attacker behaviors</p>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-87" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>Using Text Utilities and Regex for Rapid Data Extraction</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Basic text tools and regular expressions are <strong>essential for quickly extracting valuable information</strong> from a variety of files during incident response. They are lightweight, flexible, and can handle <strong>large volumes of data across multiple formats</strong>.</p><ul>
+            <li>Common utilities: strings, grep, xxd, awk, sed, Notepad++, ...</li><li>File format: database files, binary file metadata (media, executable, ...)</li><li>Automate searching for specific patterns or suspicious indicators</li><li>Process multiple files simultaneously or recursively (/var/log for example)</li><li>Regex: Enables <strong>complex pattern matching across logs, binaries, or text files</strong></li><li>Can detect obfuscated (encoded) strings, URLs, hashes, and system artifacts</li><li>Essential for <strong>automating repetitive extraction tasks</strong></li><li>Advantages: fast, low-resource, and scriptable, works even in environments where agents or scanners cannot be deployed,</li>
+          </ul>
+        </div>
+        <img src="" alt="Illustration" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section>
+    <section class="timeline-slide content-slide" id="timeline-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="MauriceLambert icon" />
+        <h3>My path, my passion: cybersecurity</h3>
+      </header>
+      <article>
+        <div id="timeline-container"></div>
+        <div id="timeline-progress"></div>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p><a href="https://www.gnu.org/licenses/">&copy; Maurice Lambert</a></p>
+  </footer>
+</body>
+</html>
