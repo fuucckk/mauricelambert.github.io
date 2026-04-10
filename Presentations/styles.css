@@ -345,4 +345,54 @@ h1, h2, h3 {
 
 }
 
-
+#bios-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+}
+.bios-box {
+  width: 560px; border: 2px solid var(--text-color, #00ff00);
+  background: #0d0d0d; color: var(--text-color, #00ff00);
+  font-family: 'Courier New', monospace; font-size: 13px;
+}
+.bios-title-bar {
+  background: var(--text-color, #00ff00); color: #0d0d0d;
+  text-align: center; padding: 3px; font-weight: bold; letter-spacing: 2px;
+}
+.bios-body { padding: 14px 18px; }
+.bios-subtitle { color: #666; font-size: 11px; margin-bottom: 12px; }
+.bios-section-label { color: #00aaaa; font-size: 11px; margin: 10px 0 5px; letter-spacing: 1px; }
+.bios-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 8px; cursor: pointer; border: 1px solid transparent;
+}
+.bios-row.focused { border-color: var(--text-color, #00ff00); background: rgba(0,255,0,0.05); }
+.bios-arrow { width: 12px; visibility: hidden; }
+.bios-name { flex: 1; }
+.swatch { width: 12px; height: 12px; border: 1px solid #333; display: inline-block; }
+.bios-swatches { display: flex; gap: 3px; }
+.bios-sep { border: none; border-top: 1px dashed #222; margin: 10px 0; }
+.bios-mode-row { display: flex; border: 1px solid var(--text-color, #00ff00); width: fit-content; margin-top: 6px; }
+.bios-mode-btn {
+  padding: 3px 16px; background: transparent;
+  border: none; border-right: 1px solid var(--text-color, #00ff00);
+  color: #555; font-family: 'Courier New', monospace; font-size: 12px; cursor: pointer;
+}
+.bios-mode-btn:last-child { border-right: none; }
+.bios-mode-btn.selected { background: var(--text-color, #00ff00); color: #0d0d0d; font-weight: bold; }
+.bios-live-bar {
+  background: #050f05; border-top: 1px solid #1a1a1a;
+  padding: 6px 18px; font-size: 11px; color: #444;
+}
+.bios-dot {
+  display: inline-block; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--text-color, #00ff00);
+  margin-right: 6px; animation: biosblnk 1s step-end infinite;
+}
+@keyframes biosblnk { 50% { opacity: 0; } }
+.bios-footer {
+  border-top: 1px solid #1a1a1a; padding: 8px 18px;
+  display: flex; gap: 20px; color: #555; font-size: 11px;
+}
+.bios-footer kbd { color: #00aaaa; }
