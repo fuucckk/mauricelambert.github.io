@@ -38,6 +38,7 @@ const applyTheme = (themeName, mode) => {
 
   localStorage.setItem('theme', themeName);
   localStorage.setItem('mode',  mode);
+  resizeContent();
 };
 
 function buildBiosPopup() {
@@ -49,7 +50,7 @@ function buildBiosPopup() {
     <div class="bios-box">
       <div class="bios-title-bar">[ PRESENTATION THEME SETUP UTILITY v2.1 ]</div>
       <div class="bios-body">
-        <div class="bios-subtitle">Flèches ↑↓ ou clic pour naviguer · Aperçu instantané</div>
+        <div class="bios-subtitle">Use ↑↓ arrows or click to navigate · Live preview</div>
         <div class="bios-section-label">&gt; PRESET THEMES</div>
         <div id="bios-theme-list">
           ${themeKeys.map((key, i) => `
@@ -78,9 +79,9 @@ function buildBiosPopup() {
         LIVE PREVIEW — <span id="bios-live-label">─</span>
       </div>
       <div class="bios-footer">
-        <span><kbd>F10</kbd> Sauvegarder</span>
-        <span><kbd>ESC</kbd> Annuler</span>
-        <span><kbd>↑↓</kbd> Naviguer</span>
+        <span><kbd>F10</kbd> Save</span>
+        <span><kbd>ESC</kbd> Cancel</span>
+        <span><kbd>↑↓</kbd> Navigate</span>
       </div>
     </div>
   `;
@@ -150,7 +151,8 @@ function buildBiosPopup() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('main section');
-  let slide_index = 0;
+  enableImageZoom();
+  resizeContent();
 
   const scrollToSlide = (index) => {
     const total = sections.length;
@@ -213,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+const resizeContent = () => {
   const slides = document.querySelectorAll('.content-slide, .table-content');
 
   slides.forEach(slide => {
@@ -239,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxArticleSize = slide.clientHeight - dynamicBuffer;
 
     const img = article.querySelector('img');
-    if (img !== null) {
+    if (img !== null && !article.classList.contains('image-only')) {
       img.style.setProperty('--max-article-size', `${maxArticleSize - 100}px`);
       void img.offsetWidth;
     }
@@ -275,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
       article.style.webkitOverflowScrolling = 'touch';
     }
   });
-});
+};
 
 const scenarios = [
   {
@@ -1071,3 +1073,43 @@ const themes = {
     transitionSpeed: '0.4s',
   },
 };
+
+function openCodePopup(btn) {
+  const code = btn.dataset.code;
+  const lang = btn.dataset.lang;
+  document.getElementById('code-popup-lang').textContent =
+    lang ? '[ ' + lang.toUpperCase() + ' ]' : '[ CODE ]';
+  document.getElementById('code-popup-code').textContent = code;
+  document.getElementById('code-popup-overlay').style.display = 'flex';
+}
+function closeCodePopup() {
+  document.getElementById('code-popup-overlay').style.display = 'none';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeCodePopup();
+});
+
+function enableImageZoom() {
+  document.querySelectorAll('section.content-slide img').forEach(img => {
+    img.style.cursor = "zoom-in";
+
+    img.addEventListener('click', () => {
+      const existing = document.querySelector('.image-zoom-overlay');
+      if (existing) existing.remove();
+
+      const overlay = document.createElement('div');
+      overlay.className = 'image-zoom-overlay';
+
+      const zoomedImg = document.createElement('img');
+      zoomedImg.src = img.src;
+
+      overlay.appendChild(zoomedImg);
+
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('click', () => {
+        overlay.remove();
+      });
+    });
+  });
+}
