@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2025 MauriceLambert
+  Copyright (C) 2025, 2026 MauriceLambert
 
   This file is part of PySlideGenerator.
 
