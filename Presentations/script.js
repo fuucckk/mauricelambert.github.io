@@ -636,6 +636,46 @@ document.addEventListener("DOMContentLoaded", () => {
         "Focused on real-world scenarios where standard defenses fall short and how attackers exploit them.",
         "Promoted hands-on understanding of purple team techniques, defense evasion, and the importance of layered security."
       ]
+    },
+    {
+      "name": "Contributor to the Emergence of Purple Team Practices",
+      "title": "Purple Team Advocacy & Knowledge Sharing",
+      "period": "2025 - Present",
+      "version": "Security.Insider",
+      "tags": ["Purple Team", "Cybersecurity", "Defense", "Security Governance", "Conference", "Awareness"],
+      "details": [
+        "Talks and conferences on Purple Team approaches.",
+        "Engagements with cybersecurity governance stakeholders within organizations.",
+        "Contribution to the dissemination of Purple Team practices to improve the quality of defensive security."
+      ]
+    },
+    {
+      "name": "Freelance Cybersecurity Trainer",
+      "title": "Defensive Security Training & Certification",
+      "period": "2025 - Present",
+      "version": "Security.Mentor",
+      "tags": ["Cybersecurity Training", "Defensive Security", "Best Practices", "Certification"],
+      "details": [
+        "Provided freelance training in defensive cybersecurity.",
+        "Helped clients improve the quality of their security practices.",
+        "Introduced new approaches to strengthen defensive strategies.",
+        "Shared best practices and practical skills.",
+        "Acted as an examiner for defensive cybersecurity certification exams."
+      ]
+    },
+    {
+      "name": "Bug Hunter",
+      "title": "Web Vulnerability Research (CVE Discoveries)",
+      "period": "2026",
+      "version": "Security.Researcher",
+      "tags": ["Web Security", "Vulnerability Research", "CVE", "Injection", "RCE"],
+      "details": [
+        "Vulnerability research conducted within a dedicated project.",
+        "Discovered multiple HIGH and CRITICAL CVEs in web applications.",
+        "Identified injection vulnerabilities in authenticated contexts.",
+        "Exploited vulnerabilities leading to access to sensitive data (e.g. hashed passwords).",
+        "Achieved remote code execution (RCE) through exploitation."
+      ]
     }
   ];
 
