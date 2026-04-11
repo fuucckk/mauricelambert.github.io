@@ -211,7 +211,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Incident Response Best Practices: Avoiding Early Technical Mistakes and Premature Remediation",
-            "image": "public_plateform.png",
+            "image": "public_plateform.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -221,6 +221,15 @@
                         "<strong>Validate automated analysis:</strong> Sandbox environments generate events related to their own operations. Not all observed connections or behaviors are caused by the malware itself. Analysts must differentiate legitimate sandbox activity from actual malicious behavior."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Pas de suppression avec la phase de rem\u00e9diation (suppression = rem\u00e9diation) => perte de preuve",
+                "Pas de malware sur les plateformes publiques avant la fin de l'incident ! L'attaquant peut v\u00e9rifier ces hashs de malwares",
+                "Les sandbox vivent => d'autres choses tournent => des \u00e9l\u00e9ments proviennent de l'environnement de la sandbox"
             ]
         },
         {
@@ -245,7 +254,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "SOC Governance and Responsibility: Key Lessons for Proper Incident Handling",
-            "image": "",
+            "image": "follow_strategic_instructions.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -255,6 +264,15 @@
                         "<strong>Respect governance directives:</strong> Following the strategy set by governance is essential. Deviating from instructions can compromise the investigation, increase risks, and lead to operational failures."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Pas d'abandon de r\u00e9ponse \u00e0 incident pour erreur et responsabilit\u00e9 => ce n'est pas morale => c'est tr\u00e8s risqu\u00e9 (m\u00eame juridiquement)",
+                "Le SOC ne peut pas prendre de d\u00e9cision strat\u00e9gique sur un incident (=> gouvernance, bas\u00e9e sur les conseils du SOC)",
+                "Il faut suivre la d\u00e9cision strat\u00e9gique, d'accord ou pas, cela peut avoir de fortes cons\u00e9quences"
             ]
         },
         {
@@ -325,7 +343,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Understanding Key Concepts: Problem versus Incident versus Crisis",
-            "image": "",
+            "image": "problem_incident_crisis.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -335,6 +353,15 @@
                         "A <strong>crisis</strong> is a serious situation, sudden or evolving, that significantly threatens the stability, operations, or survival of an organization or system."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Un probl\u00e8me est une cause d'un incident potentiel => vuln\u00e9rabilit\u00e9, cable au milieu du passage",
+                "Un incident est un \u00e9vennement avec impact => crash, ninja qui se prend les pieds dans la prise \u00e9l\u00e9ctrique",
+                "La crise est un incident \u00e0 fort impact => ransomware impactant les backups, le seul administrateur qui tombe avec le cable \u00e9l\u00e9trifi\u00e9 dans une flaque d'eau"
             ]
         },
         {
@@ -453,7 +480,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Purpose and Goals of Cybersecurity Incident Response by Stakeholder",
-            "image": "",
+            "image": "goal_IR.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -468,6 +495,20 @@
                     "type": "p",
                     "content": "<strong>Be careful with service providers !</strong><br>\nWhen selecting a company for an incident response or as a recruiter in a security team, the quality of incident response may differ depending on their strategic choices."
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "But d'un incident => r\u00e9duire les impacts",
+                "Globalement => sortir compl\u00e8tement l'attaquant en le suprenant => mais l'objectif se d\u00e9cline de plusieurs fa\u00e7ons selon les r\u00f4les",
+                "Pour la direction: impacts financiers et sur la r\u00e9putation",
+                "Pour la gouvernance: impacts sur les facteurs DICT",
+                "Pour les \u00e9quipes techniques \u00e7a devrait \u00eatre la protection des biens et des personnes",
+                "Pour les \u00e9quipes techniques en prestation c'est souvent de vendre le plus (prestation IR, vente de produit, vente de service, satisfaction du client, ...)",
+                "Attention quand vous \u00eates un client ou un membre d'une \u00e9quipe technique en prestation, le management de la prestation n'a pas toujours les m\u00eames objectifs que vous",
+                "Certains management d'\u00e9quipes techniques n'ont pas le souhait de poursuivre l'investigation pour trouver toutes les portes d\u00e9rob\u00e9es ou pr\u00e9f\u00e8re conserver un environnement anxiog\u00e8ne pour le client, parfois les solutions de rem\u00e9diation simple et peu couteuses ne sont pas divulgu\u00e9es au client..."
             ]
         },
         {
@@ -706,7 +747,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Timelines: Tracking Evidence and Actions for Effective Incident Response",
-            "image": "",
+            "image": "timeline.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -731,6 +772,19 @@
                         "Crucial for legal accountability and <strong>post-incident RETEX</strong> (lessons learned)."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Lorsqu'on d\u00e9clenche une r\u00e9ponse \u00e0 incident il faut cr\u00e9er 2 timelines",
+                "Une timeline est un tableau contenant la date est l'heure et la description d'un \u00e9vennement pour chaque ligne (elle doit \u00eatre ordonn\u00e9e par le temps)",
+                "Premi\u00e8re timeline pour les actions: qui fait quoi et quand",
+                "Seconde timeline pour les preuves, TOUTES les preuves doivent \u00eatre stok\u00e9es et partag\u00e9es d\u00e8s qu'elles sont trouv\u00e9es (pas de r\u00e9tention)",
+                "Pour la timeline des preuves il est int\u00e9ressant d'ajouter la source",
+                "Toujours choisir un format de temps et un fuseau horaire pour les temps dans les timelines",
+                "Elles sont aussi tr\u00e8s utilis\u00e9es pour la partie juridique et le RETEX"
             ]
         },
         {
@@ -1074,7 +1128,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "User-Based Pivoting in Incident Response",
-            "image": "",
+            "image": "user_pivot.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1090,6 +1144,17 @@
                         "Checks <strong>weak signals</strong> generated by the user"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Pivot sur l'utilisateur => prendre l'utilisateur et regarder ces actions",
+                "On filtre g\u00e9n\u00e9ralement sur des moments d'action de l'attaquant",
+                "L'utilisateur est li\u00e9 aux processus, aux authentifications et parfois aux fichiers (owner)",
+                "Pensez \u00e0 v\u00e9rifier les actions de l'utilisateur sur tous les syst\u00e8mes",
+                "On peut gagner du temps quand l'utilisateur est li\u00e9 aux signaux faibles"
             ]
         },
         {
@@ -1151,7 +1216,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "High-Frequency Events in Incident Response",
-            "image": "high_frequency_events.png",
+            "image": "high_frequency_events.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1166,6 +1231,18 @@
                         "Numerous processes spawned in seconds"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Les \u00e9vennements tr\u00e8s pr\u00e9sent sur une courte p\u00e9riode sont tr\u00e8s int\u00e9ressants",
+                "Ils se rep\u00e8rent facilement",
+                "Il suffit de faire une petite analyse statistique",
+                "Un scan de port => pleins de connexions sur des ports diff\u00e9rents",
+                "Un ransomware => plein d'acc\u00e8s aux fichiers avec des types/extensions/localisations diff\u00e9rents",
+                "Plein d'alertes antivirus => d\u00e9ploiement d'un outil/malware"
             ]
         },
         {
@@ -1173,7 +1250,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Unique Event in Incident Response",
-            "image": "unique_event.png",
+            "image": "unique_event.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1192,6 +1269,21 @@
                         "First-time API calls to sensitive endpoints"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Un \u00e9l\u00e9ment unique est souvent suspect",
+                "G\u00e9n\u00e9ralement les actions n'arrivent jamais qu'une seule fois sur un SI (test + production, serveurs avec le m\u00eame r\u00f4le, serveurs r\u00e9pliqu\u00e9s, ect...)",
+                "Un cryptolocker => une extension de fichier unique pour la cl\u00e9s de chiffrement ou la note de ra\u00e7on",
+                "Un webshell => un fichier avec une date de modification/cr\u00e9ation unique",
+                "Ligne de commande pour lancer une porte d\u00e9rob\u00e9e => peut \u00eatre unique",
+                "Un fichier de porte d\u00e9rob\u00e9e => localisation compl\u00e8te unique sur le SI",
+                "Lat\u00e9ralisation => connexion unique (unique: syst\u00e8me source (IP) -> service de destination (IP:port))",
+                "Persistance -> cl\u00e9s de registre sp\u00e9cifique (ou modification unique sur le SI)",
+                "..."
             ]
         },
         {
@@ -1199,7 +1291,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Balancing Search Scope in Incident Response",
-            "image": "search_scope_size.png",
+            "image": "search_scope_size.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1235,6 +1327,20 @@
                     "type": "p",
                     "content": "Guidance:<br>\n<strong>Wide searches</strong> for retrospective investigations, full forensic audits, or to expand the scope, when losing the attacker trace or starting an incident to assess potential impact.<br>\n<strong>Narrow searches</strong>: for rapid detection, containment, early-stage triage, or to identify more generic activity or subtle attacker actions."
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "2 types de recherches: recherche sur des \u00e9l\u00e9ments courants et recherche sur des \u00e9l\u00e9ments sp\u00e9cifiques",
+                "Sur les \u00e9l\u00e9ments sp\u00e9cifiques on peut faire des recherches de diff\u00e9rentes tailles",
+                "Les recherches sur un grand nombre de donn\u00e9es sont longues mais permettent d'ouvrir le scope de la recherche (tr\u00e8s utile quand on a encore peu d'\u00e9l\u00e9ments)",
+                "Les recherches sur des \u00e9l\u00e9ments courants sont toujours tr\u00e8s restreint (par la source, le temps, l'utilisateur ou autres filtres...) => permet de trouver des \u00e9l\u00e9ments plus discret",
+                "Recherche de tous les syst\u00e8mes ayant contact\u00e9s l'IP du C2",
+                "Recherche de tous les syst\u00e8mes ayant une authentification de l'utilisateur de l'attaquant",
+                "Recherche des lignes de commandes powershell contenant: -EncodedCommand, sur un seul syst\u00e8me ou lanc\u00e9 par un utilisateur sp\u00e9cifique",
+                "Recherche les connexions en localhost aux moments sp\u00e9cifiques ou l'IP de l'attaquant \u00e0 fait une connexion sur une URL sp\u00e9cifique (si exploit de SSRF suspect\u00e9)"
             ]
         },
         {
@@ -1340,7 +1446,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Live Interactive Investigation on Active Systems in Incident Response",
-            "image": "remove_traces.png",
+            "image": "remove_traces.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1363,6 +1469,17 @@
                     "type": "p",
                     "content": "This type of investigation should be avoided whenever possible; in theory, it should <strong>never occur</strong>, as the risks to evidence integrity and operational security are extremely high."
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "A EVITER -> investigations sur une machine en fonctionnement",
+                "Perte de preuves (comme timestamp d'acc\u00e8s aux fichiers)",
+                "L'attaquant peut vous rep\u00e9rer: suppression de traces, lancement de la phase d'impact, alt\u00e9ration des preuves, potentiellement vous bloquer (une simple r\u00e8gle parefeu peut vous faire perdre beaucoup de temps), ...",
+                "Avec plusieurs investigateurs -> particuli\u00e8rement visible, r\u00e9cup\u00e9ration de traces des autres investigateurs",
+                "Parfois n\u00e9cessaire: aucune proc\u00e9dure et aucun outil -> plus rapide"
             ]
         },
         {
@@ -1547,7 +1664,7 @@
                     "content": [
                         "Based on log analysis, making them ideal for investigations",
                         "Help identify <strong>TTPs (Techniques, Tactics, and Procedures)</strong> used by attackers",
-                        "Provide <strong>key indicators to search, filter, and correlate</string> within logs",
+                        "Provide <strong>key indicators to search, filter, and correlate</strong> within logs",
                         "Limitations for detection: often poorly written or too dependent on specific tool implementations, they can be easily bypassed by attackers",
                         "Strength in incident response: offer <strong>investigation leads</strong> rather than detection reliability, sometimes allow identification of <strong>specific attacker tools</strong>"
                     ]
@@ -1740,10 +1857,11 @@
                         "Regex: Enables <strong>complex pattern matching across logs, binaries, or text files</strong>",
                         "Can detect obfuscated (encoded) strings, URLs, hashes, and system artifacts",
                         "Essential for <strong>automating repetitive extraction tasks</strong>",
-                        "Advantages: fast, low-resource, and scriptable, works even in environments where agents or scanners cannot be deployed,"
+                        "Advantages: fast, low-resource, and scriptable, works even in environments where agents or scanners cannot be deployed"
                     ]
                 }
             ]
         }
-    ]
+    ],
+    "default icon alt": ""
 }
