@@ -332,7 +332,7 @@
             <li><strong>Never remediate before containment:</strong> Always ensure that any action on compromised files or systems is preceded by a decision to block the attack. Premature deletion can destroy evidence and obscure the attack path.</li><li><strong>Avoid exposing malware publicly:</strong> Uploading malware to public platforms can alert attackers and compromise the investigation. Always handle samples in a controlled, private environment.</li><li><strong>Validate automated analysis:</strong> Sandbox environments generate events related to their own operations. Not all observed connections or behaviors are caused by the malware itself. Analysts must differentiate legitimate sandbox activity from actual malicious behavior.</li>
           </ul>
         </div>
-        <img src="public_plateform.jpg" alt="" />
+        <img src="public_plateform.jpg" alt="Red ninja managing malware checklist with multiple threats illustrating incident response tracking and avoiding premature remediation" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -362,7 +362,7 @@
             <li><strong>Never abandon an investigation due to a team error:</strong> Even if a SOC member makes a mistake, the team must continue to handle the incident. Leaving it unresolved creates accountability gaps and increases client risk.</li><li><strong>SOC does not decide investigation continuation:</strong> Decisions about whether to pursue or stop an investigation must come from governance. Legal and strategicimplications are managed at the governance level, not by operational teams.</li><li><strong>Respect governance directives:</strong> Following the strategy set by governance is essential. Deviating from instructions can compromise the investigation, increase risks, and lead to operational failures.</li>
           </ul>
         </div>
-        <img src="follow_strategic_instructions.jpg" alt="" />
+        <img src="follow_strategic_instructions.jpg" alt="Blue ninjas bowing to a wise yellow master illustrating SOC governance, leadership, and responsibility in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -915,7 +915,7 @@
             <li>A <strong>problem</strong> is a situation perceived as unsatisfactory or a gap between the current state and the desired state. In ITIL v4, a problem is the cause, or potential cause, of one or more incidents.</li><li>An <strong>incident</strong> is a specific event that disrupts the normal operation of a system, organization, or activity. It requires investigation and response to restore normal conditions.</li><li>A <strong>crisis</strong> is a serious situation, sudden or evolving, that significantly threatens the stability, operations, or survival of an organization or system.</li>
           </ul>
         </div>
-        <img src="problem_incident_crisis.jpg" alt="" />
+        <img src="problem_incident_crisis.jpg" alt="Red ninja tripping over a cable with an electrified plug falling into water, illustrating problem incident and crisis in cybersecurity" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1015,7 +1015,7 @@
           </ul><p><strong>Be careful with service providers !</strong><br>
 When selecting a company for an incident response or as a recruiter in a security team, the quality of incident response may differ depending on their strategic choices.</p>
         </div>
-        <img src="goal_IR.jpg" alt="" />
+        <img src="goal_IR.jpg" alt="Blue ninja kicking out a red attacker through a door, illustrating removing threats in cybersecurity incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1200,7 +1200,7 @@ Interpretations can include confidence scores to help governance evaluate reliab
             <li><strong>Track all actions</strong> taken during the incident.</li><li><strong>Prevents duplicate efforts</strong>, ensures clarity between actions and decisions, and identifies human time spent.</li><li>Crucial for legal accountability and <strong>post-incident RETEX</strong> (lessons learned).</li>
           </ul>
         </div>
-        <img src="timeline.jpg" alt="" />
+        <img src="timeline.jpg" alt="Blue ninja organizing incident response timeline with time source and alert columns on a structured board" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1376,7 +1376,7 @@ Telemetry is more protected than logs, and <strong>network tools provide trusted
       </article>
     </section><section id="slide-60" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Finding the Source of the Incident</h3>
       </header>
       <article>
@@ -1386,13 +1386,13 @@ Start by tracing the activity back to the most relevant indicator (alert, encryp
             <li>Identify the impacted machine and network location (workstation, DMZ, production, ...).</li><li>Identify the originating process</li><li>Trace the parent process chain</li><li>Identify the user account behind the activity</li><li>Understand how the action was initiated</li><li>Determine the network activity involved</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="follow_attack_path.jpg" alt="Blue ninja analyzing a network attack path in a holographic diagram to trace incident source and attacker movement" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-61" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Time-Based Pivoting in Incident Response</h3>
       </header>
       <article>
@@ -1401,7 +1401,7 @@ Start by tracing the activity back to the most relevant indicator (alert, encryp
             <li>Identify a specific timestamp with a malicious or suspicious activity</li><li>Look for <strong>all events occurring at the exact same time</strong></li><li>Identify <strong>what else was happening simultaneously (processes, connections, logins)</strong></li><li>Reveal hidden links between seemingly unrelated events</li><li>Identify why the malicious action was performed</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="time_based_pivoting.jpg" alt="Blue ninja using sundial shadow to trace a hidden red ninja illustrating time-based pivoting in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1416,13 +1416,13 @@ Start by tracing the activity back to the most relevant indicator (alert, encryp
             <li>Start from a suspicious user account identified by an alert or unusual activity</li><li>Identify <strong>all sessions and logins</strong> associated with that user</li><li>Trace <strong>processes, files, and network connections</strong> initiated by the account</li><li>Correlate <strong>actions across multiple systems</strong> performed by the same user</li><li>Checks <strong>weak signals</strong> generated by the user</li>
           </ul>
         </div>
-        <img src="user_pivot.jpg" alt="" />
+        <img src="user_pivot.jpg" alt="Blue ninja posting a wanted poster of a red ninja illustrating user-based pivoting in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-63" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Process-Based Pivoting in Incident Response</h3>
       </header>
       <article>
@@ -1431,13 +1431,13 @@ Start by tracing the activity back to the most relevant indicator (alert, encryp
             <li>Examine all files, network connections, and system changes initiated by a specific process</li><li>Track child processes and execution lineage</li><li>Investigate all instances of a given process name across the environment</li><li>Detect unusual repetitions or rogue copies</li><li>Correlate processes that share similar parameters or unusual flags</li><li>Inspect command-line arguments to identify specific patterns and search suspicious patterns across the environment</li><li>Identify which processes accessed the target process (process injection, memory dump, etc.)</li><li>Identify all modules loaded by the processes linked to malicious activity</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="malicious_process_triage.jpg" alt="Blue ninja filtering malicious bugs from gears illustrating process-based pivoting in incident response analysis" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-64" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Network-Based Pivoting in Incident Response</h3>
       </header>
       <article>
@@ -1448,7 +1448,7 @@ Start by tracing the activity back to the most relevant indicator (alert, encryp
 With the source <strong>IP, port, and timestamps</strong>, you can identify the process on the source system.<br>
 On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a URL linked to a user-downloaded file.</p>
         </div>
-        <img src="" alt="" />
+        <img src="attacker_hidden_in_network_device.jpg" alt="Red ninja hiding at network switch monitoring blue users illustrating network-based pivoting in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1463,7 +1463,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Multiple connection attempts to different destinations (IP and ports) in a short timeframe (port scan, lateral movement, file share encryption, ...)</li><li>Mass creation, modification, renaming, or deletion of files (cryptolocker)</li><li>Multiple file types or directories opened simultaneously (ransomware)</li><li>Numerous processes spawned in seconds</li>
           </ul>
         </div>
-        <img src="high_frequency_events.jpg" alt="" />
+        <img src="high_frequency_events.jpg" alt="Cluster of red ninjas versus scattered blue ninjas illustrating high frequency events and threat concentration in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1478,7 +1478,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Rare or unusual command-line execution on a host</li><li>A single file created at an unusual timestamp (webshell deployed after last app update)</li><li>Files with rare names or extensions that don't normally appear in the environment</li><li>A one-time connection to an unusual IP or domain (downloading a first-stage backdoor or retrieving C2 configuration or phishing)</li><li>Single use of a high-privileged account for unusual activity from unusual host</li><li>Rare registry key modifications</li><li>Uncommon scheduled tasks or services</li><li>First-time API calls to sensitive endpoints</li>
           </ul>
         </div>
-        <img src="unique_event.jpg" alt="" />
+        <img src="unique_event.jpg" alt="Single red ninja hidden among many blue ninjas illustrating unique suspicious event detection in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1497,13 +1497,13 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
 <strong>Wide searches</strong> for retrospective investigations, full forensic audits, or to expand the scope, when losing the attacker trace or starting an incident to assess potential impact.<br>
 <strong>Narrow searches</strong>: for rapid detection, containment, early-stage triage, or to identify more generic activity or subtle attacker actions.</p>
         </div>
-        <img src="search_scope_size.jpg" alt="" />
+        <img src="search_scope_size.jpg" alt="Manga illustration of a blue ninja comparing complex long data analysis versus simple targeted search in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-68" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Key Remediation Actions</h3>
       </header>
       <article>
@@ -1514,7 +1514,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Patch vulnerabilities</li><li>Delete/remove backdoors (files, registry keys, WMI, etc.)</li><li>Kill malicious processes</li><li>File hash verification (low priority)</li>
           </ul><p>Authentication Blocking: block users, delete backdoor user accounts, reset passwords (all compromised accounts, KRBTGT twice, computer accounts)</p><p>Infrastructure Blocking: system hibernation, Restore from backups</p>
         </div>
-        <img src="" alt="" />
+        <img src="remediation_actions.jpg" alt="Blue ninjas containing and remediating threats by blocking access, removing malware, and securing a compromised attacker in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1566,7 +1566,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Access system directly <strong>while it is running</strong></li><li>Can gather <strong>real-time insights</strong> into processes, network, and memory</li><li>Risks include <strong>evidence alteration or loss</strong></li><li>Particularly challenging when <strong>multiple investigators</strong> work on the same host</li><li>Advantages: <strong>immediate insight</strong>, can observe attacker activity, limit tools, procedures and preparation</li><li>Limitations: <strong>hard to remain discreet, may alert attacker</strong></li><li>Attacker may have equal or higher privileges than the analysts</li><li>Attacker can interfere with interactive collection, <strong>alter evidence</strong>, or compete for system control (“access battle”)</li>
           </ul><p>This type of investigation should be avoided whenever possible; in theory, it should <strong>never occur</strong>, as the risks to evidence integrity and operational security are extremely high.</p>
         </div>
-        <img src="remove_traces.jpg" alt="" />
+        <img src="remove_traces.jpg" alt="Manga blue ninja investigating erased footprints while a red stealth ninja hides traces, illustrating attacker evasion in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
