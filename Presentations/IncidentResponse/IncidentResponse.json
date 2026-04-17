@@ -24,7 +24,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 01: Initial Alert Handling",
-            "image": "",
+            "image": "1.alert_cryptominer.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -37,7 +37,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 02: SOC Analyst Reports Alerts and Actions to Cybersecurity Expert",
-            "image": "",
+            "image": "2.deleted_files.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -50,7 +50,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 03: Cybersecurity Expert Reviews Alert and Server",
-            "image": "",
+            "image": "3.files_not_found.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -63,11 +63,11 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 04: Intern Overhears Cybersecurity Expert Reporting to SOC Manager",
-            "image": "",
+            "image": "4.expert_report.jpg",
             "texts": [
                 {
                     "type": "p",
-                    "content": "<strong>Roles:</strong> SOC Manager, Cybersecurity Expert.<br><br>\n<em>Cybersecurity Expert (private conversation between the SOC Manager and the cybersecurity expert):</em> We have an intrusion, but we cannot trace the attacker <em>(Nous avons une intrusion, mais nous ne pouvons pas remonter la trace de l'attaquant</em>).<br><br>\n<em>Intern (addresses the SOC Manager):</em> We had an intrusion? I will investigate and inform the SOC team and governance <em>(On a eu une intrusion ? Je vais investiguer et pr\u00e9venir l'\u00e9quipe SOC et la gouvernance</em>)."
+                    "content": "<strong>Roles:</strong> SOC Manager, Cybersecurity Expert, Intern.<br><br>\n<em>Cybersecurity Expert (private conversation between the SOC Manager and the cybersecurity expert):</em> We have an intrusion, but we cannot trace the attacker <em>(Nous avons une intrusion, mais nous ne pouvons pas remonter la trace de l'attaquant</em>).<br><br>\n<em>Intern (addresses the SOC Manager):</em> We had an intrusion? I will investigate and inform the SOC team and governance <em>(On a eu une intrusion ? Je vais investiguer et pr\u00e9venir l'\u00e9quipe SOC et la gouvernance</em>)."
                 }
             ]
         },
@@ -76,7 +76,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 05: Intern Reports Intrusion and SOC Manager Declines Investigation",
-            "image": "",
+            "image": "5.team_metting.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -89,7 +89,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 06: Intern Reports Findings Despite Closed Investigation",
-            "image": "",
+            "image": "6.malware_found.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -102,7 +102,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 07: Cybersecurity Expert Uploads Malware to Public Platform",
-            "image": "",
+            "image": "7.public_upload.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -115,7 +115,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 08: Cybersecurity Expert Reports Malware Connection Observed on VirusTotal",
-            "image": "",
+            "image": "8.malware_network_communication.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -128,7 +128,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 09: Intern Announces Problem",
-            "image": "",
+            "image": "9.intern_alert.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -141,7 +141,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 10: SOC Manager Orders Halt to Investigation.",
-            "image": "",
+            "image": "10.manager_orders_halt.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -154,7 +154,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 11: Governance Orders Deletion of Files Identified in Attack",
-            "image": "",
+            "image": "11.orders_deletion.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -167,7 +167,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 12: Attacker Returns to the Server",
-            "image": "",
+            "image": "12.attacker_return.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -180,7 +180,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 13: Intern Investigates After Attacker Returns",
-            "image": "",
+            "image": "13.intern_investigations.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -193,7 +193,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scene 14: Intern Removes Attacker's Access",
-            "image": "",
+            "image": "14.intern_put_outside_attacker.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -223,7 +223,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Red ninja managing malware checklist with multiple threats illustrating incident response tracking and avoiding premature remediation",
             "code": "",
             "code lang": "",
             "notes": [
@@ -237,7 +237,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Effective Incident Response: Preventing Communication Failures in SOC Teams",
-            "image": "",
+            "image": "first_communication.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -247,6 +247,15 @@
                         "<strong>Clear communication channels:</strong> Predefined escalation paths and contact methods ensure everyone receives accurate and actionable information in real-time."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Communication => premi\u00e8re chose \u00e0 faire => plus on communique t\u00f4t plus on laisse de chance aux experts d'arriver \u00e0 temps sur la machine et \u00e0 la strat\u00e9gie de se pr\u00e9parer",
+                "La communication doit se faire en utilisant le bon canal et notifier les bonnes personnes",
+                "Le fait d'attendre plusieurs jours avant que les \u00e9quipes de s\u00e9curit\u00e9 soient au courant => laisse le champs libre aux attaquants, ralenti la r\u00e9ponse \u00e0 incident, met en danger le client"
             ]
         },
         {
@@ -266,7 +275,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Blue ninjas bowing to a wise yellow master illustrating SOC governance, leadership, and responsibility in incident response",
             "code": "",
             "code lang": "",
             "notes": [
@@ -280,7 +289,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Critical Incident Response Decisions: Evaluating Actions and Risks",
-            "image": "",
+            "image": "incident_response_decision.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -293,6 +302,15 @@
                         "The decision to delete files is debatable: The attacker might lose access or might simply be alerted and return. In this context, where the attacker likely knows their file was identified, it may be justified to take the risk and delete the file, even though the incident response is not yet complete and not all backdoors or exploited vulnerabilities are known."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "En incident il faut parfois prendre des d\u00e9cisions pas \u00e9vidente",
+                "D'un cot\u00e9 l'attaquant \u00e9tait potentiellement pr\u00e9venu de l'IR \u00e0 cause de l'envoie du malware sur VirusTotal => supprimer les fichiers pourraient peut \u00eatre lui faire perdre la main sur le syst\u00e8me (si c'est une partie n\u00e9cessaire au fonctionnement de sa porte d\u00e9rob\u00e9e et si la vuln\u00e9rabilit\u00e9 qu'il a pr\u00e9c\u00e9demment n'est plus exploitable sur le syst\u00e8me (patch))",
+                "D'un autre, si l'attaquant n'\u00e9tait pas pr\u00e9venu il peut l'\u00eatre avec la suppression et si cela ne bloque pas son acc\u00e8s il va revenir => potentiellement \u00eatre plus discret ou plus impactant"
             ]
         },
         {
@@ -300,7 +318,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Live Investigations: Risks and Considerations",
-            "image": "",
+            "image": "attacker_tools_vs_defense_tools.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -313,6 +331,15 @@
                         "<strong>Evaluating a difficult choice:</strong> In this scenario, the decision to investigate live was debatable. Taking time to select and learn proper tools could delay response, but live investigation carries inherent risks. There was no perfectly safe solution."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Les d\u00e9fenseurs ont fait une investigations sur un syst\u00e8me en fonctionnement => risqu\u00e9 => on peut \u00eatre vu ou r\u00e9cup\u00e9rer des informations invalides",
+                "Parfois en r\u00e9ponse en incident on doit faire se choix => prendre le temps de trouver le bon outil ou faire \"comme on peut\"",
+                "Plus l'incident est court, plus il faut faire avec les moyens les plus rapides, plus il est long plus on prend le temps de le faire bien => il faut r\u00e9ussir \u00e0 estimer \u00e0 l'avance le temps de la r\u00e9ponse \u00e0 incident."
             ]
         },
         {
@@ -355,7 +382,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Red ninja tripping over a cable with an electrified plug falling into water, illustrating problem incident and crisis in cybersecurity",
             "code": "",
             "code lang": "",
             "notes": [
@@ -369,7 +396,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Procedures in Incident Response: How to Perform Specific Actions",
-            "image": "",
+            "image": "procedure.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -379,6 +406,15 @@
                         "Procedures are independent from scenarios. They define the methods, tools, and steps required to complete a specific action (e.g., collecting logs, analyzing a process, acquiring memory)."
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja climbing a rock using a vine with his foot while holding a katana in his mouth, illustrating controlled progression toward an objective",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Les proc\u00e9dures d\u00e9finissent comment ex\u00e9cuter une action sp\u00e9cifique avec un outil sp\u00e9cifique.",
+                "Cela permet d'avoir une marche \u00e0 suivre pour ex\u00e9cuter la tache, un moyen d'\u00eatre sur que l'op\u00e9ration fonctionne et d'\u00eatre sur que tout le monde fait du meilleur moyen identifi\u00e9 et que tout le monde fassent de la m\u00eame mani\u00e8re.",
+                "Les proc\u00e9dures ne sont pas sp\u00e9cifique aux \u00e9quipes elles peuvent \u00eatre partag\u00e9es si n\u00e9cessaire."
             ]
         },
         {
@@ -386,7 +422,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Playbooks in Incident Response: What to Do and When",
-            "image": "",
+            "image": "playbooks.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -396,14 +432,19 @@
                         "Playbooks rely on procedures to execute each step. The playbook defines the logic and flow, while procedures define how each action is performed."
                     ]
                 }
-            ]
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": []
         },
         {
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Business Continuity and Resumption Plans: BCP versus BRP",
-            "image": "",
+            "image": "pca_pra.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -421,7 +462,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "RTO and RPO: Critical Metrics in Incident Response",
-            "image": "",
+            "image": "rto.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -431,7 +472,12 @@
                         "<strong>Importance in incident response:</strong> RTO and RPO guide prioritization and response actions during incidents. They help define which systems to restore first and how to limit business impact."
                     ]
                 }
-            ]
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": []
         },
         {
             "type": "title",
@@ -497,7 +543,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Blue ninja kicking out a red attacker through a door, illustrating removing threats in cybersecurity incident response",
             "code": "",
             "code lang": "",
             "notes": [
@@ -603,7 +649,7 @@
                 {
                     "type": "ol",
                     "content": [
-                        "Analysis begins with choosing the method of <strong>evidence collection</strong>: live collection (active system) or dead collection.",
+                        "Analysis begins with choosing the method of <strong>evidence collection</strong>: live collection (active system) or cold collection.",
                         "The goal is to <strong>observe, search, and pivot</strong> to uncover the maximum number of relevant evidences.",
                         "Collected <strong>evidence</strong> must be safely <strong>stored</strong> in a secure location to PRevent loss or tampering.",
                         "Analysis is often performed individually by technical security staff to ensure thoroughness and accuracy."
@@ -678,7 +724,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Incident Response Communication Plan",
-            "image": "",
+            "image": "communication_plan.jpg",
             "texts": [
                 {
                     "type": "ul",
@@ -702,14 +748,19 @@
                         "<strong>Pre-impact: quick and light plan</strong> before the attack causes damage, when an attacker is in the system."
                     ]
                 }
-            ]
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja sending a messenger pigeon to a wise yellow ninja representing governance, illustrating structured communication planning in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": []
         },
         {
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Playbooks and Procedures: Building Preparedness Before an Incident",
-            "image": "",
+            "image": "procedures_and_playbooks.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -740,7 +791,12 @@
                     "type": "p",
                     "content": "Best Practice: Use <strong>consistent naming conventions</strong> for playbooks and procedures to ensure rapid access during incidents."
                 }
-            ]
+            ],
+            "icon alt": "",
+            "image alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": []
         },
         {
             "type": "content",
@@ -774,7 +830,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Blue ninja organizing incident response timeline with time source and alert columns on a structured board",
             "code": "",
             "code lang": "",
             "notes": [
@@ -1081,7 +1137,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Finding the Source of the Incident",
-            "image": "",
+            "image": "follow_attack_path.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1098,6 +1154,18 @@
                         "Determine the network activity involved"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja analyzing a network attack path in a holographic diagram to trace incident source and attacker movement",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "En incident => maximum d'informations => blocage complet",
+                "Incident => \u00e9l\u00e9ment impactant => on part de cet \u00e9l\u00e9ment => on remonte \u00e0 la source",
+                "De cette mani\u00e8re on obtient un maximum d'information",
+                "Une attaque suit toujours un chemin avec plusieurs \u00e9tapes",
+                "Identifier toutes les \u00e9tapes permet de s\u00e9curiser l'environnement",
+                "Souvent on manque d'information pour remonter toutes les \u00e9tapes en remontant uniquement le fil des informations, il y a d'autres techniques qui permettent de retrouver l'attaquant"
             ]
         },
         {
@@ -1105,7 +1173,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Time-Based Pivoting in Incident Response",
-            "image": "",
+            "image": "time_based_pivoting.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1121,6 +1189,17 @@
                         "Identify why the malicious action was performed"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja using sundial shadow to trace a hidden red ninja illustrating time-based pivoting in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Une technique int\u00e9ressante quand on a peu d'\u00e9l\u00e9ments: pivoter sur le temps.",
+                "On prend l'instant d'une action de l'attaquant et on regarde les autres \u00e9v\u00e9nements qui ont eu lieu en m\u00eame temps.",
+                "Connexion de l'attaquant => qu'est ce qui se passe \u00e0 ce moment sur la cible ?",
+                "Un shell lanc\u00e9 => quels fichiers/registres ont \u00e9t\u00e9 modifi\u00e9s \u00e0 ce moment ?",
+                "Une porte d\u00e9rob\u00e9e utilis\u00e9e => quelle connexion a \u00e9t\u00e9 initi\u00e9e au m\u00eame moment ?"
             ]
         },
         {
@@ -1146,7 +1225,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Blue ninja posting a wanted poster of a red ninja illustrating user-based pivoting in incident response",
             "code": "",
             "code lang": "",
             "notes": [
@@ -1162,7 +1241,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Process-Based Pivoting in Incident Response",
-            "image": "",
+            "image": "malicious_process_triage.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1181,6 +1260,16 @@
                         "Identify all modules loaded by the processes linked to malicious activity"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja filtering malicious bugs from gears illustrating process-based pivoting in incident response analysis",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "On regarde toutes les actions en lien avec le PID du processus",
+                "Parfois il est utile de rechercher toutes les instances d'un processus \u00e9quivalent: m\u00eame image name, m\u00eame localisation d'ex\u00e9cutable, m\u00eame ligne de commande...",
+                "Parfois les \u00e9l\u00e9ments ne sont pas identiques mais similaires => nombre de caract\u00e8res (impacket-psexec), pattern dans la ligne de commande (un \u00e9l\u00e9ment similaire dans un powershell obfusqu\u00e9 al\u00e9atoirement et encod\u00e9, ...)",
+                "V\u00e9rifier la localisation de chacun des modules charg\u00e9s par un processus ainsi que toutes les demandes d'acc\u00e8s au processus (m\u00eame si l'ex\u00e9cutable est bienveillant le processus peut \u00eatre impact\u00e9 par l'attaque: DLL side loading, process injection, ...)"
             ]
         },
         {
@@ -1188,7 +1277,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Network-Based Pivoting in Incident Response",
-            "image": "",
+            "image": "attacker_hidden_in_network_device.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1209,6 +1298,17 @@
                     "type": "p",
                     "content": "Tips:\nWith the source <strong>IP, port, and timestamps</strong>, you can identify the process on the source system.<br>\nOn NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a URL linked to a user-downloaded file."
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Red ninja hiding at network switch monitoring blue users illustrating network-based pivoting in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Pivot bas\u00e9 sur le r\u00e9seau => identifie d'autres machines compromises => identifie d'autres moments d'activit\u00e9s",
+                "Le/les C2 sont contact\u00e9s par toutes les machines control\u00e9es par l'attaquant (ou contact le proxy interne de l'attaquant)",
+                "Il faut filtrer les logs r\u00e9seaux sur les IP/port de destinations de l'attaquant ou IP source et port destination pour identifier les lat\u00e9ralisations depuis une m\u00eame machine",
+                "Faites attention avec le mat\u00e9riel r\u00e9seau ! Il est moins monitor\u00e9 => parfois plus simple \u00e0 compromettre => excellent endroit pour espionner ou se cacher et revenir sans se faire d\u00e9tecter",
+                "Astuce: \"IP et port source\" permet de remonter au processus qui initie la connexion"
             ]
         },
         {
@@ -1233,7 +1333,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Cluster of red ninjas versus scattered blue ninjas illustrating high frequency events and threat concentration in incident response",
             "code": "",
             "code lang": "",
             "notes": [
@@ -1271,7 +1371,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Single red ninja hidden among many blue ninjas illustrating unique suspicious event detection in incident response",
             "code": "",
             "code lang": "",
             "notes": [
@@ -1329,7 +1429,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Manga illustration of a blue ninja comparing complex long data analysis versus simple targeted search in incident response",
             "code": "",
             "code lang": "",
             "notes": [
@@ -1348,7 +1448,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Key Remediation Actions",
-            "image": "",
+            "image": "remediation_actions.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1384,6 +1484,19 @@
                     "type": "p",
                     "content": "Infrastructure Blocking: system hibernation, Restore from backups"
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninjas containing and remediating threats by blocking access, removing malware, and securing a compromised attacker in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Pour bloquer => identifiez tous les \u00e9l\u00e9ments d'acc\u00e8s pour l'attaquant (porte d\u00e9rob\u00e9es, utilisateurs compromis, vuln\u00e9rabilit\u00e9s, ...)",
+                "Il faut tout bloquer d'un coup => tr\u00e8s rapidement => si possible par script",
+                "Il faut avoir une surveillance accrue apr\u00e8s blocage (porte d\u00e9rob\u00e9e qui en cache une autre)",
+                "Certaines \"portes d\u00e9rob\u00e9es\" proviennent de l'infrastructure elle m\u00eame (par exemple sur l'AD) => golden ticket (bas\u00e9 sur le secret KRBTGT) => mots de passe des comptes machines",
+                "Attention aux CI/CD ! Attention \u00e0 l'infrastructure as code => si compromission non identif\u00e9e => porte d\u00e9rob\u00e9e \u00e0 long terme",
+                "Pensez \u00e0 une prestation de forensic compl\u00e8te",
+                "Souvent le mieux => identifier le d\u00e9but de la compromission => restaurer le SI \u00e0 une backup pr\u00e9c\u00e9dent le d\u00e9but de compromission"
             ]
         },
         {
@@ -1395,12 +1508,12 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "title": "Dead Investigations (Forensic Analysis on Offline Systems)",
-            "image": "",
+            "title": "Cold Forensics / Investigations (Forensic Analysis on Offline Systems)",
+            "image": "dead_cold_collect_investigation.jpg",
             "texts": [
                 {
                     "type": "p",
-                    "content": "Dead investigations involve analyzing systems that are powered off or imaged, minimizing risk of evidence alteration."
+                    "content": "Cold investigations involve analyzing systems that are powered off or imaged, minimizing risk of evidence alteration."
                 },
                 {
                     "type": "ul",
@@ -1416,6 +1529,17 @@
                     "type": "p",
                     "content": "This is considered a <strong>best practice</strong> in incident response for obtaining <strong>trusted evidence</strong>. It is also possible to collect <strong>trusted evidence from a compromised system via the hypervisor</strong>, which is non-application level and therefore not alterable by an attacker on the system, note that it must be demonstrated that the attacker did <strong>not compromise the hypervisor</strong>."
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja containing a frozen red ninja in ice block illustrating immobilization and incident response containment",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Investigation \u00e0 froid => collecte et analyse de preuve d'un syst\u00e8me \u00e9teint",
+                "Analyse du disque => \u00e9l\u00e9ments de persistance et traces",
+                "Des preuves de confiances, contient forc\u00e9ment les \u00e9l\u00e9ments de persistance",
+                "Permet de r\u00e9cup\u00e9rer au minimum des \u00e9l\u00e9ments de temps (pas toujours de confiance)",
+                "R\u00e9cup\u00e9rer des preuves depuis l'hyperviseur ou des \u00e9quipements r\u00e9seaux non compromis est aussi fiable (difficile de prouver que le syst\u00e8me n'est pas compromis)"
             ]
         },
         {
@@ -1423,7 +1547,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Live Data Collection from Active Systems in Incident Response",
-            "image": "",
+            "image": "collect_evidences.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1439,6 +1563,18 @@
                         "Limitations / Risks: <strong>alters system state and evidences</strong> (write operations, logging), requires careful documentation to maintain chain of custody, <strong>attacker may interfere with collection</strong>, potentially modifying evidence, <strong>attacker can detect the collection phase</strong>, compromising the element of surprise"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja collecting all artifacts into an oversized overflowing backpack illustrating evidence collection in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "La collecte \u00e0 chaud => r\u00e9cup\u00e9rer des preuves sur un syst\u00e8me en fonctionnement",
+                "Plus facile \u00e0 r\u00e9cup\u00e9rer => moins lourd => preuves parfois pr\u00e9-pars\u00e9es (registre au format texte)",
+                "Attention: parfois certaines preuves ne sont pas collect\u00e9es",
+                "On peut r\u00e9cup\u00e9rer la RAM ou le r\u00e9seau (le r\u00e9seau devrait plut\u00f4t \u00eatre collect\u00e9 depuis des \u00e9quipements r\u00e9seaux non compromis: plus fiable)",
+                "Les \u00e9l\u00e9ments live peuvent aussi \u00eatre \"pr\u00e9-pars\u00e9s\" (connexion r\u00e9seaux, processus et ligne de commandes, ...)",
+                "Les \u00e9l\u00e9ments ne sont pas fiable => un attaquant peut les alt\u00e9rer"
             ]
         },
         {
@@ -1471,7 +1607,7 @@
                 }
             ],
             "icon alt": "",
-            "image alt": "",
+            "image alt": "Manga blue ninja investigating erased footprints while a red stealth ninja hides traces, illustrating attacker evasion in incident response",
             "code": "",
             "code lang": "",
             "notes": [
@@ -1653,7 +1789,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Using Sigma Rules in Incident Response Investigations",
-            "image": "",
+            "image": "sigma_identify_technique.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1669,6 +1805,17 @@
                         "Strength in incident response: offer <strong>investigation leads</strong> rather than detection reliability, sometimes allow identification of <strong>specific attacker tools</strong>"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja analyzing broken window with multiple attack hypotheses to identify red ninja weapon technique in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "R\u00e8gles Sigma open source -> bon outil de r\u00e9ponse \u00e0 incident -> pas terrible en d\u00e9tection (trop de faux positif et sp\u00e9cifique aux impl\u00e9mentations) -> elles peuvent matcher des logs -> donner des TTPs et des techniques mais ne doivent pas orienter la r\u00e9ponse \u00e0 incident (possible d\u00e9tection \"critique\" hors scope de l'attaque)",
+                "Attention: beaucoup de faux positif, n\u00e9cessite des v\u00e9rifications et des corr\u00e9lations (ne pas l'utiliser sur tous les logs pour \"avoir des id\u00e9es\" sauf cas tr\u00e8s extr\u00eame si on a vraiment plus aucune piste)",
+                "Sans les utiliser automatiquement -> les lire donnent des d\u00e9tails pour v\u00e9rifier des hypoth\u00e8ses manuellement",
+                "Les d\u00e9tails techniques que donnent les r\u00e8gles sont \u00e9crits pour les logs -> source qu'on utilise massivement en r\u00e9ponse \u00e0 incident",
+                "Comme certaines r\u00e8gles sont bas\u00e9es sur des impl\u00e9mentations => on peut identifier des outils"
             ]
         },
         {
@@ -1676,7 +1823,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Using YARA Rules for File and Memory Analysis in Incident Response",
-            "image": "",
+            "image": "yara_scan.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1693,6 +1840,17 @@
                         "Limitations: can generate <strong>false positives or miss obfuscated malware</strong>"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja performing YARA scan across files and processes detecting malware signatures in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Yara peut \u00eatre un bon outil pour analyser des fichiers, des syst\u00e8mes ou un dump m\u00e9moire",
+                "Quand on a trouv\u00e9 un pattern sp\u00e9cifique dans un des outils de l'attaquant => vraiment tr\u00e8s puissant",
+                "Quand on utilise les \"jeux de r\u00e8gle de base\" c'est plus comme de la d\u00e9tection \"opportuniste\" en incident response => parfois c'est tr\u00e8s utile mais attention aux faux positifs",
+                "Envoyer toutes les preuves dans un scanneur yara ne vous fera pas forc\u00e9ment gagner du temps => bon outil, \u00e0 utiliser au bon moment (quand vous avez des patterns sp\u00e9cifiques de l'attaquant par exemple)",
+                "Attention sur un syst\u00e8me en cours de fonctionnement: le scanneur Yara est tr\u00e8s visible"
             ]
         },
         {
@@ -1700,7 +1858,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Using Cyber Threat Intelligence (CTI) in Incident Response",
-            "image": "",
+            "image": "FeedCTI.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1719,6 +1877,17 @@
                     "type": "p",
                     "content": "Point of attention: <strong>NEVER upload unknown files to public platforms</strong>, use external platforms in <strong>read-only mode</strong> during incidents, attackers may monitor these platforms to detect if their malware has been discovered"
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Collective CTI defense showing coordinated threat intelligence beams converging to neutralize a red attacker",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "La CTI en r\u00e9ponse \u00e0 incident peut \u00eatre puissant => identification parfois facile de l'attaquant",
+                "Les flux stix ne sont pas toujours tr\u00e8s fiable => en d\u00e9tection c'est pas toujours simple de les utiliser => en r\u00e9ponse \u00e0 incident c'est pas un probl\u00e8me => on prend tout ce qui match => si \u00e7a donne un point d'entr\u00e9e pour identifier l'attaquant on corr\u00e8le, on v\u00e9rifie et potentiellement c'est une identification tr\u00e8s rapide",
+                "Certaines plateformes propose des services gratuit => g\u00e9n\u00e9ralement public => on n'envoie jamais d'informatio dessus (pour \u00e9viter d'\u00eatre rep\u00e9r\u00e9 par l'attaquant s'il monitore la plateforme) => on peut tout lire (v\u00e9rifier que l'IOC est sur la plateforme: hash, ip ou domaine sur VirusTotal; ip sur AbuseIP)",
+                "Certains commentaires sur ces plateformes peuvent donner de bon \u00e9l\u00e9ments (attention ce n'est pas fiable, toujours v\u00e9rifier)",
+                "Gr\u00e2ce \u00e0 la CTI => identification de l'attaquant => anticipation: potentillement prochaines techniques et outils qu'il va utiliser"
             ]
         },
         {
@@ -1731,7 +1900,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Quick Malware Analysis and Reverse Engineering in Incident Response",
-            "image": "",
+            "image": "fast_malware_analysis.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1770,6 +1939,23 @@
                     "type": "p",
                     "content": "Operational value: quickly understand what the malware does, identify <strong>tools or families used</strong> by the attacker, gain <strong>informations about attacker and IOCs</strong> to research."
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja scanning malware transforming into binary code illustrating automated malware analysis and reverse engineering",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Le reverse complet de malware => pas en r\u00e9ponse \u00e0 incident => trop long",
+                "Une analyse rapide => peut permettre de gagner beaucoup de temps",
+                "Malware de SharpPanda (APT Chinoise) => IP du C2 encod\u00e9 en base64 => en 5 minutes d'analyse automatis\u00e9 on a une notification avec l'IP de l'attaquant",
+                "Les ex\u00e9cutables contiennent beaucoup de m\u00e9tadonn\u00e9es => beaucoup d'information sur le contexte et fonctionnalit\u00e9s",
+                "Beaucoup de malwares ou hacktools sont \u00e9crit avec des langages interpr\u00e9t\u00e9s (plus rapide \u00e0 analyser parfois reste rapide apr\u00e8s obfuscation)",
+                "Donne une bonne id\u00e9e de la comp\u00e9tence des attaquants",
+                "Peut donner des informations sur le d\u00e9veloppement du malware (information sur l'attaquant lui m\u00eame)",
+                ".NET => on retrouve facilement le source code",
+                "Go => toutes les urls des d\u00e9pendances sont dans le binaire en clair",
+                "IAT et EAT est en clair dans le binaire",
+                "Attention: ces informations sont int\u00e9ressantes mais elles peuvent \u00eatre controll\u00e9es par l'attaquant"
             ]
         },
         {
@@ -1777,7 +1963,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Using Canary Tokens and Honeypots in Incident Response",
-            "image": "",
+            "image": "canary_tokens.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1793,6 +1979,19 @@
                         "Limitations: <strong>not 100% reliable</strong>, requires good understanding of attacker position and behavior, not suitable for all incident response scenarios"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Red ninja lured into a candy house honeypot under surveillance cameras illustrating deception and threat detection in cybersecurity",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Parfois on a besoin d'alertes suppl\u00e9mentaires pour identifier l'attaquant",
+                "Faire des canary tokens sur des \u00e9l\u00e9ments qui int\u00e9resse l'attaquant peut \u00eatre int\u00e9ressant (l'attaquant arrive sur un nouveau syst\u00e8me d\u00e9couvre le fichier et trigger le canary) => vous \u00eates alert\u00e9 de son acc\u00e8s au canary donc au syst\u00e8me",
+                "Des honeypots vous permettent d'en apprendre plus sur l'attaquant => attention il doit \u00eatre custom sinon l'attaquant l'identifira facilement comme honeypots",
+                "Un honeypots est aussi un moyen de diriger l'attaque ou de gagner du temps => fausses informations ou \u00e9tendre le SI",
+                "Les alertes sont plut\u00f4t de confiance mais rien ne vous dit que l'attaquant utilisera votre honeypots ou canary token.",
+                "Facile et rapide \u00e0 d\u00e9ployer, puissant si on sait ce que recherche l'attaquant",
+                "Pas souvent d'opportunit\u00e9s de les utiliser en r\u00e9ponse \u00e0 incident"
             ]
         },
         {
@@ -1800,7 +1999,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Scanners and Custom Scripts for Efficient Incident Response",
-            "image": "",
+            "image": "script_detect_attacker_return.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1834,6 +2033,19 @@
                     "type": "p",
                     "content": "Advantages: high flexibility and low visibility, can achieve similar effectiveness to full-scale agent deployments, allow rapid adaptation to attacker behaviors"
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Red ninja entering a monitored trap with bait while a hidden blue ninja observes illustrating IOC detection and attacker monitoring in incident response",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Certains scanneurs d'IOC (yara peut le faire) peuvent \u00eatre puissant => trouver l'attaquant sur un syst\u00e8me \u00e0 analyser",
+                "Un incident ou l'attaquant est rest\u00e9 tr\u00e8s longtemps dans un SI => analyse d'IOC sur tous les syst\u00e8mes similaires",
+                "Des scripts personnalis\u00e9s peuvent \u00eatre tr\u00e8s puissant => identifier quand un attaquant revient",
+                "C'est plus discret d'utiliser un script qui se lance tous les X temps que d'installer un service de s\u00e9curit\u00e9 en plus",
+                "Un incident ou j'ai fait un script qui l\u00e8ve une alerte d\u00e8s que l'attaquant utilise sa porte d\u00e9rob\u00e9es => stat sur le fichier => v\u00e9rification du timestamp d'acc\u00e8s",
+                "Attention aux scanneurs v\u00e9rifiez bien => analyse r\u00e9cursive en profondeur => analyse les archives",
+                "J'ai eu un incident ou la charge utile \u00e9tait dans une archive zip => pas de d\u00e9tection du scanneur => perte de temps"
             ]
         },
         {
@@ -1841,7 +2053,7 @@
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "title": "Using Text Utilities and Regex for Rapid Data Extraction",
-            "image": "",
+            "image": "text_filter.jpg",
             "texts": [
                 {
                     "type": "p",
@@ -1860,7 +2072,239 @@
                         "Advantages: fast, low-resource, and scriptable, works even in environments where agents or scanners cannot be deployed"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "image alt": "Blue ninja filtering large document archive through a sieve to extract relevant information in incident response analysis",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Il y a beaucoup de chaines de caract\u00e8re de partout => fichier de log, script, ex\u00e9cutable, commentaires dans les images, ...",
+                "Le texte est plus facile \u00e0 comprendre pour les humains => tr\u00e8s bien pour la r\u00e9ponse \u00e0 incident",
+                "Utilisez des parsers => sortie en format texte => stockez tous les \u00e9l\u00e9ments dans une arborescence => cela vous permet de rechercher des \u00e9l\u00e9ments de texte ou des regex plus facilement",
+                "Plusieurs outils vous permettent d'obtenir, d'analyser ou de filtrer les contenus texte (ligne de commande Linux, utilitaires graphiques limit\u00e9s mais parfois utiles)",
+                "Si possible essayer d'utiliser toujours les m\u00eames formats (par exemple pour les dates)",
+                "Parfois les formats inconnus qui n'ont pas de parser connu contiennent du texte",
+                "Attention aux terminaux: les terminaux ont des formats, ils ne comprennent et n'affiche que du texte donc des caract\u00e8res sont interpr\u00e9t\u00e9s pour les rendus => j'ai d\u00e9j\u00e0 crois\u00e9 un attaquant qui cache ces charges utiles dans les terminaux (avec retour chariot puis des espaces)",
+                "Les outils comme xxd/grep/strings sont tr\u00e8s utiles et souvent sous-estim\u00e9s en r\u00e9ponse \u00e0 incident"
             ]
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "",
+            "title": "Essential Tools for Incident Response: Categories and Practical Usage",
+            "notes": []
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Maurice Lambert Cyber Security Developper Icon",
+            "title": "Security Tools in Incident Response",
+            "notes": [
+                "Outils de s\u00e9curit\u00e9 => premiers \u00e9l\u00e9ments v\u00e9rifi\u00e9s => pr\u00e9vu pour cela => plus rapide et certains plus complet",
+                "Ils ne sont pas toujours d\u00e9ploy\u00e9s, pas toujours accessibles pour l'\u00e9quipe d'IR",
+                "Ils ne sont pas toujours bien configur\u00e9s (centralisation et r\u00e9tention des logs)",
+                "Ils conservent les donn\u00e9es pendant un temps limit\u00e9",
+                "Surtout ne d\u00e9ployez jamais d'outil de s\u00e9curit\u00e9 si l'attaquant peut avoir acc\u00e8s au syst\u00e8me => vous allez vous faire rep\u00e9rer => l'attaquant va se cacher ou impacter votre SI"
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "security_tools.jpg",
+            "image alt": "",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "EDR / NDR: telemetry, weak signals, alerts",
+                        "Antivirus / EPP: endpoint alerts and basic detection",
+                        "Firewalls: network flow visibility and filtering logs",
+                        "IPS / IDS / WAF / Secure Email Gateway / DLP: security alerts and prevention logs",
+                        "SIEM / Log platforms: central log aggregation, correlation, sometimes alerting",
+                        "System log analysis tools: grep, PowerShell, Windows Event Viewer, Chainsaw, EVTX parsers (omerbenamram/evtx)",
+                        "Velociraptor: powerful DFIR tool, often not pre-deployed before incidents"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Do NOT deploy new security tools</strong> during an active incident unless carefully controlled.<br>\nRisk: attacker detection and potential countermeasures or destruction of evidence."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "",
+            "title": "Filesystem Parsers, Analyzers, and Viewers",
+            "notes": [
+                "L'analyse du disque est la plus complexe => le plus de format diff\u00e9rent => le plus d'outils",
+                "Sur Windows on analyse souvent la MFT (Master File Table), elle contient tous les \u00e9l\u00e9ments int\u00e9ressants pour l'investigation \u00e0 l'exception de la donn\u00e9e des fichiers volumineux",
+                "Sur le disque on trouve tout plein de fichier: ex\u00e9cutables, documents bureautiques, scripts et autres fichiers de l'attaquant",
+                "Les outils de Eric Zimmerman et Didier Stevens sont d'excellentes ressources.",
+                "Les executables sont un des types de fichiers cl\u00e9s en r\u00e9ponse \u00e0 incident: avec Detect It Easy vous pouvez identifier les packers, une analyse des m\u00e9tadonn\u00e9es du fichier peuvent donner des informations importantes qu'on peut voir avec des outils comme ProgramExecutableAnalyzer et PE-bear ou ELFAnalyzer pour les ex\u00e9cutables Linux.",
+                "Les documents bureatiques, les archives, les LNK sont souvent utilis\u00e9s dans les attaques de phishings, l'analyse des fichier PDF, RTF ou les documents words sont important et peuvent \u00eatre analys\u00e9s avec des outils comme pdf-parser, oledump et rtfdump.",
+                "Pour les fichiers binaires, certains outils comme xxd peuvent aider \u00e0 les analyser.",
+                "Timeline explorer permet d'analyser un fichier CSV, notamment les preuves extraites comme le CSV de sortie de MFTECmd."
+            ],
+            "aside": "References: <a href=\"https://github.com/didierstevens/didierstevenssuite\">Didier Stevens Suite</a>, <a href=\"https://ericzimmerman.github.io/\">Eric Zimmerman tools</a>.",
+            "image": "disk_tools.jpg",
+            "image alt": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "General forensic suites: Didier Stevens Suite and Eric Zimmerman tools"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Disk analysis: Autopsy, FTK Imager",
+                        "MFT analysis (Windows artifacts): MFTECmd, DiskAnalyzer",
+                        "Executable analysis (PE files): ProgramExecutableAnalyzer, PE-bear, CFF Explorer, Detect It Easy (DIE), pefile",
+                        "ELF analysis (Linux binaries): ELFAnalyzer",
+                        "Document analysis: <ul><li>PDF: pdfid, pdf-parser, PDForensic, Adobe Reader, Firefox</li><li>RTF: rtfdump</li><li>OLE: oledump</li></ul>",
+                        "Binary inspection: xxd",
+                        "Timeline analysis: Timeline Explorer"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "\"Viewers\" are easy to use but often hide low-level details needed for investigations.<br>\nRisk: malicious files (e.g., weaponized PDFs) can exploit viewing software and compromise your analysis machine.<br>\nAlways prioritize isolated and secure analysis environments when handling unknown samples."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "",
+            "title": "Network Parsers, Analyzers, and Traffic Viewers",
+            "notes": [
+                "Les captures ne sont pas les preuves les plus utilis\u00e9es: trop de donn\u00e9es chiffr\u00e9es => trop lourd pour peu d'information analysable",
+                "Les donn\u00e9es non chiffr\u00e9es => adresses IP et TCP ports ou contenu UDP principalement DNS (les noms de domaines et leurs r\u00e9solutions)",
+                "Wireshark est complet et simple \u00e0 utiliser mais probl\u00e8matique sur les captures volumineuses.",
+                "Tshark est un bon outil en ligne de commande pour filter et extraire les donn\u00e9es",
+                "NetworkMiner donne des informations int\u00e9ressantes mais ne permet pas une analyse d\u00e9taill\u00e9e",
+                "Les outils d'automatisation comme Scapy et PyShark sont extr\u00eamement puissant mais demande de savoir d\u00e9velopper (et selon les usages du temps)",
+                "Les outils de d\u00e9tection sont \u00e0 utiliser avec mod\u00e9ration: ils l\u00e8vent beaucoup de faux positifs => risque de perdre de temps sur de mauvaises alertes => permettent parfois d'ouvrir les investigations ou de retrouver l'attaquant (n\u00e9cessite de bien v\u00e9rifier et bien corr\u00e9ler)"
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "network_tools.jpg",
+            "image alt": "",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Graphical analysis: Wireshark (GUI for deep packet inspection)",
+                        "Command-line analysis: tshark (CLI version of Wireshark for efficient filtering and extraction)",
+                        "Quick triage tools: NetworkMiner (fast extraction of useful artifacts)",
+                        "Analysis automation: Scapy, PyShark (wrapper for tshark)",
+                        "Detection-focused tools: Suricata, Snort3, Zeek"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Warnings:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Graphical tools: can become slow or crash on very large captures",
+                        "Quick triage tools: less depth for full protocol analysis",
+                        "Detection-focused tools: may generate many alerts and potential false positives, risk: wasted time investigating irrelevant \"critical\" alerts, it should be used carefully and ideally scoped to relevant traffic only"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "",
+            "title": "Memory Dump Parsers and Analyzers",
+            "notes": [
+                "Volatility est le seul vrai bon outil d'analyse m\u00e9moire tr\u00e8s utilis\u00e9 (\u00e0 ma connaissance)",
+                "Comme les dumps de m\u00e9moire sont r\u00e9guli\u00e8rement corrompus et difficilement parsables, la commande strings peux aider (il faut savoir ce qu'on recherche ou utiliser des regex int\u00e9ressantes)",
+                "WinDBG permet de r\u00e9cup\u00e9rer certains \u00e9l\u00e9ments sur les dumps m\u00e9moires.",
+                "Avec Linux il faut extraire le profil pour pouvoir parser le dump, ce qui rend l'analyse plus complexe."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "memory_tools.jpg",
+            "image alt": "",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Volatility 2 & Volatility 3:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Use both versions when possible",
+                        "Some plugins/modules are not yet available in Volatility 3",
+                        "Complementary usage increases analysis coverage"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Strings extraction:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Useful when the memory dump is partially corrupted or difficult to parse",
+                        "Helps quickly identify indicators such as URLs, commands, or suspicious artifacts"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "WinDBG:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Advanced debugging tool for deep memory inspection",
+                        "Useful for low-level analysis and understanding complex behaviors"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "",
+            "title": "Malware Analysis in Incident Response",
+            "notes": [
+                "Quelques techniques permettent d'obtenir des informations de reverse sur des malwares tr\u00e8s rapidement",
+                "Si un malware ou hacktool est \u00e9crit en .NET => obtient facilement le source code avec ILSpy ou dnSpy",
+                "Si un malware est \u00e9crit en Go on obtient tous les liens github vers les d\u00e9pendances avec strings",
+                "Capa est un outil qui analyse les instructions du binaire pour donner ces capacit\u00e9s (par exemple les algorithmes de chiffrement), attention pas tr\u00e8s fiable",
+                "On \u00e9vite d'ouvrir un d\u00e9compilateur comme Ghidra, Radare2 ou IDA car le reverse prend trop de temps",
+                "Les outils d'\u00e9mulation comme miasm et angr sont assez long et complexe \u00e0 utiliser on \u00e9vite souvent en r\u00e9ponse \u00e0 incident",
+                "On utilise souvent du reverse dynamique, il peut \u00eatre effectu\u00e9 avec des outils simple d'utilisation comme ProcDump (Windows, sysinternals) ou strace/ltrace (Linux), wireshark peu aussi aider (il y a des moyens bien meilleurs pour une sandbox plus fiable mais les \u00e9quipes n'ont pas souvent une infrastructure pr\u00e9vu pour l'analyse dynamique de malware)",
+                "Si le rapport d'analyse est sur AnyRun/VirusTotal (sans envoyer le fichier !) on peut l'utiliser => attention: ce sont des syst\u00e8mes facilement identifiable par les malwares et ce sont des environnements qui \"vivent\" donc avec beaucoup de faux positifs)"
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "malware_tools.jpg",
+            "image alt": "",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        ".NET malwares (quickly recover readable source code from .NET binaries): dnSpy (Malware), ILSpy (Linux)",
+                        "Go malwares: strings (list all dependencies)",
+                        "Capability analysis: capa (identifies malware capabilities without deep reverse engineering)",
+                        "Deep reverse engineering (too slow for most incident response scenarios): Ghidra, Radare2, IDA",
+                        "Emulation frameworks (complex to use and to slow for most incident response): miasm, angr",
+                        "Dynamic analysis (ONLY in secure sandbox) to observe runtime behavior, system calls, and interactions: Procdump (Windows), strace / ltrace (Linux)",
+                        "Tools like VirusTotal or AnyRun must be validated, not blindly trusted"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
         }
     ],
     "default icon alt": ""

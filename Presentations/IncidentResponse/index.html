@@ -90,7 +90,7 @@
             </ul>
           </li><li><a href="#slide-69">Different Collection and Investigation Methods in Incident Response</a>
             <ul>
-              <li><a href="#slide-70">Dead Investigations (Forensic Analysis on Offline Systems)</a></li><li><a href="#slide-71">Live Data Collection from Active Systems in Incident Response</a></li><li><a href="#slide-72">Live Interactive Investigation on Active Systems in Incident Response</a></li>
+              <li><a href="#slide-70">Cold Forensics / Investigations (Forensic Analysis on Offline Systems)</a></li><li><a href="#slide-71">Live Data Collection from Active Systems in Incident Response</a></li><li><a href="#slide-72">Live Interactive Investigation on Active Systems in Incident Response</a></li>
             </ul>
           </li><li><a href="#slide-73">Common Challenges and Risks in Incident Response</a>
             <ul>
@@ -103,6 +103,10 @@
           </li><li><a href="#slide-84">Advanced Techniques and Practical Tips for Incident Response</a>
             <ul>
               <li><a href="#slide-85">Quick Malware Analysis and Reverse Engineering in Incident Response</a></li><li><a href="#slide-86">Using Canary Tokens and Honeypots in Incident Response</a></li><li><a href="#slide-87">Scanners and Custom Scripts for Efficient Incident Response</a></li><li><a href="#slide-88">Using Text Utilities and Regex for Rapid Data Extraction</a></li>
+            </ul>
+          </li><li><a href="#slide-89">Essential Tools for Incident Response: Categories and Practical Usage</a>
+            <ul>
+              <li><a href="#slide-90">Security Tools in Incident Response</a></li><li><a href="#slide-91">Filesystem Parsers, Analyzers, and Viewers</a></li><li><a href="#slide-92">Network Parsers, Analyzers, and Traffic Viewers</a></li><li><a href="#slide-93">Memory Dump Parsers and Analyzers</a></li><li><a href="#slide-94">Malware Analysis in Incident Response</a></li>
             </ul>
           </li>
         </ul>
@@ -126,7 +130,7 @@
 <em>EDR alert:</em> xmrig cryptominer detected at /var/log/docker/XXXXXXX/xmrig <em>(cryptominer xmrig détecté dans /var/log/docker/XXXXXXX/xmrig)</em>.<br><br>
 <em>SOC Analyst:</em> I check if the file still exists: yes, it is present, I delete it (<em>Je vérifie si le fichier existe encore : oui, il est présent, je le supprime</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="1.alert_cryptominer.jpg" alt="1.alert_cryptominer.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -140,7 +144,7 @@
           <p><strong>Roles:</strong> Cybersecurity Expert, SOC Analyst.<br><br>
 <em>SOC Analyst:</em> I saw an EDR alert; the file had not been deleted, so I deleted it <em>(J'ai vu une alerte EDR, le fichier n'était pas supprimé, je l'ai supprimé</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="2.deleted_files.jpg" alt="2.deleted_files.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -154,7 +158,7 @@
           <p><strong>Roles:</strong> Cybersecurity Expert.<br><br>
 <em>Cybersecurity Expert:</em> I review the alert and examine the server, but I am unable to trace the source without the files <em>(Je regarde l'alerte, j'examine le serveur, mais je n'arrive pas à remonter à la source sans les fichiers</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="3.files_not_found.jpg" alt="3.files_not_found.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -165,11 +169,11 @@
       </header>
       <article>
         <div class="text">
-          <p><strong>Roles:</strong> SOC Manager, Cybersecurity Expert.<br><br>
+          <p><strong>Roles:</strong> SOC Manager, Cybersecurity Expert, Intern.<br><br>
 <em>Cybersecurity Expert (private conversation between the SOC Manager and the cybersecurity expert):</em> We have an intrusion, but we cannot trace the attacker <em>(Nous avons une intrusion, mais nous ne pouvons pas remonter la trace de l'attaquant</em>).<br><br>
 <em>Intern (addresses the SOC Manager):</em> We had an intrusion? I will investigate and inform the SOC team and governance <em>(On a eu une intrusion ? Je vais investiguer et prévenir l'équipe SOC et la gouvernance</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="4.expert_report.jpg" alt="4.expert_report.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -184,7 +188,7 @@
 <em>Intern:</em> We have an intrusion on a server with an alert dating back 2 days <em>(Nous avons une intrusion sur un serveur avec une alerte datant de 2 jours</em>).<br><br>
 <em>SOC Manager:</em> We will not continue the investigation; it is no longer our responsibility <em>(Nous n'allons pas continuer l'investigation, ce n'est plus notre problème</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="5.team_metting.jpg" alt="5.team_metting.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -198,7 +202,7 @@
           <p><strong>Roles:</strong> Cybersecurity Expert, Intern.<br><br>
 <em>Intern:</em> I found traces of the attacker and one of their malware samples (despite the investigation being closed, I continued) <em>(J'ai trouvé la trace de l'attaquant et un de ses malwares (malgré la fin des investigations, j'ai continué)</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="6.malware_found.jpg" alt="6.malware_found.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -212,7 +216,7 @@
           <p><strong>Roles:</strong> Cybersecurity Expert.<br><br>
 <em>Cybersecurity Expert:</em> Uploading the malware to a public platform <em>(Envoi du malware sur une plateforme publique</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="7.public_upload.jpg" alt="7.public_upload.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -226,7 +230,7 @@
           <p><strong>Roles:</strong> Cybersecurity Expert, Intern.<br><br>
 <em>Cybersecurity Expert:</em> Did you notice the malware is connecting X.X.X.X? I saw it on VirusTotal <em>(As-tu remarqué que le malware contact X.X.X.X ? Je l'ai vu sur VirusTotal</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="8.malware_network_communication.jpg" alt="8.malware_network_communication.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -240,7 +244,7 @@
           <p><strong>Roles:</strong> Cybersecurity Expert, Governance, SOC Manager, Intern.<br><br>
 <em>Intern:</em> We have a problem <em>(Nous avons un problème</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="9.intern_alert.jpg" alt="9.intern_alert.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -254,7 +258,7 @@
           <p><strong>Roles:</strong> Intern, SOC Manager.<br><br>
 <em>SOC Manager:</em> What have you done ? We said no more investigation—you must stop all activity immediately <em>(Qu'est-ce que tu as fait ? On avait dit plus d'investigation, tu arrêtes immédiatement toute opération</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="10.manager_orders_halt.jpg" alt="10.manager_orders_halt.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -268,7 +272,7 @@
           <p><strong>Roles:</strong> Cybersecurity Expert, Manager, Governance.<br><br>
 <em>Cybersecurity Expert, Manager, Governance:</em> Deleting files recently identified as part of the attack <em>(Suppression des fichiers récemment identifiés dans l'attaque</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="11.orders_deletion.jpg" alt="11.orders_deletion.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -282,7 +286,7 @@
           <p><strong>Roles:</strong> Attacker.<br><br>
 <em>Attacker:</em> Returns to the server <em>(Revient sur le serveur</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="12.attacker_return.jpg" alt="12.attacker_return.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -296,7 +300,7 @@
           <p><strong>Roles:</strong> Security Team, Intern.<br><br>
 <em>Intern:</em> He is back ! I am investigating the incident <em>(Il est revenu ! J'investigue sur l'incident</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="13.intern_investigations.jpg" alt="13.intern_investigations.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -310,7 +314,7 @@
           <p><strong>Roles:</strong> Intern.<br><br>
 <em>Intern:</em> Investigates and permanently removes the attacker's access <em>(Investigue et supprime définitivement les accès de l'attaquant</em>).</p>
         </div>
-        <img src="" alt="" />
+        <img src="14.intern_put_outside_attacker.jpg" alt="14.intern_put_outside_attacker.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -338,7 +342,7 @@
       
     </section><section id="slide-20" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Effective Incident Response: Preventing Communication Failures in SOC Teams</h3>
       </header>
       <article>
@@ -347,7 +351,7 @@
             <li><strong>Immediate notification is critical:</strong> The security team (SOC, CSIRT, CERT, gouvernance) must be informed as soon as an intrusion is detected, ideally within the first minutes. Delays reduce the ability to contain the attack and increase overall risk.</li><li><strong>Timely information sharing:</strong> Waiting days to communicate incidents prevents coordinated response, slows investigation, and can lead to mistakes or misinterpretations.</li><li><strong>Clear communication channels:</strong> Predefined escalation paths and contact methods ensure everyone receives accurate and actionable information in real-time.</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="first_communication.jpg" alt="" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -368,7 +372,7 @@
       
     </section><section id="slide-22" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Critical Incident Response Decisions: Evaluating Actions and Risks</h3>
       </header>
       <article>
@@ -377,13 +381,13 @@
             <li><strong>Consider attacker awareness:</strong> Actions like file deletion or malware handling can alert the attacker that the intrusion is being investigated. Anticipate potential countermeasures.</li><li>The decision to delete files is debatable: The attacker might lose access or might simply be alerted and return. In this context, where the attacker likely knows their file was identified, it may be justified to take the risk and delete the file, even though the incident response is not yet complete and not all backdoors or exploited vulnerabilities are known.</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="incident_response_decision.jpg" alt="" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-23" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Live Investigations: Risks and Considerations</h3>
       </header>
       <article>
@@ -392,7 +396,7 @@
             <li><strong>Risks of live analysis:</strong> Performing investigations on live systems can lead to loss of evidence, accidental changes, or detection by the attacker. Without proper preparation, this increases operational risk.</li><li><strong>Evaluating a difficult choice:</strong> In this scenario, the decision to investigate live was debatable. Taking time to select and learn proper tools could delay response, but live investigation carries inherent risks. There was no perfectly safe solution.</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="attacker_tools_vs_defense_tools.jpg" alt="" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -921,7 +925,7 @@
       
     </section><section id="slide-28" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Procedures in Incident Response: How to Perform Specific Actions</h3>
       </header>
       <article>
@@ -930,13 +934,13 @@
             <li><strong>Procedures</strong> define how to perform a specific action. They provide precise, step-by-step instructions to execute a task correctly, regardless of the incident context.</li><li>Procedures ensure that analysts know how to act, even if they already know what needs to be done. They standardize technical execution across the team and reduce variability in how tasks are performed.</li><li>Procedures are independent from scenarios. They define the methods, tools, and steps required to complete a specific action (e.g., collecting logs, analyzing a process, acquiring memory).</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="procedure.jpg" alt="Blue ninja climbing a rock using a vine with his foot while holding a katana in his mouth, illustrating controlled progression toward an objective" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-29" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Playbooks in Incident Response: What to Do and When</h3>
       </header>
       <article>
@@ -945,7 +949,7 @@
             <li><strong>Playbooks</strong> define what actions to take and in which order during a specific type of incident. They provide a structured response strategy based on scenarios.</li><li>Playbooks guide analysts through the investigation and response process, ensuring that no critical steps are missed and that actions are performed in the correct sequence.</li><li>Playbooks rely on procedures to execute each step. The playbook defines the logic and flow, while procedures define how each action is performed.</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="playbooks.jpg" alt="" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -960,13 +964,13 @@
             <li><strong>Business Continuity Plan (BCP/PCA: Plan de Continuité d'Activité)</strong>: The PCA defines how to maintain or quickly resume critical business activities during a disruption. Its objective is to ensure service continuity, even in degraded conditions.</li><li><strong>Business Resumption Plan (BRP/PRA: Plan de Reprise d'Activité)</strong>: The PRA defines how to restore systems, infrastructure, and data after a major incident. It focuses on returning to a normal operational state after disruption.</li><li>Key difference: PCA focuses on keeping the business running, while PRA focuses on rebuilding and restoring systems after failure. Both are essential and complementary in incident response.</li><li>Example: A cryptolocker encrypts internal servers: switches activity to pre-prepared cloud-based systems with clones of production applications and data, after the PCA, production servers are restored from backups, returning operations to normal safely.</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="pca_pra.jpg" alt="pca_pra.jpg" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-31" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>RTO and RPO: Critical Metrics in Incident Response</h3>
       </header>
       <article>
@@ -975,7 +979,7 @@
             <li><strong>Recovery Time Objective (RTO):</strong> Maximum acceptable time to restore a system or service after an incident. Determines how quickly services must be back online to limit operational impact.</li><li><strong>Recovery Point Objective (RPO):</strong> Maximum acceptable amount of data loss measured in time. Defines how frequently data should be backed up to avoid unacceptable information loss.</li><li><strong>Importance in incident response:</strong> RTO and RPO guide prioritization and response actions during incidents. They help define which systems to restore first and how to limit business impact.</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="rto.jpg" alt="" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1094,7 +1098,7 @@ Interpretations can include confidence scores to help governance evaluate reliab
       <article>
         <div class="text">
           <ol>
-            <li>Analysis begins with choosing the method of <strong>evidence collection</strong>: live collection (active system) or dead collection.</li><li>The goal is to <strong>observe, search, and pivot</strong> to uncover the maximum number of relevant evidences.</li><li>Collected <strong>evidence</strong> must be safely <strong>stored</strong> in a secure location to PRevent loss or tampering.</li><li>Analysis is often performed individually by technical security staff to ensure thoroughness and accuracy.</li>
+            <li>Analysis begins with choosing the method of <strong>evidence collection</strong>: live collection (active system) or cold collection.</li><li>The goal is to <strong>observe, search, and pivot</strong> to uncover the maximum number of relevant evidences.</li><li>Collected <strong>evidence</strong> must be safely <strong>stored</strong> in a secure location to PRevent loss or tampering.</li><li>Analysis is often performed individually by technical security staff to ensure thoroughness and accuracy.</li>
           </ol>
         </div>
         <img src="" alt="" />
@@ -1155,7 +1159,7 @@ Interpretations can include confidence scores to help governance evaluate reliab
       </article>
     </section><section id="slide-45" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Incident Response Communication Plan</h3>
       </header>
       <article>
@@ -1166,13 +1170,13 @@ Interpretations can include confidence scores to help governance evaluate reliab
             <li><strong>Crisis: involves the most people</strong> during a major event.</li><li>Post-impact: after the attack has caused damage (e.g., encrypted files).</li><li><strong>Pre-impact: quick and light plan</strong> before the attack causes damage, when an attacker is in the system.</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="communication_plan.jpg" alt="Blue ninja sending a messenger pigeon to a wise yellow ninja representing governance, illustrating structured communication planning in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-46" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Playbooks and Procedures: Building Preparedness Before an Incident</h3>
       </header>
       <article>
@@ -1183,7 +1187,7 @@ Interpretations can include confidence scores to help governance evaluate reliab
             <li>Referenced <strong>within playbooks</strong> for each specific action.</li><li>Define <strong>how to perform tasks</strong>, including which tools to use and in what sequence.</li><li>Can be <strong>shared across teams</strong> (administration, governance, security...).</li>
           </ul><p>Best Practice: Use <strong>consistent naming conventions</strong> for playbooks and procedures to ensure rapid access during incidents.</p>
         </div>
-        <img src="" alt="" />
+        <img src="procedures_and_playbooks.jpg" alt="" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1527,22 +1531,22 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
       </article>
     </section><section id="slide-70" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
-        <h3>Dead Investigations (Forensic Analysis on Offline Systems)</h3>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
+        <h3>Cold Forensics / Investigations (Forensic Analysis on Offline Systems)</h3>
       </header>
       <article>
         <div class="text">
-          <p>Dead investigations involve analyzing systems that are powered off or imaged, minimizing risk of evidence alteration.</p><ul>
+          <p>Cold investigations involve analyzing systems that are powered off or imaged, minimizing risk of evidence alteration.</p><ul>
             <li>Acquire disk <strong>images, snapshots or collect evidences</strong> from offline systems</li><li>Maintain <strong>chain of custody and integrity</strong> of evidence</li><li>Perform full forensic analysis <strong>without impacting the live environment</strong></li><li>Advantages: <strong>preserves evidence, fully discreet</strong></li><li>Limitations: cannot observe live activity or <strong>running processes</strong></li>
           </ul><p>This is considered a <strong>best practice</strong> in incident response for obtaining <strong>trusted evidence</strong>. It is also possible to collect <strong>trusted evidence from a compromised system via the hypervisor</strong>, which is non-application level and therefore not alterable by an attacker on the system, note that it must be demonstrated that the attacker did <strong>not compromise the hypervisor</strong>.</p>
         </div>
-        <img src="" alt="" />
+        <img src="dead_cold_collect_investigation.jpg" alt="Blue ninja containing a frozen red ninja in ice block illustrating immobilization and incident response containment" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-71" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Live Data Collection from Active Systems in Incident Response</h3>
       </header>
       <article>
@@ -1551,7 +1555,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Collect all available data: files, logs, processes, network info, and volatile memory</li><li>Must be done discreetly to avoid alerting the attacker</li><li>Use approved tools and procedures to reduce the risk of system alteration</li><li>Advantages: Allows investigation when offline collection is not feasible</li><li>Limitations / Risks: <strong>alters system state and evidences</strong> (write operations, logging), requires careful documentation to maintain chain of custody, <strong>attacker may interfere with collection</strong>, potentially modifying evidence, <strong>attacker can detect the collection phase</strong>, compromising the element of surprise</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="collect_evidences.jpg" alt="Blue ninja collecting all artifacts into an oversized overflowing backpack illustrating evidence collection in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1678,7 +1682,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
       </article>
     </section><section id="slide-81" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Using Sigma Rules in Incident Response Investigations</h3>
       </header>
       <article>
@@ -1687,13 +1691,13 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Based on log analysis, making them ideal for investigations</li><li>Help identify <strong>TTPs (Techniques, Tactics, and Procedures)</strong> used by attackers</li><li>Provide <strong>key indicators to search, filter, and correlate</strong> within logs</li><li>Limitations for detection: often poorly written or too dependent on specific tool implementations, they can be easily bypassed by attackers</li><li>Strength in incident response: offer <strong>investigation leads</strong> rather than detection reliability, sometimes allow identification of <strong>specific attacker tools</strong></li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="sigma_identify_technique.jpg" alt="Blue ninja analyzing broken window with multiple attack hypotheses to identify red ninja weapon technique in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-82" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Using YARA Rules for File and Memory Analysis in Incident Response</h3>
       </header>
       <article>
@@ -1702,13 +1706,13 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Define rules based on <strong>strings, binary patterns, or file characteristics</strong></li><li>Scan <strong>files, directories, or memory dumps for known indicators</strong></li><li>Useful to detect <strong>modified hacktools, malware variants and reused code patterns</strong></li><li>Can be applied on endpoints, forensic images, or collected data</li><li>Strengths: highly flexible and customizable detection logic, effective for identifying <strong>known tools, malware families or artifacts</strong>, can be used on large datasets during investigations</li><li>Limitations: can generate <strong>false positives or miss obfuscated malware</strong></li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="yara_scan.jpg" alt="Blue ninja performing YARA scan across files and processes detecting malware signatures in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-83" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Using Cyber Threat Intelligence (CTI) in Incident Response</h3>
       </header>
       <article>
@@ -1717,7 +1721,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Identify known indicators: File hashes, IPs, and domains from platforms like VirusTotal or AbuseIP</li><li>Recognize attacker patterns: even partial matches can help identify tools, techniques, or threat groups</li><li>Correlate intelligence sources: MISP and STIX feeds may contain matching IOCs and threat data</li><li>Attribution considerations: full attribution is difficult, but identifying a known group or behavior is often achievable, some attackers (e.g., APTs) may imitate other groups, but the observed techniques remain relevant for response</li>
           </ul><p>Point of attention: <strong>NEVER upload unknown files to public platforms</strong>, use external platforms in <strong>read-only mode</strong> during incidents, attackers may monitor these platforms to detect if their malware has been discovered</p>
         </div>
-        <img src="" alt="" />
+        <img src="FeedCTI.jpg" alt="Collective CTI defense showing coordinated threat intelligence beams converging to neutralize a red attacker" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
@@ -1730,7 +1734,7 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
       </article>
     </section><section id="slide-85" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Quick Malware Analysis and Reverse Engineering in Incident Response</h3>
       </header>
       <article>
@@ -1741,13 +1745,13 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>.NET malware can often be <strong>decompiled into readable code</strong></li><li>Go binaries may expose <strong>library names and structure</strong></li><li>Scripts and simple malware (PHP webshells, Python exploits) are often <strong>directly readable</strong></li>
           </ul><p>Operational value: quickly understand what the malware does, identify <strong>tools or families used</strong> by the attacker, gain <strong>informations about attacker and IOCs</strong> to research.</p>
         </div>
-        <img src="" alt="" />
+        <img src="fast_malware_analysis.jpg" alt="Blue ninja scanning malware transforming into binary code illustrating automated malware analysis and reverse engineering" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-86" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Using Canary Tokens and Honeypots in Incident Response</h3>
       </header>
       <article>
@@ -1756,13 +1760,13 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Detection of attacker activity: <strong>trigger alerts on file or system access</strong>, lateral movement, exfiltration, or encryption attempts</li><li>Understanding attacker intent: <strong>reveal what data or systems are targeted</strong> and provide insight into attacker objectives and priorities</li><li>Deception and influence: potentially mislead or redirect the attacker, control parts of the investigation by shaping attacker behavior</li><li>Advantages: quick and easy to deploy, can provide high-value signals during an incident</li><li>Limitations: <strong>not 100% reliable</strong>, requires good understanding of attacker position and behavior, not suitable for all incident response scenarios</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="canary_tokens.jpg" alt="Red ninja lured into a candy house honeypot under surveillance cameras illustrating deception and threat detection in cybersecurity" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-87" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Scanners and Custom Scripts for Efficient Incident Response</h3>
       </header>
       <article>
@@ -1773,13 +1777,13 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Small, targeted scripts can <strong>collect logs, extract IOCs, or trigger alerts</strong> without deploying visible agents</li><li>Can run via <strong>cron jobs or network triggers</strong>, enabling discreet monitoring and alerting</li><li>Example: add a temporary LOG rule to iptables and collect log file to detect attacker return</li>
           </ul><p>Advantages: high flexibility and low visibility, can achieve similar effectiveness to full-scale agent deployments, allow rapid adaptation to attacker behaviors</p>
         </div>
-        <img src="" alt="" />
+        <img src="script_detect_attacker_return.jpg" alt="Red ninja entering a monitored trap with bait while a hidden blue ninja observes illustrating IOC detection and attacker monitoring in incident response" />
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section><section id="slide-88" class="content-slide">
       <header>
-        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="https://mauricelambert.github.io/MauriceLambert.png" />
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
         <h3>Using Text Utilities and Regex for Rapid Data Extraction</h3>
       </header>
       <article>
@@ -1788,7 +1792,98 @@ On NTFS, the MFT should contain the <strong>Mark of the Web (MOTW)</strong>: a U
             <li>Common utilities: strings, grep, xxd, awk, sed, Notepad++, ...</li><li>File format: database files, binary file metadata (media, executable, ...)</li><li>Automate searching for specific patterns or suspicious indicators</li><li>Process multiple files simultaneously or recursively (/var/log for example)</li><li>Regex: Enables <strong>complex pattern matching across logs, binaries, or text files</strong></li><li>Can detect obfuscated (encoded) strings, URLs, hashes, and system artifacts</li><li>Essential for <strong>automating repetitive extraction tasks</strong></li><li>Advantages: fast, low-resource, and scriptable, works even in environments where agents or scanners cannot be deployed</li>
           </ul>
         </div>
-        <img src="" alt="" />
+        <img src="text_filter.jpg" alt="Blue ninja filtering large document archive through a sieve to extract relevant information in incident response analysis" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+      
+    </section><section id="slide-89" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
+      </header>
+      <article>
+        <h2>Essential Tools for Incident Response: Categories and Practical Usage</h2>
+      </article>
+    </section><section id="slide-90" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Maurice Lambert Cyber Security Developper Icon" />
+        <h3>Security Tools in Incident Response</h3>
+      </header>
+      <article class="image-left">
+        <img src="security_tools.jpg" alt="" />
+        <div class="text">
+          <ul>
+            <li>EDR / NDR: telemetry, weak signals, alerts</li><li>Antivirus / EPP: endpoint alerts and basic detection</li><li>Firewalls: network flow visibility and filtering logs</li><li>IPS / IDS / WAF / Secure Email Gateway / DLP: security alerts and prevention logs</li><li>SIEM / Log platforms: central log aggregation, correlation, sometimes alerting</li><li>System log analysis tools: grep, PowerShell, Windows Event Viewer, Chainsaw, EVTX parsers (omerbenamram/evtx)</li><li>Velociraptor: powerful DFIR tool, often not pre-deployed before incidents</li>
+          </ul><p><strong>Do NOT deploy new security tools</strong> during an active incident unless carefully controlled.<br>
+Risk: attacker detection and potential countermeasures or destruction of evidence.</p>
+        </div>
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+      
+    </section><section id="slide-91" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
+        <h3>Filesystem Parsers, Analyzers, and Viewers</h3>
+      </header>
+      <article class="image-left">
+        <img src="disk_tools.jpg" alt="" />
+        <div class="text">
+          <p>General forensic suites: Didier Stevens Suite and Eric Zimmerman tools</p><ul>
+            <li>Disk analysis: Autopsy, FTK Imager</li><li>MFT analysis (Windows artifacts): MFTECmd, DiskAnalyzer</li><li>Executable analysis (PE files): ProgramExecutableAnalyzer, PE-bear, CFF Explorer, Detect It Easy (DIE), pefile</li><li>ELF analysis (Linux binaries): ELFAnalyzer</li><li>Document analysis: <ul><li>PDF: pdfid, pdf-parser, PDForensic, Adobe Reader, Firefox</li><li>RTF: rtfdump</li><li>OLE: oledump</li></ul></li><li>Binary inspection: xxd</li><li>Timeline analysis: Timeline Explorer</li>
+          </ul><p>"Viewers" are easy to use but often hide low-level details needed for investigations.<br>
+Risk: malicious files (e.g., weaponized PDFs) can exploit viewing software and compromise your analysis machine.<br>
+Always prioritize isolated and secure analysis environments when handling unknown samples.</p>
+        </div>
+      </article>
+      <aside>References: <a href="https://github.com/didierstevens/didierstevenssuite">Didier Stevens Suite</a>, <a href="https://ericzimmerman.github.io/">Eric Zimmerman tools</a>.</aside>
+      
+    </section><section id="slide-92" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
+        <h3>Network Parsers, Analyzers, and Traffic Viewers</h3>
+      </header>
+      <article class="image-left">
+        <img src="network_tools.jpg" alt="" />
+        <div class="text">
+          <ul>
+            <li>Graphical analysis: Wireshark (GUI for deep packet inspection)</li><li>Command-line analysis: tshark (CLI version of Wireshark for efficient filtering and extraction)</li><li>Quick triage tools: NetworkMiner (fast extraction of useful artifacts)</li><li>Analysis automation: Scapy, PyShark (wrapper for tshark)</li><li>Detection-focused tools: Suricata, Snort3, Zeek</li>
+          </ul><p>Warnings:</p><ul>
+            <li>Graphical tools: can become slow or crash on very large captures</li><li>Quick triage tools: less depth for full protocol analysis</li><li>Detection-focused tools: may generate many alerts and potential false positives, risk: wasted time investigating irrelevant "critical" alerts, it should be used carefully and ideally scoped to relevant traffic only</li>
+          </ul>
+        </div>
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+      
+    </section><section id="slide-93" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
+        <h3>Memory Dump Parsers and Analyzers</h3>
+      </header>
+      <article class="image-left">
+        <img src="memory_tools.jpg" alt="" />
+        <div class="text">
+          <p>Volatility 2 & Volatility 3:</p><ul>
+            <li>Use both versions when possible</li><li>Some plugins/modules are not yet available in Volatility 3</li><li>Complementary usage increases analysis coverage</li>
+          </ul><p>Strings extraction:</p><ul>
+            <li>Useful when the memory dump is partially corrupted or difficult to parse</li><li>Helps quickly identify indicators such as URLs, commands, or suspicious artifacts</li>
+          </ul><p>WinDBG:</p><ul>
+            <li>Advanced debugging tool for deep memory inspection</li><li>Useful for low-level analysis and understanding complex behaviors</li>
+          </ul>
+        </div>
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+      
+    </section><section id="slide-94" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="" />
+        <h3>Malware Analysis in Incident Response</h3>
+      </header>
+      <article class="image-left">
+        <img src="malware_tools.jpg" alt="" />
+        <div class="text">
+          <ul>
+            <li>.NET malwares (quickly recover readable source code from .NET binaries): dnSpy (Malware), ILSpy (Linux)</li><li>Go malwares: strings (list all dependencies)</li><li>Capability analysis: capa (identifies malware capabilities without deep reverse engineering)</li><li>Deep reverse engineering (too slow for most incident response scenarios): Ghidra, Radare2, IDA</li><li>Emulation frameworks (complex to use and to slow for most incident response): miasm, angr</li><li>Dynamic analysis (ONLY in secure sandbox) to observe runtime behavior, system calls, and interactions: Procdump (Windows), strace / ltrace (Linux)</li><li>Tools like VirusTotal or AnyRun must be validated, not blindly trusted</li>
+          </ul>
+        </div>
       </article>
       <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
