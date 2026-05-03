@@ -479,7 +479,11 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Effective Incident Response: Preventing Communication Failures in SOC Teams",
-    "notes": []
+    "notes": [
+      "Communication => première chose à faire => plus on communique tôt plus on laisse de chance aux experts d'arriver à temps sur la machine et à la stratégie de se préparer",
+      "La communication doit se faire en utilisant le bon canal et notifier les bonnes personnes",
+      "Le fait d'attendre plusieurs jours avant que les équipes de sécurité soient au courant => laisse le champs libre aux attaquants, ralenti la réponse à incident, met en danger le client"
+    ]
   },
   {
     "title": "SOC Governance and Responsibility: Key Lessons for Proper Incident Handling",
@@ -491,11 +495,19 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Critical Incident Response Decisions: Evaluating Actions and Risks",
-    "notes": []
+    "notes": [
+      "En incident il faut parfois prendre des décisions pas évidente",
+      "D'un coté l'attaquant était potentiellement prévenu de l'IR à cause de l'envoie du malware sur VirusTotal => supprimer les fichiers pourraient peut être lui faire perdre la main sur le système (si c'est une partie nécessaire au fonctionnement de sa porte dérobée et si la vulnérabilité qu'il a précédemment n'est plus exploitable sur le système (patch))",
+      "D'un autre, si l'attaquant n'était pas prévenu il peut l'être avec la suppression et si cela ne bloque pas son accès il va revenir => potentiellement être plus discret ou plus impactant"
+    ]
   },
   {
     "title": "Live Investigations: Risks and Considerations",
-    "notes": []
+    "notes": [
+      "Les défenseurs ont fait une investigations sur un système en fonctionnement => risqué => on peut être vu ou récupérer des informations invalides",
+      "Parfois en réponse en incident on doit faire se choix => prendre le temps de trouver le bon outil ou faire \"comme on peut\"",
+      "Plus l'incident est court, plus il faut faire avec les moyens les plus rapides, plus il est long plus on prend le temps de le faire bien => il faut réussir à estimer à l'avance le temps de la réponse à incident."
+    ]
   },
   {
     "title": "Hands-On Surprise Incident Lab: Realistic Unprepared Response Exercise",
@@ -519,19 +531,39 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Procedures in Incident Response: How to Perform Specific Actions",
-    "notes": []
+    "notes": [
+      "Les procédures définissent comment exécuter une action spécifique avec un outil spécifique.",
+      "Cela permet d'avoir une marche à suivre pour exécuter la tache, un moyen d'être sur que l'opération fonctionne et d'être sur que tout le monde fait du meilleur moyen identifié et que tout le monde fassent de la même manière.",
+      "Les procédures ne sont pas spécifique aux équipes elles peuvent être partagées si nécessaire."
+    ]
   },
   {
     "title": "Playbooks in Incident Response: What to Do and When",
-    "notes": []
+    "notes": [
+      "Les playbooks définissent les actions à faire sur un contexte défini",
+      "Vous pouvez avoir un playbooks suite à une intrusion, suite à un cryptolocker, suite à un cryptominer, ...",
+      "Le playbooks ne défini pas comment faire les actions => lien vers les procédures qui le font",
+      "Cela permet d'être sur que toutes les actions ont été faites sur chaque incident"
+    ]
   },
   {
     "title": "Business Continuity and Resumption Plans: BCP versus BRP",
-    "notes": []
+    "notes": [
+      "Le PRA peut être pris en compte dans la réponse à incident.",
+      "Généralement elle est basé sur des backups, soit système (le plus souvent), soit applicatif (plus léger, plus spécifique, souvent plus \"sécurisé\", nécessite un redéploiement qui peut être basé sur une automatisation).",
+      "Si le PRA est basé sur un backup il est important de connaitre depuis quand l'intrusion a eu lieu, pour identifier une backup saine.",
+      "Si l'intrusion date d'une backup trop ancienne => trop de perte de donnée pour l'entreprise ou pas de backups existante => plus possible de suivre le PRA.",
+      "Il faut essayer de sécuriser les systèmes au maximum (notamment supprimer toutes les portes dérobées, corriger les vulnérabilités, ...).",
+      "J'ai vécu un incident, la compromission => presque 10 ans avant la détection (domaine compromis) => pas de backup (même avec backup => trop compliqué de restaurer aussi loin) => full forensic (basé sur les filesystems uniquement car RAM clean après reboot et pas de logs assez vieux)"
+    ]
   },
   {
     "title": "RTO and RPO: Critical Metrics in Incident Response",
-    "notes": []
+    "notes": [
+      "Le RTO et le RPO sont importants en réponse à incident.",
+      "Ils aident à définir la stratégie en donnant la visibilité sur la criticité des assets.",
+      "Ils donnent aussi le temps que la gouvernance laissera pour la réponse à incident en cas d'impact. Parfois on a besoin de plus de temps pour terminer la réponse à incident donc il faut trouver le bon compromis dans le détail de la réponse à incident pour tenir ces délais."
+    ]
   },
   {
     "title": "Incident Response Explained for SOC Analysts: Key Principles and Objectives",
@@ -539,7 +571,11 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "When Is It Incident Response ?",
-    "notes": []
+    "notes": [
+      "La réponse à incident commence quand il y a un impact en cours: ransomware, attaquant sur un système (impact la confidentialité et l'intégrité), un service éteint (disponibilité), ...",
+      "La présence d'une vulnérabilité n'est pas un incident, une alerte dans un outil n'est pas un incident, un bruteforce en cours n'est pas un incident...",
+      "L'incident nécessite une réponse approprié passant par plusieurs phases comme: la réaction, l'analyse, la remédiation, ect..."
+    ]
   },
   {
     "title": "Purpose and Goals of Cybersecurity Incident Response by Stakeholder",
@@ -556,11 +592,24 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Technical Objectives for Security Teams During Incident Response",
-    "notes": []
+    "notes": [
+      "Le but de la réponse à incident pour les équipes techniques sont:",
+      "empêcher l'attaquant de mener sa phase d'impact",
+      "mettre en place des protections pour que l'attaquant ne puisse pas revenir sur les systèmes",
+      "Identifier le but de l'attaquant peut être utile pour mener la réponse à incident",
+      "C'est aussi intéressant de savoir où en est l'attaquant dans sa phase d'attaque",
+      "Comprendre toutes les étapes de l'attaque, par où il est entré, vers où est il allé et ce qu'il a fait",
+      "Identifier toutes les phase qui n'ont levé aucune alerte pour être sur d'avoir toute la progression."
+    ]
   },
   {
     "title": "Cybersecurity Incident Response: Preventing Attacker Returns",
-    "notes": []
+    "notes": [
+      "Un grand nombre d'équipe de sécurité sont trop pressé de sortir l'attaquant",
+      "Il faut être rapide mais pas se précipiter",
+      "Lorsque les équipes se précipite => elles oublient des éléments importants (comme des portes dérobées)",
+      "L'attaquant revient alors mais cette fois en étant plus discret et fini généralement par sa phase d'impact"
+    ]
   },
   {
     "title": "Incident Response Process: Step-by-Step Actions for Effective Cybersecurity Management",
@@ -568,27 +617,64 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Strategic Communication in Incident Response",
-    "notes": []
+    "notes": [
+      "Pour optimiser la communication il faut identifier quatres channels de communication: stratégique avec le management et la gouvernance, celui de la prise de décision avec la gouvernance et les défenseurs, opérationnel avec les admins et les défenseurs et celui d'investigation avec les défenseurs.",
+      "Sans channel claire vous allez perdre du temps et des informations et mobiliser des ressources congnitives et des échanges non nécessaire.",
+      "Les défenseurs sont la pour fournir des preuves avec des interprétations ainsi que pour conseiller.",
+      "Les interprétations peuvent être scoré en confiance cela peut aider à prendre une meilleure stratégie et les décisions associées."
+    ]
   },
   {
     "title": "Internal and External Communication Strategy in Incident Response",
-    "notes": []
+    "notes": [
+      "La communication en réponse à incident est un risque et une opportunitée.",
+      "Si vos employés identifie des éléments suspicieux et qu'ils sont au courant d'une intrusion ils vous préviendront.",
+      "Si vos employés sont au courant, l'attaquant à plus de chance d'être au courant, parfois les employés sont des complices ou sont simplement compromis par l'attaquant.",
+      "Il est souvent recommandé de donner une communication interne dès que les employés sont mis hors de cause (qu'on connait la source de l'intrusion) et une fois qu'on connait les accès de l'attaquant (pour identifier les postes de travail auquels il aurait accès).",
+      "La communication externe ne peut pas être faite avant la réaction, sinon l'attaquant saura qu'il y a une réponse à incident mais la faire trop tard impact la réputation de l'entreprise."
+    ]
   },
   {
     "title": "Evidence Collection and Analysis in Incident Response",
-    "notes": []
+    "notes": [
+      "La collecte et l'analyse des preuves est le moment le plus important de l'investigation.",
+      "Si vous ne collectez pas suffisamment de preuve vous ne pourrez pas faire une réponse à incident de qualité.",
+      "Si vous collectez trop de preuve vous mettrez plus de temps à les analyser.",
+      "Globalement, il faut mieux un maximum de preuve et partir soit des éléments que vous avez (alertes) soit suivre une méthodologie défini à l'avance avec les preuves les plus révélatrices et les plus rapide à analyser.",
+      "L'analyse est souvent un élement qu'on fait seul, il faut se partager qui analyse quoi pour ne pas faire le travail plusieurs fois et pour ne rien oublier."
+    ]
   },
   {
     "title": "Interpreting Threat Behavior and Attack Progress",
-    "notes": []
+    "notes": [
+      "Une fois que vous avez des preuves vous pouvez interpréter les résultats.",
+      "Si vous avez suffisement de preuves une seule interprétation sera possible.",
+      "Dans certains cas, trop peu de preuve, permettront d'avoir plusieurs interprétations, c'est plus compliqué à gérer puisque vous devrez prendre toutes les interprétations en compte. Si possible il faut vérifier les interprétations mais cela n'est pas toujours possibles selon le contexte.",
+      "Essayez d'interpreter d'où vient l'attaquant, ce à quoi il a accès, si possible son objectif, la prochaine étape et combien de temps il va mettre pour réussir son objectif.",
+      "Ne mettez pas trop confiance dans une interprétation, n'hésitez pas à la scorer pour savoir à quel point vous pouvez avoir confiance dans l'interprétation.",
+      "Transmettez vos interprétations une fois que vous n'en avez oublié aucune (si vous oubliez une interprétation vous risquez de vous faire surprendre et de vous retrouver dans une situation compliquée).",
+      "Les outils comme la kill chain et le mitre att&ck peut vous aider à comprendre les étapes de l'attaque et faire l'interprétation."
+    ]
   },
   {
     "title": "Making Strategic Decisions in Incident Response",
-    "notes": []
+    "notes": [
+      "La phase de décision défini quand, comment et avec quoi on fait la remédiation",
+      "Les équipes techniques ont déjà fourni les preuves mais reste pour conseiller",
+      "Elles se basent sur leurs capacités de blocage et la criticité des systèmes impactés, sur l'étape de l'attaque, sur le niveau d'information de l'incident: plus on a de l'information et plus on prend une bonne décision, avec peu d'information il faut savoir se remettre en question plutôt que de vouloir forcément remédier trop rapidement (dans certains cas c'est necessaire mais si ça ne l'est pas il faut éviter sous peine de connaitre un impact encore pire par la suite)",
+      "C'est la goucernance qui décide, à partir des informations des équipes de sécurité, à partir de leurs analyses des risques et à partir des conseils des équipes de sécurité."
+    ]
   },
   {
     "title": "Executing and Validating Remediation in Incident Response",
-    "notes": []
+    "notes": [
+      "Durant la phase de remédiation ce sont les administrateurs qui souvent sont à la manoeuvre, les équipes de sécurités donnent les consignes en respectant les décisions de la stratégie, aident et conseillent.",
+      "Les administrateurs connaissent mieux les systèmes et les applications, les équipes de sécurités connaissent mieux l'attaque, l'attaquant et les règles de sécurité, le risque et de hardening.",
+      "Les équipes de sécurité doivent vérifier en \"jouant\" des tests que les éléments sont bien résolus.",
+      "Dans un cas particuliers les équipes de sécurité mènent les actions: si un administrateur est suspecté d'être une source d'information pour l'attaquant (complice ou compromis).",
+      "Les équipes de sécurités vont aussi jouer un rôle sur l'amélioration des défenses pour cette attaque.",
+      "Le but de ce partage des tâches: réduire les impacts sur la disponibilité, l'intégrité et la confidentialité de service (au niveau de l'attaque mais aussi au niveau de la production)."
+    ]
   },
   {
     "title": "Principles and Methods for Effective Incident Response",
@@ -620,27 +706,64 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Logs and Telemetry: Capturing Technical Events in Real-Time",
-    "notes": []
+    "notes": [
+      "Première source => télémétrie => relativement complète & relativement fiable => facile d'accès, même pour SOC managé",
+      "Télémétrie: centralisation des activités presque real-time souvent avec analyse",
+      "Difficilement falsifiable par un attaquant => l'attaquant peut toujours générer de l'activité en plus que nécessaire mais difficilement \"supprimer\" ces activtiés malveillantes",
+      "Les logs systèmes sont très intéressants mais ne sont pas une source fiable: ils sont modifiable par l'attaquant, ils sont \"filtrable\", l'envoie sur le SIEM peut facilement être altéré ou remplacé"
+    ]
   },
   {
     "title": "Filesystem: Persistent Evidence for Incident Response",
-    "notes": []
+    "notes": [
+      "L'analyse de disque est relativement puissante => toute persistence peut y être retrouvé.",
+      "Il est relativement simple d'accèder aux partitions et de les analyser sans les monter.",
+      "C'est une ressource plutôt très fiable (certaines métadonnées ne sont pas accessible depuis le système live même en raw access).",
+      "En NTFS la MFT permet d'avoir des timestamps fiable défini par le kernel uniquement."
+    ]
   },
   {
     "title": "Memory Dump: Capturing Active System State",
-    "notes": []
+    "notes": [
+      "Les memory dump sont des preuves extrêmement puissante SI l'attaquant est actif au moment de la collect.",
+      "Le memory dump n'est pas souvent utile pour trouver les persistances.",
+      "Les memory dump ne sont pas fiable pour 2 raisons: majoritairement obtenu via des processus sur le système, l'attaquant peut impacter la collecte, une bonne alternative est un dump depuis l'hyperviseur (beaucoup plus fiable). Le dump peut être corrompu (plus la RAM est grande, plus le temps de collect est long, plus la RAM est modifié pendant la collecte).",
+      "Le memory dump bien que très puissant n'est pas l'outil le plus simple en réponse à incident.",
+      "On peut trouver toutes les lignes de commandes, les ports ouverts, les flux réseaux en cours (parfois même une partie de leurs contenus).",
+      "Les binaires et DLL peuvent être extrait depuis un dump permettant d'avoir tous les éléments d'un processus en cours.",
+      "Il est même relativement d'identifier un rootkit comparé à d'autres méthodes comme depuis les logs/télémétrie ou una analyse à chaud depuis le système."
+    ]
   },
   {
     "title": "CMDB & Network Diagram: Essential Context for Incident Response",
-    "notes": []
+    "notes": [
+      "Tout comme la stratégie militaire à besoin de carte du terrain => la réponse à incident à besoin d'une \"carte\" du réseau et des systèmes.",
+      "Le shadow IT se sont les systèmes non documentés qui tournent: ils ne sont pas patché, ils n'ont pas de PCA/PRA, parfois les services qu'ils rendent ne sont plus utilisés, ils ne sont pas sur le plan du réseau ni dans la CMDB et il n'ont pas d'outil de monitoring de la sécurité => les attaquants les utilisent pour mener leurs opérations car ils sont simple à compromettre et très discret, ce sont d'excellentes portes dérobées.",
+      "Avec une bonne CMDB et un bon plan réseau vous n'aurez pas de shadow IT, vous serez en mesure de faire un plan pour contenir l'attaquant et même éventuellement le piéger pour gagner du temps et obtenir des informations.",
+      "Avec de bon schémas réseaux vous pourrez prévenir les mouvements latéraux et les anticiper le cas échéant.",
+      "Vous pourrez définir des stratégies claires en connaissances des risques et des potentiels impacts.",
+      "Une scanneur de vulnérabilité avec des scans à jour et l'historique des vulnérabilités peut parfois être très utile à la réponse à incident pour identifier les machines à risque ou pour comprendre comment l'attaquant est entré sur le système d'information."
+    ]
   },
   {
     "title": "Communication Tools for Effective Incident Response",
-    "notes": []
+    "notes": [
+      "Les outils les plus importants de la réponse à incident ce sont les outils de communication.",
+      "Souvent en réponse à incident les problèmes de communication ne viennent pas des outils.",
+      "En revanche, les outils de communication et la définition de leurs rôles sont souvent minimisés. C'est pourtant un élément simple qui permet d'optimiser la réponse à incident et de gagner du temps pour la définition de la stratégie et des réactions.",
+      "Tous les outils doivent être utilisés mais pour des rôles différents ou comme backup si l'un n'est plus utilisable (non disponible ou compromis).",
+      "L'un des meilleurs moyen reste l'échange orale en présentiel mais c'est l'un des plus compliqué à mettre en place et il faut penser aux personnes sous stress qui ne seront pas en mesure d'aider et qu'il faudra sortir pour ne pas impacter le travail.",
+      "Pensez à plusieurs supports, les ordinateurs, les téléphones, les serveurs externes, les réunions et même le papier, ect..."
+    ]
   },
   {
     "title": "Physical Notes and Offline Work in Incident Response",
-    "notes": []
+    "notes": [
+      "Quand les ordinateurs sont compromis il faut savoir repartir au papier pendant que les admin remontent des postes propres",
+      "Pensez à utiliser des systèmes personnels pour retrouver internet (attention aux téléphones pro si tout le SI est compromis).",
+      "Un papier ne peut être compromis que par un accès physique (faites attention aux employés, si l'un d'eux est complice cela peut compromettre un plan défini sur papier).",
+      "Cela reste un cas extrême mais il est important d'y avoir pensé avant que ça n'arrive."
+    ]
   },
   {
     "title": "Before and After Incident Response: Preparation and Lessons Learned",
@@ -767,12 +890,25 @@ const SLIDES = window.SLIDES_NOTES || [
     "notes": []
   },
   {
-    "title": "Dead Investigations (Forensic Analysis on Offline Systems)",
-    "notes": []
+    "title": "Cold Forensics / Investigations (Forensic Analysis on Offline Systems)",
+    "notes": [
+      "Investigation à froid => collecte et analyse de preuve d'un système éteint",
+      "Analyse du disque => éléments de persistance et traces",
+      "Des preuves de confiances, contient forcément les éléments de persistance",
+      "Permet de récupérer au minimum des éléments de temps (pas toujours de confiance)",
+      "Récupérer des preuves depuis l'hyperviseur ou des équipements réseaux non compromis est aussi fiable (difficile de prouver que le système n'est pas compromis)"
+    ]
   },
   {
     "title": "Live Data Collection from Active Systems in Incident Response",
-    "notes": []
+    "notes": [
+      "La collecte à chaud => récupérer des preuves sur un système en fonctionnement",
+      "Plus facile à récupérer => moins lourd => preuves parfois pré-parsées (registre au format texte)",
+      "Attention: parfois certaines preuves ne sont pas collectées",
+      "On peut récupérer la RAM ou le réseau (le réseau devrait plutôt être collecté depuis des équipements réseaux non compromis: plus fiable)",
+      "Les éléments live peuvent aussi être \"pré-parsés\" (connexion réseaux, processus et ligne de commandes, ...)",
+      "Les éléments ne sont pas fiable => un attaquant peut les altérer"
+    ]
   },
   {
     "title": "Live Interactive Investigation on Active Systems in Incident Response",
@@ -818,15 +954,33 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Using Sigma Rules in Incident Response Investigations",
-    "notes": []
+    "notes": [
+      "Règles Sigma open source -> bon outil de réponse à incident -> pas terrible en détection (trop de faux positif et spécifique aux implémentations) -> elles peuvent matcher des logs -> donner des TTPs et des techniques mais ne doivent pas orienter la réponse à incident (possible détection \"critique\" hors scope de l'attaque)",
+      "Attention: beaucoup de faux positif, nécessite des vérifications et des corrélations (ne pas l'utiliser sur tous les logs pour \"avoir des idées\" sauf cas très extrême si on a vraiment plus aucune piste)",
+      "Sans les utiliser automatiquement -> les lire donnent des détails pour vérifier des hypothèses manuellement",
+      "Les détails techniques que donnent les règles sont écrits pour les logs -> source qu'on utilise massivement en réponse à incident",
+      "Comme certaines règles sont basées sur des implémentations => on peut identifier des outils"
+    ]
   },
   {
     "title": "Using YARA Rules for File and Memory Analysis in Incident Response",
-    "notes": []
+    "notes": [
+      "Yara peut être un bon outil pour analyser des fichiers, des systèmes ou un dump mémoire",
+      "Quand on a trouvé un pattern spécifique dans un des outils de l'attaquant => vraiment très puissant",
+      "Quand on utilise les \"jeux de règle de base\" c'est plus comme de la détection \"opportuniste\" en incident response => parfois c'est très utile mais attention aux faux positifs",
+      "Envoyer toutes les preuves dans un scanneur yara ne vous fera pas forcément gagner du temps => bon outil, à utiliser au bon moment (quand vous avez des patterns spécifiques de l'attaquant par exemple)",
+      "Attention sur un système en cours de fonctionnement: le scanneur Yara est très visible"
+    ]
   },
   {
     "title": "Using Cyber Threat Intelligence (CTI) in Incident Response",
-    "notes": []
+    "notes": [
+      "La CTI en réponse à incident peut être puissant => identification parfois facile de l'attaquant",
+      "Les flux stix ne sont pas toujours très fiable => en détection c'est pas toujours simple de les utiliser => en réponse à incident c'est pas un problème => on prend tout ce qui match => si ça donne un point d'entrée pour identifier l'attaquant on corrèle, on vérifie et potentiellement c'est une identification très rapide",
+      "Certaines plateformes propose des services gratuit => généralement public => on n'envoie jamais d'informatio dessus (pour éviter d'être repéré par l'attaquant s'il monitore la plateforme) => on peut tout lire (vérifier que l'IOC est sur la plateforme: hash, ip ou domaine sur VirusTotal; ip sur AbuseIP)",
+      "Certains commentaires sur ces plateformes peuvent donner de bon éléments (attention ce n'est pas fiable, toujours vérifier)",
+      "Grâce à la CTI => identification de l'attaquant => anticipation: potentillement prochaines techniques et outils qu'il va utiliser"
+    ]
   },
   {
     "title": "Advanced Techniques and Practical Tips for Incident Response",
@@ -834,19 +988,117 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Quick Malware Analysis and Reverse Engineering in Incident Response",
-    "notes": []
+    "notes": [
+      "Le reverse complet de malware => pas en réponse à incident => trop long",
+      "Une analyse rapide => peut permettre de gagner beaucoup de temps",
+      "Malware de SharpPanda (APT Chinoise) => IP du C2 encodé en base64 => en 5 minutes d'analyse automatisé on a une notification avec l'IP de l'attaquant",
+      "Les exécutables contiennent beaucoup de métadonnées => beaucoup d'information sur le contexte et fonctionnalités",
+      "Beaucoup de malwares ou hacktools sont écrit avec des langages interprétés (plus rapide à analyser parfois reste rapide après obfuscation)",
+      "Donne une bonne idée de la compétence des attaquants",
+      "Peut donner des informations sur le développement du malware (information sur l'attaquant lui même)",
+      ".NET => on retrouve facilement le source code",
+      "Go => toutes les urls des dépendances sont dans le binaire en clair",
+      "IAT et EAT est en clair dans le binaire",
+      "Attention: ces informations sont intéressantes mais elles peuvent être controllées par l'attaquant"
+    ]
   },
   {
     "title": "Using Canary Tokens and Honeypots in Incident Response",
-    "notes": []
+    "notes": [
+      "Parfois on a besoin d'alertes supplémentaires pour identifier l'attaquant",
+      "Faire des canary tokens sur des éléments qui intéresse l'attaquant peut être intéressant (l'attaquant arrive sur un nouveau système découvre le fichier et trigger le canary) => vous êtes alerté de son accès au canary donc au système",
+      "Des honeypots vous permettent d'en apprendre plus sur l'attaquant => attention il doit être custom sinon l'attaquant l'identifira facilement comme honeypots",
+      "Un honeypots est aussi un moyen de diriger l'attaque ou de gagner du temps => fausses informations ou étendre le SI",
+      "Les alertes sont plutôt de confiance mais rien ne vous dit que l'attaquant utilisera votre honeypots ou canary token.",
+      "Facile et rapide à déployer, puissant si on sait ce que recherche l'attaquant",
+      "Pas souvent d'opportunités de les utiliser en réponse à incident"
+    ]
   },
   {
     "title": "Scanners and Custom Scripts for Efficient Incident Response",
-    "notes": []
+    "notes": [
+      "Certains scanneurs d'IOC (yara peut le faire) peuvent être puissant => trouver l'attaquant sur un système à analyser",
+      "Un incident ou l'attaquant est resté très longtemps dans un SI => analyse d'IOC sur tous les systèmes similaires",
+      "Des scripts personnalisés peuvent être très puissant => identifier quand un attaquant revient",
+      "C'est plus discret d'utiliser un script qui se lance tous les X temps que d'installer un service de sécurité en plus",
+      "Un incident ou j'ai fait un script qui lève une alerte dès que l'attaquant utilise sa porte dérobées => stat sur le fichier => vérification du timestamp d'accès",
+      "Attention aux scanneurs vérifiez bien => analyse récursive en profondeur => analyse les archives",
+      "J'ai eu un incident ou la charge utile était dans une archive zip => pas de détection du scanneur => perte de temps"
+    ]
   },
   {
     "title": "Using Text Utilities and Regex for Rapid Data Extraction",
+    "notes": [
+      "Il y a beaucoup de chaines de caractère de partout => fichier de log, script, exécutable, commentaires dans les images, ...",
+      "Le texte est plus facile à comprendre pour les humains => très bien pour la réponse à incident",
+      "Utilisez des parsers => sortie en format texte => stockez tous les éléments dans une arborescence => cela vous permet de rechercher des éléments de texte ou des regex plus facilement",
+      "Plusieurs outils vous permettent d'obtenir, d'analyser ou de filtrer les contenus texte (ligne de commande Linux, utilitaires graphiques limités mais parfois utiles)",
+      "Si possible essayer d'utiliser toujours les mêmes formats (par exemple pour les dates)",
+      "Parfois les formats inconnus qui n'ont pas de parser connu contiennent du texte",
+      "Attention aux terminaux: les terminaux ont des formats, ils ne comprennent et n'affiche que du texte donc des caractères sont interprétés pour les rendus => j'ai déjà croisé un attaquant qui cache ces charges utiles dans les terminaux (avec retour chariot puis des espaces)",
+      "Les outils comme xxd/grep/strings sont très utiles et souvent sous-estimés en réponse à incident"
+    ]
+  },
+  {
+    "title": "Essential Tools for Incident Response: Categories and Practical Usage",
     "notes": []
+  },
+  {
+    "title": "Security Tools in Incident Response",
+    "notes": [
+      "Outils de sécurité => premiers éléments vérifiés => prévu pour cela => plus rapide et certains plus complet",
+      "Ils ne sont pas toujours déployés, pas toujours accessibles pour l'équipe d'IR",
+      "Ils ne sont pas toujours bien configurés (centralisation et rétention des logs)",
+      "Ils conservent les données pendant un temps limité",
+      "Surtout ne déployez jamais d'outil de sécurité si l'attaquant peut avoir accès au système => vous allez vous faire repérer => l'attaquant va se cacher ou impacter votre SI"
+    ]
+  },
+  {
+    "title": "Filesystem Parsers, Analyzers, and Viewers",
+    "notes": [
+      "L'analyse du disque est la plus complexe => le plus de format différent => le plus d'outils",
+      "Sur Windows on analyse souvent la MFT (Master File Table), elle contient tous les éléments intéressants pour l'investigation à l'exception de la donnée des fichiers volumineux",
+      "Sur le disque on trouve tout plein de fichier: exécutables, documents bureautiques, scripts et autres fichiers de l'attaquant",
+      "Les outils de Eric Zimmerman et Didier Stevens sont d'excellentes ressources.",
+      "Les executables sont un des types de fichiers clés en réponse à incident: avec Detect It Easy vous pouvez identifier les packers, une analyse des métadonnées du fichier peuvent donner des informations importantes qu'on peut voir avec des outils comme ProgramExecutableAnalyzer et PE-bear ou ELFAnalyzer pour les exécutables Linux.",
+      "Les documents bureatiques, les archives, les LNK sont souvent utilisés dans les attaques de phishings, l'analyse des fichier PDF, RTF ou les documents words sont important et peuvent être analysés avec des outils comme pdf-parser, oledump et rtfdump.",
+      "Pour les fichiers binaires, certains outils comme xxd peuvent aider à les analyser.",
+      "Timeline explorer permet d'analyser un fichier CSV, notamment les preuves extraites comme le CSV de sortie de MFTECmd."
+    ]
+  },
+  {
+    "title": "Network Parsers, Analyzers, and Traffic Viewers",
+    "notes": [
+      "Les captures ne sont pas les preuves les plus utilisées: trop de données chiffrées => trop lourd pour peu d'information analysable",
+      "Les données non chiffrées => adresses IP et TCP ports ou contenu UDP principalement DNS (les noms de domaines et leurs résolutions)",
+      "Wireshark est complet et simple à utiliser mais problèmatique sur les captures volumineuses.",
+      "Tshark est un bon outil en ligne de commande pour filter et extraire les données",
+      "NetworkMiner donne des informations intéressantes mais ne permet pas une analyse détaillée",
+      "Les outils d'automatisation comme Scapy et PyShark sont extrêmement puissant mais demande de savoir développer (et selon les usages du temps)",
+      "Les outils de détection sont à utiliser avec modération: ils lèvent beaucoup de faux positifs => risque de perdre de temps sur de mauvaises alertes => permettent parfois d'ouvrir les investigations ou de retrouver l'attaquant (nécessite de bien vérifier et bien corréler)"
+    ]
+  },
+  {
+    "title": "Memory Dump Parsers and Analyzers",
+    "notes": [
+      "Volatility est le seul vrai bon outil d'analyse mémoire très utilisé (à ma connaissance)",
+      "Comme les dumps de mémoire sont régulièrement corrompus et difficilement parsables, la commande strings peux aider (il faut savoir ce qu'on recherche ou utiliser des regex intéressantes)",
+      "WinDBG permet de récupérer certains éléments sur les dumps mémoires.",
+      "Avec Linux il faut extraire le profil pour pouvoir parser le dump, ce qui rend l'analyse plus complexe."
+    ]
+  },
+  {
+    "title": "Malware Analysis in Incident Response",
+    "notes": [
+      "Quelques techniques permettent d'obtenir des informations de reverse sur des malwares très rapidement",
+      "Si un malware ou hacktool est écrit en .NET => obtient facilement le source code avec ILSpy ou dnSpy",
+      "Si un malware est écrit en Go on obtient tous les liens github vers les dépendances avec strings",
+      "Capa est un outil qui analyse les instructions du binaire pour donner ces capacités (par exemple les algorithmes de chiffrement), attention pas très fiable",
+      "On évite d'ouvrir un décompilateur comme Ghidra, Radare2 ou IDA car le reverse prend trop de temps",
+      "Les outils d'émulation comme miasm et angr sont assez long et complexe à utiliser on évite souvent en réponse à incident",
+      "On utilise souvent du reverse dynamique, il peut être effectué avec des outils simple d'utilisation comme ProcDump (Windows, sysinternals) ou strace/ltrace (Linux), wireshark peu aussi aider (il y a des moyens bien meilleurs pour une sandbox plus fiable mais les équipes n'ont pas souvent une infrastructure prévu pour l'analyse dynamique de malware)",
+      "Si le rapport d'analyse est sur AnyRun/VirusTotal (sans envoyer le fichier !) on peut l'utiliser => attention: ce sont des systèmes facilement identifiable par les malwares et ce sont des environnements qui \"vivent\" donc avec beaucoup de faux positifs)"
+    ]
   },
   {
     "title": "My path, my passion: cybersecurity",
