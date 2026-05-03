@@ -1089,6 +1089,18 @@ const themes = {
     light: { bgColor: '#4caf50', textColor: '#303030' },
     fontFamily: "Roboto, Arial, sans-serif",
     transitionSpeed: '0.5s',
+  },
+  manga: {
+    dark:  { bgColor: '#0d0f14', textColor: '#2e6bff' },
+    light: { bgColor: '#9ca3af', textColor: '#ffd000' },
+    fontFamily: "'Bangers', 'Impact', 'Arial Black', sans-serif",
+    transitionSpeed: '0.4s',
+  },
+  webscripts: {
+    dark:  { bgColor: '#222222', textColor: '#dd8a12' },
+    light: { bgColor: '#CCCCCC', textColor: '#27219a' },
+    fontFamily: "Arial, Helvetica, 'Liberation Sans', FreeSans, sans-serif",
+    transitionSpeed: '0.6s',
   }
 };
 
