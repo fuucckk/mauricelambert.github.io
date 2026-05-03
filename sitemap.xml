@@ -229,21 +229,6 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html</loc>
-    <xhtml:link
-               rel="alternate"
-               hreflang="en"
-               href="https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_calculation.html"/>
-    <xhtml:link
-               rel="alternate"
-               hreflang="fr"
-               href="https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html"/>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/</loc>
-    <lastmod>2022-08-19</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/</loc>
     <lastmod>2026-03-10</lastmod>
   </url>
@@ -264,46 +249,6 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/</loc>
-    <lastmod>2022-08-19</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
-    <lastmod>2022-08-19</lastmod>
-  </url>
-    <url>
-    <loc>https://mauricelambert.github.io/404.md</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/brython/demo.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/brython/index.html</loc>
-    <lastmod>2025-05-04</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/brython/README.txt</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/brython/unicode.txt</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/index.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/index.md</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.md</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/google89c3192ff924177d.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -681,10 +626,6 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/README.md</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.html</loc>
     <lastmod>2025-05-03</lastmod>
   </url>
@@ -769,7 +710,7 @@
     <lastmod>2026-03-10</lastmod>
   </url>
     <url>
-    <loc>https://mauricelambert.github.io/Presentations/IncidentResponse/?theme=manga</loc>
+    <loc>https://mauricelambert.github.io/Presentations/IncidentResponse/</loc>
     <lastmod>2026-05-04</lastmod>
   </url>
 </urlset>
