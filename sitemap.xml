@@ -21,10 +21,6 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/EntropyAnalysis.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/EntropyEncoding.html</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
@@ -33,15 +29,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/FileAnalysis.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/LatinUtilities.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/LatinUtilities.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -49,15 +37,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/MaliciousPDF.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/mRemoteNGpasswordsStealer.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/mRemoteNGpasswordsStealer.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -65,27 +45,11 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/NetbiosSpoof.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/NetworkScanner.html</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/NetworkScanner.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/NetworkSniffer.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/NetworkSniffer.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PacketAnalysis/PacketAnalysis.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -101,15 +65,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PasswordsSniffer.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/PDForensic.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PDForensic.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -117,15 +73,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PeInjector.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/PickleExploit.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/ProgramExecutableAnalyzer.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -149,15 +97,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PyEmailTools.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/PyObfuscator.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PyObfuscator.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -165,24 +105,12 @@
     <lastmod>2025-06-22</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PyPeLoader.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/PyPePacker.html</loc>
-    <lastmod>2025-06-22</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PyPePacker.pyz</loc>
     <lastmod>2025-06-22</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/PyPeUrlLoader.html</loc>
     <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PyPeUrlLoader.pyz</loc>
-    <lastmod>2025-06-22</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/PyWCGIshell.html</loc>
@@ -193,15 +121,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/QueryCombinedLogFormat.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/RansomWare.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/RansomWare.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -209,15 +129,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/RC4Encryption.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/RC6Encryption.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/RC6Encryption.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -225,19 +137,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/ReverseShell.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SIDAnalyzer.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/SpyWare/AudioLogger.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/AudioLogger.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -245,15 +145,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/ClipboardLogger.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/SpyWare/CopyLogger.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/CopyLogger.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -261,15 +153,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/DomainsLogger.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/FilesLogger.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -277,15 +161,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/KeyLogger.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/SpyWare/ScreenLogger.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/ScreenLogger.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -293,15 +169,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/SpyWare.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare/WebcamLogger.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -309,15 +177,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SpyWare.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/SteganograPy.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SteganograPy.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -325,23 +185,11 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SynFlood.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/TotpApp.html</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/TotpApp.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/ViginereBreaker.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/ViginereBreaker.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -353,15 +201,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/WebPayloadsEncodings.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/WebServerIdentifier.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/WebServerIdentifier.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -373,15 +213,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/WebSiteCloner.pyz</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/WifiDeauth.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/WifiDeauth.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -389,16 +221,7 @@
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/WordListGenerator.pyz</loc>
-
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/ZipSteganograPy.html</loc>
-    <lastmod>2025-02-16</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/ZipSteganograPy.pyz</loc>
     <lastmod>2025-02-16</lastmod>
   </url>
   <url>
@@ -429,22 +252,22 @@
     <lastmod>2022-08-19</lastmod>
   </url>
   <url>
-    <loc>http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html</loc>
+    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html</loc>
     <xhtml:link
                rel="alternate"
                hreflang="en"
-               href="http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_calculation.html"/>
+               href="https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_calculation.html"/>
     <xhtml:link
                rel="alternate"
                hreflang="fr"
-               href="http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html"/>
+               href="https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/calcul_securite.html"/>
   </url>
   <url>
-    <loc>http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/</loc>
+    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
   <url>
-    <loc>http://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
+    <loc>https://mauricelambert.github.io/app/FrenchGovernmentDataAnalysis/security_charts.html</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
     <url>
@@ -508,10 +331,6 @@
     <lastmod>2025-05-21</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/MagicStrings.pyz</loc>
-    <lastmod>2025-05-21</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.html</loc>
     <lastmod>2025-05-20</lastmod>
   </url>
@@ -520,23 +339,7 @@
     <lastmod>2025-05-20</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/HexaReader.pyz</loc>
-    <lastmod>2025-05-20</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/BinaryFileReader.pyz</loc>
-    <lastmod>2025-05-20</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/BinaryFileReader/Strings.pyz</loc>
-    <lastmod>2025-05-20</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/code/CustomShell.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/code/CustomShell.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -548,27 +351,11 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/code/HttpClientMultipart.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/code/LocalResolver.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/code/LocalResolver.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/code/ProxyPrinter.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/code/PyProgressTerm.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/code/PyProgressTerm.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -577,10 +364,6 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/Characters.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/Characters.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -593,10 +376,6 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/DebugEncoding.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/code/PythonToolsKit/DebugEncoding.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -717,24 +496,11 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/code/SimpleWhois.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/code/Tracert.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-
-    <loc>https://mauricelambert.github.io/info/python/code/Tracert.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/code/UpgradePipPackages.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/code/UpgradePipPackages.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -871,10 +637,6 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/code/WebScriptsClient.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/code/WebScriptsTools.html</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
@@ -883,28 +645,12 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/ArpSpoof.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/AsyncRemoteShell.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/ChromePasswordsStealer.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/Cr0wl3r.html</loc>
     <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/Cr0wl3r.pyz</loc>
-    <lastmod>2025-07-19</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/CustomCrypto.html</loc>
@@ -923,15 +669,7 @@
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/ElfAnalyzer.pyz</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/EmojiEncode.html</loc>
-    <lastmod>2025-02-12</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/EmojiEncode.pyz</loc>
     <lastmod>2025-02-12</lastmod>
   </url>
   <url>
@@ -959,18 +697,6 @@
     <lastmod>2025-05-03</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/DiskAnalyzer/DiskAnalyzer.pyz</loc>
-    <lastmod>2025-05-03</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/DiskAnalyzer/NtfsAnalyzer.pyz</loc>
-    <lastmod>2025-05-03</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/DiskAnalyzer/MftAnalyzer.pyz</loc>
-    <lastmod>2025-05-03</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/code/PegParser.html</loc>
     <lastmod>2025-05-21</lastmod>
   </url>
@@ -979,19 +705,11 @@
     <lastmod>2025-05-13</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/Win32Hooking.pyz</loc>
-    <lastmod>2025-05-04</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/info/python/security/Web-MaxUriIdentifier.pdf</loc>
     <lastmod>2022-06-11</lastmod>
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/code/LinuxMemoryStatistics.html</loc>
-    <lastmod>2025-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/code/LinuxMemoryStatistics.pyz</loc>
     <lastmod>2025-06-03</lastmod>
   </url>
   <url>
@@ -1011,10 +729,6 @@
     <lastmod>2025-06-17</lastmod>
   </url>
   <url>
-    <loc>https://mauricelambert.github.io/info/python/security/PyAsyncDNS/PyAsyncDNS.pyz</loc>
-    <lastmod>2025-06-17</lastmod>
-  </url>
-  <url>
     <loc>https://mauricelambert.github.io/EscapeGames/K41r0/</loc>
     <lastmod>2025-08-19</lastmod>
   </url>
@@ -1024,10 +738,6 @@
   </url>
   <url>
     <loc>https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.html</loc>
-    <lastmod>2025-09-04</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.pyz</loc>
     <lastmod>2025-09-04</lastmod>
   </url>
   <url>
@@ -1057,5 +767,9 @@
   <url>
     <loc>https://mauricelambert.github.io/info/blog/DiskAnalyzer_fr.html</loc>
     <lastmod>2026-03-10</lastmod>
+  </url>
+    <url>
+    <loc>https://mauricelambert.github.io/Presentations/IncidentResponse/?theme=manga</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
 </urlset>
