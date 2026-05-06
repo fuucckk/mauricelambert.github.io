@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: Documentation - datatypes</title>
+</head><body>
+
+<style>
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    padding: 2rem;
+}
+
+/* Main container tables */
+table.section {
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+/* ===== COLOR PER SECTION CATEGORY ===== */
+.title-decor { background-color: #3a3d1e !important; }
+.functions-decor { background-color: #3a1e3d !important; }
+.data-decor { background-color: #1e3a3d !important; }
+.author-decor { background-color: #3d2e1e !important; }
+.index-decor { background-color: #1e3d2f !important; }
+
+/* Code blocks */
+pre {
+    background-color: #2d2d2d;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* Links */
+a { color: #4ec9b0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">datatypes</strong> (version 1.0.0)</td>
+<td class="extra"><a href=".">index</a><br><a>datatypes.py</a></td></tr></table>
+    <p><span class="code">DNS&nbsp;types,&nbsp;constants,&nbsp;and&nbsp;RFC-compliant&nbsp;data&nbsp;structures.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="datatypes.html#AAAARecord">AAAARecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#ARecord">ARecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#CAARecord">CAARecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#CNAMERecord">CNAMERecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#DNSFlags">DNSFlags</a>
+</dt><dt class="heading-text"><a href="datatypes.html#DNSHeader">DNSHeader</a>
+</dt><dt class="heading-text"><a href="datatypes.html#DNSMessage">DNSMessage</a>
+</dt><dt class="heading-text"><a href="datatypes.html#DNSQuestion">DNSQuestion</a>
+</dt><dt class="heading-text"><a href="datatypes.html#DNSResourceRecord">DNSResourceRecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#MXRecord">MXRecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#NSRecord">NSRecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#PTRRecord">PTRRecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#SOARecord">SOARecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#SRVRecord">SRVRecord</a>
+</dt><dt class="heading-text"><a href="datatypes.html#TXTRecord">TXTRecord</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="enum.html#IntEnum">enum.IntEnum</a>(<a href="builtins.html#int">builtins.int</a>, <a href="enum.html#ReprEnum">enum.ReprEnum</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="datatypes.html#Opcode">Opcode</a>
+</dt><dt class="heading-text"><a href="datatypes.html#RecordClass">RecordClass</a>
+</dt><dt class="heading-text"><a href="datatypes.html#RecordType">RecordType</a>
+</dt><dt class="heading-text"><a href="datatypes.html#ResponseCode">ResponseCode</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="AAAARecord">class <strong>AAAARecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#AAAARecord">AAAARecord</a>(address:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;an&nbsp;IPv6&nbsp;address&nbsp;(AAAA&nbsp;record).<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="AAAARecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from AAAARecord</span></span></dt></dl>
+
+<dl><dt><a name="AAAARecord-__init__"><strong>__init__</strong></a>(self, address: str) -&gt; None<span class="grey"><span class="heading-text"> from AAAARecord</span></span></dt></dl>
+
+<dl><dt><a name="AAAARecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="AAAARecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from AAAARecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'address': Field(name='address',type=&lt;class 'str'&gt;,default=...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('address',)</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ARecord">class <strong>ARecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ARecord">ARecord</a>(address:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;an&nbsp;IPv4&nbsp;address&nbsp;(A&nbsp;record).<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="ARecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from ARecord</span></span></dt></dl>
+
+<dl><dt><a name="ARecord-__init__"><strong>__init__</strong></a>(self, address: str) -&gt; None<span class="grey"><span class="heading-text"> from ARecord</span></span></dt></dl>
+
+<dl><dt><a name="ARecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="ARecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from ARecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'address': Field(name='address',type=&lt;class 'str'&gt;,default=...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('address',)</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="CAARecord">class <strong>CAARecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#CAARecord">CAARecord</a>(flags:&nbsp;int,&nbsp;tag:&nbsp;str,&nbsp;value:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;Certification&nbsp;Authority&nbsp;Authorization&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="CAARecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from CAARecord</span></span></dt></dl>
+
+<dl><dt><a name="CAARecord-__init__"><strong>__init__</strong></a>(self, flags: int, tag: str, value: str) -&gt; None<span class="grey"><span class="heading-text"> from CAARecord</span></span></dt></dl>
+
+<dl><dt><a name="CAARecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="CAARecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from CAARecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'flags': Field(name='flags',type=&lt;class 'int'&gt;,default=&lt;d...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'tag': Field(name='tag',type=&lt;class 'str'&gt;,default=&lt;dat...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'value': Field(name='value',type=&lt;class 'str'&gt;,default=&lt;d...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('flags', 'tag', 'value')</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="CNAMERecord">class <strong>CNAMERecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#CNAMERecord">CNAMERecord</a>(target:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;canonical&nbsp;name&nbsp;(alias)&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="CNAMERecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from CNAMERecord</span></span></dt></dl>
+
+<dl><dt><a name="CNAMERecord-__init__"><strong>__init__</strong></a>(self, target: str) -&gt; None<span class="grey"><span class="heading-text"> from CNAMERecord</span></span></dt></dl>
+
+<dl><dt><a name="CNAMERecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="CNAMERecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from CNAMERecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'target': Field(name='target',type=&lt;class 'str'&gt;,default=&lt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('target',)</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DNSFlags">class <strong>DNSFlags</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#DNSFlags">DNSFlags</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qr:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;opcode:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;aa:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tc:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rd:&nbsp;int&nbsp;=&nbsp;1,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ra:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rcode:&nbsp;int&nbsp;=&nbsp;0<br>
+)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;DNS&nbsp;header&nbsp;flags&nbsp;and&nbsp;provides&nbsp;serialization&nbsp;utilities.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="DNSFlags-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from DNSFlags</span></span></dt></dl>
+
+<dl><dt><a name="DNSFlags-__init__"><strong>__init__</strong></a>(
+    self,
+    qr: int = 0,
+    opcode: int = 0,
+    aa: int = 0,
+    tc: int = 0,
+    rd: int = 1,
+    ra: int = 0,
+    z: int = 0,
+    rcode: int = 0
+) -&gt; None<span class="grey"><span class="heading-text"> from DNSFlags</span></span></dt></dl>
+
+<dl><dt><a name="DNSFlags-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="DNSFlags-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from DNSFlags</span></span></dt></dl>
+
+<dl><dt><a name="DNSFlags-to_int"><strong>to_int</strong></a>(self) -&gt; int</dt><dd><span class="code">Serialize&nbsp;the&nbsp;DNS&nbsp;flags&nbsp;into&nbsp;a&nbsp;16-bit&nbsp;integer&nbsp;according&nbsp;to&nbsp;<a href="https://www.rfc-editor.org/rfc/rfc1035.txt">RFC&nbsp;1035</a>.</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="DNSFlags-from_int"><strong>from_int</strong></a>(value: int) -&gt; DNSFlags</dt><dd><span class="code">Deserialize&nbsp;a&nbsp;16-bit&nbsp;integer&nbsp;into&nbsp;a&nbsp;<a href="#DNSFlags">DNSFlags</a>&nbsp;instance.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'aa': Field(name='aa',type=&lt;class 'int'&gt;,default=0,def...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'opcode': Field(name='opcode',type=&lt;class 'int'&gt;,default=0...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'qr': Field(name='qr',type=&lt;class 'int'&gt;,default=0,def...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'ra': Field(name='ra',type=&lt;class 'int'&gt;,default=0,def...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'rcode': Field(name='rcode',type=&lt;class 'int'&gt;,default=0,...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'rd': Field(name='rd',type=&lt;class 'int'&gt;,default=1,def...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'tc': Field(name='tc',type=&lt;class 'int'&gt;,default=0,def...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'z': Field(name='z',type=&lt;class 'int'&gt;,default=0,defa...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('qr', 'opcode', 'aa', 'tc', 'rd', 'ra', 'z', 'rcode')</dl>
+
+<dl><dt><strong>aa</strong> = 0</dl>
+
+<dl><dt><strong>opcode</strong> = 0</dl>
+
+<dl><dt><strong>qr</strong> = 0</dl>
+
+<dl><dt><strong>ra</strong> = 0</dl>
+
+<dl><dt><strong>rcode</strong> = 0</dl>
+
+<dl><dt><strong>rd</strong> = 1</dl>
+
+<dl><dt><strong>tc</strong> = 0</dl>
+
+<dl><dt><strong>z</strong> = 0</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DNSHeader">class <strong>DNSHeader</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#DNSHeader">DNSHeader</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transaction_id:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;flags:&nbsp;<a href="#DNSFlags">DNSFlags</a>&nbsp;=&nbsp;&amp;lt;factory&amp;gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;question_count:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;answer_count:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;authority_count:&nbsp;int&nbsp;=&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;additional_count:&nbsp;int&nbsp;=&nbsp;0<br>
+)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;the&nbsp;DNS&nbsp;message&nbsp;header&nbsp;structure&nbsp;(12&nbsp;bytes).<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="DNSHeader-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from DNSHeader</span></span></dt></dl>
+
+<dl><dt><a name="DNSHeader-__init__"><strong>__init__</strong></a>(
+    self,
+    transaction_id: int = 0,
+    flags: DNSFlags = &lt;factory&gt;,
+    question_count: int = 0,
+    answer_count: int = 0,
+    authority_count: int = 0,
+    additional_count: int = 0
+) -&gt; None<span class="grey"><span class="heading-text"> from DNSHeader</span></span></dt></dl>
+
+<dl><dt><a name="DNSHeader-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="DNSHeader-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from DNSHeader</span></span></dt></dl>
+
+<dl><dt><a name="DNSHeader-pack"><strong>pack</strong></a>(self) -&gt; bytes</dt><dd><span class="code">Pack&nbsp;the&nbsp;DNS&nbsp;header&nbsp;into&nbsp;its&nbsp;binary&nbsp;representation.</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="DNSHeader-unpack"><strong>unpack</strong></a>(data: bytes) -&gt; DNSHeader</dt><dd><span class="code">Unpack&nbsp;raw&nbsp;bytes&nbsp;into&nbsp;a&nbsp;<a href="#DNSHeader">DNSHeader</a>&nbsp;instance.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>SIZE</strong> = 12</dl>
+
+<dl><dt><strong>__dataclass_fields__</strong> = {'additional_count': Field(name='additional_count',type=&lt;class 'int'&gt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'answer_count': Field(name='answer_count',type=&lt;class 'int'&gt;,def...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'authority_count': Field(name='authority_count',type=&lt;class 'int'&gt;,...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'flags': Field(name='flags',type=&lt;class 'datatypes.DNSFla...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'question_count': Field(name='question_count',type=&lt;class 'int'&gt;,d...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'transaction_id': Field(name='transaction_id',type=&lt;class 'int'&gt;,d...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('transaction_id', 'flags', 'question_count', 'answer_count', 'authority_count', 'additional_count')</dl>
+
+<dl><dt><strong>additional_count</strong> = 0</dl>
+
+<dl><dt><strong>answer_count</strong> = 0</dl>
+
+<dl><dt><strong>authority_count</strong> = 0</dl>
+
+<dl><dt><strong>question_count</strong> = 0</dl>
+
+<dl><dt><strong>transaction_id</strong> = 0</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DNSMessage">class <strong>DNSMessage</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#DNSMessage">DNSMessage</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;header:&nbsp;<a href="#DNSHeader">DNSHeader</a>&nbsp;=&nbsp;&amp;lt;factory&amp;gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;questions:&nbsp;List[<a href="#DNSQuestion">DNSQuestion</a>]&nbsp;=&nbsp;&amp;lt;factory&amp;gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;answers:&nbsp;List[<a href="#DNSResourceRecord">DNSResourceRecord</a>]&nbsp;=&nbsp;&amp;lt;factory&amp;gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;authorities:&nbsp;List[<a href="#DNSResourceRecord">DNSResourceRecord</a>]&nbsp;=&nbsp;&amp;lt;factory&amp;gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;additionals:&nbsp;List[<a href="#DNSResourceRecord">DNSResourceRecord</a>]&nbsp;=&nbsp;&amp;lt;factory&amp;gt;<br>
+)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;full&nbsp;DNS&nbsp;message&nbsp;including&nbsp;all&nbsp;sections.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="DNSMessage-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from DNSMessage</span></span></dt></dl>
+
+<dl><dt><a name="DNSMessage-__init__"><strong>__init__</strong></a>(
+    self,
+    header: DNSHeader = &lt;factory&gt;,
+    questions: List[DNSQuestion] = &lt;factory&gt;,
+    answers: List[DNSResourceRecord] = &lt;factory&gt;,
+    authorities: List[DNSResourceRecord] = &lt;factory&gt;,
+    additionals: List[DNSResourceRecord] = &lt;factory&gt;
+) -&gt; None<span class="grey"><span class="heading-text"> from DNSMessage</span></span></dt></dl>
+
+<dl><dt><a name="DNSMessage-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="DNSMessage-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from DNSMessage</span></span></dt></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>is_query</strong></dt>
+<dd><span class="code">Return&nbsp;True&nbsp;if&nbsp;this&nbsp;message&nbsp;is&nbsp;a&nbsp;DNS&nbsp;query.</span></dd>
+</dl>
+<dl><dt><strong>is_response</strong></dt>
+<dd><span class="code">Return&nbsp;True&nbsp;if&nbsp;this&nbsp;message&nbsp;is&nbsp;a&nbsp;DNS&nbsp;response.</span></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'additionals': Field(name='additionals',type=typing.List[dataty...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'answers': Field(name='answers',type=typing.List[datatypes....xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'authorities': Field(name='authorities',type=typing.List[dataty...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'header': Field(name='header',type=&lt;class 'datatypes.DNSHe...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'questions': Field(name='questions',type=typing.List[datatype...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('header', 'questions', 'answers', 'authorities', 'additionals')</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DNSQuestion">class <strong>DNSQuestion</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#DNSQuestion">DNSQuestion</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;str,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qtype:&nbsp;int&nbsp;=&nbsp;&amp;lt;<a href="#RecordType">RecordType</a>.A:&nbsp;1&amp;gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qclass:&nbsp;int&nbsp;=&nbsp;&amp;lt;<a href="#RecordClass">RecordClass</a>.IN:&nbsp;1&amp;gt;<br>
+)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;DNS&nbsp;question&nbsp;section&nbsp;entry.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="DNSQuestion-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from DNSQuestion</span></span></dt></dl>
+
+<dl><dt><a name="DNSQuestion-__init__"><strong>__init__</strong></a>(
+    self,
+    name: str,
+    qtype: int = &lt;RecordType.A: 1&gt;,
+    qclass: int = &lt;RecordClass.IN: 1&gt;
+) -&gt; None<span class="grey"><span class="heading-text"> from DNSQuestion</span></span></dt></dl>
+
+<dl><dt><a name="DNSQuestion-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="DNSQuestion-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from DNSQuestion</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'name': Field(name='name',type=&lt;class 'str'&gt;,default=&lt;da...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'qclass': Field(name='qclass',type=&lt;class 'int'&gt;,default=&lt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'qtype': Field(name='qtype',type=&lt;class 'int'&gt;,default=&lt;R...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('name', 'qtype', 'qclass')</dl>
+
+<dl><dt><strong>qclass</strong> = &lt;RecordClass.IN: 1&gt;</dl>
+
+<dl><dt><strong>qtype</strong> = &lt;RecordType.A: 1&gt;</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DNSResourceRecord">class <strong>DNSResourceRecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#DNSResourceRecord">DNSResourceRecord</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;str,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rtype:&nbsp;int,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rclass:&nbsp;int&nbsp;=&nbsp;&amp;lt;<a href="#RecordClass">RecordClass</a>.IN:&nbsp;1&amp;gt;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ttl:&nbsp;int&nbsp;=&nbsp;300,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rdata:&nbsp;Optional[RData]&nbsp;=&nbsp;None<br>
+)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;generic&nbsp;DNS&nbsp;resource&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="DNSResourceRecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from DNSResourceRecord</span></span></dt></dl>
+
+<dl><dt><a name="DNSResourceRecord-__init__"><strong>__init__</strong></a>(
+    self,
+    name: str,
+    rtype: int,
+    rclass: int = &lt;RecordClass.IN: 1&gt;,
+    ttl: int = 300,
+    rdata: Optional[RData] = None
+) -&gt; None<span class="grey"><span class="heading-text"> from DNSResourceRecord</span></span></dt></dl>
+
+<dl><dt><a name="DNSResourceRecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="DNSResourceRecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from DNSResourceRecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'name': Field(name='name',type=&lt;class 'str'&gt;,default=&lt;da...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'rclass': Field(name='rclass',type=&lt;class 'int'&gt;,default=&lt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'rdata': Field(name='rdata',type=datatypes.ARecord | data...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'rtype': Field(name='rtype',type=&lt;class 'int'&gt;,default=&lt;d...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'ttl': Field(name='ttl',type=&lt;class 'int'&gt;,default=300,...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('name', 'rtype', 'rclass', 'ttl', 'rdata')</dl>
+
+<dl><dt><strong>rclass</strong> = &lt;RecordClass.IN: 1&gt;</dl>
+
+<dl><dt><strong>rdata</strong> = None</dl>
+
+<dl><dt><strong>ttl</strong> = 300</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="MXRecord">class <strong>MXRecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#MXRecord">MXRecord</a>(preference:&nbsp;int,&nbsp;exchange:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;mail&nbsp;exchange&nbsp;record&nbsp;with&nbsp;priority.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="MXRecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from MXRecord</span></span></dt></dl>
+
+<dl><dt><a name="MXRecord-__init__"><strong>__init__</strong></a>(self, preference: int, exchange: str) -&gt; None<span class="grey"><span class="heading-text"> from MXRecord</span></span></dt></dl>
+
+<dl><dt><a name="MXRecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="MXRecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from MXRecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'exchange': Field(name='exchange',type=&lt;class 'str'&gt;,default...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'preference': Field(name='preference',type=&lt;class 'int'&gt;,defau...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('preference', 'exchange')</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="NSRecord">class <strong>NSRecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#NSRecord">NSRecord</a>(nameserver:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;an&nbsp;authoritative&nbsp;name&nbsp;server&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="NSRecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from NSRecord</span></span></dt></dl>
+
+<dl><dt><a name="NSRecord-__init__"><strong>__init__</strong></a>(self, nameserver: str) -&gt; None<span class="grey"><span class="heading-text"> from NSRecord</span></span></dt></dl>
+
+<dl><dt><a name="NSRecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="NSRecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from NSRecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'nameserver': Field(name='nameserver',type=&lt;class 'str'&gt;,defau...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('nameserver',)</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Opcode">class <strong>Opcode</strong></a>(<a href="enum.html#IntEnum">enum.IntEnum</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Opcode">Opcode</a>(*values)<br>
+&nbsp;<br>
+Enumeration&nbsp;of&nbsp;DNS&nbsp;operation&nbsp;codes.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="datatypes.html#Opcode">Opcode</a></dd>
+<dd><a href="enum.html#IntEnum">enum.IntEnum</a></dd>
+<dd><a href="builtins.html#int">builtins.int</a></dd>
+<dd><a href="enum.html#ReprEnum">enum.ReprEnum</a></dd>
+<dd><a href="enum.html#Enum">enum.Enum</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Opcode-__format__"><strong>__format__</strong></a>(self, format_spec, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Convert&nbsp;to&nbsp;a&nbsp;string&nbsp;according&nbsp;to&nbsp;format_spec.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__new__"><strong>__new__</strong></a>(cls, value)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>IQUERY</strong> = &lt;Opcode.IQUERY: 1&gt;</dl>
+
+<dl><dt><strong>QUERY</strong> = &lt;Opcode.QUERY: 0&gt;</dl>
+
+<dl><dt><strong>STATUS</strong> = &lt;Opcode.STATUS: 2&gt;</dl>
+
+<hr>
+Methods inherited from <a href="enum.html#IntEnum">enum.IntEnum</a>:<br>
+<dl><dt><a name="Opcode-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="Opcode-__str__"><strong>__str__</strong></a> = __repr__(self, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="Opcode-__abs__"><strong>__abs__</strong></a>(self, /)</dt><dd><span class="code">abs(self)</span></dd></dl>
+
+<dl><dt><a name="Opcode-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__and__"><strong>__and__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&amp;value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__bool__"><strong>__bool__</strong></a>(self, /)</dt><dd><span class="code">True&nbsp;if&nbsp;self&nbsp;else&nbsp;False</span></dd></dl>
+
+<dl><dt><a name="Opcode-__ceil__"><strong>__ceil__</strong></a>(self, /)</dt><dd><span class="code">Ceiling&nbsp;of&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__divmod__"><strong>__divmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(self,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="Opcode-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__float__"><strong>__float__</strong></a>(self, /)</dt><dd><span class="code">float(self)</span></dd></dl>
+
+<dl><dt><a name="Opcode-__floor__"><strong>__floor__</strong></a>(self, /)</dt><dd><span class="code">Flooring&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__floordiv__"><strong>__floordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self//value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__getnewargs__"><strong>__getnewargs__</strong></a>(self, /)</dt></dl>
+
+<dl><dt><a name="Opcode-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="Opcode-__index__"><strong>__index__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;self&nbsp;converted&nbsp;to&nbsp;an&nbsp;integer,&nbsp;if&nbsp;self&nbsp;is&nbsp;suitable&nbsp;for&nbsp;use&nbsp;as&nbsp;an&nbsp;index&nbsp;into&nbsp;a&nbsp;list.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__int__"><strong>__int__</strong></a>(self, /)</dt><dd><span class="code">int(self)</span></dd></dl>
+
+<dl><dt><a name="Opcode-__invert__"><strong>__invert__</strong></a>(self, /)</dt><dd><span class="code">~self</span></dd></dl>
+
+<dl><dt><a name="Opcode-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__lshift__"><strong>__lshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;&lt;value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__mod__"><strong>__mod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self%value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__neg__"><strong>__neg__</strong></a>(self, /)</dt><dd><span class="code">-self</span></dd></dl>
+
+<dl><dt><a name="Opcode-__or__"><strong>__or__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self|value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__pos__"><strong>__pos__</strong></a>(self, /)</dt><dd><span class="code">+self</span></dd></dl>
+
+<dl><dt><a name="Opcode-__pow__"><strong>__pow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(self,&nbsp;value,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="Opcode-__radd__"><strong>__radd__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value+self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rand__"><strong>__rand__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&amp;self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rdivmod__"><strong>__rdivmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(value,&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rfloordiv__"><strong>__rfloordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value//self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rlshift__"><strong>__rlshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&lt;&lt;self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rmod__"><strong>__rmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value%self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__ror__"><strong>__ror__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value|self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__round__"><strong>__round__</strong></a>(self, ndigits=None, /)</dt><dd><span class="code">Rounding&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.<br>
+&nbsp;<br>
+Rounding&nbsp;with&nbsp;an&nbsp;ndigits&nbsp;argument&nbsp;also&nbsp;returns&nbsp;an&nbsp;integer.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rpow__"><strong>__rpow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(value,&nbsp;self,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rrshift__"><strong>__rrshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&gt;&gt;self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rshift__"><strong>__rshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;&gt;value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rsub__"><strong>__rsub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value-self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rtruediv__"><strong>__rtruediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value/self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__rxor__"><strong>__rxor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value^self.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__sizeof__"><strong>__sizeof__</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;size&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__sub__"><strong>__sub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self-value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__truediv__"><strong>__truediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self/value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__trunc__"><strong>__trunc__</strong></a>(self, /)</dt><dd><span class="code">Truncating&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__xor__"><strong>__xor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self^value.</span></dd></dl>
+
+<dl><dt><a name="Opcode-as_integer_ratio"><strong>as_integer_ratio</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;pair&nbsp;of&nbsp;integers,&nbsp;whose&nbsp;ratio&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;original&nbsp;int.<br>
+&nbsp;<br>
+The&nbsp;ratio&nbsp;is&nbsp;in&nbsp;lowest&nbsp;terms&nbsp;and&nbsp;has&nbsp;a&nbsp;positive&nbsp;denominator.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;(10).<a href="#Opcode-as_integer_ratio">as_integer_ratio</a>()<br>
+(10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(-10).<a href="#Opcode-as_integer_ratio">as_integer_ratio</a>()<br>
+(-10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(0).<a href="#Opcode-as_integer_ratio">as_integer_ratio</a>()<br>
+(0,&nbsp;1)</span></dd></dl>
+
+<dl><dt><a name="Opcode-bit_count"><strong>bit_count</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;ones&nbsp;in&nbsp;the&nbsp;binary&nbsp;representation&nbsp;of&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;self.<br>
+&nbsp;<br>
+Also&nbsp;known&nbsp;as&nbsp;the&nbsp;population&nbsp;count.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(13)<br>
+'0b1101'<br>
+&gt;&gt;&gt;&nbsp;(13).<a href="#Opcode-bit_count">bit_count</a>()<br>
+3</span></dd></dl>
+
+<dl><dt><a name="Opcode-bit_length"><strong>bit_length</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;bits&nbsp;necessary&nbsp;to&nbsp;represent&nbsp;self&nbsp;in&nbsp;binary.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(37)<br>
+'0b100101'<br>
+&gt;&gt;&gt;&nbsp;(37).<a href="#Opcode-bit_length">bit_length</a>()<br>
+6</span></dd></dl>
+
+<dl><dt><a name="Opcode-conjugate"><strong>conjugate</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;self,&nbsp;the&nbsp;complex&nbsp;conjugate&nbsp;of&nbsp;any&nbsp;int.</span></dd></dl>
+
+<dl><dt><a name="Opcode-is_integer"><strong>is_integer</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;True.&nbsp;Exists&nbsp;for&nbsp;duck&nbsp;type&nbsp;compatibility&nbsp;with&nbsp;float.is_integer.</span></dd></dl>
+
+<dl><dt><a name="Opcode-to_bytes"><strong>to_bytes</strong></a>(self, /, length=1, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;an&nbsp;array&nbsp;of&nbsp;bytes&nbsp;representing&nbsp;an&nbsp;integer.<br>
+&nbsp;<br>
+length<br>
+&nbsp;&nbsp;Length&nbsp;of&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;use.&nbsp;&nbsp;An&nbsp;OverflowError&nbsp;is&nbsp;raised&nbsp;if&nbsp;the<br>
+&nbsp;&nbsp;integer&nbsp;is&nbsp;not&nbsp;representable&nbsp;with&nbsp;the&nbsp;given&nbsp;number&nbsp;of&nbsp;bytes.&nbsp;&nbsp;Default<br>
+&nbsp;&nbsp;is&nbsp;length&nbsp;1.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Determines&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.<br>
+&nbsp;&nbsp;If&nbsp;signed&nbsp;is&nbsp;False&nbsp;and&nbsp;a&nbsp;negative&nbsp;integer&nbsp;is&nbsp;given,&nbsp;an&nbsp;OverflowError<br>
+&nbsp;&nbsp;is&nbsp;raised.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="Opcode-from_bytes"><strong>from_bytes</strong></a>(bytes, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;integer&nbsp;represented&nbsp;by&nbsp;the&nbsp;given&nbsp;array&nbsp;of&nbsp;bytes.<br>
+&nbsp;<br>
+bytes<br>
+&nbsp;&nbsp;Holds&nbsp;the&nbsp;array&nbsp;of&nbsp;bytes&nbsp;to&nbsp;convert.&nbsp;&nbsp;The&nbsp;argument&nbsp;must&nbsp;either<br>
+&nbsp;&nbsp;support&nbsp;the&nbsp;buffer&nbsp;protocol&nbsp;or&nbsp;be&nbsp;an&nbsp;iterable&nbsp;<a href="builtins.html#object">object</a>&nbsp;producing&nbsp;bytes.<br>
+&nbsp;&nbsp;Bytes&nbsp;and&nbsp;bytearray&nbsp;are&nbsp;examples&nbsp;of&nbsp;built-in&nbsp;objects&nbsp;that&nbsp;support&nbsp;the<br>
+&nbsp;&nbsp;buffer&nbsp;protocol.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Indicates&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><strong>denominator</strong></dt>
+<dd><span class="code">the&nbsp;denominator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>imag</strong></dt>
+<dd><span class="code">the&nbsp;imaginary&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<dl><dt><strong>numerator</strong></dt>
+<dd><span class="code">the&nbsp;numerator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>real</strong></dt>
+<dd><span class="code">the&nbsp;real&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><a name="Opcode-__dir__"><strong>__dir__</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;public&nbsp;methods&nbsp;and&nbsp;other&nbsp;interesting&nbsp;attributes.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__reduce_ex__"><strong>__reduce_ex__</strong></a>(self, proto)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><strong>name</strong></dt>
+<dd><span class="code">The&nbsp;name&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<dl><dt><strong>value</strong></dt>
+<dd><span class="code">The&nbsp;value&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><a name="Opcode-__contains__"><strong>__contains__</strong></a>(value)</dt><dd><span class="code">Return&nbsp;True&nbsp;if&nbsp;`value`&nbsp;is&nbsp;in&nbsp;`cls`.<br>
+&nbsp;<br>
+`value`&nbsp;is&nbsp;in&nbsp;`cls`&nbsp;if:<br>
+1)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;member&nbsp;of&nbsp;`cls`,&nbsp;or<br>
+2)&nbsp;`value`&nbsp;is&nbsp;the&nbsp;value&nbsp;of&nbsp;one&nbsp;of&nbsp;the&nbsp;`cls`'s&nbsp;members.<br>
+3)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;pseudo-member&nbsp;(flags)</span></dd></dl>
+
+<dl><dt><a name="Opcode-__getitem__"><strong>__getitem__</strong></a>(name)</dt><dd><span class="code">Return&nbsp;the&nbsp;member&nbsp;matching&nbsp;`name`.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__iter__"><strong>__iter__</strong></a>()</dt><dd><span class="code">Return&nbsp;members&nbsp;in&nbsp;definition&nbsp;order.</span></dd></dl>
+
+<dl><dt><a name="Opcode-__len__"><strong>__len__</strong></a>()</dt><dd><span class="code">Return&nbsp;the&nbsp;number&nbsp;of&nbsp;members&nbsp;(no&nbsp;aliases)</span></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><strong>__members__</strong></dt>
+<dd><span class="code">Returns&nbsp;a&nbsp;mapping&nbsp;of&nbsp;member&nbsp;name-&gt;value.<br>
+&nbsp;<br>
+This&nbsp;mapping&nbsp;lists&nbsp;all&nbsp;enum&nbsp;members,&nbsp;including&nbsp;aliases.&nbsp;Note&nbsp;that&nbsp;this<br>
+is&nbsp;a&nbsp;read-only&nbsp;view&nbsp;of&nbsp;the&nbsp;internal&nbsp;mapping.</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="PTRRecord">class <strong>PTRRecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#PTRRecord">PTRRecord</a>(ptrdname:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;reverse&nbsp;DNS&nbsp;pointer&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="PTRRecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from PTRRecord</span></span></dt></dl>
+
+<dl><dt><a name="PTRRecord-__init__"><strong>__init__</strong></a>(self, ptrdname: str) -&gt; None<span class="grey"><span class="heading-text"> from PTRRecord</span></span></dt></dl>
+
+<dl><dt><a name="PTRRecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="PTRRecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from PTRRecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'ptrdname': Field(name='ptrdname',type=&lt;class 'str'&gt;,default...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('ptrdname',)</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="RecordClass">class <strong>RecordClass</strong></a>(<a href="enum.html#IntEnum">enum.IntEnum</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#RecordClass">RecordClass</a>(*values)<br>
+&nbsp;<br>
+Enumeration&nbsp;of&nbsp;DNS&nbsp;record&nbsp;classes.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="datatypes.html#RecordClass">RecordClass</a></dd>
+<dd><a href="enum.html#IntEnum">enum.IntEnum</a></dd>
+<dd><a href="builtins.html#int">builtins.int</a></dd>
+<dd><a href="enum.html#ReprEnum">enum.ReprEnum</a></dd>
+<dd><a href="enum.html#Enum">enum.Enum</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RecordClass-__format__"><strong>__format__</strong></a>(self, format_spec, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Convert&nbsp;to&nbsp;a&nbsp;string&nbsp;according&nbsp;to&nbsp;format_spec.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__new__"><strong>__new__</strong></a>(cls, value)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>ANY</strong> = &lt;RecordClass.ANY: 255&gt;</dl>
+
+<dl><dt><strong>IN</strong> = &lt;RecordClass.IN: 1&gt;</dl>
+
+<hr>
+Methods inherited from <a href="enum.html#IntEnum">enum.IntEnum</a>:<br>
+<dl><dt><a name="RecordClass-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__str__"><strong>__str__</strong></a> = __repr__(self, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="RecordClass-__abs__"><strong>__abs__</strong></a>(self, /)</dt><dd><span class="code">abs(self)</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__and__"><strong>__and__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&amp;value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__bool__"><strong>__bool__</strong></a>(self, /)</dt><dd><span class="code">True&nbsp;if&nbsp;self&nbsp;else&nbsp;False</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__ceil__"><strong>__ceil__</strong></a>(self, /)</dt><dd><span class="code">Ceiling&nbsp;of&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__divmod__"><strong>__divmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(self,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__float__"><strong>__float__</strong></a>(self, /)</dt><dd><span class="code">float(self)</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__floor__"><strong>__floor__</strong></a>(self, /)</dt><dd><span class="code">Flooring&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__floordiv__"><strong>__floordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self//value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__getnewargs__"><strong>__getnewargs__</strong></a>(self, /)</dt></dl>
+
+<dl><dt><a name="RecordClass-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__index__"><strong>__index__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;self&nbsp;converted&nbsp;to&nbsp;an&nbsp;integer,&nbsp;if&nbsp;self&nbsp;is&nbsp;suitable&nbsp;for&nbsp;use&nbsp;as&nbsp;an&nbsp;index&nbsp;into&nbsp;a&nbsp;list.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__int__"><strong>__int__</strong></a>(self, /)</dt><dd><span class="code">int(self)</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__invert__"><strong>__invert__</strong></a>(self, /)</dt><dd><span class="code">~self</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__lshift__"><strong>__lshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;&lt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__mod__"><strong>__mod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self%value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__neg__"><strong>__neg__</strong></a>(self, /)</dt><dd><span class="code">-self</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__or__"><strong>__or__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self|value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__pos__"><strong>__pos__</strong></a>(self, /)</dt><dd><span class="code">+self</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__pow__"><strong>__pow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(self,&nbsp;value,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__radd__"><strong>__radd__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value+self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rand__"><strong>__rand__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&amp;self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rdivmod__"><strong>__rdivmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(value,&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rfloordiv__"><strong>__rfloordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value//self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rlshift__"><strong>__rlshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&lt;&lt;self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rmod__"><strong>__rmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value%self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__ror__"><strong>__ror__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value|self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__round__"><strong>__round__</strong></a>(self, ndigits=None, /)</dt><dd><span class="code">Rounding&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.<br>
+&nbsp;<br>
+Rounding&nbsp;with&nbsp;an&nbsp;ndigits&nbsp;argument&nbsp;also&nbsp;returns&nbsp;an&nbsp;integer.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rpow__"><strong>__rpow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(value,&nbsp;self,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rrshift__"><strong>__rrshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&gt;&gt;self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rshift__"><strong>__rshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;&gt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rsub__"><strong>__rsub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value-self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rtruediv__"><strong>__rtruediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value/self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__rxor__"><strong>__rxor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value^self.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__sizeof__"><strong>__sizeof__</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;size&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__sub__"><strong>__sub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self-value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__truediv__"><strong>__truediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self/value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__trunc__"><strong>__trunc__</strong></a>(self, /)</dt><dd><span class="code">Truncating&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__xor__"><strong>__xor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self^value.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-as_integer_ratio"><strong>as_integer_ratio</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;pair&nbsp;of&nbsp;integers,&nbsp;whose&nbsp;ratio&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;original&nbsp;int.<br>
+&nbsp;<br>
+The&nbsp;ratio&nbsp;is&nbsp;in&nbsp;lowest&nbsp;terms&nbsp;and&nbsp;has&nbsp;a&nbsp;positive&nbsp;denominator.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;(10).<a href="#RecordClass-as_integer_ratio">as_integer_ratio</a>()<br>
+(10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(-10).<a href="#RecordClass-as_integer_ratio">as_integer_ratio</a>()<br>
+(-10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(0).<a href="#RecordClass-as_integer_ratio">as_integer_ratio</a>()<br>
+(0,&nbsp;1)</span></dd></dl>
+
+<dl><dt><a name="RecordClass-bit_count"><strong>bit_count</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;ones&nbsp;in&nbsp;the&nbsp;binary&nbsp;representation&nbsp;of&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;self.<br>
+&nbsp;<br>
+Also&nbsp;known&nbsp;as&nbsp;the&nbsp;population&nbsp;count.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(13)<br>
+'0b1101'<br>
+&gt;&gt;&gt;&nbsp;(13).<a href="#RecordClass-bit_count">bit_count</a>()<br>
+3</span></dd></dl>
+
+<dl><dt><a name="RecordClass-bit_length"><strong>bit_length</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;bits&nbsp;necessary&nbsp;to&nbsp;represent&nbsp;self&nbsp;in&nbsp;binary.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(37)<br>
+'0b100101'<br>
+&gt;&gt;&gt;&nbsp;(37).<a href="#RecordClass-bit_length">bit_length</a>()<br>
+6</span></dd></dl>
+
+<dl><dt><a name="RecordClass-conjugate"><strong>conjugate</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;self,&nbsp;the&nbsp;complex&nbsp;conjugate&nbsp;of&nbsp;any&nbsp;int.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-is_integer"><strong>is_integer</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;True.&nbsp;Exists&nbsp;for&nbsp;duck&nbsp;type&nbsp;compatibility&nbsp;with&nbsp;float.is_integer.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-to_bytes"><strong>to_bytes</strong></a>(self, /, length=1, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;an&nbsp;array&nbsp;of&nbsp;bytes&nbsp;representing&nbsp;an&nbsp;integer.<br>
+&nbsp;<br>
+length<br>
+&nbsp;&nbsp;Length&nbsp;of&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;use.&nbsp;&nbsp;An&nbsp;OverflowError&nbsp;is&nbsp;raised&nbsp;if&nbsp;the<br>
+&nbsp;&nbsp;integer&nbsp;is&nbsp;not&nbsp;representable&nbsp;with&nbsp;the&nbsp;given&nbsp;number&nbsp;of&nbsp;bytes.&nbsp;&nbsp;Default<br>
+&nbsp;&nbsp;is&nbsp;length&nbsp;1.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Determines&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.<br>
+&nbsp;&nbsp;If&nbsp;signed&nbsp;is&nbsp;False&nbsp;and&nbsp;a&nbsp;negative&nbsp;integer&nbsp;is&nbsp;given,&nbsp;an&nbsp;OverflowError<br>
+&nbsp;&nbsp;is&nbsp;raised.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="RecordClass-from_bytes"><strong>from_bytes</strong></a>(bytes, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;integer&nbsp;represented&nbsp;by&nbsp;the&nbsp;given&nbsp;array&nbsp;of&nbsp;bytes.<br>
+&nbsp;<br>
+bytes<br>
+&nbsp;&nbsp;Holds&nbsp;the&nbsp;array&nbsp;of&nbsp;bytes&nbsp;to&nbsp;convert.&nbsp;&nbsp;The&nbsp;argument&nbsp;must&nbsp;either<br>
+&nbsp;&nbsp;support&nbsp;the&nbsp;buffer&nbsp;protocol&nbsp;or&nbsp;be&nbsp;an&nbsp;iterable&nbsp;<a href="builtins.html#object">object</a>&nbsp;producing&nbsp;bytes.<br>
+&nbsp;&nbsp;Bytes&nbsp;and&nbsp;bytearray&nbsp;are&nbsp;examples&nbsp;of&nbsp;built-in&nbsp;objects&nbsp;that&nbsp;support&nbsp;the<br>
+&nbsp;&nbsp;buffer&nbsp;protocol.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Indicates&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><strong>denominator</strong></dt>
+<dd><span class="code">the&nbsp;denominator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>imag</strong></dt>
+<dd><span class="code">the&nbsp;imaginary&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<dl><dt><strong>numerator</strong></dt>
+<dd><span class="code">the&nbsp;numerator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>real</strong></dt>
+<dd><span class="code">the&nbsp;real&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><a name="RecordClass-__dir__"><strong>__dir__</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;public&nbsp;methods&nbsp;and&nbsp;other&nbsp;interesting&nbsp;attributes.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__reduce_ex__"><strong>__reduce_ex__</strong></a>(self, proto)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><strong>name</strong></dt>
+<dd><span class="code">The&nbsp;name&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<dl><dt><strong>value</strong></dt>
+<dd><span class="code">The&nbsp;value&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><a name="RecordClass-__contains__"><strong>__contains__</strong></a>(value)</dt><dd><span class="code">Return&nbsp;True&nbsp;if&nbsp;`value`&nbsp;is&nbsp;in&nbsp;`cls`.<br>
+&nbsp;<br>
+`value`&nbsp;is&nbsp;in&nbsp;`cls`&nbsp;if:<br>
+1)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;member&nbsp;of&nbsp;`cls`,&nbsp;or<br>
+2)&nbsp;`value`&nbsp;is&nbsp;the&nbsp;value&nbsp;of&nbsp;one&nbsp;of&nbsp;the&nbsp;`cls`'s&nbsp;members.<br>
+3)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;pseudo-member&nbsp;(flags)</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__getitem__"><strong>__getitem__</strong></a>(name)</dt><dd><span class="code">Return&nbsp;the&nbsp;member&nbsp;matching&nbsp;`name`.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__iter__"><strong>__iter__</strong></a>()</dt><dd><span class="code">Return&nbsp;members&nbsp;in&nbsp;definition&nbsp;order.</span></dd></dl>
+
+<dl><dt><a name="RecordClass-__len__"><strong>__len__</strong></a>()</dt><dd><span class="code">Return&nbsp;the&nbsp;number&nbsp;of&nbsp;members&nbsp;(no&nbsp;aliases)</span></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><strong>__members__</strong></dt>
+<dd><span class="code">Returns&nbsp;a&nbsp;mapping&nbsp;of&nbsp;member&nbsp;name-&gt;value.<br>
+&nbsp;<br>
+This&nbsp;mapping&nbsp;lists&nbsp;all&nbsp;enum&nbsp;members,&nbsp;including&nbsp;aliases.&nbsp;Note&nbsp;that&nbsp;this<br>
+is&nbsp;a&nbsp;read-only&nbsp;view&nbsp;of&nbsp;the&nbsp;internal&nbsp;mapping.</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="RecordType">class <strong>RecordType</strong></a>(<a href="enum.html#IntEnum">enum.IntEnum</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#RecordType">RecordType</a>(*values)<br>
+&nbsp;<br>
+Enumeration&nbsp;of&nbsp;DNS&nbsp;record&nbsp;types&nbsp;as&nbsp;defined&nbsp;in&nbsp;multiple&nbsp;RFCs.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="datatypes.html#RecordType">RecordType</a></dd>
+<dd><a href="enum.html#IntEnum">enum.IntEnum</a></dd>
+<dd><a href="builtins.html#int">builtins.int</a></dd>
+<dd><a href="enum.html#ReprEnum">enum.ReprEnum</a></dd>
+<dd><a href="enum.html#Enum">enum.Enum</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RecordType-__format__"><strong>__format__</strong></a>(self, format_spec, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Convert&nbsp;to&nbsp;a&nbsp;string&nbsp;according&nbsp;to&nbsp;format_spec.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__new__"><strong>__new__</strong></a>(cls, value)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>A</strong> = &lt;RecordType.A: 1&gt;</dl>
+
+<dl><dt><strong>AAAA</strong> = &lt;RecordType.AAAA: 28&gt;</dl>
+
+<dl><dt><strong>ANY</strong> = &lt;RecordType.ANY: 255&gt;</dl>
+
+<dl><dt><strong>CAA</strong> = &lt;RecordType.CAA: 257&gt;</dl>
+
+<dl><dt><strong>CNAME</strong> = &lt;RecordType.CNAME: 5&gt;</dl>
+
+<dl><dt><strong>MX</strong> = &lt;RecordType.MX: 15&gt;</dl>
+
+<dl><dt><strong>NS</strong> = &lt;RecordType.NS: 2&gt;</dl>
+
+<dl><dt><strong>PTR</strong> = &lt;RecordType.PTR: 12&gt;</dl>
+
+<dl><dt><strong>SOA</strong> = &lt;RecordType.SOA: 6&gt;</dl>
+
+<dl><dt><strong>SRV</strong> = &lt;RecordType.SRV: 33&gt;</dl>
+
+<dl><dt><strong>TXT</strong> = &lt;RecordType.TXT: 16&gt;</dl>
+
+<hr>
+Methods inherited from <a href="enum.html#IntEnum">enum.IntEnum</a>:<br>
+<dl><dt><a name="RecordType-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="RecordType-__str__"><strong>__str__</strong></a> = __repr__(self, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="RecordType-__abs__"><strong>__abs__</strong></a>(self, /)</dt><dd><span class="code">abs(self)</span></dd></dl>
+
+<dl><dt><a name="RecordType-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__and__"><strong>__and__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&amp;value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__bool__"><strong>__bool__</strong></a>(self, /)</dt><dd><span class="code">True&nbsp;if&nbsp;self&nbsp;else&nbsp;False</span></dd></dl>
+
+<dl><dt><a name="RecordType-__ceil__"><strong>__ceil__</strong></a>(self, /)</dt><dd><span class="code">Ceiling&nbsp;of&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__divmod__"><strong>__divmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(self,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="RecordType-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__float__"><strong>__float__</strong></a>(self, /)</dt><dd><span class="code">float(self)</span></dd></dl>
+
+<dl><dt><a name="RecordType-__floor__"><strong>__floor__</strong></a>(self, /)</dt><dd><span class="code">Flooring&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__floordiv__"><strong>__floordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self//value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__getnewargs__"><strong>__getnewargs__</strong></a>(self, /)</dt></dl>
+
+<dl><dt><a name="RecordType-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="RecordType-__index__"><strong>__index__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;self&nbsp;converted&nbsp;to&nbsp;an&nbsp;integer,&nbsp;if&nbsp;self&nbsp;is&nbsp;suitable&nbsp;for&nbsp;use&nbsp;as&nbsp;an&nbsp;index&nbsp;into&nbsp;a&nbsp;list.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__int__"><strong>__int__</strong></a>(self, /)</dt><dd><span class="code">int(self)</span></dd></dl>
+
+<dl><dt><a name="RecordType-__invert__"><strong>__invert__</strong></a>(self, /)</dt><dd><span class="code">~self</span></dd></dl>
+
+<dl><dt><a name="RecordType-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__lshift__"><strong>__lshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;&lt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__mod__"><strong>__mod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self%value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__neg__"><strong>__neg__</strong></a>(self, /)</dt><dd><span class="code">-self</span></dd></dl>
+
+<dl><dt><a name="RecordType-__or__"><strong>__or__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self|value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__pos__"><strong>__pos__</strong></a>(self, /)</dt><dd><span class="code">+self</span></dd></dl>
+
+<dl><dt><a name="RecordType-__pow__"><strong>__pow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(self,&nbsp;value,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="RecordType-__radd__"><strong>__radd__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value+self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rand__"><strong>__rand__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&amp;self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rdivmod__"><strong>__rdivmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(value,&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rfloordiv__"><strong>__rfloordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value//self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rlshift__"><strong>__rlshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&lt;&lt;self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rmod__"><strong>__rmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value%self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__ror__"><strong>__ror__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value|self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__round__"><strong>__round__</strong></a>(self, ndigits=None, /)</dt><dd><span class="code">Rounding&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.<br>
+&nbsp;<br>
+Rounding&nbsp;with&nbsp;an&nbsp;ndigits&nbsp;argument&nbsp;also&nbsp;returns&nbsp;an&nbsp;integer.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rpow__"><strong>__rpow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(value,&nbsp;self,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rrshift__"><strong>__rrshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&gt;&gt;self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rshift__"><strong>__rshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;&gt;value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rsub__"><strong>__rsub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value-self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rtruediv__"><strong>__rtruediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value/self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__rxor__"><strong>__rxor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value^self.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__sizeof__"><strong>__sizeof__</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;size&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__sub__"><strong>__sub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self-value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__truediv__"><strong>__truediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self/value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__trunc__"><strong>__trunc__</strong></a>(self, /)</dt><dd><span class="code">Truncating&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__xor__"><strong>__xor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self^value.</span></dd></dl>
+
+<dl><dt><a name="RecordType-as_integer_ratio"><strong>as_integer_ratio</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;pair&nbsp;of&nbsp;integers,&nbsp;whose&nbsp;ratio&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;original&nbsp;int.<br>
+&nbsp;<br>
+The&nbsp;ratio&nbsp;is&nbsp;in&nbsp;lowest&nbsp;terms&nbsp;and&nbsp;has&nbsp;a&nbsp;positive&nbsp;denominator.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;(10).<a href="#RecordType-as_integer_ratio">as_integer_ratio</a>()<br>
+(10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(-10).<a href="#RecordType-as_integer_ratio">as_integer_ratio</a>()<br>
+(-10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(0).<a href="#RecordType-as_integer_ratio">as_integer_ratio</a>()<br>
+(0,&nbsp;1)</span></dd></dl>
+
+<dl><dt><a name="RecordType-bit_count"><strong>bit_count</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;ones&nbsp;in&nbsp;the&nbsp;binary&nbsp;representation&nbsp;of&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;self.<br>
+&nbsp;<br>
+Also&nbsp;known&nbsp;as&nbsp;the&nbsp;population&nbsp;count.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(13)<br>
+'0b1101'<br>
+&gt;&gt;&gt;&nbsp;(13).<a href="#RecordType-bit_count">bit_count</a>()<br>
+3</span></dd></dl>
+
+<dl><dt><a name="RecordType-bit_length"><strong>bit_length</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;bits&nbsp;necessary&nbsp;to&nbsp;represent&nbsp;self&nbsp;in&nbsp;binary.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(37)<br>
+'0b100101'<br>
+&gt;&gt;&gt;&nbsp;(37).<a href="#RecordType-bit_length">bit_length</a>()<br>
+6</span></dd></dl>
+
+<dl><dt><a name="RecordType-conjugate"><strong>conjugate</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;self,&nbsp;the&nbsp;complex&nbsp;conjugate&nbsp;of&nbsp;any&nbsp;int.</span></dd></dl>
+
+<dl><dt><a name="RecordType-is_integer"><strong>is_integer</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;True.&nbsp;Exists&nbsp;for&nbsp;duck&nbsp;type&nbsp;compatibility&nbsp;with&nbsp;float.is_integer.</span></dd></dl>
+
+<dl><dt><a name="RecordType-to_bytes"><strong>to_bytes</strong></a>(self, /, length=1, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;an&nbsp;array&nbsp;of&nbsp;bytes&nbsp;representing&nbsp;an&nbsp;integer.<br>
+&nbsp;<br>
+length<br>
+&nbsp;&nbsp;Length&nbsp;of&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;use.&nbsp;&nbsp;An&nbsp;OverflowError&nbsp;is&nbsp;raised&nbsp;if&nbsp;the<br>
+&nbsp;&nbsp;integer&nbsp;is&nbsp;not&nbsp;representable&nbsp;with&nbsp;the&nbsp;given&nbsp;number&nbsp;of&nbsp;bytes.&nbsp;&nbsp;Default<br>
+&nbsp;&nbsp;is&nbsp;length&nbsp;1.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Determines&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.<br>
+&nbsp;&nbsp;If&nbsp;signed&nbsp;is&nbsp;False&nbsp;and&nbsp;a&nbsp;negative&nbsp;integer&nbsp;is&nbsp;given,&nbsp;an&nbsp;OverflowError<br>
+&nbsp;&nbsp;is&nbsp;raised.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="RecordType-from_bytes"><strong>from_bytes</strong></a>(bytes, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;integer&nbsp;represented&nbsp;by&nbsp;the&nbsp;given&nbsp;array&nbsp;of&nbsp;bytes.<br>
+&nbsp;<br>
+bytes<br>
+&nbsp;&nbsp;Holds&nbsp;the&nbsp;array&nbsp;of&nbsp;bytes&nbsp;to&nbsp;convert.&nbsp;&nbsp;The&nbsp;argument&nbsp;must&nbsp;either<br>
+&nbsp;&nbsp;support&nbsp;the&nbsp;buffer&nbsp;protocol&nbsp;or&nbsp;be&nbsp;an&nbsp;iterable&nbsp;<a href="builtins.html#object">object</a>&nbsp;producing&nbsp;bytes.<br>
+&nbsp;&nbsp;Bytes&nbsp;and&nbsp;bytearray&nbsp;are&nbsp;examples&nbsp;of&nbsp;built-in&nbsp;objects&nbsp;that&nbsp;support&nbsp;the<br>
+&nbsp;&nbsp;buffer&nbsp;protocol.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Indicates&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><strong>denominator</strong></dt>
+<dd><span class="code">the&nbsp;denominator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>imag</strong></dt>
+<dd><span class="code">the&nbsp;imaginary&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<dl><dt><strong>numerator</strong></dt>
+<dd><span class="code">the&nbsp;numerator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>real</strong></dt>
+<dd><span class="code">the&nbsp;real&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><a name="RecordType-__dir__"><strong>__dir__</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;public&nbsp;methods&nbsp;and&nbsp;other&nbsp;interesting&nbsp;attributes.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__reduce_ex__"><strong>__reduce_ex__</strong></a>(self, proto)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><strong>name</strong></dt>
+<dd><span class="code">The&nbsp;name&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<dl><dt><strong>value</strong></dt>
+<dd><span class="code">The&nbsp;value&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><a name="RecordType-__contains__"><strong>__contains__</strong></a>(value)</dt><dd><span class="code">Return&nbsp;True&nbsp;if&nbsp;`value`&nbsp;is&nbsp;in&nbsp;`cls`.<br>
+&nbsp;<br>
+`value`&nbsp;is&nbsp;in&nbsp;`cls`&nbsp;if:<br>
+1)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;member&nbsp;of&nbsp;`cls`,&nbsp;or<br>
+2)&nbsp;`value`&nbsp;is&nbsp;the&nbsp;value&nbsp;of&nbsp;one&nbsp;of&nbsp;the&nbsp;`cls`'s&nbsp;members.<br>
+3)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;pseudo-member&nbsp;(flags)</span></dd></dl>
+
+<dl><dt><a name="RecordType-__getitem__"><strong>__getitem__</strong></a>(name)</dt><dd><span class="code">Return&nbsp;the&nbsp;member&nbsp;matching&nbsp;`name`.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__iter__"><strong>__iter__</strong></a>()</dt><dd><span class="code">Return&nbsp;members&nbsp;in&nbsp;definition&nbsp;order.</span></dd></dl>
+
+<dl><dt><a name="RecordType-__len__"><strong>__len__</strong></a>()</dt><dd><span class="code">Return&nbsp;the&nbsp;number&nbsp;of&nbsp;members&nbsp;(no&nbsp;aliases)</span></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><strong>__members__</strong></dt>
+<dd><span class="code">Returns&nbsp;a&nbsp;mapping&nbsp;of&nbsp;member&nbsp;name-&gt;value.<br>
+&nbsp;<br>
+This&nbsp;mapping&nbsp;lists&nbsp;all&nbsp;enum&nbsp;members,&nbsp;including&nbsp;aliases.&nbsp;Note&nbsp;that&nbsp;this<br>
+is&nbsp;a&nbsp;read-only&nbsp;view&nbsp;of&nbsp;the&nbsp;internal&nbsp;mapping.</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ResponseCode">class <strong>ResponseCode</strong></a>(<a href="enum.html#IntEnum">enum.IntEnum</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ResponseCode">ResponseCode</a>(*values)<br>
+&nbsp;<br>
+Enumeration&nbsp;of&nbsp;DNS&nbsp;response&nbsp;codes&nbsp;returned&nbsp;in&nbsp;replies.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="datatypes.html#ResponseCode">ResponseCode</a></dd>
+<dd><a href="enum.html#IntEnum">enum.IntEnum</a></dd>
+<dd><a href="builtins.html#int">builtins.int</a></dd>
+<dd><a href="enum.html#ReprEnum">enum.ReprEnum</a></dd>
+<dd><a href="enum.html#Enum">enum.Enum</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ResponseCode-__format__"><strong>__format__</strong></a>(self, format_spec, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Convert&nbsp;to&nbsp;a&nbsp;string&nbsp;according&nbsp;to&nbsp;format_spec.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__new__"><strong>__new__</strong></a>(cls, value)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>FORMERR</strong> = &lt;ResponseCode.FORMERR: 1&gt;</dl>
+
+<dl><dt><strong>NOERROR</strong> = &lt;ResponseCode.NOERROR: 0&gt;</dl>
+
+<dl><dt><strong>NOTIMP</strong> = &lt;ResponseCode.NOTIMP: 4&gt;</dl>
+
+<dl><dt><strong>NXDOMAIN</strong> = &lt;ResponseCode.NXDOMAIN: 3&gt;</dl>
+
+<dl><dt><strong>REFUSED</strong> = &lt;ResponseCode.REFUSED: 5&gt;</dl>
+
+<dl><dt><strong>SERVFAIL</strong> = &lt;ResponseCode.SERVFAIL: 2&gt;</dl>
+
+<hr>
+Methods inherited from <a href="enum.html#IntEnum">enum.IntEnum</a>:<br>
+<dl><dt><a name="ResponseCode-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from enum.Enum</span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__str__"><strong>__str__</strong></a> = __repr__(self, /)<span class="grey"><span class="heading-text"> from <a href="builtins.html#int">builtins.int</a></span></span></dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="ResponseCode-__abs__"><strong>__abs__</strong></a>(self, /)</dt><dd><span class="code">abs(self)</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__and__"><strong>__and__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&amp;value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__bool__"><strong>__bool__</strong></a>(self, /)</dt><dd><span class="code">True&nbsp;if&nbsp;self&nbsp;else&nbsp;False</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__ceil__"><strong>__ceil__</strong></a>(self, /)</dt><dd><span class="code">Ceiling&nbsp;of&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__divmod__"><strong>__divmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(self,&nbsp;value).</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__float__"><strong>__float__</strong></a>(self, /)</dt><dd><span class="code">float(self)</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__floor__"><strong>__floor__</strong></a>(self, /)</dt><dd><span class="code">Flooring&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__floordiv__"><strong>__floordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self//value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__getnewargs__"><strong>__getnewargs__</strong></a>(self, /)</dt></dl>
+
+<dl><dt><a name="ResponseCode-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__index__"><strong>__index__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;self&nbsp;converted&nbsp;to&nbsp;an&nbsp;integer,&nbsp;if&nbsp;self&nbsp;is&nbsp;suitable&nbsp;for&nbsp;use&nbsp;as&nbsp;an&nbsp;index&nbsp;into&nbsp;a&nbsp;list.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__int__"><strong>__int__</strong></a>(self, /)</dt><dd><span class="code">int(self)</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__invert__"><strong>__invert__</strong></a>(self, /)</dt><dd><span class="code">~self</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__lshift__"><strong>__lshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;&lt;value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__mod__"><strong>__mod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self%value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__neg__"><strong>__neg__</strong></a>(self, /)</dt><dd><span class="code">-self</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__or__"><strong>__or__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self|value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__pos__"><strong>__pos__</strong></a>(self, /)</dt><dd><span class="code">+self</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__pow__"><strong>__pow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(self,&nbsp;value,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__radd__"><strong>__radd__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value+self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rand__"><strong>__rand__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&amp;self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rdivmod__"><strong>__rdivmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;divmod(value,&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rfloordiv__"><strong>__rfloordiv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value//self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rlshift__"><strong>__rlshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&lt;&lt;self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rmod__"><strong>__rmod__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value%self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__ror__"><strong>__ror__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value|self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__round__"><strong>__round__</strong></a>(self, ndigits=None, /)</dt><dd><span class="code">Rounding&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.<br>
+&nbsp;<br>
+Rounding&nbsp;with&nbsp;an&nbsp;ndigits&nbsp;argument&nbsp;also&nbsp;returns&nbsp;an&nbsp;integer.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rpow__"><strong>__rpow__</strong></a>(self, value, mod=None, /)</dt><dd><span class="code">Return&nbsp;pow(value,&nbsp;self,&nbsp;mod).</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rrshift__"><strong>__rrshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value&gt;&gt;self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rshift__"><strong>__rshift__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;&gt;value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rsub__"><strong>__rsub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value-self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rtruediv__"><strong>__rtruediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value/self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__rxor__"><strong>__rxor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value^self.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__sizeof__"><strong>__sizeof__</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;size&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__sub__"><strong>__sub__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self-value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__truediv__"><strong>__truediv__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self/value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__trunc__"><strong>__trunc__</strong></a>(self, /)</dt><dd><span class="code">Truncating&nbsp;an&nbsp;Integral&nbsp;returns&nbsp;itself.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__xor__"><strong>__xor__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self^value.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-as_integer_ratio"><strong>as_integer_ratio</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;a&nbsp;pair&nbsp;of&nbsp;integers,&nbsp;whose&nbsp;ratio&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;original&nbsp;int.<br>
+&nbsp;<br>
+The&nbsp;ratio&nbsp;is&nbsp;in&nbsp;lowest&nbsp;terms&nbsp;and&nbsp;has&nbsp;a&nbsp;positive&nbsp;denominator.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;(10).<a href="#ResponseCode-as_integer_ratio">as_integer_ratio</a>()<br>
+(10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(-10).<a href="#ResponseCode-as_integer_ratio">as_integer_ratio</a>()<br>
+(-10,&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;(0).<a href="#ResponseCode-as_integer_ratio">as_integer_ratio</a>()<br>
+(0,&nbsp;1)</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-bit_count"><strong>bit_count</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;ones&nbsp;in&nbsp;the&nbsp;binary&nbsp;representation&nbsp;of&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;self.<br>
+&nbsp;<br>
+Also&nbsp;known&nbsp;as&nbsp;the&nbsp;population&nbsp;count.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(13)<br>
+'0b1101'<br>
+&gt;&gt;&gt;&nbsp;(13).<a href="#ResponseCode-bit_count">bit_count</a>()<br>
+3</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-bit_length"><strong>bit_length</strong></a>(self, /)</dt><dd><span class="code">Number&nbsp;of&nbsp;bits&nbsp;necessary&nbsp;to&nbsp;represent&nbsp;self&nbsp;in&nbsp;binary.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bin(37)<br>
+'0b100101'<br>
+&gt;&gt;&gt;&nbsp;(37).<a href="#ResponseCode-bit_length">bit_length</a>()<br>
+6</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-conjugate"><strong>conjugate</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;self,&nbsp;the&nbsp;complex&nbsp;conjugate&nbsp;of&nbsp;any&nbsp;int.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-is_integer"><strong>is_integer</strong></a>(self, /)</dt><dd><span class="code">Returns&nbsp;True.&nbsp;Exists&nbsp;for&nbsp;duck&nbsp;type&nbsp;compatibility&nbsp;with&nbsp;float.is_integer.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-to_bytes"><strong>to_bytes</strong></a>(self, /, length=1, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;an&nbsp;array&nbsp;of&nbsp;bytes&nbsp;representing&nbsp;an&nbsp;integer.<br>
+&nbsp;<br>
+length<br>
+&nbsp;&nbsp;Length&nbsp;of&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;use.&nbsp;&nbsp;An&nbsp;OverflowError&nbsp;is&nbsp;raised&nbsp;if&nbsp;the<br>
+&nbsp;&nbsp;integer&nbsp;is&nbsp;not&nbsp;representable&nbsp;with&nbsp;the&nbsp;given&nbsp;number&nbsp;of&nbsp;bytes.&nbsp;&nbsp;Default<br>
+&nbsp;&nbsp;is&nbsp;length&nbsp;1.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Determines&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.<br>
+&nbsp;&nbsp;If&nbsp;signed&nbsp;is&nbsp;False&nbsp;and&nbsp;a&nbsp;negative&nbsp;integer&nbsp;is&nbsp;given,&nbsp;an&nbsp;OverflowError<br>
+&nbsp;&nbsp;is&nbsp;raised.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><a name="ResponseCode-from_bytes"><strong>from_bytes</strong></a>(bytes, byteorder='big', *, signed=False)</dt><dd><span class="code">Return&nbsp;the&nbsp;integer&nbsp;represented&nbsp;by&nbsp;the&nbsp;given&nbsp;array&nbsp;of&nbsp;bytes.<br>
+&nbsp;<br>
+bytes<br>
+&nbsp;&nbsp;Holds&nbsp;the&nbsp;array&nbsp;of&nbsp;bytes&nbsp;to&nbsp;convert.&nbsp;&nbsp;The&nbsp;argument&nbsp;must&nbsp;either<br>
+&nbsp;&nbsp;support&nbsp;the&nbsp;buffer&nbsp;protocol&nbsp;or&nbsp;be&nbsp;an&nbsp;iterable&nbsp;<a href="builtins.html#object">object</a>&nbsp;producing&nbsp;bytes.<br>
+&nbsp;&nbsp;Bytes&nbsp;and&nbsp;bytearray&nbsp;are&nbsp;examples&nbsp;of&nbsp;built-in&nbsp;objects&nbsp;that&nbsp;support&nbsp;the<br>
+&nbsp;&nbsp;buffer&nbsp;protocol.<br>
+byteorder<br>
+&nbsp;&nbsp;The&nbsp;byte&nbsp;order&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.&nbsp;&nbsp;If&nbsp;byteorder&nbsp;is&nbsp;'big',<br>
+&nbsp;&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;byte&nbsp;array.&nbsp;&nbsp;If<br>
+&nbsp;&nbsp;byteorder&nbsp;is&nbsp;'little',&nbsp;the&nbsp;most&nbsp;significant&nbsp;byte&nbsp;is&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;byte&nbsp;array.&nbsp;&nbsp;To&nbsp;request&nbsp;the&nbsp;native&nbsp;byte&nbsp;order&nbsp;of&nbsp;the&nbsp;host&nbsp;system,&nbsp;use<br>
+&nbsp;&nbsp;sys.byteorder&nbsp;as&nbsp;the&nbsp;byte&nbsp;order&nbsp;value.&nbsp;&nbsp;Default&nbsp;is&nbsp;to&nbsp;use&nbsp;'big'.<br>
+signed<br>
+&nbsp;&nbsp;Indicates&nbsp;whether&nbsp;two's&nbsp;complement&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;integer.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#int">builtins.int</a>:<br>
+<dl><dt><strong>denominator</strong></dt>
+<dd><span class="code">the&nbsp;denominator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>imag</strong></dt>
+<dd><span class="code">the&nbsp;imaginary&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<dl><dt><strong>numerator</strong></dt>
+<dd><span class="code">the&nbsp;numerator&nbsp;of&nbsp;a&nbsp;rational&nbsp;number&nbsp;in&nbsp;lowest&nbsp;terms</span></dd>
+</dl>
+<dl><dt><strong>real</strong></dt>
+<dd><span class="code">the&nbsp;real&nbsp;part&nbsp;of&nbsp;a&nbsp;complex&nbsp;number</span></dd>
+</dl>
+<hr>
+Methods inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><a name="ResponseCode-__dir__"><strong>__dir__</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;public&nbsp;methods&nbsp;and&nbsp;other&nbsp;interesting&nbsp;attributes.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__reduce_ex__"><strong>__reduce_ex__</strong></a>(self, proto)</dt><dd><span class="code">Helper&nbsp;for&nbsp;pickle.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="enum.html#Enum">enum.Enum</a>:<br>
+<dl><dt><strong>name</strong></dt>
+<dd><span class="code">The&nbsp;name&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<dl><dt><strong>value</strong></dt>
+<dd><span class="code">The&nbsp;value&nbsp;of&nbsp;the&nbsp;Enum&nbsp;member.</span></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><a name="ResponseCode-__contains__"><strong>__contains__</strong></a>(value)</dt><dd><span class="code">Return&nbsp;True&nbsp;if&nbsp;`value`&nbsp;is&nbsp;in&nbsp;`cls`.<br>
+&nbsp;<br>
+`value`&nbsp;is&nbsp;in&nbsp;`cls`&nbsp;if:<br>
+1)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;member&nbsp;of&nbsp;`cls`,&nbsp;or<br>
+2)&nbsp;`value`&nbsp;is&nbsp;the&nbsp;value&nbsp;of&nbsp;one&nbsp;of&nbsp;the&nbsp;`cls`'s&nbsp;members.<br>
+3)&nbsp;`value`&nbsp;is&nbsp;a&nbsp;pseudo-member&nbsp;(flags)</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__getitem__"><strong>__getitem__</strong></a>(name)</dt><dd><span class="code">Return&nbsp;the&nbsp;member&nbsp;matching&nbsp;`name`.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__iter__"><strong>__iter__</strong></a>()</dt><dd><span class="code">Return&nbsp;members&nbsp;in&nbsp;definition&nbsp;order.</span></dd></dl>
+
+<dl><dt><a name="ResponseCode-__len__"><strong>__len__</strong></a>()</dt><dd><span class="code">Return&nbsp;the&nbsp;number&nbsp;of&nbsp;members&nbsp;(no&nbsp;aliases)</span></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="enum.html#EnumType">enum.EnumType</a>:<br>
+<dl><dt><strong>__members__</strong></dt>
+<dd><span class="code">Returns&nbsp;a&nbsp;mapping&nbsp;of&nbsp;member&nbsp;name-&gt;value.<br>
+&nbsp;<br>
+This&nbsp;mapping&nbsp;lists&nbsp;all&nbsp;enum&nbsp;members,&nbsp;including&nbsp;aliases.&nbsp;Note&nbsp;that&nbsp;this<br>
+is&nbsp;a&nbsp;read-only&nbsp;view&nbsp;of&nbsp;the&nbsp;internal&nbsp;mapping.</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="SOARecord">class <strong>SOARecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#SOARecord">SOARecord</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mname:&nbsp;str,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rname:&nbsp;str,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;serial:&nbsp;int,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;refresh:&nbsp;int,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;retry:&nbsp;int,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expire:&nbsp;int,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;minimum:&nbsp;int<br>
+)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;the&nbsp;Start&nbsp;of&nbsp;Authority&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="SOARecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from SOARecord</span></span></dt></dl>
+
+<dl><dt><a name="SOARecord-__init__"><strong>__init__</strong></a>(
+    self,
+    mname: str,
+    rname: str,
+    serial: int,
+    refresh: int,
+    retry: int,
+    expire: int,
+    minimum: int
+) -&gt; None<span class="grey"><span class="heading-text"> from SOARecord</span></span></dt></dl>
+
+<dl><dt><a name="SOARecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="SOARecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from SOARecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'expire': Field(name='expire',type=&lt;class 'int'&gt;,default=&lt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'minimum': Field(name='minimum',type=&lt;class 'int'&gt;,default=...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'mname': Field(name='mname',type=&lt;class 'str'&gt;,default=&lt;d...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'refresh': Field(name='refresh',type=&lt;class 'int'&gt;,default=...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'retry': Field(name='retry',type=&lt;class 'int'&gt;,default=&lt;d...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'rname': Field(name='rname',type=&lt;class 'str'&gt;,default=&lt;d...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'serial': Field(name='serial',type=&lt;class 'int'&gt;,default=&lt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('mname', 'rname', 'serial', 'refresh', 'retry', 'expire', 'minimum')</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="SRVRecord">class <strong>SRVRecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#SRVRecord">SRVRecord</a>(priority:&nbsp;int,&nbsp;weight:&nbsp;int,&nbsp;port:&nbsp;int,&nbsp;target:&nbsp;str)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;service&nbsp;locator&nbsp;record.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="SRVRecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from SRVRecord</span></span></dt></dl>
+
+<dl><dt><a name="SRVRecord-__init__"><strong>__init__</strong></a>(self, priority: int, weight: int, port: int, target: str) -&gt; None<span class="grey"><span class="heading-text"> from SRVRecord</span></span></dt></dl>
+
+<dl><dt><a name="SRVRecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="SRVRecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from SRVRecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'port': Field(name='port',type=&lt;class 'int'&gt;,default=&lt;da...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'priority': Field(name='priority',type=&lt;class 'int'&gt;,default...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'target': Field(name='target',type=&lt;class 'str'&gt;,default=&lt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD), 'weight': Field(name='weight',type=&lt;class 'int'&gt;,default=&lt;...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('priority', 'weight', 'port', 'target')</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="TXTRecord">class <strong>TXTRecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#TXTRecord">TXTRecord</a>(strings:&nbsp;List[bytes])&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Represents&nbsp;a&nbsp;text&nbsp;record&nbsp;containing&nbsp;one&nbsp;or&nbsp;more&nbsp;byte&nbsp;strings.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="TXTRecord-__eq__"><strong>__eq__</strong></a>(self, other)<span class="grey"><span class="heading-text"> from TXTRecord</span></span></dt></dl>
+
+<dl><dt><a name="TXTRecord-__init__"><strong>__init__</strong></a>(self, strings: List[bytes]) -&gt; None<span class="grey"><span class="heading-text"> from TXTRecord</span></span></dt></dl>
+
+<dl><dt><a name="TXTRecord-__replace__"><strong>__replace__</strong></a> = _replace(self, /, **changes)<span class="grey"><span class="heading-text"> from <a href="dataclasses.html">dataclasses</a></span></span></dt></dl>
+
+<dl><dt><a name="TXTRecord-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from TXTRecord</span></span></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dataclass_fields__</strong> = {'strings': Field(name='strings',type=typing.List[bytes],def...xy({}),kw_only=False,doc=None,_field_type=_FIELD)}</dl>
+
+<dl><dt><strong>__dataclass_params__</strong> = _DataclassParams(init=True,repr=True,eq=True,ord...rue,kw_only=False,slots=False,weakref_slot=False)</dl>
+
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('strings',)</dl>
+
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>__all__</strong> = ['RecordType', 'RecordClass', 'Opcode', 'ResponseCode', 'DNSFlags', 'DNSHeader', 'DNSQuestion', 'ARecord', 'AAAARecord', 'CNAMERecord', 'NSRecord', 'PTRRecord', 'MXRecord', 'TXTRecord', 'SRVRecord', 'SOARecord', 'CAARecord', 'DNSResourceRecord', 'DNSMessage']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<span class="repr">\n</span>PyAsyncDNS  Copyright (C) 2025, 2026  Maurice L...ome to redistribute it<span class="repr">\n</span>under certain conditions.<span class="repr">\n</span>'<br>
+<strong>__description__</strong> = '<span class="repr">\n</span>This package implements a basic asynchronous DN...r<span class="repr">\n</span>with a feature to exfiltrate data through DNS.<span class="repr">\n</span>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PyAsyncDNS'</td></tr></table><p>
+<table class="section">
+<tr class="decor author-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Author</strong></td></tr>
+    
+<tr><td class="decor author-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
