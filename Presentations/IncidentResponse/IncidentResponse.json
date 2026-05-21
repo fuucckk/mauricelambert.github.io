@@ -869,7 +869,16 @@
             "image alt": "Blue ninja sending a messenger pigeon to a wise yellow ninja representing governance, illustrating structured communication planning in incident response",
             "code": "",
             "code lang": "",
-            "notes": []
+            "notes": [
+                "Le plan de communication d\u00e9fini comment, quand, o\u00f9 et avec qui communiquer.",
+                "Le but est de d\u00e9finir avec qui partager les quelles informations et de quelle mani\u00e8re.",
+                "Si il faut partager par mail un rapport au format PDF avec les timelines chaque soir avec la gouvernance et \u00e0 quelle adresse mail.",
+                "Il faut faire de m\u00eame avec le client, entre les personnes techniques en charge de la r\u00e9ponse \u00e0 incident, avec les administrateurs et en interne dans l'entreprise impact\u00e9e.",
+                "On ne d\u00e9fini le plan de communication externe si on est prestataire, \u00e9ventuellement on peut pr\u00e9parer des \"templates\" \u00e0 proposer aux clients qui n'en ont pas fait, sinon c'est en interne que \u00e7a se d\u00e9fini par le client lui m\u00eame.",
+                "Pour chaque interaction entre chaque partie prenante il faut un plan de communication: il faut r\u00e9pondre \u00e0 o\u00f9 (l'endroit de l'\u00e9change: SMS, mail, messagerie), quand (soit une heure soit sur un \u00e9v\u00e9nement), comment (sous quel forme: texte, fichier, graphique, dans une application, ect...) et quoi (quelle information: preuve, rapport, timeline, ect...).",
+                "Il faut pr\u00e9voir toutes les situations: SI compromis, postes de travail compromis, employ\u00e9 compromis (y compris dans l'\u00e9quipe de s\u00e9curit\u00e9), ..."
+            ],
+            "icon alt": ""
         },
         {
             "type": "content",
@@ -911,7 +920,13 @@
             "image alt": "Blue ninjas discussing incident response strategy around a map illustrating playbook creation and coordinated planning",
             "code": "",
             "code lang": "",
-            "notes": []
+            "notes": [
+                "Les playbooks et les procedures sont des \u00e9l\u00e9ments importants pour les techniciens, que ce soit l'\u00e9quipe s\u00e9curit\u00e9 ou les administrateurs.",
+                "Elles permettent de faire les bonnes choses au bon moment (par exemple r\u00e9cup\u00e9rer les bonnes preuves, d'une mani\u00e8re efficace et fiable tout en conservant leur valeur juridique).",
+                "Elles permettent de r\u00e9duire le stress des \u00e9quipes techniques et la fatigue, elles permettent \u00e9galement de gagner du temps en r\u00e9ponse \u00e0 incident.",
+                "J'ai connu une r\u00e9ponse \u00e0 incident o\u00f9 nous devions v\u00e9rifier des syst\u00e8mes potentiellement compromis \u00e0 17h un jeudi soir, l'\"expert cybers\u00e9curit\u00e9\" en charge d'une machine n'a pas d\u00e9tect\u00e9 une des preuves qu'il aurait du voir: un SUID dans /opt utilis\u00e9 pour une persistance de l'attaquant. Le \"playbook\" \u00e9tait mal fait car nous \u00e9tions en pleine improvisation, pas de stockage de preuve, juste une case \u00e0 cocher si la machine semblait compromise ou pas. L'\"expert\" a probablement simplement oubli\u00e9 une commande et coch\u00e9 la case trop rapidement. Lorsque vous faites des proc\u00e9dures et des playbooks allez jusqu'au bout, la r\u00e9cup\u00e9ration des informations et le stockage consultable par tout les analystes est tr\u00e8s important. Si nous avions fait cela, tout le monde aurait rep\u00e9r\u00e9 l'absence du r\u00e9sultat d'une commande pour cette machine."
+            ],
+            "icon alt": ""
         },
         {
             "type": "content",
@@ -1257,7 +1272,16 @@
             "image alt": "Blue ninjas building defenses like walls and moats illustrating infrastructure preparation before incident response",
             "code": "",
             "code lang": "",
-            "notes": []
+            "notes": [
+                "En r\u00e9ponse \u00e0 incident vous allez souvent vous retrouver des des situations tr\u00e8s compliqu\u00e9, simplement parce que la nature m\u00eame de la r\u00e9ponse \u00e0 incident est compliqu\u00e9e mais aussi par manque de pr\u00e9paration.",
+                "Un soir un service tombe, le PRA est compromis par un blocage antivirus dans une backup, pas de plan de communication, le SOC est pr\u00e9venu que le lendemain matin, les managers ne sont pas pr\u00e9venus, la gouvernance n'est pas pr\u00e9venue, personne, aucune r\u00e9ponse mais un attaquant bien pr\u00e9sent sur le SI \u00e0 profiter d'heure tranquille.",
+                "Une autre fois c'est un incident sur un client sur lequel il y a eu un \"oublie\" de d\u00e9ploiement d'EDR, sans t\u00e9l\u00e9m\u00e9trie, sans proc\u00e9dure pour r\u00e9cup\u00e9rer les preuves nous avons du faire une investigation en live sur le syst\u00e8me avec des preuves probablement effac\u00e9es par l'attaquant.",
+                "J'ai d\u00e9j\u00e0 travaill\u00e9 dans des SI dans lesquels la r\u00e9solution des adresses n'\u00e9tait pas possible, trop de NAT, impossible de trouver la source du flux et quand enfin vous trouvez le sch\u00e9ma r\u00e9seau vous vous rendez compte qu'il n'est pas \u00e0 jour et pas complet. Il faut alors redoubler d'effort et de pivots pour r\u00e9ussir \u00e0 trouver l'attaquant.",
+                "Toutes ces choses sont des \u00e9l\u00e9ments \u00e0 v\u00e9rifier avant l'incident, la pr\u00e9paration n'est pas a sous estimer, elle prend beaucoup de temps avant m\u00eame de parler de cr\u00e9ation d'outil d'analyse il faut pr\u00e9parer le SI.",
+                "Ces pr\u00e9paration peuvent aussi vous aidez en dehors des incidents de s\u00e9curit\u00e9, pour le debug, pour la maintenance, pour l'\u00e9volution du SI, ect...",
+                "La gouvernance peut \u00eatre un moteur sur certains de ces sujets, n'h\u00e9sitez pas \u00e0 faire appel \u00e0 eux pour obtenir le temps et les moyens."
+            ],
+            "icon alt": ""
         },
         {
             "type": "content",
@@ -1286,7 +1310,15 @@
             "image alt": "Yellow ninja reviewing defenses with blue ninjas after an attack illustrating post-incident analysis and improvement",
             "code": "",
             "code lang": "",
-            "notes": []
+            "notes": [
+                "Durant les incidents vous identifier des manques.",
+                "Les manques peuvent \u00eatre une proc\u00e9dure plus \u00e0 jour, une proc\u00e9dure inexistante, un playbook incomplet, une nouvelle id\u00e9e de pivot, un outil pas d\u00e9ploy\u00e9, une mauvaise politique, un sch\u00e9ma r\u00e9seau incomplet ou la CMDB pas compl\u00e8te, ect...",
+                "Tous ces points doivent \u00eatre remont\u00e9 durant la r\u00e9ponse \u00e0 incident mais trait\u00e9 apr\u00e8s la r\u00e9ponse \u00e0 incident.",
+                "A la fin de la r\u00e9ponse \u00e0 incident il faut organiser un RETEX et il faut prendre le temps de le faire, j'ai fait un RETEX pour une r\u00e9ponse \u00e0 incident de 5 semaines en 1 heure -> elle n'a servit \u00e0 rien. Durant le RETEX il faut faire la liste de \u00e9l\u00e9ments et d\u00e9finir la roadmap pour les fixer. Certaines actions peuvent \u00eatre d\u00e9l\u00e9gu\u00e9 mais l'\u00e9quipe s\u00e9curit\u00e9 doit toujours valider les actions et relancer si l'\u00e9ch\u00e9ance approche.",
+                "Durant le RETEX il faut aussi repasser sur toutes les actions faites et \u00e0 quel moment, savoir si oui on non c'\u00e9tait le meilleur moyen pour r\u00e9soudre l'incident rapidement ou si il y a eu perte de temps. Il ne faut pas tout changer mais il faut tout remettre en question au moins le temps d'un instant pour \u00e9ventuellement trouver une am\u00e9lioration.",
+                "Il faut \u00e9valuer tous les \u00e9l\u00e9ments: communication, investigation, rem\u00e9diation, d\u00e9tection, ect..."
+            ],
+            "icon alt": ""
         },
         {
             "type": "content",
@@ -1312,7 +1344,15 @@
             "image alt": "Blue ninjas rebuilding stronger defenses after an attack illustrating post-incident improvements and security hardening",
             "code": "",
             "code lang": "",
-            "notes": []
+            "notes": [
+                "Apr\u00e8s le RETEX et la d\u00e9finition de la roadmap il faut prendre le temps de bien mettre en place les am\u00e9liorations.",
+                "Mettre \u00e0 jour les proc\u00e9dures et les playbooks pour g\u00e9rer les cas non pris en compte ou pour ajouter les pivots ou les nouvelles technologies.",
+                "Il faut am\u00e9liorer les capacit\u00e9s des d\u00e9tections, avec des r\u00e8gles et/ou des outils efficace.",
+                "La gouvernance doit s'occuper des PRA/PCA avec \u00e9changes avec les techniciens en prenant en compte les recommandations de s\u00e9curit\u00e9 mais aussi les remarques des administrateurs qui appliquent ces actions.",
+                "Il ne faut pas oublier le hardening et les configurations qu'elles soient syst\u00e8mes ou r\u00e9seaux il faut renforcer la r\u00e9sistance aux attaques.",
+                "Il est courant qu'\u00e0 la fin d'une r\u00e9ponse \u00e0 incident on veuille modifier certaines strat\u00e9gies de logs, c'est parfois une bonne id\u00e9e, il faut prendre en compte tous les cas d'usages des logs, les \u00e9l\u00e9ments juridique et modifier les proc\u00e9dures et les playbooks li\u00e9s."
+            ],
+            "icon alt": ""
         },
         {
             "type": "title",
@@ -1492,6 +1532,35 @@
                 "Faites attention avec le mat\u00e9riel r\u00e9seau ! Il est moins monitor\u00e9 => parfois plus simple \u00e0 compromettre => excellent endroit pour espionner ou se cacher et revenir sans se faire d\u00e9tecter",
                 "Astuce: \"IP et port source\" permet de remonter au processus qui initie la connexion"
             ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Incident Response Pivoting: Beyond Standard Indicators",
+            "notes": [
+                "Les pivots que j'ai cit\u00e9 sont les plus connus.",
+                "Le principes de la r\u00e9ponse est de tracer les actions de l'attaquants, parfois on a la chance de suivre les actions les une apr\u00e8s les autres avec les traces qu'il laisse mais parfois on perd la trace et la il faut utiliser les pivots qui n'est rien d'autre qu'un filtre sur un \u00e9l\u00e9ment diff\u00e9renciants et pr\u00e9sent dans les traces.",
+                "Vous devrait donc filter sur plein d'\u00e9l\u00e9ments diff\u00e9rents.",
+                "Par exemple des sessions de processus linux, des user-agent, des URLs, ou m\u00eame des donn\u00e9es m\u00e9tiers comme la taille de l'\u00e9cran que j'ai trouv\u00e9 une fois dans les param\u00e8tres de l'URL."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "specific_pivots.jpg",
+            "image alt": "Blue ninja tightening giant funnel filtering massive colorful information flows into a tiny critical red output illustrating aggressive data reduction and incident response prioritization",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "The previously presented pivots are only the most common investigation starting points.",
+                        "In real-world incident response, analysts often pivot on many other technical artifacts depending on the environment and available telemetry.",
+                        "Web investigations may include pivots on URLs, User-Agents, HTTP headers, screen resolution values, tracking identifiers, query parameters, or application-specific fields.",
+                        "Investigations can also rely on non-user session identifiers, such as Linux process sessions, container identifiers, service accounts, API tokens, or transient execution contexts.",
+                        "Successful incident response relies either on being able to continuously follow attacker actions across systems, or on identifying unique artifacts within each trace that allow you to pivot and reconstruct their activity."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
         },
         {
             "type": "content",
@@ -1824,6 +1893,16 @@
                     "type": "p",
                     "content": "Proper evidence storage ensures trusted, legally defensible investigations."
                 }
+            ],
+            "icon alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "Le stockage des preuves n'est pas la priorit\u00e9s des \u00e9quipes de s\u00e9curit\u00e9 qui ne font pas que de la r\u00e9ponse \u00e0 incident.",
+                "La gouvernance rappel les r\u00e8gles de stockage des preuves.",
+                "Les administrateurs sont souvent sollicit\u00e9s en incident response pour savoir o\u00f9 on peut les entreproser, les administrateurs r\u00e9pondent souvent avec un \"vieux\" stockage r\u00e9seau ne respectant pas les r\u00e8gles d\u00e9finnis par la gouvernance et accessible \u00e0 beaucoup de personnes.",
+                "Il faut pr\u00e9voir bien \u00e0 l'avance le stockage et ils faut pr\u00e9voir un grand espace de stockage, pas besoin qu'il soit rapide, le mieux et d'avoir une application qui g\u00e9rent bien les droits en upload et lecture et sans overwrite avec des hashs stock\u00e9s validant l'authenticit\u00e9 des preuves.",
+                "Le mieux c'est que les proc\u00e9dures et outils de collecte puisse stocker automatiquement les preuves au bon endroit de la bonne mani\u00e8re."
             ]
         },
         {
@@ -1851,6 +1930,16 @@
                     "type": "p",
                     "content": "Decisions by governance can regularly undermine incident response, causing serious consequences: <strong>alerting the attacker, crashing systems, or destroying evidence</strong>. In France and Europe, <strong>legal obligations often take precedence over security</strong> for governance teams."
                 }
+            ],
+            "icon alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "En r\u00e9ponse \u00e0 incident les responsabilit\u00e9s impact fortement la r\u00e9putation des prestataires de s\u00e9curit\u00e9.",
+                "La gouvernance pr\u00e9ferera \u00eatre conforme et dans les r\u00e8gles du contrat plut\u00f4t que de laisser les personnes techniques g\u00e9rer la r\u00e9ponse \u00e0 incident et rem\u00e9dier aux erreurs apr\u00e8s.",
+                "Il est extr\u00eament compliqu\u00e9 pour la gouvernance d'accepter les erreurs de conformit\u00e9, contractuelle et l\u00e9gislative qui arrive trop souvent, par cons\u00e9quent ils prendront des d\u00e9cisions qui impactera fortement la r\u00e9ponse \u00e0 incident et les personnes techniques.",
+                "Par exemple, j'ai connu une r\u00e9ponse \u00e0 incident o\u00f9 la gouvernance a pr\u00e9f\u00e9r\u00e9 installer un EDR plut\u00f4t que d'attendre 2 jours que la r\u00e9ponse \u00e0 incident et la rem\u00e9diation soit faite. La raison est simple: le contrat expliqu\u00e9 clairement la couverture de l'EDR sur toutes les machines g\u00e9r\u00e9es par le prestataire, malheuresement cette ancienne machine n'a pas \u00e9t\u00e9 d\u00e9ploy\u00e9 comme les autres et n'a pas eu l'EDR install\u00e9. L'attaquant a donc pu voir l'installation de l'EDR lui permettant de lancer la phase d'impact plus rapidement.",
+                "En France et en Europe les lois sur la cybers\u00e9curit\u00e9 \u00e9volue beaucoup g\u00e9n\u00e9r\u00e9ant une certaine peur pour un grand nombre des \u00e9quipes de gouvernance qui auront donc tendance \u00e0 prendre ces \"mauvaises d\u00e9cisions\" pour la r\u00e9ponse \u00e0 incident."
             ]
         },
         {
@@ -1874,6 +1963,16 @@
                         "Technical and computer science skills: <strong>deep understanding of systems</strong> allows multiple methods to achieve investigative objectives. <strong>Knowledge of commands alone is insufficient</strong> without understanding system behavior, leading to missed insights"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "La r\u00e9ponse \u00e0 incident nettant pas une priorit\u00e9 pour les SOC manag\u00e9s, la pr\u00e9paration est souvent laiss\u00e9 de cot\u00e9 pour des taches jug\u00e9es plus prioritaires.",
+                "Le premier probl\u00e8me qu'engendre un manque de pr\u00e9paration: une mauvaise communication, qui est la cl\u00e9s de la r\u00e9ponse \u00e0 incident. Avec trop de communication vous aurez tendance \u00e0 ralentir la r\u00e9ponse \u00e0 incident et parfois de mauvaises interpr\u00e9tations mais avec trop peu de communication l\u00e0 vous allez avoir des d\u00e9cisions prises sans informations et rat\u00e9 compl\u00e9tement votre r\u00e9ponse \u00e0 incident. Le manager d'un SOC dans cette position doit communiquer avec TOUS les analystes individuellement dans ce contexte, rendant son travail particuli\u00e8rement complexe mais permettant potentiellement de sauver la r\u00e9ponse \u00e0 incident, il devrait aussi organiser des points pour confronter les diff\u00e9rents analystes afin de valider des preuves ou des interpr\u00e9tations.",
+                "Le second probl\u00e8le sera l'organisation des personnes techniques, les analystes risquent de travailler sur les m\u00eames \u00e9l\u00e9ments plut\u00f4t que de couvrir le scope de l'attaque plus rapidement. La coordination avec les \u00e9quipes d'administration seront plus difficiles impactant la rem\u00e9diation, mettant en danger la production et ralentissant la r\u00e9ponse \u00e0 incident.",
+                "Les analystes devront \u00eatre autonome, parfois sans les outils ad\u00e9quats, il faudra donc des personnes tr\u00e8s qualifi\u00e9 pour prendre en compte toutes les \u00e9tapes de la r\u00e9ponse \u00e0 incident sur tous les contextes, de la meilleure mani\u00e8re possible (souvent avec des complexit\u00e9 pour la collecte de preuve puis pour l'analyse rapide et parfois m\u00eame pour identifier le scope).",
+                "Dans un cas ou l'analyste n'a aucune proc\u00e9dure et aucun playbook il devra probablement relayer sur ces comp\u00e9tences de r\u00e9ponse \u00e0 incident et forensic ainsi que sur connaissances syst\u00e8mes. Se remettre au niveau de syst\u00e8me permet de revenir \u00e0 un niveau plus facilement g\u00e9rable qu'un niveau applicatif ou infrastructures et r\u00e9seaux (il est difficile de connaitre tous les syst\u00e8mes r\u00e9seaux dans toutes les versions, tous les hyperviseurs et tous les applicatifs de toute la production contrairement \u00e0 avoir de nombreuse connaissance en Linux et Windows). Cela n\u00e9cessite une compr\u00e9hension en profondeur des syst\u00e8mes informatiques (niveau noyau et de son fonctionnement) et non simplement de ligne de commande qui ne vous donneront que rarement toutes les r\u00e9ponses que vous rechercherez."
             ]
         },
         {
@@ -1909,6 +2008,17 @@
                         "Encourage communication to detect signs of fatigue or incapacity early"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "La r\u00e9ponse \u00e0 incident g\u00e9n\u00e8re une forte de pression.",
+                "Le stress impact tout le monde, certaines personnes sont en mesure d'en g\u00e9rer plus que d'autres mais le contexte personnel et professionnel peut fortement impacter la gestion de stress des personnes.",
+                "Ainsi m\u00eame les personnes les plus exp\u00e9riment\u00e9s, peuvent dans certaines conditions \u00eatre fortement impact\u00e9 par le stress et mal g\u00e9rer la r\u00e9ponse \u00e0 incident.",
+                "Si certaines personnes sont les seuls personnes connaisseurs de certaines technologies il faut soit pr\u00e9voir en amont une monter en comp\u00e9tence d'autres membres soit r\u00e9duire la charge sur la r\u00e9ponse \u00e0 incident de la personne afin de diminuer le stress de cette personne strat\u00e9gique.",
+                "Un autre \u00e9l\u00e9ment \u00e0 prendre en compte et la gestion de la fatigue pendant la r\u00e9ponse \u00e0 incident puisque la fatigue impact directement la gestion du stress et donc de la r\u00e9ussite de la r\u00e9ponse \u00e0 incident. Si la r\u00e9ponse \u00e0 incident est courte, une journ\u00e9e ou deux il est possible d'en demander plus aux \u00e9quipes mais il n'est pas toujours facile de pr\u00e9voir le temps de r\u00e9ponse \u00e0 incident au d\u00e9but de celle-ci donc si la r\u00e9ponse \u00e0 incident est potentiellement longue (durant parfois plusieurs semaines) vous devez r\u00e9duire les demandes aupr\u00e8s des \u00e9quipes et si vous en avez le moyen pr\u00e9voir une rotation des membres prenant les r\u00f4les les plus stressant de la r\u00e9ponse \u00e0 incident (attention la rotation est partielle et non compl\u00e8te: les personnes ayant fait des investigations doivent toujours \u00eatre pr\u00e9sente \u00e0 toutes les \u00e9tapes de la r\u00e9ponse \u00e0 incident).",
+                "La communication par le manager permet d'identifier la fatigue et la gestion du stress, certaines personnes peuvent \"cacher\" leur manque de gestion du stress et leur fatigue durant un \u00e9change orale mais les autres analystes remarqueront des incoh\u00e9rences ou des erreurs qu'ils auront remarqu\u00e9."
             ]
         },
         {
@@ -1931,6 +2041,15 @@
                         "Governance versus technical best practices: governance teams often prioritize legal compliance over security best practices (France/Europe), security measures may be restricted or altered to comply with regulatory constraints"
                     ]
                 }
+            ],
+            "icon alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "La r\u00e9ponse \u00e0 incident amm\u00e8ne des \u00e9l\u00e9ments l\u00e9gislatifs, des \u00e9l\u00e9ments financiers et des \u00e9l\u00e9ments administratif qu'il faut prendre en compte.",
+                "Si vous \u00eates prestataire vous devez fortement recommander \u00e0 vos clients de s'y soumettre et potentiellement accompagner le client si il accepte de faire les d\u00e9marches.",
+                "En cas d'impact sur des donn\u00e9es personnels il faut absolument informer la CNIL dans les 72 heures (prouver qu'aucune information personnel n'est impact\u00e9 dans ce temps n'est pas toujours simple).",
+                "Si il y a des d\u00e9gats et des co\u00fbts li\u00e9s \u00e0 l'attaque il est souvent n\u00e9cessaire de faire jouer une assurance, pour cela il faut avoir pr\u00e9alablement port\u00e9 plainte, les assureurs peuvent vous aider \u00e0 g\u00e9rer vos r\u00e9ponses \u00e0 incident (recommender et faciliter un contact avec des \u00e9quipes sp\u00e9cialis\u00e9s et g\u00e9rer la partie administrative)."
             ]
         },
         {
@@ -1958,6 +2077,17 @@
                     "type": "p",
                     "content": "Teams should prioritize <strong>simple, safe, validated actions</strong> and escalate to experts when tasks exceed the team's skill or operational certainty."
                 }
+            ],
+            "icon alt": "",
+            "code": "",
+            "code lang": "",
+            "notes": [
+                "La r\u00e9ponse \u00e0 incident peut mener \u00e0 des erreurs et des impacts sur la production, notamment sur des actions complexes.",
+                "Par exemple certaines lignes de commandes pour modifier de fichiers contenant des valeurs sp\u00e9cifiques lors d'une rem\u00e9diation ne doit pas \u00eatre effectu\u00e9 si la proc\u00e9dure ne permet pas la cr\u00e9ation de cette ligne de mani\u00e8re s\u00e9curis\u00e9.",
+                "J'ai connu un incident ou l'administrateur se rendant compte de la pr\u00e9sence de backdoors a tent\u00e9 de les supprimer, par erreur la commande a supprim\u00e9 tous les fichiers PHP du serveur, la production est tomb\u00e9e alors que l'attaquant ne souhait\u00e9 pas l'impacter.",
+                "Il faut privil\u00e9gier des actions simple et sans modification, lorsqu'on proc\u00e8de \u00e0 la rem\u00e9diation il faut tester ces commandes sans impacter la production, le mieux c'est une proc\u00e9dure permettant de faire les choses de mani\u00e8re plus s\u00e9curis\u00e9 (par exemple des scripts ou outils avec validation de l'utilisateur).",
+                "M\u00eame avec des commandes bien connues il faut se m\u00e9fier le stress \u00e0 tendance \u00e0 g\u00e9n\u00e9rer des erreurs inhabituels.",
+                "La r\u00e9ponse \u00e0 incident doit \u00eatre proc\u00e9dur\u00e9, valid\u00e9 et revue par des personnes de connaissances, dans certains cas il est possible de former des binomes pour limiter certains risque durant une r\u00e9ponse \u00e0 incident."
             ]
         },
         {
@@ -2469,6 +2599,38 @@
                         "Emulation frameworks (complex to use and to slow for most incident response): miasm, angr",
                         "Dynamic analysis (ONLY in secure sandbox) to observe runtime behavior, system calls, and interactions: Procdump (Windows), strace / ltrace (Linux)",
                         "Tools like VirusTotal or AnyRun must be validated, not blindly trusted"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Specialized Incident Response Tools: High-Level Analysis and Investigation",
+            "notes": [
+                "Il y a beaucoup d'outils de communs en r\u00e9ponse \u00e0 incident, ils couvrent un gros pourcentage des analyses en r\u00e9ponse \u00e0 incident.",
+                "Parfois certaines r\u00e9ponses \u00e0 incident sont complexe et ajoute des \u00e9l\u00e9ments non couvert par ces outils communs.",
+                "Parfois les outils couvrent ces syst\u00e8mes mais pas toutes les actions r\u00e9ellement r\u00e9alis\u00e9es aux niveaux infrastructure ou applicatif.",
+                "Il faut donc avoir la possibilit\u00e9 d'utiliser des outils plus sp\u00e9cialis\u00e9s sur certains \u00e9l\u00e9ments du SI, comme l'AD avec ADTimeline.",
+                "J'ai rencontr\u00e9 2 incidents o\u00f9 j'ai du faire face \u00e0 des analyses qui ne couvraient aucune des \u00e9l\u00e9ments communs: un client pour qui nous devions remonter son SI, compl\u00e8tement compromis jusqu'aux infrastructures. Mon r\u00f4le \u00e9tait de valider l'AD pour assurer qu'il n'y avait aucune porte d\u00e9rob\u00e9e qui auraient pu permettre \u00e0 l'attaquant de se retrouver sur l'AD remont\u00e9 sur nos infrastructures.",
+                "La seconde r\u00e9ponse \u00e0 incident \u00e9tait un serveur SQL contenant toutes les donn\u00e9es m\u00e9tier d'une entreprise pr\u00e9c\u00e9demment compromises, mon r\u00f4le \u00e9tait de v\u00e9rifier que l'attaquant ne puissent pas revenir sur le SI compromis gr\u00e2ce \u00e0 ce SQL Server.",
+                "Ces investigations sont nettement plus difficiles que les autres: il n'y a pas d'attaquant \u00e0 suivre, il faut analyser tous les \u00e9l\u00e9ments, les moindres \"recoins\" des fichiers et des syst\u00e8mes et il est probablement impossible de valider une machine ou un applicatif aussi compliqu\u00e9 que ceux-l\u00e0. Les outils sp\u00e9cialis\u00e9s permettent de gagner en rapidit\u00e9 et en pr\u00e9cision en parsant des fichiers importants et en validant un certains nombre d'\u00e9l\u00e9ments connus."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "specialized_tools.jpg",
+            "image alt": "Blue cyber ninja in a high-tech armory surrounded by modular cybersecurity tools and neon icons, including ANSSI and Hawk M365 Analysis logos, symbolizing tool flexibility and versatility during incident response.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Most incident response investigations rely on low-level analysis tools: logs, memory analysis, filesystem forensics, network captures, EDR telemetry, and system artifacts.",
+                        "These tools provide the technical evidence required to understand attacker actions, persistence, lateral movement, and compromise scope.",
+                        "However, efficient investigations also require higher-level or highly specialized tools adapted to the environment and the incident context.",
+                        "Examples: ADTimeline for Active Directory investigations, Hawk for Microsoft 365, MFCMAPI for Exchange analysis, SQLECmd for SQL Server artifacts, kubectl-trace for Kubernetes environments, or ROADtools for Azure AD and Entra ID investigations.",
+                        "Effective incident response depends on combining generic forensic techniques with specialized investigation tooling to gain speed, visibility, and accuracy."
                     ]
                 }
             ],

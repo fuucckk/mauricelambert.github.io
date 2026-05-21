@@ -682,11 +682,24 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Incident Response Communication Plan",
-    "notes": []
+    "notes": [
+      "Le plan de communication défini comment, quand, où et avec qui communiquer.",
+      "Le but est de définir avec qui partager les quelles informations et de quelle manière.",
+      "Si il faut partager par mail un rapport au format PDF avec les timelines chaque soir avec la gouvernance et à quelle adresse mail.",
+      "Il faut faire de même avec le client, entre les personnes techniques en charge de la réponse à incident, avec les administrateurs et en interne dans l'entreprise impactée.",
+      "On ne défini le plan de communication externe si on est prestataire, éventuellement on peut préparer des \"templates\" à proposer aux clients qui n'en ont pas fait, sinon c'est en interne que ça se défini par le client lui même.",
+      "Pour chaque interaction entre chaque partie prenante il faut un plan de communication: il faut répondre à où (l'endroit de l'échange: SMS, mail, messagerie), quand (soit une heure soit sur un événement), comment (sous quel forme: texte, fichier, graphique, dans une application, ect...) et quoi (quelle information: preuve, rapport, timeline, ect...).",
+      "Il faut prévoir toutes les situations: SI compromis, postes de travail compromis, employé compromis (y compris dans l'équipe de sécurité), ..."
+    ]
   },
   {
     "title": "Playbooks and Procedures: Building Preparedness Before an Incident",
-    "notes": []
+    "notes": [
+      "Les playbooks et les procedures sont des éléments importants pour les techniciens, que ce soit l'équipe sécurité ou les administrateurs.",
+      "Elles permettent de faire les bonnes choses au bon moment (par exemple récupérer les bonnes preuves, d'une manière efficace et fiable tout en conservant leur valeur juridique).",
+      "Elles permettent de réduire le stress des équipes techniques et la fatigue, elles permettent également de gagner du temps en réponse à incident.",
+      "J'ai connu une réponse à incident où nous devions vérifier des systèmes potentiellement compromis à 17h un jeudi soir, l'\"expert cybersécurité\" en charge d'une machine n'a pas détecté une des preuves qu'il aurait du voir: un SUID dans /opt utilisé pour une persistance de l'attaquant. Le \"playbook\" était mal fait car nous étions en pleine improvisation, pas de stockage de preuve, juste une case à cocher si la machine semblait compromise ou pas. L'\"expert\" a probablement simplement oublié une commande et coché la case trop rapidement. Lorsque vous faites des procédures et des playbooks allez jusqu'au bout, la récupération des informations et le stockage consultable par tout les analystes est très important. Si nous avions fait cela, tout le monde aurait repéré l'absence du résultat d'une commande pour cette machine."
+    ]
   },
   {
     "title": "Timelines: Tracking Evidence and Actions for Effective Incident Response",
@@ -771,15 +784,37 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Preparation: Building a Strong and Secure Foundation",
-    "notes": []
+    "notes": [
+      "En réponse à incident vous allez souvent vous retrouver des des situations très compliqué, simplement parce que la nature même de la réponse à incident est compliquée mais aussi par manque de préparation.",
+      "Un soir un service tombe, le PRA est compromis par un blocage antivirus dans une backup, pas de plan de communication, le SOC est prévenu que le lendemain matin, les managers ne sont pas prévenus, la gouvernance n'est pas prévenue, personne, aucune réponse mais un attaquant bien présent sur le SI à profiter d'heure tranquille.",
+      "Une autre fois c'est un incident sur un client sur lequel il y a eu un \"oublie\" de déploiement d'EDR, sans télémétrie, sans procédure pour récupérer les preuves nous avons du faire une investigation en live sur le système avec des preuves probablement effacées par l'attaquant.",
+      "J'ai déjà travaillé dans des SI dans lesquels la résolution des adresses n'était pas possible, trop de NAT, impossible de trouver la source du flux et quand enfin vous trouvez le schéma réseau vous vous rendez compte qu'il n'est pas à jour et pas complet. Il faut alors redoubler d'effort et de pivots pour réussir à trouver l'attaquant.",
+      "Toutes ces choses sont des éléments à vérifier avant l'incident, la préparation n'est pas a sous estimer, elle prend beaucoup de temps avant même de parler de création d'outil d'analyse il faut préparer le SI.",
+      "Ces préparation peuvent aussi vous aidez en dehors des incidents de sécurité, pour le debug, pour la maintenance, pour l'évolution du SI, ect...",
+      "La gouvernance peut être un moteur sur certains de ces sujets, n'hésitez pas à faire appel à eux pour obtenir le temps et les moyens."
+    ]
   },
   {
     "title": "Post-Incident Review (RETEX): Technical and Managerial Analysis",
-    "notes": []
+    "notes": [
+      "Durant les incidents vous identifier des manques.",
+      "Les manques peuvent être une procédure plus à jour, une procédure inexistante, un playbook incomplet, une nouvelle idée de pivot, un outil pas déployé, une mauvaise politique, un schéma réseau incomplet ou la CMDB pas complète, ect...",
+      "Tous ces points doivent être remonté durant la réponse à incident mais traité après la réponse à incident.",
+      "A la fin de la réponse à incident il faut organiser un RETEX et il faut prendre le temps de le faire, j'ai fait un RETEX pour une réponse à incident de 5 semaines en 1 heure -> elle n'a servit à rien. Durant le RETEX il faut faire la liste de éléments et définir la roadmap pour les fixer. Certaines actions peuvent être délégué mais l'équipe sécurité doit toujours valider les actions et relancer si l'échéance approche.",
+      "Durant le RETEX il faut aussi repasser sur toutes les actions faites et à quel moment, savoir si oui on non c'était le meilleur moyen pour résoudre l'incident rapidement ou si il y a eu perte de temps. Il ne faut pas tout changer mais il faut tout remettre en question au moins le temps d'un instant pour éventuellement trouver une amélioration.",
+      "Il faut évaluer tous les éléments: communication, investigation, remédiation, détection, ect..."
+    ]
   },
   {
     "title": "Continuous Improvement of Security Posture",
-    "notes": []
+    "notes": [
+      "Après le RETEX et la définition de la roadmap il faut prendre le temps de bien mettre en place les améliorations.",
+      "Mettre à jour les procédures et les playbooks pour gérer les cas non pris en compte ou pour ajouter les pivots ou les nouvelles technologies.",
+      "Il faut améliorer les capacités des détections, avec des règles et/ou des outils efficace.",
+      "La gouvernance doit s'occuper des PRA/PCA avec échanges avec les techniciens en prenant en compte les recommandations de sécurité mais aussi les remarques des administrateurs qui appliquent ces actions.",
+      "Il ne faut pas oublier le hardening et les configurations qu'elles soient systèmes ou réseaux il faut renforcer la résistance aux attaques.",
+      "Il est courant qu'à la fin d'une réponse à incident on veuille modifier certaines stratégies de logs, c'est parfois une bonne idée, il faut prendre en compte tous les cas d'usages des logs, les éléments juridique et modifier les procédures et les playbooks liés."
+    ]
   },
   {
     "title": "Incident Response Techniques and Investigation Tips",
@@ -833,6 +868,15 @@ const SLIDES = window.SLIDES_NOTES || [
       "Il faut filtrer les logs réseaux sur les IP/port de destinations de l'attaquant ou IP source et port destination pour identifier les latéralisations depuis une même machine",
       "Faites attention avec le matériel réseau ! Il est moins monitoré => parfois plus simple à compromettre => excellent endroit pour espionner ou se cacher et revenir sans se faire détecter",
       "Astuce: \"IP et port source\" permet de remonter au processus qui initie la connexion"
+    ]
+  },
+  {
+    "title": "Incident Response Pivoting: Beyond Standard Indicators",
+    "notes": [
+      "Les pivots que j'ai cité sont les plus connus.",
+      "Le principes de la réponse est de tracer les actions de l'attaquants, parfois on a la chance de suivre les actions les une après les autres avec les traces qu'il laisse mais parfois on perd la trace et la il faut utiliser les pivots qui n'est rien d'autre qu'un filtre sur un élément différenciants et présent dans les traces.",
+      "Vous devrait donc filter sur plein d'éléments différents.",
+      "Par exemple des sessions de processus linux, des user-agent, des URLs, ou même des données métiers comme la taille de l'écran que j'ai trouvé une fois dans les paramètres de l'URL."
     ]
   },
   {
@@ -926,27 +970,64 @@ const SLIDES = window.SLIDES_NOTES || [
   },
   {
     "title": "Evidence Storage Challenges in Incident Response",
-    "notes": []
+    "notes": [
+      "Le stockage des preuves n'est pas la priorités des équipes de sécurité qui ne font pas que de la réponse à incident.",
+      "La gouvernance rappel les règles de stockage des preuves.",
+      "Les administrateurs sont souvent sollicités en incident response pour savoir où on peut les entreproser, les administrateurs répondent souvent avec un \"vieux\" stockage réseau ne respectant pas les règles définnis par la gouvernance et accessible à beaucoup de personnes.",
+      "Il faut prévoir bien à l'avance le stockage et ils faut prévoir un grand espace de stockage, pas besoin qu'il soit rapide, le mieux et d'avoir une application qui gérent bien les droits en upload et lecture et sans overwrite avec des hashs stockés validant l'authenticité des preuves.",
+      "Le mieux c'est que les procédures et outils de collecte puisse stocker automatiquement les preuves au bon endroit de la bonne manière."
+    ]
   },
   {
     "title": "Responsibilities versus Risk in Incident Response Operations",
-    "notes": []
+    "notes": [
+      "En réponse à incident les responsabilités impact fortement la réputation des prestataires de sécurité.",
+      "La gouvernance préferera être conforme et dans les règles du contrat plutôt que de laisser les personnes techniques gérer la réponse à incident et remédier aux erreurs après.",
+      "Il est extrêment compliqué pour la gouvernance d'accepter les erreurs de conformité, contractuelle et législative qui arrive trop souvent, par conséquent ils prendront des décisions qui impactera fortement la réponse à incident et les personnes techniques.",
+      "Par exemple, j'ai connu une réponse à incident où la gouvernance a préféré installer un EDR plutôt que d'attendre 2 jours que la réponse à incident et la remédiation soit faite. La raison est simple: le contrat expliqué clairement la couverture de l'EDR sur toutes les machines gérées par le prestataire, malheuresement cette ancienne machine n'a pas été déployé comme les autres et n'a pas eu l'EDR installé. L'attaquant a donc pu voir l'installation de l'EDR lui permettant de lancer la phase d'impact plus rapidement.",
+      "En France et en Europe les lois sur la cybersécurité évolue beaucoup généréant une certaine peur pour un grand nombre des équipes de gouvernance qui auront donc tendance à prendre ces \"mauvaises décisions\" pour la réponse à incident."
+    ]
   },
   {
     "title": "Impact of Lack of Procedures and Preparation in Incident Response",
-    "notes": []
+    "notes": [
+      "La réponse à incident nettant pas une priorité pour les SOC managés, la préparation est souvent laissé de coté pour des taches jugées plus prioritaires.",
+      "Le premier problème qu'engendre un manque de préparation: une mauvaise communication, qui est la clés de la réponse à incident. Avec trop de communication vous aurez tendance à ralentir la réponse à incident et parfois de mauvaises interprétations mais avec trop peu de communication là vous allez avoir des décisions prises sans informations et raté complétement votre réponse à incident. Le manager d'un SOC dans cette position doit communiquer avec TOUS les analystes individuellement dans ce contexte, rendant son travail particulièrement complexe mais permettant potentiellement de sauver la réponse à incident, il devrait aussi organiser des points pour confronter les différents analystes afin de valider des preuves ou des interprétations.",
+      "Le second problèle sera l'organisation des personnes techniques, les analystes risquent de travailler sur les mêmes éléments plutôt que de couvrir le scope de l'attaque plus rapidement. La coordination avec les équipes d'administration seront plus difficiles impactant la remédiation, mettant en danger la production et ralentissant la réponse à incident.",
+      "Les analystes devront être autonome, parfois sans les outils adéquats, il faudra donc des personnes très qualifié pour prendre en compte toutes les étapes de la réponse à incident sur tous les contextes, de la meilleure manière possible (souvent avec des complexité pour la collecte de preuve puis pour l'analyse rapide et parfois même pour identifier le scope).",
+      "Dans un cas ou l'analyste n'a aucune procédure et aucun playbook il devra probablement relayer sur ces compétences de réponse à incident et forensic ainsi que sur connaissances systèmes. Se remettre au niveau de système permet de revenir à un niveau plus facilement gérable qu'un niveau applicatif ou infrastructures et réseaux (il est difficile de connaitre tous les systèmes réseaux dans toutes les versions, tous les hyperviseurs et tous les applicatifs de toute la production contrairement à avoir de nombreuse connaissance en Linux et Windows). Cela nécessite une compréhension en profondeur des systèmes informatiques (niveau noyau et de son fonctionnement) et non simplement de ligne de commande qui ne vous donneront que rarement toutes les réponses que vous rechercherez."
+    ]
   },
   {
     "title": "Managing Team Stress During Incident Response",
-    "notes": []
+    "notes": [
+      "La réponse à incident génère une forte de pression.",
+      "Le stress impact tout le monde, certaines personnes sont en mesure d'en gérer plus que d'autres mais le contexte personnel et professionnel peut fortement impacter la gestion de stress des personnes.",
+      "Ainsi même les personnes les plus expérimentés, peuvent dans certaines conditions être fortement impacté par le stress et mal gérer la réponse à incident.",
+      "Si certaines personnes sont les seuls personnes connaisseurs de certaines technologies il faut soit prévoir en amont une monter en compétence d'autres membres soit réduire la charge sur la réponse à incident de la personne afin de diminuer le stress de cette personne stratégique.",
+      "Un autre élément à prendre en compte et la gestion de la fatigue pendant la réponse à incident puisque la fatigue impact directement la gestion du stress et donc de la réussite de la réponse à incident. Si la réponse à incident est courte, une journée ou deux il est possible d'en demander plus aux équipes mais il n'est pas toujours facile de prévoir le temps de réponse à incident au début de celle-ci donc si la réponse à incident est potentiellement longue (durant parfois plusieurs semaines) vous devez réduire les demandes auprès des équipes et si vous en avez le moyen prévoir une rotation des membres prenant les rôles les plus stressant de la réponse à incident (attention la rotation est partielle et non complète: les personnes ayant fait des investigations doivent toujours être présente à toutes les étapes de la réponse à incident).",
+      "La communication par le manager permet d'identifier la fatigue et la gestion du stress, certaines personnes peuvent \"cacher\" leur manque de gestion du stress et leur fatigue durant un échange orale mais les autres analystes remarqueront des incohérences ou des erreurs qu'ils auront remarqué."
+    ]
   },
   {
     "title": "Legal Obligations and Evidence Handling in Incident Response",
-    "notes": []
+    "notes": [
+      "La réponse à incident ammène des éléments législatifs, des éléments financiers et des éléments administratif qu'il faut prendre en compte.",
+      "Si vous êtes prestataire vous devez fortement recommander à vos clients de s'y soumettre et potentiellement accompagner le client si il accepte de faire les démarches.",
+      "En cas d'impact sur des données personnels il faut absolument informer la CNIL dans les 72 heures (prouver qu'aucune information personnel n'est impacté dans ce temps n'est pas toujours simple).",
+      "Si il y a des dégats et des coûts liés à l'attaque il est souvent nécessaire de faire jouer une assurance, pour cela il faut avoir préalablement porté plainte, les assureurs peuvent vous aider à gérer vos réponses à incident (recommender et faciliter un contact avec des équipes spécialisés et gérer la partie administrative)."
+    ]
   },
   {
     "title": "Technical Complexity and Risk Management in Incident Response",
-    "notes": []
+    "notes": [
+      "La réponse à incident peut mener à des erreurs et des impacts sur la production, notamment sur des actions complexes.",
+      "Par exemple certaines lignes de commandes pour modifier de fichiers contenant des valeurs spécifiques lors d'une remédiation ne doit pas être effectué si la procédure ne permet pas la création de cette ligne de manière sécurisé.",
+      "J'ai connu un incident ou l'administrateur se rendant compte de la présence de backdoors a tenté de les supprimer, par erreur la commande a supprimé tous les fichiers PHP du serveur, la production est tombée alors que l'attaquant ne souhaité pas l'impacter.",
+      "Il faut privilégier des actions simple et sans modification, lorsqu'on procède à la remédiation il faut tester ces commandes sans impacter la production, le mieux c'est une procédure permettant de faire les choses de manière plus sécurisé (par exemple des scripts ou outils avec validation de l'utilisateur).",
+      "Même avec des commandes bien connues il faut se méfier le stress à tendance à générer des erreurs inhabituels.",
+      "La réponse à incident doit être procéduré, validé et revue par des personnes de connaissances, dans certains cas il est possible de former des binomes pour limiter certains risque durant une réponse à incident."
+    ]
   },
   {
     "title": "Useful Resources for Incident Response and Threat Detection",
@@ -1098,6 +1179,18 @@ const SLIDES = window.SLIDES_NOTES || [
       "Les outils d'émulation comme miasm et angr sont assez long et complexe à utiliser on évite souvent en réponse à incident",
       "On utilise souvent du reverse dynamique, il peut être effectué avec des outils simple d'utilisation comme ProcDump (Windows, sysinternals) ou strace/ltrace (Linux), wireshark peu aussi aider (il y a des moyens bien meilleurs pour une sandbox plus fiable mais les équipes n'ont pas souvent une infrastructure prévu pour l'analyse dynamique de malware)",
       "Si le rapport d'analyse est sur AnyRun/VirusTotal (sans envoyer le fichier !) on peut l'utiliser => attention: ce sont des systèmes facilement identifiable par les malwares et ce sont des environnements qui \"vivent\" donc avec beaucoup de faux positifs)"
+    ]
+  },
+  {
+    "title": "Specialized Incident Response Tools: High-Level Analysis and Investigation",
+    "notes": [
+      "Il y a beaucoup d'outils de communs en réponse à incident, ils couvrent un gros pourcentage des analyses en réponse à incident.",
+      "Parfois certaines réponses à incident sont complexe et ajoute des éléments non couvert par ces outils communs.",
+      "Parfois les outils couvrent ces systèmes mais pas toutes les actions réellement réalisées aux niveaux infrastructure ou applicatif.",
+      "Il faut donc avoir la possibilité d'utiliser des outils plus spécialisés sur certains éléments du SI, comme l'AD avec ADTimeline.",
+      "J'ai rencontré 2 incidents où j'ai du faire face à des analyses qui ne couvraient aucune des éléments communs: un client pour qui nous devions remonter son SI, complètement compromis jusqu'aux infrastructures. Mon rôle était de valider l'AD pour assurer qu'il n'y avait aucune porte dérobée qui auraient pu permettre à l'attaquant de se retrouver sur l'AD remonté sur nos infrastructures.",
+      "La seconde réponse à incident était un serveur SQL contenant toutes les données métier d'une entreprise précédemment compromises, mon rôle était de vérifier que l'attaquant ne puissent pas revenir sur le SI compromis grâce à ce SQL Server.",
+      "Ces investigations sont nettement plus difficiles que les autres: il n'y a pas d'attaquant à suivre, il faut analyser tous les éléments, les moindres \"recoins\" des fichiers et des systèmes et il est probablement impossible de valider une machine ou un applicatif aussi compliqué que ceux-là. Les outils spécialisés permettent de gagner en rapidité et en précision en parsant des fichiers importants et en validant un certains nombre d'éléments connus."
     ]
   },
   {
