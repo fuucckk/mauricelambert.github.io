@@ -33,14 +33,14 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cybersecurity as the Security of Digital Systems",
             "notes": [
-                "La d\u00e9finition de cybers\u00e9curit\u00e9 est souvent r\u00e9sum\u00e9 \u00e0 la s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques.",
-                "Les syst\u00e8mes num\u00e9riques sont per\u00e7u comme: tous ces appareils connect\u00e9s qui fa\u00e7onnent la vie moderne.",
-                "Quelques \"petits\" exemples: ordinateurs, tablettes et t\u00e9l\u00e9phones.",
-                "Les acc\u00e8s internet et les communications sans fil pourraient \u00eatre \u00e9galement impact\u00e9s, emp\u00eachant toutes communications \u00e0 distance utilis\u00e9es de nos jours de mani\u00e8re communes.",
-                "Tous les objets connect\u00e9s, par exemple si vous avez une bouilloire connect\u00e9e elle serait alors potentiellement inutilisable.",
-                "Et si vous avez un compteur linky, auriez vous de l'\u00e9l\u00e9ctricit\u00e9 chez vous ? Oui, si les infrastructures d'\u00e9l\u00e9cricit\u00e9 arrivent \u00e0 g\u00e9rer le flux sans les informations des compteurs dans le cas contraire on peut avoir des impacts sur la distribution.",
-                "Et sans syst\u00e8me de payements ? Plus d'achat en ligne, en carte bancaire ou retrait de liquide.",
-                "On peut aussi imaginer les syst\u00e8mes de sant\u00e9, plus de syst\u00e8mes d'informations dans les hopitaux pour g\u00e9rer les patients, les salles, les rendez-vous des m\u00e9decins, les urgences o\u00f9 simplement plus de donn\u00e9es de sant\u00e9."
+                "La d\u00e9finition de la cybers\u00e9curit\u00e9 est souvent r\u00e9sum\u00e9e \u00e0 la s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques.",
+                "Les syst\u00e8mes num\u00e9riques sont per\u00e7us comme tous ces appareils connect\u00e9s qui fa\u00e7onnent la vie moderne.",
+                "Quelques \"petits\" exemples : ordinateurs, tablettes et t\u00e9l\u00e9phones.",
+                "Les acc\u00e8s \u00e0 Internet et les communications sans fil pourraient \u00e9galement \u00eatre impact\u00e9s, emp\u00eachant toute communication \u00e0 distance utilis\u00e9e de nos jours de mani\u00e8re courante.",
+                "Tous les objets connect\u00e9s seraient \u00e9galement concern\u00e9s. Par exemple, si vous avez une bouilloire connect\u00e9e, elle pourrait devenir inutilisable.",
+                "Et si vous avez un compteur Linky, auriez-vous de l'\u00e9lectricit\u00e9 chez vous ? Oui, si les infrastructures \u00e9lectriques arrivent \u00e0 g\u00e9rer le flux sans les informations des compteurs. Dans le cas contraire, on pourrait observer des impacts sur la distribution.",
+                "Et sans syst\u00e8me de paiement ? Plus d'achats en ligne, de paiements par carte bancaire ou de retraits d'esp\u00e8ces.",
+                "On peut aussi imaginer les syst\u00e8mes de sant\u00e9 : plus de syst\u00e8mes d'information dans les h\u00f4pitaux pour g\u00e9rer les patients, les salles, les rendez-vous des m\u00e9decins, les urgences ou simplement les donn\u00e9es de sant\u00e9."
             ],
             "aside": "References: <a href=\"https://www.cisco.com/site/us/en/learn/topics/security/what-is-cybersecurity.html\">Cisco</a>.",
             "image": "hacked_healthcare.jpg",
@@ -48,7 +48,7 @@
             "texts": [
                 {
                     "type": "p",
-                    "content": "Cybersecurity can be understood as the security of digital systems. In simple terms, it refers to protecting the technologies that make modern life work. (Cisco: <blockquote><em>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.</em></blockquote>"
+                    "content": "Cybersecurity can be understood as the security of digital systems. In simple terms, it refers to protecting the technologies that make modern life work. <blockquote>Cisco: <em>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.</em></blockquote>"
                 },
                 {
                     "type": "p",
@@ -81,13 +81,13 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Digital Systems: Simple Operations Creating Complex Environments",
             "notes": [
-                "On va temporairement le temps d'une slide parler d'\u00e9l\u00e9ments un peu abstrait des syst\u00e8mes num\u00e9riques.",
-                "Les syst\u00e8mes num\u00e9riques sont bas\u00e9s sur des composants de calcul binaire, c'est \u00e0 dire \u00e0 2 \u00e9tats, souvent repr\u00e9sent\u00e9 par des 0 et des 1.",
-                "Pour les humains les 0 et les 1 sont difficilement lisible, les flux de donn\u00e9es ou d'instructions sont souvent lisible dans du code ou des \u00e9l\u00e9ments textuels.",
-                "Parfois pour bien comprendre en d\u00e9tail le fonctionnement on est oblig\u00e9 des descendre plus bas, pour cela on repr\u00e9sente les 0 et les 1 par groupe de 8 (qu'on appel octet) et on les repr\u00e9sentent sous faire hexad\u00e9cimal et de temps en temps d\u00e9cimal.",
-                "Ces flux de 0 et de 1 sont pr\u00e9visible \u00e0 \u00e9chelle humaine mais toujours bien compris par des couches interm\u00e9diaire opaque, pas toujours connu des d\u00e9veloppeurs ou parfois mal interpr\u00e9t\u00e9.",
-                "Si quelqu'un arrive \u00e0 modifier ces flux de 0 et de 1 qui repr\u00e9sentent les donn\u00e9es et donc parfois les instructions de calculs alors on peut modifier le comportement des appareils \u00e9l\u00e9ctronique et donc les compromettre.",
-                "Les chercheurs en vuln\u00e9rabilit\u00e9 n'ont pas toujours besoin de descendre aussi bas dans les couches des syst\u00e8mes, ils peuvent modifier les flux simplement avec du \"texte\" lisible par l'homme ou des donn\u00e9es forg\u00e9 dans un format que l'appareil ou l'application comprend."
+                "On va temporairement, le temps d'une slide, parler d'\u00e9l\u00e9ments un peu abstraits des syst\u00e8mes num\u00e9riques.",
+                "Les syst\u00e8mes num\u00e9riques sont bas\u00e9s sur des composants de calcul binaire, c'est-\u00e0-dire \u00e0 deux \u00e9tats, souvent repr\u00e9sent\u00e9s par des 0 et des 1.",
+                "Pour les humains, les 0 et les 1 sont difficilement lisibles. Les flux de donn\u00e9es ou d'instructions sont souvent plus lisibles sous forme de code ou d'\u00e9l\u00e9ments textuels.",
+                "Parfois, pour bien comprendre le fonctionnement en d\u00e9tail, on est oblig\u00e9 de descendre plus bas. Pour cela, on repr\u00e9sente les 0 et les 1 par groupes de 8 (qu'on appelle des octets) et on les repr\u00e9sente sous forme hexad\u00e9cimale et, de temps en temps, d\u00e9cimale.",
+                "Ces flux de 0 et de 1 sont pr\u00e9visibles \u00e0 l'\u00e9chelle humaine, mais restent compris par des couches interm\u00e9diaires opaques, pas toujours connues des d\u00e9veloppeurs ou parfois mal interpr\u00e9t\u00e9es.",
+                "Si quelqu'un arrive \u00e0 modifier ces flux de 0 et de 1, qui repr\u00e9sentent les donn\u00e9es et parfois m\u00eame les instructions de calcul, alors il peut modifier le comportement des appareils \u00e9lectroniques et donc les compromettre.",
+                "Les chercheurs en vuln\u00e9rabilit\u00e9s n'ont pas toujours besoin de descendre aussi bas dans les couches des syst\u00e8mes. Ils peuvent modifier les flux simplement avec du \"texte\" lisible par l'homme ou avec des donn\u00e9es forg\u00e9es dans un format que l'appareil ou l'application comprend."
             ],
             "aside": "References: <a href=\"https://www.britannica.com/technology/digital-computer\">Britannica - digital-computer</a>.",
             "image": "binary_data.png",
@@ -123,11 +123,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cyberattack Concepts: Vulnerability, Risk, and Threat",
             "notes": [
-                "Maintenant que nous avons bien compris pourquoi la cybers\u00e9curit\u00e9 \u00e9tait un probl\u00e8me important: les syst\u00e8mes sont de plus en plus nombreux avec de plus en plus de responsabilit\u00e9 et qu'en plus ils sont extr\u00eamement compliqu\u00e9 que les d\u00e9veloppeurs ne les comprennent pas toujours dans tous les d\u00e9tails, nous pouvons regarder quels sont les pr\u00e9requis pour une cyberattaques.",
-                "Les pr\u00e9requis peuvent \u00eatre vu de la mani\u00e8re suivante: un risque, une vuln\u00e9rabilit\u00e9 et une menace.",
-                "Le risque est d\u00e9fini par un danger \u00e9ventuel plus ou moins pr\u00e9visible. Par exemple un risque pourrait \u00eatre de se faire cambrioler.",
-                "Pour ce risque il existe tout un tas de vuln\u00e9rabilit\u00e9 comme une fen\u00eatre qui ne ferme plus. La vuln\u00e9rabilit\u00e9 c'est la faiblesse qui permet de rendre le risque r\u00e9alisable.",
-                "Enfin la menace, c'est l'\u00e9l\u00e9ment qui amm\u00e8ne la volont\u00e9 de nuire. Toujours pour le m\u00eame risque se serait le cambrioleur ou le commenditaire du cambriolage."
+                "Maintenant que nous avons bien compris pourquoi la cybers\u00e9curit\u00e9 \u00e9tait un probl\u00e8me important — les syst\u00e8mes sont de plus en plus nombreux, avec de plus en plus de responsabilit\u00e9s, et qu'en plus ils sont extr\u00eamement compliqu\u00e9s au point que les d\u00e9veloppeurs ne les comprennent pas toujours dans tous les d\u00e9tails — nous pouvons regarder quels sont les pr\u00e9requis pour une cyberattaque.",
+                "Les pr\u00e9requis peuvent \u00eatre vus de la mani\u00e8re suivante : un risque, une vuln\u00e9rabilit\u00e9 et une menace.",
+                "Le risque est d\u00e9fini comme un danger \u00e9ventuel plus ou moins pr\u00e9visible. Par exemple, un risque pourrait \u00eatre de se faire cambrioler.",
+                "Pour ce risque, il existe tout un tas de vuln\u00e9rabilit\u00e9s, comme une fen\u00eatre qui ne ferme plus. La vuln\u00e9rabilit\u00e9, c'est la faiblesse qui permet de rendre le risque r\u00e9alisable.",
+                "Enfin, la menace, c'est l'\u00e9l\u00e9ment qui am\u00e8ne la volont\u00e9 de nuire. Toujours pour le m\u00eame risque, ce serait le cambrioleur ou le commanditaire du cambriolage."
             ],
             "aside": "References: CSRC NIST glossary <a href=\"https://csrc.nist.gov/glossary/term/vulnerability\">Vulnerability</a>, <a href=\"https://csrc.nist.gov/glossary/term/risk\">Risk</a>, <a href=\"https://csrc.nist.gov/glossary/term/threat\">Threat</a>.",
             "image": "VulnerabilityThreat.jpg",
@@ -140,8 +140,8 @@
                 {
                     "type": "ul",
                     "content": [
-                        "<strong>What is a vulnerability ?<strong> A weakness or flaw in a system that can be exploited. Example: <em>a house with a shutter that does not close properly is a vulnerability.</em>",
-                        "<strong>What is a risk ?<strong> The potential of a harmful event occurring when a vulnerability is exploited. Example: <em>being burgled is a risk.</em>",
+                        "<strong>What is a vulnerability ?</strong> A weakness or flaw in a system that can be exploited. Example: <em>a house with a shutter that does not close properly is a vulnerability.</em>",
+                        "<strong>What is a risk ?</strong> The potential of a harmful event occurring when a vulnerability is exploited. Example: <em>being burgled is a risk.</em>",
                         "<strong>What is a threat ?</strong> Anything (person, group, system, or event) capable of exploiting a vulnerability. Example: <em>the burglar is the threat.</em>"
                     ]
                 }
@@ -155,13 +155,13 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "The CIA Triad: The Criteria of Cybersecurity Strategy",
             "notes": [
-                "La strat\u00e9gie de la cybers\u00e9curit\u00e9 utilisent 3 crit\u00e8res que nous pouvons les utiliser pour bien comprendre ce que c'est que la cybers\u00e9curit\u00e9.",
-                "Le premier principe est la confidentialit\u00e9, nous n'avons pas envie que n'importe qui dans le monde voit nos photos et nos messages.",
-                "Le second \u00e9l\u00e9ment est l'int\u00e9grit\u00e9, en effet nous n'avons pas envie que notre nom et pr\u00e9nom change sans notre consentement.",
-                "Enfin le dernier crit\u00e8re est la disponibilit\u00e9 parce que lorsqu'on va au urgence on souhaite que le m\u00e9decin qui nous prend en charge connaisse nos traitements en cours ou allergies pour \u00e9viter toute interaction m\u00e9dicamenteuse dangereuse.",
-                "Enfaite nous venons, gr\u00e2ce \u00e0 ces crit\u00e8res, d'ajouter un \u00e9l\u00e9ment fondamentale de la cybers\u00e9curit\u00e9: les donn\u00e9es. Ce n'est pas que du service disponible c'est aussi la \"qualit\u00e9\" de l'information."
+                "La strat\u00e9gie de la cybers\u00e9curit\u00e9 utilise 3 crit\u00e8res que nous pouvons employer pour bien comprendre ce qu'est la cybers\u00e9curit\u00e9.",
+                "Le premier principe est la confidentialit\u00e9 : nous n'avons pas envie que n'importe qui dans le monde voie nos photos et nos messages.",
+                "Le second \u00e9l\u00e9ment est l'int\u00e9grit\u00e9. En effet, nous n'avons pas envie que notre nom et notre pr\u00e9nom changent sans notre consentement.",
+                "Enfin, le dernier crit\u00e8re est la disponibilit\u00e9, parce que lorsqu'on va aux urgences, on souhaite que le m\u00e9decin qui nous prend en charge connaisse nos traitements en cours ou nos allergies afin d'\u00e9viter toute interaction m\u00e9dicamenteuse dangereuse.",
+                "En fait, nous venons, gr\u00e2ce \u00e0 ces crit\u00e8res, d'ajouter un \u00e9l\u00e9ment fondamental de la cybers\u00e9curit\u00e9 : les donn\u00e9es. Ce n'est pas seulement une question de disponibilit\u00e9 des services, c'est aussi la \"qualit\u00e9\" de l'information."
             ],
-            "aside": "References: <a href=\"https://www.checkpoint.com/cyber-hub/cyber-security/what-is-it-security/what-is-the-cia-triad/\">Checkpoint CIA Triad</a>.",
+            "aside": "References: <a href=\"https://www.checkpoint.com/cyber-hub/cyber-security/what-is-it-security/what-is-the-cia-triad/\">Checkpoint - CIA Triad</a>.",
             "image": "CIA.jpg",
             "image alt": "Diagram explaining the CIA triad in cybersecurity: confidentiality, integrity, and availability as core principles of information security.",
             "texts": [
@@ -191,10 +191,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Who Makes Data Available, Reads It, and Modifies It ?",
             "notes": [
-                "Nous avons d\u00e9fini les trois crit\u00e8res fondamentaux, nous avons ajout\u00e9 un \u00e9l\u00e9ment important \u00e0 la cybers\u00e9curit\u00e9, et si nous les utilisions pour se poser quelques questions pour mieux comprendre la cybers\u00e9curit\u00e9 ?",
-                "Qu'est ce qui lit les donn\u00e9es ? Qu'est ce qui modifie les donn\u00e9es ? Et qu'est ce qui rend les donn\u00e9es accessibles ?",
-                "Les appareils num\u00e9riques les rendent disponible mais ce sont les humains qui les lisent au final et ce sont eux qui les modifient.",
-                "La question de la cybers\u00e9curit\u00e9 n'est peut \u00eatre pas que sur la s\u00e9curit\u00e9 du mat\u00e9riel et des services num\u00e9riques."
+                "Nous avons d\u00e9fini les trois crit\u00e8res fondamentaux, nous avons ajout\u00e9 un \u00e9l\u00e9ment important \u00e0 la cybers\u00e9curit\u00e9, et si nous les utilisions pour nous poser quelques questions afin de mieux comprendre la cybers\u00e9curit\u00e9 ?",
+                "Qu'est-ce qui lit les donn\u00e9es ? Qu'est-ce qui modifie les donn\u00e9es ? Et qu'est-ce qui rend les donn\u00e9es accessibles ?",
+                "Les appareils num\u00e9riques les rendent disponibles, mais ce sont les humains qui les lisent au final et ce sont eux qui les modifient.",
+                "La question de la cybers\u00e9curit\u00e9 n'est peut-\u00eatre pas uniquement celle de la s\u00e9curit\u00e9 du mat\u00e9riel et des services num\u00e9riques."
             ],
             "aside": "References: <a href=\"https://openstax.org/books/foundations-information-systems/pages/1-1-introduction-to-information-systems\">OpenStax - Introduction to information systems</a>.",
             "image": "human_interfaces.webp",
@@ -234,9 +234,9 @@
             "title": "Complete Cybersecurity Definition: Systems, Data, Context and Users",
             "notes": [
                 "Nous avons d\u00e9fini la cybers\u00e9curit\u00e9 comme \u00e9tant la s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques et nous avons compris pourquoi ils pouvaient \u00eatre aussi vuln\u00e9rables.",
-                "Ensuite nous nous sommes rendu compte que les donn\u00e9es \u00e9taient au moins aussi importantes que le syst\u00e8me lui m\u00eame et qu'il fallait l'ajouter dans la d\u00e9finition de la cybers\u00e9curit\u00e9.",
-                "Nous nous sommes rendu compte que ces donn\u00e9es \u00e9taient utilis\u00e9 dans un but finale de lecture et modification par un utilisateur qui doivent donc \u00eatre inclut dans la d\u00e9finition aussi.",
-                "Nous arrivons donc \u00e0 la conclusion que la cybers\u00e9curit\u00e9 c'est la s\u00e9curit\u00e9 des syst\u00e8mes du num\u00e9riques, de leurs contenus, de leurs utilisations et du contexte de leurs utilisations. La s\u00e9curit\u00e9 inclut bien sur la suret\u00e9, donc les accidents, des syst\u00e8mes tout autant que les attaques volontairement malveillantes."
+                "Ensuite, nous nous sommes rendu compte que les donn\u00e9es \u00e9taient au moins aussi importantes que le syst\u00e8me lui-m\u00eame et qu'il fallait les ajouter dans la d\u00e9finition de la cybers\u00e9curit\u00e9.",
+                "Nous nous sommes rendu compte que ces donn\u00e9es \u00e9taient utilis\u00e9es dans un but final de lecture et de modification par des utilisateurs qui doivent donc \u00eatre inclus dans la d\u00e9finition aussi.",
+                "Nous arrivons donc \u00e0 la conclusion que la cybers\u00e9curit\u00e9, c'est la s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques, de leurs contenus, de leurs utilisations et du contexte de leurs utilisations. La s\u00e9curit\u00e9 inclut bien s\u00fbr la s\u00fbret\u00e9, donc les accidents des syst\u00e8mes, tout autant que les attaques volontairement malveillantes."
             ],
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "image": "CompleteCyberSecurity.jpg",
@@ -277,12 +277,12 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cybersecurity Etymology: The Origin of the Word \"Cyber\"",
             "notes": [
-                "Le pr\u00e9fix \"Cyber\" apporte le domaine des syst\u00e8mes num\u00e9riques au terme qu'il compose.",
-                "Il vient de cybernetics, provenant de cybern\u00e9tique d\u00e9fini en France comme \u00e9tant la science de gouverner les hommes.",
-                "Cybern\u00e9tique vient d'un mot Grec qui veut dire piloter un bateau, probablement pens\u00e9 comme \"diriger un syst\u00e8me complexe\".",
-                "D'autres mots et noms moderne proviennent de ce m\u00eame mot Grec comme Kubernetes qui g\u00e8re et orchestre des syst\u00e8mes de conteneurs."
+                "Le pr\u00e9fixe \"Cyber\" apporte le domaine des syst\u00e8mes num\u00e9riques au terme qu'il compose.",
+                "Il vient de \"cybernetics\", provenant de \"cybern\u00e9tique\", d\u00e9fini en France comme \u00e9tant la science de gouverner les hommes.",
+                "Cybern\u00e9tique vient d'un mot grec qui signifie piloter un bateau, probablement pens\u00e9 comme \"diriger un syst\u00e8me complexe\".",
+                "D'autres mots et noms modernes proviennent de ce m\u00eame mot grec, comme Kubernetes, qui g\u00e8re et orchestre des syst\u00e8mes de conteneurs."
             ],
-            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "aside": "References: Wikipedia - <a href=\"https://fr.wikipedia.org/wiki/Cyber\">Cyber</a>, <a href=\"https://fr.wikipedia.org/wiki/Cybern%C3%A9tique\">Cybern\u00e9tique</a>.",
             "image": "CyberEtymology.jpg",
             "image alt": "Three-part illustration showing a boat pilot steering a ship, a leader governing people, and a hacker manipulating systems, representing the origin and meaning of the prefix cyber.",
             "texts": [
