@@ -56,6 +56,10 @@
             <ul>
               <li><a href="#slide-12">Can You Find the Vulnerability in This Building ?</a></li><li><a href="#slide-13">Building Security Vulnerability 1: Information Exposure Through a Window</a></li><li><a href="#slide-14">Server Room Accessibility Vulnerability</a></li><li><a href="#slide-15">Multiple Others Physical Security Vulnerabilities</a></li><li><a href="#slide-16">Can You Find the Vulnerability in This Picture ?</a></li><li><a href="#slide-17">Critical Emergency Exit Vulnerability</a></li>
             </ul>
+          </li><li><a href="#slide-18">Cybersecurity Reconnaissance: How Attackers Search for Vulnerabilities</a>
+            <ul>
+              <li><a href="#slide-19">Physical Reconnaissance and Human Behavior Observation</a></li><li><a href="#slide-20">Wireless Reconnaissance: Wi-Fi, Bluetooth and Radio Signals</a></li><li><a href="#slide-21">Hardware Reconnaissance and Security Equipment Identification</a></li><li><a href="#slide-22">Digital Reconnaissance and Open-Source Intelligence (OSINT)</a></li><li><a href="#slide-23">Can you find vulnerability in this profile page ?</a></li><li><a href="#slide-24">Social Media Profile Vulnerabilities</a></li>
+            </ul>
           </li>
         </ul>
       </nav>
@@ -203,7 +207,7 @@
             <li>customer information,</li><li>contracts and quotes,</li><li>source code,</li><li>patents,</li><li>or industrial secrets.</li>
           </ul><p>This is still a cyberattack because digital information is stolen. However, the attack does not require malware, programming, or advanced technical knowledge.</p>
         </div>
-        <img src="vulnerability_window1.jpg" alt="Office window exposing a worker’s computer screen to outside observers, illustrating visual data leakage and physical context vulnerability in cybersecurity." />
+        <img src="vulnerability_window1.jpg" alt="Office window exposing a worker's computer screen to outside observers, illustrating visual data leakage and physical context vulnerability in cybersecurity." />
       </article>
       <aside>References: <a href="https://fr.wikipedia.org/wiki/Shoulder_surfing">Wikipédia - shoulder surfing</a>.</aside>
       
@@ -263,7 +267,102 @@
           </ul><p>Emergency exits follow strict safety regulations: they must allow fast evacuation.<br>However, they are also frequently: located in less monitored areas, positioned near external structures, or protected with insufficient consideration for intrusion scenarios.</p>
         </div>
       </article>
-      <aside>References: <a href="https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf">ANSSI - Guide d’hygiène informatique</a>.</aside>
+      <aside>References: <a href="https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf">ANSSI - Guide d'hygiène informatique</a>.</aside>
+      
+    </section><section id="slide-18" class="subtitle-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense" />
+      </header>
+      <article>
+        <h2>Cybersecurity Reconnaissance: How Attackers Search for Vulnerabilities</h2>
+      </article>
+    </section><section id="slide-19" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense" />
+        <h3>Physical Reconnaissance and Human Behavior Observation</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>An attacker able to observe a target without being identified will often physically inspect the location before attempting an intrusion.<br>During this reconnaissance phase, the attacker may:</p><ul>
+            <li>observe entrances and exits,</li><li>identify employee habits and routines,</li><li>analyze working hours and presence schedules,</li><li>detect good and bad security practices,</li><li>study access systems such as badges, locks, keys, or gates,</li><li>take photos or videos for later analysis.</li>
+          </ul><p>The objective is to understand: how the organization works, where security is weak, and which behaviors could be exploited.</p>
+        </div>
+        <img src="surveillance1.jpg" alt="Three individuals disguised as a businessman in a restaurant, a homeless person, and a teenager eating ice cream covertly observing a corporate building to gather information for reconnaissance and social engineering." />
+      </article>
+      <aside>References: <a href="https://www.redlegg.com/penetration-testing/physical-pen-testing">RedLegg - physical pentesting</a>.</aside>
+      
+    </section><section id="slide-20" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense" />
+        <h3>Wireless Reconnaissance: Wi-Fi, Bluetooth and Radio Signals</h3>
+      </header>
+      <article class="image-left">
+        <img src="surveillance2.jpg" alt="Three individuals: a businessman, a homeless person, and a teenager; attempting to observe a large secured gate behind a high fence, showing failed reconnaissance due to effective perimeter security preventing visual access" />
+        <div class="text">
+          <p>An attacker does not only observe with their eyes. They can also observe the electromagnetic signals emitted by devices and networks.<br>During this phase, the attacker may:</p><ul>
+            <li>detect Wi-Fi networks,</li><li>listen for Bluetooth devices,</li><li>identify wireless communications used on site.</li>
+          </ul><p>These observations can reveal important information:</p><ul>
+            <li>Is the network using Wi-Fi or wired Ethernet (RJ45) ?</li><li>Are there connected devices using Bluetooth ?</li><li>Are wireless headsets used for confidential meetings ?</li><li>Are smart speakers or connected devices present ?</li><li>Which types of phones are mainly used: iPhone (iOS) or Android ?</li>
+          </ul>
+        </div>
+      </article>
+      <aside>References: <a href="https://attack.mitre.org/techniques/T0887/">MITRE ATT&CK – Wireless Sniffing</a>.</aside>
+      
+    </section><section id="slide-21" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense" />
+        <h3>Hardware Reconnaissance and Security Equipment Identification</h3>
+      </header>
+      <article class="image-left">
+        <img src="discovery.jpg" alt="Attacker performing visual reconnaissance on a secure facility, observing entry points, surveillance systems, and physical security weaknesses before an intrusion." />
+        <div class="text">
+          <p>An attacker may also analyze the physical equipment present in the environment. During this reconnaissance phase, the attacker can identify:</p><ul>
+            <li>computer equipment,</li><li>security devices,</li><li>connected objects,</li><li>and infrastructure technologies.</li>
+          </ul><p>By observing brands, models, or providers, the attacker may estimate the level of security.</p><p>Examples of useful observations:</p><ul>
+            <li>Which computers, servers, or networking devices are used ?</li><li>Are there connected objects or IoT devices ?</li><li>Which cameras, alarms, or access control systems are installed ?</li><li>Are physical backups present on-site ?</li><li>Is video surveillance stored locally or online ?</li><li>Which security company or provider manages the infrastructure?</li>
+          </ul>
+        </div>
+      </article>
+      <aside>References: <a href="https://hackersmanifest.com/iot-pentesting/01-reconnaissance/">Hackers Manifest - IoT pentesting</a>.</aside>
+      
+    </section><section id="slide-22" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense" />
+        <h3>Digital Reconnaissance and Open-Source Intelligence (OSINT)</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Attackers can collect a large amount of information without touching the target directly. This phase is called digital reconnaissance or OSINT (Open-Source Intelligence). An attacker may search for:</p><ul>
+            <li>Information available on Google Maps: (photos of buildings, opening hours, customer identity, entrances, parking areas, or security equipment visible in images).</li><li>Internet services: websites, exposed devices, internet-connected systems, public IP addresses or domains.</li><li>Employee information on LinkedIn: technical skills, technologies and products used, interests, communities, or public relationships.</li><li>Employee activity on social networks: personal information, habits, family members, pets, birthdays, locations, or daily routines.</li><li>Contact information: professional or personal email addresses, phone numbers, physical addresses.</li>
+          </ul>
+        </div>
+        <img src="profil.jpg" alt="Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers." />
+      </article>
+      <aside>References: <a href="https://www.kaspersky.com/blog/osint-open-source-intelligence/48911/">Kaspersky - OSINT</a>.</aside>
+      
+    </section><section id="slide-23" class="content-slide image-only-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense" />
+        <h3>Can you find vulnerability in this profile page ?</h3>
+      </header>
+      <article class="image-only">
+        <img src="profil.jpg" alt="Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers" />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
+    </section><section id="slide-24" class="content-slide">
+      <header>
+        <img src="https://mauricelambert.github.io/MauriceLambert.png" alt="Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense" />
+        <h3>Social Media Profile Vulnerabilities</h3>
+      </header>
+      <article>
+        <div class="text">
+          <p>Social networks can expose a large amount of valuable information to attackers. A public profile may reveal:</p><ul>
+            <li>employer information: technologies, software, products, and even versions used inside the company,</li><li>personal contact information: personal email addresses, phone numbers, or accounts reused for professional communications.</li><li>age or birthday,</li><li>the name of a pet (sometimes reused in passwords),</li><li>vacation dates: useful if an attacker wants to enter a house or office while the person is away,</li><li>friends, relationships, and habits,</li><li>favorite places,</li><li>liked products.</li>
+          </ul>
+        </div>
+        <img src="profil.jpg" alt="Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers." />
+      </article>
+      <aside>References: <a href="https://github.com/mauricelambert/">Github MauriceLambert</a>, <a href="https://mauricelambert.github.io/">MauriceLambert WebSite</a>.</aside>
       
     </section>
     <section class="timeline-slide content-slide" id="timeline-slide">

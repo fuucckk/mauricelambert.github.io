@@ -123,7 +123,7 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cyberattack Concepts: Vulnerability, Risk, and Threat",
             "notes": [
-                "Maintenant que nous avons bien compris pourquoi la cybers\u00e9curit\u00e9 \u00e9tait un probl\u00e8me important — les syst\u00e8mes sont de plus en plus nombreux, avec de plus en plus de responsabilit\u00e9s, et qu'en plus ils sont extr\u00eamement compliqu\u00e9s au point que les d\u00e9veloppeurs ne les comprennent pas toujours dans tous les d\u00e9tails — nous pouvons regarder quels sont les pr\u00e9requis pour une cyberattaque.",
+                "Maintenant que nous avons bien compris pourquoi la cybers\u00e9curit\u00e9 \u00e9tait un probl\u00e8me important \u00e2\u20ac\u201d les syst\u00e8mes sont de plus en plus nombreux, avec de plus en plus de responsabilit\u00e9s, et qu'en plus ils sont extr\u00eamement compliqu\u00e9s au point que les d\u00e9veloppeurs ne les comprennent pas toujours dans tous les d\u00e9tails \u00e2\u20ac\u201d nous pouvons regarder quels sont les pr\u00e9requis pour une cyberattaque.",
                 "Les pr\u00e9requis peuvent \u00eatre vus de la mani\u00e8re suivante : un risque, une vuln\u00e9rabilit\u00e9 et une menace.",
                 "Le risque est d\u00e9fini comme un danger \u00e9ventuel plus ou moins pr\u00e9visible. Par exemple, un risque pourrait \u00eatre de se faire cambrioler.",
                 "Pour ce risque, il existe tout un tas de vuln\u00e9rabilit\u00e9s, comme une fen\u00eatre qui ne ferme plus. La vuln\u00e9rabilit\u00e9, c'est la faiblesse qui permet de rendre le risque r\u00e9alisable.",
@@ -301,6 +301,439 @@
                 {
                     "type": "p",
                     "content": "Even modern technologies still use this origin: <strong>Kubernetes</strong>, a platform used to manage and orchestrate software containers, also comes from \"kybern\u0113tik\u1e17\" (\u03ba\u03c5\u03b2\u03b5\u03c1\u03bd\u03b7\u03c4\u03b9\u03ba\u03ae)."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Learn Cybersecurity: Identify Vulnerabilities Like a Hacker",
+            "notes": []
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Can You Find the Vulnerability in This Building ?",
+            "notes": [
+                "Trouvez-vous des vuln\u00e9rabilit\u00e9s dans ce sch\u00e9ma ?"
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "vulnerable_building.jpg",
+            "image alt": "Building blueprint illustrating security flaws and vulnerable-by-design architecture, representing cybersecurity weaknesses caused by insecure system design."
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Building Security Vulnerability 1: Information Exposure Through a Window",
+            "notes": [
+                "La fen\u00eatre dans le dos du bureau permet de voir l'\u00e9cran du travailleur depuis l'ext\u00e9rieur sans \u00eatre soi-m\u00eame vu.",
+                "Un attaquant \u00e9quip\u00e9 d'une cam\u00e9ra peut filmer tout ce qui passe \u00e0 l'\u00e9cran et obtenir toutes les informations confidentielles.",
+                "Sans aucune connaissance technique, vous \u00eates en mesure de voler toutes les informations confidentielles de l'entreprise qui passent sur l'\u00e9cran, par exemple les clients et les devis, les brevets, le code ou les secrets industriels.",
+                "Cela constitue un vol de donn\u00e9es num\u00e9riques, donc une cyberattaque, mais elle ne n\u00e9cessite aucune comp\u00e9tence informatique."
+            ],
+            "aside": "References: <a href=\"https://fr.wikipedia.org/wiki/Shoulder_surfing\">Wikip\u00e9dia - shoulder surfing</a>.",
+            "image": "vulnerability_window1.jpg",
+            "image alt": "Office window exposing a worker's computer screen to outside observers, illustrating visual data leakage and physical context vulnerability in cybersecurity.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker outside the building could:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "observe the screen without being seen,",
+                        "record the screen with a camera,",
+                        "collect confidential information displayed on the monitor."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Without any hacking tools or technical computer skills, the attacker could steal:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "customer information,",
+                        "contracts and quotes,",
+                        "source code,",
+                        "patents,",
+                        "or industrial secrets."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "This is still a cyberattack because digital information is stolen. However, the attack does not require malware, programming, or advanced technical knowledge."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Server Room Accessibility Vulnerability",
+            "notes": [
+                "Une fen\u00eatre dans la salle serveur permet \u00e0 un attaquant d'obtenir des informations sur les serveurs et le mat\u00e9riel de s\u00e9curit\u00e9.",
+                "Un cambrioleur peut entrer en cassant la fen\u00eatre afin de voler les serveurs et, par la suite, les donn\u00e9es.",
+                "C'est une intrusion physique et une cyberattaque pour deux raisons: un acc\u00e8s \u00e0 des donn\u00e9es non autoris\u00e9 et une indisponibilit\u00e9 des services et des donn\u00e9es."
+            ],
+            "aside": "References: <a href=\"https://messervices.cyber.gouv.fr/documents-guides/CyberDico_ANSSI_2024.pdf\">ANSSI - CyberDico</a>.",
+            "image": "vulnerability_window2.jpg",
+            "image alt": "Server room accessible through a fragile exterior window, illustrating a physical security vulnerability that could enable unauthorized access to critical systems.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The server room contains a window. This creates multiple security risks:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "an attacker can observe the servers and security equipment from outside,",
+                        "information about the infrastructure can be collected without authorization,",
+                        "the physical security measures become visible."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "A burglar could also break the window to enter the server room:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "steal servers,",
+                        "steal storage devices,",
+                        "and later access or extract the data contained inside them."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "This is both: a physical intrusion, and a cybersecurity incident because digital systems and data are targeted: the data may become accessible to the attacker, but the services and information also become unavailable to legitimate users."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Multiple Others Physical Security Vulnerabilities",
+            "notes": [
+                "Il y a plusieurs autres vuln\u00e9rabilit\u00e9s qui impactent ces locaux.",
+                "Le salon pour les invit\u00e9s est directement dans le bureau de travail, cela implique que tout \u00e9change confidentiel durant une visite est entendu par les invit\u00e9s.",
+                "L'acc\u00e8s \u00e0 la salle serveur par une simple porte n'est pas suffisant prot\u00e9g\u00e9, th\u00e9oriquement il devrait y avoir des mesures beaucoup plus forte pour acc\u00e8der aux serveurs (un sous sol avec des portes renforc\u00e9es, des cam\u00e9ras, des alarmes, ect...)."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "vulnerable_building.jpg",
+            "image alt": "Building blueprint illustrating security flaws and vulnerable-by-design architecture, representing cybersecurity weaknesses caused by insecure system design.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Others vulnerabilities in this building:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "No confidentiality between the customer reception area and the working office. Visitors may see screens, documents, conversations, or sensitive information.",
+                        "The server room is directly accessible through a simple door. Sensitive infrastructure should not be easily accessible. A server room is usually expected to have reinforced physical protection and restricted access."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "These vulnerabilities show that cybersecurity is also linked to: physical security, architecture, organization, and environmental design."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Can You Find the Vulnerability in This Picture ?",
+            "notes": [
+                "Trouvez-vous une vuln\u00e9rabilit\u00e9 dans cette image ?"
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "vulnerability_door.jpg",
+            "image alt": "Emergency exit gate in the perimeter fence of a highly secured facility, illustrating a critical physical security vulnerability and potential unauthorized access point."
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Critical Emergency Exit Vulnerability",
+            "notes": [
+                "Les issues de secours sont obligatoires et doivent respecter des r\u00e8gles de s\u00fbret\u00e9 importantes.",
+                "Elles donnent souvent sur l'ext\u00e9rieur, par des portes situ\u00e9es \u00e0 l'arri\u00e8re, l\u00e0 o\u00f9 il n'y a pas d'entr\u00e9e principale.",
+                "Ce sont souvent des endroits moins surveill\u00e9s, ce qui rend cette vuln\u00e9rabilit\u00e9 particuli\u00e8rement int\u00e9ressante pour un attaquant.",
+                "Ici, la porte est install\u00e9e dans un mur grillag\u00e9. Les portes s'ouvrent avec un simple m\u00e9canisme d'appui sur la barre d'ouverture pour des raisons de s\u00fbret\u00e9.",
+                "Pour l'attaquant, il suffit de glisser un fil de fer rigide et courb\u00e9, de l'accrocher \u00e0 la barre d'ouverture, puis de tirer \u00e0 soi.",
+                "La porte s'ouvre alors et l'attaquant peut entrer."
+            ],
+            "aside": "References: <a href=\"https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf\">ANSSI - Guide d'hygi\u00e8ne informatique</a>.",
+            "image": "vulnerability_door.jpg",
+            "image alt": "Emergency exit gate in the perimeter fence of a highly secured facility, illustrating a critical physical security vulnerability and potential unauthorized access point.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Security systems can contain critical vulnerabilities because of safety requirements and physical design choices.<br>In this example, a secured site contains an emergency exit behind a fence. The emergency door uses a push-bar opening mechanism:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "designed to allow fast evacuation during an emergency,",
+                        "but also reachable from outside through the fence."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "With a simple rigid wire:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "an attacker can slide the wire through the fence,",
+                        "hook the emergency push bar,",
+                        "and pull it to trigger the opening mechanism."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Emergency exits follow strict safety regulations: they must allow fast evacuation.<br>However, they are also frequently: located in less monitored areas, positioned near external structures, or protected with insufficient consideration for intrusion scenarios."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cybersecurity Reconnaissance: How Attackers Search for Vulnerabilities",
+            "notes": []
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Physical Reconnaissance and Human Behavior Observation",
+            "notes": [
+                "Un attaquant qui peut observer les lieux d'une intrusion sans \u00eatre identifi\u00e9 ne s'emp\u00eachera pas d'aller voir physiquement.",
+                "Il peut regarder les entr\u00e9es et les sorties.",
+                "Observer les bonnes et mauvaises pratiques des personnes, les horaires de pr\u00e9sence, etc.",
+                "Les d\u00e9tails des acc\u00e8s : badges, serrures, cl\u00e9s, etc.",
+                "Prendre des photos et des vid\u00e9os pour analyser par la suite les \u00e9l\u00e9ments.",
+                "A votre avis, les personnes sur l'image peuvent obtenir des informations \u00e0 propos de l'entreprise dont la porte est illumin\u00e9e ?"
+            ],
+            "aside": "References: <a href=\"https://www.redlegg.com/penetration-testing/physical-pen-testing\">RedLegg - physical pentesting</a>.",
+            "image": "surveillance1.jpg",
+            "image alt": "Three individuals disguised as a businessman in a restaurant, a homeless person, and a teenager eating ice cream covertly observing a corporate building to gather information for reconnaissance and social engineering.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker able to observe a target without being identified will often physically inspect the location before attempting an intrusion.<br>During this reconnaissance phase, the attacker may:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "observe entrances and exits,",
+                        "identify employee habits and routines,",
+                        "analyze working hours and presence schedules,",
+                        "detect good and bad security practices,",
+                        "study access systems such as badges, locks, keys, or gates,",
+                        "take photos or videos for later analysis."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "The objective is to understand: how the organization works, where security is weak, and which behaviors could be exploited."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Wireless Reconnaissance: Wi-Fi, Bluetooth and Radio Signals",
+            "notes": [
+                "Il peut \u00e9couter les ondes (Wi-Fi, Bluetooth et autres).",
+                "Est-ce du Wi-Fi (ondes) ou de l'Ethernet (filaire, RJ45) ?",
+                "Y a-t-il du mat\u00e9riel qui utilise le Bluetooth ? Un casque utilis\u00e9 pour des r\u00e9unions confidentielles ? Une enceinte pour diffuser de la musique ?",
+                "Les t\u00e9l\u00e9phones utilisent-ils iOS (qui utilise beaucoup le Bluetooth et n'est pas toujours tr\u00e8s s\u00fbr) ou Android ?",
+                "D'apr\u00e8s vous que peuvent savoir ces personnes qui cherchent \u00e0 obtenir sur l'entreprise qu'il y a derri\u00e8re ce grand portail ? Ont-ils suffisamment d'informations pour faire une intrusion discr\u00e8te ? Et avec un dr\u00f4ne pour prendre des photos depuis le haut ?"
+            ],
+            "aside": "References: <a href=\"https://attack.mitre.org/techniques/T0887/\">MITRE ATT&CK \u2013 Wireless Sniffing</a>.",
+            "image": "surveillance2.jpg",
+            "image alt": "Three individuals: a businessman, a homeless person, and a teenager; attempting to observe a large secured gate behind a high fence, showing failed reconnaissance due to effective perimeter security preventing visual access",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker does not only observe with their eyes. They can also observe the electromagnetic signals emitted by devices and networks.<br>During this phase, the attacker may:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "detect Wi-Fi networks,",
+                        "listen for Bluetooth devices,",
+                        "identify wireless communications used on site."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "These observations can reveal important information:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Is the network using Wi-Fi or wired Ethernet (RJ45) ?",
+                        "Are there connected devices using Bluetooth ?",
+                        "Are wireless headsets used for confidential meetings ?",
+                        "Are smart speakers or connected devices present ?",
+                        "Which types of phones are mainly used: iPhone (iOS) or Android ?"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Hardware Reconnaissance and Security Equipment Identification",
+            "notes": [
+                "L'attaquant peut identifier le mat\u00e9riel informatique et le mat\u00e9riel de s\u00e9curit\u00e9.",
+                "Identifier les mod\u00e8les, les marques, parfois les prestataires de s\u00e9curit\u00e9, et en d\u00e9duire le niveau de s\u00e9curit\u00e9.",
+                "Y a-t-il des objets connect\u00e9s ?",
+                "Y a-t-il des sauvegardes physiques ? La vid\u00e9osurveillance est-elle locale ou en ligne ?"
+            ],
+            "aside": "References: <a href=\"https://hackersmanifest.com/iot-pentesting/01-reconnaissance/\">Hackers Manifest - IoT pentesting</a>.",
+            "image": "discovery.jpg",
+            "image alt": "Attacker performing visual reconnaissance on a secure facility, observing entry points, surveillance systems, and physical security weaknesses before an intrusion.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker may also analyze the physical equipment present in the environment. During this reconnaissance phase, the attacker can identify:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "computer equipment,",
+                        "security devices,",
+                        "connected objects,",
+                        "and infrastructure technologies."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "By observing brands, models, or providers, the attacker may estimate the level of security."
+                },
+                {
+                    "type": "p",
+                    "content": "Examples of useful observations:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Which computers, servers, or networking devices are used ?",
+                        "Are there connected objects or IoT devices ?",
+                        "Which cameras, alarms, or access control systems are installed ?",
+                        "Are physical backups present on-site ?",
+                        "Is video surveillance stored locally or online ?",
+                        "Which security company or provider manages the infrastructure?"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Digital Reconnaissance and Open-Source Intelligence (OSINT)",
+            "notes": [
+                "GoogleMaps a des photos, des horaires d'ouvertures, des commentaires de clients ?",
+                "Y a-t-il un site web ? Des services, des adresses ou appareils sur internet ?",
+                "Les employ\u00e9s ont-ils LinkedIn ? Ont-ils mis des d\u00e9tails comme des \"comp\u00e9tences\" li\u00e9es \u00e0 des marques ou produits ? Quelle est leur exp\u00e9rience ? Sont-ils comp\u00e9tents en cybers\u00e9curit\u00e9 ? Ont-ils des centres d'int\u00e9r\u00eat autres que leur m\u00e9tier, des amis ou des personnes qu'ils admirent ?",
+                "Les employ\u00e9s ont-ils des r\u00e9seaux sociaux ? Quelles informations peut-on obtenir ? Ont-ils des enfants, des animaux ? Si oui, quels sont leurs noms et leurs dates de naissance ?",
+                "Quelles sont les adresses e-mail professionnelles et personnelles des employ\u00e9s ? Leurs num\u00e9ros de t\u00e9l\u00e9phone ? Leurs adresses physiques ?"
+            ],
+            "aside": "References: <a href=\"https://www.kaspersky.com/blog/osint-open-source-intelligence/48911/\">Kaspersky - OSINT</a>.",
+            "image": "profil.jpg",
+            "image alt": "Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Attackers can collect a large amount of information without touching the target directly. This phase is called digital reconnaissance or OSINT (Open-Source Intelligence). An attacker may search for:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Information available on Google Maps: (photos of buildings, opening hours, customer identity, entrances, parking areas, or security equipment visible in images).",
+                        "Internet services: websites, exposed devices, internet-connected systems, public IP addresses or domains.",
+                        "Employee information on LinkedIn: technical skills, technologies and products used, interests, communities, or public relationships.",
+                        "Employee activity on social networks: personal information, habits, family members, pets, birthdays, locations, or daily routines.",
+                        "Contact information: professional or personal email addresses, phone numbers, physical addresses."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Can you find vulnerability in this profile page ?",
+            "notes": [],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "profil.jpg",
+            "image alt": "Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Social Media Profile Vulnerabilities",
+            "notes": [
+                "Tous les r\u00e9seaux sociaux.",
+                "Les dates de vacances affich\u00e9es sur le profil (si vous devez entrer dans sa maison ou dans son bureau, vous avez un mois tranquille).",
+                "Le nom du chat, qui semble \u00eatre son seul compagnon (et qui pourrait bien faire partie de son mot de passe !).",
+                "Son \u00e2ge (et donc son ann\u00e9e de naissance).",
+                "Son entreprise, ainsi que tous les produits utilis\u00e9s avec leurs versions.",
+                "Ses amis, des photos de lui, son lieu de vacances, son caf\u00e9 pr\u00e9f\u00e9r\u00e9 et toutes ses informations de contact, y compris une adresse e-mail personnelle utilis\u00e9e pour les \u00e9changes professionnels."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "profil.jpg",
+            "image alt": "Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Social networks can expose a large amount of valuable information to attackers. A public profile may reveal:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "employer information: technologies, software, products, and even versions used inside the company,",
+                        "personal contact information: personal email addresses, phone numbers, or accounts reused for professional communications.",
+                        "age or birthday,",
+                        "the name of a pet (sometimes reused in passwords),",
+                        "vacation dates: useful if an attacker wants to enter a house or office while the person is away,",
+                        "friends, relationships, and habits,",
+                        "favorite places,",
+                        "liked products."
+                    ]
                 }
             ],
             "code": "",
