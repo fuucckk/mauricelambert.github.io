@@ -431,7 +431,7 @@
                 "L'acc\u00e8s \u00e0 la salle serveur par une simple porte n'est pas suffisant prot\u00e9g\u00e9, th\u00e9oriquement il devrait y avoir des mesures beaucoup plus forte pour acc\u00e8der aux serveurs (un sous sol avec des portes renforc\u00e9es, des cam\u00e9ras, des alarmes, ect...)."
             ],
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
-            "image": "vulnerable_building.jpg",
+            "image": "vulnerable_building2.jpg",
             "image alt": "Building blueprint illustrating security flaws and vulnerable-by-design architecture, representing cybersecurity weaknesses caused by insecure system design.",
             "texts": [
                 {
@@ -733,6 +733,381 @@
                         "friends, relationships, and habits,",
                         "favorite places,",
                         "liked products."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "How Cybercriminals Exploit Security Vulnerabilities ?",
+            "notes": [
+                "D'apr\u00e8s vous et les histoires de cybers\u00e9curit\u00e9 que vous avez entendu, comment les attaquants entre dans les syst\u00e8mes informatiques ?"
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Intrusion Methods: Physical Break-Ins, Stealth Access and Social Engineering",
+            "notes": [
+                "Forte (mode cambriolage: on casse la porte/fen\u00eatre, on entre, on vole, on ressort et les victimes sont au courant): Les Isra\u00e9liens ont fait cela pour voler les plans nucl\u00e9aires iraniens: ils ont amen\u00e9 deux v\u00e9hicules et ont embarqu\u00e9 des caisses compl\u00e8tes de documents.",
+                "Fine (on crochette la serrure, on place des portes d\u00e9rob\u00e9es et/ou on vole des donn\u00e9es, on sort, on referme et la victime ne se rend compte de rien)",
+                "Ing\u00e9nierie social: On se fait passer pour un collaborateur (caf\u00e9 \u00e0 la main, au t\u00e9l\u00e9phone, souriant, bien ras\u00e9, chemise, ...), un prestataire, un fournisseur ou un professionnel de la s\u00e9curit\u00e9/de l'audit, et on se fait ouvrir la porte. On entre, on observe, on attend, on place des portes d\u00e9rob\u00e9es ou on vole des donn\u00e9es, voire m\u00eame des postes de travail, et la victime peut ou non se rendre compte de l'intrusion."
+            ],
+            "aside": "References: <a href=\"https://www.isere.gouv.fr/Actions-de-l-Etat/Entreprises-economie-emploi-finances-publiques/Entreprises-etes-vous-protegees-face-au-risque-d-intrusion\">Is\u00e8re Prefecture reports physical intrusion data theft in research</a>.",
+            "image": "mission_impossible.jpg",
+            "image alt": "Tom Cruise climbing through a window in Mission: Impossible 4 during a cyber intrusion scene",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Strong Intrusion</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Similar to a burglary",
+                        "Attackers force entry through doors, windows, or protected areas",
+                        "The victim immediately notices the intrusion",
+                        "Example: the theft of Iranian nuclear documents allegedly carried out by Israeli intelligence services"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Stealth Intrusion</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Attackers discreetly enter and leave without visible evidence",
+                        "They may pick locks, bypass protections, install backdoors, or copy data",
+                        "The victim may remain unaware for weeks or months"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Social Engineering Intrusion</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Attackers impersonate employees, contractors, suppliers, auditors, or security professionals",
+                        "They rely on appearance, confidence, urgency, and trust to obtain legitimate access",
+                        "Once inside, they observe, wait, steal information, install malicious devices, or compromise workstations"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Social Engineering: Exploiting Human Vulnerabilities",
+            "notes": [
+                "Principe: on contacte une personne et on utilise des biais cognitifs pour la manipuler afin d'obtenir un comportement voulu.",
+                "Humainement: on utilise le secret, l'urgence, l'autorit\u00e9 et l'importance de la situation pour que la personne ne communique avec personne et effectue les actions souhait\u00e9es.",
+                "Moyens: mail, SMS, messagerie instantan\u00e9e, vishing (appel), quishing (QR code)",
+                "Sujets: changement de mot de passe, probl\u00e8me de s\u00e9curit\u00e9, nouveau client/fournisseur ou investissement urgent, nouveau document (campagne de licenciement, augmentation de salaire, facture, mutuelle, CV), probl\u00e8me juridique, frais suppl\u00e9mentaires (livraison, amende/facture impay\u00e9e), perte de fonctionnalit\u00e9 (captcha invalide et bloqu\u00e9, carte bancaire bloqu\u00e9e, perte d'abonnement)",
+                "Actions: effectuer des virements bancaires, entrer un mot de passe et le 2FA, t\u00e9l\u00e9charger et ex\u00e9cuter un programme, copier-coller et ex\u00e9cuter du code, cliquer sur un bouton, ouvrir un lien"
+            ],
+            "aside": "References: <a href=\"https://www.paloaltonetworks.com/blog/2025/07/social-engineering-rise-new-unit-42-report/\">Palo Alto Networks - Unit 42 Report</a>.",
+            "image": "manipulation.jpg",
+            "image alt": "Lawyer puppet manipulated by unseen hand with neon network envelope representing cybersecurity manipulation",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Attackers communicate with a target and use psychological manipulation to influence behavior, often bypassing technical security controls entirely.<br><strong>Psychological Levers Used</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Secrecy: \u201cDo not tell anyone\u201d",
+                        "Urgency: \u201cAct immediately\u201d",
+                        "Authority: impersonating managers, IT staff, auditors, or official institutions",
+                        "Importance: making the situation appear critical or high-risk"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Common Communication Channels</strong>: Phishing (email), Smishing (SMS), Instant messaging platforms, Vishing (phone calls), Quishing (QR code-based attacks)"
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Typical Scenarios</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Password reset requests",
+                        "Security alerts",
+                        "Urgent supplier/client payments or investments",
+                        "Fake documents (HR changes, salary updates, layoffs, invoices, CVs)",
+                        "Legal or administrative threats",
+                        "Service disruption claims (blocked bank card, expired subscription, failed captcha)"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Targeted User Actions</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Sending bank transfers",
+                        "Entering passwords and 2FA codes",
+                        "Downloading and executing files or programs",
+                        "Copying and executing scripts or commands",
+                        "Clicking malicious links or buttons",
+                        "Scanning QR codes leading to fraudulent pages"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Contextual Security Vulnerabilities Caused by Unsafe Daily Practices",
+            "notes": [
+                "Les vuln\u00e9rabilit\u00e9s dues au contexte sont souvent li\u00e9es \u00e0 des comportements visant \u00e0 simplifier la gestion de l'informatique et \u00e0 diminuer le temps n\u00e9cessaire:",
+                "Ne pas mettre de mot de passe sur un ordinateur ou ne pas fermer sa session",
+                "ne pas fermer \u00e0 cl\u00e9 la porte de son bureau",
+                "noter le mot de passe sur un post-it pour le partager entre plusieurs personnes sans avoir \u00e0 le retenir",
+                "noter les mots de passe dans un cahier ou dans un fichier non prot\u00e9g\u00e9 ou encore les sauvegarder dans le navigateur",
+                "utiliser toujours le m\u00eame mot de passe pour \u00e9viter de devoir se rappeler chacun des mots de passe",
+                "utiliser des dates de naissance ou des noms et surnoms dans son mot de passe pour s'en rappeler plus facilement"
+            ],
+            "aside": "References: <a href=\"https://www.helpnetsecurity.com/2024/04/26/current-user-password-practices/\">Help Net Security \u2013 password management</a>.",
+            "image": "risky_practices.jpg",
+            "image alt": "Lawyer exiting office without locking door, leaving workstation open with exposed confidential information and weak security habits",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Many cybersecurity vulnerabilities are created by everyday behaviors intended to save time, simplify IT usage, or reduce operational constraints.<br><strong>Common Risky Practices</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Using computers without passwords",
+                        "Leaving work sessions unlocked",
+                        "Not locking office doors or restricted areas",
+                        "Writing passwords on sticky notes",
+                        "Sharing passwords between multiple users",
+                        "Storing passwords in unprotected files or notebooks",
+                        "Saving passwords directly in web browsers",
+                        "Reusing the same password across multiple services",
+                        "Using weak passwords based on names, nicknames, or birth dates"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Technical Vulnerability Exploitation Through Hardware and Software Analysis",
+            "notes": [
+                "Hardware: acheter le m\u00eame mat\u00e9riel (m\u00eame marque et m\u00eame mod\u00e8le que celui cibl\u00e9), d\u00e9monter le bo\u00eetier, analyser le contenu pour r\u00e9cup\u00e9rer le code et trouver des vuln\u00e9rabilit\u00e9s dans celui-ci",
+                "Logiciel open source: analyser le code open source pour trouver des vuln\u00e9rabilit\u00e9s",
+                "Logiciel closed source: analyser les fichiers ex\u00e9cutables pour comprendre \u00e0 quoi \"ressemble\" le code source et trouver des vuln\u00e9rabilit\u00e9s",
+                "Souvent, on \u00e9crit une automatisation (parfois une petite dizaine de lignes, parfois quelques centaines de lignes) pour exploiter la vuln\u00e9rabilit\u00e9 facilement et rapidement."
+            ],
+            "aside": "References: <a href=\"https://www.enisa.europa.eu/sites/default/files/2025-10/ENISA%20Threat%20Landscape%202025%20Booklet.pdf?_bhlid=77801cc22cbd30022dfcfae475c47d0534e1ae5b\">ENISA - Threat Landscape 2025</a>.",
+            "image": "iot_hacking.jpg",
+            "image alt": "Hacker accessing surveillance camera hardware and using a terminal to identify and exploit system vulnerabilities",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Technical exploitation involves using know and unpatched vulnerabilities or analyzing hardware or software to identify new weaknesses that can be abused by attackers."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Hardware Analysis</strong>: Buying and disassembling the same device model to inspect firmware, chips, and embedded code to find new vulnerability."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Closed Source Software Analysis</strong>: Reverse engineering executable files to understand how the software works and identify vulnerabilities."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Open Source Software Analysis</strong>: Reviewing publicly available source code to find programming errors or insecure logic."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Exploitation Automation</strong>: Writing scripts or tools to exploit vulnerabilities quickly, efficiently, and at scale."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "What are the impacts of post-exploitation in cybersecurity ?",
+            "notes": [
+                "D'apr\u00e8s vous, quels sont les impacts d'une cyberattaque ?"
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Human Impacts of Post-Exploitation Attacks",
+            "notes": [
+                "Direct: culpabilit\u00e9 des personnes qui se sont fait avoir par une manipulation, le stress des employ\u00e9s pendant la r\u00e9ponse \u00e0 incident pour ceux qui risquent de perdre leurs jobs et ceux qui ne seront peut \u00eatre pas pay\u00e9.",
+                "Indirect: les syst\u00e8mes informatiques sont des interfaces pour les humains, si ces interfaces sont falsifi\u00e9es, elles impactent les m\u00e9tiers qui les utilisent, lesquels peuvent \u00eatre critiques, comme les syst\u00e8mes d'urgence des h\u00f4pitaux, l'acc\u00e8s \u00e0 l'eau ou la distribution d'\u00e9lectricit\u00e9."
+            ],
+            "aside": "References: <a href=\"https://journals.sagepub.com/doi/10.1177/21582440211061556\">SAGE Journals \u2013 An Exploration of the Psychological Impact of Hacking Victimization</a>.",
+            "image": "human_impact.jpg",
+            "image alt": "Depressed lawyer leaning over dry faucet after cyberattack disrupting water supply infrastructure.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Direct impact:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Guilt and loss of confidence for people who have been manipulated by cyber attacks (phishing, social engineering).",
+                        "Some employees experience high stress during and after an attack, some are unable to continue working, and some do not know if they will be paid or if they will keep their job."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Indirect impact: information systems are interfaces for humans, if these interfaces are compromised, they impact the jobs and activities that depend on them, including critical ones such as:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "hospital emergency systems",
+                        "water access",
+                        "electricity distribution",
+                        "transport company"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Hardware and Connected Device Impacts",
+            "notes": [
+                "Le vol de mat\u00e9riel peut impacter le travail des victimes.",
+                "Les objets connect\u00e9s sont aussi des cibles de choix: certains existent pour donner de l'information, mais d'autres peuvent aussi mener des actions automatiquement ou sur demande. Si ce mat\u00e9riel est impact\u00e9, il peut modifier des comportements importants, par exemple une vanne de barrage qui peut retenir ou rel\u00e2cher des milliers de litres d'eau."
+            ],
+            "aside": "References: <a href=\"https://www.automation.com/article/white-paper-zscaler-threatlabz-2023-enterprise-iot\">Zscaler ThreatLabz Report 2023</a>.",
+            "image": "connected_device.jpg",
+            "image alt": "Connected dam system opening massive valve causing giant flood wave toward village after cyberattack.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Hardware theft can directly impact the work and daily activities of victims by preventing access to important devices, files, or services.",
+                        "Connected devices are also valuable targets for attackers. Some are used to provide information, while others can automatically perform physical actions or respond to remote commands.",
+                        "If these devices are compromised, they can alter important behaviors and operations.",
+                        "For example, a compromised dam valve system could retain or release thousands of liters of water, causing major operational or safety consequences."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cyber Espionage and Theft of Strategic Information",
+            "notes": [
+                "Les brevets des entreprises peuvent \u00eatre vol\u00e9s.",
+                "Les devis, les clients et les offres peuvent \u00eatre vol\u00e9s.",
+                "Les secrets professionnels.",
+                "Les secrets des personnes, pouvant servir de moyens de pression."
+            ],
+            "aside": "References: <a href=\"https://www.wsj.com/articles/nation-state-hackers-hit-businesses-for-commercial-edge-d07865e0\">Wall Street Journal \u2013 Nation-State Hackers Hit Businesses for Commercial Edge</a>.",
+            "image": "economic_war.jpg",
+            "image alt": "France sinking into the ocean pulled by piggy bank anchor symbolizing cyber warfare, economic crisis and national cybersecurity threats.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Cyber espionage allows attackers to steal sensitive and strategic information from companies and individuals.",
+                        "Company patents and research data can be stolen to gain competitive or technological advantages.",
+                        "Business information such as quotations, customer lists, contracts, and commercial offers can also be exfiltrated.",
+                        "Professional secrets and confidential internal information may be targeted during attacks.",
+                        "Personal secrets and private information can also be stolen and later used for blackmail, pressure, or manipulation."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Financial Cyber Attacks, Ransomware: Cryptolocker, Data Theft, and Service Disruption",
+            "notes": [
+                "Les attaquants \u00e0 but lucratif font des demandes de ran\u00e7on en utilisant entre 1 et 3 moyens pour prendre en otage les syst\u00e8mes d'information.",
+                "Le chiffrement est le plus connu et le plus utilis\u00e9. Il est aussi int\u00e9ressant pour rendre illisibles les preuves. Les entreprises comptent sur les sauvegardes pour se prot\u00e9ger. Cette prise d'otage unique fonctionne de moins en moins dans les entreprises, sauf lorsque les attaquants arrivent \u00e0 chiffrer ou supprimer les backups.",
+                "L'exfiltration avec menace de vente ou de publication: l'exfiltration est souvent utilis\u00e9e en pr\u00e9-chiffrement, en duo avec celui-ci. Cette menace fonctionne mieux que le chiffrement seul, car les entreprises n'ont plus la main sur les donn\u00e9es et une cyberattaque impacte l'image de l'entreprise. Il existe toutefois un probl\u00e8me avec ce type de demande de ran\u00e7on: les entreprises n'ont aucune preuve que les attaquants ne vont pas revendre en parall\u00e8le les donn\u00e9es pour obtenir plus d'argent. La tendance actuelle est de plus en plus d'exfiltrer les donn\u00e9es sans chiffrement.",
+                "La troisi\u00e8me option est de rendre le service informatique inutilisable: une attaque par d\u00e9ni de service. Si les syst\u00e8mes ne fonctionnent plus, il est particuli\u00e8rement difficile pour les entreprises de reprendre l'activit\u00e9. C'est donc une perte massive et imm\u00e9diate de source de revenus. Face \u00e0 l'urgence et \u00e0 la difficult\u00e9 de reprise, ces prises d'otage peuvent parfois fonctionner."
+            ],
+            "aside": "References: <a href=\"https://www.checkpoint.com/fr/cyber-hub/ransomware/what-is-triple-extortion-ransomware/\">Check Point \u2013 What is Triple Extortion Ransomware ?</a>.",
+            "image": "ransomware.jpg",
+            "image alt": "Smiling hacker casting digital prison on employee computer, demanding ransomware payment through encrypted hostage-taking and cyber extortion.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Profit-driven attackers use ransom demands to take information systems hostage using one or several attack methods."
+                },
+                {
+                    "type": "ol",
+                    "content": [
+                        "Encryption attacks (ransomware) are the most common and well-known method. They make company data inaccessible and can also hide evidence of the intrusion. Backups are often used as protection, but attacks become far more effective when backups are also encrypted or deleted.",
+                        "Data exfiltration combined with threats of publication or resale is frequently used alongside encryption. This method is often more effective because companies lose control over sensitive data and may suffer reputational damage. However, companies have no guarantee that attackers will not secretly sell or reuse the stolen data even after a ransom is paid. The current trend increasingly involves data exfiltration without necessarily using cryptolocking.",
+                        "Another method is to make IT services unusable through denial-of-service attacks. If systems stop functioning, companies may be unable to continue operations, causing immediate financial losses and disruption of business activities."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Data Destruction and Cyber Sabotage",
+            "notes": [
+                "La destruction des donn\u00e9es permet un sabotage difficilement r\u00e9cup\u00e9rable.",
+                "Le but peut \u00eatre d'emp\u00eacher un projet d'aboutir, ou d'\u00eatre utilis\u00e9e comme moyen de prise d'otage en d\u00e9truisant les donn\u00e9es de r\u00e9cup\u00e9ration.",
+                "Elle est aussi utilis\u00e9e pour ne pas laisser de traces, par exemple apr\u00e8s un projet confidentiel et compromettant, ou par les attaquants pour effacer les traces de leurs intrusions (espionnage ou pour \u00e9viter l'adaptation des moyens de d\u00e9fense).",
+                "C'est une technique utilis\u00e9 en temps de guerre pour emp\u00eacher les communications."
+            ],
+            "aside": "References: <a href=\"https://www.numerama.com/cyberguerre/865129-lukraine-se-fait-attaquer-par-un-wiper-un-malware-qui-detruit-des-donnees.html\">Numerama - L\u2019Ukraine se fait attaquer par un malware qui d\u00e9truit des donn\u00e9es.</a>.",
+            "image": "cyber_sabotage.jpg",
+            "image alt": "Person using smoke signals with cyber warning symbols after IT outage, illustrating communication challenges without computers and digital systems.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Data destruction can cause severe and sometimes irreversible sabotage of information systems and business activities.",
+                        "Attackers may destroy data to prevent a project from succeeding or to increase pressure during a ransom attack by deleting recovery data and backups.",
+                        "Destruction can also be used to permanently remove sensitive or compromising information after confidential operations or projects.",
+                        "In many cases, attackers erase logs, evidence, and traces of their intrusion to hide espionage activities or to prevent defenders from understanding and adapting their security measures.",
+                        "These attacks are also used during wartime operations. During the first hours of the war in Ukraine, destructive cyber attacks targeted information systems and communications in order to disrupt access to information and complicate the organization of defenses."
                     ]
                 }
             ],

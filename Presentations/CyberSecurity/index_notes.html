@@ -595,6 +595,98 @@ const SLIDES = window.SLIDES_NOTES || [
     ]
   },
   {
+    "title": "How Cybercriminals Exploit Security Vulnerabilities ?",
+    "notes": [
+      "D'après vous et les histoires de cybersécurité que vous avez entendu, comment les attaquants entre dans les systèmes informatiques ?"
+    ]
+  },
+  {
+    "title": "Intrusion Methods: Physical Break-Ins, Stealth Access and Social Engineering",
+    "notes": [
+      "Forte (mode cambriolage: on casse la porte/fenêtre, on entre, on vole, on ressort et les victimes sont au courant): Les Israéliens ont fait cela pour voler les plans nucléaires iraniens: ils ont amené deux véhicules et ont embarqué des caisses complètes de documents.",
+      "Fine (on crochette la serrure, on place des portes dérobées et/ou on vole des données, on sort, on referme et la victime ne se rend compte de rien)",
+      "Ingénierie social: On se fait passer pour un collaborateur (café à la main, au téléphone, souriant, bien rasé, chemise, ...), un prestataire, un fournisseur ou un professionnel de la sécurité/de l'audit, et on se fait ouvrir la porte. On entre, on observe, on attend, on place des portes dérobées ou on vole des données, voire même des postes de travail, et la victime peut ou non se rendre compte de l'intrusion."
+    ]
+  },
+  {
+    "title": "Social Engineering: Exploiting Human Vulnerabilities",
+    "notes": [
+      "Principe: on contacte une personne et on utilise des biais cognitifs pour la manipuler afin d'obtenir un comportement voulu.",
+      "Humainement: on utilise le secret, l'urgence, l'autorité et l'importance de la situation pour que la personne ne communique avec personne et effectue les actions souhaitées.",
+      "Moyens: mail, SMS, messagerie instantanée, vishing (appel), quishing (QR code)",
+      "Sujets: changement de mot de passe, problème de sécurité, nouveau client/fournisseur ou investissement urgent, nouveau document (campagne de licenciement, augmentation de salaire, facture, mutuelle, CV), problème juridique, frais supplémentaires (livraison, amende/facture impayée), perte de fonctionnalité (captcha invalide et bloqué, carte bancaire bloquée, perte d'abonnement)",
+      "Actions: effectuer des virements bancaires, entrer un mot de passe et le 2FA, télécharger et exécuter un programme, copier-coller et exécuter du code, cliquer sur un bouton, ouvrir un lien"
+    ]
+  },
+  {
+    "title": "Contextual Security Vulnerabilities Caused by Unsafe Daily Practices",
+    "notes": [
+      "Les vulnérabilités dues au contexte sont souvent liées à des comportements visant à simplifier la gestion de l'informatique et à diminuer le temps nécessaire:",
+      "Ne pas mettre de mot de passe sur un ordinateur ou ne pas fermer sa session",
+      "ne pas fermer à clé la porte de son bureau",
+      "noter le mot de passe sur un post-it pour le partager entre plusieurs personnes sans avoir à le retenir",
+      "noter les mots de passe dans un cahier ou dans un fichier non protégé ou encore les sauvegarder dans le navigateur",
+      "utiliser toujours le même mot de passe pour éviter de devoir se rappeler chacun des mots de passe",
+      "utiliser des dates de naissance ou des noms et surnoms dans son mot de passe pour s'en rappeler plus facilement"
+    ]
+  },
+  {
+    "title": "Technical Vulnerability Exploitation Through Hardware and Software Analysis",
+    "notes": [
+      "Hardware: acheter le même matériel (même marque et même modèle que celui ciblé), démonter le boîtier, analyser le contenu pour récupérer le code et trouver des vulnérabilités dans celui-ci",
+      "Logiciel open source: analyser le code open source pour trouver des vulnérabilités",
+      "Logiciel closed source: analyser les fichiers exécutables pour comprendre à quoi \"ressemble\" le code source et trouver des vulnérabilités",
+      "Souvent, on écrit une automatisation (parfois une petite dizaine de lignes, parfois quelques centaines de lignes) pour exploiter la vulnérabilité facilement et rapidement."
+    ]
+  },
+  {
+    "title": "What are the impacts of post-exploitation in cybersecurity ?",
+    "notes": [
+      "D'après vous, quels sont les impacts d'une cyberattaque ?"
+    ]
+  },
+  {
+    "title": "Human Impacts of Post-Exploitation Attacks",
+    "notes": [
+      "Direct: culpabilité des personnes qui se sont fait avoir par une manipulation, le stress des employés pendant la réponse à incident pour ceux qui risquent de perdre leurs jobs et ceux qui ne seront peut être pas payé.",
+      "Indirect: les systèmes informatiques sont des interfaces pour les humains, si ces interfaces sont falsifiées, elles impactent les métiers qui les utilisent, lesquels peuvent être critiques, comme les systèmes d'urgence des hôpitaux, l'accès à l'eau ou la distribution d'électricité."
+    ]
+  },
+  {
+    "title": "Hardware and Connected Device Impacts",
+    "notes": [
+      "Le vol de matériel peut impacter le travail des victimes.",
+      "Les objets connectés sont aussi des cibles de choix: certains existent pour donner de l'information, mais d'autres peuvent aussi mener des actions automatiquement ou sur demande. Si ce matériel est impacté, il peut modifier des comportements importants, par exemple une vanne de barrage qui peut retenir ou relâcher des milliers de litres d'eau."
+    ]
+  },
+  {
+    "title": "Cyber Espionage and Theft of Strategic Information",
+    "notes": [
+      "Les brevets des entreprises peuvent être volés.",
+      "Les devis, les clients et les offres peuvent être volés.",
+      "Les secrets professionnels.",
+      "Les secrets des personnes, pouvant servir de moyens de pression."
+    ]
+  },
+  {
+    "title": "Financial Cyber Attacks, Ransomware: Cryptolocker, Data Theft, and Service Disruption",
+    "notes": [
+      "Les attaquants à but lucratif font des demandes de rançon en utilisant entre 1 et 3 moyens pour prendre en otage les systèmes d'information.",
+      "Le chiffrement est le plus connu et le plus utilisé. Il est aussi intéressant pour rendre illisibles les preuves. Les entreprises comptent sur les sauvegardes pour se protéger. Cette prise d'otage unique fonctionne de moins en moins dans les entreprises, sauf lorsque les attaquants arrivent à chiffrer ou supprimer les backups.",
+      "L'exfiltration avec menace de vente ou de publication: l'exfiltration est souvent utilisée en pré-chiffrement, en duo avec celui-ci. Cette menace fonctionne mieux que le chiffrement seul, car les entreprises n'ont plus la main sur les données et une cyberattaque impacte l'image de l'entreprise. Il existe toutefois un problème avec ce type de demande de rançon: les entreprises n'ont aucune preuve que les attaquants ne vont pas revendre en parallèle les données pour obtenir plus d'argent. La tendance actuelle est de plus en plus d'exfiltrer les données sans chiffrement.",
+      "La troisième option est de rendre le service informatique inutilisable: une attaque par déni de service. Si les systèmes ne fonctionnent plus, il est particulièrement difficile pour les entreprises de reprendre l'activité. C'est donc une perte massive et immédiate de source de revenus. Face à l'urgence et à la difficulté de reprise, ces prises d'otage peuvent parfois fonctionner."
+    ]
+  },
+  {
+    "title": "Data Destruction and Cyber Sabotage",
+    "notes": [
+      "La destruction des données permet un sabotage difficilement récupérable.",
+      "Le but peut être d'empêcher un projet d'aboutir, ou d'être utilisée comme moyen de prise d'otage en détruisant les données de récupération.",
+      "Elle est aussi utilisée pour ne pas laisser de traces, par exemple après un projet confidentiel et compromettant, ou par les attaquants pour effacer les traces de leurs intrusions (espionnage ou pour éviter l'adaptation des moyens de défense).",
+      "C'est une technique utilisé en temps de guerre pour empêcher les communications."
+    ]
+  },
+  {
     "title": "My path, my passion: cybersecurity",
     "notes": []
   }
