@@ -1272,7 +1272,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cybersecurity Best Practices to Prevent Cyber Attacks",
             "notes": [
-                "D'apr\u00e8s vous, comment vous prot\u00e9ger contre les cyberattaques ?"
+                "Nous allons, dans la partie suivante, r\u00e9pondre \u00e0 la question: comment vous prot\u00e9ger contre les cyberattaques ?",
+                "Maintenant que vous savez que ce sont les secrets tels que vos mots de passe qui vous prot\u00e8ge: comment un attaquant pourrait-il avoir acc\u00e8s \u00e0 vos comptes et donn\u00e9es ?"
             ]
         },
         {
@@ -1284,7 +1285,8 @@
                 "Pour se pr\u00e9munir des cyberattaques, il faut disposer de secrets r\u00e9ellement secrets.",
                 "Ne jamais les communiquer.",
                 "Veiller \u00e0 ce qu'ils ne soient pas devinables.",
-                "Veiller \u00e0 ce qu'ils ne soient ni \u00e9crits ni stock\u00e9s sur un support accessible."
+                "Veiller \u00e0 ce qu'ils ne soient ni \u00e9crits ni stock\u00e9s sur un support accessible.",
+                "Si vos mots de passe sont fort, comment un attaquant pourrait-il compromettre votre ordinateur ou t\u00e9l\u00e9phone ?"
             ],
             "aside": "References: <a href=\"https://forestall.io/identity-glossary/what-is-a-secret-in-cybersecurity\">Forestall \u2013 What is a Secret in Cybersecurity?</a>.",
             "image": "password_postit.jpg",
@@ -1299,238 +1301,6 @@
                         "Avoid writing down or storing secrets in locations that are easily accessible to other people.",
                         "The more difficult a secret is to guess, obtain, or steal, the more effective it becomes as a protection against cyber attacks.",
                         "When possible, reduce reliance on a single secret by using additional protections such as multi-factor authentication (MFA)."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content-left",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "Safe Internet Browsing and Digital Exposure Protection",
-            "notes": [
-                "Le navigateur est aujourd'hui l'un des outils les plus puissants, puisqu'il vous permet d'acc\u00e9der \u00e0 n'importe quelle application en ligne, c'est-\u00e0-dire \u00e0 la majorit\u00e9 des applications que vous utilisez.",
-                "Ne t\u00e9l\u00e9chargez pas n'importe quoi. Seule la validation de la source de l'information vous permettra de v\u00e9rifier facilement le contenu t\u00e9l\u00e9charg\u00e9.",
-                "\u00c9vitez de t\u00e9l\u00e9charger des plugins ou des extensions qui n'ont pas \u00e9t\u00e9 valid\u00e9s au pr\u00e9alable par des organismes de confiance, car ils peuvent acc\u00e9der \u00e0 toutes vos informations, m\u00eame les plus sensibles.",
-                "Supprimez r\u00e9guli\u00e8rement les donn\u00e9es de votre navigateur, y compris les cookies, afin de rendre le tra\u00e7age de vos activit\u00e9s sur Internet plus difficile, de vous rendre moins pr\u00e9visible et de r\u00e9duire les risques de compromission.",
-                "\u00c9vitez de trop publier d'\u00e9l\u00e9ments de votre vie personnelle sur Internet. Au minimum, ne les rendez pas publics, mais partagez-les uniquement avec des cercles de personnes contr\u00f4l\u00e9s et de confiance."
-            ],
-            "aside": "References: <a href=\"https://www.technadu.com/unc4536-spreads-malware-via-fake-popular-software-sites/545860/\">TechNadu / Mandiant (Google) - UNC4536 Spreads Malware via Fake Popular Software Websites</a>.",
-            "image": "browser.jpg",
-            "image alt": "Downloading suspicious software with warning signs and risky browser cookies, illustrating unsafe cybersecurity practices to avoid.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "The web browser is one of the most powerful tools today, as it provides access to nearly all online applications and services used in daily life.",
-                        "Avoid downloading files or software from untrusted sources. Always verify the origin of any content before downloading or executing it.",
-                        "Be cautious with browser plugins and extensions. Only install those that have been reviewed or validated by trusted organizations, as they may access sensitive personal data.",
-                        "Regularly clear browser data, including cookies, to reduce online tracking, lower predictability, and limit potential exposure in case of compromise.",
-                        "Avoid oversharing personal information online. At a minimum, keep content private and share it only with controlled and trusted groups of people."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "External Devices and Removable Media Cybersecurity Risks",
-            "notes": [
-                "Les p\u00e9riph\u00e9riques sont une source de compromission. Essayez de ne pas en utiliser; si vous devez en brancher un, n'utilisez que le v\u00f4tre.",
-                "Le p\u00e9riph\u00e9rique d'un ami, m\u00eame de confiance, peut \u00eatre compromis et ne doit donc pas impacter vos appareils.",
-                "Les p\u00e9riph\u00e9riques incluent notamment les cl\u00e9s USB, particuli\u00e8rement dangereuses, les cartes SD, ainsi que les appareils \u00e9lectroniques comme les t\u00e9l\u00e9phones ou les appareils photo."
-            ],
-            "aside": "References: <a href=\"https://www.csoonline.com/article/569163/cybercriminal-group-mails-malicious-usb-dongles-to-targeted-companies.html\">CSO Online \u2013 Cybercriminal Group Mails Malicious USB Dongles to Targeted Companies</a>.",
-            "image": "badusb.jpg",
-            "image alt": "Suspicious hacker USB drive plugged into computer, highlighting cybersecurity risks of unknown external devices and removable media.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "External devices are a common source of security compromise and should be handled with caution.",
-                        "Avoid using unknown or untrusted peripherals whenever possible. If a device must be connected, only use your own trusted hardware.",
-                        "Even devices belonging to friends or trusted colleagues may be compromised and can introduce malware or data theft risks to your systems.",
-                        "Common examples of risky peripherals include USB flash drives, SD cards, smartphones, cameras, and other connected electronic devices.",
-                        "USB drives are especially dangerous because they can automatically execute malicious actions when plugged into a system."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content-left",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "Hidden Risks of Automatic Digital Actions",
-            "notes": [
-                "Les outils essayent de faciliter la vie des utilisateurs pour cela ils effectuent des actions automatiquement.",
-                "Accepter que l'appareil fasse quelque chose pour vous automatiquement, c'est accepter qu'une personne externe effectue une action sur votre appareil sans que vous sachiez exactement laquelle. C'est utile pour les d\u00e9veloppeurs afin de vous faire gagner du temps, mais c'est \u00e9galement utile aux pirates qui souhaitent r\u00e9aliser des actions malveillantes sur votre appareil.",
-                "Ces actions, comme ouvrir des liens automatiquement ou enregistrer des mots de passe WiFi, bien qu'elles paraissent relativement peu dangeureuse peuvent en r\u00e9alit\u00e9 faciliter les cyberattaques.",
-                "Ne scannez pas des QrCodes dont vous ne controller pas compl\u00e8tement la source, ne cliquez pas sur les boutons dans les mails, sur les pubs et autres \u00e9l\u00e9ments externes que vous ne controllez pas."
-            ],
-            "aside": "References: <a href=\"https://www.vditelecom.fr/le-quishing/\">VdiTelecom - Quishing: A Growing Cybersecurity Threat</a>.",
-            "image": "quishing.jpg",
-            "image alt": "Malicious QR code with hacker skull symbol, illustrating QR phishing attacks, cybersecurity threats and fraudulent links used by cybercriminals.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "Modern tools simplify everyday tasks by performing actions automatically.",
-                        "Every time a tool simplifies a decision or an action for you, it means that someone else has decided what will happen on your device. This can be a legitimate developer trying to save you time, or an attacker attempting to make your phone or computer perform actions that lead to compromise.",
-                        "Features such as opening links, joining Wi-Fi networks, or redirecting users can be abused by attackers.",
-                        "Never scan a QR code unless you fully trust and control its source.",
-                        "Avoid clicking buttons, links, advertisements, or other external content that you cannot independently verify."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "Detecting Impersonation and Communication-Based Cyber Attacks",
-            "notes": [
-                "Dans toutes les communications, v\u00e9rifiez la source. Cela inclut les SMS et les appels, les e-mails, les messageries instantan\u00e9es et les r\u00e9seaux sociaux.",
-                "Dans les e-mails, v\u00e9rifiez attentivement le domaine (la partie de l'adresse e-mail situ\u00e9e apr\u00e8s le @).",
-                "Certains caract\u00e8res peuvent \u00eatre extr\u00eamement trompeurs : un \"l\" minuscule ressemble beaucoup \u00e0 un \"I\" majuscule, et certains caract\u00e8res cyrilliques sont tr\u00e8s proches des caract\u00e8res latins."
-            ],
-            "aside": "References: <a href=\"https://www.cloudflare.com/fr-fr/learning/dns/what-is-cybersquatting/\">Cloudflare - What is cybersquatting ?</a>.",
-            "image": "domains.jpg",
-            "image alt": "Domain name structure showing TLD, domain and subdomain, illustrating how to verify website sources and improve cybersecurity awareness.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "Always verify the source of a communication, regardless of whether it comes through email, SMS, phone calls, instant messaging, or social media.",
-                        "Attackers frequently impersonate trusted organizations, colleagues, friends, or family members to gain credibility.",
-                        "For emails, carefully check the domain name, which is the part located after the \"@\" symbol.",
-                        "Small differences can be difficult to spot: for example, a lowercase \"l\" may look identical to an uppercase \"I\", and some Cyrillic characters closely resemble Latin characters.",
-                        "When in doubt, verify the request through another trusted communication channel before taking any action.",
-                        "Trust should be based on verification, not on the appearance of a message or the identity it claims to represent.Dans toutes les communications, v\u00e9rifiez la source. Cela inclut les SMS et les appels, les e-mails, les messageries instantan\u00e9es et les r\u00e9seaux sociaux."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content-left",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "Preventing Accidental Data Leaks and Information Exposure",
-            "notes": [
-                "De plus en plus de fuites de donn\u00e9es confidentielles surviennent \u00e0 cause d'employ\u00e9s qui ne se rendent pas compte des mauvais usages de l'informatique.",
-                "Les moteurs de recherche, les IA, les espaces de stockage en ligne (drives), les forums, ainsi qu'un grand nombre de messageries conservent et analysent tout ce qui est \u00e9crit.",
-                "N'entrez jamais d'informations de l'entreprise dans ces services : pas de code confidentiel, pas de donn\u00e9es RH, pas de donn\u00e9es financi\u00e8res, pas d'\u00e9l\u00e9ments de strat\u00e9gie et encore moins d'\u00e9l\u00e9ments de recherche.",
-                "Par exemple, une messagerie dite s\u00e9curis\u00e9e (chiffr\u00e9e de bout en bout) qui int\u00e8gre une IA peut lire et conserver tout ce qui est \u00e9crit. Les e-mails ne sont pas r\u00e9ellement tr\u00e8s prot\u00e9g\u00e9s : ils ne devraient jamais \u00eatre utilis\u00e9s pour transmettre des donn\u00e9es confidentielles, bien qu'ils soient probablement le moyen le plus couramment utilis\u00e9 pour \u00e9changer des documents officiels. De plus, les syst\u00e8mes de messagerie int\u00e8grent de plus en plus d'agents destin\u00e9s \u00e0 aider \u00e0 la lecture et \u00e0 la r\u00e9daction des e-mails ; il est donc techniquement possible pour les fournisseurs de ces services de tout conserver."
-            ],
-            "aside": "References: <a href=\"https://www.techtimes.com/articles/289996/20230404/samsung-employees-used-chatgpt-work-unknowingly-leaked-critical-source-codes.htm\"></a>.",
-            "image": "malicious_ia.jpg",
-            "image alt": "Malicious-looking AI digital brain consuming massive amounts of data, illustrating artificial intelligence data collection, privacy risks and cybersecurity concerns.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "An increasing number of confidential data breaches are caused by employees who unknowingly misuse digital tools and online services.",
-                        "Search engines, AI assistants, cloud storage platforms, forums, and many messaging services may store, process, analyze, or retain the information entered by users.",
-                        "Confidential company information should never be shared with these services unless they have been explicitly approved for that purpose.",
-                        "This includes source code, HR data, financial information, strategic plans, research data, intellectual property, and other sensitive business information.",
-                        "Many users assume that a service is private or secure because it is encrypted. However, some services integrate AI features that can process, store, or learn from user content.",
-                        "Emails are widely used for official communications, but they should not be considered a secure method for transmitting highly confidential information."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "Separating Personal and Professional Digital Activities to Prevent Cyberattacks",
-            "notes": [
-                "Les entreprises mettent en place de plus en plus de syst\u00e8mes de protection, avec une supervision de la s\u00e9curit\u00e9 sur un maximum d'\u00e9l\u00e9ments (acc\u00e8s Internet, messagerie, t\u00e9l\u00e9phones mobiles, postes de travail, r\u00e9seaux, etc.).",
-                "Pour faciliter leurs intrusions, les attaquants pr\u00e9f\u00e8rent \u00e9viter ces outils de s\u00e9curit\u00e9. C'est plus simple et plus discret pour eux.",
-                "Le meilleur moyen est alors d'attaquer une cible dans sa vie priv\u00e9e. Si un attaquant parvient, via un e-mail personnel non s\u00e9curis\u00e9, \u00e0 compromettre le poste de travail professionnel d'une victime parce qu'elle consulte ses e-mails personnels sur son ordinateur professionnel, il peut compromettre l'entreprise. Inversement, s'il compromet l'ordinateur personnel de la victime via sa messagerie personnelle et que celle-ci acc\u00e8de \u00e0 ses e-mails professionnels depuis cet ordinateur, l'attaquant peut \u00e9galement compromettre l'entreprise."
-            ],
-            "aside": "References: <a href=\"https://www.business-standard.com/article/companies/hacker-breached-network-via-employee-account-no-data-compromised-cisco-122081300468_1.html\">Business Standard - Hacker breached network via employee account</a>.",
-            "image": "professionnal_personnal_context.jpg",
-            "image alt": "Split-screen comparison of personal and professional computer use, highlighting the importance of separating work and private environments for better cybersecurity.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "Organizations invest heavily in security controls, monitoring, and protection mechanisms across internet access, email systems, mobile devices, workstations, and corporate networks.",
-                        "Because these protections make attacks more difficult, attackers often look for less protected entry points.",
-                        "Personal accounts, devices, and services are frequently targeted because they usually have fewer security controls than corporate environments.",
-                        "Mixing personal and professional activities increases the risk that a compromise in one environment can spread to the other.",
-                        "Accessing personal emails on a work computer, or professional resources from a personal device, can create a bridge between two environments that should remain separate.",
-                        "Whenever possible, use separate devices, email addresses, phone numbers, accounts, and services for personal and professional activities to reduce the impact of a compromise."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content-left",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "Local Networks and the Risk of Lateral Cyber Attacks",
-            "notes": [
-                "Les r\u00e9seaux permettent de cr\u00e9er des liens entre les diff\u00e9rents syst\u00e8mes qui les composent. Ces liens sont pr\u00e9cieux pour un attaquant, car ils peuvent lui permettre de compromettre les syst\u00e8mes voisins.",
-                "Si vous connectez votre ordinateur professionnel \u00e0 votre Wi-Fi personnel et qu'un autre appareil du r\u00e9seau est compromis, un attaquant pourrait potentiellement compromettre l'ordinateur professionnel.",
-                "Si vous vous connectez \u00e0 un r\u00e9seau Wi-Fi public, par exemple dans un bar, un train ou un a\u00e9roport, un attaquant pr\u00e9sent sur le m\u00eame r\u00e9seau pourrait tenter de compromettre votre appareil."
-            ],
-            "aside": "References: <a href=\"https://www.cnbc.com/2014/11/10/ceos-beware-of-darkhotel-hackers.html\">CNBC - CEOs beware of \"DarkHotel\" hackers</a>.",
-            "image": "wifi_attacks.jpg",
-            "image alt": "Hacker intercepting data from business professional on public Wi-Fi in a caf\u00e9, illustrating cybersecurity risks of unsecured public networks and data theft.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "Networks create connections between devices, allowing them to communicate and share resources. These connections can also provide opportunities for attackers to move from one system to another.",
-                        "A compromised device on a home network may become a pathway to other devices connected to the same network.",
-                        "For example, if a professional laptop is connected to a home Wi-Fi network where another device has already been compromised, an attacker may attempt to reach the professional system through that connection.",
-                        "Public Wi-Fi networks in caf\u00e9s, hotels, airports, trains, or other public places present additional risks because unknown and potentially malicious devices may be connected to the same network.",
-                        "Whenever possible, limit exposure to untrusted networks and be aware that every network connection extends the potential attack surface of a device."
-                    ]
-                }
-            ],
-            "code": "",
-            "code lang": ""
-        },
-        {
-            "type": "content",
-            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
-            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
-            "title": "Physical Security and Device Protection",
-            "notes": [
-                "Les appareils ne doivent jamais \u00eatre laiss\u00e9s sans surveillance, sauf dans un lieu contr\u00f4l\u00e9 par vous ou par votre organisation.",
-                "Ne laissez jamais votre appareil sans surveillance dans un train, m\u00eame pour passer un appel de quelques secondes ou pour aller aux toilettes ou au bar. D'ailleurs, si vous travaillez dans des lieux publics, assurez-vous de toujours utiliser un filtre de confidentialit\u00e9 sur votre \u00e9cran.",
-                "Si vous \u00eates en d\u00e9placement et que l'on vous demande de laisser vos appareils \u00e0 l'ext\u00e9rieur, il faut refuser. Vous pouvez les placer dans des sacoches bloquant les communications radio afin d'emp\u00eacher toute transmission de donn\u00e9es. Vous pouvez \u00e9ventuellement laisser \u00e0 l'entr\u00e9e la seule cl\u00e9 permettant d'acc\u00e9der \u00e0 votre appareil, mais le syst\u00e8me doit rester avec vous."
-            ],
-            "aside": "References: <a href=\"https://www.itpro.com/security/hacking/hackers-are-turning-up-at-law-firms-to-gain-physical-access-to-machines\">IT Pro - Hackers are turning up at law firms to gain physical access to machines</a>.",
-            "image": "https://mauricelambert.github.io/Presentations/CyberTalk/PublicConfidentialData.jpg",
-            "image alt": "Hacker spying on confidential laptop data in a train using binoculars, illustrating shoulder surfing risks and the dangers of handling sensitive information in public places.",
-            "texts": [
-                {
-                    "type": "ul",
-                    "content": [
-                        "A device that is physically accessible to an attacker should be considered potentially compromised.",
-                        "Computers, smartphones, tablets, and removable media should never be left unattended unless they are stored in a location controlled by you or your organization.",
-                        "In public places such as trains, airports, hotels, or conferences, even a few seconds without supervision may be enough for a device to be stolen, modified, or accessed.",
-                        "When working in public environments, privacy screen filters help prevent unauthorized observation of sensitive information displayed on the screen.",
-                        "During travel, requests to leave electronic devices outside a meeting room or secure area should be carefully evaluated. Whenever possible, the device should remain under your control.",
-                        "Radio-blocking pouches can help prevent wireless communications, but they do not replace physical supervision. The safest approach is to keep the device with you at all times."
                     ]
                 }
             ],
@@ -1572,12 +1342,133 @@
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Safe Internet Browsing and Digital Exposure Protection",
+            "notes": [
+                "Le navigateur est aujourd'hui l'un des outils les plus puissants, puisqu'il vous permet d'acc\u00e9der \u00e0 n'importe quelle application en ligne, c'est-\u00e0-dire \u00e0 la majorit\u00e9 des applications que vous utilisez.",
+                "Ne t\u00e9l\u00e9chargez pas n'importe quoi. Seule la validation de la source de l'information vous permettra de v\u00e9rifier facilement le contenu t\u00e9l\u00e9charg\u00e9.",
+                "\u00c9vitez de t\u00e9l\u00e9charger des plugins ou des extensions qui n'ont pas \u00e9t\u00e9 valid\u00e9s au pr\u00e9alable par des organismes de confiance, car ils peuvent acc\u00e9der \u00e0 toutes vos informations, m\u00eame les plus sensibles.",
+                "Supprimez r\u00e9guli\u00e8rement les donn\u00e9es de votre navigateur, y compris les cookies (et utilisez la navigation priv\u00e9e), afin de rendre le tra\u00e7age de vos activit\u00e9s sur Internet plus difficile, de vous rendre moins pr\u00e9visible et de r\u00e9duire les risques de compromission.",
+                "\u00c9vitez de trop publier d'\u00e9l\u00e9ments de votre vie personnelle sur Internet. Au minimum, ne les rendez pas publics, mais partagez-les uniquement avec des cercles de personnes contr\u00f4l\u00e9s et de confiance.",
+                "Si vous n'allez plus sur des sites douteux, qu'est-ce que l'attaquant pourrait faire pour vous faire ex\u00e9cuter un program malveillant ?"
+            ],
+            "aside": "References: <a href=\"https://www.technadu.com/unc4536-spreads-malware-via-fake-popular-software-sites/545860/\">TechNadu / Mandiant (Google) - UNC4536 Spreads Malware via Fake Popular Software Websites</a>.",
+            "image": "browser.jpg",
+            "image alt": "Downloading suspicious software with warning signs and risky browser cookies, illustrating unsafe cybersecurity practices to avoid.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "The web browser is one of the most powerful tools today, as it provides access to nearly all online applications and services used in daily life.",
+                        "Avoid downloading files or software from untrusted sources. Always verify the origin of any content before downloading or executing it.",
+                        "Be cautious with browser plugins and extensions. Only install those that have been reviewed or validated by trusted organizations, as they may access sensitive personal data.",
+                        "Regularly clear browser data, including cookies, to reduce online tracking, lower predictability, and limit potential exposure in case of compromise.",
+                        "Avoid oversharing personal information online. At a minimum, keep content private and share it only with controlled and trusted groups of people."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Detecting Impersonation and Communication-Based Cyber Attacks",
+            "notes": [
+                "Dans toutes les communications, v\u00e9rifiez la source. Cela inclut les SMS et les appels, les e-mails, les messageries instantan\u00e9es et les r\u00e9seaux sociaux.",
+                "Dans les e-mails, v\u00e9rifiez attentivement le domaine (la partie de l'adresse e-mail situ\u00e9e apr\u00e8s le @).",
+                "Certains caract\u00e8res peuvent \u00eatre extr\u00eamement trompeurs : un \"l\" minuscule ressemble beaucoup \u00e0 un \"I\" majuscule, et certains caract\u00e8res cyrilliques sont tr\u00e8s proches des caract\u00e8res latins.",
+                "Si les attaquants ne peuvent plus vous envoyer directement des liens, comment pourraient-ils vous en faire ouvrir un ?"
+            ],
+            "aside": "References: <a href=\"https://www.cloudflare.com/fr-fr/learning/dns/what-is-cybersquatting/\">Cloudflare - What is cybersquatting ?</a>.",
+            "image": "domains.jpg",
+            "image alt": "Domain name structure showing TLD, domain and subdomain, illustrating how to verify website sources and improve cybersecurity awareness.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Always verify the source of a communication, regardless of whether it comes through email, SMS, phone calls, instant messaging, or social media.",
+                        "Attackers frequently impersonate trusted organizations, colleagues, friends, or family members to gain credibility.",
+                        "For emails, carefully check the domain name, which is the part located after the \"@\" symbol.",
+                        "Small differences can be difficult to spot: for example, a lowercase \"l\" may look identical to an uppercase \"I\", and some Cyrillic characters closely resemble Latin characters.",
+                        "When in doubt, verify the request through another trusted communication channel before taking any action.",
+                        "Trust should be based on verification, not on the appearance of a message or the identity it claims to represent.Dans toutes les communications, v\u00e9rifiez la source. Cela inclut les SMS et les appels, les e-mails, les messageries instantan\u00e9es et les r\u00e9seaux sociaux."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Hidden Risks of Automatic Digital Actions",
+            "notes": [
+                "Les outils essayent de faciliter la vie des utilisateurs pour cela ils effectuent des actions automatiquement.",
+                "Accepter que l'appareil fasse quelque chose pour vous automatiquement, c'est accepter qu'une personne externe effectue une action sur votre appareil sans que vous sachiez exactement laquelle. C'est utile pour les d\u00e9veloppeurs afin de vous faire gagner du temps, mais c'est \u00e9galement utile aux pirates qui souhaitent r\u00e9aliser des actions malveillantes sur votre appareil.",
+                "Ces actions, comme ouvrir des liens automatiquement ou enregistrer des mots de passe WiFi, bien qu'elles paraissent relativement peu dangeureuse peuvent en r\u00e9alit\u00e9 faciliter les cyberattaques.",
+                "Ne scannez pas des QrCodes dont vous ne controller pas compl\u00e8tement la source, ne cliquez pas sur les boutons dans les mails, sur les pubs et autres \u00e9l\u00e9ments externes que vous ne controllez pas.",
+                "Si vous n'ouvrez plus de liens et que vous ne t\u00e9l\u00e9chargez plus de documents suspicieux, comment un attaquant pourrait-il vous faire cliquer sur un fichier malveillant ?"
+            ],
+            "aside": "References: <a href=\"https://www.vditelecom.fr/le-quishing/\">VdiTelecom - Quishing: A Growing Cybersecurity Threat</a>.",
+            "image": "quishing.jpg",
+            "image alt": "Malicious QR code with hacker skull symbol, illustrating QR phishing attacks, cybersecurity threats and fraudulent links used by cybercriminals.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Modern tools simplify everyday tasks by performing actions automatically.",
+                        "Every time a tool simplifies a decision or an action for you, it means that someone else has decided what will happen on your device. This can be a legitimate developer trying to save you time, or an attacker attempting to make your phone or computer perform actions that lead to compromise.",
+                        "Features such as opening links, joining Wi-Fi networks, or redirecting users can be abused by attackers.",
+                        "Never scan a QR code unless you fully trust and control its source.",
+                        "Avoid clicking buttons, links, advertisements, or other external content that you cannot independently verify."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "External Devices and Removable Media Cybersecurity Risks",
+            "notes": [
+                "Les p\u00e9riph\u00e9riques sont une source de compromission. Essayez de ne pas en utiliser; si vous devez en brancher un, n'utilisez que le v\u00f4tre.",
+                "Le p\u00e9riph\u00e9rique d'un ami, m\u00eame de confiance, peut \u00eatre compromis et ne doit donc pas impacter vos appareils.",
+                "Les p\u00e9riph\u00e9riques incluent notamment les cl\u00e9s USB, particuli\u00e8rement dangereuses, les cartes SD, ainsi que les appareils \u00e9lectroniques comme les t\u00e9l\u00e9phones ou les appareils photo.",
+                "Si vous ne cliquez plus sur des fichiers dangeureux, comment un attaquant pourrait-il faire ex\u00e9cuter un programme malveillant sur votre ordinateur ?"
+            ],
+            "aside": "References: <a href=\"https://www.csoonline.com/article/569163/cybercriminal-group-mails-malicious-usb-dongles-to-targeted-companies.html\">CSO Online \u2013 Cybercriminal Group Mails Malicious USB Dongles to Targeted Companies</a>.",
+            "image": "badusb.jpg",
+            "image alt": "Suspicious hacker USB drive plugged into computer, highlighting cybersecurity risks of unknown external devices and removable media.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "External devices are a common source of security compromise and should be handled with caution.",
+                        "Avoid using unknown or untrusted peripherals whenever possible. If a device must be connected, only use your own trusted hardware.",
+                        "Even devices belonging to friends or trusted colleagues may be compromised and can introduce malware or data theft risks to your systems.",
+                        "Common examples of risky peripherals include USB flash drives, SD cards, smartphones, cameras, and other connected electronic devices.",
+                        "USB drives are especially dangerous because they can automatically execute malicious actions when plugged into a system."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Physical Access Control and Session Security",
             "notes": [
                 "Lorsqu'une victime est trop difficilement accessible \u00e0 distance, les attaquants peuvent se d\u00e9placer ou recruter des acteurs malveillants locaux pour la compromettre physiquement.",
                 "Pour \u00e9viter cela: fermez bien vos portes \u00e0 cl\u00e9 et verrouillez toujours vos sessions !",
                 "Si vous devez changer vos serrures, assurez-vous d'installer une serrure offrant un bon niveau de s\u00e9curit\u00e9.",
-                "Attention \u00e0 ne pas oublier le reste: les portes qui se \"claquent\" peuvent \u00eatre ouvertes avec une carte bancaire, une fen\u00eatre ouverte constitue un bon point d'entr\u00e9e m\u00eame au premier \u00e9tage, et une fen\u00eatre ou une porte peu r\u00e9sistante est une vuln\u00e9rabilit\u00e9 qui peut permettre \u00e0 un attaquant d'entrer."
+                "Attention \u00e0 ne pas oublier le reste: les portes qui se \"claquent\" peuvent \u00eatre ouvertes avec une carte bancaire, une fen\u00eatre ouverte constitue un bon point d'entr\u00e9e m\u00eame au premier \u00e9tage, et une fen\u00eatre ou une porte peu r\u00e9sistante est une vuln\u00e9rabilit\u00e9 qui peut permettre \u00e0 un attaquant d'entrer.",
+                "Si vous fermez bien votre bureau et votre session, comment l'attaquant pourrait-il voir vos donn\u00e9es ?"
             ],
             "aside": "References: <a href=\"https://arstechnica.com/tech-policy/2019/10/man-faces-12-years-for-using-keyloggers-to-steal-companies-technology/\">Man planted keyloggers in companies' networks and stole their data</a>.",
             "image": "physical_access.jpg",
@@ -1602,11 +1493,42 @@
             "type": "content-left",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Physical Security and Device Protection",
+            "notes": [
+                "Les appareils ne doivent jamais \u00eatre laiss\u00e9s sans surveillance, sauf dans un lieu contr\u00f4l\u00e9 par vous ou par votre organisation.",
+                "Ne laissez jamais votre appareil sans surveillance dans un train, m\u00eame pour passer un appel de quelques secondes ou pour aller aux toilettes ou au bar. D'ailleurs, si vous travaillez dans des lieux publics, assurez-vous de toujours utiliser un filtre de confidentialit\u00e9 sur votre \u00e9cran.",
+                "Si vous \u00eates en d\u00e9placement et que l'on vous demande de laisser vos appareils \u00e0 l'ext\u00e9rieur, il faut refuser. Vous pouvez les placer dans des sacoches bloquant les communications radio afin d'emp\u00eacher toute transmission de donn\u00e9es. Vous pouvez \u00e9ventuellement laisser \u00e0 l'entr\u00e9e la seule cl\u00e9 permettant d'acc\u00e9der \u00e0 votre appareil, mais le syst\u00e8me doit rester avec vous.",
+                "Et si vous vous respectez toutes les consignes et recommandations que nous venons de faire, comment ces consignes pourrait-elles ne pas \u00eatre respect\u00e9es sur vos appareils ?"
+            ],
+            "aside": "References: <a href=\"https://www.itpro.com/security/hacking/hackers-are-turning-up-at-law-firms-to-gain-physical-access-to-machines\">IT Pro - Hackers are turning up at law firms to gain physical access to machines</a>.",
+            "image": "https://mauricelambert.github.io/Presentations/CyberTalk/PublicConfidentialData.jpg",
+            "image alt": "Hacker spying on confidential laptop data in a train using binoculars, illustrating shoulder surfing risks and the dangers of handling sensitive information in public places.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "A device that is physically accessible to an attacker should be considered potentially compromised.",
+                        "Computers, smartphones, tablets, and removable media should never be left unattended unless they are stored in a location controlled by you or your organization.",
+                        "In public places such as trains, airports, hotels, or conferences, even a few seconds without supervision may be enough for a device to be stolen, modified, or accessed.",
+                        "When working in public environments, privacy screen filters help prevent unauthorized observation of sensitive information displayed on the screen.",
+                        "During travel, requests to leave electronic devices outside a meeting room or secure area should be carefully evaluated. Whenever possible, the device should remain under your control.",
+                        "Radio-blocking pouches can help prevent wireless communications, but they do not replace physical supervision. The safest approach is to keep the device with you at all times."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Never Lend Devices or Security Assets",
             "notes": [
                 "Le pr\u00eat d'un ordinateur, d'un t\u00e9l\u00e9phone ou d'un \u00e9l\u00e9ment de s\u00e9curit\u00e9 constitue un risque consid\u00e9rable.",
                 "M\u00eame avec une personne bienveillante, si elle branche une cl\u00e9 USB, scanne un QR code, lit ses e-mails, visite un site ou clique par m\u00e9garde sur un lien ou un bouton, elle peut compromettre votre syst\u00e8me et votre entreprise.",
-                "Pr\u00eater une carte bancaire, m\u00eame cinq secondes et en gardant la personne sous les yeux, constitue une vuln\u00e9rabilit\u00e9. Elle peut m\u00e9moriser votre code, votre date de p\u00e9remption, votre nom, votre pr\u00e9nom ainsi que le code de s\u00e9curit\u00e9, et effectuer des achats sur Internet pour un faible co\u00fbt."
+                "Pr\u00eater une carte bancaire, m\u00eame cinq secondes et en gardant la personne sous les yeux, constitue une vuln\u00e9rabilit\u00e9. Elle peut m\u00e9moriser votre code, votre date de p\u00e9remption, votre nom, votre pr\u00e9nom ainsi que le code de s\u00e9curit\u00e9, et effectuer des achats sur Internet pour un faible co\u00fbt.",
+                "Maintenant que vous ne pr\u00eatez plus vos appareils et que vous les prot\u00e9gez, comment l'attaquant ferait-il pour se rapprocher/acc\u00e8der \u00e0 votre appareil \"virtuellement\" ?"
             ],
             "aside": "References: <a href=\"https://www.computerworld.com/article/1690178/sensitive-data-leaking-onto-p2p-networks.html\">Sensitive Data Leaking Onto P2P Networks</a>.",
             "image": "share_devices.jpg",
@@ -1634,6 +1556,35 @@
             "code lang": ""
         },
         {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Local Networks and the Risk of Lateral Cyber Attacks",
+            "notes": [
+                "Les r\u00e9seaux permettent de cr\u00e9er des liens entre les diff\u00e9rents syst\u00e8mes qui les composent. Ces liens sont pr\u00e9cieux pour un attaquant, car ils peuvent lui permettre de compromettre les syst\u00e8mes voisins.",
+                "Si vous connectez votre ordinateur professionnel \u00e0 votre Wi-Fi personnel et qu'un autre appareil du r\u00e9seau est compromis, un attaquant pourrait potentiellement compromettre l'ordinateur professionnel.",
+                "Si vous vous connectez \u00e0 un r\u00e9seau Wi-Fi public, par exemple dans un bar, un train ou un a\u00e9roport, un attaquant pr\u00e9sent sur le m\u00eame r\u00e9seau pourrait tenter de compromettre votre appareil.",
+                "Et si l'attaquant r\u00e9ussi \u00e0 voler un t\u00e9l\u00e9phone ou compromettre l'ordinateur ou le compte d'un de vos coll\u00e8gue ou ami, comment l'attaquant pourrait-il en profiter pour vous compromettre ?"
+            ],
+            "aside": "References: <a href=\"https://www.cnbc.com/2014/11/10/ceos-beware-of-darkhotel-hackers.html\">CNBC - CEOs beware of \"DarkHotel\" hackers</a>.",
+            "image": "wifi_attacks.jpg",
+            "image alt": "Hacker intercepting data from business professional on public Wi-Fi in a caf\u00e9, illustrating cybersecurity risks of unsecured public networks and data theft.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Networks create connections between devices, allowing them to communicate and share resources. These connections can also provide opportunities for attackers to move from one system to another.",
+                        "A compromised device on a home network may become a pathway to other devices connected to the same network.",
+                        "For example, if a professional laptop is connected to a home Wi-Fi network where another device has already been compromised, an attacker may attempt to reach the professional system through that connection.",
+                        "Public Wi-Fi networks in caf\u00e9s, hotels, airports, trains, or other public places present additional risks because unknown and potentially malicious devices may be connected to the same network.",
+                        "Whenever possible, limit exposure to untrusted networks and be aware that every network connection extends the potential attack surface of a device."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
             "type": "content",
             "icon": "https://mauricelambert.github.io/MauriceLambert.png",
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
@@ -1641,7 +1592,8 @@
             "notes": [
                 "Si un attaquant veut vous manipuler, il utilisera des m\u00e9canismes pour vous \"forcer\" ou vous \"inciter fortement\" \u00e0 r\u00e9aliser des actions sans v\u00e9rification.",
                 "Pour votre s\u00e9curit\u00e9 et celle de votre soci\u00e9t\u00e9, faites toujours valider les actions par plusieurs canaux diff\u00e9rents.",
-                "Par exemple, si vous \u00eates au t\u00e9l\u00e9phone avec une personne importante de la soci\u00e9t\u00e9 et qu'elle vous demande un virement, un changement de mot de passe ou une connexion sur un site, envoyez un e-mail \u00e0 cette m\u00eame personne pour confirmer qu'elle est bien au t\u00e9l\u00e9phone avec vous (et ne demandez pas l'adresse e-mail par t\u00e9l\u00e9phone, r\u00e9cup\u00e9rez-la \u00e0 partir d'une source fiable. G\u00e9n\u00e9ralement, les adresses e-mail sont automatiquement r\u00e9solues \u00e0 partir des noms et pr\u00e9noms au sein d'une entreprise)."
+                "Par exemple, si vous \u00eates au t\u00e9l\u00e9phone avec une personne importante de la soci\u00e9t\u00e9 et qu'elle vous demande un virement, un changement de mot de passe ou une connexion sur un site, envoyez un e-mail \u00e0 cette m\u00eame personne pour confirmer qu'elle est bien au t\u00e9l\u00e9phone avec vous (et ne demandez pas l'adresse e-mail par t\u00e9l\u00e9phone, r\u00e9cup\u00e9rez-la \u00e0 partir d'une source fiable. G\u00e9n\u00e9ralement, les adresses e-mail sont automatiquement r\u00e9solues \u00e0 partir des noms et pr\u00e9noms au sein d'une entreprise).",
+                "Sachant que vous n'allez plus sur des sites douteux, que vous ne publiez plus aucune information professionnelle ou personelle et que vous ne laissez personne approcher vos donn\u00e9es, comment pourrait-elles se retrouver en ligne ?"
             ],
             "aside": "References: <a href=\"https://nophi.sh/en/blog/ceo-fraud-bec-costly-cases-france\">CEO Fraud and Targeted Phishing: The Most Costly BEC Cases in France</a>.",
             "image": "CEO_fraud.jpg",
@@ -1663,6 +1615,67 @@
                 {
                     "type": "p",
                     "content": "If a manager or IT support representative asks you by phone to transfer money, reset a password, or log in to a website, always verify the request through a separate trusted channel before acting."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Preventing Accidental Data Leaks and Information Exposure",
+            "notes": [
+                "De plus en plus de fuites de donn\u00e9es confidentielles surviennent \u00e0 cause d'employ\u00e9s qui ne se rendent pas compte des mauvais usages de l'informatique.",
+                "Les moteurs de recherche, les IA, les espaces de stockage en ligne (drives), les forums, ainsi qu'un grand nombre de messageries conservent et analysent tout ce qui est \u00e9crit.",
+                "N'entrez jamais d'informations de l'entreprise dans ces services : pas de code confidentiel, pas de donn\u00e9es RH, pas de donn\u00e9es financi\u00e8res, pas d'\u00e9l\u00e9ments de strat\u00e9gie et encore moins d'\u00e9l\u00e9ments de recherche.",
+                "Par exemple, une messagerie dite s\u00e9curis\u00e9e (chiffr\u00e9e de bout en bout) qui int\u00e8gre une IA peut lire et conserver tout ce qui est \u00e9crit. Les e-mails ne sont pas r\u00e9ellement tr\u00e8s prot\u00e9g\u00e9s : ils ne devraient jamais \u00eatre utilis\u00e9s pour transmettre des donn\u00e9es confidentielles, bien qu'ils soient probablement le moyen le plus couramment utilis\u00e9 pour \u00e9changer des documents officiels. De plus, les syst\u00e8mes de messagerie int\u00e8grent de plus en plus d'agents destin\u00e9s \u00e0 aider \u00e0 la lecture et \u00e0 la r\u00e9daction des e-mails ; il est donc techniquement possible pour les fournisseurs de ces services de tout conserver.",
+                "D'apr\u00e8s vous, est-ce que les attaquants ont des pr\u00e9f\u00e9rences de contexte ou de moment pour envoyer une attaque ? Si oui, lesquels ?"
+            ],
+            "aside": "References: <a href=\"https://www.techtimes.com/articles/289996/20230404/samsung-employees-used-chatgpt-work-unknowingly-leaked-critical-source-codes.htm\"></a>.",
+            "image": "malicious_ia.jpg",
+            "image alt": "Malicious-looking AI digital brain consuming massive amounts of data, illustrating artificial intelligence data collection, privacy risks and cybersecurity concerns.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "An increasing number of confidential data breaches are caused by employees who unknowingly misuse digital tools and online services.",
+                        "Search engines, AI assistants, cloud storage platforms, forums, and many messaging services may store, process, analyze, or retain the information entered by users.",
+                        "Confidential company information should never be shared with these services unless they have been explicitly approved for that purpose.",
+                        "This includes source code, HR data, financial information, strategic plans, research data, intellectual property, and other sensitive business information.",
+                        "Many users assume that a service is private or secure because it is encrypted. However, some services integrate AI features that can process, store, or learn from user content.",
+                        "Emails are widely used for official communications, but they should not be considered a secure method for transmitting highly confidential information."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Separating Personal and Professional Digital Activities to Prevent Cyberattacks",
+            "notes": [
+                "Les entreprises mettent en place de plus en plus de syst\u00e8mes de protection, avec une supervision de la s\u00e9curit\u00e9 sur un maximum d'\u00e9l\u00e9ments (acc\u00e8s Internet, messagerie, t\u00e9l\u00e9phones mobiles, postes de travail, r\u00e9seaux, etc.).",
+                "Pour faciliter leurs intrusions, les attaquants pr\u00e9f\u00e8rent \u00e9viter ces outils de s\u00e9curit\u00e9. C'est plus simple et plus discret pour eux.",
+                "Le meilleur moyen est alors d'attaquer une cible dans sa vie priv\u00e9e. Si un attaquant parvient, via un e-mail personnel non s\u00e9curis\u00e9, \u00e0 compromettre le poste de travail professionnel d'une victime parce qu'elle consulte ses e-mails personnels sur son ordinateur professionnel, il peut compromettre l'entreprise. Inversement, s'il compromet l'ordinateur personnel de la victime via sa messagerie personnelle et que celle-ci acc\u00e8de \u00e0 ses e-mails professionnels depuis cet ordinateur, l'attaquant peut \u00e9galement compromettre l'entreprise.",
+                "D'apr\u00e8s vous, les syst\u00e8mes peuvent-ils nous dirent si il y a un probl\u00e8me ? Et si oui, comment, comment les syst\u00e8mes nous informent et comment r\u00e9agir ?"
+            ],
+            "aside": "References: <a href=\"https://www.business-standard.com/article/companies/hacker-breached-network-via-employee-account-no-data-compromised-cisco-122081300468_1.html\">Business Standard - Hacker breached network via employee account</a>.",
+            "image": "professionnal_personnal_context.jpg",
+            "image alt": "Split-screen comparison of personal and professional computer use, highlighting the importance of separating work and private environments for better cybersecurity.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Organizations invest heavily in security controls, monitoring, and protection mechanisms across internet access, email systems, mobile devices, workstations, and corporate networks.",
+                        "Because these protections make attacks more difficult, attackers often look for less protected entry points.",
+                        "Personal accounts, devices, and services are frequently targeted because they usually have fewer security controls than corporate environments.",
+                        "Mixing personal and professional activities increases the risk that a compromise in one environment can spread to the other.",
+                        "Accessing personal emails on a work computer, or professional resources from a personal device, can create a bridge between two environments that should remain separate.",
+                        "Whenever possible, use separate devices, email addresses, phone numbers, accounts, and services for personal and professional activities to reduce the impact of a compromise."
+                    ]
                 }
             ],
             "code": "",
@@ -1709,6 +1722,16 @@
             ],
             "code": "",
             "code lang": ""
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Full attacks vectors schema",
+            "notes": [],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "attack_vectors.svg",
+            "image alt": "Schema representing attacks vectors logical order."
         }
     ]
 }
