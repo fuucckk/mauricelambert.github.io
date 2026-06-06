@@ -5,6 +5,7 @@
  - [Talk 1 - Bank security](https://github.com/mauricelambert/Talk1.BankSecurity)
  - [Talk 2 - Bypass antivirus](https://mauricelambert.github.io/info/AntivirusBypass.pdf)
  - [Talk 7 - Incident response](https://mauricelambert.github.io/Presentations/IncidentResponse/?theme=manga)
+ - [Talk 9 - CyberSecurity for Everyone](https://mauricelambert.github.io/Presentations/CyberSecurity/?theme=athenaos)
  - [BTS lesson 1 - Challenges Web Hacking](https://github.com/mauricelambert/BTS-SIO-SLAM-CYBER-INTERVENTION)
  - [BTS lesson 2 - Dev/Admin](https://mauricelambert.github.io/info/InterventionCyberBTS.pdf)
  - [BTS lesson 3 - Career](https://mauricelambert.github.io/info/InterventionCyberBTS2.pdf)
