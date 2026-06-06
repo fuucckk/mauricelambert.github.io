@@ -182,4 +182,5 @@ https://mauricelambert.github.io/info/python/security/SupplyChainAnalysis.html
 https://mauricelambert.github.io/app/CalculMentale/
 https://mauricelambert.github.io/info/blog/DiskAnalyzer_en.html
 https://mauricelambert.github.io/info/blog/DiskAnalyzer_fr.html
-https://mauricelambert.github.io/Presentations/IncidentResponse/?theme=manga
+https://mauricelambert.github.io/Presentations/IncidentResponse/
+https://mauricelambert.github.io/Presentations/CyberSecurity/
