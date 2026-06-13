@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Notes de Présentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .slide {
+            display: none;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        .slide.active {
+            display: block;
+        }
+        h2 {
+            font-size: 2em;
+            color: #333;
+        }
+        ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="notes-container">
+</div>
+
+<div class="navigation">
+    <button onclick="navigateSlide(-1)">Précédent</button>
+    <button onclick="navigateSlide(1)">Suivant</button>
+</div>
+
+<script>
+    const notes = `
+1. On va parler de contournement de systèmes de protection comme les "antivirus" et EPP
+2. Pour ce faire on va le faire en 4 grandes étapes : vocabulaire, définition des protections à contourner, comment les contourner et enfin si c'est facile à contourner, est-ce que c'est utile ?
+3. Les produits "antivirus" sont sous-entendus des protections contre les virus. Question : est-ce que les produits "antivirus" sont vraiment des protections contre les virus ?
+4. Définitions : un virus est un programme capable de s'auto-répliquer. Il était à l'époque très utilisé pour se propager (commence vers 1990, monte jusqu'en 2000 (entre 800-1000 différents) puis chute libre : quasi nul dès 2010). Les logiciels que nous avons aujourd'hui sont plutôt des malwares. Question : est-ce que le bypass antivirus est plus ou moins important que le bypass EDR ?
+5. Les "antivirus" sont des logiciels qui analysent des **fichiers à la demande** : donc pas en "temps réel" (éventuellement avec une tâche planifiée pour scanner le disque complet). Donc premier bypass par conception : exécuter un malware qui s'auto-supprime. Problème : pas de persistance et si on veut l'exécuter plusieurs fois on doit le télécharger plusieurs fois (impact de discrétion au forensic). Le rôle de l'antivirus est plus d'identifier d'éventuelles menaces (comme des pièces jointes dans le mail, un navigateur qui télécharge un programme, un upload de fichier, ...). Ce qui cherche à "protéger" le système, c'est l'EPP.
+6. Question : est-ce que d'après vous un antivirus peut détecter un logiciel malveillant inconnu ?
+7. Ni oui, ni non : les antivirus ne sont pas vraiment conçus pour identifier des programmes inconnus donc globalement ils sont très limités sur des éléments inconnus. Donc si vous implémentez votre propre malware, très peu de chances que vous soyez détecté.
+8. Les antivirus fonctionnent par signature (hash, strings, regex, YARA et "heuristique" que nous appellerons des éléments suspicieux), ils peuvent se baser sur la réputation (plutôt une approche EPP qu'antivirus)
+9. Question : pensez-vous que les hashs sont de bonnes signatures pour détecter des logiciels malveillants ?
+10. Les hashs ne sont pas "si mauvais" pour la détection par signature : les hashs cryptographiques permettent d'identifier un fichier "unique", aucun faux positif mais beaucoup de vrais négatifs. Qu'est-ce que vous changez si vous voulez avoir un hash différent ? Les imphashs (import hash) sont des hashs qui se basent sur les "ressources" (DLL et fonctions) d'un exécutable (donc si vous recompilez ou que changez vos jeux d'instructions ou l'overlay vous êtes toujours détecté). Les fuzzy hashs ou similarity hashs permettent au contraire d'identifier des **similitudes** dans les exécutables. Donc un code légèrement modifié donnera un hash très proche. Authentihash permet de jouer des hashs cryptographiques sur des sections spécifiques du fichier PE (à la base utilisé pour identifier les versions d'un binaire).
+11. L'heuristique est un principe qui permet de dire qu'un problème n'a pas qu'une solution. Je ne vais pas trop l'utiliser car certains parlent d'heuristique à l'exécution (souvent avec analyse en sandbox) dans les EPP. On va plutôt parler d'éléments suspicieux : certains noms de fonctions importées/exportées, certaines chaînes de caractères, l'entropie du fichier ou de certaines sections, la taille du fichier, la stack exécutable (très utilisée anciennement jusqu'aux années 2000-2010 mais plus maintenant), les sections read-write-exec (fort avant 2005 mais plus depuis 2015), etc. Vous pouvez aussi avoir certaines regex ou règles YARA pour détecter un malware.
+12. Question : quelle est la meilleure pomme ? Pas de solution, il n'y a qu'une photo, on peut penser que c'est la plus grosse car elle est plus belle. L'antivirus fonctionne de la même manière : 1. est-ce qu'il connaît le binaire ? Non alors 2. est-ce qu'il ressemble à un binaire malveillant ? Non alors c'est un binaire "légitime" (alors qu'il n'a juste rien d'identifiable comme courant dans les logiciels malveillants).
+13. Time to bypass
+14. Premier bypass : utiliser des commandes du système pour faire des actions malveillantes (c'est ce qu'on appelle les lolbins)
+15. Second bypass : un packer, le packer est un logiciel utilisé pour modifier le fichier binaire (par exemple le rendre plus petit comme UPX ou pour cacher le code comme Themida ou WinLicense). C'est probablement la technique la plus utilisée pour contourner les systèmes de signatures, le fichier est complètement différent : aucune chaîne de caractères, aucun code, ni même les headers (par exemple les noms de sections) donc tous les éléments heuristiques ne sont plus identifiables. Dans la plupart des cas les packers sont identifiables, si c'est un packer très connu et utilisé il sera "unpack" automatiquement par certains antivirus pour scanner le "programme caché", sinon la plupart du temps ils seront flagués à l'analyse heuristique (entropie, appels systèmes suspicieux, noms de sections suspicieux, etc.).
+16. L'obfuscation est une technique très utilisée pour contourner les systèmes de détection par signature mais aussi rendre le reverse engineering plus complexe. Je pense qu'il faut séparer 2 obfuscations : les scripts où le code est en clair (ou presque : .NET) et les binaires compilés (où l'obfuscation est gérée par le compilateur en ajoutant des instructions "inutiles" au fonctionnement du programme). Les scripts passent souvent par l'altération des noms de variables, cacher les valeurs des constantes, cacher la structure du script (utilisation des fonctions eval/exec, d'encodage, de chiffrement, etc.).
+17. Les manières que j'utilise et que je n'ai pas trouvées sur Internet avant de les avoir documentées
+18. Le bypass d'entropie est un sujet connu et documenté mais les solutions proposées ne sont clairement pas optimisées et peut-être même réellement fonctionnelles : l'entropie dans les fichiers exécutables est aux environs de 5 ou 6/8, packés (dans la plupart du temps) les binaires sont plus entre 7 et 8/8. Le moyen documenté est d'ajouter de l'overlay avec des octets identiques. C'est facilement identifiable par un antivirus et supprimable. C'est aussi assez peu fonctionnel car les antivirus regardent souvent l'entropie de certaines parties du binaire et non simplement de l'intégralité du fichier. Il vaut mieux réduire l'entropie réelle du code ou des parties chiffrées/compressées. Les encodages comme l'hexadécimal ou la base64 fonctionnent plutôt bien mais sont facilement identifiables et décodables par les systèmes de signatures. Un encodage "dynamique" et réducteur d'entropie est possible : le but sera de réduire l'aléatoire, pour faire cela on encode le contenu de telle manière à avoir 2 octets possibles pour une valeur unique (par exemple on encode en base32 et on peut utiliser les 64 caractères de la base64 pour avoir 2 octets pour représenter une seule et même valeur). Ensuite on "choisit" ou alterne entre les deux octets à chaque fois que l'on voit la valeur, plus souvent l'un que l'autre (choix basé sur des statistiques), de cette manière on force à avoir certains caractères plus présents que d'autres (donc à diminuer l'aléatoire et le score d'entropie). Un détail : cela augmente légèrement la taille du fichier mais nettement moins que les autres moyens documentés et cela corrige le problème d'entropie sur la donnée importante (donc au bon emplacement).
+19. Pour bypasser des systèmes tels que les hashs SSDeep il faut modifier soit la taille du fichier de telle manière que chaque morceau du hash soit calculé sur de plus grandes parties du fichier ou alors réussir à modifier des éléments du fichier dans toutes les différentes parties du hash. La première est simple à mettre en place : ajouter de l'overlay avec des données sans importance ou agrandir des sections, etc. La seconde option est plus complexe mais tout à fait faisable et sans augmenter la taille (et sans overlay non utilisé qui serait suspicieux), dans les PE et les ELF nous avons tout un tas de données non utilisées, des chaînes de caractères, du padding et des métadonnées modifiables en restant valides, c'est ce que fait mon POC : BypassHash.
+20. Test time
+21. Le premier test permet de tester un virus dans son rôle premier : identifier un fichier infecté. Pour cela j'utilise non pas un vrai virus mais mon POC d'injecteur PE qui produit une section supplémentaire (comme le ferait une "infection"). Résultat : pas de détection. On peut véroler plein d'autres types de documents, un virus c'est un programme qui s'auto-réplique dans d'autres fichiers, aucune obligation de rester sur des exécutables. Tous les fichiers contenant du code exécuté sont vulnérables, les fichiers Word, Excel, PDF, RTF, LNK, etc. On pourrait même imaginer un exploit qui s'auto-réplique dans d'autres documents (par exemple une image dont l'exploit est de se répliquer dans d'autres images).
+22. On peut télécharger et analyser des malwares inconnus, certains de mes POC sont inconnus des antivirus, résultat : pas de détection. Donc réimplémenter votre propre malware pour une campagne d'attaque précise et spécifique peut vraiment fonctionner.
+23. On peut utiliser des malwares en mémoire, généralement il faudra un fichier spécifique sur le disque pour lancer l'exécution mais si ce fichier n'est pas détecté le malware s'exécutera sans détection par l'antivirus.
+24. On peut utiliser son propre packer custom, de cette manière pas de détection de la part de l'antivirus. Le packer va produire un fichier qui n'aura rien à voir avec le binaire malveillant mais le packer fera en sorte qu'il soit exécutable en mémoire.
+25. Il est possible de télécharger des binaires connus et bloqués par les antivirus mais de les modifier avec BypassHash pour qu'ils ne soient plus détectés et donc pouvoir les utiliser tranquillement sur le système.
+26. Question : d'après vous avec tout ce qu'on vient de voir, est-ce que les produits de détection par signature sont vraiment intéressants ?
+27. Les EPP sont basés sur des systèmes antivirus et suffisamment embêtants pour un attaquant dans de nombreux cas (par exemple pour une privesc depuis une RCE), les antivirus permettent de bloquer certaines campagnes connues de social engineering, les malwares connus ne peuvent pas être utilisés par la grande majorité des script kiddies, si vous utilisez votre propre malware, une fois connu il sera inutilisable sans modification. Les antivirus ont un point intéressant : ils produisent peu de faux positifs. Les alertes sont donc vraiment prises en compte. Pour finir une petite recommandation, l'antivirus Windows Defender a l'EPP intégré dans la licence Windows, je recommande donc de l'utiliser car vous l'aurez sur vos appareils Windows. Un EPP est réellement efficace (même si contournable) et dans tous les EPP que j'ai testés, Windows Defender reste le meilleur sur la partie détection.
+    `;
+
+    function generateSlides(notesText) {
+        const slides = [];
+        let currentSlide = [];
+        const lines = notesText.trim().split('\n');
+        
+        lines.forEach(line => {
+            if (/^\d+\./.test(line)) {
+                if (currentSlide.length > 0) {
+                    slides.push(currentSlide);
+                }
+                currentSlide = [line];
+            } else {
+                currentSlide.push(line);
+            }
+        });
+        if (currentSlide.length > 0) {
+            slides.push(currentSlide);
+        }
+
+        const container = document.getElementById('notes-container');
+        slides.forEach((slideContent, index) => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+            slide.id = `slide${index + 1}`;
+
+            const slideTitle = document.createElement('h2');
+            // slideTitle.textContent = slideContent[0];
+            slide.appendChild(slideTitle);
+
+            const ul = document.createElement('ul');
+            // slideContent.slice(1).forEach(point => {
+            slideContent.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point.trim();
+                ul.appendChild(li);
+            });
+            slide.appendChild(ul);
+
+            container.appendChild(slide);
+        });
+    }
+
+    generateSlides(notes);
+
+    let currentSlide = 1;
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function navigateSlide(direction) {
+        document.getElementById(`slide${currentSlide}`).classList.remove('active');
+        currentSlide += direction;
+
+        if (currentSlide > totalSlides) currentSlide = 1;
+        if (currentSlide < 1) currentSlide = totalSlides;
+
+        document.getElementById(`slide${currentSlide}`).classList.add('active');
+    }
+
+    navigateSlide(0);
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowRight' || event.key === ' ') { // || event.key === 'ArrowDown') {
+            navigateSlide(1);
+        } else if (event.key === 'ArrowLeft') { // || event.key === 'ArrowUp') {
+            navigateSlide(-1);
+        }
+    });
+</script>
+
+</body>
+</html>
