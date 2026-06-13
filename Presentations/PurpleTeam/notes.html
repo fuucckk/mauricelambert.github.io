@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Notes de Présentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .slide {
+            display: none;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        .slide.active {
+            display: block;
+        }
+        h2 {
+            font-size: 2em;
+            color: #333;
+        }
+        ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="notes-container">
+</div>
+
+<div class="navigation">
+    <button onclick="navigateSlide(-1)">Précédent</button>
+    <button onclick="navigateSlide(1)">Suivant</button>
+</div>
+
+<script>
+    const notes = `
+1. Présent meetup -> premier talk, 5 ans d'exp, plutôt défensif -> ça ne fonctionne pas toujours, réflexion sur comment faire pour que ça fonctionne
+2. Présenter le contexte très rapidement parce que pas très technique
+3. "Procédures génériques de montage de la cyber" : politiques cyber, sécu code et supply chain, monitoring cyber, chemins de compromission, tests de scénarios stratégiques
+4. Traduction en équipe : admin sécu, DevSecOps, SOC, Pentest, Red Team
+5. 2 équipes qui mettent en place de la cyber, 2,5 équipes qui cherchent des vulns techniques, 0,5 vulns humaines et discrétion pour un test stratégique -> personne ne vérifie la qualité du SOC
+6. SOC fonctionnel ? Chiffres du FBI -> non
+7. Pentest/Red Team -> pas une Purple Team
+8. Purple Team -> pwn SOC, Pentest/Red Team -> pwn applicatif
+9. SOC doit répondre à beaucoup d'attentes de la gouv, peu de tests qui ne couvrent pas le périmètre, pas ou peu d'identification des limites
+10. Si une règle est développée -> gouv valide : risque maîtrisé (faux si pas suffisant ou non fonctionnel)
+11. Purple Team actions : joue un scénario pour valider la détection et la réaction (rules, process, people), génère des rapports pour la gouv
+12. Conflit d'intérêts si le management est le même que le SOC -> management différent
+13. Actions : SOC développe, Purple Team joue le scénario, Purple Team regarde l'implémentation et tente de bypass
+14. On va passer sur ma mission Purple Team -> 6 étapes, sur 1,5 an on estime 6 mois de travail (je pense qu'en 3 c'est faisable) mais 20 jours alloués
+15. En septembre 2024 on me dit : demain réunion, présente toutes les possibilités du projet avec charge et scoring de l'intérêt -> 1 journée de 14 h de travail
+    Plein de catégories : maldev, premier accès, vol d'informations, impacts, exfiltrations, lolbins, mouvements latéraux, AV/EPP
+16. La réunion : "on va faire 7 tests, on n'a pas le temps, dans 20 jours je veux le rapport" -> plus de tests EPP/AV que de tests EDR et pas de test Linux
+17. 20 jours de 12 heures -> 11 tests avec exploits RCE, pièces jointes malicieuses, exécution par WinRM et SMB, un Excel qui scanne 1 000 ports par seconde, utilisation de packer, modification de signatures de malware. Un playbook Ansible qui build les tests, déploie les services, lance tous les tests et check si blocage à chaque étape.
+18. EDR ne bloque pas -> check manuel sur les consoles les détections
+19. 1er EDR - 2e place (38,5/77) -> bon sur les tests bonus, moyen sur AV/EPP et premier accès mais rien sur mouvements latéraux, lolbins, discovery. Pas de télémétrie donc pas un EDR car pas d'incident response ni de forensic
+20. 2e EDR - 1re place (31-54/77) -> très bon sur AV/EPP, lolbins et tests bonus, moyen sur premier accès et mouvements latéraux, mauvais sur discovery. Interface rapide et puissante, outils d'analyse de binaire intégrés, transparence des règles YARA et Sigma lisibles et modifiables, surveillance et monitoring des agents intégrés et système d'exclusion incroyable avec tout le contexte (arbre de processus)
+21. 2 derniers EDR -> un disqualifié -> DOS -> services légitimes si processus parent d'un processus malicieux, un noté bas -> pas de détection/blocage mais télémétrie avec mapping MITRE
+22. Choix : changer d'EDR mais erreur sur le choix de l'EPP -> beaucoup de faux positifs et pire, de vrais négatifs
+23. Quelques mois plus tard -> autre mission de Purple Team -> demande par la gouv sur l'exfiltration de données -> 2 catégories de règles : YARA et Sigma -> test sur Sigma car peu d'intérêt à check les signatures -> 4 familles de règles :
+     - lolbins : règle sur nom du fichier + arguments -> changer les arguments difficile et change la signature, changer le nom du fichier et du dossier facile -> bypass avec une copie du fichier,
+     - scripting (PowerShell, JScript) : règle presque "signature" par instruction utilisant nom de commande + valeur des arguments -> valeur des arguments facilement bypassable si on lit la règle -> nom de commande facile à changer en utilisant les alias -> alias built-in bypass mais possible d'implémenter ses propres alias pour bypass,
+     - fichier : impossible de lire et modifier des fichiers sans détection/blocage basé sur dossier et nom de fichier -> renommer le fichier -> lire/modifier le fichier -> re-renommer le fichier -> bypass,
+     - réseau : intrigué car capable de vérifier le contenu HTTP alors qu'avec TLS pas de MITM possible sauf en cassant le chiffrement -> après plusieurs tests -> hook de la Win32 API -> bypass en réimplémentant HTTP et après vérification possible de faire la même chose pour DNS ou autres protocoles
+24. Donc on réussit à bypass 100 % des règles de l'EDR -> rapport des vulnérabilités à la CTI de l'EDR -> réponse : limite du système -> ma réponse : possible de sécuriser lolbins et les fichiers sans modification du système :
+     - lolbins : vuln -> EDR basé sur le contexte et EPP basé sur signature -> sous Windows possible de se baser sur le nom d'image et donc sur le contenu, le bypass requiert une modification de signature -> EPP doit détecter les exécutables mal signés et les exécutables trop proches des signatures de lolbins (pas basé sur des hash comme ssdeep du fichier ! sur la section code OK)
+     - fichier : vuln -> règle oubliée -> empêcher le renommage du fichier -> impossible de lire ou d'écrire sur le fichier + impossible de renommer le fichier -> plus difficile à compromettre
+     - scripting : vuln :
+         - trop haut niveau : signatures sur l'expression PowerShell telle qu'écrite par l'utilisateur -> la signature pourrait fonctionner si faite après la résolution de l'alias,
+         - incompréhension de la syntaxe et pas de règle dynamique : avec un AST et des règles dynamiques -> possibilité d'ajouter les alias built-in et dynamiquement les alias créés manuellement,
+         - hooking système : comme du IAST ou un hook, directement sur les commandes PowerShell
+     - réseau : analyse du trafic sortant non chiffré, stats sur trafic réseau avec corrélation du process et de l'exécutable (système de scoring ? potentiellement beaucoup de FP)
+25. Avec ces 2 missions : augmenter le niveau de sécu de ma boîte, améliorer l'EDR, estimer les limites de l'outil en expliquant clairement à la gouv les angles morts -> permettant de changer quelques priorités sur les éléments à implémenter -> globalement une vraie victoire
+26. On va passer sur les cas d'étude -> montrer les faiblesses du SOC -> le SOC c'est lui qui vous protège -> bonnes personnes très compétentes mais parfois quelques trous que je vais mettre en évidence -> exemple : en entretien un manager qui rigole de la qualité de mon ancien taf et qui me dit : "nous on a de la vraie qualité, on utilise CrowdStrike" mais sans test... qualité potentiellement nulle (20 000e client, pas de connaissance du client...)
+27. Port scan : une technique pour savoir quels sont les ports ouverts, TCP sweep : une technique pour regarder si certains services sont ouverts sur une liste de machines. Technique pas très discrète, utilisée par des attaquants ? -> le malware Conti utilisait un TCP sweep sur le port 445 et Cerber (reprise de Conti) l'utilise toujours, sur le réseau en /24 (~256 IP)
+28. Elastic et ChatGPT -> courte période avec un grand nombre de connexions sur un unique hôte distant == port scan -> implémentation par les SOC
+29. Cette méthode -> beaucoup de faux positifs : protocoles avec ports dynamiques (FTP, DCE-RPC, ...), machines avec plein de services ouverts (Active Directory), le NAT, la supervision, plusieurs tâches planifiées à la même heure, outils de management du SI. Parlons vrais négatifs : scan de 20 ports par minute -> 100 ports en 5 minutes -> 1 000 ports en 50 minutes
+30. Pour diminuer les FP : augmenter le nombre de ports, whitelist supervision / Active Directory ou machines avec plein de microservices sous conteneurs / IP NAT (pas toujours facile) / toutes les machines utilisant des protocoles avec des ports dynamiques -> conclusion : faites vos scans de ports depuis les machines de SUP/AD/équipements réseau
+31. Besoin d'une règle TCP sweep -> mêmes faux positifs -> IP NAT / SUP / outils de gestion du SI
+32. Réduction des FP : augmenter le nombre de machines scannées -> situations absurdes avec des réseaux de 50 machines où il faut scanner 100 machines pour déclencher la détection. Autres éléments intéressants : j'ai observé des SOC utiliser des logs firewalls au lieu de logs système -> uniquement flux inter-réseaux et pas intra-réseau (complètement inutile face aux attaquants qui scannent le réseau courant)
+33. Purple Team : redéfini ce qu'est un port scan -> pas une seule machine cible (donc TCP sweep == port scan particulier) et pas un seul port unique
+34. Purple Team : bypass -> une machine un port, une autre machine un autre port, ... on attend et on relance un tour avec un décalage des ports -> bypass TCP sweep et port scan
+35. Purple Team objectif : diminuer les vrais négatifs et faux positifs -> différence entre un faux positif et un vrai positif -> trafic légitime : port ouvert, port scan : port fermé -> perte des faux positifs sur protocoles avec ports dynamiques, machines avec plusieurs services, outils de gestion du SI -> le SOC peut réduire le nombre de ports pour la détection
+36. Limites : faux positifs sur la SUP quand plusieurs services sont down (intéressant comme info), IP NAT ou mauvaises configurations/pratiques réseau (intéressant comme info)
+37. Pour l'implémenter c'est simple : port ouvert -> SYN/ACK/data, port fermé -> SYN/RST/no-data ou deny ou timeout. Le principe est simple et logique mais très peu utilisé -> la plupart des SOC ne l'utilisent pas. Recommandation : ne pas tenter d'écrire des règles FW dans le SIEM -> règles réseau dans le SIEM uniquement avec logs système -> un firewall détecte et bloque / un SIEM détecte seulement (SOAR souvent trop long pour bloquer, plus de risque de bloquer du flux légitime que le port scan)
+38. Deuxième cas d'étude : un jour la gouv sort de son chapeau "GitLab est critique -> à sécuriser ASAP en plus des actions habituelles" -> le SOC fait une intégration rapide -> les seuls logs au format JSON sont les logs d'authentification -> ingestion des logs d'authentification -> dit OK mission accomplie à la gouv
+39. La gouv demande à la Purple Team -> check si le SOC peut faire du forensic sur des accès aux codes suite à une alerte -> les requêtes avec token GitLab ne sont pas dans les logs d'authentification (user/password) -> scénario : vol de token dans un CI/CD -> accès au code -> pas de logs dans le SIEM -> bypass du monitoring cyber
+40. Purple Team fait corriger au SOC -> le SOC ingère de nouveaux logs -> nouvelle demande de la gouv : test de la détection du téléchargement de tous les projets -> règles de détection sur les logs HTTP (download des archives et git clone) -> Purple Team passe par SSH et bypass la règle
+41. De nouveau Purple Team et SOC travaillent à corriger le problème -> la gouv demande un nouveau test : infecter le code pour vol de données clientes sur toutes les instances -> le SOC protège bien git push (SSH et HTTP) ainsi que l'upload via l'interface web (requêtes POST) -> trop de détections, le SOC annonce : "ce sera que des signaux faibles, on ne peut pas analyser toutes les détections" -> Purple Team utilise l'édition de fichier de GitLab pour modifier le code source -> requête PUT non surveillée -> pas de weak signal -> bypass -> la Purple Team demande au SOC des détections durant la nuit
+42. Le principe des Purple Teams -> pas très connu -> souvent considéré comme un exercice entre une équipe offensive et défensive. La gouv a souvent du mal à comprendre à quoi ça sert et pense que si le SOC dit : "on a pris en charge la demande" -> c'est OK, ils ont tout couvert et la détection est parfaite
+43. Un peu étonnant de la part de la gouv qui veut tout checker 5 fois mais souvent : ils considèrent que le SOC fait bien tout le boulot sans vérifier autrement que par des KPI donnés par le management du SOC
+44. Purple Team -> rare en France dans le privé -> on préfère être conforme à des normes plutôt qu'être sécurisé -> facilite les ventes et réduit la responsabilité des personnes (une fois conforme on considère que la personne a mis en place la sécu qu'elle pouvait) même s'ils se font compromettre ce n'est pas leur faute et on ne cherche pas de responsable (les attaquants étaient juste trop avancés pour les moyens que l'entreprise a)
+45. Possible de rendre la Purple Team connue et utilisée -> avec une certification reconnue qui devient une norme basée sur des tests techniques et des équipes certifiées -> si des batteries de tests peuvent être exécutées par les assureurs cyber pour définir le coût de l'assurance et par les clients pour identifier le niveau de sécurité d'un fournisseur de sécurité (fournisseur EDR, SOC managé, ...) -> sans prévention du fournisseur
+46. Obliger des résultats à ces tests/certifications pour les OIV (plus d'obligation de moyens mais de résultats)
+47. En cas de fuite de données -> obligation de passer les tests/certifications pour estimer le niveau de responsabilité avec le niveau de sécurité des entreprises
+48. Pour réussir à construire cette certification il faut des équipes certifiées avec des plateformes de simulation dont les implémentations sont inconnues et spécifiques à chaque équipe
+49. Pour faire passer la certification il faut une batterie de tests choisie aléatoirement par la plateforme, les exécuter dans l'ordre de discrétion mais il faut prendre en compte qu'il y a certains prérequis à obtenir sans prévenir le fournisseur
+50. Théoriquement lors d'une intrusion on doit avoir une timeline des actions : elle sera utilisée pour donner le score de l'équipe
+51. La qualité de la réponse sera utilisée pour donner le score de l'équipe avec des pénalités sur les mauvaises réactions (par exemple laisser un compte actif utilisé dans l'attaque ou laisser une backdoor sur le système)
+52. Plus les blocages seront de qualité et plus les équipes auront de points
+53. Après les tests il faut une réunion entre les différentes équipes pour tout analyser et discuter des erreurs, des améliorations
+54. On profite de la réunion pour vérifier que chaque action est bien procédurée -> une réponse sans procédure == pas de certification qu'on aura la même réponse sur un autre événement du même type
+55. La Purple Team est importante pour la qualité de la défense -> qualité de la détection et de la réaction mais aussi estimation de la couverture des risques par la gouv
+56. La Purple Team n'est pas encore très connue et utilisée mais avec un système de certification reconnu on pourrait augmenter la qualité des défenses des organisations au moins au niveau national
+    `;
+
+    function generateSlides(notesText) {
+        const slides = [];
+        let currentSlide = [];
+        const lines = notesText.trim().split('\n');
+        
+        lines.forEach(line => {
+            if (/^\d+\./.test(line)) {
+                if (currentSlide.length > 0) {
+                    slides.push(currentSlide);
+                }
+                currentSlide = [line];
+            } else {
+                currentSlide.push(line);
+            }
+        });
+        if (currentSlide.length > 0) {
+            slides.push(currentSlide);
+        }
+
+        const container = document.getElementById('notes-container');
+        slides.forEach((slideContent, index) => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+            slide.id = `slide${index + 1}`;
+
+            const slideTitle = document.createElement('h2');
+            // slideTitle.textContent = slideContent[0];
+            slide.appendChild(slideTitle);
+
+            const ul = document.createElement('ul');
+            // slideContent.slice(1).forEach(point => {
+            slideContent.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point.trim();
+                ul.appendChild(li);
+            });
+            slide.appendChild(ul);
+
+            container.appendChild(slide);
+        });
+    }
+
+    generateSlides(notes);
+
+    let currentSlide = 1;
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function navigateSlide(direction) {
+        document.getElementById(`slide${currentSlide}`).classList.remove('active');
+        currentSlide += direction;
+
+        if (currentSlide > totalSlides) currentSlide = 1;
+        if (currentSlide < 1) currentSlide = totalSlides;
+
+        document.getElementById(`slide${currentSlide}`).classList.add('active');
+    }
+
+    navigateSlide(0);
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowRight' || event.key === ' ') { // || event.key === 'ArrowDown') {
+            navigateSlide(1);
+        } else if (event.key === 'ArrowLeft') { // || event.key === 'ArrowUp') {
+            navigateSlide(-1);
+        }
+    });
+</script>
+
+</body>
+</html>
