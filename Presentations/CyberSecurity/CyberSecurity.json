@@ -1632,7 +1632,7 @@
                 "Par exemple, une messagerie dite s\u00e9curis\u00e9e (chiffr\u00e9e de bout en bout) qui int\u00e8gre une IA peut lire et conserver tout ce qui est \u00e9crit. Les e-mails ne sont pas r\u00e9ellement tr\u00e8s prot\u00e9g\u00e9s : ils ne devraient jamais \u00eatre utilis\u00e9s pour transmettre des donn\u00e9es confidentielles, bien qu'ils soient probablement le moyen le plus couramment utilis\u00e9 pour \u00e9changer des documents officiels. De plus, les syst\u00e8mes de messagerie int\u00e8grent de plus en plus d'agents destin\u00e9s \u00e0 aider \u00e0 la lecture et \u00e0 la r\u00e9daction des e-mails ; il est donc techniquement possible pour les fournisseurs de ces services de tout conserver.",
                 "D'apr\u00e8s vous, est-ce que les attaquants ont des pr\u00e9f\u00e9rences de contexte ou de moment pour envoyer une attaque ? Si oui, lesquels ?"
             ],
-            "aside": "References: <a href=\"https://www.techtimes.com/articles/289996/20230404/samsung-employees-used-chatgpt-work-unknowingly-leaked-critical-source-codes.htm\"></a>.",
+            "aside": "References: <a href=\"https://www.techtimes.com/articles/289996/20230404/samsung-employees-used-chatgpt-work-unknowingly-leaked-critical-source-codes.htm\">Samsung employees used chatgpt work unknowingly leaked critical source codes</a>.",
             "image": "malicious_ia.jpg",
             "image alt": "Malicious-looking AI digital brain consuming massive amounts of data, illustrating artificial intelligence data collection, privacy risks and cybersecurity concerns.",
             "texts": [
