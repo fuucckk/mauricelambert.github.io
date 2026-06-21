@@ -1,0 +1,1729 @@
+{
+    "title": "Cybersecurity for Everyone: Understanding Digital Security, Risks, Vulnerabilities & Cyber Attacks",
+    "keywords": [
+        "cybersecurity",
+        "social engineering",
+        "introduction to cybersecurity",
+        "cybersecurity for beginners",
+        "digital security",
+        "cyber attack",
+        "cyber threats",
+        "vulnerabilities",
+        "cyber risks",
+        "cyber security"
+    ],
+    "description": "Learn the fundamentals of cybersecurity: digital systems, vulnerabilities, threats, cyber attacks, passwords, social engineering, reconnaissance, ransomware, data protection, networks, and security best practices.",
+    "author": "Maurice Lambert",
+    "default icon": "https://mauricelambert.github.io/MauriceLambert.png",
+    "default icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+    "default aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+    "slides": [
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "What Is Cybersecurity ? Understanding Digital Systems Security",
+            "notes": [
+                "D'apr\u00e8s vous, qu'est ce que la cybers\u00e9curit\u00e9 ?"
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cybersecurity as the Security of Digital Systems",
+            "notes": [
+                "cybers\u00e9curit\u00e9: s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques.",
+                "exemples: ordinateurs, tablettes, t\u00e9l\u00e9phones, internet, objets connect\u00e9s, compteur linky ou acc\u00e8s \u00e9l\u00e9ctricit\u00e9, paiement, sant\u00e9."
+            ],
+            "aside": "References: <a href=\"https://www.cisco.com/site/us/en/learn/topics/security/what-is-cybersecurity.html\">Cisco</a>.",
+            "image": "hacked_healthcare.jpg",
+            "image alt": "Hacked hospital system interface illustrating how cybersecurity breaches can impact critical healthcare infrastructure affecting everyone",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Cybersecurity can be understood as the security of digital systems. <blockquote>Cisco: <em>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.</em></blockquote>"
+                },
+                {
+                    "type": "p",
+                    "content": "From this perspective, cybersecurity focuses on devices and services like:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Computers, laptops, smartphones, and tablets",
+                        "Internet access and wireless communication",
+                        "Smart devices such as connected kettles, ovens, TVs, and home assistants",
+                        "Smart home systems like alarms, cameras, and connected locks",
+                        "Electricity and energy management systems such as smart meters",
+                        "Payment systems and banking services (card payments, online transfers, cash machines)",
+                        "Social networks and messaging platforms used to stay connected",
+                        "Healthcare systems and digital medical records"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Digital Systems: Simple Operations Creating Complex Environments",
+            "notes": [
+                "Si cybers\u00e9curit\u00e9 = s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques alors: qu'est ce que syst\u00e8me num\u00e9rique ?",
+                "Pourquoi y a t il des probl\u00e8mes de s\u00e9curit\u00e9 ?",
+                "Syst\u00e8mes num\u00e9riques => 0 et 1. Humains: texte. Probl\u00e8me: niveau d'abstration.",
+                "Informaticiens != comprendre l'informatique.",
+                "Hacker => comprendre les flux d'ex\u00e9cution",
+                "Modifier un flux d'ex\u00e9cution => une vuln\u00e9rabilit\u00e9",
+                "D\u00e9finissez vuln\u00e9rabilit\u00e9 ? 2 autres pr\u00e9requis pour une malveillance: risque et menace."
+            ],
+            "aside": "References: <a href=\"https://www.britannica.com/technology/digital-computer\">Britannica - digital-computer</a>.",
+            "image": "binary_data.png",
+            "image alt": "Pwndbg GDB debugger view displaying raw binary data in memory, used for cybersecurity reverse engineering and system vulnerability exploitation",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Digital systems are built on extremely simple operations based on two possible states, which are commonly represented as 0 and 1."
+                },
+                {
+                    "type": "p",
+                    "content": "Even though each operation is simple, modern systems process <strong>billions and billions of these operations every second</strong>."
+                },
+                {
+                    "type": "p",
+                    "content": "This scale makes the overall behavior too complex for a human to fully follow in real time.<br>This is where unexpected behaviors and vulnerabilities can appear<br>In cybersecurity, professionals work directly with these flows:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Understanding the usage of data in the program",
+                        "Analyzing program behavior based on this usage",
+                        "Acting to influence, modify, or falsify data flows, in order to change system behavior."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cyberattack Concepts: Vulnerability, Risk, and Threat",
+            "notes": [
+                "Risque: danger \u00e9ventuel plus ou moins pr\u00e9visible (cambriolage).",
+                "Vuln\u00e9rabilit\u00e9s: faiblesse => risque r\u00e9alisable (fen\u00eatre cass\u00e9e).",
+                "Menace: volont\u00e9 de nuire (voleur => cambrioleur).",
+                "Cyberattaque requiert: risque, vuln\u00e9rabilit\u00e9, menace."
+            ],
+            "aside": "References: CSRC NIST glossary <a href=\"https://csrc.nist.gov/glossary/term/vulnerability\">Vulnerability</a>, <a href=\"https://csrc.nist.gov/glossary/term/risk\">Risk</a>, <a href=\"https://csrc.nist.gov/glossary/term/threat\">Threat</a>.",
+            "image": "VulnerabilityThreat.jpg",
+            "image alt": "Burglar circling a house with a broken window, illustrating cybersecurity concepts of vulnerability and threat in physical security analogies",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Now that we understand why cybersecurity is so important: with digital objects everywhere in our lives, increasing responsibilities, and systems so complex that even their creators do not always fully understand them, we can move on to identifying the core elements behind a cyber attack.<br>To analyze and defend systems properly, we first need to define three fundamental concepts for cyberattacks: vulnerability, risk, and threat."
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>What is a vulnerability ?</strong> A weakness or flaw in a system that can be exploited. Example: <em>a house with a shutter that does not close properly is a vulnerability.</em>",
+                        "<strong>What is a risk ?</strong> The potential of a harmful event occurring when a vulnerability is exploited. Example: <em>being burgled is a risk.</em>",
+                        "<strong>What is a threat ?</strong> Anything (person, group, system, or event) capable of exploiting a vulnerability. Example: <em>the burglar is the threat.</em>"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "The CIA Triad: The Criteria of Cybersecurity Strategy",
+            "notes": [
+                "On connait \"vuln\u00e9rabilit\u00e9\", comment on sait que s'en est une \"cyber\" ? Vuln\u00e9rabilit\u00e9 cyber: impact 1 des 3 aspects:",
+                "Confidentialit\u00e9: acc\u00e8s aux donn\u00e9es non autoris\u00e9es (photo, message, sant\u00e9, donn\u00e9es GPS, ...).",
+                "Int\u00e9grit\u00e9: modification des donn\u00e9es (compte bancaire).",
+                "Disponibilit\u00e9: acc\u00e8s au service (paiement).",
+                "Qu'est-ce qui peut \u00eatre lu et modifi\u00e9 ? Qu'est-ce qui peut lire, \u00e9ventuellement divulguer et modifier les donn\u00e9es ?"
+            ],
+            "aside": "References: <a href=\"https://www.checkpoint.com/cyber-hub/cyber-security/what-is-it-security/what-is-the-cia-triad/\">Checkpoint - CIA Triad</a>.",
+            "image": "CIA.jpg",
+            "image alt": "Diagram explaining the CIA triad in cybersecurity: confidentiality, integrity, and availability as core principles of information security.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Cybersecurity strategies are often built around three essential objectives known as the CIA Triad.<br>These principles help organizations evaluate whether systems and data are properly protected."
+                },
+                {
+                    "type": "ol",
+                    "content": [
+                        "<strong>Confidentiality:</strong> Information should only be accessible to authorized people or systems.",
+                        "<string>Integrity:</strong> Data must remain accurate, trustworthy, and unmodified unless authorized.",
+                        "<strong>Availability:</strong> Systems and data must remain accessible when needed."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "The goal of cybersecurity is often to maintain the balance between these three principles."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Who Makes Data Available, Reads It, and Modifies It ?",
+            "notes": [
+                "Syst\u00e8mes num\u00e9riques. Humains => lire et divulguer les donn\u00e9es (RH).",
+                "Syst\u00e8mes num\u00e9riques => interface pour les humains (\u00e9cran, microphone, \u00e9couteurs, ...)."
+            ],
+            "aside": "References: <a href=\"https://openstax.org/books/foundations-information-systems/pages/1-1-introduction-to-information-systems\">OpenStax - Introduction to information systems</a>.",
+            "image": "human_interfaces.webp",
+            "image alt": "Scene from the movie WarGames showing humans interacting with multiple computer screens, illustrating how information systems serve as human-driven interfaces for problem solving",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Now that we know the three core cybersecurity principles: Confidentiality, Integrity, and Availability. We can use them to ask three important questions that help us better understand cybersecurity systems:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "What makes data available ?",
+                        "What reads the data ?",
+                        "What modifies the data ?"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "The answer is both technical and human."
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "<strong>Digital devices and infrastructure</strong> make data available, allow it to be read, and allow it to be modified.",
+                        "<strong>Humans</strong> are the ones who read, use, share, and modify the data."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Complete Cybersecurity Definition: Systems, Data, Context and Users",
+            "notes": [
+                "Cybers\u00e9curit\u00e9 => s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques ?",
+                "Cybers\u00e9curit\u00e9 => s\u00e9curit\u00e9 du context des syst\u00e8mes num\u00e9riques.",
+                "Context des syst\u00e8mes num\u00e9riques => syst\u00e8mes num\u00e9riques, donn\u00e9es, humains.",
+                "Cybers\u00e9curit\u00e9 => Attaques num\u00e9riques ?",
+                "Cybers\u00e9curit\u00e9 => attaques num\u00e9riques et humaines."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "CompleteCyberSecurity.jpg",
+            "image alt": "Composite illustration of a hacker engaging in hacking, phishing, surveillance with binoculars, and electronic device intrusion, representing cybersecurity across systems, data, users, and context",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "At first, cybersecurity can be defined as the security of digital systems. But this definition is incomplete."
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Does the risk include system data ?",
+                        "Can users themselves become a vulnerability ?",
+                        "Can the context become a vulnerability ?"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Cybersecurity is not only the protection of computers, servers, or connected devices.<br>It is also the secruity, including the safety, of:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "the data contained inside these systems,",
+                        "the availability and reliability of these systems,",
+                        "the context of usages,",
+                        "and the actions taken by users interacting with them."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cybersecurity Etymology: The Origin of the Word \"Cyber\"",
+            "notes": [
+                "M\u00eame \u00e9thymologie que gouverner => gouvernail => piloter un bateau. Grec ancien: les bateaux => syst\u00e8mes complexes.",
+                "Premier \"cyber\" => \"cybern\u00e9tique\" => science de gouverner les hommes (diriger un syst\u00e8me complexe).",
+                "Cybers\u00e9curit\u00e9 => \"s\u00e9curit\u00e9 des syst\u00e8mes complexes\" => contexte des syst\u00e8mes num\u00e9riques (complexe)."
+            ],
+            "aside": "References: Wikipedia - <a href=\"https://fr.wikipedia.org/wiki/Cyber\">Cyber</a>, <a href=\"https://fr.wikipedia.org/wiki/Cybern%C3%A9tique\">Cybern\u00e9tique</a>.",
+            "image": "CyberEtymology.jpg",
+            "image alt": "Three-part illustration showing a boat pilot steering a ship, a leader governing people, and a hacker manipulating systems, representing the origin and meaning of the prefix cyber.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The word \"cyber\" comes from the ancient Greek term \"kybern\u0113tik\u1e17\" (\u03ba\u03c5\u03b2\u03b5\u03c1\u03bd\u03b7\u03c4\u03b9\u03ba\u03ae), meaning: the art of steering, piloting, or governing.<br>Ancient Greeks originally used this term to describe the act of piloting a ship."
+                },
+                {
+                    "type": "p",
+                    "content": "In 1834, French physicist and mathematician Andr\u00e9-Marie Amp\u00e8re used the word \"cybern\u00e9tique\" to describe: the science of governing humans."
+                },
+                {
+                    "type": "p",
+                    "content": "The word \"cyber\" was therefore linked to: control, guidance, and systems.<br>Modern cybersecurity still reflects this idea: understanding, controlling, and securing complex systems."
+                },
+                {
+                    "type": "p",
+                    "content": "Even modern technologies still use this origin: <strong>Kubernetes</strong>, a platform used to manage and orchestrate software containers, also comes from \"kybern\u0113tik\u1e17\" (\u03ba\u03c5\u03b2\u03b5\u03c1\u03bd\u03b7\u03c4\u03b9\u03ba\u03ae)."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Learn Cybersecurity: Identify Vulnerabilities Like a Hacker",
+            "notes": []
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Can You Find the Vulnerability in This Building ?",
+            "notes": [
+                "Trouvez-vous des vuln\u00e9rabilit\u00e9s dans ce sch\u00e9ma ?"
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "vulnerable_building.jpg",
+            "image alt": "Building blueprint illustrating security flaws and vulnerable-by-design architecture, representing cybersecurity weaknesses caused by insecure system design."
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Building Security Vulnerability 1: Information Exposure Through a Window",
+            "notes": [
+                "Fen\u00eatre dans le dos => voir l'\u00e9cran sans \u00eatre vu.",
+                "Avec cam\u00e9ra => vol facile d'informations confidentielles.",
+                "Sans connaissance technique: vol des clients, des devis, brevets, codes, secrets industriels.",
+                "Vol de donn\u00e9es == atteinte \u00e0 la confidentialit\u00e9 des donn\u00e9es num\u00e9riques => cyberattaque.",
+                "D\u00e9j\u00e0 vu => b\u00e2timent d'une banque"
+            ],
+            "aside": "References: <a href=\"https://fr.wikipedia.org/wiki/Shoulder_surfing\">Wikip\u00e9dia - shoulder surfing</a>.",
+            "image": "vulnerability_window1.jpg",
+            "image alt": "Office window exposing a worker's computer screen to outside observers, illustrating visual data leakage and physical context vulnerability in cybersecurity.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker outside the building could:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "observe the screen without being seen,",
+                        "record the screen with a camera,",
+                        "collect confidential information displayed on the monitor."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Without any hacking tools or technical computer skills, the attacker could steal:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "customer information,",
+                        "contracts and quotes,",
+                        "source code,",
+                        "patents,",
+                        "or industrial secrets."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "This is still a cyberattack because digital information is stolen. However, the attack does not require malware, programming, or advanced technical knowledge."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Server Room Accessibility Vulnerability",
+            "notes": [
+                "1. Fen\u00eatre dans la salle serveur => informations sur les serveurs et le mat\u00e9riel de s\u00e9curit\u00e9",
+                "2. Cassre la fen\u00eatre => Cambrioleur peut voler les serveurs et les donn\u00e9es",
+                "Intrusion physique => Vol de mat\u00e9riel => un acc\u00e8s \u00e0 des donn\u00e9es non autoris\u00e9 et une indisponibilit\u00e9 des services => cyberattaque"
+            ],
+            "aside": "References: <a href=\"https://messervices.cyber.gouv.fr/documents-guides/CyberDico_ANSSI_2024.pdf\">ANSSI - CyberDico</a>.",
+            "image": "vulnerability_window2.jpg",
+            "image alt": "Server room accessible through a fragile exterior window, illustrating a physical security vulnerability that could enable unauthorized access to critical systems.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "The server room contains a window. This creates multiple security risks:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "an attacker can observe the servers and security equipment from outside,",
+                        "information about the infrastructure can be collected without authorization,",
+                        "the physical security measures become visible."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "A burglar could also break the window to enter the server room:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "steal servers,",
+                        "steal storage devices,",
+                        "and later access or extract the data contained inside them."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "This is both: a physical intrusion, and a cybersecurity incident because digital systems and data are targeted: the data may become accessible to the attacker, but the services and information also become unavailable to legitimate users."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Multiple Others Physical Security Vulnerabilities",
+            "notes": [
+                "Salon et le bureau de travail dans la m\u00eame pi\u00e8ce => \u00e9change confidentiel peut \u00eatre entendu par les invit\u00e9s.",
+                "Acc\u00e8s \u00e0 la salle serveur par une porte => faible protection d'\u00e9l\u00e9ments sensibles (un sous sol avec des portes renforc\u00e9es, des cam\u00e9ras, des alarmes, ect...)."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "vulnerable_building2.jpg",
+            "image alt": "Building blueprint illustrating security flaws and vulnerable-by-design architecture, representing cybersecurity weaknesses caused by insecure system design.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Others vulnerabilities in this building:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "No confidentiality between the customer reception area and the working office. Visitors may see screens, documents, conversations, or sensitive information.",
+                        "The server room is directly accessible through a simple door. Sensitive infrastructure should not be easily accessible. A server room is usually expected to have reinforced physical protection and restricted access."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "These vulnerabilities show that cybersecurity is also linked to: physical security, architecture, organization, and environmental design."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Can You Find the Vulnerability in This Picture ?",
+            "notes": [
+                "Trouvez-vous une vuln\u00e9rabilit\u00e9 dans cette image ?"
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "vulnerability_door.jpg",
+            "image alt": "Emergency exit gate in the perimeter fence of a highly secured facility, illustrating a critical physical security vulnerability and potential unauthorized access point."
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Critical Emergency Exit Vulnerability",
+            "notes": [
+                "Issues de secours => obligatoires pour respect des r\u00e8gles de s\u00fbret\u00e9",
+                "Sur l'ext\u00e9rieur => cam\u00e9ra et s\u00e9curit\u00e9 plut\u00f4t sur les entr\u00e9es",
+                "Endroits moins surveill\u00e9s => int\u00e9ret pour un attaquant",
+                "La porte sur un mur grillag\u00e9. Les portes s'ouvrent => appui sur la barre d'ouverture (ouverture en cas de mouvement de masse)",
+                "Fil de fer rigide et courb\u00e9 => accrocher la barre => tirer \u00e0 soi => ouverture => attaquant peut entrer",
+                "D\u00e9j\u00e0 vu => infrastructure critique"
+            ],
+            "aside": "References: <a href=\"https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf\">ANSSI - Guide d'hygi\u00e8ne informatique</a>.",
+            "image": "vulnerability_door.jpg",
+            "image alt": "Emergency exit gate in the perimeter fence of a highly secured facility, illustrating a critical physical security vulnerability and potential unauthorized access point.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Security systems can contain critical vulnerabilities because of safety requirements and physical design choices.<br>In this example, a secured site contains an emergency exit behind a fence. The emergency door uses a push-bar opening mechanism:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "designed to allow fast evacuation during an emergency,",
+                        "but also reachable from outside through the fence."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "With a simple rigid wire:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "an attacker can slide the wire through the fence,",
+                        "hook the emergency push bar,",
+                        "and pull it to trigger the opening mechanism."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Emergency exits follow strict safety regulations: they must allow fast evacuation.<br>However, they are also frequently: located in less monitored areas, positioned near external structures, or protected with insufficient consideration for intrusion scenarios."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cybersecurity Reconnaissance: How Attackers Search for Vulnerabilities",
+            "notes": []
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Physical Reconnaissance and Human Behavior Observation",
+            "notes": [
+                "Voyez-vous une menace sur l'image ?",
+                "Observation des les lieux avant intrusion:",
+                "Entr\u00e9es et sorties: bonnes et mauvaises pratiques, horaires de pr\u00e9sence...",
+                "S\u00e9curit\u00e9 des  acc\u00e8s: badges, serrures, cl\u00e9s...",
+                "Photos et vid\u00e9os => analyse \u00e0 postiori",
+                "Sur l'image => 3 personnes peuvent \u00eatre des menaces, le status sociale, le visage et les activit\u00e9s => permettent pas d'identifier une menace.",
+                "Comment se prot\u00e9ger contre ce type reconnaissance ?"
+            ],
+            "aside": "References: <a href=\"https://www.redlegg.com/penetration-testing/physical-pen-testing\">RedLegg - physical pentesting</a>.",
+            "image": "surveillance1.jpg",
+            "image alt": "Three individuals disguised as a businessman in a restaurant, a homeless person, and a teenager eating ice cream covertly observing a corporate building to gather information for reconnaissance and social engineering.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker able to observe a target without being identified will often physically inspect the location before attempting an intrusion.<br>During this reconnaissance phase, the attacker may:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "observe entrances and exits,",
+                        "identify employee habits and routines,",
+                        "analyze working hours and presence schedules,",
+                        "detect good and bad security practices,",
+                        "study access systems such as badges, locks, keys, or gates,",
+                        "take photos or videos for later analysis."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "The objective is to understand: how the organization works, where security is weak, and which behaviors could be exploited."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Wireless Reconnaissance: Wi-Fi, Bluetooth and Radio Signals",
+            "notes": [
+                "Un mur => protection contre la reconnaissance physique. Suffisant d'apr\u00e8s vous ? Utiliser un drone => photos et vid\u00e9os du b\u00e2timent.",
+                "Si pas de viseul => \"\u00e9couter\" les ondes (Wi-Fi, Bluetooth)",
+                "Si WiFi, peut-il se connecter ? Trouver un mot de passe ?",
+                "Y a-t-il du Bluetooth ? (\u00e9couteurs => suivi de r\u00e9unions confidentielles)"
+            ],
+            "aside": "References: <a href=\"https://attack.mitre.org/techniques/T0887/\">MITRE ATT&CK \u2013 Wireless Sniffing</a>.",
+            "image": "surveillance2.jpg",
+            "image alt": "Three individuals: a businessman, a homeless person, and a teenager; attempting to observe a large secured gate behind a high fence, showing failed reconnaissance due to effective perimeter security preventing visual access",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker does not only observe with their eyes. They can also observe the electromagnetic signals emitted by devices and networks.<br>During this phase, the attacker may:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "detect Wi-Fi networks,",
+                        "listen for Bluetooth devices,",
+                        "identify wireless communications used on site."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "These observations can reveal important information:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Is the network using Wi-Fi or wired Ethernet (RJ45) ?",
+                        "Are there connected devices using Bluetooth ?",
+                        "Are wireless headsets used for confidential meetings ?",
+                        "Are smart speakers or connected devices present ?",
+                        "Which types of phones are mainly used: iPhone (iOS) or Android ?"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Hardware Reconnaissance and Security Equipment Identification",
+            "notes": [
+                "Identifier le mat\u00e9riel informatique/s\u00e9curit\u00e9.",
+                "Marques, mod\u00e8les, prestataires (de s\u00e9curit\u00e9: d\u00e9t\u00e9ction du niveau de s\u00e9curit\u00e9 ou intrusion par social engineering)",
+                "Objets connect\u00e9s ? Vid\u00e9osurveillance est-elle locale ou en ligne ?"
+            ],
+            "aside": "References: <a href=\"https://hackersmanifest.com/iot-pentesting/01-reconnaissance/\">Hackers Manifest - IoT pentesting</a>.",
+            "image": "discovery.jpg",
+            "image alt": "Attacker performing visual reconnaissance on a secure facility, observing entry points, surveillance systems, and physical security weaknesses before an intrusion.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "An attacker may also analyze the physical equipment present in the environment. During this reconnaissance phase, the attacker can identify:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "computer equipment,",
+                        "security devices,",
+                        "connected objects,",
+                        "and infrastructure technologies."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "By observing brands, models, or providers, the attacker may estimate the level of security."
+                },
+                {
+                    "type": "p",
+                    "content": "Examples of useful observations:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Which computers, servers, or networking devices are used ?",
+                        "Are there connected objects or IoT devices ?",
+                        "Which cameras, alarms, or access control systems are installed ?",
+                        "Are physical backups present on-site ?",
+                        "Is video surveillance stored locally or online ?",
+                        "Which security company or provider manages the infrastructure?"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Digital Reconnaissance and Open-Source Intelligence (OSINT)",
+            "notes": [
+                "GoogleMaps => photos, horaires d'ouvertures et vacances, commentaires de clients, produits...",
+                "Site web, services, adresses ou appareils sur internet ?",
+                "LinkedIn (soci\u00e9t\u00e9, employ\u00e9s) ? Avec d\u00e9tails qui divulgent des informations ? Exp\u00e9rience (informatique/cyber) ? Centres d'int\u00e9r\u00eat et activit\u00e9s, des amis ou des personnes qu'ils admirent ?",
+                "Employ\u00e9s avec r\u00e9seaux sociaux ? Obtenir => nom, animaux, date de naissance...",
+                "Adresses e-mail professionnelles/personnelles, num\u00e9ros de t\u00e9l\u00e9phone, adresses physiques ?"
+            ],
+            "aside": "References: <a href=\"https://www.kaspersky.com/blog/osint-open-source-intelligence/48911/\">Kaspersky - OSINT</a>.",
+            "image": "profil.jpg",
+            "image alt": "Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Attackers can collect a large amount of information without touching the target directly. This phase is called digital reconnaissance or OSINT (Open-Source Intelligence). An attacker may search for:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Information available on Google Maps: (photos of buildings, opening hours, customer identity, entrances, parking areas, or security equipment visible in images).",
+                        "Internet services: websites, exposed devices, internet-connected systems, public IP addresses or domains.",
+                        "Employee information on LinkedIn: technical skills, technologies and products used, interests, communities, or public relationships.",
+                        "Employee activity on social networks: personal information, habits, family members, pets, birthdays, locations, or daily routines.",
+                        "Contact information: professional or personal email addresses, phone numbers, physical addresses."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Can you find vulnerability in this profile page ?",
+            "notes": [],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "profil.jpg",
+            "image alt": "Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers"
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Social Media Profile Vulnerabilities",
+            "notes": [
+                "Tous les r\u00e9seaux sociaux.",
+                "Les dates de vacances affich\u00e9es sur le profil (si vous devez entrer dans sa maison ou dans son bureau, vous avez un mois tranquille)",
+                "Nom du chat => seul compagnon (dans le mot de passe ?)",
+                "Son \u00e2ge (et donc son ann\u00e9e de naissance)",
+                "Entreprise et tous les produits utilis\u00e9s (avec versions)",
+                "Amis, photos de lui, lieu de vacances, caf\u00e9 pr\u00e9f\u00e9r\u00e9 et informations de contact, adresse e-mail personnelle avec usages professionnels."
+            ],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "profil.jpg",
+            "image alt": "Public employee profile page displaying detailed company technologies, vacation dates, email addresses, and phone numbers, illustrating an open-source intelligence (OSINT) information source valuable for attackers.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Social networks can expose a large amount of valuable information to attackers. A public profile may reveal:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "employer information: technologies, software, products, and even versions used inside the company,",
+                        "personal contact information: personal email addresses, phone numbers, or accounts reused for professional communications.",
+                        "age or birthday,",
+                        "the name of a pet (sometimes reused in passwords),",
+                        "vacation dates: useful if an attacker wants to enter a house or office while the person is away,",
+                        "friends, relationships, and habits,",
+                        "favorite places,",
+                        "liked products."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "How Cybercriminals Exploit Security Vulnerabilities ?",
+            "notes": [
+                "D'apr\u00e8s vous et les histoires de cybers\u00e9curit\u00e9 que vous avez entendu, comment les attaquants entre dans les syst\u00e8mes informatiques ?"
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Intrusion Methods: Physical Break-Ins, Stealth Access and Social Engineering",
+            "notes": [
+                "Forte (mode cambriolage: casser la porte/fen\u00eatre, entrer, voler, ressortir. Victimes inform\u00e9es de l'intrusion): Isra\u00e9liens => vole des plans nucl\u00e9aires iraniens => 2 v\u00e9hicules => embarquement des caisses documents",
+                "Fine (crochettage, d\u00e9poser des portes d\u00e9rob\u00e9es et/ou on vole de donn\u00e9es, sortir, refermer. La victime => pas inform\u00e9e)",
+                "Ing\u00e9nierie social: d\u00e9guisement (collaborateur: caf\u00e9, t\u00e9l\u00e9phone, souriant, bien ras\u00e9, chemise; prestataire, prestataire) => ouvrir la porte. Entrer, observer, attendre, d\u00e9poser des portes d\u00e9rob\u00e9es, voler des donn\u00e9es, ou des postes de travail. La victime pas toujours inform\u00e9e."
+            ],
+            "aside": "References: <a href=\"https://www.isere.gouv.fr/Actions-de-l-Etat/Entreprises-economie-emploi-finances-publiques/Entreprises-etes-vous-protegees-face-au-risque-d-intrusion\">Is\u00e8re Prefecture reports physical intrusion data theft in research</a>.",
+            "image": "mission_impossible.jpg",
+            "image alt": "Tom Cruise climbing through a window in Mission: Impossible 4 during a cyber intrusion scene",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Strong Intrusion</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Similar to a burglary",
+                        "Attackers force entry through doors, windows, or protected areas",
+                        "The victim immediately notices the intrusion",
+                        "Example: the theft of Iranian nuclear documents allegedly carried out by Israeli intelligence services"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Stealth Intrusion</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Attackers discreetly enter and leave without visible evidence",
+                        "They may pick locks, bypass protections, install backdoors, or copy data",
+                        "The victim may remain unaware for weeks or months"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Social Engineering Intrusion</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Attackers impersonate employees, contractors, suppliers, auditors, or security professionals",
+                        "They rely on appearance, confidence, urgency, and trust to obtain legitimate access",
+                        "Once inside, they observe, wait, steal information, install malicious devices, or compromise workstations"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Social Engineering: Exploiting Human Vulnerabilities",
+            "notes": [
+                "Biais cognitifs pour manipuler une cible => obtenir un comportement voulu",
+                "Utilisation de: secret, urgence, autorit\u00e9 et importance de la situation",
+                "Moyens: mail, SMS, messagerie instantan\u00e9e, vishing (appel), quishing (QR code)"
+            ],
+            "aside": "References: <a href=\"https://www.paloaltonetworks.com/blog/2025/07/social-engineering-rise-new-unit-42-report/\">Palo Alto Networks - Unit 42 Report</a>.",
+            "image": "manipulation.jpg",
+            "image alt": "Lawyer puppet manipulated by unseen hand with neon network envelope representing cybersecurity manipulation",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Attackers communicate with a target and use psychological manipulation to influence behavior, often bypassing technical security controls entirely.<br><strong>Psychological Levers Used</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Secrecy: \u201cDo not tell anyone\u201d",
+                        "Urgency: \u201cAct immediately\u201d",
+                        "Authority: impersonating managers, IT staff, auditors, or official institutions",
+                        "Importance: making the situation appear critical or high-risk"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Common Communication Channels</strong>: Phishing (email), Smishing (SMS), Instant messaging platforms, Vishing (phone calls), Quishing (QR code-based attacks)"
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Social Engineering: Exploiting Human Vulnerabilities",
+            "notes": [
+                "Sujets: changement de mot de passe, probl\u00e8me de s\u00e9curit\u00e9, nouveau client/fournisseur ou investissement urgent, nouveau document (campagne de licenciement, augmentation de salaire, facture, mutuelle, CV), probl\u00e8me juridique, frais suppl\u00e9mentaires (livraison, amende/facture impay\u00e9e), perte de fonctionnalit\u00e9 (captcha invalide et bloqu\u00e9, carte bancaire bloqu\u00e9e, perte d'abonnement)",
+                "Actions: effectuer des virements bancaires, entrer un mot de passe et le 2FA, t\u00e9l\u00e9charger et ex\u00e9cuter un programme, copier-coller et ex\u00e9cuter du code, cliquer sur un bouton, ouvrir un lien"
+            ],
+            "aside": "References: <a href=\"https://www.paloaltonetworks.com/blog/2025/07/social-engineering-rise-new-unit-42-report/\">Palo Alto Networks - Unit 42 Report</a>.",
+            "image": "manipulation.jpg",
+            "image alt": "Lawyer puppet manipulated by unseen hand with neon network envelope representing cybersecurity manipulation",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "<strong>Typical Scenarios</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Password reset requests",
+                        "Security alerts",
+                        "Urgent supplier/client payments or investments",
+                        "Fake documents (HR changes, salary updates, layoffs, invoices, CVs)",
+                        "Legal or administrative threats",
+                        "Service disruption claims (blocked bank card, expired subscription, failed captcha)"
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Targeted User Actions</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Sending bank transfers",
+                        "Entering passwords and 2FA codes",
+                        "Downloading and executing files or programs",
+                        "Copying and executing scripts or commands",
+                        "Clicking malicious links or buttons",
+                        "Scanning QR codes leading to fraudulent pages"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Contextual Security Vulnerabilities Caused by Unsafe Daily Practices",
+            "notes": [
+                "Attaquant aiment les m\u00e9chanisme de simplification de la s\u00e9curit\u00e9:",
+                "Pas de mot de passe, session ouverte",
+                "porte ouverte",
+                "mot de passe sur post-it (partage du mot de passe)",
+                "\u00e9crire les mots de passe (navigateur, cahier, fichiers non prot\u00e9g\u00e9s)",
+                "1 mot de passe pour tous les comptes",
+                "donn\u00e9es personnelles non secr\u00e8tes comme mot de passe"
+            ],
+            "aside": "References: <a href=\"https://www.helpnetsecurity.com/2024/04/26/current-user-password-practices/\">Help Net Security \u2013 password management</a>.",
+            "image": "risky_practices.jpg",
+            "image alt": "Lawyer exiting office without locking door, leaving workstation open with exposed confidential information and weak security habits",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Many cybersecurity vulnerabilities are created by everyday behaviors intended to save time, simplify IT usage, or reduce operational constraints.<br><strong>Common Risky Practices</strong>:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Using computers without passwords",
+                        "Leaving work sessions unlocked",
+                        "Not locking office doors or restricted areas",
+                        "Writing passwords on sticky notes",
+                        "Sharing passwords between multiple users",
+                        "Storing passwords in unprotected files or notebooks",
+                        "Saving passwords directly in web browsers",
+                        "Reusing the same password across multiple services",
+                        "Using weak passwords based on names, nicknames, or birth dates"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Technical Vulnerability Exploitation Through Hardware and Software Analysis",
+            "notes": [
+                "Open source: analyse du code => vuln\u00e9rabilit\u00e9s",
+                "Close source: analyse instructions machine => \"code\" => vuln\u00e9rabilit\u00e9s",
+                "Hardware: achat (m\u00eame mod\u00e8le) => d\u00e9montage, analyse mat\u00e9riiel => \"dump\" le syst\u00e8me => r\u00e9cup\u00e8re et analyse les instructions machine => \"code\" => vuln\u00e9rabilit\u00e9s",
+                "Script: + rapide et + facile."
+            ],
+            "aside": "References: <a href=\"https://www.enisa.europa.eu/sites/default/files/2025-10/ENISA%20Threat%20Landscape%202025%20Booklet.pdf?_bhlid=77801cc22cbd30022dfcfae475c47d0534e1ae5b\">ENISA - Threat Landscape 2025</a>.",
+            "image": "iot_hacking.jpg",
+            "image alt": "Hacker accessing surveillance camera hardware and using a terminal to identify and exploit system vulnerabilities",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Technical exploitation involves using know and unpatched vulnerabilities or analyzing hardware or software to identify new weaknesses that can be abused by attackers."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Hardware Analysis</strong>: Buying and disassembling the same device model to inspect firmware, chips, and embedded code to find new vulnerability."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Closed Source Software Analysis</strong>: Reverse engineering executable files to understand how the software works and identify vulnerabilities."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Open Source Software Analysis</strong>: Reviewing publicly available source code to find programming errors or insecure logic."
+                },
+                {
+                    "type": "p",
+                    "content": "<strong>Exploitation Automation</strong>: Writing scripts or tools to exploit vulnerabilities quickly, efficiently, and at scale."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "What are the impacts of post-exploitation in cybersecurity ?",
+            "notes": [
+                "Individuellement pour un humain, quel serait les impacts d'une cyberattaque ?"
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Human Impacts of Post-Exploitation Attacks",
+            "notes": [
+                "culpabilit\u00e9 (victimes), stress (employ\u00e9s => pay\u00e9s pendant l'attaque ?)",
+                "acc\u00e8s \u00e0 l'eau, \u00e9lectricit\u00e9, sant\u00e9, informations r\u00e9elles (montant d'un compte bancaire, ...)",
+                "Quels seraient les impacts d'une attaque qui s'en prend au mat\u00e9riel ?"
+            ],
+            "aside": "References: <a href=\"https://journals.sagepub.com/doi/10.1177/21582440211061556\">SAGE Journals \u2013 An Exploration of the Psychological Impact of Hacking Victimization</a>.",
+            "image": "human_impact.jpg",
+            "image alt": "Depressed lawyer leaning over dry faucet after cyberattack disrupting water supply infrastructure.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Direct impact:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Guilt and loss of confidence for people who have been manipulated by cyber attacks (phishing, social engineering).",
+                        "Some employees experience high stress during and after an attack, some are unable to continue working, and some do not know if they will be paid or if they will keep their job."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Indirect impact: information systems are interfaces for humans, if these interfaces are compromised, they impact the jobs and activities that depend on them, including critical ones such as:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "hospital emergency systems",
+                        "water access",
+                        "electricity distribution",
+                        "transport company"
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Hardware and Connected Device Impacts",
+            "notes": [
+                "Vol de mat\u00e9riel != travail pour les victimes",
+                "Objets connect\u00e9s => mauvaise information, mener des actions automatiques (critique: vanne de barrage => rel\u00e2cher des milliers de litres d'eau)",
+                "Qu'est-ce qui pourrait \u00eatre vol\u00e9 en cas d'espionnage ? A quoi cela pourrait-il servir ?"
+            ],
+            "aside": "References: <a href=\"https://www.automation.com/article/white-paper-zscaler-threatlabz-2023-enterprise-iot\">Zscaler ThreatLabz Report 2023</a>.",
+            "image": "connected_device.jpg",
+            "image alt": "Connected dam system opening massive valve causing giant flood wave toward village after cyberattack.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Hardware theft can directly impact the work and daily activities of victims by preventing access to important devices, files, or services.",
+                        "Connected devices are also valuable targets for attackers. Some are used to provide information, while others can automatically perform physical actions or respond to remote commands.",
+                        "If these devices are compromised, they can alter important behaviors and operations.",
+                        "For example, a compromised dam valve system could retain or release thousands of liters of water, causing major operational or safety consequences."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cyber Espionage and Theft of Strategic Information",
+            "notes": [
+                "Brevets, devis, clients, offres, secrets professionnels => vol de business",
+                "Secrets des personnes => chantage / moyens de pression",
+                "Comment gagner de l'argent avec une cyberattaque ?"
+            ],
+            "aside": "References: <a href=\"https://www.wsj.com/articles/nation-state-hackers-hit-businesses-for-commercial-edge-d07865e0\">Wall Street Journal \u2013 Nation-State Hackers Hit Businesses for Commercial Edge</a>.",
+            "image": "economic_war.jpg",
+            "image alt": "France sinking into the ocean pulled by piggy bank anchor symbolizing cyber warfare, economic crisis and national cybersecurity threats.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Cyber espionage allows attackers to steal sensitive and strategic information from companies and individuals.",
+                        "Company patents and research data can be stolen to gain competitive or technological advantages.",
+                        "Business information such as quotations, customer lists, contracts, and commercial offers can also be exfiltrated.",
+                        "Professional secrets and confidential internal information may be targeted during attacks.",
+                        "Personal secrets and private information can also be stolen and later used for blackmail, pressure, or manipulation."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Financial Cyber Attacks, Ransomware: Cryptolocker, Data Theft, and Service Disruption",
+            "notes": [
+                "Attaques \u00e0 but lucratif => 1 \u00e0 3 moyens de prise d'otage des SI",
+                "Chiffrement => le plus utilis\u00e9 => fonctionne de moins en moins car backups => fonctionne mieux avec chiffrement/suppresion des backups.",
+                "Exfiltration => menace de vente/publication => souvent duo avec chiffrement (avec nouvelle tendance \u00e0 exfiltration uniquement). Fonctionne mieux => impacte l'image de l'entreprise (sans moyen d'y rem\u00e9dier). Aucune preuve de non revente des donn\u00e9es apr\u00e8s chiffrement.",
+                "DOS => pas de reprise d'activit\u00e9 => perte de revenus imm\u00e9diat. Urgence + difficult\u00e9 de reprise => fonctionne."
+            ],
+            "aside": "References: <a href=\"https://www.checkpoint.com/fr/cyber-hub/ransomware/what-is-triple-extortion-ransomware/\">Check Point \u2013 What is Triple Extortion Ransomware ?</a>.",
+            "image": "ransomware.jpg",
+            "image alt": "Smiling hacker casting digital prison on employee computer, demanding ransomware payment through encrypted hostage-taking and cyber extortion.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Profit-driven attackers use ransom demands to take information systems hostage using one or several attack methods."
+                },
+                {
+                    "type": "ol",
+                    "content": [
+                        "Encryption attacks (ransomware) are the most common and well-known method. They make company data inaccessible and can also hide evidence of the intrusion. Backups are often used as protection, but attacks become far more effective when backups are also encrypted or deleted.",
+                        "Data exfiltration combined with threats of publication or resale is frequently used alongside encryption. This method is often more effective because companies lose control over sensitive data and may suffer reputational damage. However, companies have no guarantee that attackers will not secretly sell or reuse the stolen data even after a ransom is paid. The current trend increasingly involves data exfiltration without necessarily using cryptolocking.",
+                        "Another method is to make IT services unusable through denial-of-service attacks. If systems stop functioning, companies may be unable to continue operations, causing immediate financial losses and disruption of business activities."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Data Destruction and Cyber Sabotage",
+            "notes": [
+                "Destruction des donn\u00e9es => sabotage difficilement r\u00e9cup\u00e9rable.",
+                "Le but => emp\u00eacher un projet d'aboutir",
+                "Usages => ne pas laisser de traces (projet confidentiel et compromettant), effacer les traces apr\u00e8s intrusions (espionnage, r\u00e9cup\u00e9ration des donn\u00e9es ou \u00e9viter l'adaptation des moyens de d\u00e9fense).",
+                "En temps de guerre => emp\u00eacher les communications."
+            ],
+            "aside": "References: <a href=\"https://www.numerama.com/cyberguerre/865129-lukraine-se-fait-attaquer-par-un-wiper-un-malware-qui-detruit-des-donnees.html\">Numerama - Ukraine Hit by a Data-Wiping Malware Attack</a>.",
+            "image": "cyber_sabotage.jpg",
+            "image alt": "Person using smoke signals with cyber warning symbols after IT outage, illustrating communication challenges without computers and digital systems.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Data destruction can cause severe and sometimes irreversible sabotage of information systems and business activities.",
+                        "Attackers may destroy data to prevent a project from succeeding or to increase pressure during a ransom attack by deleting recovery data and backups.",
+                        "Destruction can also be used to permanently remove sensitive or compromising information after confidential operations or projects.",
+                        "In many cases, attackers erase logs, evidence, and traces of their intrusion to hide espionage activities or to prevent defenders from understanding and adapting their security measures.",
+                        "These attacks are also used during wartime operations. During the first hours of the war in Ukraine, destructive cyber attacks targeted information systems and communications in order to disrupt access to information and complicate the organization of defenses."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Disinformation and Destabilization Through Cyber Operations",
+            "notes": [
+                "SI => instantan\u00e9it\u00e9 et l'acc\u00e8s \u00e0 distance. Usage: politique et communication, d\u00e9sinformation => d\u00e9stabilisation de projets, d'\u00c9tats ou de pays.",
+                "Difficile de se blanchir et difficile que la population oublie (m\u00eame avec preuve) => perte de confiance et notori\u00e9t\u00e9",
+                "D\u00e9sinformation touche les valeurs morales et convictions profondes => une marque ind\u00e9l\u00e9bile dans l'esprit du public",
+                "Pensez vous qu'une crise cyber mondiale puisse arriver ? Comment ?"
+            ],
+            "aside": "References: <a href=\"https://www.defense.gouv.fr/actualites/decryptage-matriochka-campagne-pro-russe-desinformation\">French Ministry of the Armed Forces \u2013 \"Matriochka\" Pro-Russian Disinformation Campaign</a>.",
+            "image": "disinformation_covid19.jpg",
+            "image alt": "Screenshot of COVID-19 misinformation post falsely linking 5G antennas to the pandemic, illustrating online disinformation and cyber-enabled fake news.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Digital technologies enable instant communication and global reach, making them powerful tools for influence, disinformation, and destabilization campaigns.",
+                        "These techniques are frequently used in politics, public communication, and information warfare to undermine individuals, organizations, projects, governments, or entire countries.",
+                        "False or misleading information can spread rapidly through online platforms and reach large audiences before it can be verified or corrected.",
+                        "Once a person, organization, or project has been targeted, restoring public trust and reputation can be extremely difficult, even when the information is proven to be false.",
+                        "Disinformation campaigns often target moral values, emotions, and deeply held beliefs because emotionally charged messages tend to leave a lasting impression on people's minds."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Could the Next Global Crisis Be Cyber ?",
+            "notes": [
+                "Chercheurs pensent => prochaine crise mondiale sera cyber.",
+                "3 th\u00e9ories: crise \u00e9nerg\u00e9tique majeure, crise logistique mondiale, crise de confiance.",
+                "Crise \u00e9nerg\u00e9tique (difficile): impacter plusieurs producteurs ou distributeurs en parall\u00e8le.",
+                "Crise logistique: une solution => attaquer un service cloud (incident CrowdStrike => impacts majeurs sur les transports (avions, bateaux, trains)). Cet impact sur plusieurs jours => difficilement g\u00e9rable."
+            ],
+            "aside": "References: <a href=\"https://www.weforum.org/stories/2016/06/could-a-cyber-attack-cause-a-financial-crisis/\">World Economic Forum (WEF) - Cyber risk as systemic risk in financial systems</a>.",
+            "image": "cyber_crisis.jpg",
+            "image alt": "Cyber crisis scene with collapsing digital infrastructure, crashing airplane, falling skyscraper and panicked crowds, illustrating large-scale cybersecurity disruption.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "A growing number of researchers and experts believe that the next major global crisis could originate from cyberspace.",
+                        "Several theories exist regarding large-scale cyber crises. Three of the most plausible scenarios are a major energy crisis, a global logistics crisis, and a crisis of trust.",
+                        "A large-scale energy crisis would require coordinated attacks against multiple electricity producers or distributors, making it one of the most complex scenarios to execute.",
+                        "A global logistics crisis may be easier to trigger. Modern transportation, supply chains, and industrial operations depend heavily on digital services and cloud providers. The CrowdStrike incident demonstrated how a relatively simple technical failure could disrupt airlines, trains, shipping operations, and businesses worldwide for several hours. Similar disruptions lasting several days would have far greater consequences."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Could the Next Global Crisis Be Cyber ?",
+            "notes": [
+                "Attaque sur la confiance => la perte de confiance par supercherie => fake news sur les r\u00e9seaux sociaux ou deepfakes (l'IA aide). Si trop courants: la population ne saurait plus o\u00f9 trouver une information juste et fiable.",
+                "Deuxi\u00e8me th\u00e9orie (plus facile individuellement) => falsifier une donn\u00e9e (donn\u00e9es bancaires => \u00e9norme crise financi\u00e8re internationale par perte de confiance)"
+            ],
+            "aside": "References: <a href=\"https://www.weforum.org/stories/2016/06/could-a-cyber-attack-cause-a-financial-crisis/\">World Economic Forum (WEF) - Cyber risk as systemic risk in financial systems</a>.",
+            "image": "cyber_crisis.jpg",
+            "image alt": "Cyber crisis scene with collapsing digital infrastructure, crashing airplane, falling skyscraper and panicked crowds, illustrating large-scale cybersecurity disruption.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "The most feared scenario today is a crisis of trust. Over time, artificial intelligence, social media, fake news, and deepfakes may make it increasingly difficult to distinguish reliable information from manipulated content.",
+                        "Another theory focuses on the deliberate falsification of data. Unlike service outages, manipulated data may remain undetected for long periods while progressively undermining trust in institutions and systems.",
+                        "For example, the alteration of banking records could trigger a major international financial crisis if people lose confidence in banks and financial services, even if the technical systems themselves continue to operate."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Understanding the Security Mechanisms That Protect Digital Systems",
+            "notes": [
+                "D'apr\u00e8s vous, quels sont les moyens qui permettent de vous prot\u00e9ger du risque cyber ?"
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Secrets: The Foundation of Digital Identity and Security",
+            "notes": [
+                "Identification => caract\u00e9ristique unique de la personne (secret, empreinte digital, reconaissance faciale). Pr\u00e9sentation du secret => identification",
+                "Mots de passe => th\u00e9oriquement secret => 0 communication (meilleurs amis, famille, enfants), != devinable (pas bas\u00e9 sur: nom, pr\u00e9nom, surnom, date de naissance, date du d\u00e9but d'une relation, nom d'un animal de compagnie, ville, code postal) => car connue sur internet."
+            ],
+            "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
+            "image": "password_prompts.jpg",
+            "image alt": "Multiple password prompts across digital interfaces, illustrating how passwords control access to various cyber systems and accounts.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "In computing, identity is based on unique characteristics. The simplest and most reliable way to verify a person's identity is through a secret known only to that person.",
+                        "Passwords, authentication codes, cryptographic keys, and active sessions are all examples of secrets used to protect accounts, devices, and data.",
+                        "A secret must remain secret. It should never be shared, even with friends or family members, and it should not be based on publicly known information such as names, birthdays, pets, cities, or important dates."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Secrets: The Foundation of Digital Identity and Security",
+            "notes": [
+                "Secrets parfois g\u00e9n\u00e9r\u00e9s par une machine (2FA, cl\u00e9s cryptographiques) => si syst\u00e8me compromis => attaquant peut obtenir les secrets (aussi pour gestionnaire de mots de passe).",
+                "Protections fiable pour les mots de passe (f(a) = <r\u00e9sultat \"unique\">, impossible de faire l'inverse) => pas toujours utilis\u00e9 ou bien utilis\u00e9 (comme Microsoft Windows)."
+            ],
+            "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
+            "image": "password_prompts.jpg",
+            "image alt": "Multiple password prompts across digital interfaces, illustrating how passwords control access to various cyber systems and accounts.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Some secrets are generated automatically by systems, such as two-factor authentication (2FA) codes or cryptographic keys stored on computers and smartphones.",
+                        "However, these secrets are not immune to compromise. Anyone with sufficient access to a device, software, or password manager may be able to recover the secrets they contain.",
+                        "Some cryptographic protections work like digital fingerprints: the same input always produces the same fingerprint, but it is mathematically infeasible to recover the original data from it. This allows systems to verify secrets without storing or exposing them directly.",
+                        "Unfortunately, not all systems implement these protections correctly, which can weaken the security of user credentials and sensitive information."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "title",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Cybersecurity Best Practices to Prevent Cyber Attacks",
+            "notes": [
+                "Nous allons, dans la partie suivante, r\u00e9pondre \u00e0 la question: comment vous prot\u00e9ger contre les cyberattaques ?",
+                "Maintenant que vous savez que ce sont les secrets tels que vos mots de passe qui vous prot\u00e8ge: comment un attaquant pourrait-il avoir acc\u00e8s \u00e0 vos comptes et donn\u00e9es ?"
+            ]
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Strong Secrets: Building the First Layer of Cyber Defense",
+            "notes": [
+                "Avoir des secrets r\u00e9ellement secrets.",
+                "Ne jamais les communiquer.",
+                "Fort et pas devinables.",
+                "Pas \u00e9crits ou stock\u00e9s sur un support accessible.",
+                "Si vos mots de passe sont fort, comment un attaquant pourrait-il compromettre votre ordinateur ou t\u00e9l\u00e9phone ?"
+            ],
+            "aside": "References: <a href=\"https://forestall.io/identity-glossary/what-is-a-secret-in-cybersecurity\">Forestall \u2013 What is a Secret in Cybersecurity?</a>.",
+            "image": "password_postit.jpg",
+            "image alt": "Computer covered in sticky notes showing passwords for bank, accounts and devices, highlighting weak password security and cybersecurity vulnerabilities.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Effective cybersecurity starts with secrets that are truly secret.",
+                        "Never share passwords, authentication codes, recovery codes, or other sensitive credentials with anyone.",
+                        "Secrets should not be predictable or based on publicly available information such as names, birthdays, addresses, pets, or important dates.",
+                        "Avoid writing down or storing secrets in locations that are easily accessible to other people.",
+                        "The more difficult a secret is to guess, obtain, or steal, the more effective it becomes as a protection against cyber attacks.",
+                        "When possible, reduce reliance on a single secret by using additional protections such as multi-factor authentication (MFA)."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Security Updates and Vulnerability Management",
+            "notes": [
+                "Tous les syst\u00e8mes ont des vuln\u00e9rabilit\u00e9s.",
+                "Vuln\u00e9rabilit\u00e9s connues => simple, vuln\u00e9rabilit\u00e9s inconnues => difficile",
+                "Editeurs corrigent => mettre \u00e0 jour pour s\u00e9curiser",
+                "Mettre \u00e0 jour r\u00e9guli\u00e8rement: tous ses syst\u00e8mes pr\u00e9sent sur le syst\u00e8me (y comris si vous les utilisez plus !)",
+                "Au minimum => prioriser: le navigateur web (Chrome, Firefox, ...), le syst\u00e8me d'exploitation (Windows, Linux, ...), messageries (mail & instantan\u00e9es)."
+            ],
+            "aside": "References: <a href=\"https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3481350/cisa-nsa-fbi-and-international-partners-issue-advisory-on-the-top-routinely-exp/\">CISA, NSA, FBI and International Partners Issue Advisory on the Top Routinely Exploited Vulnerabilities</a>.",
+            "image": "vulnerability_exploit.jpg",
+            "image alt": "Hacker workstation with code consoles, network monitoring dashboards and malware analysis tools, illustrating the exploitation of technical vulnerabilities in cyberattacks.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Every system and software application contains vulnerabilities, including those considered highly secure.",
+                        "Attackers often rely on known vulnerabilities because they are easier to exploit than discovering new ones.",
+                        "Software vendors regularly publish security patches to fix these weaknesses, but devices only benefit from them if updates are installed.",
+                        "Regularly updating operating systems, applications, and software is one of the most effective ways to reduce cybersecurity risks.",
+                        "When updates must be prioritized, web browsers, operating systems, email clients, and messaging applications should be treated as critical.",
+                        "Unused software should not be forgotten. If it remains installed, attackers may still exploit its vulnerabilities even if it is rarely or never used."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Safe Internet Browsing and Digital Exposure Protection",
+            "notes": [
+                "Majorit\u00e9e des applications => application en ligne => navigateur tr\u00e8s important",
+                "Naviguer != T\u00e9l\u00e9charger des fichiers suspicieux => Identifier la source => Validez le contenu",
+                "/!\\ plugins/extensions => v\u00e9rifier la validation par des organismes de confiance => acc\u00e8s aux secrets et informations",
+                "Publications => informations => exposition personnelle/professionnelle => limiter les acc\u00e8s aux \"amis\"",
+                "Cookie => tra\u00e7age => informations et pr\u00e9visible => facilite les attaques => suppression r\u00e9gulier des donn\u00e9es de navigation.",
+                "Si vous n'allez plus sur des sites douteux, qu'est-ce que l'attaquant pourrait faire pour vous faire ex\u00e9cuter un program malveillant ?"
+            ],
+            "aside": "References: <a href=\"https://www.technadu.com/unc4536-spreads-malware-via-fake-popular-software-sites/545860/\">TechNadu / Mandiant (Google) - UNC4536 Spreads Malware via Fake Popular Software Websites</a>.",
+            "image": "browser.jpg",
+            "image alt": "Downloading suspicious software with warning signs and risky browser cookies, illustrating unsafe cybersecurity practices to avoid.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "The web browser is one of the most powerful tools today, as it provides access to nearly all online applications and services used in daily life.",
+                        "Avoid downloading files or software from untrusted sources. Always verify the origin of any content before downloading or executing it.",
+                        "Be cautious with browser plugins and extensions. Only install those that have been reviewed or validated by trusted organizations, as they may access sensitive personal data.",
+                        "Regularly clear browser data, including cookies, to reduce online tracking, lower predictability, and limit potential exposure in case of compromise.",
+                        "Avoid oversharing personal information online. At a minimum, keep content private and share it only with controlled and trusted groups of people."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Detecting Impersonation and Communication-Based Cyber Attacks",
+            "notes": [
+                "Naviguer => v\u00e9rifier la source, communication (SMS, appels, e-mails, messageries instantan\u00e9es, r\u00e9seaux sociaux) => v\u00e9rifier la source.",
+                "Comment v\u00e9rifier la source ? e-mails et navigation: v\u00e9rifiez le domaine (apr\u00e8s @)",
+                "/!\\ caract\u00e8res trompeurs (\"l\", \"I\", \"1\"), caract\u00e8res cyrilliques/latins",
+                "Si les attaquants ne peuvent plus vous envoyer directement des liens, comment pourraient-ils vous en faire ouvrir un ?"
+            ],
+            "aside": "References: <a href=\"https://www.cloudflare.com/fr-fr/learning/dns/what-is-cybersquatting/\">Cloudflare - What is cybersquatting ?</a>.",
+            "image": "domains.jpg",
+            "image alt": "Domain name structure showing TLD, domain and subdomain, illustrating how to verify website sources and improve cybersecurity awareness.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Always verify the source of a communication, regardless of whether it comes through email, SMS, phone calls, instant messaging, or social media.",
+                        "Attackers frequently impersonate trusted organizations, colleagues, friends, or family members to gain credibility.",
+                        "For emails, carefully check the domain name, which is the part located after the \"@\" symbol.",
+                        "Small differences can be difficult to spot: for example, a lowercase \"l\" may look identical to an uppercase \"I\", and some Cyrillic characters closely resemble Latin characters.",
+                        "When in doubt, verify the request through another trusted communication channel before taking any action.",
+                        "Trust should be based on verification, not on the appearance of a message or the identity it claims to represent.Dans toutes les communications, v\u00e9rifiez la source. Cela inclut les SMS et les appels, les e-mails, les messageries instantan\u00e9es et les r\u00e9seaux sociaux."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Hidden Risks of Automatic Digital Actions",
+            "notes": [
+                "Faciliter les actions => faire des choses \u00e0 la place de l'utilisateur => faire les choix \u00e0 votre place => dangeureux.",
+                "Appareil fait une action => avec les donn\u00e9es de la personne qui a cr\u00e9\u00e9 l'outil => choix de l'action est fait par un inconnu => n'importe qui peut choisir ce que fait votre appareil ? => ne les laissez pas faire le choix",
+                "Lien ouvert, connection Wi-Fi => facilite les cyberattaques",
+                "/!\\ QrCodes => v\u00e9rfier la source ou le contenu, boutons dans les mails/pubs",
+                "Si vous n'ouvrez plus de liens et que vous ne t\u00e9l\u00e9chargez plus de documents suspicieux, comment un attaquant pourrait-il vous faire cliquer sur un fichier malveillant ?"
+            ],
+            "aside": "References: <a href=\"https://www.vditelecom.fr/le-quishing/\">VdiTelecom - Quishing: A Growing Cybersecurity Threat</a>.",
+            "image": "quishing.jpg",
+            "image alt": "Malicious QR code with hacker skull symbol, illustrating QR phishing attacks, cybersecurity threats and fraudulent links used by cybercriminals.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Modern tools simplify everyday tasks by performing actions automatically.",
+                        "Every time a tool simplifies a decision or an action for you, it means that someone else has decided what will happen on your device. This can be a legitimate developer trying to save you time, or an attacker attempting to make your phone or computer perform actions that lead to compromise.",
+                        "Features such as opening links, joining Wi-Fi networks, or redirecting users can be abused by attackers.",
+                        "Never scan a QR code unless you fully trust and control its source.",
+                        "Avoid clicking buttons, links, advertisements, or other external content that you cannot independently verify."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "External Devices and Removable Media Cybersecurity Risks",
+            "notes": [
+                "/!\\ P\u00e9riph\u00e9riques => \u00e9viter l'usage au maximum => n'utilisez que le votre (sur des appareil \u00e0 vous)",
+                "P\u00e9rif\u00e9rique d'amis de confiance != p\u00e9rif\u00e9rique s\u00e9cure  => pas sur vos appareils",
+                "P\u00e9riph\u00e9riques: les cl\u00e9s USB, les cartes SD, les t\u00e9l\u00e9phones, les appareils photo...",
+                "Si vous ne cliquez plus sur des fichiers dangeureux, comment un attaquant pourrait-il faire ex\u00e9cuter un programme malveillant sur votre ordinateur ?"
+            ],
+            "aside": "References: <a href=\"https://www.csoonline.com/article/569163/cybercriminal-group-mails-malicious-usb-dongles-to-targeted-companies.html\">CSO Online \u2013 Cybercriminal Group Mails Malicious USB Dongles to Targeted Companies</a>.",
+            "image": "badusb.jpg",
+            "image alt": "Suspicious hacker USB drive plugged into computer, highlighting cybersecurity risks of unknown external devices and removable media.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "External devices are a common source of security compromise and should be handled with caution.",
+                        "Avoid using unknown or untrusted peripherals whenever possible. If a device must be connected, only use your own trusted hardware.",
+                        "Even devices belonging to friends or trusted colleagues may be compromised and can introduce malware or data theft risks to your systems.",
+                        "Common examples of risky peripherals include USB flash drives, SD cards, smartphones, cameras, and other connected electronic devices.",
+                        "USB drives are especially dangerous because they can automatically execute malicious actions when plugged into a system."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Physical Access Control and Session Security",
+            "notes": [
+                "Victime difficile \u00e0 distance => acc\u00e8s local (d\u00e9placement ou recrutement)",
+                "Ils entrent pour avoir le premier acc\u00e8s => pour \u00e9viter: fermez vos portes \u00e0 cl\u00e9 et verrouillez vos sessions",
+                "Si vous changer vos serrures => assurez-vous du niveau de s\u00e9curit\u00e9",
+                "Portes qui se \"claquent\" => s'ouvertes avec une carte bancaire, fen\u00eatre ouverte == vuln\u00e9rabilit\u00e9, fen\u00eatre/porte faible == vuln\u00e9rabilit\u00e9, velux == vuln\u00e9rabilit\u00e9",
+                "Si vous fermez bien votre bureau et votre session, comment l'attaquant pourrait-il voir vos donn\u00e9es ?"
+            ],
+            "aside": "References: <a href=\"https://arstechnica.com/tech-policy/2019/10/man-faces-12-years-for-using-keyloggers-to-steal-companies-technology/\">Man planted keyloggers in companies' networks and stole their data</a>.",
+            "image": "physical_access.jpg",
+            "image alt": "Cybercriminal entering through a window to compromise a computer and infiltrate the entire company network, illustrating cybersecurity breach risks and unauthorized access.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "When a target is difficult to compromise remotely, attackers may attempt to gain physical access or rely on local malicious actors to do so.",
+                        "Physical security and cybersecurity are closely connected: an attacker who gains access to a building, an office, or a device may be able to bypass many digital security measures.",
+                        "Always lock doors, secure access points, and lock computer sessions when leaving a workstation unattended, even for a short period.",
+                        "If locks need to be replaced, choose security solutions that provide an appropriate level of protection against unauthorized entry.",
+                        "Security should not focus only on the main entrance. Doors that can be opened with simple tools, open windows, or weak physical barriers can all become entry points for an attacker.",
+                        "Just as digital systems must be protected against unauthorized access, physical access must be controlled and monitored to prevent compromise."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Physical Security and Device Protection",
+            "notes": [
+                "Appareils sans surveillance (lieux controll\u00e9s par vous ou votre organisation) == compromis",
+                "Ne pas laissez dans un train (pour un court appel, aller aux toilettes, au bar). Travailler dans un lieux public => un filtre de confidentialit\u00e9",
+                "D\u00e9placement avec demande de d\u00e9poser vos appareils => refuser => sacoches bloquant les ondes. Si serrure => la cl\u00e9 peut rester \u00e0 l'entr\u00e9e",
+                "Et si vous vous respectez toutes les consignes et recommandations que nous venons de faire, comment ces consignes pourrait-elles ne pas \u00eatre respect\u00e9es sur vos appareils ?"
+            ],
+            "aside": "References: <a href=\"https://www.itpro.com/security/hacking/hackers-are-turning-up-at-law-firms-to-gain-physical-access-to-machines\">IT Pro - Hackers are turning up at law firms to gain physical access to machines</a>.",
+            "image": "https://mauricelambert.github.io/Presentations/CyberTalk/PublicConfidentialData.jpg",
+            "image alt": "Hacker spying on confidential laptop data in a train using binoculars, illustrating shoulder surfing risks and the dangers of handling sensitive information in public places.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "A device that is physically accessible to an attacker should be considered potentially compromised.",
+                        "Computers, smartphones, tablets, and removable media should never be left unattended unless they are stored in a location controlled by you or your organization.",
+                        "In public places such as trains, airports, hotels, or conferences, even a few seconds without supervision may be enough for a device to be stolen, modified, or accessed.",
+                        "When working in public environments, privacy screen filters help prevent unauthorized observation of sensitive information displayed on the screen.",
+                        "During travel, requests to leave electronic devices outside a meeting room or secure area should be carefully evaluated. Whenever possible, the device should remain under your control.",
+                        "Radio-blocking pouches can help prevent wireless communications, but they do not replace physical supervision. The safest approach is to keep the device with you at all times."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Never Lend Devices or Security Assets",
+            "notes": [
+                "Vos enfants, fr\u00e8res et soeurs, amis, grand-parents connaissent-ils toutes les r\u00e8gles de cybers\u00e9curit\u00e9 qu'on vient de lister ? => pr\u00eat (ordinateur, t\u00e9l\u00e9phone) => risque",
+                "Personne bienveillante => branche une cl\u00e9 USB, scanne un QR code, lit ses e-mails, visite un site ou clique par m\u00e9garde sur un lien ou un bouton => compromettre votre syst\u00e8me",
+                "Pr\u00eater une carte bancaire (cinq secondes) m\u00eame en regardant == vuln\u00e9rabilit\u00e9 => m\u00e9moriser votre code/date de p\u00e9remption/nom/code de s\u00e9curit\u00e9 => achats sur Internet",
+                "Maintenant que vous ne pr\u00eatez plus vos appareils et que vous les prot\u00e9gez, comment l'attaquant ferait-il pour se rapprocher/acc\u00e8der \u00e0 votre appareil \"virtuellement\" ?"
+            ],
+            "aside": "References: <a href=\"https://www.computerworld.com/article/1690178/sensitive-data-leaking-onto-p2p-networks.html\">Sensitive Data Leaking Onto P2P Networks</a>.",
+            "image": "share_devices.jpg",
+            "image alt": "Child using a work computer and clicking a malicious link while employee is distracted, illustrating cybersecurity risks of sharing professional devices with family members.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Lending a laptop, smartphone, bank card, or security device can expose both personal and business information."
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Even trusted people can make mistakes.",
+                        "A simple click on a malicious link or QR code can compromise a device.",
+                        "An infected USB drive or unsafe website can introduce malware.",
+                        "Shared devices may expose emails, passwords, and company data."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "Bank cards are also sensitive assets, a few seconds are enough to capture critical data and enable online fraud: card number, expiration date, security code (CVV), PIN code."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Local Networks and the Risk of Lateral Cyber Attacks",
+            "notes": [
+                "R\u00e9seaux => liens entre diff\u00e9rents syst\u00e8mes => compromettre les syst\u00e8mes li\u00e9s",
+                "Connectez votre ordinateur professionnel sur Wi-Fi personnel => si appareil compromis => compromission de votre syst\u00e8me",
+                "R\u00e9seau Wi-Fi public (bar, train, a\u00e9roport) => compromission par attaquant pr\u00e9sent",
+                "Et si l'attaquant r\u00e9ussi \u00e0 voler un t\u00e9l\u00e9phone ou compromettre l'ordinateur ou le compte d'un de vos coll\u00e8gue ou ami, comment l'attaquant pourrait-il en profiter pour vous compromettre ?"
+            ],
+            "aside": "References: <a href=\"https://www.cnbc.com/2014/11/10/ceos-beware-of-darkhotel-hackers.html\">CNBC - CEOs beware of \"DarkHotel\" hackers</a>.",
+            "image": "wifi_attacks.jpg",
+            "image alt": "Hacker intercepting data from business professional on public Wi-Fi in a caf\u00e9, illustrating cybersecurity risks of unsecured public networks and data theft.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Networks create connections between devices, allowing them to communicate and share resources. These connections can also provide opportunities for attackers to move from one system to another.",
+                        "A compromised device on a home network may become a pathway to other devices connected to the same network.",
+                        "For example, if a professional laptop is connected to a home Wi-Fi network where another device has already been compromised, an attacker may attempt to reach the professional system through that connection.",
+                        "Public Wi-Fi networks in caf\u00e9s, hotels, airports, trains, or other public places present additional risks because unknown and potentially malicious devices may be connected to the same network.",
+                        "Whenever possible, limit exposure to untrusted networks and be aware that every network connection extends the potential attack surface of a device."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Verify Requests, Avoid Isolation, Never Act Under Pressure",
+            "notes": [
+                "Manipulation => pas de double v\u00e9rification => isolation \"forcer\"",
+                "Valider les actions => canaux diff\u00e9rents",
+                "En appel (personne importante) => demande un virement, un changement de mot de passe, une connexion sur un site => envoyez un e-mail/message \u00e0 la m\u00eame personne (confirmation) => sans demander l'adresse par t\u00e9l\u00e9phone",
+                "Sachant que vous n'allez plus sur des sites douteux, que vous ne publiez plus aucune information professionnelle ou personelle et que vous ne laissez personne approcher vos donn\u00e9es, comment pourrait-elles se retrouver en ligne ?"
+            ],
+            "aside": "References: <a href=\"https://nophi.sh/en/blog/ceo-fraud-bec-costly-cases-france\">CEO Fraud and Targeted Phishing: The Most Costly BEC Cases in France</a>.",
+            "image": "CEO_fraud.jpg",
+            "image alt": "Stressed HR employee approving large financial transactions under pressure, illustrating CEO fraud, social engineering attacks and business email compromise scams.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Attackers often rely on urgency, authority, and pressure to bypass security controls."
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Be suspicious of requests that require immediate action.",
+                        "Never make sensitive changes without verification.",
+                        "Confirm requests through a second, independent communication channel.",
+                        "Do not rely solely on information provided during the conversation."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "If a manager or IT support representative asks you by phone to transfer money, reset a password, or log in to a website, always verify the request through a separate trusted channel before acting."
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Preventing Accidental Data Leaks and Information Exposure",
+            "notes": [
+                "Envoyez vous les donn\u00e9es de votre entreprise dans l'IA et les sites et moteurs de recherche ? Faites vous corriger les fautes de vos mails par l'IA ou un correcteur orthographique ? Fuites de donn\u00e9es confidentielles => mauvaise pratique",
+                "Moteurs de recherche, IA, drives, forums, messageries (m\u00eame \"s\u00e9curis\u00e9\" de bout en bout) => risque => analyse par programme (IA/correcteur/proposition intelligente de contenu)",
+                "Pas d'informations professionnelles => dans des services non valid\u00e9 (code confidentiel, donn\u00e9es RH, donn\u00e9es financi\u00e8res, \u00e9l\u00e9ments de strat\u00e9gie, r\u00e9sultats de projet de recherche)",
+                "e-mails => faible protection => mauvaise pratique (destinataires: r\u00e9sum\u00e9s par l'IA) => pas de documents confidentiels",
+                "D'apr\u00e8s vous, est-ce que les attaquants ont des pr\u00e9f\u00e9rences de contexte ou de moment pour envoyer une attaque ? Si oui, lesquels ?"
+            ],
+            "aside": "References: <a href=\"https://www.techtimes.com/articles/289996/20230404/samsung-employees-used-chatgpt-work-unknowingly-leaked-critical-source-codes.htm\">Samsung employees used chatgpt work unknowingly leaked critical source codes</a>.",
+            "image": "malicious_ia.jpg",
+            "image alt": "Malicious-looking AI digital brain consuming massive amounts of data, illustrating artificial intelligence data collection, privacy risks and cybersecurity concerns.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "An increasing number of confidential data breaches are caused by employees who unknowingly misuse digital tools and online services.",
+                        "Search engines, AI assistants, cloud storage platforms, forums, and many messaging services may store, process, analyze, or retain the information entered by users.",
+                        "Confidential company information should never be shared with these services unless they have been explicitly approved for that purpose.",
+                        "This includes source code, HR data, financial information, strategic plans, research data, intellectual property, and other sensitive business information.",
+                        "Many users assume that a service is private or secure because it is encrypted. However, some services integrate AI features that can process, store, or learn from user content.",
+                        "Emails are widely used for official communications, but they should not be considered a secure method for transmitting highly confidential information."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Separating Personal and Professional Digital Activities to Prevent Cyberattacks",
+            "notes": [
+                "Entreprises => plus en plus de protection, supervision de s\u00e9curit\u00e9 (acc\u00e8s Internet, messagerie, t\u00e9l\u00e9phones mobiles, postes de travail, r\u00e9seaux)",
+                "Compromettre le milieu personnel => faciliter les intrusions => obtenir les informations, rebondir sur le milieu professionnel",
+                "mail professionnel sur PC personnel => compromission du PC => acc\u00e8s au mail, mail personnel sur PC professionnel => compromission par mail personnel du syst\u00e8me professionnel",
+                "D'apr\u00e8s vous, les syst\u00e8mes peuvent-ils nous dirent si il y a un probl\u00e8me ? Et si oui, comment, comment les syst\u00e8mes nous informent et comment r\u00e9agir ?"
+            ],
+            "aside": "References: <a href=\"https://www.business-standard.com/article/companies/hacker-breached-network-via-employee-account-no-data-compromised-cisco-122081300468_1.html\">Business Standard - Hacker breached network via employee account</a>.",
+            "image": "professionnal_personnal_context.jpg",
+            "image alt": "Split-screen comparison of personal and professional computer use, highlighting the importance of separating work and private environments for better cybersecurity.",
+            "texts": [
+                {
+                    "type": "ul",
+                    "content": [
+                        "Organizations invest heavily in security controls, monitoring, and protection mechanisms across internet access, email systems, mobile devices, workstations, and corporate networks.",
+                        "Because these protections make attacks more difficult, attackers often look for less protected entry points.",
+                        "Personal accounts, devices, and services are frequently targeted because they usually have fewer security controls than corporate environments.",
+                        "Mixing personal and professional activities increases the risk that a compromise in one environment can spread to the other.",
+                        "Accessing personal emails on a work computer, or professional resources from a personal device, can create a bridge between two environments that should remain separate.",
+                        "Whenever possible, use separate devices, email addresses, phone numbers, accounts, and services for personal and professional activities to reduce the impact of a compromise."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "content-left",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Be Cautious with Notifications and Contact IT",
+            "notes": [
+                "/!\\ aux notifications => pas de panique => contacter le service informatique, surtout s'ils sont urgentes/insistantes",
+                "Service informatique => valide => vous informe => priorise les alertes => g\u00e9re l'incident si n\u00e9cessaire"
+            ],
+            "aside": "References: <a href=\"https://www.scamwatch.gov.au/about-us/news-and-alerts/your-computer-is-infected-fake-anti-virus-pop-up-alert-scams\">Australian Government Scamwatch \u2013 Fake Anti-Virus Pop-Up Alert Scams</a>.",
+            "image": "notification_alerts.jpg",
+            "image alt": "User clicking multiple urgent security notifications without verification, illustrating alert fatigue, phishing risks and dangerous cybersecurity habits.",
+            "texts": [
+                {
+                    "type": "p",
+                    "content": "Not every notification is legitimate. Attackers often use fake alerts, warnings, and urgent messages to create panic and trigger immediate actions."
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Be cautious with unexpected security warnings or urgent notifications.",
+                        "Do not assume a notification is genuine simply because it appears on your screen.",
+                        "Avoid clicking links, calling phone numbers, or following instructions before verification.",
+                        "When in doubt, contact your IT department and ask them to validate the message."
+                    ]
+                },
+                {
+                    "type": "p",
+                    "content": "By involving IT:"
+                },
+                {
+                    "type": "ul",
+                    "content": [
+                        "Security incidents can be investigated more quickly.",
+                        "Appropriate remediation actions can be prioritized.",
+                        "Attack attempts can be identified and contained faster."
+                    ]
+                }
+            ],
+            "code": "",
+            "code lang": ""
+        },
+        {
+            "type": "image-only",
+            "icon": "https://mauricelambert.github.io/MauriceLambert.png",
+            "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
+            "title": "Full attacks vectors schema",
+            "notes": [],
+            "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
+            "image": "attack_vectors.svg",
+            "image alt": "Schema representing attacks vectors logical order."
+        }
+    ]
+}
