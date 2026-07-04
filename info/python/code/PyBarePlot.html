@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: Documentation - PyBarePlot</title>
+</head><body>
+
+<style>
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    padding: 2rem;
+}
+
+/* Main container tables */
+table.section {
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+/* ===== COLOR PER SECTION CATEGORY ===== */
+.title-decor { background-color: #3a3d1e !important; }
+.functions-decor { background-color: #3a1e3d !important; }
+.data-decor { background-color: #1e3a3d !important; }
+.author-decor { background-color: #3d2e1e !important; }
+.index-decor { background-color: #1e3d2f !important; }
+
+/* Code blocks */
+pre {
+    background-color: #2d2d2d;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* Links */
+a { color: #4ec9b0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">PyBarePlot</strong> (version 0.0.1)</td>
+<td class="extra"><a href=".">index</a><br><a>pybareplot.py</a></td></tr></table>
+    <p><span class="code">SVG&nbsp;chart&nbsp;generator&nbsp;CLI&nbsp;and&nbsp;Python&nbsp;module&nbsp;for&nbsp;creating&nbsp;visual&nbsp;charts<br>
+with&nbsp;support&nbsp;for&nbsp;styling,&nbsp;legends,&nbsp;gradients,&nbsp;and&nbsp;layout<br>
+customization.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="PyBarePlot.html#DataPoint">DataPoint</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="PyBarePlot.html#DataBox">DataBox</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="PyBarePlot.html#Graph">Graph</a>
+</dt><dt class="heading-text"><a href="PyBarePlot.html#SVGChart">SVGChart</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="builtins.html#tuple">builtins.tuple</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="PyBarePlot.html#Bar">Bar</a>
+</dt><dt class="heading-text"><a href="PyBarePlot.html#BarLayout">BarLayout</a>
+</dt><dt class="heading-text"><a href="PyBarePlot.html#GroupedBar">GroupedBar</a>
+</dt><dt class="heading-text"><a href="PyBarePlot.html#Point">Point</a>
+</dt><dt class="heading-text"><a href="PyBarePlot.html#StackedBar">StackedBar</a>
+</dt><dt class="heading-text"><a href="PyBarePlot.html#Tick">Tick</a>
+</dt><dt class="heading-text"><a href="PyBarePlot.html#Zone">Zone</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Bar">class <strong>Bar</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Bar">Bar</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position_x:&nbsp;float,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position_y:&nbsp;float,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;int,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;int,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;<a href="#DataPoint">DataPoint</a><br>
+)<br>
+&nbsp;<br>
+SVG&nbsp;rectangle&nbsp;representing&nbsp;a&nbsp;bar.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#Bar">Bar</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Bar-__getnewargs__"><strong>__getnewargs__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Bar</span></span></dt><dd><span class="code">Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="Bar-__replace__"><strong>__replace__</strong></a> = <a href="#Bar-_replace">_replace</a>(self, /, **kwds)</dt></dl>
+
+<dl><dt><a name="Bar-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Bar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</span></dd></dl>
+
+<dl><dt><a name="Bar-_asdict"><strong>_asdict</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Bar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;dict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</span></dd></dl>
+
+<dl><dt><a name="Bar-_replace"><strong>_replace</strong></a>(self, /, **kwds)<span class="grey"><span class="heading-text"> from collections.Bar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;<a href="#Bar">Bar</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Bar-_make"><strong>_make</strong></a>(iterable)<span class="grey"><span class="heading-text"> from collections.Bar</span></span></dt><dd><span class="code">Make&nbsp;a&nbsp;new&nbsp;<a href="#Bar">Bar</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Bar-__new__"><strong>__new__</strong></a>(
+    _cls,
+    position_x: float,
+    position_y: float,
+    width: int,
+    height: int,
+    data: DataPoint
+)<span class="grey"><span class="heading-text"> from namedtuple_Bar.Bar</span></span></dt><dd><span class="code">Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#Bar">Bar</a>(position_x,&nbsp;position_y,&nbsp;width,&nbsp;height,&nbsp;data)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>position_x</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</span></dd>
+</dl>
+<dl><dt><strong>position_y</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</span></dd>
+</dl>
+<dl><dt><strong>width</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</span></dd>
+</dl>
+<dl><dt><strong>height</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;3</span></dd>
+</dl>
+<dl><dt><strong>data</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;4</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__classdictcell__</strong> = &lt;cell at 0x0000015325669CF0: dict object&gt;</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('position_x', 'position_y', 'width', 'height', 'data')</dl>
+
+<dl><dt><strong>__orig_bases__</strong> = (&lt;function NamedTuple&gt;,)</dl>
+
+<dl><dt><strong>_field_defaults</strong> = {}</dl>
+
+<dl><dt><strong>_fields</strong> = ('position_x', 'position_y', 'width', 'height', 'data')</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Bar-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;bool(key&nbsp;in&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="Bar-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;self[key].</span></dd></dl>
+
+<dl><dt><a name="Bar-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="Bar-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><span class="code">Implement&nbsp;iter(self).</span></dd></dl>
+
+<dl><dt><a name="Bar-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;len(self).</span></dd></dl>
+
+<dl><dt><a name="Bar-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="Bar-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="Bar-count"><strong>count</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="Bar-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><span class="code">Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Bar-__class_getitem__"><strong>__class_getitem__</strong></a>(object, /)</dt><dd><span class="code">See&nbsp;<a href="https://peps.python.org/pep-0585/">PEP&nbsp;585</a></span></dd></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="BarLayout">class <strong>BarLayout</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#BarLayout">BarLayout</a>(group_width:&nbsp;Number,&nbsp;bar_width:&nbsp;Number,&nbsp;offset:&nbsp;int)<br>
+&nbsp;<br>
+Common&nbsp;layout&nbsp;information&nbsp;for&nbsp;bar&nbsp;charts.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#BarLayout">BarLayout</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="BarLayout-__getnewargs__"><strong>__getnewargs__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.BarLayout</span></span></dt><dd><span class="code">Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__replace__"><strong>__replace__</strong></a> = <a href="#BarLayout-_replace">_replace</a>(self, /, **kwds)</dt></dl>
+
+<dl><dt><a name="BarLayout-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.BarLayout</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</span></dd></dl>
+
+<dl><dt><a name="BarLayout-_asdict"><strong>_asdict</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.BarLayout</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;dict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-_replace"><strong>_replace</strong></a>(self, /, **kwds)<span class="grey"><span class="heading-text"> from collections.BarLayout</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;<a href="#BarLayout">BarLayout</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="BarLayout-_make"><strong>_make</strong></a>(iterable)<span class="grey"><span class="heading-text"> from collections.BarLayout</span></span></dt><dd><span class="code">Make&nbsp;a&nbsp;new&nbsp;<a href="#BarLayout">BarLayout</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="BarLayout-__new__"><strong>__new__</strong></a>(_cls, group_width: Number, bar_width: Number, offset: int)<span class="grey"><span class="heading-text"> from namedtuple_BarLayout.BarLayout</span></span></dt><dd><span class="code">Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#BarLayout">BarLayout</a>(group_width,&nbsp;bar_width,&nbsp;offset)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>group_width</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</span></dd>
+</dl>
+<dl><dt><strong>bar_width</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</span></dd>
+</dl>
+<dl><dt><strong>offset</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__classdictcell__</strong> = &lt;cell at 0x000001532566AA40: dict object&gt;</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('group_width', 'bar_width', 'offset')</dl>
+
+<dl><dt><strong>__orig_bases__</strong> = (&lt;function NamedTuple&gt;,)</dl>
+
+<dl><dt><strong>_field_defaults</strong> = {}</dl>
+
+<dl><dt><strong>_fields</strong> = ('group_width', 'bar_width', 'offset')</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="BarLayout-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;bool(key&nbsp;in&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;self[key].</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><span class="code">Implement&nbsp;iter(self).</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;len(self).</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-count"><strong>count</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="BarLayout-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><span class="code">Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="BarLayout-__class_getitem__"><strong>__class_getitem__</strong></a>(object, /)</dt><dd><span class="code">See&nbsp;<a href="https://peps.python.org/pep-0585/">PEP&nbsp;585</a></span></dd></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DataBox">class <strong>DataBox</strong></a>(<a href="PyBarePlot.html#DataPoint">DataPoint</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#DataBox">DataBox</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;median_value:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;first_quartile:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;third_quartile:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;minimum:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;maximum:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;Optional[Union[str,&nbsp;int,&nbsp;datetime,&nbsp;date]]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;Optional[str]&nbsp;=&nbsp;None<br>
+)<br>
+&nbsp;<br>
+Boxplot&nbsp;statistical&nbsp;data&nbsp;container.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#DataBox">DataBox</a></dd>
+<dd><a href="PyBarePlot.html#DataPoint">DataPoint</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DataBox-__init__"><strong>__init__</strong></a>(
+    self,
+    median_value: Number,
+    first_quartile: Number,
+    third_quartile: Number,
+    minimum: Number,
+    maximum: Number,
+    name: Optional[Union[str, int, datetime, date]] = None,
+    color: Optional[str] = None
+)</dt><dd><span class="code">Initialize&nbsp;boxplot&nbsp;statistics.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyBarePlot.html#DataPoint">DataPoint</a>:<br>
+<dl><dt><a name="DataBox-__repr__"><strong>__repr__</strong></a>(self) -&gt; str</dt><dd><span class="code">Return&nbsp;a&nbsp;string&nbsp;representation.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyBarePlot.html#DataPoint">DataPoint</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyBarePlot.html#DataPoint">DataPoint</a>:<br>
+<dl><dt><strong>points</strong> = []</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DataPoint">class <strong>DataPoint</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#DataPoint">DataPoint</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;Optional[Union[str,&nbsp;int,&nbsp;datetime,&nbsp;date]]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;Optional[str]&nbsp;=&nbsp;None<br>
+)<br>
+&nbsp;<br>
+Single&nbsp;data&nbsp;point&nbsp;representation.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="DataPoint-__init__"><strong>__init__</strong></a>(
+    self,
+    value: Number,
+    name: Optional[Union[str, int, datetime, date]] = None,
+    color: Optional[str] = None
+)</dt><dd><span class="code">Initialize&nbsp;a&nbsp;data&nbsp;point.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+value&nbsp;:&nbsp;int&nbsp;or&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Numeric&nbsp;value.<br>
+name&nbsp;:&nbsp;str,&nbsp;int&nbsp;or&nbsp;datetime,&nbsp;date,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Data&nbsp;label.<br>
+color&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Color&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="DataPoint-__repr__"><strong>__repr__</strong></a>(self) -&gt; str</dt><dd><span class="code">Return&nbsp;a&nbsp;string&nbsp;representation.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>points</strong> = []</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Graph">class <strong>Graph</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Graph">Graph</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;Optional[List[Union[<a href="#DataPoint">DataPoint</a>,&nbsp;Number]]]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default_color:&nbsp;Optional[str]&nbsp;=&nbsp;'#3498db',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;show_points:&nbsp;Optional[bool]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;None<br>
+)<br>
+&nbsp;<br>
+<a href="#Graph">Graph</a>&nbsp;data&nbsp;container.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Graph-__init__"><strong>__init__</strong></a>(
+    self,
+    data: Optional[List[Union[DataPoint, Number]]] = None,
+    default_color: Optional[str] = '#3498db',
+    show_points: Optional[bool] = None,
+    name: Optional[str] = None
+)</dt><dd><span class="code">Initialize&nbsp;graph&nbsp;data.</span></dd></dl>
+
+<dl><dt><a name="Graph-__repr__"><strong>__repr__</strong></a>(self) -&gt; str</dt><dd><span class="code">Return&nbsp;a&nbsp;string&nbsp;representation.</span></dd></dl>
+
+<dl><dt><a name="Graph-apply_color_gradient"><strong>apply_color_gradient</strong></a>(
+    self,
+    min_value: Optional[float] = None,
+    max_value: Optional[float] = None,
+    start_color: str = '#00ff00',
+    end_color: str = '#ff0000'
+) -&gt; None</dt><dd><span class="code">Apply&nbsp;a&nbsp;linear&nbsp;color&nbsp;gradient&nbsp;to&nbsp;data&nbsp;points.</span></dd></dl>
+
+<dl><dt><a name="Graph-apply_color_steps"><strong>apply_color_steps</strong></a>(self, steps: List[tuple]) -&gt; None</dt><dd><span class="code">Apply&nbsp;stepped&nbsp;color&nbsp;ranges.</span></dd></dl>
+
+<dl><dt><a name="Graph-build_data"><strong>build_data</strong></a>(self, data: List[Union[DataPoint, Number]]) -&gt; None</dt><dd><span class="code">Normalize&nbsp;raw&nbsp;values&nbsp;into&nbsp;<a href="#DataPoint">DataPoint</a>&nbsp;instances.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>graphs</strong> = []</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="GroupedBar">class <strong>GroupedBar</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#GroupedBar">GroupedBar</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position_x:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position_y:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;<a href="#DataPoint">DataPoint</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;group_index:&nbsp;int<br>
+)<br>
+&nbsp;<br>
+SVG&nbsp;rectangle&nbsp;for&nbsp;a&nbsp;grouped&nbsp;bar.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#GroupedBar">GroupedBar</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="GroupedBar-__getnewargs__"><strong>__getnewargs__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.GroupedBar</span></span></dt><dd><span class="code">Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__replace__"><strong>__replace__</strong></a> = <a href="#GroupedBar-_replace">_replace</a>(self, /, **kwds)</dt></dl>
+
+<dl><dt><a name="GroupedBar-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.GroupedBar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-_asdict"><strong>_asdict</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.GroupedBar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;dict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-_replace"><strong>_replace</strong></a>(self, /, **kwds)<span class="grey"><span class="heading-text"> from collections.GroupedBar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;<a href="#GroupedBar">GroupedBar</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="GroupedBar-_make"><strong>_make</strong></a>(iterable)<span class="grey"><span class="heading-text"> from collections.GroupedBar</span></span></dt><dd><span class="code">Make&nbsp;a&nbsp;new&nbsp;<a href="#GroupedBar">GroupedBar</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="GroupedBar-__new__"><strong>__new__</strong></a>(
+    _cls,
+    position_x: Number,
+    position_y: Number,
+    width: Number,
+    height: Number,
+    data: DataPoint,
+    group_index: int
+)<span class="grey"><span class="heading-text"> from namedtuple_GroupedBar.GroupedBar</span></span></dt><dd><span class="code">Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#GroupedBar">GroupedBar</a>(position_x,&nbsp;position_y,&nbsp;width,&nbsp;height,&nbsp;data,&nbsp;group_index)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>position_x</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</span></dd>
+</dl>
+<dl><dt><strong>position_y</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</span></dd>
+</dl>
+<dl><dt><strong>width</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</span></dd>
+</dl>
+<dl><dt><strong>height</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;3</span></dd>
+</dl>
+<dl><dt><strong>data</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;4</span></dd>
+</dl>
+<dl><dt><strong>group_index</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;5</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__classdictcell__</strong> = &lt;cell at 0x000001532566A140: dict object&gt;</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('position_x', 'position_y', 'width', 'height', 'data', 'group_index')</dl>
+
+<dl><dt><strong>__orig_bases__</strong> = (&lt;function NamedTuple&gt;,)</dl>
+
+<dl><dt><strong>_field_defaults</strong> = {}</dl>
+
+<dl><dt><strong>_fields</strong> = ('position_x', 'position_y', 'width', 'height', 'data', 'group_index')</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="GroupedBar-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;bool(key&nbsp;in&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;self[key].</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><span class="code">Implement&nbsp;iter(self).</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;len(self).</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-count"><strong>count</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="GroupedBar-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><span class="code">Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="GroupedBar-__class_getitem__"><strong>__class_getitem__</strong></a>(object, /)</dt><dd><span class="code">See&nbsp;<a href="https://peps.python.org/pep-0585/">PEP&nbsp;585</a></span></dd></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Point">class <strong>Point</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Point">Point</a>(position_x:&nbsp;float,&nbsp;position_y:&nbsp;float,&nbsp;data:&nbsp;<a href="#DataPoint">DataPoint</a>)<br>
+&nbsp;<br>
+SVG&nbsp;coordinates&nbsp;of&nbsp;a&nbsp;graph&nbsp;point.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#Point">Point</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Point-__getnewargs__"><strong>__getnewargs__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Point</span></span></dt><dd><span class="code">Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="Point-__replace__"><strong>__replace__</strong></a> = <a href="#Point-_replace">_replace</a>(self, /, **kwds)</dt></dl>
+
+<dl><dt><a name="Point-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Point</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</span></dd></dl>
+
+<dl><dt><a name="Point-_asdict"><strong>_asdict</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Point</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;dict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</span></dd></dl>
+
+<dl><dt><a name="Point-_replace"><strong>_replace</strong></a>(self, /, **kwds)<span class="grey"><span class="heading-text"> from collections.Point</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;<a href="#Point">Point</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Point-_make"><strong>_make</strong></a>(iterable)<span class="grey"><span class="heading-text"> from collections.Point</span></span></dt><dd><span class="code">Make&nbsp;a&nbsp;new&nbsp;<a href="#Point">Point</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Point-__new__"><strong>__new__</strong></a>(_cls, position_x: float, position_y: float, data: DataPoint)<span class="grey"><span class="heading-text"> from namedtuple_Point.Point</span></span></dt><dd><span class="code">Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#Point">Point</a>(position_x,&nbsp;position_y,&nbsp;data)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>position_x</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</span></dd>
+</dl>
+<dl><dt><strong>position_y</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</span></dd>
+</dl>
+<dl><dt><strong>data</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__classdictcell__</strong> = &lt;cell at 0x000001532565F010: dict object&gt;</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('position_x', 'position_y', 'data')</dl>
+
+<dl><dt><strong>__orig_bases__</strong> = (&lt;function NamedTuple&gt;,)</dl>
+
+<dl><dt><strong>_field_defaults</strong> = {}</dl>
+
+<dl><dt><strong>_fields</strong> = ('position_x', 'position_y', 'data')</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Point-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="Point-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;bool(key&nbsp;in&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="Point-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="Point-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="Point-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;self[key].</span></dd></dl>
+
+<dl><dt><a name="Point-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="Point-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="Point-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><span class="code">Implement&nbsp;iter(self).</span></dd></dl>
+
+<dl><dt><a name="Point-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="Point-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;len(self).</span></dd></dl>
+
+<dl><dt><a name="Point-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="Point-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="Point-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="Point-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="Point-count"><strong>count</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="Point-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><span class="code">Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Point-__class_getitem__"><strong>__class_getitem__</strong></a>(object, /)</dt><dd><span class="code">See&nbsp;<a href="https://peps.python.org/pep-0585/">PEP&nbsp;585</a></span></dd></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="SVGChart">class <strong>SVGChart</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#SVGChart">SVGChart</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;int&nbsp;=&nbsp;600,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;int&nbsp;=&nbsp;400,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;int&nbsp;=&nbsp;40,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin_left:&nbsp;Optional[int]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin_right:&nbsp;Optional[int]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin_top:&nbsp;Optional[int]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin_bottom:&nbsp;Optional[int]&nbsp;=&nbsp;None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;theme:&nbsp;str&nbsp;=&nbsp;'light'<br>
+)<br>
+&nbsp;<br>
+SVG&nbsp;chart&nbsp;renderer.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="SVGChart-__init__"><strong>__init__</strong></a>(
+    self,
+    width: int = 600,
+    height: int = 400,
+    margin: int = 40,
+    margin_left: Optional[int] = None,
+    margin_right: Optional[int] = None,
+    margin_top: Optional[int] = None,
+    margin_bottom: Optional[int] = None,
+    theme: str = 'light'
+)</dt><dd><span class="code">Initialize&nbsp;SVG&nbsp;chart&nbsp;canvas.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-add_x_zone"><strong>add_x_zone</strong></a>(self, xmin: Number, xmax: Number, color: str, opacity: float = 0.2) -&gt; None</dt><dd><span class="code">Add&nbsp;a&nbsp;vertical&nbsp;background&nbsp;zone.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-add_y_zone"><strong>add_y_zone</strong></a>(self, ymin: Number, ymax: Number, color: str, opacity: float = 0.2) -&gt; None</dt><dd><span class="code">Add&nbsp;an&nbsp;horizontal&nbsp;background&nbsp;zone.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-axes"><strong>axes</strong></a>(
+    self,
+    xmin: Union[Number, date, datetime],
+    xmax: Union[Number, date, datetime],
+    ymin: Number,
+    ymax: Number,
+    xticks: Union[int, List[Union[int, date, datetime]]] = 5,
+    yticks: int = 5,
+    bar: bool = True,
+    hbar: bool = False
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;chart&nbsp;axes&nbsp;and&nbsp;grid.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_bar_layout"><strong>compute_bar_layout</strong></a>(
+    self,
+    xmax: int,
+    bars_per_group: int = 1,
+    bar_width_ratio: float = 0.8
+) -&gt; BarLayout</dt><dd><span class="code">Compute&nbsp;common&nbsp;bar&nbsp;layout&nbsp;information.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_bars"><strong>compute_bars</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    bar_width_ratio: float = 0.8
+) -&gt; List[Bar]</dt><dd><span class="code">Compute&nbsp;SVG&nbsp;rectangles&nbsp;for&nbsp;a&nbsp;bar&nbsp;chart.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_boxplot"><strong>compute_boxplot</strong></a>(self, graphs: List[Graph]) -&gt; List[DataBox]</dt><dd><span class="code">Compute&nbsp;boxplot&nbsp;statistics&nbsp;from&nbsp;graphs.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_grouped_bars"><strong>compute_grouped_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    bar_width_ratio: float = 0.8
+) -&gt; List[GroupedBar]</dt><dd><span class="code">Compute&nbsp;grouped&nbsp;bar&nbsp;layout&nbsp;for&nbsp;multiple&nbsp;graphs.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_grouped_step_paths"><strong>compute_grouped_step_paths</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int
+) -&gt; Dict[str, str]</dt><dd><span class="code">Compute&nbsp;SVG&nbsp;paths&nbsp;grouped&nbsp;by&nbsp;color.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_horizontal_bar_layout"><strong>compute_horizontal_bar_layout</strong></a>(
+    self,
+    graph_count: int,
+    category_count: int,
+    plot_size: Number
+) -&gt; BarLayout</dt><dd><span class="code">Compute&nbsp;common&nbsp;bar&nbsp;layout.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_horizontal_bars"><strong>compute_horizontal_bars</strong></a>(
+    self,
+    graph: Graph,
+    xmin: Number,
+    xmax: Number,
+    ymax: int,
+    height: Number
+) -&gt; List[Bar]</dt><dd><span class="code">Compute&nbsp;horizontal&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_horizontal_grouped_bars"><strong>compute_horizontal_grouped_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    xmin: Number,
+    xmax: Number,
+    ymax: int
+) -&gt; List[GroupedBar]</dt><dd><span class="code">Compute&nbsp;grouped&nbsp;horizontal&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_horizontal_stacked_bars"><strong>compute_horizontal_stacked_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    xmin: Number,
+    xmax: Number,
+    ymax: int
+) -&gt; List[StackedBar]</dt><dd><span class="code">Compute&nbsp;stacked&nbsp;horizontal&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_limits"><strong>compute_limits</strong></a>(
+    self,
+    graphs: List[Graph],
+    ymin: Optional[Number] = None,
+    ymax: Optional[Number] = None,
+    xmax: Optional[Union[int, date, datetime]] = None
+) -&gt; Tuple[Number, Number, int]</dt><dd><span class="code">Compute&nbsp;graph&nbsp;boundaries.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_pie_slices"><strong>compute_pie_slices</strong></a>(self, graph: Graph) -&gt; List[Tuple[DataPoint, float, float]]</dt><dd><span class="code">Compute&nbsp;pie&nbsp;slices&nbsp;(start_angle,&nbsp;end_angle).</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_polyline"><strong>compute_polyline</strong></a>(self, graph: Graph, ymin: Number, ymax: Number, xmax: int) -&gt; str</dt><dd><span class="code">Compute&nbsp;SVG&nbsp;polyline&nbsp;points.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_radar"><strong>compute_radar</strong></a>(self, graphs: List[Graph]) -&gt; tuple</dt><dd><span class="code">Compute&nbsp;radar&nbsp;chart&nbsp;geometry.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_radar_labels"><strong>compute_radar_labels</strong></a>(
+    self,
+    graph: Graph,
+    cx: Number,
+    cy: Number,
+    radius: Number,
+    angles: List[float],
+    offset: Number = 15
+) -&gt; List[Tuple[Number, Number, str]]</dt><dd><span class="code">Compute&nbsp;radar&nbsp;labels.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_radar_points"><strong>compute_radar_points</strong></a>(
+    self,
+    graph: Graph,
+    radius: Number,
+    rmax: Number,
+    cx: Number,
+    cy: Number,
+    angles: List[float]
+) -&gt; str</dt><dd><span class="code">Compute&nbsp;radar&nbsp;polygon&nbsp;points.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_radar_ring"><strong>compute_radar_ring</strong></a>(
+    self,
+    cx: Number,
+    cy: Number,
+    radius: Number,
+    angles: List[float]
+) -&gt; str</dt><dd><span class="code">Compute&nbsp;radar&nbsp;ring&nbsp;polygon.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_segments"><strong>compute_segments</strong></a>(self, graph: Graph, ymin: Number, ymax: Number, xmax: int) -&gt; List[Tuple[Point, Point]]</dt><dd><span class="code">Compute&nbsp;graph&nbsp;line&nbsp;segments.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_stacked_bars"><strong>compute_stacked_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    bar_width_ratio: float = 0.8
+) -&gt; List[StackedBar]</dt><dd><span class="code">Compute&nbsp;stacked&nbsp;bar&nbsp;layout.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_step_paths"><strong>compute_step_paths</strong></a>(self, graph: Graph, ymin: Number, ymax: Number, xmax: int) -&gt; List[Tuple[str, str]]</dt><dd><span class="code">Compute&nbsp;SVG&nbsp;paths&nbsp;grouped&nbsp;by&nbsp;contiguous&nbsp;colors.<br>
+Returns:&nbsp;[(path_d,&nbsp;color)]</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_svg_points"><strong>compute_svg_points</strong></a>(self, graph: Graph, ymin: Number, ymax: Number, xmax: int) -&gt; List[Point]</dt><dd><span class="code">Compute&nbsp;SVG&nbsp;coordinates&nbsp;for&nbsp;a&nbsp;graph.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_x_ticks"><strong>compute_x_ticks</strong></a>(
+    self,
+    xmin: Union[Number, date, datetime],
+    xmax: Union[Number, date, datetime],
+    xticks: Union[int, List[Union[Number, date, datetime]]],
+    bar: bool = True
+) -&gt; List[Tuple[float, str]]</dt><dd><span class="code">Compute&nbsp;X&nbsp;tick&nbsp;positions&nbsp;and&nbsp;labels.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-compute_y_ticks"><strong>compute_y_ticks</strong></a>(
+    self,
+    ymin: Number,
+    ymax: Number,
+    yticks: Union[int, List],
+    hbar: bool = False
+) -&gt; List[Tuple[float, str]]</dt><dd><span class="code">Compute&nbsp;Y&nbsp;tick&nbsp;positions&nbsp;and&nbsp;labels.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_bar"><strong>draw_bar</strong></a>(self, bar: Bar, color: str, *args, **kwargs) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;single&nbsp;bar.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_bars"><strong>draw_bars</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    width: Number,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;graph&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_boxplot"><strong>draw_boxplot</strong></a>(self, boxes: List[DataBox], *args, **kwargs) -&gt; None</dt><dd><span class="code">Draw&nbsp;boxplot&nbsp;from&nbsp;precomputed&nbsp;statistics.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_circle"><strong>draw_circle</strong></a>(
+    self,
+    x: Number,
+    y: Number,
+    radius: Number,
+    color: str,
+    stroke: Optional[str] = None,
+    stroke_width: int = 1,
+    opacity: int = 1,
+    fill_opacity: Optional[Number] = None,
+    stroke_opacity: Optional[Number] = None
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;SVG&nbsp;circle.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_gradient_line"><strong>draw_gradient_line</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;gradient&nbsp;line.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_gradient_segment"><strong>draw_gradient_segment</strong></a>(
+    self,
+    start: Point,
+    end: Point,
+    start_color: str,
+    end_color: str,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;gradient&nbsp;line&nbsp;segment.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_graph"><strong>draw_graph</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    line_renderer: Optional[Callable] = None,
+    point_renderer: Optional[Callable] = None,
+    args_line: List[Any] = [],
+    kwargs_line: Dict[str, Any] = {},
+    args_point: List[Any] = [],
+    kwargs_point: Dict[str, Any] = {}
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;graph&nbsp;with&nbsp;its&nbsp;line&nbsp;and&nbsp;optional&nbsp;points.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_grouped_bars"><strong>draw_grouped_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;grouped&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_horizontal_bars"><strong>draw_horizontal_bars</strong></a>(
+    self,
+    graph: Graph,
+    xmin: Number,
+    xmax: Number,
+    ymax: int,
+    height: Number,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;horizontal&nbsp;graph&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_horizontal_grouped_bars"><strong>draw_horizontal_grouped_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    xmin: Number,
+    xmax: Number,
+    ymax: int,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;grouped&nbsp;horizontal&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_horizontal_stacked_bars"><strong>draw_horizontal_stacked_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    xmin: Number,
+    xmax: Number,
+    ymax: int,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;stacked&nbsp;horizontal&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_legend"><strong>draw_legend</strong></a>(
+    self,
+    graphs: List[Graph],
+    x: Optional[Number] = None,
+    y: Optional[Number] = None,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;graph&nbsp;legend.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_line"><strong>draw_line</strong></a>(
+    self,
+    x1: Number,
+    y1: Number,
+    x2: Number,
+    y2: Number,
+    stroke: str,
+    width: int = 2,
+    dasharray: Optional[Tuple[int, int]] = None,
+    opacity: float = 1,
+    stroke_opacity: Optional[Number] = None
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;SVG&nbsp;line.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_path"><strong>draw_path</strong></a>(
+    self,
+    path: str,
+    stroke: str,
+    width: int = 2,
+    fill: Optional[str] = None,
+    opacity: float = 1,
+    fill_opacity: Optional[Number] = None,
+    stroke_opacity: Optional[Number] = None
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;SVG&nbsp;path.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_pie"><strong>draw_pie</strong></a>(
+    self,
+    graph: Graph,
+    radius: Optional[Number] = None,
+    center: Optional[tuple] = None,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;pie&nbsp;chart.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_pie_legend"><strong>draw_pie_legend</strong></a>(
+    self,
+    graph: Graph,
+    x: Optional[Number] = None,
+    y: Optional[Number] = None,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;legend&nbsp;for&nbsp;pie&nbsp;chart.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_points"><strong>draw_points</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    *args,
+    radius: int = 3,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;graph&nbsp;points.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_polygon"><strong>draw_polygon</strong></a>(
+    self,
+    points: str,
+    stroke: str,
+    fill: Optional[str] = None,
+    stroke_width: int = 1,
+    opacity: float = 1,
+    dasharray: Optional[Tuple[Number, Number]] = None,
+    fill_opacity: Optional[Number] = None,
+    stroke_opacity: Optional[Number] = None
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;SVG&nbsp;polygon.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_polyline"><strong>draw_polyline</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    fill: str = 'none',
+    width: int = 2,
+    opacity: float = 1,
+    stroke_opacity: Optional[Number] = None
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;polyline&nbsp;for&nbsp;a&nbsp;graph.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_radar"><strong>draw_radar</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Draw&nbsp;radar&nbsp;chart.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_radar_grid"><strong>draw_radar_grid</strong></a>(
+    self,
+    cx: Number,
+    cy: Number,
+    radius: Number,
+    angles: List[float],
+    rings: int = 5
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;radar&nbsp;grid.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_radar_labels"><strong>draw_radar_labels</strong></a>(
+    self,
+    graph: Graph,
+    cx: Number,
+    cy: Number,
+    radius: Number,
+    angles: List[float],
+    offset: Number = 15,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;radar&nbsp;labels.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_rect"><strong>draw_rect</strong></a>(
+    self,
+    x: Number,
+    y: Number,
+    width: Number,
+    height: Number,
+    fill: str,
+    stroke: Optional[str] = None,
+    stroke_width: int = 1,
+    opacity: float = 1,
+    fill_opacity: Optional[Number] = None,
+    stroke_opacity: Optional[Number] = None
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;SVG&nbsp;rectangle.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_segment"><strong>draw_segment</strong></a>(self, start: Point, end: Point, stroke: str, *args, **kwargs) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;line&nbsp;segment.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_stacked_bars"><strong>draw_stacked_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;stacked&nbsp;bars.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_step_line"><strong>draw_step_line</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;line&nbsp;split&nbsp;whenever&nbsp;the&nbsp;point&nbsp;color&nbsp;changes.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_step_line_grouped"><strong>draw_step_line_grouped</strong></a>(
+    self,
+    graph: Graph,
+    ymin: Number,
+    ymax: Number,
+    xmax: int,
+    *args,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;grouped&nbsp;line&nbsp;segments&nbsp;sharing&nbsp;the&nbsp;same&nbsp;color.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_text"><strong>draw_text</strong></a>(
+    self,
+    x: Number,
+    y: Number,
+    text: str,
+    color: str,
+    font_size: int = 12,
+    anchor: str = 'middle',
+    opacity: float = 1
+) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;SVG&nbsp;text.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_x_axis"><strong>draw_x_axis</strong></a>(self) -&gt; None</dt><dd><span class="code">Draw&nbsp;the&nbsp;horizontal&nbsp;axis.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_x_grid_line"><strong>draw_x_grid_line</strong></a>(self, x: Number, dasharray: Tuple[int, int] = (4, 4)) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;vertical&nbsp;grid&nbsp;line.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_x_label"><strong>draw_x_label</strong></a>(self, x: Number, label: str, *args, **kwargs) -&gt; None</dt><dd><span class="code">Draw&nbsp;X&nbsp;axis&nbsp;label.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_x_tick"><strong>draw_x_tick</strong></a>(self, x: Number) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;tick&nbsp;on&nbsp;the&nbsp;X&nbsp;axis.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_x_zones"><strong>draw_x_zones</strong></a>(self, xmin: Number, xmax: Number) -&gt; None</dt><dd><span class="code">Draw&nbsp;vertical&nbsp;background&nbsp;bands.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_y_axis"><strong>draw_y_axis</strong></a>(self) -&gt; None</dt><dd><span class="code">Draw&nbsp;the&nbsp;vertical&nbsp;axis.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_y_grid_line"><strong>draw_y_grid_line</strong></a>(self, y: Number, dasharray: Tuple[int, int] = (4, 4)) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;horizontal&nbsp;grid&nbsp;line.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_y_label"><strong>draw_y_label</strong></a>(self, y: Number, label: str, *args, **kwargs) -&gt; None</dt><dd><span class="code">Draw&nbsp;Y&nbsp;axis&nbsp;label.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_y_tick"><strong>draw_y_tick</strong></a>(self, y: Number) -&gt; None</dt><dd><span class="code">Draw&nbsp;a&nbsp;tick&nbsp;on&nbsp;the&nbsp;Y&nbsp;axis.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-draw_y_zones"><strong>draw_y_zones</strong></a>(self, ymin: Number, ymax: Number) -&gt; None</dt><dd><span class="code">Draw&nbsp;horizontal&nbsp;background&nbsp;zones.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-format_tick_value"><strong>format_tick_value</strong></a>(
+    self,
+    value: Union[Number, date, datetime],
+    is_timestamp: bool = False
+) -&gt; str</dt><dd><span class="code">Format&nbsp;a&nbsp;tick&nbsp;value&nbsp;for&nbsp;display.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_bars"><strong>plot_bars</strong></a>(self, graphs: List[Graph], bar_width_ratio: float = 0.6, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_boxplots"><strong>plot_boxplots</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;boxplots.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_gradient_lines"><strong>plot_gradient_lines</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;lines&nbsp;with&nbsp;color&nbsp;gradients.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_grouped_bars"><strong>plot_grouped_bars</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;grouped&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_horizontal_bars"><strong>plot_horizontal_bars</strong></a>(
+    self,
+    graphs: List[Graph],
+    bar_height_ratio: float = 0.6,
+    **kwargs
+) -&gt; None</dt><dd><span class="code">Plot&nbsp;horizontal&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_horizontal_grouped_bars"><strong>plot_horizontal_grouped_bars</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;grouped&nbsp;horizontal&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_horizontal_stacked_bars"><strong>plot_horizontal_stacked_bars</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;stacked&nbsp;horizontal&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_line"><strong>plot_line</strong></a>(self, graph: Graph, *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;line&nbsp;chart.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_lines"><strong>plot_lines</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;line&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_pie"><strong>plot_pie</strong></a>(self, graph: Graph, *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;pie&nbsp;chart.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_radar"><strong>plot_radar</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;radar&nbsp;chart.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_stacked_bars"><strong>plot_stacked_bars</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;stacked&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_step_lines"><strong>plot_step_lines</strong></a>(self, graphs: List[Graph], *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;step&nbsp;lines&nbsp;with&nbsp;color&nbsp;changes.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-plot_step_lines_optimized"><strong>plot_step_lines_optimized</strong></a>(self, graphs, *args, **kwargs) -&gt; None</dt><dd><span class="code">Plot&nbsp;optimized&nbsp;step&nbsp;lines&nbsp;grouped&nbsp;by&nbsp;color.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-prepare_horizontal_plot"><strong>prepare_horizontal_plot</strong></a>(
+    self,
+    graphs: List[Graph],
+    xmin: Optional[Number] = None,
+    xmax: Optional[Number] = None,
+    ymin: Number = 0,
+    ymax: Optional[int] = None
+) -&gt; Tuple[Number, Number, int]</dt><dd><span class="code">Prepare&nbsp;axes&nbsp;and&nbsp;bounds&nbsp;for&nbsp;horizontal&nbsp;bar&nbsp;charts.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-prepare_plot"><strong>prepare_plot</strong></a>(
+    self,
+    graphs: List[Graph],
+    ymin: Optional[Number] = None,
+    ymax: Optional[Number] = None,
+    xmin: Union[int, date, datetime] = 0,
+    xmax: Optional[Union[int, date, datetime]] = None,
+    draw_axes: bool = True,
+    bar: bool = False
+) -&gt; Tuple[Number, Number, int]</dt><dd><span class="code">Prepare&nbsp;a&nbsp;line&nbsp;chart&nbsp;before&nbsp;drawing.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-render"><strong>render</strong></a>(self) -&gt; str</dt><dd><span class="code">Return&nbsp;the&nbsp;full&nbsp;SVG&nbsp;string.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-save"><strong>save</strong></a>(self, filename: str) -&gt; None</dt><dd><span class="code">Save&nbsp;the&nbsp;rendered&nbsp;SVG&nbsp;to&nbsp;a&nbsp;file.</span></dd></dl>
+
+<dl><dt><a name="SVGChart-segment_to_path"><strong>segment_to_path</strong></a>(self, start: Point, end: Point) -&gt; str</dt><dd><span class="code">Convert&nbsp;a&nbsp;segment&nbsp;to&nbsp;an&nbsp;SVG&nbsp;path&nbsp;command.</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="SVGChart-verify_graphs_names"><strong>verify_graphs_names</strong></a>(graphs: List[Graph]) -&gt; Union[bool, List[str]]</dt><dd><span class="code">Checks&nbsp;that&nbsp;all&nbsp;graphs&nbsp;have&nbsp;the&nbsp;same&nbsp;names.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;False:&nbsp;If&nbsp;the&nbsp;graphs&nbsp;do&nbsp;not&nbsp;contain&nbsp;the&nbsp;same&nbsp;names.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;False:&nbsp;If&nbsp;any&nbsp;name&nbsp;is&nbsp;not&nbsp;defined&nbsp;(None).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List[str]:&nbsp;The&nbsp;list&nbsp;of&nbsp;names&nbsp;if&nbsp;all&nbsp;graphs&nbsp;match.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>colors</strong> = ['red', 'blue', 'green', 'orange', 'purple', 'yellow', 'magenta', 'cyan', 'pink', 'lime', 'brown', 'black', 'lavenderblush', 'dimgrey', 'lightpink', 'dimgray', 'hotpink', 'white', 'darkmagenta', 'whitesmoke', ...]</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="StackedBar">class <strong>StackedBar</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#StackedBar">StackedBar</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position_x:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position_y:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;Number,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;<a href="#DataPoint">DataPoint</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;graph:&nbsp;<a href="#Graph">Graph</a><br>
+)<br>
+&nbsp;<br>
+SVG&nbsp;rectangle&nbsp;for&nbsp;a&nbsp;stacked&nbsp;bar.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#StackedBar">StackedBar</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="StackedBar-__getnewargs__"><strong>__getnewargs__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.StackedBar</span></span></dt><dd><span class="code">Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__replace__"><strong>__replace__</strong></a> = <a href="#StackedBar-_replace">_replace</a>(self, /, **kwds)</dt></dl>
+
+<dl><dt><a name="StackedBar-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.StackedBar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</span></dd></dl>
+
+<dl><dt><a name="StackedBar-_asdict"><strong>_asdict</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.StackedBar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;dict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-_replace"><strong>_replace</strong></a>(self, /, **kwds)<span class="grey"><span class="heading-text"> from collections.StackedBar</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;<a href="#StackedBar">StackedBar</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="StackedBar-_make"><strong>_make</strong></a>(iterable)<span class="grey"><span class="heading-text"> from collections.StackedBar</span></span></dt><dd><span class="code">Make&nbsp;a&nbsp;new&nbsp;<a href="#StackedBar">StackedBar</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="StackedBar-__new__"><strong>__new__</strong></a>(
+    _cls,
+    position_x: Number,
+    position_y: Number,
+    width: Number,
+    height: Number,
+    data: DataPoint,
+    graph: Graph
+)<span class="grey"><span class="heading-text"> from namedtuple_StackedBar.StackedBar</span></span></dt><dd><span class="code">Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#StackedBar">StackedBar</a>(position_x,&nbsp;position_y,&nbsp;width,&nbsp;height,&nbsp;data,&nbsp;graph)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>position_x</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</span></dd>
+</dl>
+<dl><dt><strong>position_y</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</span></dd>
+</dl>
+<dl><dt><strong>width</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</span></dd>
+</dl>
+<dl><dt><strong>height</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;3</span></dd>
+</dl>
+<dl><dt><strong>data</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;4</span></dd>
+</dl>
+<dl><dt><strong>graph</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;5</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__classdictcell__</strong> = &lt;cell at 0x000001532566A620: dict object&gt;</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('position_x', 'position_y', 'width', 'height', 'data', 'graph')</dl>
+
+<dl><dt><strong>__orig_bases__</strong> = (&lt;function NamedTuple&gt;,)</dl>
+
+<dl><dt><strong>_field_defaults</strong> = {}</dl>
+
+<dl><dt><strong>_fields</strong> = ('position_x', 'position_y', 'width', 'height', 'data', 'graph')</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="StackedBar-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;bool(key&nbsp;in&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;self[key].</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><span class="code">Implement&nbsp;iter(self).</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;len(self).</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-count"><strong>count</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="StackedBar-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><span class="code">Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="StackedBar-__class_getitem__"><strong>__class_getitem__</strong></a>(object, /)</dt><dd><span class="code">See&nbsp;<a href="https://peps.python.org/pep-0585/">PEP&nbsp;585</a></span></dd></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Tick">class <strong>Tick</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Tick">Tick</a>(position:&nbsp;int,&nbsp;label:&nbsp;Union[str,&nbsp;Number])<br>
+&nbsp;<br>
+Position&nbsp;and&nbsp;label&nbsp;of&nbsp;an&nbsp;axis&nbsp;tick.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#Tick">Tick</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Tick-__getnewargs__"><strong>__getnewargs__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Tick</span></span></dt><dd><span class="code">Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="Tick-__replace__"><strong>__replace__</strong></a> = <a href="#Tick-_replace">_replace</a>(self, /, **kwds)</dt></dl>
+
+<dl><dt><a name="Tick-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Tick</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</span></dd></dl>
+
+<dl><dt><a name="Tick-_asdict"><strong>_asdict</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Tick</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;dict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</span></dd></dl>
+
+<dl><dt><a name="Tick-_replace"><strong>_replace</strong></a>(self, /, **kwds)<span class="grey"><span class="heading-text"> from collections.Tick</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;<a href="#Tick">Tick</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Tick-_make"><strong>_make</strong></a>(iterable)<span class="grey"><span class="heading-text"> from collections.Tick</span></span></dt><dd><span class="code">Make&nbsp;a&nbsp;new&nbsp;<a href="#Tick">Tick</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Tick-__new__"><strong>__new__</strong></a>(_cls, position: int, label: Union[str, Number])<span class="grey"><span class="heading-text"> from namedtuple_Tick.Tick</span></span></dt><dd><span class="code">Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#Tick">Tick</a>(position,&nbsp;label)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>position</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</span></dd>
+</dl>
+<dl><dt><strong>label</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__classdictcell__</strong> = &lt;cell at 0x000001532566B1C0: dict object&gt;</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('position', 'label')</dl>
+
+<dl><dt><strong>__orig_bases__</strong> = (&lt;function NamedTuple&gt;,)</dl>
+
+<dl><dt><strong>_field_defaults</strong> = {}</dl>
+
+<dl><dt><strong>_fields</strong> = ('position', 'label')</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Tick-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;bool(key&nbsp;in&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="Tick-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;self[key].</span></dd></dl>
+
+<dl><dt><a name="Tick-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="Tick-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><span class="code">Implement&nbsp;iter(self).</span></dd></dl>
+
+<dl><dt><a name="Tick-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;len(self).</span></dd></dl>
+
+<dl><dt><a name="Tick-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="Tick-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="Tick-count"><strong>count</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="Tick-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><span class="code">Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Tick-__class_getitem__"><strong>__class_getitem__</strong></a>(object, /)</dt><dd><span class="code">See&nbsp;<a href="https://peps.python.org/pep-0585/">PEP&nbsp;585</a></span></dd></dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Zone">class <strong>Zone</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Zone">Zone</a>(position_low:&nbsp;Number,&nbsp;position_hight:&nbsp;Number,&nbsp;color:&nbsp;str,&nbsp;opacity:&nbsp;float)<br>
+&nbsp;<br>
+SVG&nbsp;zone&nbsp;in&nbsp;charts.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="PyBarePlot.html#Zone">Zone</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Zone-__getnewargs__"><strong>__getnewargs__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Zone</span></span></dt><dd><span class="code">Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</span></dd></dl>
+
+<dl><dt><a name="Zone-__replace__"><strong>__replace__</strong></a> = <a href="#Zone-_replace">_replace</a>(self, /, **kwds)</dt></dl>
+
+<dl><dt><a name="Zone-__repr__"><strong>__repr__</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Zone</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</span></dd></dl>
+
+<dl><dt><a name="Zone-_asdict"><strong>_asdict</strong></a>(self)<span class="grey"><span class="heading-text"> from collections.Zone</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;dict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</span></dd></dl>
+
+<dl><dt><a name="Zone-_replace"><strong>_replace</strong></a>(self, /, **kwds)<span class="grey"><span class="heading-text"> from collections.Zone</span></span></dt><dd><span class="code">Return&nbsp;a&nbsp;new&nbsp;<a href="#Zone">Zone</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Zone-_make"><strong>_make</strong></a>(iterable)<span class="grey"><span class="heading-text"> from collections.Zone</span></span></dt><dd><span class="code">Make&nbsp;a&nbsp;new&nbsp;<a href="#Zone">Zone</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Zone-__new__"><strong>__new__</strong></a>(
+    _cls,
+    position_low: Number,
+    position_hight: Number,
+    color: str,
+    opacity: float
+)<span class="grey"><span class="heading-text"> from namedtuple_Zone.Zone</span></span></dt><dd><span class="code">Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#Zone">Zone</a>(position_low,&nbsp;position_hight,&nbsp;color,&nbsp;opacity)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>position_low</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</span></dd>
+</dl>
+<dl><dt><strong>position_hight</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</span></dd>
+</dl>
+<dl><dt><strong>color</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</span></dd>
+</dl>
+<dl><dt><strong>opacity</strong></dt>
+<dd><span class="code">Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;3</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__classdictcell__</strong> = &lt;cell at 0x000001532566AE00: dict object&gt;</dl>
+
+<dl><dt><strong>__match_args__</strong> = ('position_low', 'position_hight', 'color', 'opacity')</dl>
+
+<dl><dt><strong>__orig_bases__</strong> = (&lt;function NamedTuple&gt;,)</dl>
+
+<dl><dt><strong>_field_defaults</strong> = {}</dl>
+
+<dl><dt><strong>_fields</strong> = ('position_low', 'position_hight', 'color', 'opacity')</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Zone-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self+value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;bool(key&nbsp;in&nbsp;self).</span></dd></dl>
+
+<dl><dt><a name="Zone-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self==value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;=value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><span class="code">Return&nbsp;self[key].</span></dd></dl>
+
+<dl><dt><a name="Zone-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&gt;value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;hash(self).</span></dd></dl>
+
+<dl><dt><a name="Zone-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><span class="code">Implement&nbsp;iter(self).</span></dd></dl>
+
+<dl><dt><a name="Zone-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;=value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><span class="code">Return&nbsp;len(self).</span></dd></dl>
+
+<dl><dt><a name="Zone-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self&lt;value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self*value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;self!=value.</span></dd></dl>
+
+<dl><dt><a name="Zone-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;value*self.</span></dd></dl>
+
+<dl><dt><a name="Zone-count"><strong>count</strong></a>(self, value, /)</dt><dd><span class="code">Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="Zone-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><span class="code">Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Zone-__class_getitem__"><strong>__class_getitem__</strong></a>(object, /)</dt><dd><span class="code">See&nbsp;<a href="https://peps.python.org/pep-0585/">PEP&nbsp;585</a></span></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-escape_svg"><strong>escape_svg</strong></a>(text: str) -&gt; str</dt><dd><span class="code">Escape&nbsp;a&nbsp;string&nbsp;for&nbsp;safe&nbsp;use&nbsp;in&nbsp;SVG&nbsp;(XML)&nbsp;content.<br>
+&nbsp;<br>
+Replaces&nbsp;the&nbsp;five&nbsp;XML&nbsp;special&nbsp;characters&nbsp;with&nbsp;their&nbsp;corresponding<br>
+entity&nbsp;references:<br>
+&nbsp;&nbsp;-&nbsp;&amp;&nbsp;&nbsp;-&gt;&nbsp;&amp;amp;<br>
+&nbsp;&nbsp;-&nbsp;&lt;&nbsp;&nbsp;-&gt;&nbsp;&amp;lt;<br>
+&nbsp;&nbsp;-&nbsp;&gt;&nbsp;&nbsp;-&gt;&nbsp;&amp;gt;<br>
+&nbsp;&nbsp;-&nbsp;"&nbsp;&nbsp;-&gt;&nbsp;&amp;quot;<br>
+&nbsp;&nbsp;-&nbsp;'&nbsp;&nbsp;-&gt;&nbsp;&amp;apos;<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;(str):&nbsp;The&nbsp;input&nbsp;string&nbsp;to&nbsp;escape.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;The&nbsp;escaped&nbsp;string,&nbsp;safe&nbsp;for&nbsp;use&nbsp;in&nbsp;SVG/XML&nbsp;text&nbsp;or&nbsp;attribute<br>
+&nbsp;&nbsp;&nbsp;&nbsp;values.</span></dd></dl>
+ <dl><dt><a name="-get_color"><strong>get_color</strong></a>(index: int) -&gt; str</dt><dd><span class="code">Return&nbsp;a&nbsp;strategic&nbsp;different&nbsp;color&nbsp;for&nbsp;each&nbsp;call.</span></dd></dl>
+ <dl><dt><a name="-load_graphs"><strong>load_graphs</strong></a>(args: Namespace) -&gt; Graph</dt><dd><span class="code">Merge&nbsp;all&nbsp;input&nbsp;sources&nbsp;into&nbsp;a&nbsp;single&nbsp;list&nbsp;of&nbsp;Graphs.<br>
+&nbsp;<br>
+Order&nbsp;priority:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;CSV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;JSON<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;MJSON<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;CLI&nbsp;values</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>THEMES</strong> = {'dark': {'axis': '#e0e0e0', 'background': '#121212', 'box': '#e0e0e0', 'grid': '#444444', 'text': '#e0e0e0'}, 'light': {'axis': 'black', 'background': 'white', 'box': 'black', 'grid': 'lightgray', 'text': 'black'}, 'transparent': {'axis': 'black', 'background': None, 'box': 'black', 'grid': 'lightgray', 'text': 'black'}}<br>
+<strong>__all__</strong> = ['load_graphs', 'StackedBar', 'GroupedBar', 'escape_svg', 'DataPoint', 'BarLayout', 'get_color', 'SVGChart', 'DataBox', 'THEMES', 'Graph', 'Point', 'Tick', 'Zone', 'Bar']<br>
+<strong>__author_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__copyright__</strong> = '<span class="repr">\n</span>PyBarePlot  Copyright (C) 2026  Maurice Lambert...ome to redistribute it<span class="repr">\n</span>under certain conditions.<span class="repr">\n</span>'<br>
+<strong>__description__</strong> = '<span class="repr">\n</span>SVG chart generator CLI and Python module for c...g, legends, gradients, and layout<span class="repr">\n</span>customization.<span class="repr">\n</span>'<br>
+<strong>__license__</strong> = 'GPL-3.0 License'<br>
+<strong>__maintainer__</strong> = 'Maurice Lambert'<br>
+<strong>__maintainer_email__</strong> = 'mauricelambert434@gmail.com'<br>
+<strong>__url__</strong> = 'https://github.com/mauricelambert/PyBarePlot'</td></tr></table><p>
+<table class="section">
+<tr class="decor author-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Author</strong></td></tr>
+    
+<tr><td class="decor author-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn">Maurice&nbsp;Lambert</td></tr></table>
+</body></html>
