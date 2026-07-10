@@ -33,8 +33,14 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cybersecurity as the Security of Digital Systems",
             "notes": [
-                "cybers\u00e9curit\u00e9: s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques.",
-                "exemples: ordinateurs, tablettes, t\u00e9l\u00e9phones, internet, objets connect\u00e9s, compteur linky ou acc\u00e8s \u00e9l\u00e9ctricit\u00e9, paiement, sant\u00e9."
+                "La d\u00e9finition de la cybers\u00e9curit\u00e9 est souvent r\u00e9sum\u00e9e \u00e0 la s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques.",
+                "Les syst\u00e8mes num\u00e9riques sont per\u00e7us comme tous ces appareils connect\u00e9s qui fa\u00e7onnent la vie moderne.",
+                "Quelques \"petits\" exemples : ordinateurs, tablettes et t\u00e9l\u00e9phones.",
+                "Les acc\u00e8s \u00e0 Internet et les communications sans fil pourraient \u00e9galement \u00eatre impact\u00e9s, emp\u00eachant toute communication \u00e0 distance utilis\u00e9e de nos jours de mani\u00e8re courante.",
+                "Tous les objets connect\u00e9s seraient \u00e9galement concern\u00e9s. Par exemple, si vous avez une bouilloire connect\u00e9e, elle pourrait devenir inutilisable.",
+                "Et si vous avez un compteur Linky, auriez-vous de l'\u00e9lectricit\u00e9 chez vous ? Oui, si les infrastructures \u00e9lectriques arrivent \u00e0 g\u00e9rer le flux sans les informations des compteurs. Dans le cas contraire, on pourrait observer des impacts sur la distribution.",
+                "Et sans syst\u00e8me de paiement ? Plus d'achats en ligne, de paiements par carte bancaire ou de retraits d'esp\u00e8ces.",
+                "On peut aussi imaginer les syst\u00e8mes de sant\u00e9 : plus de syst\u00e8mes d'information dans les h\u00f4pitaux pour g\u00e9rer les patients, les salles, les rendez-vous des m\u00e9decins, les urgences ou simplement les donn\u00e9es de sant\u00e9."
             ],
             "aside": "References: <a href=\"https://www.cisco.com/site/us/en/learn/topics/security/what-is-cybersecurity.html\">Cisco</a>.",
             "image": "hacked_healthcare.jpg",
@@ -71,13 +77,13 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Digital Systems: Simple Operations Creating Complex Environments",
             "notes": [
-                "Si cybers\u00e9curit\u00e9 = s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques alors: qu'est ce que syst\u00e8me num\u00e9rique ?",
-                "Pourquoi y a t il des probl\u00e8mes de s\u00e9curit\u00e9 ?",
-                "Syst\u00e8mes num\u00e9riques => 0 et 1. Humains: texte. Probl\u00e8me: niveau d'abstration.",
-                "Informaticiens != comprendre l'informatique.",
-                "Hacker => comprendre les flux d'ex\u00e9cution",
-                "Modifier un flux d'ex\u00e9cution => une vuln\u00e9rabilit\u00e9",
-                "D\u00e9finissez vuln\u00e9rabilit\u00e9 ? 2 autres pr\u00e9requis pour une malveillance: risque et menace."
+                "On va temporairement, le temps d'une slide, parler d'\u00e9l\u00e9ments un peu abstraits des syst\u00e8mes num\u00e9riques.",
+                "Les syst\u00e8mes num\u00e9riques sont bas\u00e9s sur des composants de calcul binaire, c'est-\u00e0-dire \u00e0 deux \u00e9tats, souvent repr\u00e9sent\u00e9s par des 0 et des 1.",
+                "Pour les humains, les 0 et les 1 sont difficilement lisibles. Les flux de donn\u00e9es ou d'instructions sont souvent plus lisibles sous forme de code ou d'\u00e9l\u00e9ments textuels.",
+                "Parfois, pour bien comprendre le fonctionnement en d\u00e9tail, on est oblig\u00e9 de descendre plus bas. Pour cela, on repr\u00e9sente les 0 et les 1 par groupes de 8 (qu'on appelle des octets) et on les repr\u00e9sente sous forme hexad\u00e9cimale et, de temps en temps, d\u00e9cimale.",
+                "Ces flux de 0 et de 1 sont pr\u00e9visibles \u00e0 l'\u00e9chelle humaine, mais restent compris par des couches interm\u00e9diaires opaques, pas toujours connues des d\u00e9veloppeurs ou parfois mal interpr\u00e9t\u00e9es.",
+                "Si quelqu'un arrive \u00e0 modifier ces flux de 0 et de 1, qui repr\u00e9sentent les donn\u00e9es et parfois m\u00eame les instructions de calcul, alors il peut modifier le comportement des appareils \u00e9lectroniques et donc les compromettre.",
+                "Les chercheurs en vuln\u00e9rabilit\u00e9s n'ont pas toujours besoin de descendre aussi bas dans les couches des syst\u00e8mes. Ils peuvent modifier les flux simplement avec du \"texte\" lisible par l'homme ou avec des donn\u00e9es forg\u00e9es dans un format que l'appareil ou l'application comprend."
             ],
             "aside": "References: <a href=\"https://www.britannica.com/technology/digital-computer\">Britannica - digital-computer</a>.",
             "image": "binary_data.png",
@@ -113,10 +119,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cyberattack Concepts: Vulnerability, Risk, and Threat",
             "notes": [
-                "Risque: danger \u00e9ventuel plus ou moins pr\u00e9visible (cambriolage).",
-                "Vuln\u00e9rabilit\u00e9s: faiblesse => risque r\u00e9alisable (fen\u00eatre cass\u00e9e).",
-                "Menace: volont\u00e9 de nuire (voleur => cambrioleur).",
-                "Cyberattaque requiert: risque, vuln\u00e9rabilit\u00e9, menace."
+                "Maintenant que nous avons bien compris pourquoi la cybers\u00e9curit\u00e9 \u00e9tait un probl\u00e8me important \u00e2\u20ac\u201d les syst\u00e8mes sont de plus en plus nombreux, avec de plus en plus de responsabilit\u00e9s, et qu'en plus ils sont extr\u00eamement compliqu\u00e9s au point que les d\u00e9veloppeurs ne les comprennent pas toujours dans tous les d\u00e9tails \u00e2\u20ac\u201d nous pouvons regarder quels sont les pr\u00e9requis pour une cyberattaque.",
+                "Les pr\u00e9requis peuvent \u00eatre vus de la mani\u00e8re suivante : un risque, une vuln\u00e9rabilit\u00e9 et une menace.",
+                "Le risque est d\u00e9fini comme un danger \u00e9ventuel plus ou moins pr\u00e9visible. Par exemple, un risque pourrait \u00eatre de se faire cambrioler.",
+                "Pour ce risque, il existe tout un tas de vuln\u00e9rabilit\u00e9s, comme une fen\u00eatre qui ne ferme plus. La vuln\u00e9rabilit\u00e9, c'est la faiblesse qui permet de rendre le risque r\u00e9alisable.",
+                "Enfin, la menace, c'est l'\u00e9l\u00e9ment qui am\u00e8ne la volont\u00e9 de nuire. Toujours pour le m\u00eame risque, ce serait le cambrioleur ou le commanditaire du cambriolage."
             ],
             "aside": "References: CSRC NIST glossary <a href=\"https://csrc.nist.gov/glossary/term/vulnerability\">Vulnerability</a>, <a href=\"https://csrc.nist.gov/glossary/term/risk\">Risk</a>, <a href=\"https://csrc.nist.gov/glossary/term/threat\">Threat</a>.",
             "image": "VulnerabilityThreat.jpg",
@@ -144,11 +151,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "The CIA Triad: The Criteria of Cybersecurity Strategy",
             "notes": [
-                "On connait \"vuln\u00e9rabilit\u00e9\", comment on sait que s'en est une \"cyber\" ? Vuln\u00e9rabilit\u00e9 cyber: impact 1 des 3 aspects:",
-                "Confidentialit\u00e9: acc\u00e8s aux donn\u00e9es non autoris\u00e9es (photo, message, sant\u00e9, donn\u00e9es GPS, ...).",
-                "Int\u00e9grit\u00e9: modification des donn\u00e9es (compte bancaire).",
-                "Disponibilit\u00e9: acc\u00e8s au service (paiement).",
-                "Qu'est-ce qui peut \u00eatre lu et modifi\u00e9 ? Qu'est-ce qui peut lire, \u00e9ventuellement divulguer et modifier les donn\u00e9es ?"
+                "La strat\u00e9gie de la cybers\u00e9curit\u00e9 utilise 3 crit\u00e8res que nous pouvons employer pour bien comprendre ce qu'est la cybers\u00e9curit\u00e9.",
+                "Le premier principe est la confidentialit\u00e9 : nous n'avons pas envie que n'importe qui dans le monde voie nos photos et nos messages.",
+                "Le second \u00e9l\u00e9ment est l'int\u00e9grit\u00e9. En effet, nous n'avons pas envie que notre nom et notre pr\u00e9nom changent sans notre consentement.",
+                "Enfin, le dernier crit\u00e8re est la disponibilit\u00e9, parce que lorsqu'on va aux urgences, on souhaite que le m\u00e9decin qui nous prend en charge connaisse nos traitements en cours ou nos allergies afin d'\u00e9viter toute interaction m\u00e9dicamenteuse dangereuse.",
+                "En fait, nous venons, gr\u00e2ce \u00e0 ces crit\u00e8res, d'ajouter un \u00e9l\u00e9ment fondamental de la cybers\u00e9curit\u00e9 : les donn\u00e9es. Ce n'est pas seulement une question de disponibilit\u00e9 des services, c'est aussi la \"qualit\u00e9\" de l'information."
             ],
             "aside": "References: <a href=\"https://www.checkpoint.com/cyber-hub/cyber-security/what-is-it-security/what-is-the-cia-triad/\">Checkpoint - CIA Triad</a>.",
             "image": "CIA.jpg",
@@ -180,8 +187,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Who Makes Data Available, Reads It, and Modifies It ?",
             "notes": [
-                "Syst\u00e8mes num\u00e9riques. Humains => lire et divulguer les donn\u00e9es (RH).",
-                "Syst\u00e8mes num\u00e9riques => interface pour les humains (\u00e9cran, microphone, \u00e9couteurs, ...)."
+                "Nous avons d\u00e9fini les trois crit\u00e8res fondamentaux, nous avons ajout\u00e9 un \u00e9l\u00e9ment important \u00e0 la cybers\u00e9curit\u00e9, et si nous les utilisions pour nous poser quelques questions afin de mieux comprendre la cybers\u00e9curit\u00e9 ?",
+                "Qu'est-ce qui lit les donn\u00e9es ? Qu'est-ce qui modifie les donn\u00e9es ? Et qu'est-ce qui rend les donn\u00e9es accessibles ?",
+                "Les appareils num\u00e9riques les rendent disponibles, mais ce sont les humains qui les lisent au final et ce sont eux qui les modifient.",
+                "La question de la cybers\u00e9curit\u00e9 n'est peut-\u00eatre pas uniquement celle de la s\u00e9curit\u00e9 du mat\u00e9riel et des services num\u00e9riques."
             ],
             "aside": "References: <a href=\"https://openstax.org/books/foundations-information-systems/pages/1-1-introduction-to-information-systems\">OpenStax - Introduction to information systems</a>.",
             "image": "human_interfaces.webp",
@@ -220,11 +229,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Complete Cybersecurity Definition: Systems, Data, Context and Users",
             "notes": [
-                "Cybers\u00e9curit\u00e9 => s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques ?",
-                "Cybers\u00e9curit\u00e9 => s\u00e9curit\u00e9 du context des syst\u00e8mes num\u00e9riques.",
-                "Context des syst\u00e8mes num\u00e9riques => syst\u00e8mes num\u00e9riques, donn\u00e9es, humains.",
-                "Cybers\u00e9curit\u00e9 => Attaques num\u00e9riques ?",
-                "Cybers\u00e9curit\u00e9 => attaques num\u00e9riques et humaines."
+                "Nous avons d\u00e9fini la cybers\u00e9curit\u00e9 comme \u00e9tant la s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques et nous avons compris pourquoi ils pouvaient \u00eatre aussi vuln\u00e9rables.",
+                "Ensuite, nous nous sommes rendu compte que les donn\u00e9es \u00e9taient au moins aussi importantes que le syst\u00e8me lui-m\u00eame et qu'il fallait les ajouter dans la d\u00e9finition de la cybers\u00e9curit\u00e9.",
+                "Nous nous sommes rendu compte que ces donn\u00e9es \u00e9taient utilis\u00e9es dans un but final de lecture et de modification par des utilisateurs qui doivent donc \u00eatre inclus dans la d\u00e9finition aussi.",
+                "Nous arrivons donc \u00e0 la conclusion que la cybers\u00e9curit\u00e9, c'est la s\u00e9curit\u00e9 des syst\u00e8mes num\u00e9riques, de leurs contenus, de leurs utilisations et du contexte de leurs utilisations. La s\u00e9curit\u00e9 inclut bien s\u00fbr la s\u00fbret\u00e9, donc les accidents des syst\u00e8mes, tout autant que les attaques volontairement malveillantes."
             ],
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "image": "CompleteCyberSecurity.jpg",
@@ -265,9 +273,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cybersecurity Etymology: The Origin of the Word \"Cyber\"",
             "notes": [
-                "M\u00eame \u00e9thymologie que gouverner => gouvernail => piloter un bateau. Grec ancien: les bateaux => syst\u00e8mes complexes.",
-                "Premier \"cyber\" => \"cybern\u00e9tique\" => science de gouverner les hommes (diriger un syst\u00e8me complexe).",
-                "Cybers\u00e9curit\u00e9 => \"s\u00e9curit\u00e9 des syst\u00e8mes complexes\" => contexte des syst\u00e8mes num\u00e9riques (complexe)."
+                "Le pr\u00e9fixe \"Cyber\" apporte le domaine des syst\u00e8mes num\u00e9riques au terme qu'il compose.",
+                "Il vient de \"cybernetics\", provenant de \"cybern\u00e9tique\", d\u00e9fini en France comme \u00e9tant la science de gouverner les hommes.",
+                "Cybern\u00e9tique vient d'un mot grec qui signifie piloter un bateau, probablement pens\u00e9 comme \"diriger un syst\u00e8me complexe\".",
+                "D'autres mots et noms modernes proviennent de ce m\u00eame mot grec, comme Kubernetes, qui g\u00e8re et orchestre des syst\u00e8mes de conteneurs."
             ],
             "aside": "References: Wikipedia - <a href=\"https://fr.wikipedia.org/wiki/Cyber\">Cyber</a>, <a href=\"https://fr.wikipedia.org/wiki/Cybern%C3%A9tique\">Cybern\u00e9tique</a>.",
             "image": "CyberEtymology.jpg",
@@ -318,11 +327,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Building Security Vulnerability 1: Information Exposure Through a Window",
             "notes": [
-                "Fen\u00eatre dans le dos => voir l'\u00e9cran sans \u00eatre vu.",
-                "Avec cam\u00e9ra => vol facile d'informations confidentielles.",
-                "Sans connaissance technique: vol des clients, des devis, brevets, codes, secrets industriels.",
-                "Vol de donn\u00e9es == atteinte \u00e0 la confidentialit\u00e9 des donn\u00e9es num\u00e9riques => cyberattaque.",
-                "D\u00e9j\u00e0 vu => b\u00e2timent d'une banque"
+                "La fen\u00eatre dans le dos du bureau permet de voir l'\u00e9cran du travailleur depuis l'ext\u00e9rieur sans \u00eatre soi-m\u00eame vu.",
+                "Un attaquant \u00e9quip\u00e9 d'une cam\u00e9ra peut filmer tout ce qui passe \u00e0 l'\u00e9cran et obtenir toutes les informations confidentielles.",
+                "Sans aucune connaissance technique, vous \u00eates en mesure de voler toutes les informations confidentielles de l'entreprise qui passent sur l'\u00e9cran, par exemple les clients et les devis, les brevets, le code ou les secrets industriels.",
+                "Cela constitue un vol de donn\u00e9es num\u00e9riques, donc une cyberattaque, mais elle ne n\u00e9cessite aucune comp\u00e9tence informatique."
             ],
             "aside": "References: <a href=\"https://fr.wikipedia.org/wiki/Shoulder_surfing\">Wikip\u00e9dia - shoulder surfing</a>.",
             "image": "vulnerability_window1.jpg",
@@ -368,9 +376,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Server Room Accessibility Vulnerability",
             "notes": [
-                "1. Fen\u00eatre dans la salle serveur => informations sur les serveurs et le mat\u00e9riel de s\u00e9curit\u00e9",
-                "2. Cassre la fen\u00eatre => Cambrioleur peut voler les serveurs et les donn\u00e9es",
-                "Intrusion physique => Vol de mat\u00e9riel => un acc\u00e8s \u00e0 des donn\u00e9es non autoris\u00e9 et une indisponibilit\u00e9 des services => cyberattaque"
+                "Une fen\u00eatre dans la salle serveur permet \u00e0 un attaquant d'obtenir des informations sur les serveurs et le mat\u00e9riel de s\u00e9curit\u00e9.",
+                "Un cambrioleur peut entrer en cassant la fen\u00eatre afin de voler les serveurs et, par la suite, les donn\u00e9es.",
+                "C'est une intrusion physique et une cyberattaque pour deux raisons: un acc\u00e8s \u00e0 des donn\u00e9es non autoris\u00e9 et une indisponibilit\u00e9 des services et des donn\u00e9es."
             ],
             "aside": "References: <a href=\"https://messervices.cyber.gouv.fr/documents-guides/CyberDico_ANSSI_2024.pdf\">ANSSI - CyberDico</a>.",
             "image": "vulnerability_window2.jpg",
@@ -414,8 +422,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Multiple Others Physical Security Vulnerabilities",
             "notes": [
-                "Salon et le bureau de travail dans la m\u00eame pi\u00e8ce => \u00e9change confidentiel peut \u00eatre entendu par les invit\u00e9s.",
-                "Acc\u00e8s \u00e0 la salle serveur par une porte => faible protection d'\u00e9l\u00e9ments sensibles (un sous sol avec des portes renforc\u00e9es, des cam\u00e9ras, des alarmes, ect...)."
+                "Il y a plusieurs autres vuln\u00e9rabilit\u00e9s qui impactent ces locaux.",
+                "Le salon pour les invit\u00e9s est directement dans le bureau de travail, cela implique que tout \u00e9change confidentiel durant une visite est entendu par les invit\u00e9s.",
+                "L'acc\u00e8s \u00e0 la salle serveur par une simple porte n'est pas suffisant prot\u00e9g\u00e9, th\u00e9oriquement il devrait y avoir des mesures beaucoup plus forte pour acc\u00e8der aux serveurs (un sous sol avec des portes renforc\u00e9es, des cam\u00e9ras, des alarmes, ect...)."
             ],
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "image": "vulnerable_building2.jpg",
@@ -458,12 +467,12 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Critical Emergency Exit Vulnerability",
             "notes": [
-                "Issues de secours => obligatoires pour respect des r\u00e8gles de s\u00fbret\u00e9",
-                "Sur l'ext\u00e9rieur => cam\u00e9ra et s\u00e9curit\u00e9 plut\u00f4t sur les entr\u00e9es",
-                "Endroits moins surveill\u00e9s => int\u00e9ret pour un attaquant",
-                "La porte sur un mur grillag\u00e9. Les portes s'ouvrent => appui sur la barre d'ouverture (ouverture en cas de mouvement de masse)",
-                "Fil de fer rigide et courb\u00e9 => accrocher la barre => tirer \u00e0 soi => ouverture => attaquant peut entrer",
-                "D\u00e9j\u00e0 vu => infrastructure critique"
+                "Les issues de secours sont obligatoires et doivent respecter des r\u00e8gles de s\u00fbret\u00e9 importantes.",
+                "Elles donnent souvent sur l'ext\u00e9rieur, par des portes situ\u00e9es \u00e0 l'arri\u00e8re, l\u00e0 o\u00f9 il n'y a pas d'entr\u00e9e principale.",
+                "Ce sont souvent des endroits moins surveill\u00e9s, ce qui rend cette vuln\u00e9rabilit\u00e9 particuli\u00e8rement int\u00e9ressante pour un attaquant.",
+                "Ici, la porte est install\u00e9e dans un mur grillag\u00e9. Les portes s'ouvrent avec un simple m\u00e9canisme d'appui sur la barre d'ouverture pour des raisons de s\u00fbret\u00e9.",
+                "Pour l'attaquant, il suffit de glisser un fil de fer rigide et courb\u00e9, de l'accrocher \u00e0 la barre d'ouverture, puis de tirer \u00e0 soi.",
+                "La porte s'ouvre alors et l'attaquant peut entrer."
             ],
             "aside": "References: <a href=\"https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf\">ANSSI - Guide d'hygi\u00e8ne informatique</a>.",
             "image": "vulnerability_door.jpg",
@@ -513,13 +522,12 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Physical Reconnaissance and Human Behavior Observation",
             "notes": [
-                "Voyez-vous une menace sur l'image ?",
-                "Observation des les lieux avant intrusion:",
-                "Entr\u00e9es et sorties: bonnes et mauvaises pratiques, horaires de pr\u00e9sence...",
-                "S\u00e9curit\u00e9 des  acc\u00e8s: badges, serrures, cl\u00e9s...",
-                "Photos et vid\u00e9os => analyse \u00e0 postiori",
-                "Sur l'image => 3 personnes peuvent \u00eatre des menaces, le status sociale, le visage et les activit\u00e9s => permettent pas d'identifier une menace.",
-                "Comment se prot\u00e9ger contre ce type reconnaissance ?"
+                "Un attaquant qui peut observer les lieux d'une intrusion sans \u00eatre identifi\u00e9 ne s'emp\u00eachera pas d'aller voir physiquement.",
+                "Il peut regarder les entr\u00e9es et les sorties.",
+                "Observer les bonnes et mauvaises pratiques des personnes, les horaires de pr\u00e9sence, etc.",
+                "Les d\u00e9tails des acc\u00e8s : badges, serrures, cl\u00e9s, etc.",
+                "Prendre des photos et des vid\u00e9os pour analyser par la suite les \u00e9l\u00e9ments.",
+                "A votre avis, les personnes sur l'image peuvent obtenir des informations \u00e0 propos de l'entreprise dont la porte est illumin\u00e9e ?"
             ],
             "aside": "References: <a href=\"https://www.redlegg.com/penetration-testing/physical-pen-testing\">RedLegg - physical pentesting</a>.",
             "image": "surveillance1.jpg",
@@ -554,10 +562,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Wireless Reconnaissance: Wi-Fi, Bluetooth and Radio Signals",
             "notes": [
-                "Un mur => protection contre la reconnaissance physique. Suffisant d'apr\u00e8s vous ? Utiliser un drone => photos et vid\u00e9os du b\u00e2timent.",
-                "Si pas de viseul => \"\u00e9couter\" les ondes (Wi-Fi, Bluetooth)",
-                "Si WiFi, peut-il se connecter ? Trouver un mot de passe ?",
-                "Y a-t-il du Bluetooth ? (\u00e9couteurs => suivi de r\u00e9unions confidentielles)"
+                "Il peut \u00e9couter les ondes (Wi-Fi, Bluetooth et autres).",
+                "Est-ce du Wi-Fi (ondes) ou de l'Ethernet (filaire, RJ45) ?",
+                "Y a-t-il du mat\u00e9riel qui utilise le Bluetooth ? Un casque utilis\u00e9 pour des r\u00e9unions confidentielles ? Une enceinte pour diffuser de la musique ?",
+                "Les t\u00e9l\u00e9phones utilisent-ils iOS (qui utilise beaucoup le Bluetooth et n'est pas toujours tr\u00e8s s\u00fbr) ou Android ?",
+                "D'apr\u00e8s vous que peuvent savoir ces personnes qui cherchent \u00e0 obtenir sur l'entreprise qu'il y a derri\u00e8re ce grand portail ? Ont-ils suffisamment d'informations pour faire une intrusion discr\u00e8te ? Et avec un dr\u00f4ne pour prendre des photos depuis le haut ?"
             ],
             "aside": "References: <a href=\"https://attack.mitre.org/techniques/T0887/\">MITRE ATT&CK \u2013 Wireless Sniffing</a>.",
             "image": "surveillance2.jpg",
@@ -599,9 +608,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Hardware Reconnaissance and Security Equipment Identification",
             "notes": [
-                "Identifier le mat\u00e9riel informatique/s\u00e9curit\u00e9.",
-                "Marques, mod\u00e8les, prestataires (de s\u00e9curit\u00e9: d\u00e9t\u00e9ction du niveau de s\u00e9curit\u00e9 ou intrusion par social engineering)",
-                "Objets connect\u00e9s ? Vid\u00e9osurveillance est-elle locale ou en ligne ?"
+                "L'attaquant peut identifier le mat\u00e9riel informatique et le mat\u00e9riel de s\u00e9curit\u00e9.",
+                "Identifier les mod\u00e8les, les marques, parfois les prestataires de s\u00e9curit\u00e9, et en d\u00e9duire le niveau de s\u00e9curit\u00e9.",
+                "Y a-t-il des objets connect\u00e9s ?",
+                "Y a-t-il des sauvegardes physiques ? La vid\u00e9osurveillance est-elle locale ou en ligne ?"
             ],
             "aside": "References: <a href=\"https://hackersmanifest.com/iot-pentesting/01-reconnaissance/\">Hackers Manifest - IoT pentesting</a>.",
             "image": "discovery.jpg",
@@ -649,11 +659,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Digital Reconnaissance and Open-Source Intelligence (OSINT)",
             "notes": [
-                "GoogleMaps => photos, horaires d'ouvertures et vacances, commentaires de clients, produits...",
-                "Site web, services, adresses ou appareils sur internet ?",
-                "LinkedIn (soci\u00e9t\u00e9, employ\u00e9s) ? Avec d\u00e9tails qui divulgent des informations ? Exp\u00e9rience (informatique/cyber) ? Centres d'int\u00e9r\u00eat et activit\u00e9s, des amis ou des personnes qu'ils admirent ?",
-                "Employ\u00e9s avec r\u00e9seaux sociaux ? Obtenir => nom, animaux, date de naissance...",
-                "Adresses e-mail professionnelles/personnelles, num\u00e9ros de t\u00e9l\u00e9phone, adresses physiques ?"
+                "GoogleMaps a des photos, des horaires d'ouvertures, des commentaires de clients ?",
+                "Y a-t-il un site web ? Des services, des adresses ou appareils sur internet ?",
+                "Les employ\u00e9s ont-ils LinkedIn ? Ont-ils mis des d\u00e9tails comme des \"comp\u00e9tences\" li\u00e9es \u00e0 des marques ou produits ? Quelle est leur exp\u00e9rience ? Sont-ils comp\u00e9tents en cybers\u00e9curit\u00e9 ? Ont-ils des centres d'int\u00e9r\u00eat autres que leur m\u00e9tier, des amis ou des personnes qu'ils admirent ?",
+                "Les employ\u00e9s ont-ils des r\u00e9seaux sociaux ? Quelles informations peut-on obtenir ? Ont-ils des enfants, des animaux ? Si oui, quels sont leurs noms et leurs dates de naissance ?",
+                "Quelles sont les adresses e-mail professionnelles et personnelles des employ\u00e9s ? Leurs num\u00e9ros de t\u00e9l\u00e9phone ? Leurs adresses physiques ?"
             ],
             "aside": "References: <a href=\"https://www.kaspersky.com/blog/osint-open-source-intelligence/48911/\">Kaspersky - OSINT</a>.",
             "image": "profil.jpg",
@@ -694,11 +704,11 @@
             "title": "Social Media Profile Vulnerabilities",
             "notes": [
                 "Tous les r\u00e9seaux sociaux.",
-                "Les dates de vacances affich\u00e9es sur le profil (si vous devez entrer dans sa maison ou dans son bureau, vous avez un mois tranquille)",
-                "Nom du chat => seul compagnon (dans le mot de passe ?)",
-                "Son \u00e2ge (et donc son ann\u00e9e de naissance)",
-                "Entreprise et tous les produits utilis\u00e9s (avec versions)",
-                "Amis, photos de lui, lieu de vacances, caf\u00e9 pr\u00e9f\u00e9r\u00e9 et informations de contact, adresse e-mail personnelle avec usages professionnels."
+                "Les dates de vacances affich\u00e9es sur le profil (si vous devez entrer dans sa maison ou dans son bureau, vous avez un mois tranquille).",
+                "Le nom du chat, qui semble \u00eatre son seul compagnon (et qui pourrait bien faire partie de son mot de passe !).",
+                "Son \u00e2ge (et donc son ann\u00e9e de naissance).",
+                "Son entreprise, ainsi que tous les produits utilis\u00e9s avec leurs versions.",
+                "Ses amis, des photos de lui, son lieu de vacances, son caf\u00e9 pr\u00e9f\u00e9r\u00e9 et toutes ses informations de contact, y compris une adresse e-mail personnelle utilis\u00e9e pour les \u00e9changes professionnels."
             ],
             "aside": "References: <a href=\"https://github.com/mauricelambert/\">Github MauriceLambert</a>, <a href=\"https://mauricelambert.github.io/\">MauriceLambert WebSite</a>.",
             "image": "profil.jpg",
@@ -740,9 +750,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Intrusion Methods: Physical Break-Ins, Stealth Access and Social Engineering",
             "notes": [
-                "Forte (mode cambriolage: casser la porte/fen\u00eatre, entrer, voler, ressortir. Victimes inform\u00e9es de l'intrusion): Isra\u00e9liens => vole des plans nucl\u00e9aires iraniens => 2 v\u00e9hicules => embarquement des caisses documents",
-                "Fine (crochettage, d\u00e9poser des portes d\u00e9rob\u00e9es et/ou on vole de donn\u00e9es, sortir, refermer. La victime => pas inform\u00e9e)",
-                "Ing\u00e9nierie social: d\u00e9guisement (collaborateur: caf\u00e9, t\u00e9l\u00e9phone, souriant, bien ras\u00e9, chemise; prestataire, prestataire) => ouvrir la porte. Entrer, observer, attendre, d\u00e9poser des portes d\u00e9rob\u00e9es, voler des donn\u00e9es, ou des postes de travail. La victime pas toujours inform\u00e9e."
+                "Forte (mode cambriolage: on casse la porte/fen\u00eatre, on entre, on vole, on ressort et les victimes sont au courant): Les Isra\u00e9liens ont fait cela pour voler les plans nucl\u00e9aires iraniens: ils ont amen\u00e9 deux v\u00e9hicules et ont embarqu\u00e9 des caisses compl\u00e8tes de documents.",
+                "Fine (on crochette la serrure, on place des portes d\u00e9rob\u00e9es et/ou on vole des donn\u00e9es, on sort, on referme et la victime ne se rend compte de rien)",
+                "Ing\u00e9nierie social: On se fait passer pour un collaborateur (caf\u00e9 \u00e0 la main, au t\u00e9l\u00e9phone, souriant, bien ras\u00e9, chemise, ...), un prestataire, un fournisseur ou un professionnel de la s\u00e9curit\u00e9/de l'audit, et on se fait ouvrir la porte. On entre, on observe, on attend, on place des portes d\u00e9rob\u00e9es ou on vole des donn\u00e9es, voire m\u00eame des postes de travail, et la victime peut ou non se rendre compte de l'intrusion."
             ],
             "aside": "References: <a href=\"https://www.isere.gouv.fr/Actions-de-l-Etat/Entreprises-economie-emploi-finances-publiques/Entreprises-etes-vous-protegees-face-au-risque-d-intrusion\">Is\u00e8re Prefecture reports physical intrusion data theft in research</a>.",
             "image": "mission_impossible.jpg",
@@ -795,8 +805,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Social Engineering: Exploiting Human Vulnerabilities",
             "notes": [
-                "Biais cognitifs pour manipuler une cible => obtenir un comportement voulu",
-                "Utilisation de: secret, urgence, autorit\u00e9 et importance de la situation",
+                "Principe: on contacte une personne et on utilise des biais cognitifs pour la manipuler afin d'obtenir un comportement voulu.",
+                "Humainement: on utilise le secret, l'urgence, l'autorit\u00e9 et l'importance de la situation pour que la personne ne communique avec personne et effectue les actions souhait\u00e9es.",
                 "Moyens: mail, SMS, messagerie instantan\u00e9e, vishing (appel), quishing (QR code)"
             ],
             "aside": "References: <a href=\"https://www.paloaltonetworks.com/blog/2025/07/social-engineering-rise-new-unit-42-report/\">Palo Alto Networks - Unit 42 Report</a>.",
@@ -877,13 +887,13 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Contextual Security Vulnerabilities Caused by Unsafe Daily Practices",
             "notes": [
-                "Attaquant aiment les m\u00e9chanisme de simplification de la s\u00e9curit\u00e9:",
-                "Pas de mot de passe, session ouverte",
-                "porte ouverte",
-                "mot de passe sur post-it (partage du mot de passe)",
-                "\u00e9crire les mots de passe (navigateur, cahier, fichiers non prot\u00e9g\u00e9s)",
-                "1 mot de passe pour tous les comptes",
-                "donn\u00e9es personnelles non secr\u00e8tes comme mot de passe"
+                "Les vuln\u00e9rabilit\u00e9s dues au contexte sont souvent li\u00e9es \u00e0 des comportements visant \u00e0 simplifier la gestion de l'informatique et \u00e0 diminuer le temps n\u00e9cessaire:",
+                "Ne pas mettre de mot de passe sur un ordinateur ou ne pas fermer sa session",
+                "ne pas fermer \u00e0 cl\u00e9 la porte de son bureau",
+                "noter le mot de passe sur un post-it pour le partager entre plusieurs personnes sans avoir \u00e0 le retenir",
+                "noter les mots de passe dans un cahier ou dans un fichier non prot\u00e9g\u00e9 ou encore les sauvegarder dans le navigateur",
+                "utiliser toujours le m\u00eame mot de passe pour \u00e9viter de devoir se rappeler chacun des mots de passe",
+                "utiliser des dates de naissance ou des noms et surnoms dans son mot de passe pour s'en rappeler plus facilement"
             ],
             "aside": "References: <a href=\"https://www.helpnetsecurity.com/2024/04/26/current-user-password-practices/\">Help Net Security \u2013 password management</a>.",
             "image": "risky_practices.jpg",
@@ -917,10 +927,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Technical Vulnerability Exploitation Through Hardware and Software Analysis",
             "notes": [
-                "Open source: analyse du code => vuln\u00e9rabilit\u00e9s",
-                "Close source: analyse instructions machine => \"code\" => vuln\u00e9rabilit\u00e9s",
-                "Hardware: achat (m\u00eame mod\u00e8le) => d\u00e9montage, analyse mat\u00e9riiel => \"dump\" le syst\u00e8me => r\u00e9cup\u00e8re et analyse les instructions machine => \"code\" => vuln\u00e9rabilit\u00e9s",
-                "Script: + rapide et + facile."
+                "Hardware: acheter le m\u00eame mat\u00e9riel (m\u00eame marque et m\u00eame mod\u00e8le que celui cibl\u00e9), d\u00e9monter le bo\u00eetier, analyser le contenu pour r\u00e9cup\u00e9rer le code et trouver des vuln\u00e9rabilit\u00e9s dans celui-ci",
+                "Logiciel open source: analyser le code open source pour trouver des vuln\u00e9rabilit\u00e9s",
+                "Logiciel closed source: analyser les fichiers ex\u00e9cutables pour comprendre \u00e0 quoi \"ressemble\" le code source et trouver des vuln\u00e9rabilit\u00e9s",
+                "Souvent, on \u00e9crit une automatisation (parfois une petite dizaine de lignes, parfois quelques centaines de lignes) pour exploiter la vuln\u00e9rabilit\u00e9 facilement et rapidement."
             ],
             "aside": "References: <a href=\"https://www.enisa.europa.eu/sites/default/files/2025-10/ENISA%20Threat%20Landscape%202025%20Booklet.pdf?_bhlid=77801cc22cbd30022dfcfae475c47d0534e1ae5b\">ENISA - Threat Landscape 2025</a>.",
             "image": "iot_hacking.jpg",
@@ -956,7 +966,7 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "What are the impacts of post-exploitation in cybersecurity ?",
             "notes": [
-                "Individuellement pour un humain, quel serait les impacts d'une cyberattaque ?"
+                "D'apr\u00e8s vous, quels sont les impacts d'une cyberattaque ?"
             ]
         },
         {
@@ -965,9 +975,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Human Impacts of Post-Exploitation Attacks",
             "notes": [
-                "culpabilit\u00e9 (victimes), stress (employ\u00e9s => pay\u00e9s pendant l'attaque ?)",
-                "acc\u00e8s \u00e0 l'eau, \u00e9lectricit\u00e9, sant\u00e9, informations r\u00e9elles (montant d'un compte bancaire, ...)",
-                "Quels seraient les impacts d'une attaque qui s'en prend au mat\u00e9riel ?"
+                "Direct: culpabilit\u00e9 des personnes qui se sont fait avoir par une manipulation, le stress des employ\u00e9s pendant la r\u00e9ponse \u00e0 incident pour ceux qui risquent de perdre leurs jobs et ceux qui ne seront peut \u00eatre pas pay\u00e9.",
+                "Indirect: les syst\u00e8mes informatiques sont des interfaces pour les humains, si ces interfaces sont falsifi\u00e9es, elles impactent les m\u00e9tiers qui les utilisent, lesquels peuvent \u00eatre critiques, comme les syst\u00e8mes d'urgence des h\u00f4pitaux, l'acc\u00e8s \u00e0 l'eau ou la distribution d'\u00e9lectricit\u00e9."
             ],
             "aside": "References: <a href=\"https://journals.sagepub.com/doi/10.1177/21582440211061556\">SAGE Journals \u2013 An Exploration of the Psychological Impact of Hacking Victimization</a>.",
             "image": "human_impact.jpg",
@@ -1007,9 +1016,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Hardware and Connected Device Impacts",
             "notes": [
-                "Vol de mat\u00e9riel != travail pour les victimes",
-                "Objets connect\u00e9s => mauvaise information, mener des actions automatiques (critique: vanne de barrage => rel\u00e2cher des milliers de litres d'eau)",
-                "Qu'est-ce qui pourrait \u00eatre vol\u00e9 en cas d'espionnage ? A quoi cela pourrait-il servir ?"
+                "Le vol de mat\u00e9riel peut impacter le travail des victimes.",
+                "Les objets connect\u00e9s sont aussi des cibles de choix: certains existent pour donner de l'information, mais d'autres peuvent aussi mener des actions automatiquement ou sur demande. Si ce mat\u00e9riel est impact\u00e9, il peut modifier des comportements importants, par exemple une vanne de barrage qui peut retenir ou rel\u00e2cher des milliers de litres d'eau."
             ],
             "aside": "References: <a href=\"https://www.automation.com/article/white-paper-zscaler-threatlabz-2023-enterprise-iot\">Zscaler ThreatLabz Report 2023</a>.",
             "image": "connected_device.jpg",
@@ -1034,9 +1042,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Cyber Espionage and Theft of Strategic Information",
             "notes": [
-                "Brevets, devis, clients, offres, secrets professionnels => vol de business",
-                "Secrets des personnes => chantage / moyens de pression",
-                "Comment gagner de l'argent avec une cyberattaque ?"
+                "Les brevets des entreprises peuvent \u00eatre vol\u00e9s.",
+                "Les devis, les clients et les offres peuvent \u00eatre vol\u00e9s.",
+                "Les secrets professionnels.",
+                "Les secrets des personnes, pouvant servir de moyens de pression."
             ],
             "aside": "References: <a href=\"https://www.wsj.com/articles/nation-state-hackers-hit-businesses-for-commercial-edge-d07865e0\">Wall Street Journal \u2013 Nation-State Hackers Hit Businesses for Commercial Edge</a>.",
             "image": "economic_war.jpg",
@@ -1062,10 +1071,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Financial Cyber Attacks, Ransomware: Cryptolocker, Data Theft, and Service Disruption",
             "notes": [
-                "Attaques \u00e0 but lucratif => 1 \u00e0 3 moyens de prise d'otage des SI",
-                "Chiffrement => le plus utilis\u00e9 => fonctionne de moins en moins car backups => fonctionne mieux avec chiffrement/suppresion des backups.",
-                "Exfiltration => menace de vente/publication => souvent duo avec chiffrement (avec nouvelle tendance \u00e0 exfiltration uniquement). Fonctionne mieux => impacte l'image de l'entreprise (sans moyen d'y rem\u00e9dier). Aucune preuve de non revente des donn\u00e9es apr\u00e8s chiffrement.",
-                "DOS => pas de reprise d'activit\u00e9 => perte de revenus imm\u00e9diat. Urgence + difficult\u00e9 de reprise => fonctionne."
+                "Les attaquants \u00e0 but lucratif font des demandes de ran\u00e7on en utilisant entre 1 et 3 moyens pour prendre en otage les syst\u00e8mes d'information.",
+                "Le chiffrement est le plus connu et le plus utilis\u00e9. Il est aussi int\u00e9ressant pour rendre illisibles les preuves. Les entreprises comptent sur les sauvegardes pour se prot\u00e9ger. Cette prise d'otage unique fonctionne de moins en moins dans les entreprises, sauf lorsque les attaquants arrivent \u00e0 chiffrer ou supprimer les backups.",
+                "L'exfiltration avec menace de vente ou de publication: l'exfiltration est souvent utilis\u00e9e en pr\u00e9-chiffrement, en duo avec celui-ci. Cette menace fonctionne mieux que le chiffrement seul, car les entreprises n'ont plus la main sur les donn\u00e9es et une cyberattaque impacte l'image de l'entreprise. Il existe toutefois un probl\u00e8me avec ce type de demande de ran\u00e7on: les entreprises n'ont aucune preuve que les attaquants ne vont pas revendre en parall\u00e8le les donn\u00e9es pour obtenir plus d'argent. La tendance actuelle est de plus en plus d'exfiltrer les donn\u00e9es sans chiffrement.",
+                "La troisi\u00e8me option est de rendre le service informatique inutilisable: une attaque par d\u00e9ni de service. Si les syst\u00e8mes ne fonctionnent plus, il est particuli\u00e8rement difficile pour les entreprises de reprendre l'activit\u00e9. C'est donc une perte massive et imm\u00e9diate de source de revenus. Face \u00e0 l'urgence et \u00e0 la difficult\u00e9 de reprise, ces prises d'otage peuvent parfois fonctionner."
             ],
             "aside": "References: <a href=\"https://www.checkpoint.com/fr/cyber-hub/ransomware/what-is-triple-extortion-ransomware/\">Check Point \u2013 What is Triple Extortion Ransomware ?</a>.",
             "image": "ransomware.jpg",
@@ -1093,10 +1102,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Data Destruction and Cyber Sabotage",
             "notes": [
-                "Destruction des donn\u00e9es => sabotage difficilement r\u00e9cup\u00e9rable.",
-                "Le but => emp\u00eacher un projet d'aboutir",
-                "Usages => ne pas laisser de traces (projet confidentiel et compromettant), effacer les traces apr\u00e8s intrusions (espionnage, r\u00e9cup\u00e9ration des donn\u00e9es ou \u00e9viter l'adaptation des moyens de d\u00e9fense).",
-                "En temps de guerre => emp\u00eacher les communications."
+                "La destruction des donn\u00e9es permet un sabotage difficilement r\u00e9cup\u00e9rable.",
+                "Le but peut \u00eatre d'emp\u00eacher un projet d'aboutir, ou d'\u00eatre utilis\u00e9e comme moyen de prise d'otage en d\u00e9truisant les donn\u00e9es de r\u00e9cup\u00e9ration.",
+                "Elle est aussi utilis\u00e9e pour ne pas laisser de traces, par exemple apr\u00e8s un projet confidentiel et compromettant, ou par les attaquants pour effacer les traces de leurs intrusions (espionnage ou pour \u00e9viter l'adaptation des moyens de d\u00e9fense).",
+                "C'est une technique utilis\u00e9 en temps de guerre pour emp\u00eacher les communications."
             ],
             "aside": "References: <a href=\"https://www.numerama.com/cyberguerre/865129-lukraine-se-fait-attaquer-par-un-wiper-un-malware-qui-detruit-des-donnees.html\">Numerama - Ukraine Hit by a Data-Wiping Malware Attack</a>.",
             "image": "cyber_sabotage.jpg",
@@ -1122,10 +1131,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Disinformation and Destabilization Through Cyber Operations",
             "notes": [
-                "SI => instantan\u00e9it\u00e9 et l'acc\u00e8s \u00e0 distance. Usage: politique et communication, d\u00e9sinformation => d\u00e9stabilisation de projets, d'\u00c9tats ou de pays.",
-                "Difficile de se blanchir et difficile que la population oublie (m\u00eame avec preuve) => perte de confiance et notori\u00e9t\u00e9",
-                "D\u00e9sinformation touche les valeurs morales et convictions profondes => une marque ind\u00e9l\u00e9bile dans l'esprit du public",
-                "Pensez vous qu'une crise cyber mondiale puisse arriver ? Comment ?"
+                "L'informatique permet l'instantan\u00e9it\u00e9 et l'acc\u00e8s \u00e0 distance. C'est tr\u00e8s utilis\u00e9 dans la politique et la communication: c'est un outil efficace pour la d\u00e9sinformation et la d\u00e9stabilisation de projets, d'\u00c9tats ou de pays.",
+                "Une fois la personne ou le projet victime attaqu\u00e9, il est difficile de regagner la confiance et la notori\u00e9t\u00e9 aupr\u00e8s du public vis\u00e9, m\u00eame si les informations sont fausses, erron\u00e9es et que cela est prouv\u00e9.",
+                "La d\u00e9sinformation touche souvent les valeurs morales et les convictions profondes afin de laisser une marque ind\u00e9l\u00e9bile de l'information dans l'esprit des personnes."
             ],
             "aside": "References: <a href=\"https://www.defense.gouv.fr/actualites/decryptage-matriochka-campagne-pro-russe-desinformation\">French Ministry of the Armed Forces \u2013 \"Matriochka\" Pro-Russian Disinformation Campaign</a>.",
             "image": "disinformation_covid19.jpg",
@@ -1151,10 +1159,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Could the Next Global Crisis Be Cyber ?",
             "notes": [
-                "Chercheurs pensent => prochaine crise mondiale sera cyber.",
-                "3 th\u00e9ories: crise \u00e9nerg\u00e9tique majeure, crise logistique mondiale, crise de confiance.",
-                "Crise \u00e9nerg\u00e9tique (difficile): impacter plusieurs producteurs ou distributeurs en parall\u00e8le.",
-                "Crise logistique: une solution => attaquer un service cloud (incident CrowdStrike => impacts majeurs sur les transports (avions, bateaux, trains)). Cet impact sur plusieurs jours => difficilement g\u00e9rable."
+                "Enfin, un certain nombre de chercheurs pensent que la prochaine crise mondiale sera une crise cyber.",
+                "Il y a plusieurs th\u00e9ories sur les crises mondiales d'origine cyber. Voici 3 sc\u00e9narios probables : crise \u00e9nerg\u00e9tique majeure, crise logistique mondiale, crise de confiance.",
+                "Pour une crise \u00e9nerg\u00e9tique, le sc\u00e9nario probablement le plus complexe \u00e0 mettre en \u0153uvre actuellement, il faut impacter un certain nombre de producteurs ou de distributeurs d'\u00e9lectricit\u00e9 en parall\u00e8le.",
+                "Pour une crise logistique mondiale, cela semble moins complexe \u00e0 mettre en place. L'une des solutions est d'attaquer l'un des services cloud les plus utilis\u00e9s. Avec l'incident CrowdStrike, qui est un incident relativement simple compar\u00e9 \u00e0 certains incidents cyber, nous avons pu observer des impacts majeurs sur les transports (avions, bateaux, trains) durant quelques heures. Le m\u00eame impact pendant quelques jours serait beaucoup plus compliqu\u00e9 \u00e0 g\u00e9rer."
             ],
             "aside": "References: <a href=\"https://www.weforum.org/stories/2016/06/could-a-cyber-attack-cause-a-financial-crisis/\">World Economic Forum (WEF) - Cyber risk as systemic risk in financial systems</a>.",
             "image": "cyber_crisis.jpg",
@@ -1179,8 +1187,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Could the Next Global Crisis Be Cyber ?",
             "notes": [
-                "Attaque sur la confiance => la perte de confiance par supercherie => fake news sur les r\u00e9seaux sociaux ou deepfakes (l'IA aide). Si trop courants: la population ne saurait plus o\u00f9 trouver une information juste et fiable.",
-                "Deuxi\u00e8me th\u00e9orie (plus facile individuellement) => falsifier une donn\u00e9e (donn\u00e9es bancaires => \u00e9norme crise financi\u00e8re internationale par perte de confiance)"
+                "Enfin, le sc\u00e9nario le plus redout\u00e9 aujourd'hui est l'attaque sur la confiance. Pour ce faire, il y a 2 th\u00e9ories. La premi\u00e8re, sur le long terme, est la perte de confiance \u00e0 cause de l'IA, des r\u00e9seaux sociaux, des fake news et des deepfakes. Ces \u00e9l\u00e9ments risquent de devenir courants et les personnes ne sauraient plus o\u00f9 trouver une information juste et fiable.",
+                "Une deuxi\u00e8me th\u00e9orie, probablement la plus facile \u00e0 mettre en \u0153uvre pour un acteur malveillant, consiste \u00e0 falsifier des donn\u00e9es afin d'impacter la confiance des utilisateurs. Par exemple, une alt\u00e9ration des donn\u00e9es bancaires pourrait engendrer une \u00e9norme crise financi\u00e8re internationale, par perte de confiance de la population dans les banques et autres services financiers."
             ],
             "aside": "References: <a href=\"https://www.weforum.org/stories/2016/06/could-a-cyber-attack-cause-a-financial-crisis/\">World Economic Forum (WEF) - Cyber risk as systemic risk in financial systems</a>.",
             "image": "cyber_crisis.jpg",
@@ -1213,8 +1221,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Secrets: The Foundation of Digital Identity and Security",
             "notes": [
-                "Identification => caract\u00e9ristique unique de la personne (le plus simple: le secret)",
-                "Types: secret, empreinte digitale, reconnaissance faciale/vocal, 2FA, cl\u00e9s cryptographiques."
+                "En informatique, le seul moyen d'identifier une personne est de disposer d'une caract\u00e9ristique unique. La fa\u00e7on la plus simple, et probablement l'une des plus s\u00fbres, de v\u00e9rifier l'identit\u00e9 d'une personne est le secret. Si une personne est la seule \u00e0 conna\u00eetre un secret, alors la pr\u00e9sentation de ce secret permet d'identifier cette personne avec certitude.",
+                "Il y a plusieurs types de caract\u00e9ristique unique: le mots de passe (secret), l'empreinte digitale, la reconnaissance faciale ou vocal et le 2FA (le code sur le t\u00e9l\u00e9phone) parfois aussi des cl\u00e9s de chiffrement."
             ],
             "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
             "image": "password_prompts.jpg",
@@ -1238,9 +1246,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Secrets: The Foundation of Digital Identity and Security",
             "notes": [
-                "Caract\u00e8ristiques uniques != \u00e9gaux, meilleur: secrets",
-                "secret d'ordinateur < bon secret humain",
-                "Pour \u00eatre bon secret humain => bonne gestion des secrets c\u00f4t\u00e9s applicatifs (pas toujours le cas)"
+                "Toutes les caract\u00e9ristiques uniques ne sont pas \u00e9gaux, les meilleurs caract\u00e9ristiques uniques sont les bons secrets humains qui ne sont connu que par vous.",
+                "Lorsque le secret est donn\u00e9 par un ordinateur il est moins bon car l'attaquant peut compromettre l'ordinateur pour l'obtenir.",
+                "Pour que le mot de passe reste secret il faut aussi des \u00e9l\u00e9ments techniques adapt\u00e9s qui ne sont pas toujours bien utilis\u00e9 par les applications."
             ],
             "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
             "image": "password_prompts.jpg",
@@ -1275,11 +1283,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Strong Secrets: Building the First Layer of Cyber Defense",
             "notes": [
-                "Avoir des secrets r\u00e9ellement secrets.",
-                "Ne jamais les communiquer.",
-                "Long, complexe et pas devinables.",
-                "Pas \u00e9crits ou stock\u00e9s sur un support accessible.",
-                "Si vos mots de passe sont fort, comment un attaquant pourrait-il compromettre votre ordinateur ou t\u00e9l\u00e9phone ?"
+                "Pour se pr\u00e9munir des cyberattaques, il faut disposer de secrets r\u00e9ellement secrets.",
+                "Ne jamais les communiquer (m\u00eame aux meilleurs amis, famille et aux enfants).",
+                "Veiller \u00e0 ce qu'ils ne soient pas devinables (pas bas\u00e9 sur un unique mot commun, noms (animaux, enfants, copine), dates (naissance, relation)).",
+                "Veiller \u00e0 ce qu'ils ne soient ni \u00e9crits ni stock\u00e9s sur un support accessible (post-it, fichier texte, excel).",
+                "Sans mot de passe, comment un attaquant pourrait-il prendre le controle de votre ordinateur ou t\u00e9l\u00e9phone ? (mot d\u00e9fini pendant l'introduction)"
             ],
             "aside": "References: <a href=\"https://forestall.io/identity-glossary/what-is-a-secret-in-cybersecurity\">Forestall \u2013 What is a Secret in Cybersecurity?</a>.",
             "image": "password_postit.jpg",
@@ -1306,11 +1314,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Security Updates and Vulnerability Management",
             "notes": [
-                "Tous les syst\u00e8mes ont des vuln\u00e9rabilit\u00e9s.",
-                "Vuln\u00e9rabilit\u00e9s connues => simple, vuln\u00e9rabilit\u00e9s inconnues => difficile",
-                "Editeurs corrigent => mettre \u00e0 jour pour s\u00e9curiser",
-                "Mettre \u00e0 jour r\u00e9guli\u00e8rement: tous ses syst\u00e8mes pr\u00e9sent sur le syst\u00e8me (y comris si vous les utilisez plus !)",
-                "Au minimum => prioriser: le navigateur web (Chrome, Firefox, ...), le syst\u00e8me d'exploitation (Windows, Linux, ...), messageries (mail & instantan\u00e9es)."
+                "Tous les syst\u00e8mes et logiciels contiennent des vuln\u00e9rabilit\u00e9s, m\u00eame les plus s\u00e9curis\u00e9s.",
+                "Les attaquants ne sont pas toujours capables de trouver et d'exploiter une vuln\u00e9rabilit\u00e9 encore inconnue; ils utilisent donc souvent des vuln\u00e9rabilit\u00e9s connues.",
+                "Les \u00e9diteurs corrigent relativement rapidement les vuln\u00e9rabilit\u00e9s, mais pour profiter de ces correctifs, il faut mettre \u00e0 jour les logiciels.",
+                "Il faut r\u00e9guli\u00e8rement mettre \u00e0 jour tous ses syst\u00e8mes, logiciels et programmes pr\u00e9sents sur la machine.",
+                "Parfois, il est compliqu\u00e9 de mettre \u00e0 jour : c'est contraignant, cela prend du temps. Si vous devez prioriser les mises \u00e0 jour, vous devez inclure en priorit\u00e9 absolue le navigateur web (Chrome, Firefox, ...) et le syst\u00e8me d'exploitation (Windows). Les logiciels de messagerie \u00e9lectronique sont \u00e9galement \u00e0 inclure dans les priorit\u00e9s, ainsi que les messageries instantan\u00e9es. Attention \u00e0 ne pas oublier les logiciels que vous n'utilisez plus mais qui sont toujours pr\u00e9sents, car les attaquants, eux, peuvent les utiliser \u00e0 partir du moment o\u00f9 ils sont install\u00e9s."
             ],
             "aside": "References: <a href=\"https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/3481350/cisa-nsa-fbi-and-international-partners-issue-advisory-on-the-top-routinely-exp/\">CISA, NSA, FBI and International Partners Issue Advisory on the Top Routinely Exploited Vulnerabilities</a>.",
             "image": "vulnerability_exploit.jpg",
@@ -1337,11 +1345,11 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Safe Internet Browsing and Digital Exposure Protection",
             "notes": [
-                "Majorit\u00e9e des applications => application en ligne => navigateur tr\u00e8s important",
-                "Naviguer != T\u00e9l\u00e9charger des fichiers suspicieux => Identifier la source => Validez le contenu",
-                "/!\\ plugins/extensions => v\u00e9rifier la validation par des organismes de confiance => acc\u00e8s aux secrets et informations",
-                "Publications => informations => exposition personnelle/professionnelle => limiter les acc\u00e8s aux \"amis\"",
-                "Cookie => tra\u00e7age => informations et pr\u00e9visible => facilite les attaques => suppression r\u00e9gulier des donn\u00e9es de navigation.",
+                "Le navigateur est aujourd'hui l'un des outils les plus puissants, puisqu'il vous permet d'acc\u00e9der \u00e0 n'importe quelle application en ligne, c'est-\u00e0-dire \u00e0 la majorit\u00e9 des applications que vous utilisez.",
+                "Ne t\u00e9l\u00e9chargez pas n'importe quoi. Seule la validation de la source de l'information vous permettra de v\u00e9rifier facilement le contenu t\u00e9l\u00e9charg\u00e9.",
+                "\u00c9vitez de t\u00e9l\u00e9charger des plugins ou des extensions qui n'ont pas \u00e9t\u00e9 valid\u00e9s au pr\u00e9alable par des organismes de confiance, car ils peuvent acc\u00e9der \u00e0 toutes vos informations, m\u00eame les plus sensibles.",
+                "Supprimez r\u00e9guli\u00e8rement les donn\u00e9es de votre navigateur, y compris les cookies (et utilisez la navigation priv\u00e9e), afin de rendre le tra\u00e7age de vos activit\u00e9s sur Internet plus difficile, de vous rendre moins pr\u00e9visible et de r\u00e9duire les risques de compromission.",
+                "\u00c9vitez de trop publier d'\u00e9l\u00e9ments de votre vie personnelle sur Internet. Au minimum, ne les rendez pas publics, mais partagez-les uniquement avec des cercles de personnes contr\u00f4l\u00e9s et de confiance.",
                 "Si vous n'allez plus sur des sites douteux, qu'est-ce que l'attaquant pourrait faire pour vous faire ex\u00e9cuter un program malveillant ?"
             ],
             "aside": "References: <a href=\"https://www.technadu.com/unc4536-spreads-malware-via-fake-popular-software-sites/545860/\">TechNadu / Mandiant (Google) - UNC4536 Spreads Malware via Fake Popular Software Websites</a>.",
@@ -1368,9 +1376,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Detecting Impersonation and Communication-Based Cyber Attacks",
             "notes": [
-                "Naviguer => v\u00e9rifier la source, communication (SMS, appels, e-mails, messageries instantan\u00e9es, r\u00e9seaux sociaux) => v\u00e9rifier la source.",
-                "Comment v\u00e9rifier la source ? e-mails et navigation: v\u00e9rifiez le domaine (apr\u00e8s @)",
-                "/!\\ caract\u00e8res trompeurs (\"l\", \"I\", \"1\"), caract\u00e8res cyrilliques/latins",
+                "Dans toutes les communications, v\u00e9rifiez la source. Cela inclut les SMS et les appels, les e-mails, les messageries instantan\u00e9es et les r\u00e9seaux sociaux.",
+                "Dans les e-mails, v\u00e9rifiez attentivement le domaine (la partie de l'adresse e-mail situ\u00e9e apr\u00e8s le @).",
+                "Certains caract\u00e8res peuvent \u00eatre extr\u00eamement trompeurs : un \"l\" minuscule ressemble beaucoup \u00e0 un \"I\" majuscule, et certains caract\u00e8res cyrilliques sont tr\u00e8s proches des caract\u00e8res latins.",
                 "Si les attaquants ne peuvent plus vous envoyer directement des liens, comment pourraient-ils vous en faire ouvrir un ?"
             ],
             "aside": "References: <a href=\"https://www.cloudflare.com/fr-fr/learning/dns/what-is-cybersquatting/\">Cloudflare - What is cybersquatting ?</a>.",
@@ -1398,10 +1406,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Hidden Risks of Automatic Digital Actions",
             "notes": [
-                "Faciliter les actions => faire des choses \u00e0 la place de l'utilisateur => faire les choix \u00e0 votre place => dangeureux.",
-                "Appareil fait une action => avec les donn\u00e9es de la personne qui a cr\u00e9\u00e9 l'outil => choix de l'action est fait par un inconnu => n'importe qui peut choisir ce que fait votre appareil ? => ne les laissez pas faire le choix",
-                "Lien ouvert, connection Wi-Fi => facilite les cyberattaques",
-                "/!\\ QrCodes => v\u00e9rfier la source ou le contenu, boutons dans les mails/pubs",
+                "Les outils essayent de faciliter la vie des utilisateurs pour cela ils effectuent des actions automatiquement.",
+                "Accepter que l'appareil fasse quelque chose pour vous automatiquement, c'est accepter qu'une personne externe effectue une action sur votre appareil sans que vous sachiez exactement laquelle. C'est utile pour les d\u00e9veloppeurs afin de vous faire gagner du temps, mais c'est \u00e9galement utile aux pirates qui souhaitent r\u00e9aliser des actions malveillantes sur votre appareil.",
+                "Ces actions, comme ouvrir des liens automatiquement ou enregistrer des mots de passe WiFi, bien qu'elles paraissent relativement peu dangeureuse peuvent en r\u00e9alit\u00e9 faciliter les cyberattaques.",
+                "Ne scannez pas des QrCodes dont vous ne controller pas compl\u00e8tement la source, ne cliquez pas sur les boutons dans les mails, sur les pubs et autres \u00e9l\u00e9ments externes que vous ne controllez pas.",
                 "Si vous n'ouvrez plus de liens et que vous ne t\u00e9l\u00e9chargez plus de documents suspicieux, comment un attaquant pourrait-il vous faire cliquer sur un fichier malveillant ?"
             ],
             "aside": "References: <a href=\"https://www.vditelecom.fr/le-quishing/\">VdiTelecom - Quishing: A Growing Cybersecurity Threat</a>.",
@@ -1428,9 +1436,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "External Devices and Removable Media Cybersecurity Risks",
             "notes": [
-                "/!\\ P\u00e9riph\u00e9riques => \u00e9viter l'usage au maximum => n'utilisez que le votre (sur des appareil \u00e0 vous)",
-                "P\u00e9rif\u00e9rique d'amis de confiance != p\u00e9rif\u00e9rique s\u00e9cure  => pas sur vos appareils",
-                "P\u00e9riph\u00e9riques: les cl\u00e9s USB, les cartes SD, les t\u00e9l\u00e9phones, les appareils photo...",
+                "Les p\u00e9riph\u00e9riques sont une source de compromission. Essayez de ne pas en utiliser; si vous devez en brancher un, n'utilisez que le v\u00f4tre.",
+                "Le p\u00e9riph\u00e9rique d'un ami, m\u00eame de confiance, peut \u00eatre compromis et ne doit donc pas impacter vos appareils.",
+                "Les p\u00e9riph\u00e9riques incluent notamment les cl\u00e9s USB, particuli\u00e8rement dangereuses, les cartes SD, ainsi que les appareils \u00e9lectroniques comme les t\u00e9l\u00e9phones ou les appareils photo.",
                 "Si vous ne cliquez plus sur des fichiers dangeureux, comment un attaquant pourrait-il faire ex\u00e9cuter un programme malveillant sur votre ordinateur ?"
             ],
             "aside": "References: <a href=\"https://www.csoonline.com/article/569163/cybercriminal-group-mails-malicious-usb-dongles-to-targeted-companies.html\">CSO Online \u2013 Cybercriminal Group Mails Malicious USB Dongles to Targeted Companies</a>.",
@@ -1457,10 +1465,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Physical Access Control and Session Security",
             "notes": [
-                "Victime difficile \u00e0 distance => acc\u00e8s local (d\u00e9placement ou recrutement)",
-                "Ils entrent pour avoir le premier acc\u00e8s => pour \u00e9viter: fermez vos portes \u00e0 cl\u00e9 et verrouillez vos sessions",
-                "Si vous changer vos serrures => assurez-vous du niveau de s\u00e9curit\u00e9",
-                "Portes qui se \"claquent\" => s'ouvertes avec une carte bancaire, fen\u00eatre ouverte == vuln\u00e9rabilit\u00e9, fen\u00eatre/porte faible == vuln\u00e9rabilit\u00e9, velux == vuln\u00e9rabilit\u00e9",
+                "Lorsqu'une victime est trop difficilement accessible \u00e0 distance, les attaquants peuvent se d\u00e9placer ou recruter des acteurs malveillants locaux pour la compromettre physiquement.",
+                "Pour \u00e9viter cela: fermez bien vos portes \u00e0 cl\u00e9 et verrouillez toujours vos sessions !",
+                "Si vous devez changer vos serrures, assurez-vous d'installer une serrure offrant un bon niveau de s\u00e9curit\u00e9.",
+                "Attention \u00e0 ne pas oublier le reste: les portes qui se \"claquent\" peuvent \u00eatre ouvertes avec une carte bancaire, une fen\u00eatre ouverte constitue un bon point d'entr\u00e9e m\u00eame au premier \u00e9tage, et une fen\u00eatre ou une porte peu r\u00e9sistante est une vuln\u00e9rabilit\u00e9 qui peut permettre \u00e0 un attaquant d'entrer.",
                 "Si vous fermez bien votre bureau et votre session, comment l'attaquant pourrait-il voir vos donn\u00e9es ?"
             ],
             "aside": "References: <a href=\"https://arstechnica.com/tech-policy/2019/10/man-faces-12-years-for-using-keyloggers-to-steal-companies-technology/\">Man planted keyloggers in companies' networks and stole their data</a>.",
@@ -1488,9 +1496,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Physical Security and Device Protection",
             "notes": [
-                "Appareils sans surveillance (lieux controll\u00e9s par vous ou votre organisation) == compromis",
-                "Ne pas laissez dans un train (pour un court appel, aller aux toilettes, au bar). Travailler dans un lieux public => un filtre de confidentialit\u00e9",
-                "D\u00e9placement avec demande de d\u00e9poser vos appareils => refuser => sacoches bloquant les ondes. Si serrure => la cl\u00e9 peut rester \u00e0 l'entr\u00e9e",
+                "Les appareils ne doivent jamais \u00eatre laiss\u00e9s sans surveillance, sauf dans un lieu contr\u00f4l\u00e9 par vous ou par votre organisation.",
+                "Ne laissez jamais votre appareil sans surveillance dans un train, m\u00eame pour passer un appel de quelques secondes ou pour aller aux toilettes ou au bar. D'ailleurs, si vous travaillez dans des lieux publics, assurez-vous de toujours utiliser un filtre de confidentialit\u00e9 sur votre \u00e9cran.",
+                "Si vous \u00eates en d\u00e9placement et que l'on vous demande de laisser vos appareils \u00e0 l'ext\u00e9rieur, il faut refuser. Vous pouvez les placer dans des sacoches bloquant les communications radio afin d'emp\u00eacher toute transmission de donn\u00e9es. Vous pouvez \u00e9ventuellement laisser \u00e0 l'entr\u00e9e la seule cl\u00e9 permettant d'acc\u00e9der \u00e0 votre appareil, mais le syst\u00e8me doit rester avec vous.",
                 "Et si vous vous respectez toutes les consignes et recommandations que nous venons de faire, comment ces consignes pourrait-elles ne pas \u00eatre respect\u00e9es sur vos appareils ?"
             ],
             "aside": "References: <a href=\"https://www.itpro.com/security/hacking/hackers-are-turning-up-at-law-firms-to-gain-physical-access-to-machines\">IT Pro - Hackers are turning up at law firms to gain physical access to machines</a>.",
@@ -1518,9 +1526,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Never Lend Devices or Security Assets",
             "notes": [
-                "Vos enfants, fr\u00e8res et soeurs, amis, grand-parents connaissent-ils toutes les r\u00e8gles de cybers\u00e9curit\u00e9 qu'on vient de lister ? => pr\u00eat (ordinateur, t\u00e9l\u00e9phone) => risque",
-                "Personne bienveillante => branche une cl\u00e9 USB, scanne un QR code, lit ses e-mails, visite un site ou clique par m\u00e9garde sur un lien ou un bouton => compromettre votre syst\u00e8me",
-                "Pr\u00eater une carte bancaire (cinq secondes) m\u00eame en regardant == vuln\u00e9rabilit\u00e9 => m\u00e9moriser votre code/date de p\u00e9remption/nom/code de s\u00e9curit\u00e9 => achats sur Internet",
+                "Le pr\u00eat d'un ordinateur, d'un t\u00e9l\u00e9phone ou d'un \u00e9l\u00e9ment de s\u00e9curit\u00e9 constitue un risque consid\u00e9rable.",
+                "M\u00eame avec une personne bienveillante, si elle branche une cl\u00e9 USB, scanne un QR code, lit ses e-mails, visite un site ou clique par m\u00e9garde sur un lien ou un bouton, elle peut compromettre votre syst\u00e8me et votre entreprise.",
+                "Pr\u00eater une carte bancaire, m\u00eame cinq secondes et en gardant la personne sous les yeux, constitue une vuln\u00e9rabilit\u00e9. Elle peut m\u00e9moriser votre code, votre date de p\u00e9remption, votre nom, votre pr\u00e9nom ainsi que le code de s\u00e9curit\u00e9, et effectuer des achats sur Internet pour un faible co\u00fbt.",
                 "Maintenant que vous ne pr\u00eatez plus vos appareils et que vous les prot\u00e9gez, comment l'attaquant ferait-il pour se rapprocher/acc\u00e8der \u00e0 votre appareil \"virtuellement\" ?"
             ],
             "aside": "References: <a href=\"https://www.computerworld.com/article/1690178/sensitive-data-leaking-onto-p2p-networks.html\">Sensitive Data Leaking Onto P2P Networks</a>.",
@@ -1554,9 +1562,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Local Networks and the Risk of Lateral Cyber Attacks",
             "notes": [
-                "R\u00e9seaux => liens entre diff\u00e9rents syst\u00e8mes => compromettre les syst\u00e8mes li\u00e9s",
-                "Connectez votre ordinateur professionnel sur Wi-Fi personnel => si appareil compromis => compromission de votre syst\u00e8me",
-                "R\u00e9seau Wi-Fi public (bar, train, a\u00e9roport) => compromission par attaquant pr\u00e9sent",
+                "Les r\u00e9seaux permettent de cr\u00e9er des liens entre les diff\u00e9rents syst\u00e8mes qui les composent. Ces liens sont pr\u00e9cieux pour un attaquant, car ils peuvent lui permettre de compromettre les syst\u00e8mes voisins.",
+                "Si vous connectez votre ordinateur professionnel \u00e0 votre Wi-Fi personnel et qu'un autre appareil du r\u00e9seau est compromis, un attaquant pourrait potentiellement compromettre l'ordinateur professionnel.",
+                "Si vous vous connectez \u00e0 un r\u00e9seau Wi-Fi public, par exemple dans un bar, un train ou un a\u00e9roport, un attaquant pr\u00e9sent sur le m\u00eame r\u00e9seau pourrait tenter de compromettre votre appareil.",
                 "Et si l'attaquant r\u00e9ussi \u00e0 voler un t\u00e9l\u00e9phone ou compromettre l'ordinateur ou le compte d'un de vos coll\u00e8gue ou ami, comment l'attaquant pourrait-il en profiter pour vous compromettre ?"
             ],
             "aside": "References: <a href=\"https://www.cnbc.com/2014/11/10/ceos-beware-of-darkhotel-hackers.html\">CNBC - CEOs beware of \"DarkHotel\" hackers</a>.",
@@ -1583,9 +1591,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Verify Requests, Avoid Isolation, Never Act Under Pressure",
             "notes": [
-                "Manipulation => pas de double v\u00e9rification => isolation \"forcer\"",
-                "Valider les actions => canaux diff\u00e9rents",
-                "En appel (personne importante) => demande un virement, un changement de mot de passe, une connexion sur un site => envoyez un e-mail/message \u00e0 la m\u00eame personne (confirmation) => sans demander l'adresse par t\u00e9l\u00e9phone",
+                "Si un attaquant veut vous manipuler, il utilisera des m\u00e9canismes pour vous \"forcer\" ou vous \"inciter fortement\" \u00e0 r\u00e9aliser des actions sans v\u00e9rification.",
+                "Pour votre s\u00e9curit\u00e9 et celle de votre soci\u00e9t\u00e9, faites toujours valider les actions par plusieurs canaux diff\u00e9rents.",
+                "Par exemple, si vous \u00eates au t\u00e9l\u00e9phone avec une personne importante de la soci\u00e9t\u00e9 et qu'elle vous demande un virement, un changement de mot de passe ou une connexion sur un site, envoyez un e-mail \u00e0 cette m\u00eame personne pour confirmer qu'elle est bien au t\u00e9l\u00e9phone avec vous (et ne demandez pas l'adresse e-mail par t\u00e9l\u00e9phone, r\u00e9cup\u00e9rez-la \u00e0 partir d'une source fiable. G\u00e9n\u00e9ralement, les adresses e-mail sont automatiquement r\u00e9solues \u00e0 partir des noms et pr\u00e9noms au sein d'une entreprise).",
                 "Sachant que vous n'allez plus sur des sites douteux, que vous ne publiez plus aucune information professionnelle ou personelle et que vous ne laissez personne approcher vos donn\u00e9es, comment pourrait-elles se retrouver en ligne ?"
             ],
             "aside": "References: <a href=\"https://nophi.sh/en/blog/ceo-fraud-bec-costly-cases-france\">CEO Fraud and Targeted Phishing: The Most Costly BEC Cases in France</a>.",
@@ -1619,10 +1627,10 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Preventing Accidental Data Leaks and Information Exposure",
             "notes": [
-                "Envoyez vous les donn\u00e9es de votre entreprise dans l'IA et les sites et moteurs de recherche ? Faites vous corriger les fautes de vos mails par l'IA ou un correcteur orthographique ? Fuites de donn\u00e9es confidentielles => mauvaise pratique",
-                "Moteurs de recherche, IA, drives, forums, messageries (m\u00eame \"s\u00e9curis\u00e9\" de bout en bout) => risque => analyse par programme (IA/correcteur/proposition intelligente de contenu)",
-                "Pas d'informations professionnelles => dans des services non valid\u00e9 (code confidentiel, donn\u00e9es RH, donn\u00e9es financi\u00e8res, \u00e9l\u00e9ments de strat\u00e9gie, r\u00e9sultats de projet de recherche)",
-                "e-mails => faible protection => mauvaise pratique (destinataires: r\u00e9sum\u00e9s par l'IA) => pas de documents confidentiels",
+                "De plus en plus de fuites de donn\u00e9es confidentielles surviennent \u00e0 cause d'employ\u00e9s qui ne se rendent pas compte des mauvais usages de l'informatique.",
+                "Les moteurs de recherche, les IA, les espaces de stockage en ligne (drives), les forums, ainsi qu'un grand nombre de messageries conservent et analysent tout ce qui est \u00e9crit.",
+                "N'entrez jamais d'informations de l'entreprise dans ces services : pas de code confidentiel, pas de donn\u00e9es RH, pas de donn\u00e9es financi\u00e8res, pas d'\u00e9l\u00e9ments de strat\u00e9gie et encore moins d'\u00e9l\u00e9ments de recherche.",
+                "Par exemple, une messagerie dite s\u00e9curis\u00e9e (chiffr\u00e9e de bout en bout) qui int\u00e8gre une IA peut lire et conserver tout ce qui est \u00e9crit. Les e-mails ne sont pas r\u00e9ellement tr\u00e8s prot\u00e9g\u00e9s : ils ne devraient jamais \u00eatre utilis\u00e9s pour transmettre des donn\u00e9es confidentielles, bien qu'ils soient probablement le moyen le plus couramment utilis\u00e9 pour \u00e9changer des documents officiels. De plus, les syst\u00e8mes de messagerie int\u00e8grent de plus en plus d'agents destin\u00e9s \u00e0 aider \u00e0 la lecture et \u00e0 la r\u00e9daction des e-mails ; il est donc techniquement possible pour les fournisseurs de ces services de tout conserver.",
                 "D'apr\u00e8s vous, est-ce que les attaquants ont des pr\u00e9f\u00e9rences de contexte ou de moment pour envoyer une attaque ? Si oui, lesquels ?"
             ],
             "aside": "References: <a href=\"https://www.techtimes.com/articles/289996/20230404/samsung-employees-used-chatgpt-work-unknowingly-leaked-critical-source-codes.htm\">Samsung employees used chatgpt work unknowingly leaked critical source codes</a>.",
@@ -1650,9 +1658,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Separating Personal and Professional Digital Activities to Prevent Cyberattacks",
             "notes": [
-                "Entreprises => plus en plus de protection, supervision de s\u00e9curit\u00e9 (acc\u00e8s Internet, messagerie, t\u00e9l\u00e9phones mobiles, postes de travail, r\u00e9seaux)",
-                "Compromettre le milieu personnel => faciliter les intrusions => obtenir les informations, rebondir sur le milieu professionnel",
-                "mail professionnel sur PC personnel => compromission du PC => acc\u00e8s au mail, mail personnel sur PC professionnel => compromission par mail personnel du syst\u00e8me professionnel",
+                "Les entreprises mettent en place de plus en plus de syst\u00e8mes de protection, avec une supervision de la s\u00e9curit\u00e9 sur un maximum d'\u00e9l\u00e9ments (acc\u00e8s Internet, messagerie, t\u00e9l\u00e9phones mobiles, postes de travail, r\u00e9seaux, etc.).",
+                "Pour faciliter leurs intrusions, les attaquants pr\u00e9f\u00e8rent \u00e9viter ces outils de s\u00e9curit\u00e9. C'est plus simple et plus discret pour eux.",
+                "Le meilleur moyen est alors d'attaquer une cible dans sa vie priv\u00e9e. Si un attaquant parvient, via un e-mail personnel non s\u00e9curis\u00e9, \u00e0 compromettre le poste de travail professionnel d'une victime parce qu'elle consulte ses e-mails personnels sur son ordinateur professionnel, il peut compromettre l'entreprise. Inversement, s'il compromet l'ordinateur personnel de la victime via sa messagerie personnelle et que celle-ci acc\u00e8de \u00e0 ses e-mails professionnels depuis cet ordinateur, l'attaquant peut \u00e9galement compromettre l'entreprise.",
                 "D'apr\u00e8s vous, les syst\u00e8mes peuvent-ils nous dirent si il y a un probl\u00e8me ? Et si oui, comment, comment les syst\u00e8mes nous informent et comment r\u00e9agir ?"
             ],
             "aside": "References: <a href=\"https://www.business-standard.com/article/companies/hacker-breached-network-via-employee-account-no-data-compromised-cisco-122081300468_1.html\">Business Standard - Hacker breached network via employee account</a>.",
@@ -1680,8 +1688,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Be Cautious with Notifications and Contact IT",
             "notes": [
-                "/!\\ aux notifications => pas de panique => contacter le service informatique, surtout s'ils sont urgentes/insistantes",
-                "Service informatique => valide => vous informe => priorise les alertes => g\u00e9re l'incident si n\u00e9cessaire"
+                "Si des notifications apparaissent \u00e0 l'\u00e9cran, qu'elles soient inhabituelles, de s\u00e9curit\u00e9, urgentes ou autres, demandez \u00e0 votre service informatique de les valider.",
+                "En validant avec le service informatique, celui-ci peut g\u00e9rer les priorit\u00e9s des actions, mener les actions de rem\u00e9diation et, s'il s'agit d'une tentative d'attaque, l'identifier plus facilement et plus rapidement."
             ],
             "aside": "References: <a href=\"https://www.scamwatch.gov.au/about-us/news-and-alerts/your-computer-is-infected-fake-anti-virus-pop-up-alert-scams\">Australian Government Scamwatch \u2013 Fake Anti-Virus Pop-Up Alert Scams</a>.",
             "image": "notification_alerts.jpg",
