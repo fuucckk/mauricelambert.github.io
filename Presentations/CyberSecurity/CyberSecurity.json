@@ -1222,7 +1222,7 @@
             "title": "Secrets: The Foundation of Digital Identity and Security",
             "notes": [
                 "En informatique, le seul moyen d'identifier une personne est de disposer d'une caract\u00e9ristique unique. La fa\u00e7on la plus simple, et probablement l'une des plus s\u00fbres, de v\u00e9rifier l'identit\u00e9 d'une personne est le secret. Si une personne est la seule \u00e0 conna\u00eetre un secret, alors la pr\u00e9sentation de ce secret permet d'identifier cette personne avec certitude.",
-                "Les secrets (souvent appel\u00e9s mots de passe) ne sont pas toujours aussi secrets qu'ils devraient l'\u00eatre: un secret ne se communique pas (y compris aux meilleurs amis, m\u00eame s'ils souhaitent pouvoir d\u00e9verrouiller le t\u00e9l\u00e9phone, ou aux enfants, m\u00eame s'ils souhaitent acc\u00e9der \u00e0 tel ou tel service); un secret ne peut pas \u00eatre devinable (il ne peut pas se baser sur des informations connues comme un nom, un pr\u00e9nom, un surnom, une date de naissance, la date du d\u00e9but d'une relation, le nom d'un animal de compagnie, une ville ou un code postal, qui sont tous des \u00e9l\u00e9ments connus)."
+                "Il y a plusieurs types de caract\u00e9ristique unique: le mots de passe (secret), l'empreinte digitale, la reconnaissance faciale ou vocal et le 2FA (le code sur le t\u00e9l\u00e9phone) parfois aussi des cl\u00e9s de chiffrement."
             ],
             "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
             "image": "password_prompts.jpg",
@@ -1246,8 +1246,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Secrets: The Foundation of Digital Identity and Security",
             "notes": [
-                "Les secrets peuvent \u00eatre g\u00e9n\u00e9r\u00e9s par une machine, comme le code 2FA que vous obtenez sur votre t\u00e9l\u00e9phone ou par e-mail, ou encore les \u00e9l\u00e9ments cryptographiques de votre ordinateur ou de votre t\u00e9l\u00e9phone. Malheureusement, ces \u00e9l\u00e9ments ne sont pas totalement secrets: lorsqu'une personne a acc\u00e8s au mat\u00e9riel ou au logiciel, elle peut r\u00e9cup\u00e9rer toutes les donn\u00e9es secr\u00e8tes qui les composent. Cela s'applique \u00e9galement aux gestionnaires de mots de passe.",
-                "Certaines protections cryptographiques fonctionnent comme des empreintes : une donn\u00e9e source produit toujours la m\u00eame empreinte, mais il est math\u00e9matiquement impossible de retrouver le contenu d'origine \u00e0 partir de cette empreinte. Ces m\u00e9canismes sont fiables pour v\u00e9rifier des secrets sans les exposer. Malheureusement, tous les services ne les utilisent pas, ou ne les utilisent pas correctement (comme Microsoft Windows)."
+                "Toutes les caract\u00e9ristiques uniques ne sont pas \u00e9gaux, les meilleurs caract\u00e9ristiques uniques sont les bons secrets humains qui ne sont connu que par vous.",
+                "Lorsque le secret est donn\u00e9 par un ordinateur il est moins bon car l'attaquant peut compromettre l'ordinateur pour l'obtenir.",
+                "Pour que le mot de passe reste secret il faut aussi des \u00e9l\u00e9ments techniques adapt\u00e9s qui ne sont pas toujours bien utilis\u00e9 par les applications."
             ],
             "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
             "image": "password_prompts.jpg",
@@ -1283,10 +1284,10 @@
             "title": "Strong Secrets: Building the First Layer of Cyber Defense",
             "notes": [
                 "Pour se pr\u00e9munir des cyberattaques, il faut disposer de secrets r\u00e9ellement secrets.",
-                "Ne jamais les communiquer.",
-                "Veiller \u00e0 ce qu'ils ne soient pas devinables.",
-                "Veiller \u00e0 ce qu'ils ne soient ni \u00e9crits ni stock\u00e9s sur un support accessible.",
-                "Si vos mots de passe sont fort, comment un attaquant pourrait-il compromettre votre ordinateur ou t\u00e9l\u00e9phone ?"
+                "Ne jamais les communiquer (m\u00eame aux meilleurs amis, famille et aux enfants).",
+                "Veiller \u00e0 ce qu'ils ne soient pas devinables (pas bas\u00e9 sur un unique mot commun, noms (animaux, enfants, copine), dates (naissance, relation)).",
+                "Veiller \u00e0 ce qu'ils ne soient ni \u00e9crits ni stock\u00e9s sur un support accessible (post-it, fichier texte, excel).",
+                "Sans mot de passe, comment un attaquant pourrait-il prendre le controle de votre ordinateur ou t\u00e9l\u00e9phone ? (mot d\u00e9fini pendant l'introduction)"
             ],
             "aside": "References: <a href=\"https://forestall.io/identity-glossary/what-is-a-secret-in-cybersecurity\">Forestall \u2013 What is a Secret in Cybersecurity?</a>.",
             "image": "password_postit.jpg",

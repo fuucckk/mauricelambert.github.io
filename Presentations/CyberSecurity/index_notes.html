@@ -725,14 +725,15 @@ const SLIDES = window.SLIDES_NOTES || [
     "title": "Secrets: The Foundation of Digital Identity and Security",
     "notes": [
       "En informatique, le seul moyen d'identifier une personne est de disposer d'une caractéristique unique. La façon la plus simple, et probablement l'une des plus sûres, de vérifier l'identité d'une personne est le secret. Si une personne est la seule à connaître un secret, alors la présentation de ce secret permet d'identifier cette personne avec certitude.",
-      "Les secrets (souvent appelés mots de passe) ne sont pas toujours aussi secrets qu'ils devraient l'être: un secret ne se communique pas (y compris aux meilleurs amis, même s'ils souhaitent pouvoir déverrouiller le téléphone, ou aux enfants, même s'ils souhaitent accéder à tel ou tel service); un secret ne peut pas être devinable (il ne peut pas se baser sur des informations connues comme un nom, un prénom, un surnom, une date de naissance, la date du début d'une relation, le nom d'un animal de compagnie, une ville ou un code postal, qui sont tous des éléments connus)."
+      "Il y a plusieurs types de caractéristique unique: le mots de passe (secret), l'empreinte digitale, la reconnaissance faciale ou vocal et le 2FA (le code sur le téléphone) parfois aussi des clés de chiffrement."
     ]
   },
   {
     "title": "Secrets: The Foundation of Digital Identity and Security",
     "notes": [
-      "Les secrets peuvent être générés par une machine, comme le code 2FA que vous obtenez sur votre téléphone ou par e-mail, ou encore les éléments cryptographiques de votre ordinateur ou de votre téléphone. Malheureusement, ces éléments ne sont pas totalement secrets: lorsqu'une personne a accès au matériel ou au logiciel, elle peut récupérer toutes les données secrètes qui les composent. Cela s'applique également aux gestionnaires de mots de passe.",
-      "Certaines protections cryptographiques fonctionnent comme des empreintes : une donnée source produit toujours la même empreinte, mais il est mathématiquement impossible de retrouver le contenu d'origine à partir de cette empreinte. Ces mécanismes sont fiables pour vérifier des secrets sans les exposer. Malheureusement, tous les services ne les utilisent pas, ou ne les utilisent pas correctement (comme Microsoft Windows)."
+      "Toutes les caractéristiques uniques ne sont pas égaux, les meilleurs caractéristiques uniques sont les bons secrets humains qui ne sont connu que par vous.",
+      "Lorsque le secret est donné par un ordinateur il est moins bon car l'attaquant peut compromettre l'ordinateur pour l'obtenir.",
+      "Pour que le mot de passe reste secret il faut aussi des éléments techniques adaptés qui ne sont pas toujours bien utilisé par les applications."
     ]
   },
   {
@@ -746,10 +747,10 @@ const SLIDES = window.SLIDES_NOTES || [
     "title": "Strong Secrets: Building the First Layer of Cyber Defense",
     "notes": [
       "Pour se prémunir des cyberattaques, il faut disposer de secrets réellement secrets.",
-      "Ne jamais les communiquer.",
-      "Veiller à ce qu'ils ne soient pas devinables.",
-      "Veiller à ce qu'ils ne soient ni écrits ni stockés sur un support accessible.",
-      "Si vos mots de passe sont fort, comment un attaquant pourrait-il compromettre votre ordinateur ou téléphone ?"
+      "Ne jamais les communiquer (même aux meilleurs amis, famille et aux enfants).",
+      "Veiller à ce qu'ils ne soient pas devinables (pas basé sur un unique mot commun, noms (animaux, enfants, copine), dates (naissance, relation)).",
+      "Veiller à ce qu'ils ne soient ni écrits ni stockés sur un support accessible (post-it, fichier texte, excel).",
+      "Sans mot de passe, comment un attaquant pourrait-il prendre le controle de votre ordinateur ou téléphone ? (mot défini pendant l'introduction)"
     ]
   },
   {

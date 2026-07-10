@@ -1213,8 +1213,8 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Secrets: The Foundation of Digital Identity and Security",
             "notes": [
-                "Identification => caract\u00e9ristique unique de la personne (secret, empreinte digital, reconaissance faciale). Pr\u00e9sentation du secret => identification",
-                "Mots de passe => th\u00e9oriquement secret => 0 communication (meilleurs amis, famille, enfants), != devinable (pas bas\u00e9 sur: nom, pr\u00e9nom, surnom, date de naissance, date du d\u00e9but d'une relation, nom d'un animal de compagnie, ville, code postal) => car connue sur internet."
+                "Identification => caract\u00e9ristique unique de la personne (le plus simple: le secret)",
+                "Types: secret, empreinte digitale, reconnaissance faciale/vocal, 2FA, cl\u00e9s cryptographiques."
             ],
             "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
             "image": "password_prompts.jpg",
@@ -1238,8 +1238,9 @@
             "icon alt": "Metallic serpent dragon logo in red to purple gradient symbolizing offensive power, high quality, mythic strength and Python-inspired security defense",
             "title": "Secrets: The Foundation of Digital Identity and Security",
             "notes": [
-                "Secrets parfois g\u00e9n\u00e9r\u00e9s par une machine (2FA, cl\u00e9s cryptographiques) => si syst\u00e8me compromis => attaquant peut obtenir les secrets (aussi pour gestionnaire de mots de passe).",
-                "Protections fiable pour les mots de passe (f(a) = <r\u00e9sultat \"unique\">, impossible de faire l'inverse) => pas toujours utilis\u00e9 ou bien utilis\u00e9 (comme Microsoft Windows)."
+                "Caract\u00e8ristiques uniques != \u00e9gaux, meilleur: secrets",
+                "secret d'ordinateur < bon secret humain",
+                "Pour \u00eatre bon secret humain => bonne gestion des secrets c\u00f4t\u00e9s applicatifs (pas toujours le cas)"
             ],
             "aside": "References: <a href=\"https://www.cyber.gov.au/business-government/secure-design/secure-by-design/managing-cryptographic-keys-and-secrets\">Australian Cyber Security Centre (ASD) - Cybersecurity managing keys secrets</a>.",
             "image": "password_prompts.jpg",
@@ -1276,7 +1277,7 @@
             "notes": [
                 "Avoir des secrets r\u00e9ellement secrets.",
                 "Ne jamais les communiquer.",
-                "Fort et pas devinables.",
+                "Long, complexe et pas devinables.",
                 "Pas \u00e9crits ou stock\u00e9s sur un support accessible.",
                 "Si vos mots de passe sont fort, comment un attaquant pourrait-il compromettre votre ordinateur ou t\u00e9l\u00e9phone ?"
             ],
